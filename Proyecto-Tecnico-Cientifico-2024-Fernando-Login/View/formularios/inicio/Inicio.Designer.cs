@@ -400,7 +400,6 @@
             // 
             // bunifuGradientPanel4
             // 
-            this.bunifuGradientPanel4.AutoSize = true;
             this.bunifuGradientPanel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel4.BackgroundImage")));
             this.bunifuGradientPanel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuGradientPanel4.Controls.Add(this.bunifuImageButton3);
@@ -412,7 +411,7 @@
             this.bunifuGradientPanel4.Location = new System.Drawing.Point(354, 39);
             this.bunifuGradientPanel4.Name = "bunifuGradientPanel4";
             this.bunifuGradientPanel4.Quality = 10;
-            this.bunifuGradientPanel4.Size = new System.Drawing.Size(231, 275);
+            this.bunifuGradientPanel4.Size = new System.Drawing.Size(231, 272);
             this.bunifuGradientPanel4.TabIndex = 3;
             // 
             // bunifuGradientPanel5
@@ -465,7 +464,7 @@
             this.bunifuCustomLabel5.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(64, 37);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(59, 14);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(106, 24);
             this.bunifuCustomLabel5.TabIndex = 0;
