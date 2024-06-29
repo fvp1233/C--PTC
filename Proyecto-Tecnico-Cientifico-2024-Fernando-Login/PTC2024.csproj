@@ -57,6 +57,12 @@
     <Compile Include="View\formularios\inicio\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Inventario\FrmInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Inventario\FrmInventario.Designer.cs">
+      <DependentUpon>FrmInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\formularios\login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="View\formularios\inicio\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Inventario\FrmInventario.resx">
+      <DependentUpon>FrmInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\formularios\login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
