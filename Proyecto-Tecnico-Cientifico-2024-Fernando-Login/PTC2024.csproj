@@ -96,42 +96,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="View\formularios\inicio\Inicio.cs">
+    <Compile Include="View\inicio\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\formularios\inicio\Inicio.Designer.cs">
+    <Compile Include="View\inicio\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Inventario\FrmInventario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Inventario\FrmInventario.Designer.cs">
-      <DependentUpon>FrmInventario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\formularios\login\Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\formularios\login\Login.Designer.cs">
+    <Compile Include="View\login\Login.cs" />
+    <Compile Include="View\login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\formularios\login\Recuperar contraseña.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\formularios\login\Recuperar contraseña.Designer.cs">
+    <Compile Include="View\login\Recuperar contraseña.cs" />
+    <Compile Include="View\login\Recuperar contraseña.Designer.cs">
       <DependentUpon>Recuperar contraseña.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="View\formularios\inicio\Inicio.resx">
+    <EmbeddedResource Include="View\inicio\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Inventario\FrmInventario.resx">
-      <DependentUpon>FrmInventario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\formularios\login\Login.resx">
+    <EmbeddedResource Include="View\login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\formularios\login\Recuperar contraseña.resx">
+    <EmbeddedResource Include="View\login\Recuperar contraseña.resx">
       <DependentUpon>Recuperar contraseña.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
