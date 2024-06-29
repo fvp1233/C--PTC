@@ -102,11 +102,15 @@
     <Compile Include="View\inicio\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\login\Login.cs" />
+    <Compile Include="View\login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\login\Recuperar contraseña.cs" />
+    <Compile Include="View\login\Recuperar contraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\login\Recuperar contraseña.Designer.cs">
       <DependentUpon>Recuperar contraseña.cs</DependentUpon>
     </Compile>
