@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PTC2024.View.formularios.inicio
+namespace PTC2024.View.Empleados
 {
-    public partial class Inicio : Form
+    public partial class FrmActualizarEmpleado : Form
     {
-        public Inicio()
+        public FrmActualizarEmpleado()
         {
             InitializeComponent();
         }
-
     }
 }
