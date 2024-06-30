@@ -142,6 +142,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -160,6 +161,9 @@
   <ItemGroup>
     <Folder Include="Controller\" />
     <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgEmpleados.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
