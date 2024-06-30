@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PTC2024.formularios.login;
+using PTC2024.View.Empleados;
 
 namespace PTC2024
 {
@@ -17,7 +18,7 @@ namespace PTC2024
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new MenuEmpleados());
         }
     }
 }
