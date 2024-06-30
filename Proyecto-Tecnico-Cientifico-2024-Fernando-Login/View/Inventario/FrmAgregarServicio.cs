@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PTC2024.View.formularios.Inventario
+namespace PTC2024.View.Inventario
 {
-    public partial class FrmInventario : Form
+    public partial class FrmAgregarServicio : Form
     {
-        public FrmInventario()
+        public FrmAgregarServicio()
         {
             InitializeComponent();
         }

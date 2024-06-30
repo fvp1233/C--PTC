@@ -102,6 +102,18 @@
     <Compile Include="View\inicio\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Inventario\FrmAgregarServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Inventario\FrmAgregarServicio.Designer.cs">
+      <DependentUpon>FrmAgregarServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Inventario\FrmInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Inventario\FrmInventario.Designer.cs">
+      <DependentUpon>FrmInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +131,12 @@
     <EmbeddedResource Include="View\inicio\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Inventario\FrmAgregarServicio.resx">
+      <DependentUpon>FrmAgregarServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Inventario\FrmInventario.resx">
+      <DependentUpon>FrmInventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +151,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -151,6 +170,15 @@
   <ItemGroup>
     <Folder Include="Controller\" />
     <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo btnAgregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lupa1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
