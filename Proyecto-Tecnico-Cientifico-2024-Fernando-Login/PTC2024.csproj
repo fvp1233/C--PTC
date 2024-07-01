@@ -108,15 +108,11 @@
     <Compile Include="View\Empleados\ApartadoEmpleados.Designer.cs">
       <DependentUpon>ApartadoEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Empleados\FrmActualizarEmpleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="View\Empleados\FrmActualizarEmpleado.cs" />
     <Compile Include="View\Empleados\FrmActualizarEmpleado.Designer.cs">
       <DependentUpon>FrmActualizarEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Empleados\FrmAgregarEmpleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="View\Empleados\FrmAgregarEmpleado.cs" />
     <Compile Include="View\Empleados\FrmAgregarEmpleado.Designer.cs">
       <DependentUpon>FrmAgregarEmpleado.cs</DependentUpon>
     </Compile>
@@ -188,8 +184,6 @@
   <ItemGroup>
     <Folder Include="Controller\" />
     <Folder Include="Model\" />
-    <Folder Include="Resources\" />
-    <Folder Include="View\Empleados\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\ActualizarEmpleado.png" />
