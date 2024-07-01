@@ -114,12 +114,6 @@
     <Compile Include="View\Empleados\FrmAgregarEmpleado.Designer.cs">
       <DependentUpon>FrmAgregarEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Empleados\MenuInicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Empleados\MenuInicio.Designer.cs">
-      <DependentUpon>MenuInicio.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\inicio\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,9 +142,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Empleados\FrmAgregarEmpleado.resx">
       <DependentUpon>FrmAgregarEmpleado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Empleados\MenuInicio.resx">
-      <DependentUpon>MenuInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\inicio\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
