@@ -161,10 +161,8 @@
   <ItemGroup>
     <Folder Include="Controller\" />
     <Folder Include="Model\" />
+    <Folder Include="Resources\" />
     <Folder Include="View\Empleados\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imgEmpleados.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

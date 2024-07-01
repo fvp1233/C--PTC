@@ -129,7 +129,6 @@
             this.bunifuImageButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
             this.bunifuImageButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bunifuImageButton4.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.bunifuImageButton4.ErrorImage = global::PTC2024.Properties.Resources.imgEmpleados;
             this.bunifuImageButton4.FadeWhenInactive = false;
             this.bunifuImageButton4.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.bunifuImageButton4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.Image")));
@@ -208,7 +207,6 @@
             this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
             this.bunifuImageButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bunifuImageButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.bunifuImageButton1.ErrorImage = global::PTC2024.Properties.Resources.imgEmpleados;
             this.bunifuImageButton1.FadeWhenInactive = false;
             this.bunifuImageButton1.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
@@ -346,7 +344,6 @@
             this.bunifuImageButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
             this.bunifuImageButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bunifuImageButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.bunifuImageButton3.ErrorImage = global::PTC2024.Properties.Resources.imgEmpleados;
             this.bunifuImageButton3.FadeWhenInactive = false;
             this.bunifuImageButton3.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
             this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
