@@ -102,6 +102,24 @@
     <Compile Include="View\inicio\MenuInicio.Designer.cs">
       <DependentUpon>MenuInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Empleados\ApartadoEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Empleados\ApartadoEmpleados.Designer.cs">
+      <DependentUpon>ApartadoEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Empleados\FrmActualizarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Empleados\FrmActualizarEmpleado.Designer.cs">
+      <DependentUpon>FrmActualizarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Empleados\FrmAgregarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Empleados\FrmAgregarEmpleado.Designer.cs">
+      <DependentUpon>FrmAgregarEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\inicio\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +142,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="View\inicio\MenuInicio.resx">
       <DependentUpon>MenuInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Empleados\ApartadoEmpleados.resx">
+      <DependentUpon>ApartadoEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Empleados\FrmActualizarEmpleado.resx">
+      <DependentUpon>FrmActualizarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Empleados\FrmAgregarEmpleado.resx">
+      <DependentUpon>FrmAgregarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\inicio\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
@@ -163,6 +190,22 @@
     <Folder Include="Model\" />
     <Folder Include="Resources\" />
     <Folder Include="View\Empleados\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ActualizarEmpleado.png" />
+    <Content Include="Resources\AgregarEmpleado.png" />
+    <None Include="Resources\AgregarEmpleado1.png" />
+    <Content Include="Resources\Cancelar.png" />
+    <Content Include="Resources\Confirmar.png" />
+    <Content Include="Resources\Eliminar.png" />
+    <Content Include="Resources\H2C_HR negro.png" />
+    <Content Include="Resources\imgCerrarSesion.png" />
+    <Content Include="Resources\imgClientes %281%29.png" />
+    <Content Include="Resources\imgDashboard.png" />
+    <Content Include="Resources\imgEmpleados.png" />
+    <Content Include="Resources\imgFacturacion.png" />
+    <Content Include="Resources\imgInventarioServicios.png" />
+    <Content Include="Resources\imgPlanillas.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
