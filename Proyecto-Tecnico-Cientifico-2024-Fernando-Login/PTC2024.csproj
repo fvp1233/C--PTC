@@ -96,11 +96,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="View\Empleados\MenuEmpleados.cs">
+    <Compile Include="View\inicio\MenuInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Empleados\MenuEmpleados.Designer.cs">
-      <DependentUpon>MenuEmpleados.cs</DependentUpon>
+    <Compile Include="View\inicio\MenuInicio.Designer.cs">
+      <DependentUpon>MenuInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="View\inicio\Inicio.cs">
       <SubType>Form</SubType>
@@ -122,8 +122,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="View\Empleados\MenuEmpleados.resx">
-      <DependentUpon>MenuEmpleados.cs</DependentUpon>
+    <EmbeddedResource Include="View\inicio\MenuInicio.resx">
+      <DependentUpon>MenuInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\inicio\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
@@ -161,6 +161,7 @@
   <ItemGroup>
     <Folder Include="Controller\" />
     <Folder Include="Model\" />
+    <Folder Include="View\Empleados\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imgEmpleados.png" />

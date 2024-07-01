@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PTC2024.View.Empleados
 {
-    public partial class MenuEmpleados : Form
+    public partial class MenuInicio : Form
     {
-        public MenuEmpleados()
+        public MenuInicio()
         {
             InitializeComponent();
         }
