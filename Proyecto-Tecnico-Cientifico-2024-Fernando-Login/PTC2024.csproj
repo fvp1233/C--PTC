@@ -197,6 +197,10 @@
   <ItemGroup>
     <Folder Include="Controller\" />
     <Folder Include="Model\" />
+    <Folder Include="View\Clientes\" />
+    <Folder Include="View\Dashboard\" />
+    <Folder Include="View\Facturacion\" />
+    <Folder Include="View\InventarioServicios\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\ActualizarEmpleado.png" />
