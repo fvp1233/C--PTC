@@ -73,7 +73,7 @@
             // 
             // bunifuFlatButton7
             // 
-            this.bunifuFlatButton7.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton7.Activecolor = System.Drawing.Color.DimGray;
             this.bunifuFlatButton7.BackColor = System.Drawing.Color.Black;
             this.bunifuFlatButton7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton7.BorderRadius = 0;
@@ -108,7 +108,7 @@
             // 
             // bunifuFlatButton8
             // 
-            this.bunifuFlatButton8.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton8.Activecolor = System.Drawing.Color.DimGray;
             this.bunifuFlatButton8.BackColor = System.Drawing.Color.Black;
             this.bunifuFlatButton8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton8.BorderRadius = 0;
