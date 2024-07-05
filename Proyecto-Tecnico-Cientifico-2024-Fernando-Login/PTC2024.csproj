@@ -222,6 +222,7 @@
   <ItemGroup>
     <Content Include="Resources\ActualizarEmpleado.png" />
     <Content Include="Resources\AgregarEmpleado.png" />
+    <None Include="Resources\User.png" />
     <None Include="Resources\AgregarEmpleado1.png" />
     <Content Include="Resources\Cancelar.png" />
     <Content Include="Resources\Confirmar.png" />
