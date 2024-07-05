@@ -132,18 +132,6 @@
     <Compile Include="View\inicio\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\InventarioServicios\FrmAgregarServicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\InventarioServicios\FrmAgregarServicio.Designer.cs">
-      <DependentUpon>FrmAgregarServicio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\InventarioServicios\FrmInventario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\InventarioServicios\FrmInventario.Designer.cs">
-      <DependentUpon>FrmInventario.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,12 +163,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\inicio\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\InventarioServicios\FrmAgregarServicio.resx">
-      <DependentUpon>FrmAgregarServicio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\InventarioServicios\FrmInventario.resx">
-      <DependentUpon>FrmInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -217,7 +199,7 @@
     <Folder Include="Model\" />
     <Folder Include="View\Clientes\" />
     <Folder Include="View\Dashboard\" />
-    <Folder Include="View\Facturacion\" />
+    <Folder Include="View\InventarioServicios\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\ActualizarEmpleado.png" />
