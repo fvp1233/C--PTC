@@ -245,13 +245,13 @@
             // bunifuFlatButton12
             // 
             this.bunifuFlatButton12.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuFlatButton12.BackColor = System.Drawing.Color.Black;
             this.bunifuFlatButton12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton12.BorderRadius = 0;
             this.bunifuFlatButton12.ButtonText = "Cerrar Sesión";
             this.bunifuFlatButton12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuFlatButton12.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton12.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuFlatButton12.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton12.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton12.Iconimage")));
             this.bunifuFlatButton12.Iconimage_right = null;
