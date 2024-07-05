@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PTC2024.formularios.login;
 using PTC2024.View.Empleados;
+using PTC2024.View.formularios.inicio;
 
 namespace PTC2024
 {

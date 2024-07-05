@@ -20,7 +20,7 @@ namespace PTC2024.formularios.login
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUser.Text == "Fernando" && txtPassword.Text =="1234" )
+            if (TxtUserBunifu.Text == "Fernando" && txtPasswordBunifu.Text =="1234" )
             { 
                 Inicio inicio = new Inicio();
                 this.Hide();
@@ -29,50 +29,75 @@ namespace PTC2024.formularios.login
             else
             {
                 MessageBox.Show ("Datos erroneos");
-                txtUser.Clear();
-                txtPassword.Clear();
+                TxtUserBunifu.Clear();
+                txtPasswordBunifu.Clear();
             }
         }
 
-        
 
-        private void txtUser_Enter(object sender, EventArgs e)
+
+
+
+        //Bunifu
+      
+      
+
+       
+
+        private void TxtUserBunifu_Leave(object sender, EventArgs e)
         {
-            if (txtUser.Text == "Usuario")
+            if (TxtUserBunifu.Text == "")
             {
-                txtUser.Text = "";
-                txtUser.ForeColor = Color.Black;
+                TxtUserBunifu.Text = "Usuario";
+                TxtUserBunifu.ForeColor = Color.Black;
             }
         }
 
-        private void txtUser_Leave(object sender, EventArgs e)
+        private void txtPasswordBunifu_Enter(object sender, EventArgs e)
         {
-            if(txtUser.Text == "")
+            if (txtPasswordBunifu.Text == "Contraseña")
             {
-                txtUser.Text = "Usuario";
-                txtUser.ForeColor = Color.Black;
-            }
-        }
-
-
-        private void txtPassword_Enter(object sender, EventArgs e)
-        {
-            if (txtPassword.Text == "Contraseña")
-            { txtPassword.Text = "";
-                txtPassword.ForeColor = Color.Black;
-                txtPassword.UseSystemPasswordChar = true;
+                txtPasswordBunifu.Text = "";
+                txtPasswordBunifu.ForeColor = Color.Black;
+                txtPasswordBunifu.UseSystemPasswordChar = true;
 
             }
         }
 
-        private void txtPassword_Leave(object sender, EventArgs e)
+        private void txtPasswordBunifu_Leave(object sender, EventArgs e)
         {
-            if (txtPassword.Text == "")
+            if (txtPasswordBunifu.Text == "")
             {
-                txtPassword.Text = "Contraseña";
-                txtPassword.ForeColor = Color.Black;
-                txtPassword.UseSystemPasswordChar = false;
+                txtPasswordBunifu.Text = "Contraseña";
+                txtPasswordBunifu.ForeColor = Color.Black;
+                txtPasswordBunifu.UseSystemPasswordChar = false;
             }
+        }
+
+        private void TxtUserBunifu_Enter(object sender, EventArgs e)
+        {
+            if (TxtUserBunifu.Text == "Usuario")
+            {
+                TxtUserBunifu.Text = "";
+                TxtUserBunifu.ForeColor = Color.Black;
+            }
+        }
+
+        private void btnLoginBunifu_Click(object sender, EventArgs e)
+        {
+            if (TxtUserBunifu.Text == "Fernando" && txtPasswordBunifu.Text == "1234")
+            {
+                Inicio inicio = new Inicio();
+                this.Hide();
+                inicio.Show();
+            }
+            else
+            {
+                MessageBox.Show("Datos erroneos");
+                TxtUserBunifu.Clear();
+                txtPasswordBunifu.Clear();
+            }
+
         }
     }
 }
