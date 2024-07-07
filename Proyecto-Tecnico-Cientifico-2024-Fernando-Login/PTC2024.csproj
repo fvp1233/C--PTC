@@ -102,6 +102,12 @@
     <Compile Include="View\Empleados\CrearPlanilla.Designer.cs">
       <DependentUpon>CrearPlanilla.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Empleados\FrmAgregarPlanilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Empleados\FrmAgregarPlanilla.Designer.cs">
+      <DependentUpon>FrmAgregarPlanilla.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Empleados\FrmModificarPlanilla.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="View\Empleados\CrearPlanilla.resx">
       <DependentUpon>CrearPlanilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Empleados\FrmAgregarPlanilla.resx">
+      <DependentUpon>FrmAgregarPlanilla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Empleados\FrmModificarPlanilla.resx">
       <DependentUpon>FrmModificarPlanilla.cs</DependentUpon>
