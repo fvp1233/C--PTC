@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmActualizarEmpleado));
-            this.BtnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.BtnConfirmar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.comboEstadoEmpleado = new Bunifu.Framework.UI.BunifuDropdown();
             this.comboTipoEmpleado = new Bunifu.Framework.UI.BunifuDropdown();
@@ -56,75 +54,9 @@
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.BtnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.BtnConfirmar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.SuspendLayout();
-            // 
-            // BtnCancelar
-            // 
-            this.BtnCancelar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.BtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.BtnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnCancelar.BorderRadius = 7;
-            this.BtnCancelar.ButtonText = "Cancelar";
-            this.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCancelar.DisabledColor = System.Drawing.Color.Gray;
-            this.BtnCancelar.Iconcolor = System.Drawing.Color.Transparent;
-            this.BtnCancelar.Iconimage = ((System.Drawing.Image)(resources.GetObject("BtnCancelar.Iconimage")));
-            this.BtnCancelar.Iconimage_right = null;
-            this.BtnCancelar.Iconimage_right_Selected = null;
-            this.BtnCancelar.Iconimage_Selected = null;
-            this.BtnCancelar.IconMarginLeft = 0;
-            this.BtnCancelar.IconMarginRight = 0;
-            this.BtnCancelar.IconRightVisible = true;
-            this.BtnCancelar.IconRightZoom = 0D;
-            this.BtnCancelar.IconVisible = true;
-            this.BtnCancelar.IconZoom = 60D;
-            this.BtnCancelar.IsTab = false;
-            this.BtnCancelar.Location = new System.Drawing.Point(394, 538);
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.BtnCancelar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
-            this.BtnCancelar.OnHoverTextColor = System.Drawing.Color.White;
-            this.BtnCancelar.selected = false;
-            this.BtnCancelar.Size = new System.Drawing.Size(197, 59);
-            this.BtnCancelar.TabIndex = 84;
-            this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnCancelar.Textcolor = System.Drawing.Color.White;
-            this.BtnCancelar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // BtnConfirmar
-            // 
-            this.BtnConfirmar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.BtnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.BtnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnConfirmar.BorderRadius = 7;
-            this.BtnConfirmar.ButtonText = "Confirmar";
-            this.BtnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnConfirmar.DisabledColor = System.Drawing.Color.Gray;
-            this.BtnConfirmar.Iconcolor = System.Drawing.Color.Transparent;
-            this.BtnConfirmar.Iconimage = ((System.Drawing.Image)(resources.GetObject("BtnConfirmar.Iconimage")));
-            this.BtnConfirmar.Iconimage_right = null;
-            this.BtnConfirmar.Iconimage_right_Selected = null;
-            this.BtnConfirmar.Iconimage_Selected = null;
-            this.BtnConfirmar.IconMarginLeft = 0;
-            this.BtnConfirmar.IconMarginRight = 0;
-            this.BtnConfirmar.IconRightVisible = true;
-            this.BtnConfirmar.IconRightZoom = 0D;
-            this.BtnConfirmar.IconVisible = true;
-            this.BtnConfirmar.IconZoom = 60D;
-            this.BtnConfirmar.IsTab = false;
-            this.BtnConfirmar.Location = new System.Drawing.Point(189, 538);
-            this.BtnConfirmar.Name = "BtnConfirmar";
-            this.BtnConfirmar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.BtnConfirmar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
-            this.BtnConfirmar.OnHoverTextColor = System.Drawing.Color.White;
-            this.BtnConfirmar.selected = false;
-            this.BtnConfirmar.Size = new System.Drawing.Size(197, 59);
-            this.BtnConfirmar.TabIndex = 83;
-            this.BtnConfirmar.Text = "Confirmar";
-            this.BtnConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnConfirmar.Textcolor = System.Drawing.Color.White;
-            this.BtnConfirmar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // bunifuSeparator1
             // 
@@ -470,6 +402,74 @@
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(351, 32);
             this.bunifuCustomLabel1.TabIndex = 58;
             this.bunifuCustomLabel1.Text = "ACTUALIZAR EMPLEADO";
+            // 
+            // BtnCancelar
+            // 
+            this.BtnCancelar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.BtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.BtnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCancelar.BorderRadius = 7;
+            this.BtnCancelar.ButtonText = "Cancelar";
+            this.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCancelar.DisabledColor = System.Drawing.Color.Gray;
+            this.BtnCancelar.Iconcolor = System.Drawing.Color.Transparent;
+            this.BtnCancelar.Iconimage = ((System.Drawing.Image)(resources.GetObject("BtnCancelar.Iconimage")));
+            this.BtnCancelar.Iconimage_right = null;
+            this.BtnCancelar.Iconimage_right_Selected = null;
+            this.BtnCancelar.Iconimage_Selected = null;
+            this.BtnCancelar.IconMarginLeft = 0;
+            this.BtnCancelar.IconMarginRight = 0;
+            this.BtnCancelar.IconRightVisible = true;
+            this.BtnCancelar.IconRightZoom = 0D;
+            this.BtnCancelar.IconVisible = true;
+            this.BtnCancelar.IconZoom = 60D;
+            this.BtnCancelar.IsTab = false;
+            this.BtnCancelar.Location = new System.Drawing.Point(394, 538);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.BtnCancelar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.BtnCancelar.OnHoverTextColor = System.Drawing.Color.White;
+            this.BtnCancelar.selected = false;
+            this.BtnCancelar.Size = new System.Drawing.Size(197, 59);
+            this.BtnCancelar.TabIndex = 84;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnCancelar.Textcolor = System.Drawing.Color.White;
+            this.BtnCancelar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // BtnConfirmar
+            // 
+            this.BtnConfirmar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.BtnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.BtnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnConfirmar.BorderRadius = 7;
+            this.BtnConfirmar.ButtonText = "Confirmar";
+            this.BtnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnConfirmar.DisabledColor = System.Drawing.Color.Gray;
+            this.BtnConfirmar.Iconcolor = System.Drawing.Color.Transparent;
+            this.BtnConfirmar.Iconimage = ((System.Drawing.Image)(resources.GetObject("BtnConfirmar.Iconimage")));
+            this.BtnConfirmar.Iconimage_right = null;
+            this.BtnConfirmar.Iconimage_right_Selected = null;
+            this.BtnConfirmar.Iconimage_Selected = null;
+            this.BtnConfirmar.IconMarginLeft = 0;
+            this.BtnConfirmar.IconMarginRight = 0;
+            this.BtnConfirmar.IconRightVisible = true;
+            this.BtnConfirmar.IconRightZoom = 0D;
+            this.BtnConfirmar.IconVisible = true;
+            this.BtnConfirmar.IconZoom = 60D;
+            this.BtnConfirmar.IsTab = false;
+            this.BtnConfirmar.Location = new System.Drawing.Point(189, 538);
+            this.BtnConfirmar.Name = "BtnConfirmar";
+            this.BtnConfirmar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.BtnConfirmar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.BtnConfirmar.OnHoverTextColor = System.Drawing.Color.White;
+            this.BtnConfirmar.selected = false;
+            this.BtnConfirmar.Size = new System.Drawing.Size(197, 59);
+            this.BtnConfirmar.TabIndex = 83;
+            this.BtnConfirmar.Text = "Confirmar";
+            this.BtnConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnConfirmar.Textcolor = System.Drawing.Color.White;
+            this.BtnConfirmar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // FrmActualizarEmpleado
             // 

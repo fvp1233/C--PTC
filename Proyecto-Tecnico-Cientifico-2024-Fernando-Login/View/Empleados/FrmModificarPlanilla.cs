@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PTC2024.View.Empleados
 {
-    public partial class CrearPlanilla : Form
+    public partial class FrmModificarPlanilla : Form
     {
-        public CrearPlanilla()
+        public FrmModificarPlanilla()
         {
             InitializeComponent();
-        }
-
-        private void bunifuButton21_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
