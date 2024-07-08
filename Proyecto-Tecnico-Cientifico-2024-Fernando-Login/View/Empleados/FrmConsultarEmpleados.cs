@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PTC2024.View.InventarioServicios
+namespace PTC2024.View.Empleados
 {
-    public partial class FrmInventario : Form
+    public partial class FrmConsultarEmpleados : Form
     {
-        public FrmInventario()
+        public FrmConsultarEmpleados()
         {
             InitializeComponent();
         }
-
     }
 }

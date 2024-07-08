@@ -102,6 +102,12 @@
     <Compile Include="View\Empleados\CrearPlanilla.Designer.cs">
       <DependentUpon>CrearPlanilla.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Empleados\FrmConsultarEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Empleados\FrmConsultarEmpleados.Designer.cs">
+      <DependentUpon>FrmConsultarEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Empleados\FrmModificarPlanilla.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,12 +119,6 @@
     </Compile>
     <Compile Include="View\Empleados\MenuEmpleados.Designer.cs">
       <DependentUpon>MenuEmpleados.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Empleados\ApartadoEmpleados.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Empleados\ApartadoEmpleados.Designer.cs">
-      <DependentUpon>ApartadoEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Empleados\FrmActualizarEmpleado.cs">
       <SubType>Form</SubType>
@@ -144,11 +144,11 @@
     <Compile Include="View\InventarioServicios\FrmAgregarServicio.Designer.cs">
       <DependentUpon>FrmAgregarServicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\InventarioServicios\FrmInventario.cs">
+    <Compile Include="View\InventarioServicios\FrmConsultarServicios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\InventarioServicios\FrmInventario.Designer.cs">
-      <DependentUpon>FrmInventario.cs</DependentUpon>
+    <Compile Include="View\InventarioServicios\FrmConsultarServicios.Designer.cs">
+      <DependentUpon>FrmConsultarServicios.cs</DependentUpon>
     </Compile>
     <Compile Include="View\login\Login.cs">
       <SubType>Form</SubType>
@@ -167,14 +167,14 @@
     <EmbeddedResource Include="View\Empleados\CrearPlanilla.resx">
       <DependentUpon>CrearPlanilla.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Empleados\FrmConsultarEmpleados.resx">
+      <DependentUpon>FrmConsultarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Empleados\FrmModificarPlanilla.resx">
       <DependentUpon>FrmModificarPlanilla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Empleados\MenuEmpleados.resx">
       <DependentUpon>MenuEmpleados.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Empleados\ApartadoEmpleados.resx">
-      <DependentUpon>ApartadoEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Empleados\FrmActualizarEmpleado.resx">
       <DependentUpon>FrmActualizarEmpleado.cs</DependentUpon>
@@ -188,8 +188,8 @@
     <EmbeddedResource Include="View\InventarioServicios\FrmAgregarServicio.resx">
       <DependentUpon>FrmAgregarServicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\InventarioServicios\FrmInventario.resx">
-      <DependentUpon>FrmInventario.cs</DependentUpon>
+    <EmbeddedResource Include="View\InventarioServicios\FrmConsultarServicios.resx">
+      <DependentUpon>FrmConsultarServicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
