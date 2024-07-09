@@ -1,6 +1,6 @@
 ﻿namespace PTC2024.View.Empleados
 {
-    partial class FrmModificarPlanilla
+    partial class FrmAgregarPlanilla
     {
         /// <summary>
         /// Required designer variable.
@@ -28,53 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmModificarPlanilla));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges17 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges18 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            this.txtNombres = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarPlanilla));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
-            this.label12 = new System.Windows.Forms.Label();
+            this.bunifuMaterialTextbox11 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label15 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuMaterialTextbox3 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtNombres = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label4 = new System.Windows.Forms.Label();
+            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuMaterialTextbox4 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuMaterialTextbox5 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuMaterialTextbox7 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuMaterialTextbox6 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuMaterialTextbox9 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuMaterialTextbox8 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuMaterialTextbox10 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuMaterialTextbox13 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.label14 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuButton25 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.bunifuButton21 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
-            this.bunifuMaterialTextbox11 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -90,27 +90,6 @@
             this.tableLayoutPanel12.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtNombres
-            // 
-            this.txtNombres.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNombres.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtNombres.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNombres.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtNombres.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNombres.HintForeColor = System.Drawing.Color.Empty;
-            this.txtNombres.HintText = "";
-            this.txtNombres.isPassword = false;
-            this.txtNombres.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtNombres.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtNombres.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtNombres.LineThickness = 3;
-            this.txtNombres.Location = new System.Drawing.Point(22, 27);
-            this.txtNombres.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(330, 28);
-            this.txtNombres.TabIndex = 63;
-            this.txtNombres.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // tableLayoutPanel1
             // 
@@ -148,7 +127,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(761, 599);
-            this.tableLayoutPanel1.TabIndex = 64;
+            this.tableLayoutPanel1.TabIndex = 65;
             // 
             // tableLayoutPanel16
             // 
@@ -165,16 +144,37 @@
             this.tableLayoutPanel16.Size = new System.Drawing.Size(375, 60);
             this.tableLayoutPanel16.TabIndex = 79;
             // 
-            // label12
+            // bunifuMaterialTextbox11
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(137, 3);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(99, 17);
-            this.label12.TabIndex = 81;
-            this.label12.Text = "Pago adicional";
+            this.bunifuMaterialTextbox11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bunifuMaterialTextbox11.BackColor = System.Drawing.Color.Gainsboro;
+            this.bunifuMaterialTextbox11.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuMaterialTextbox11.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.bunifuMaterialTextbox11.ForeColor = System.Drawing.Color.DimGray;
+            this.bunifuMaterialTextbox11.HintForeColor = System.Drawing.Color.Empty;
+            this.bunifuMaterialTextbox11.HintText = "";
+            this.bunifuMaterialTextbox11.isPassword = false;
+            this.bunifuMaterialTextbox11.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.bunifuMaterialTextbox11.LineIdleColor = System.Drawing.Color.Gray;
+            this.bunifuMaterialTextbox11.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.bunifuMaterialTextbox11.LineThickness = 3;
+            this.bunifuMaterialTextbox11.Location = new System.Drawing.Point(22, 27);
+            this.bunifuMaterialTextbox11.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuMaterialTextbox11.Name = "bunifuMaterialTextbox11";
+            this.bunifuMaterialTextbox11.Size = new System.Drawing.Size(330, 28);
+            this.bunifuMaterialTextbox11.TabIndex = 83;
+            this.bunifuMaterialTextbox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(139, 3);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(96, 17);
+            this.label15.TabIndex = 81;
+            this.label15.Text = "Pago vacación";
             // 
             // tableLayoutPanel5
             // 
@@ -212,16 +212,16 @@
             this.bunifuMaterialTextbox3.TabIndex = 80;
             this.bunifuMaterialTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // label5
+            // label6
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(118, 2);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 17);
-            this.label5.TabIndex = 80;
-            this.label5.Text = "Numero de afiliación";
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(137, 2);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 17);
+            this.label6.TabIndex = 80;
+            this.label6.Text = "Primer nombre";
             // 
             // label1
             // 
@@ -230,9 +230,9 @@
             this.label1.Location = new System.Drawing.Point(20, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(20, 15, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(270, 32);
+            this.label1.Size = new System.Drawing.Size(248, 32);
             this.label1.TabIndex = 64;
-            this.label1.Text = "MODIFICAR PLANILLA";
+            this.label1.Text = "AGREGAR PLANILLA";
             // 
             // tableLayoutPanel2
             // 
@@ -248,6 +248,27 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.01695F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(374, 59);
             this.tableLayoutPanel2.TabIndex = 65;
+            // 
+            // txtNombres
+            // 
+            this.txtNombres.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtNombres.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtNombres.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNombres.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtNombres.ForeColor = System.Drawing.Color.DimGray;
+            this.txtNombres.HintForeColor = System.Drawing.Color.Empty;
+            this.txtNombres.HintText = "";
+            this.txtNombres.isPassword = false;
+            this.txtNombres.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtNombres.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtNombres.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtNombres.LineThickness = 3;
+            this.txtNombres.Location = new System.Drawing.Point(22, 27);
+            this.txtNombres.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(330, 28);
+            this.txtNombres.TabIndex = 63;
+            this.txtNombres.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label2
             // 
@@ -265,7 +286,7 @@
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.bunifuMaterialTextbox2, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(383, 73);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -292,24 +313,47 @@
             this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(22, 27);
             this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
-            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(330, 28);
-            this.bunifuMaterialTextbox2.TabIndex = 65;
+            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(330, 27);
+            this.bunifuMaterialTextbox2.TabIndex = 81;
             this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(114, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(146, 17);
+            this.label3.TabIndex = 68;
+            this.label3.Text = "Institución previsional";
             // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.bunifuMaterialTextbox1, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 138);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(374, 57);
             this.tableLayoutPanel4.TabIndex = 67;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(118, 2);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(138, 17);
+            this.label4.TabIndex = 81;
+            this.label4.Text = "Numero de afiliación";
             // 
             // bunifuMaterialTextbox1
             // 
@@ -325,23 +369,12 @@
             this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.Gray;
             this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.bunifuMaterialTextbox1.LineThickness = 3;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(22, 26);
+            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(22, 29);
             this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(330, 27);
+            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(330, 21);
             this.bunifuMaterialTextbox1.TabIndex = 80;
             this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(114, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 17);
-            this.label4.TabIndex = 67;
-            this.label4.Text = "Institución previsional";
             // 
             // tableLayoutPanel6
             // 
@@ -379,16 +412,16 @@
             this.bunifuMaterialTextbox4.TabIndex = 81;
             this.bunifuMaterialTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // label6
+            // label7
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(137, 2);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 17);
-            this.label6.TabIndex = 80;
-            this.label6.Text = "Primer nombre";
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(130, 3);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(114, 17);
+            this.label7.TabIndex = 80;
+            this.label7.Text = "Segundo nombre";
             // 
             // tableLayoutPanel7
             // 
@@ -426,16 +459,16 @@
             this.bunifuMaterialTextbox5.TabIndex = 81;
             this.bunifuMaterialTextbox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // label7
+            // label9
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(130, 3);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 17);
-            this.label7.TabIndex = 80;
-            this.label7.Text = "Segundo nombre";
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(136, 3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(103, 17);
+            this.label9.TabIndex = 81;
+            this.label9.Text = "Primer apellido";
             // 
             // tableLayoutPanel8
             // 
@@ -473,16 +506,16 @@
             this.bunifuMaterialTextbox7.TabIndex = 82;
             this.bunifuMaterialTextbox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // label9
+            // label8
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(136, 3);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(103, 17);
-            this.label9.TabIndex = 81;
-            this.label9.Text = "Primer apellido";
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(129, 3);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(116, 17);
+            this.label8.TabIndex = 81;
+            this.label8.Text = "Segundo apellido";
             // 
             // tableLayoutPanel9
             // 
@@ -520,16 +553,16 @@
             this.bunifuMaterialTextbox6.TabIndex = 82;
             this.bunifuMaterialTextbox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // label8
+            // label11
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(129, 3);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 17);
-            this.label8.TabIndex = 81;
-            this.label8.Text = "Segundo apellido";
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(137, 3);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(100, 17);
+            this.label11.TabIndex = 81;
+            this.label11.Text = "Días laborados";
             // 
             // tableLayoutPanel10
             // 
@@ -567,16 +600,16 @@
             this.bunifuMaterialTextbox9.TabIndex = 82;
             this.bunifuMaterialTextbox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // label11
+            // label10
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(137, 3);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(100, 17);
-            this.label11.TabIndex = 81;
-            this.label11.Text = "Días laborados";
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(162, 3);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 17);
+            this.label10.TabIndex = 81;
+            this.label10.Text = "Salario";
             // 
             // tableLayoutPanel11
             // 
@@ -614,16 +647,16 @@
             this.bunifuMaterialTextbox8.TabIndex = 82;
             this.bunifuMaterialTextbox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // label10
+            // label13
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(162, 3);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 17);
-            this.label10.TabIndex = 81;
-            this.label10.Text = "Salario";
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(133, 3);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(108, 17);
+            this.label13.TabIndex = 81;
+            this.label13.Text = "Horas laboradas";
             // 
             // tableLayoutPanel12
             // 
@@ -661,16 +694,16 @@
             this.bunifuMaterialTextbox10.TabIndex = 82;
             this.bunifuMaterialTextbox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // label13
+            // label12
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(133, 3);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(108, 17);
-            this.label13.TabIndex = 81;
-            this.label13.Text = "Horas laboradas";
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(137, 3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(99, 17);
+            this.label12.TabIndex = 81;
+            this.label12.Text = "Pago adicional";
             // 
             // tableLayoutPanel14
             // 
@@ -708,16 +741,16 @@
             this.bunifuMaterialTextbox13.TabIndex = 82;
             this.bunifuMaterialTextbox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // label15
+            // label14
             // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(139, 3);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(96, 17);
-            this.label15.TabIndex = 81;
-            this.label15.Text = "Pago vacación";
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(125, 3);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(124, 17);
+            this.label14.TabIndex = 81;
+            this.label14.Text = "Días de vacaciones";
             // 
             // tableLayoutPanel15
             // 
@@ -731,17 +764,6 @@
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61F));
             this.tableLayoutPanel15.Size = new System.Drawing.Size(375, 60);
             this.tableLayoutPanel15.TabIndex = 78;
-            // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(125, 3);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(124, 17);
-            this.label14.TabIndex = 81;
-            this.label14.Text = "Días de vacaciones";
             // 
             // bunifuButton25
             // 
@@ -763,11 +785,11 @@
             this.bunifuButton25.ColorContrastOnClick = 45;
             this.bunifuButton25.ColorContrastOnHover = 45;
             this.bunifuButton25.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges17.BottomLeft = true;
-            borderEdges17.BottomRight = true;
-            borderEdges17.TopLeft = true;
-            borderEdges17.TopRight = true;
-            this.bunifuButton25.CustomizableEdges = borderEdges17;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.bunifuButton25.CustomizableEdges = borderEdges1;
             this.bunifuButton25.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton25.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton25.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -826,7 +848,7 @@
             this.bunifuButton25.OnPressedState.IconLeftImage = null;
             this.bunifuButton25.OnPressedState.IconRightImage = null;
             this.bunifuButton25.Size = new System.Drawing.Size(151, 52);
-            this.bunifuButton25.TabIndex = 83;
+            this.bunifuButton25.TabIndex = 84;
             this.bunifuButton25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton25.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.bunifuButton25.TextMarginLeft = 0;
@@ -853,11 +875,11 @@
             this.bunifuButton21.ColorContrastOnClick = 45;
             this.bunifuButton21.ColorContrastOnHover = 45;
             this.bunifuButton21.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges18.BottomLeft = true;
-            borderEdges18.BottomRight = true;
-            borderEdges18.TopLeft = true;
-            borderEdges18.TopRight = true;
-            this.bunifuButton21.CustomizableEdges = borderEdges18;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.bunifuButton21.CustomizableEdges = borderEdges2;
             this.bunifuButton21.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton21.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton21.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -916,42 +938,21 @@
             this.bunifuButton21.OnPressedState.IconLeftImage = null;
             this.bunifuButton21.OnPressedState.IconRightImage = null;
             this.bunifuButton21.Size = new System.Drawing.Size(151, 52);
-            this.bunifuButton21.TabIndex = 84;
+            this.bunifuButton21.TabIndex = 85;
             this.bunifuButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton21.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.bunifuButton21.TextMarginLeft = 0;
             this.bunifuButton21.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton21.UseDefaultRadiusAndThickness = true;
             // 
-            // bunifuMaterialTextbox11
-            // 
-            this.bunifuMaterialTextbox11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuMaterialTextbox11.BackColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox11.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox11.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMaterialTextbox11.ForeColor = System.Drawing.Color.DimGray;
-            this.bunifuMaterialTextbox11.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox11.HintText = "";
-            this.bunifuMaterialTextbox11.isPassword = false;
-            this.bunifuMaterialTextbox11.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.bunifuMaterialTextbox11.LineIdleColor = System.Drawing.Color.Gray;
-            this.bunifuMaterialTextbox11.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.bunifuMaterialTextbox11.LineThickness = 3;
-            this.bunifuMaterialTextbox11.Location = new System.Drawing.Point(22, 27);
-            this.bunifuMaterialTextbox11.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox11.Name = "bunifuMaterialTextbox11";
-            this.bunifuMaterialTextbox11.Size = new System.Drawing.Size(330, 28);
-            this.bunifuMaterialTextbox11.TabIndex = 83;
-            this.bunifuMaterialTextbox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // FrmModificarPlanilla
+            // FrmAgregarPlanilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(761, 599);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FrmModificarPlanilla";
-            this.Text = "FrmModificarPlanilla";
+            this.Name = "FrmAgregarPlanilla";
+            this.Text = "FrmAgregarPlanilla";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel16.ResumeLayout(false);
@@ -986,47 +987,47 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtNombres;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtNombres;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox3;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox8;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox10;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox13;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        private System.Windows.Forms.Label label14;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 bunifuButton25;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 bunifuButton21;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox11;
