@@ -114,9 +114,7 @@
     <Compile Include="View\Empleados\FrmAgregarPlanilla.Designer.cs">
       <DependentUpon>FrmAgregarPlanilla.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Empleados\FrmConsultarPlanillas.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="View\Empleados\FrmConsultarPlanillas.cs" />
     <Compile Include="View\Empleados\FrmConsultarPlanillas.Designer.cs">
       <DependentUpon>FrmConsultarPlanillas.cs</DependentUpon>
     </Compile>
