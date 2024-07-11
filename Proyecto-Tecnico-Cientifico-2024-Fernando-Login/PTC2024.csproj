@@ -114,12 +114,6 @@
     <Compile Include="View\Clientes\FrmModificarCliente.Designer.cs">
       <DependentUpon>FrmModificarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Empleados\CrearPlanilla.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Empleados\CrearPlanilla.Designer.cs">
-      <DependentUpon>CrearPlanilla.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Empleados\FrmConsultarEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,9 +208,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Clientes\FrmModificarCliente.resx">
       <DependentUpon>FrmModificarCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Empleados\CrearPlanilla.resx">
-      <DependentUpon>CrearPlanilla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Empleados\FrmConsultarEmpleados.resx">
       <DependentUpon>FrmConsultarEmpleados.cs</DependentUpon>
