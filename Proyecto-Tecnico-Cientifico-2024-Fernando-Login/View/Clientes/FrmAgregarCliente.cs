@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PTC2024.View.Empleados
+namespace PTC2024.View.Clientes
 {
-    public partial class FrmAgregarPlanilla : Form
+    public partial class FrmAgregarCliente : Form
     {
-        public FrmAgregarPlanilla()
+        public FrmAgregarCliente()
         {
             InitializeComponent();
-        }
-
-        private void bunifuSeparator1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
