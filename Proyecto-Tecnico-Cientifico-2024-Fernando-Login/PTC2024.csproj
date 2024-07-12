@@ -96,95 +96,95 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="View\Clientes\FrmAgregarCliente.cs">
+    <Compile Include="View\CustomersView\FrmAddCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Clientes\FrmAgregarCliente.Designer.cs">
-      <DependentUpon>FrmAgregarCliente.cs</DependentUpon>
+    <Compile Include="View\CustomersView\FrmAddCustomers.Designer.cs">
+      <DependentUpon>FrmAddCustomers.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Clientes\FrmClientes.cs">
+    <Compile Include="View\CustomersView\FrmCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Clientes\FrmClientes.Designer.cs">
-      <DependentUpon>FrmClientes.cs</DependentUpon>
+    <Compile Include="View\CustomersView\FrmCustomers.Designer.cs">
+      <DependentUpon>FrmCustomers.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Clientes\FrmModificarCliente.cs">
+    <Compile Include="View\CustomersView\FrmUploadCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Clientes\FrmModificarCliente.Designer.cs">
-      <DependentUpon>FrmModificarCliente.cs</DependentUpon>
+    <Compile Include="View\CustomersView\FrmUploadCustomers.Designer.cs">
+      <DependentUpon>FrmUploadCustomers.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Empleados\FrmConsultarEmpleados.cs">
+    <Compile Include="View\EmployeeViews\FrmEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Empleados\FrmConsultarEmpleados.Designer.cs">
-      <DependentUpon>FrmConsultarEmpleados.cs</DependentUpon>
+    <Compile Include="View\EmployeeViews\FrmEmployees.Designer.cs">
+      <DependentUpon>FrmEmployees.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Empleados\FrmAgregarPlanilla.cs">
+    <Compile Include="View\EmployeeViews\FrmAddPayroll.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Empleados\FrmAgregarPlanilla.Designer.cs">
-      <DependentUpon>FrmAgregarPlanilla.cs</DependentUpon>
+    <Compile Include="View\EmployeeViews\FrmAddPayroll.Designer.cs">
+      <DependentUpon>FrmAddPayroll.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Empleados\FrmConsultarPlanillas.cs">
+    <Compile Include="View\EmployeeViews\FrmConsultarPlanillas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Empleados\FrmConsultarPlanillas.Designer.cs">
+    <Compile Include="View\EmployeeViews\FrmConsultarPlanillas.Designer.cs">
       <DependentUpon>FrmConsultarPlanillas.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Empleados\FrmModificarPlanilla.cs">
+    <Compile Include="View\EmployeeViews\FrmUploadPayroll.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Empleados\FrmModificarPlanilla.Designer.cs">
-      <DependentUpon>FrmModificarPlanilla.cs</DependentUpon>
+    <Compile Include="View\EmployeeViews\FrmUploadPayroll.Designer.cs">
+      <DependentUpon>FrmUploadPayroll.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Empleados\MenuEmpleados.cs">
+    <Compile Include="View\EmployeeViews\FrmPayrolls.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Empleados\MenuEmpleados.Designer.cs">
-      <DependentUpon>MenuEmpleados.cs</DependentUpon>
+    <Compile Include="View\EmployeeViews\FrmPayrolls.Designer.cs">
+      <DependentUpon>FrmPayrolls.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Empleados\FrmActualizarEmpleado.cs">
+    <Compile Include="View\EmployeeViews\FrmUploadEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Empleados\FrmActualizarEmpleado.Designer.cs">
-      <DependentUpon>FrmActualizarEmpleado.cs</DependentUpon>
+    <Compile Include="View\EmployeeViews\FrmUploadEmployee.Designer.cs">
+      <DependentUpon>FrmUploadEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Empleados\FrmAgregarEmpleado.cs">
+    <Compile Include="View\EmployeeViews\FrmAddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Empleados\FrmAgregarEmpleado.Designer.cs">
-      <DependentUpon>FrmAgregarEmpleado.cs</DependentUpon>
+    <Compile Include="View\EmployeeViews\FrmAddEmployee.Designer.cs">
+      <DependentUpon>FrmAddEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Facturacion\FrmFacturacion.cs">
+    <Compile Include="View\BillsViews\FrmAddBills.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Facturacion\FrmFacturacion.Designer.cs">
-      <DependentUpon>FrmFacturacion.cs</DependentUpon>
+    <Compile Include="View\BillsViews\FrmAddBills.Designer.cs">
+      <DependentUpon>FrmAddBills.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Facturacion\FrmFacturas.cs">
+    <Compile Include="View\BillsViews\FrmBills.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Facturacion\FrmFacturas.Designer.cs">
-      <DependentUpon>FrmFacturas.cs</DependentUpon>
+    <Compile Include="View\BillsViews\FrmBills.Designer.cs">
+      <DependentUpon>FrmBills.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\inicio\Inicio.cs">
+    <Compile Include="View\Start\StartMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\inicio\Inicio.Designer.cs">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <Compile Include="View\Start\StartMenu.Designer.cs">
+      <DependentUpon>StartMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\InventarioServicios\FrmAgregarServicio.cs">
+    <Compile Include="View\Service inventory\FrmAddService.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\InventarioServicios\FrmAgregarServicio.Designer.cs">
-      <DependentUpon>FrmAgregarServicio.cs</DependentUpon>
+    <Compile Include="View\Service inventory\FrmAddService.Designer.cs">
+      <DependentUpon>FrmAddService.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\InventarioServicios\FrmConsultarServicios.cs">
+    <Compile Include="View\Service inventory\FrmServices.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\InventarioServicios\FrmConsultarServicios.Designer.cs">
-      <DependentUpon>FrmConsultarServicios.cs</DependentUpon>
+    <Compile Include="View\Service inventory\FrmServices.Designer.cs">
+      <DependentUpon>FrmServices.cs</DependentUpon>
     </Compile>
     <Compile Include="View\login\Login.cs">
       <SubType>Form</SubType>
@@ -192,64 +192,64 @@
     <Compile Include="View\login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\login\Recuperar contraseña.cs">
+    <Compile Include="View\login\RecoverPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\login\Recuperar contraseña.Designer.cs">
-      <DependentUpon>Recuperar contraseña.cs</DependentUpon>
+    <Compile Include="View\login\RecoverPassword.Designer.cs">
+      <DependentUpon>RecoverPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="View\Clientes\FrmAgregarCliente.resx">
-      <DependentUpon>FrmAgregarCliente.cs</DependentUpon>
+    <EmbeddedResource Include="View\CustomersView\FrmAddCustomers.resx">
+      <DependentUpon>FrmAddCustomers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Clientes\FrmClientes.resx">
-      <DependentUpon>FrmClientes.cs</DependentUpon>
+    <EmbeddedResource Include="View\CustomersView\FrmCustomers.resx">
+      <DependentUpon>FrmCustomers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Clientes\FrmModificarCliente.resx">
-      <DependentUpon>FrmModificarCliente.cs</DependentUpon>
+    <EmbeddedResource Include="View\CustomersView\FrmUploadCustomers.resx">
+      <DependentUpon>FrmUploadCustomers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Empleados\FrmConsultarEmpleados.resx">
-      <DependentUpon>FrmConsultarEmpleados.cs</DependentUpon>
+    <EmbeddedResource Include="View\EmployeeViews\FrmEmployees.resx">
+      <DependentUpon>FrmEmployees.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Empleados\FrmAgregarPlanilla.resx">
-      <DependentUpon>FrmAgregarPlanilla.cs</DependentUpon>
+    <EmbeddedResource Include="View\EmployeeViews\FrmAddPayroll.resx">
+      <DependentUpon>FrmAddPayroll.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Empleados\FrmConsultarPlanillas.resx">
+    <EmbeddedResource Include="View\EmployeeViews\FrmConsultarPlanillas.resx">
       <DependentUpon>FrmConsultarPlanillas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Empleados\FrmModificarPlanilla.resx">
-      <DependentUpon>FrmModificarPlanilla.cs</DependentUpon>
+    <EmbeddedResource Include="View\EmployeeViews\FrmUploadPayroll.resx">
+      <DependentUpon>FrmUploadPayroll.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Empleados\MenuEmpleados.resx">
-      <DependentUpon>MenuEmpleados.cs</DependentUpon>
+    <EmbeddedResource Include="View\EmployeeViews\FrmPayrolls.resx">
+      <DependentUpon>FrmPayrolls.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Empleados\FrmActualizarEmpleado.resx">
-      <DependentUpon>FrmActualizarEmpleado.cs</DependentUpon>
+    <EmbeddedResource Include="View\EmployeeViews\FrmUploadEmployee.resx">
+      <DependentUpon>FrmUploadEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Empleados\FrmAgregarEmpleado.resx">
-      <DependentUpon>FrmAgregarEmpleado.cs</DependentUpon>
+    <EmbeddedResource Include="View\EmployeeViews\FrmAddEmployee.resx">
+      <DependentUpon>FrmAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Facturacion\FrmFacturacion.resx">
-      <DependentUpon>FrmFacturacion.cs</DependentUpon>
+    <EmbeddedResource Include="View\BillsViews\FrmAddBills.resx">
+      <DependentUpon>FrmAddBills.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Facturacion\FrmFacturas.resx">
-      <DependentUpon>FrmFacturas.cs</DependentUpon>
+    <EmbeddedResource Include="View\BillsViews\FrmBills.resx">
+      <DependentUpon>FrmBills.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\inicio\Inicio.resx">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <EmbeddedResource Include="View\Start\StartMenu.resx">
+      <DependentUpon>StartMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\InventarioServicios\FrmAgregarServicio.resx">
-      <DependentUpon>FrmAgregarServicio.cs</DependentUpon>
+    <EmbeddedResource Include="View\Service inventory\FrmAddService.resx">
+      <DependentUpon>FrmAddService.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\InventarioServicios\FrmConsultarServicios.resx">
-      <DependentUpon>FrmConsultarServicios.cs</DependentUpon>
+    <EmbeddedResource Include="View\Service inventory\FrmServices.resx">
+      <DependentUpon>FrmServices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\login\Recuperar contraseña.resx">
-      <DependentUpon>Recuperar contraseña.cs</DependentUpon>
+    <EmbeddedResource Include="View\login\RecoverPassword.resx">
+      <DependentUpon>RecoverPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

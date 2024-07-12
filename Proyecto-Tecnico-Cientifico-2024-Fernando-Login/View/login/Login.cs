@@ -22,7 +22,7 @@ namespace PTC2024.formularios.login
         {
             if (TxtUserBunifu.Text == "Fernando" && txtPasswordBunifu.Text =="1234" )
             { 
-                Inicio inicio = new Inicio();
+                StartMenu inicio = new StartMenu();
                 this.Hide();
                 inicio.Show();
             }
@@ -87,7 +87,7 @@ namespace PTC2024.formularios.login
         {
             if (TxtUserBunifu.Text == "Fernando" && txtPasswordBunifu.Text == "1234")
             {
-                Inicio inicio = new Inicio();
+                StartMenu inicio = new StartMenu();
                 this.Hide();
                 inicio.Show();
             }

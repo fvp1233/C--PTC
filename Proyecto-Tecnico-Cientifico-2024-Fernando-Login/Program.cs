@@ -20,7 +20,7 @@ namespace PTC2024
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmFacturacion());
+            Application.Run(new FrmAddBills());
         }
     }
 }
