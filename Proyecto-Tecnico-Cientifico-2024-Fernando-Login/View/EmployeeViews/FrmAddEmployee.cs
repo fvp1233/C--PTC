@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PTC2024.Controller;
 
 namespace PTC2024.View.Empleados
 {
@@ -15,6 +16,8 @@ namespace PTC2024.View.Empleados
         public FrmAddEmployee()
         {
             InitializeComponent();
+            ControllerAddEmployee objControl = new ControllerAddEmployee(this);
+            
         }
     }
 }

@@ -96,6 +96,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ControllerAddEmployee.cs" />
+    <Compile Include="Model\DAO\DAOAddEmployee.cs" />
+    <Compile Include="Model\dbContext.cs" />
+    <Compile Include="Model\DTO\DTOAddEmployee.cs" />
     <Compile Include="View\CustomersView\FrmAddCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,8 +280,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\" />
-    <Folder Include="Model\" />
     <Folder Include="View\Dashboard\" />
   </ItemGroup>
   <ItemGroup>
