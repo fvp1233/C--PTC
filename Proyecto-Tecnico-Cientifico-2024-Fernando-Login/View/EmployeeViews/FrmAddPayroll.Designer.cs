@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddPayroll));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.bunifuButton25 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.bunifuButton21 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
@@ -84,11 +84,11 @@
             this.bunifuButton25.ColorContrastOnClick = 45;
             this.bunifuButton25.ColorContrastOnHover = 45;
             this.bunifuButton25.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.bunifuButton25.CustomizableEdges = borderEdges3;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.bunifuButton25.CustomizableEdges = borderEdges1;
             this.bunifuButton25.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton25.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton25.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -174,11 +174,11 @@
             this.bunifuButton21.ColorContrastOnClick = 45;
             this.bunifuButton21.ColorContrastOnHover = 45;
             this.bunifuButton21.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.bunifuButton21.CustomizableEdges = borderEdges4;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.bunifuButton21.CustomizableEdges = borderEdges2;
             this.bunifuButton21.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton21.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton21.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -665,14 +665,14 @@
             this.bunifuMaterialTextbox6.LineIdleColor = System.Drawing.Color.Gray;
             this.bunifuMaterialTextbox6.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.bunifuMaterialTextbox6.LineThickness = 3;
-            this.bunifuMaterialTextbox6.Location = new System.Drawing.Point(399, 189);
+            this.bunifuMaterialTextbox6.Location = new System.Drawing.Point(399, 188);
             this.bunifuMaterialTextbox6.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextbox6.Name = "bunifuMaterialTextbox6";
             this.bunifuMaterialTextbox6.Size = new System.Drawing.Size(330, 31);
             this.bunifuMaterialTextbox6.TabIndex = 122;
             this.bunifuMaterialTextbox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // FrmAgregarPlanilla
+            // FrmAddPayroll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -708,7 +708,7 @@
             this.Controls.Add(this.bunifuCustomLabel3);
             this.Controls.Add(this.bunifuCustomLabel2);
             this.Controls.Add(this.bunifuCustomLabel1);
-            this.Name = "FrmAgregarPlanilla";
+            this.Name = "FrmAddPayroll";
             this.Text = "FrmAgregarPlanilla";
             this.ResumeLayout(false);
             this.PerformLayout();
