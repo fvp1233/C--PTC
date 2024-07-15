@@ -19,7 +19,7 @@ namespace PTC2024.Model.DAO
             try
             {
                 command.Connection = getConnection();
-                string query = "SELECT*FROM estadoCivil";
+                string query = "SELECT*FROM tbmaritalStatus";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.ExecuteNonQuery();
 
@@ -30,7 +30,7 @@ namespace PTC2024.Model.DAO
                 DataSet ds = new DataSet();
 
                 //se llena el dataset "ds" con la información que recibió el adaptador "adp"
-                adp.Fill(ds, "estadoCivil");
+                adp.Fill(ds, "tbmaritalStatus");
 
                 //se devuelve el dataset
                 return ds;
@@ -52,7 +52,7 @@ namespace PTC2024.Model.DAO
             try
             {
                 command.Connection = getConnection();
-                string query = "SELECT*FROM departamentos";
+                string query = "SELECT*FROM tbDepartment";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.ExecuteNonQuery();
 
@@ -63,7 +63,7 @@ namespace PTC2024.Model.DAO
                 DataSet ds = new DataSet();
 
                 //se llena el dataset "ds" con la información que recibió el adaptador "adp"
-                adp.Fill(ds, "departamentos");
+                adp.Fill(ds, "tbDepartment");
 
                 //se devuelve el dataset
                 return ds;
@@ -85,7 +85,7 @@ namespace PTC2024.Model.DAO
             try
             {
                 command.Connection = getConnection();
-                string query = "SELECT*FROM tipoEmpleado";
+                string query = "SELECT*FROM tbTypeE";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.ExecuteNonQuery();
 
@@ -96,7 +96,7 @@ namespace PTC2024.Model.DAO
                 DataSet ds = new DataSet();
 
                 //se llena el dataset "ds" con la información que recibió el adaptador "adp"
-                adp.Fill(ds, "tipoEmpleado");
+                adp.Fill(ds, "tbTypeE");
 
                 //se devuelve el dataset
                 return ds;
@@ -118,7 +118,7 @@ namespace PTC2024.Model.DAO
             try
             {
                 command.Connection = getConnection();
-                string query = "SELECT*FROM puestoEmpleado";
+                string query = "SELECT*FROM tbBusinessP";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.ExecuteNonQuery();
 
@@ -129,7 +129,7 @@ namespace PTC2024.Model.DAO
                 DataSet ds = new DataSet();
 
                 //se llena el dataset "ds" con la información que recibió el adaptador "adp"
-                adp.Fill(ds, "puestoEmpleado");
+                adp.Fill(ds, "tbBusinessP");
 
                 //se devuelve el dataset
                 return ds;
@@ -151,7 +151,7 @@ namespace PTC2024.Model.DAO
             try
             {
                 command.Connection = getConnection();
-                string query = "SELECT*FROM estadoEmpleado";
+                string query = "SELECT*FROM tbE_Status";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.ExecuteNonQuery();
 
@@ -162,7 +162,7 @@ namespace PTC2024.Model.DAO
                 DataSet ds = new DataSet();
 
                 //se llena el dataset "ds" con la información que recibió el adaptador "adp"
-                adp.Fill(ds, "estadoEmpleado");
+                adp.Fill(ds, "tbE_Status");
 
                 //se devuelve el dataset
                 return ds;
