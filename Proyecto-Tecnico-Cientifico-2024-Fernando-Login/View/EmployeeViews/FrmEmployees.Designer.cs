@@ -87,7 +87,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.96335F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 115F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1183, 688);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1147, 648);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -104,7 +104,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.49533F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.50467F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1177, 126);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1141, 116);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -114,11 +114,11 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 26);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 24);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(584, 78);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(548, 70);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // label1
@@ -126,7 +126,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(35, 19);
+            this.label1.Location = new System.Drawing.Point(17, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(450, 40);
             this.label1.TabIndex = 0;
@@ -139,11 +139,11 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.61102F));
             this.tableLayoutPanel4.Controls.Add(this.BtnRegresar, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(593, 26);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(557, 24);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(581, 78);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(581, 70);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // BtnRegresar
@@ -165,7 +165,7 @@
             this.BtnRegresar.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
             this.BtnRegresar.IdleForecolor = System.Drawing.Color.White;
             this.BtnRegresar.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
-            this.BtnRegresar.Location = new System.Drawing.Point(357, 18);
+            this.BtnRegresar.Location = new System.Drawing.Point(357, 14);
             this.BtnRegresar.Margin = new System.Windows.Forms.Padding(5);
             this.BtnRegresar.Name = "BtnRegresar";
             this.BtnRegresar.Size = new System.Drawing.Size(181, 41);
@@ -182,12 +182,12 @@
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel7, 2, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 576);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 535);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 109F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1177, 109);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1141, 110);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // BtnActualizarEmpleado
@@ -212,7 +212,7 @@
             this.BtnActualizarEmpleado.IconVisible = true;
             this.BtnActualizarEmpleado.IconZoom = 60D;
             this.BtnActualizarEmpleado.IsTab = false;
-            this.BtnActualizarEmpleado.Location = new System.Drawing.Point(496, 25);
+            this.BtnActualizarEmpleado.Location = new System.Drawing.Point(465, 25);
             this.BtnActualizarEmpleado.Name = "BtnActualizarEmpleado";
             this.BtnActualizarEmpleado.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.BtnActualizarEmpleado.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
@@ -236,7 +236,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(478, 103);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(453, 104);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // BtnAgregarEmpleado
@@ -261,7 +261,7 @@
             this.BtnAgregarEmpleado.IconVisible = true;
             this.BtnAgregarEmpleado.IconZoom = 60D;
             this.BtnAgregarEmpleado.IsTab = false;
-            this.BtnAgregarEmpleado.Location = new System.Drawing.Point(260, 22);
+            this.BtnAgregarEmpleado.Location = new System.Drawing.Point(241, 22);
             this.BtnAgregarEmpleado.Name = "BtnAgregarEmpleado";
             this.BtnAgregarEmpleado.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.BtnAgregarEmpleado.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
@@ -281,11 +281,11 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Controls.Add(this.BtnEliminarEmpleado, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(708, 3);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(671, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(466, 103);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(467, 104);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // BtnEliminarEmpleado
@@ -329,11 +329,11 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.Controls.Add(this.bunifuDataGridView1, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 135);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 125);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(1177, 435);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(1141, 404);
             this.tableLayoutPanel8.TabIndex = 3;
             // 
             // bunifuDataGridView1
@@ -406,7 +406,7 @@
             this.bunifuDataGridView1.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
             this.bunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
             this.bunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White;
-            this.bunifuDataGridView1.Location = new System.Drawing.Point(17, 28);
+            this.bunifuDataGridView1.Location = new System.Drawing.Point(3, 12);
             this.bunifuDataGridView1.Name = "bunifuDataGridView1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
@@ -427,7 +427,7 @@
             this.bunifuDataGridView1.RowTemplate.Height = 40;
             this.bunifuDataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.bunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bunifuDataGridView1.Size = new System.Drawing.Size(1143, 379);
+            this.bunifuDataGridView1.Size = new System.Drawing.Size(1135, 379);
             this.bunifuDataGridView1.TabIndex = 2;
             this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
             // 
@@ -531,7 +531,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1183, 688);
+            this.ClientSize = new System.Drawing.Size(1147, 648);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmEmployees";
             this.Text = "FrmConsultarEmpleados";

@@ -92,7 +92,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.13372F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.86628F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1183, 688);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1147, 648);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -118,7 +118,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.57143F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.42857F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1177, 105);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1141, 98);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // bunifuDropdown4
@@ -157,7 +157,7 @@
             this.bunifuDropdown4.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.bunifuDropdown4.ItemHighLightForeColor = System.Drawing.Color.White;
             this.bunifuDropdown4.ItemTopMargin = 3;
-            this.bunifuDropdown4.Location = new System.Drawing.Point(943, 54);
+            this.bunifuDropdown4.Location = new System.Drawing.Point(915, 50);
             this.bunifuDropdown4.Name = "bunifuDropdown4";
             this.bunifuDropdown4.Size = new System.Drawing.Size(202, 32);
             this.bunifuDropdown4.TabIndex = 3;
@@ -169,7 +169,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(708, 20);
+            this.label5.Location = new System.Drawing.Point(687, 20);
             this.label5.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 21);
@@ -212,7 +212,7 @@
             this.bunifuDropdown3.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.bunifuDropdown3.ItemHighLightForeColor = System.Drawing.Color.White;
             this.bunifuDropdown3.ItemTopMargin = 3;
-            this.bunifuDropdown3.Location = new System.Drawing.Point(708, 54);
+            this.bunifuDropdown3.Location = new System.Drawing.Point(687, 50);
             this.bunifuDropdown3.Name = "bunifuDropdown3";
             this.bunifuDropdown3.Size = new System.Drawing.Size(202, 32);
             this.bunifuDropdown3.TabIndex = 2;
@@ -256,7 +256,7 @@
             this.bunifuDropdown2.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.bunifuDropdown2.ItemHighLightForeColor = System.Drawing.Color.White;
             this.bunifuDropdown2.ItemTopMargin = 3;
-            this.bunifuDropdown2.Location = new System.Drawing.Point(473, 54);
+            this.bunifuDropdown2.Location = new System.Drawing.Point(459, 50);
             this.bunifuDropdown2.Name = "bunifuDropdown2";
             this.bunifuDropdown2.Size = new System.Drawing.Size(202, 32);
             this.bunifuDropdown2.TabIndex = 1;
@@ -268,7 +268,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(473, 20);
+            this.label4.Location = new System.Drawing.Point(459, 20);
             this.label4.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 21);
@@ -279,7 +279,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(238, 20);
+            this.label3.Location = new System.Drawing.Point(231, 20);
             this.label3.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(163, 21);
@@ -322,7 +322,7 @@
             this.bunifuDropdown1.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.bunifuDropdown1.ItemHighLightForeColor = System.Drawing.Color.White;
             this.bunifuDropdown1.ItemTopMargin = 3;
-            this.bunifuDropdown1.Location = new System.Drawing.Point(238, 54);
+            this.bunifuDropdown1.Location = new System.Drawing.Point(231, 50);
             this.bunifuDropdown1.Name = "bunifuDropdown1";
             this.bunifuDropdown1.Size = new System.Drawing.Size(202, 32);
             this.bunifuDropdown1.TabIndex = 0;
@@ -337,7 +337,7 @@
             this.label1.Location = new System.Drawing.Point(0, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(0, 20, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 31);
+            this.label1.Size = new System.Drawing.Size(212, 27);
             this.label1.TabIndex = 8;
             this.label1.Text = "CREAR PLANILLA";
             // 
@@ -345,7 +345,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(943, 20);
+            this.label6.Location = new System.Drawing.Point(915, 20);
             this.label6.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 21);
@@ -358,11 +358,11 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 114);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 107);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1177, 571);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1141, 538);
             this.tableLayoutPanel4.TabIndex = 3;
             // 
             // tableLayoutPanel5
@@ -381,7 +381,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.08511F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.91489F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 94F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1171, 565);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1135, 532);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // tableLayoutPanel6
@@ -398,7 +398,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1130, 79);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1094, 73);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // bunifuButton25
@@ -449,7 +449,7 @@
             this.bunifuButton25.IdleIconLeftImage = null;
             this.bunifuButton25.IdleIconRightImage = null;
             this.bunifuButton25.IndicateFocus = false;
-            this.bunifuButton25.Location = new System.Drawing.Point(488, 13);
+            this.bunifuButton25.Location = new System.Drawing.Point(470, 10);
             this.bunifuButton25.Name = "bunifuButton25";
             this.bunifuButton25.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton25.OnDisabledState.BorderRadius = 20;
@@ -539,7 +539,7 @@
             this.bunifuButton22.IdleIconLeftImage = null;
             this.bunifuButton22.IdleIconRightImage = null;
             this.bunifuButton22.IndicateFocus = false;
-            this.bunifuButton22.Location = new System.Drawing.Point(865, 13);
+            this.bunifuButton22.Location = new System.Drawing.Point(835, 10);
             this.bunifuButton22.Name = "bunifuButton22";
             this.bunifuButton22.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton22.OnDisabledState.BorderRadius = 20;
@@ -629,7 +629,7 @@
             this.bunifuButton21.IdleIconLeftImage = null;
             this.bunifuButton21.IdleIconRightImage = null;
             this.bunifuButton21.IndicateFocus = false;
-            this.bunifuButton21.Location = new System.Drawing.Point(112, 13);
+            this.bunifuButton21.Location = new System.Drawing.Point(106, 10);
             this.bunifuButton21.Name = "bunifuButton21";
             this.bunifuButton21.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton21.OnDisabledState.BorderRadius = 20;
@@ -677,11 +677,11 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Controls.Add(this.bunifuButton23, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 473);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 440);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1130, 89);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1094, 89);
             this.tableLayoutPanel7.TabIndex = 4;
             // 
             // bunifuButton23
@@ -732,7 +732,7 @@
             this.bunifuButton23.IdleIconLeftImage = null;
             this.bunifuButton23.IdleIconRightImage = null;
             this.bunifuButton23.IndicateFocus = false;
-            this.bunifuButton23.Location = new System.Drawing.Point(489, 18);
+            this.bunifuButton23.Location = new System.Drawing.Point(471, 18);
             this.bunifuButton23.Name = "bunifuButton23";
             this.bunifuButton23.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton23.OnDisabledState.BorderRadius = 20;
@@ -841,7 +841,7 @@
             this.bunifuDataGridView1.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
             this.bunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
             this.bunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White;
-            this.bunifuDataGridView1.Location = new System.Drawing.Point(16, 88);
+            this.bunifuDataGridView1.Location = new System.Drawing.Point(3, 82);
             this.bunifuDataGridView1.Name = "bunifuDataGridView1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
@@ -862,7 +862,7 @@
             this.bunifuDataGridView1.RowTemplate.Height = 40;
             this.bunifuDataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.bunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bunifuDataGridView1.Size = new System.Drawing.Size(1104, 379);
+            this.bunifuDataGridView1.Size = new System.Drawing.Size(1094, 352);
             this.bunifuDataGridView1.TabIndex = 1;
             this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
             // 
@@ -940,7 +940,7 @@
             this.bunifuVScrollBar1.BorderThickness = 1;
             this.bunifuVScrollBar1.DurationBeforeShrink = 2000;
             this.bunifuVScrollBar1.LargeChange = 10;
-            this.bunifuVScrollBar1.Location = new System.Drawing.Point(1139, 88);
+            this.bunifuVScrollBar1.Location = new System.Drawing.Point(1103, 82);
             this.bunifuVScrollBar1.Maximum = 100;
             this.bunifuVScrollBar1.Minimum = 0;
             this.bunifuVScrollBar1.MinimumThumbLength = 18;
@@ -951,22 +951,22 @@
             this.bunifuVScrollBar1.ScrollBarBorderColor = System.Drawing.Color.Silver;
             this.bunifuVScrollBar1.ScrollBarColor = System.Drawing.Color.Silver;
             this.bunifuVScrollBar1.ShrinkSizeLimit = 3;
-            this.bunifuVScrollBar1.Size = new System.Drawing.Size(15, 379);
+            this.bunifuVScrollBar1.Size = new System.Drawing.Size(15, 352);
             this.bunifuVScrollBar1.SmallChange = 1;
             this.bunifuVScrollBar1.TabIndex = 3;
             this.bunifuVScrollBar1.ThumbColor = System.Drawing.Color.Gray;
-            this.bunifuVScrollBar1.ThumbLength = 37;
+            this.bunifuVScrollBar1.ThumbLength = 34;
             this.bunifuVScrollBar1.ThumbMargin = 1;
             this.bunifuVScrollBar1.ThumbStyle = Bunifu.UI.WinForms.BunifuVScrollBar.ThumbStyles.Inset;
             this.bunifuVScrollBar1.Value = 0;
             // 
-            // FrmConsultarPlanillas
+            // FrmViewPayrolls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1183, 688);
+            this.ClientSize = new System.Drawing.Size(1147, 648);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FrmConsultarPlanillas";
+            this.Name = "FrmViewPayrolls";
             this.Text = "FrmConsultarPlanillas";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

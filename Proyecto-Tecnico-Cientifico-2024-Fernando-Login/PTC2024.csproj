@@ -100,6 +100,12 @@
     <Compile Include="Model\DAO\DAOAddEmployee.cs" />
     <Compile Include="Model\dbContext.cs" />
     <Compile Include="Model\DTO\DTOAddEmployee.cs" />
+    <Compile Include="View\BillsViews\FrmUploadBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BillsViews\FrmUploadBill.Designer.cs">
+      <DependentUpon>FrmUploadBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CustomersView\FrmAddCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\BillsViews\FrmUploadBill.resx">
+      <DependentUpon>FrmUploadBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CustomersView\FrmAddCustomers.resx">
       <DependentUpon>FrmAddCustomers.cs</DependentUpon>
     </EmbeddedResource>
