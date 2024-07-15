@@ -100,9 +100,7 @@
     <Compile Include="Model\DAO\DAOAddEmployee.cs" />
     <Compile Include="Model\dbContext.cs" />
     <Compile Include="Model\DTO\DTOAddEmployee.cs" />
-    <Compile Include="View\BillsViews\FrmUploadBill.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="View\BillsViews\FrmUploadBill.cs" />
     <Compile Include="View\BillsViews\FrmUploadBill.Designer.cs">
       <DependentUpon>FrmUploadBill.cs</DependentUpon>
     </Compile>
