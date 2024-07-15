@@ -20,6 +20,7 @@ namespace PTC2024.Controller
             objAddEmployee = View;
             objAddEmployee.Load += new EventHandler(CargarCombos);
             objAddEmployee.BtnAgregarEmpleado.Click += new EventHandler(AgregarEmpleado);
+            objAddEmployee.BtnCancelar.Click += new EventHandler(CancelarProceso);
         }
 
         public void CargarCombos(object sender, EventArgs e)
@@ -29,38 +30,43 @@ namespace PTC2024.Controller
 
             //Dropdown de Estados civiles
             DataSet dsEstadosCiviles = daoAddEmployee.ObtenerEstadosCiviles();
-            objAddEmployee.comboEstadosCiviles.DataSource = dsEstadosCiviles.Tables["estadoCivil"];
-            objAddEmployee.comboEstadosCiviles.DisplayMember = "nombreEstadoCivil";
-            objAddEmployee.comboEstadosCiviles.ValueMember = "idEstadoCivil";
+            objAddEmployee.comboEstadosCiviles.DataSource = dsEstadosCiviles.Tables["tbmaritalStatus"];
+            objAddEmployee.comboEstadosCiviles.DisplayMember = "marital_Status";
+            objAddEmployee.comboEstadosCiviles.ValueMember = "Id_MaritalS";
 
             //Dropdown de Departamentos
             DataSet dsDepartamentos = daoAddEmployee.ObtenerDepartamentos();
-            objAddEmployee.comboDepartamento.DataSource = dsDepartamentos.Tables["departamentos"];
-            objAddEmployee.comboDepartamento.DisplayMember = "nombreDepartamento";
-            objAddEmployee.comboDepartamento.ValueMember = "idDepartamento";
+            objAddEmployee.comboDepartamento.DataSource = dsDepartamentos.Tables["tbDepartment"];
+            objAddEmployee.comboDepartamento.DisplayMember = "departmentName";
+            objAddEmployee.comboDepartamento.ValueMember = "Id_Department";
 
             //Dropdown de tipos de empleado
             DataSet dsTiposEmpleado = daoAddEmployee.ObtenerTiposEmpleado();
-            objAddEmployee.comboTipoEmpleado.DataSource = dsTiposEmpleado.Tables["tipoEmpleado"];
-            objAddEmployee.comboTipoEmpleado.DisplayMember = "nombreTipoEmpleado";
-            objAddEmployee.comboTipoEmpleado.ValueMember = "idTipoEmpleado";
+            objAddEmployee.comboTipoEmpleado.DataSource = dsTiposEmpleado.Tables["tbTypeE"];
+            objAddEmployee.comboTipoEmpleado.DisplayMember = "typeEmployee";
+            objAddEmployee.comboTipoEmpleado.ValueMember = "Id_TypeE";
 
             //Dropdown de puestos de empleado
             DataSet dsPuestosEmpleado = daoAddEmployee.ObtenerPuestosEmpleado();
-            objAddEmployee.comboPuestoEmpleado.DataSource = dsPuestosEmpleado.Tables["puestoEmpleado"];
-            objAddEmployee.comboPuestoEmpleado.DisplayMember = "nombrePuesto";
-            objAddEmployee.comboPuestoEmpleado.ValueMember = "idPuestoEmpleado";
+            objAddEmployee.comboPuestoEmpleado.DataSource = dsPuestosEmpleado.Tables["tbBusinessP"];
+            objAddEmployee.comboPuestoEmpleado.DisplayMember = "business_Position";
+            objAddEmployee.comboPuestoEmpleado.ValueMember = "Id_BusinessP";
 
             //Dropdown de estado de empleado
             DataSet dsEstadosEmpleado = daoAddEmployee.ObtenerEstadosEmpleado();
-            objAddEmployee.comboEstadoEmpleado.DataSource = dsEstadosEmpleado.Tables["estadoEmpleado"];
-            objAddEmployee.comboEstadoEmpleado.DisplayMember = "nombreEstado";
-            objAddEmployee.comboEstadoEmpleado.ValueMember = "idEstadoEmpleado";
+            objAddEmployee.comboEstadoEmpleado.DataSource = dsEstadosEmpleado.Tables["tbE_Status"];
+            objAddEmployee.comboEstadoEmpleado.DisplayMember = "employee_Status";
+            objAddEmployee.comboEstadoEmpleado.ValueMember = "Id_Status";
         }
 
         public void AgregarEmpleado(object sender, EventArgs e)
         {
             
+        }
+
+        public void CancelarProceso(object sender, EventArgs e)
+        {
+            objAddEmployee.Close();
         }
 
 

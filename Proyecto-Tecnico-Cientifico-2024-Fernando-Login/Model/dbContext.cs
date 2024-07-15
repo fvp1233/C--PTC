@@ -15,7 +15,7 @@ namespace PTC2024.Model
 			try
 			{
                 string server = "PC\\SQLEXPRESS";
-                string database = "dbPruebaCRUD";
+                string database = "DBPTC_H2C24";
 
                 SqlConnection conexion = new SqlConnection($"Server = {server}; DataBase = {database}; Integrated Security = true");
                 conexion.Open();
