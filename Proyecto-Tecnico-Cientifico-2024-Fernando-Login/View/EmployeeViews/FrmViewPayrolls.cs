@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PTC2024.View.Empleados
 {
-    public partial class FrmConsultarPlanillas : Form
+    public partial class FrmViewPayrolls : Form
     {
-        public FrmConsultarPlanillas()
+        public FrmViewPayrolls()
         {
             InitializeComponent();
         }
