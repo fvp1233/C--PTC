@@ -803,13 +803,13 @@
             this.Column5.HeaderText = "Teléfono";
             this.Column5.Name = "Column5";
             // 
-            // FrmClientes
+            // FrmCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1183, 688);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FrmClientes";
+            this.Name = "FrmCustomers";
             this.Text = "FrmClientes";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

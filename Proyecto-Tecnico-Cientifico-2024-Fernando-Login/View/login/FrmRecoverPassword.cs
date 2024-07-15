@@ -8,14 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PTC2024.View.ApartadoEmpleados
+namespace PTC2024.formularios.login
 {
-    public partial class FrmEmpleados : Form
+    public partial class Recuperar_contraseña : Form
     {
-        public FrmEmpleados()
+        public Recuperar_contraseña()
         {
             InitializeComponent();
-
         }
+
+       
     }
 }
