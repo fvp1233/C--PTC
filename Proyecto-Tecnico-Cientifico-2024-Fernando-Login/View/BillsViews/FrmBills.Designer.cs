@@ -806,7 +806,7 @@
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "Prestador";
+            this.Column3.HeaderText = "Encargado";
             this.Column3.Name = "Column3";
             // 
             // Column4

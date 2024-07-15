@@ -495,9 +495,9 @@
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(3, 0);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(76, 16);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(82, 16);
             this.bunifuCustomLabel1.TabIndex = 37;
-            this.bunifuCustomLabel1.Text = "Prestador";
+            this.bunifuCustomLabel1.Text = "Encargado";
             // 
             // tableLayoutPanel5
             // 
