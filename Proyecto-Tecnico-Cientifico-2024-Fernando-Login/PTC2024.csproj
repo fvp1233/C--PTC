@@ -185,6 +185,12 @@
     <Compile Include="View\login\FrmRegister.Designer.cs">
       <DependentUpon>FrmRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Service inventory\FrmUpdateService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Service inventory\FrmUpdateService.Designer.cs">
+      <DependentUpon>FrmUpdateService.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Start\StartMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\login\FrmRegister.resx">
       <DependentUpon>FrmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Service inventory\FrmUpdateService.resx">
+      <DependentUpon>FrmUpdateService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Start\StartMenu.resx">
       <DependentUpon>StartMenu.cs</DependentUpon>
