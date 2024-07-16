@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace PTC2024.Controller.ServicesController
 {
-    internal class ControllerServices
+    internal class ControllerAddService
     {
-
     }
 }
