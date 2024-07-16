@@ -98,6 +98,7 @@
   <ItemGroup>
     <Compile Include="Controller\EmployeesController\ControllerAddEmployee.cs" />
     <Compile Include="Controller\EmployeesController\ControllerEmployees.cs" />
+    <Compile Include="Controller\ServicesController\ControllerServices.cs" />
     <Compile Include="Model\DAO\EmployeesDAO\DAOAddEmployee.cs" />
     <Compile Include="Model\dbContext.cs" />
     <Compile Include="Model\DTO\EmployeesDTO\DTOAddEmployee.cs" />
@@ -303,7 +304,6 @@
     <Folder Include="Controller\CustomersController\" />
     <Folder Include="Controller\LogInController\" />
     <Folder Include="Controller\PayrollsController\" />
-    <Folder Include="Controller\ServicesController\" />
     <Folder Include="Controller\StartController\" />
     <Folder Include="Helpers\" />
     <Folder Include="Model\DAO\BillsDAO\" />
