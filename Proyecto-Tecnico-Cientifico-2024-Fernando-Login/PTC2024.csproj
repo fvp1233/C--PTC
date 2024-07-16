@@ -100,13 +100,16 @@
     <Compile Include="Controller\EmployeesController\ControllerEmployees.cs" />
     <Compile Include="Controller\ServicesController\ControllerAddService.cs" />
     <Compile Include="Controller\ServicesController\ControllerServices.cs" />
+    <Compile Include="Controller\ServicesController\ControllerUpdateService.cs" />
     <Compile Include="Model\DAO\EmployeesDAO\DAOAddEmployee.cs" />
     <Compile Include="Model\DAO\ServicesDAO\DAOAddService.cs" />
     <Compile Include="Model\DAO\ServicesDAO\DAOServices.cs" />
+    <Compile Include="Model\DAO\ServicesDAO\DAOUpdateService.cs" />
     <Compile Include="Model\dbContext.cs" />
     <Compile Include="Model\DTO\EmployeesDTO\DTOAddEmployee.cs" />
     <Compile Include="Model\DTO\ServicesDTO\DTOAddService.cs" />
     <Compile Include="Model\DTO\ServicesDTO\DTOServices.cs" />
+    <Compile Include="Model\DTO\ServicesDTO\DTOUpdateService.cs" />
     <Compile Include="View\BillsViews\FrmUploadBill.cs">
       <SubType>Form</SubType>
     </Compile>
