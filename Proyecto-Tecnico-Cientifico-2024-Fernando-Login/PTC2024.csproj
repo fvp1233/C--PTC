@@ -96,11 +96,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\Employees\ControllerAddEmployee.cs" />
-    <Compile Include="Controller\Employees\ControllerEmployees.cs" />
-    <Compile Include="Model\DAO\DAOAddEmployee.cs" />
+    <Compile Include="Controller\EmployeesController\ControllerAddEmployee.cs" />
+    <Compile Include="Controller\EmployeesController\ControllerEmployees.cs" />
+    <Compile Include="Model\DAO\EmployeesDAO\DAOAddEmployee.cs" />
     <Compile Include="Model\dbContext.cs" />
-    <Compile Include="Model\DTO\DTOAddEmployee.cs" />
+    <Compile Include="Model\DTO\EmployeesDTO\DTOAddEmployee.cs" />
     <Compile Include="View\BillsViews\FrmUploadBill.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,6 +299,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Controller\BillsController\" />
+    <Folder Include="Controller\CustomersController\" />
+    <Folder Include="Controller\LogInController\" />
+    <Folder Include="Controller\PayrollsController\" />
+    <Folder Include="Controller\ServicesController\" />
+    <Folder Include="Controller\StartController\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Model\DAO\BillsDAO\" />
+    <Folder Include="Model\DAO\CustomersDAO\" />
+    <Folder Include="Model\DAO\LogInDAO\" />
+    <Folder Include="Model\DAO\PayrollsDAO\" />
+    <Folder Include="Model\DAO\ServicesDAO\" />
+    <Folder Include="Model\DAO\StartDAO\" />
+    <Folder Include="Model\DTO\BillsDTO\" />
+    <Folder Include="Model\DTO\CustomersDTO\" />
+    <Folder Include="Model\DTO\LogInDTO\" />
+    <Folder Include="Model\DTO\PayrollDTO\" />
+    <Folder Include="Model\DTO\ServicesDTO\" />
+    <Folder Include="Model\DTO\StartDTO\" />
     <Folder Include="View\Dashboard\" />
   </ItemGroup>
   <ItemGroup>
