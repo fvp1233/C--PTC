@@ -96,7 +96,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\ControllerAddEmployee.cs" />
+    <Compile Include="Controller\Employees\ControllerAddEmployee.cs" />
     <Compile Include="Controller\Employees\ControllerEmployees.cs" />
     <Compile Include="Model\DAO\DAOAddEmployee.cs" />
     <Compile Include="Model\dbContext.cs" />
