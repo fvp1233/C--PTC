@@ -173,11 +173,11 @@
     <Compile Include="View\CustomersView\FrmCustomers.Designer.cs">
       <DependentUpon>FrmCustomers.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CustomersView\FrmUpdateCustomers.cs">
+    <Compile Include="View\CustomersView\FrmUpdateCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\CustomersView\FrmUploadCustomers.Designer.cs">
-      <DependentUpon>FrmUpdateCustomers.cs</DependentUpon>
+    <Compile Include="View\CustomersView\FrmUpdateCustomer.Designer.cs">
+      <DependentUpon>FrmUpdateCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="View\EmployeeViews\FrmEmployees.cs">
       <SubType>Form</SubType>
@@ -287,7 +287,7 @@
       <DependentUpon>FrmCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomersView\FrmUploadCustomers.resx">
-      <DependentUpon>FrmUpdateCustomers.cs</DependentUpon>
+      <DependentUpon>FrmUpdateCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmEmployees.resx">
       <DependentUpon>FrmEmployees.cs</DependentUpon>
