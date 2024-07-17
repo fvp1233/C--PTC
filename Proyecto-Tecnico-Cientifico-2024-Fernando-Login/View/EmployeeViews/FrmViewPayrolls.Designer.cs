@@ -40,11 +40,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.bunifuDropdown4 = new Bunifu.UI.WinForms.BunifuDropdown();
-            this.bunifuDropdown2 = new Bunifu.UI.WinForms.BunifuDropdown();
-            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.bunifuDropdown2 = new Bunifu.UI.WinForms.BunifuDropdown();
             this.label6 = new System.Windows.Forms.Label();
+            this.bunifuDropdown4 = new Bunifu.UI.WinForms.BunifuDropdown();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -54,7 +54,6 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuButton23 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.bunifuDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.bunifuVScrollBar1 = new Bunifu.UI.WinForms.BunifuVScrollBar();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +61,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bunifuVScrollBar1 = new Bunifu.UI.WinForms.BunifuVScrollBar();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -107,49 +107,27 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1141, 98);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
-            // bunifuDropdown4
+            // label1
             // 
-            this.bunifuDropdown4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown4.BackgroundColor = System.Drawing.Color.White;
-            this.bunifuDropdown4.BorderColor = System.Drawing.Color.Silver;
-            this.bunifuDropdown4.BorderRadius = 3;
-            this.bunifuDropdown4.Color = System.Drawing.Color.Silver;
-            this.bunifuDropdown4.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.bunifuDropdown4.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.bunifuDropdown4.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuDropdown4.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.bunifuDropdown4.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.bunifuDropdown4.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.bunifuDropdown4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.bunifuDropdown4.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.bunifuDropdown4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bunifuDropdown4.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.bunifuDropdown4.FillDropDown = true;
-            this.bunifuDropdown4.FillIndicator = false;
-            this.bunifuDropdown4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bunifuDropdown4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuDropdown4.ForeColor = System.Drawing.Color.Black;
-            this.bunifuDropdown4.FormattingEnabled = true;
-            this.bunifuDropdown4.Icon = null;
-            this.bunifuDropdown4.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.bunifuDropdown4.IndicatorColor = System.Drawing.Color.DarkGray;
-            this.bunifuDropdown4.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.bunifuDropdown4.IndicatorThickness = 2;
-            this.bunifuDropdown4.IsDropdownOpened = false;
-            this.bunifuDropdown4.ItemBackColor = System.Drawing.Color.White;
-            this.bunifuDropdown4.ItemBorderColor = System.Drawing.Color.White;
-            this.bunifuDropdown4.ItemForeColor = System.Drawing.Color.Black;
-            this.bunifuDropdown4.ItemHeight = 26;
-            this.bunifuDropdown4.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuDropdown4.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown4.ItemTopMargin = 3;
-            this.bunifuDropdown4.Location = new System.Drawing.Point(763, 50);
-            this.bunifuDropdown4.Name = "bunifuDropdown4";
-            this.bunifuDropdown4.Size = new System.Drawing.Size(249, 32);
-            this.bunifuDropdown4.TabIndex = 3;
-            this.bunifuDropdown4.Text = null;
-            this.bunifuDropdown4.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.bunifuDropdown4.TextLeftMargin = 5;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(0, 20, 3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 27);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "PLANILLAS";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(383, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(138, 21);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Cuenta bancaria:";
             // 
             // bunifuDropdown2
             // 
@@ -195,28 +173,6 @@
             this.bunifuDropdown2.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.bunifuDropdown2.TextLeftMargin = 5;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(383, 20);
-            this.label4.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 21);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Cuenta bancaria:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(0, 20, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 27);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "PLANILLAS";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -227,6 +183,50 @@
             this.label6.Size = new System.Drawing.Size(45, 21);
             this.label6.TabIndex = 7;
             this.label6.Text = "Mes:";
+            // 
+            // bunifuDropdown4
+            // 
+            this.bunifuDropdown4.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDropdown4.BackgroundColor = System.Drawing.Color.White;
+            this.bunifuDropdown4.BorderColor = System.Drawing.Color.Silver;
+            this.bunifuDropdown4.BorderRadius = 3;
+            this.bunifuDropdown4.Color = System.Drawing.Color.Silver;
+            this.bunifuDropdown4.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.bunifuDropdown4.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.bunifuDropdown4.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.bunifuDropdown4.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.bunifuDropdown4.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.bunifuDropdown4.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.bunifuDropdown4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.bunifuDropdown4.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.bunifuDropdown4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.bunifuDropdown4.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.bunifuDropdown4.FillDropDown = true;
+            this.bunifuDropdown4.FillIndicator = false;
+            this.bunifuDropdown4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bunifuDropdown4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuDropdown4.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDropdown4.FormattingEnabled = true;
+            this.bunifuDropdown4.Icon = null;
+            this.bunifuDropdown4.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.bunifuDropdown4.IndicatorColor = System.Drawing.Color.DarkGray;
+            this.bunifuDropdown4.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.bunifuDropdown4.IndicatorThickness = 2;
+            this.bunifuDropdown4.IsDropdownOpened = false;
+            this.bunifuDropdown4.ItemBackColor = System.Drawing.Color.White;
+            this.bunifuDropdown4.ItemBorderColor = System.Drawing.Color.White;
+            this.bunifuDropdown4.ItemForeColor = System.Drawing.Color.Black;
+            this.bunifuDropdown4.ItemHeight = 26;
+            this.bunifuDropdown4.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuDropdown4.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.bunifuDropdown4.ItemTopMargin = 3;
+            this.bunifuDropdown4.Location = new System.Drawing.Point(763, 50);
+            this.bunifuDropdown4.Name = "bunifuDropdown4";
+            this.bunifuDropdown4.Size = new System.Drawing.Size(249, 32);
+            this.bunifuDropdown4.TabIndex = 3;
+            this.bunifuDropdown4.Text = null;
+            this.bunifuDropdown4.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.bunifuDropdown4.TextLeftMargin = 5;
             // 
             // tableLayoutPanel4
             // 
@@ -738,6 +738,41 @@
             this.bunifuDataGridView1.TabIndex = 1;
             this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "N°";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "DUI";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Nombre";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Apellido";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Salario bruto";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Salario neto";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Cuenta bancaria";
+            this.Column7.Name = "Column7";
+            // 
             // bunifuVScrollBar1
             // 
             this.bunifuVScrollBar1.AllowCursorChanges = true;
@@ -776,41 +811,6 @@
             this.bunifuVScrollBar1.ThumbMargin = 1;
             this.bunifuVScrollBar1.ThumbStyle = Bunifu.UI.WinForms.BunifuVScrollBar.ThumbStyles.Inset;
             this.bunifuVScrollBar1.Value = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "N°";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "DUI";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Nombre";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Apellido";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Salario bruto";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Salario neto";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Cuenta bancaria";
-            this.Column7.Name = "Column7";
             // 
             // FrmViewPayrolls
             // 

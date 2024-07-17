@@ -184,9 +184,9 @@
             this.bunifuCustomLabel7.Location = new System.Drawing.Point(3, 0);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
             this.bunifuCustomLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuCustomLabel7.Size = new System.Drawing.Size(122, 16);
+            this.bunifuCustomLabel7.Size = new System.Drawing.Size(130, 16);
             this.bunifuCustomLabel7.TabIndex = 40;
-            this.bunifuCustomLabel7.Text = "Metodo de pago";
+            this.bunifuCustomLabel7.Text = "Estado de factura";
             // 
             // tableLayoutPanel7
             // 
@@ -565,9 +565,9 @@
             this.bunifuCustomLabel2.Location = new System.Drawing.Point(3, 0);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(121, 16);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(122, 16);
             this.bunifuCustomLabel2.TabIndex = 37;
-            this.bunifuCustomLabel2.Text = "Cuenta bancaria";
+            this.bunifuCustomLabel2.Text = "Metodo de pago";
             // 
             // bunifuDataGridView1
             // 

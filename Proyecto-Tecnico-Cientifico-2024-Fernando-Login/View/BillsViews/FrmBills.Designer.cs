@@ -821,7 +821,7 @@
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "Cuenta bancaria";
+            this.Column6.HeaderText = "Estado de factura";
             this.Column6.Name = "Column6";
             // 
             // FrmBills

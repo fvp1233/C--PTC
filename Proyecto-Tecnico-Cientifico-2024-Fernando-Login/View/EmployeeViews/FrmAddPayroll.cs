@@ -16,10 +16,5 @@ namespace PTC2024.View.Empleados
         {
             InitializeComponent();
         }
-
-        private void bunifuSeparator1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
