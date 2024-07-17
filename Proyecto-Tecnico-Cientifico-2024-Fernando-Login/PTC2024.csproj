@@ -108,13 +108,6 @@
     <Compile Include="Controller\LogInController\ControllerRegister.cs" />
     <Compile Include="Controller\PayrollsController\ControllerAddPayroll.cs" />
     <Compile Include="Controller\EmployeesController\ControllerEmployees.cs" />
-    <Compile Include="Controller\ServicesController\ControllerAddService.cs" />
-    <Compile Include="Controller\ServicesController\ControllerServices.cs" />
-    <Compile Include="Controller\ServicesController\ControllerUpdateService.cs" />
-    <Compile Include="Model\DAO\EmployeesDAO\DAOAddEmployee.cs" />
-    <Compile Include="Model\DAO\ServicesDAO\DAOAddService.cs" />
-    <Compile Include="Model\DAO\ServicesDAO\DAOServices.cs" />
-    <Compile Include="Model\DAO\ServicesDAO\DAOUpdateService.cs" />
     <Compile Include="Controller\EmployeesController\ControllerPayrolls.cs" />
     <Compile Include="Controller\EmployeesController\ControllerUpdateEmployee.cs" />
     <Compile Include="Controller\PayrollsController\ControllerUpdatePayroll.cs" />
@@ -150,10 +143,6 @@
     <Compile Include="Model\DTO\CustomersDTO\DTOCustomers.cs" />
     <Compile Include="Model\DTO\CustomersDTO\DTOUpdateCustomers.cs" />
     <Compile Include="Model\DTO\EmployeesDTO\DTOAddEmployee.cs" />
-    <Compile Include="Model\DTO\ServicesDTO\DTOAddService.cs" />
-    <Compile Include="Model\DTO\ServicesDTO\DTOServices.cs" />
-    <Compile Include="Model\DTO\ServicesDTO\DTOUpdateService.cs" />
-    <Compile Include="View\BillsViews\FrmUploadBill.cs">
     <Compile Include="Model\DTO\EmployeesDTO\DTOEmployees.cs" />
     <Compile Include="Model\DTO\EmployeesDTO\DTOUpdateEmployee.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTOLogin.cs" />
@@ -376,22 +365,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\BillsController\" />
-    <Folder Include="Controller\CustomersController\" />
-    <Folder Include="Controller\LogInController\" />
-    <Folder Include="Controller\PayrollsController\" />
-    <Folder Include="Controller\StartController\" />
-    <Folder Include="Helpers\" />
-    <Folder Include="Model\DAO\BillsDAO\" />
-    <Folder Include="Model\DAO\CustomersDAO\" />
-    <Folder Include="Model\DAO\LogInDAO\" />
-    <Folder Include="Model\DAO\PayrollsDAO\" />
-    <Folder Include="Model\DAO\StartDAO\" />
-    <Folder Include="Model\DTO\BillsDTO\" />
-    <Folder Include="Model\DTO\CustomersDTO\" />
-    <Folder Include="Model\DTO\LogInDTO\" />
-    <Folder Include="Model\DTO\PayrollDTO\" />
-    <Folder Include="Model\DTO\StartDTO\" />
     <Folder Include="Helpers\" />
     <Folder Include="View\Dashboard\" />
   </ItemGroup>
