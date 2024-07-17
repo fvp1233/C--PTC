@@ -42,9 +42,7 @@
             this.txtDui = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtApellidos = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtNombres = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -210,26 +208,6 @@
             this.bunifuCustomLabel6.TabIndex = 91;
             this.bunifuCustomLabel6.Text = "DUI:";
             // 
-            // txtApellidos
-            // 
-            this.txtApellidos.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtApellidos.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtApellidos.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtApellidos.ForeColor = System.Drawing.Color.DimGray;
-            this.txtApellidos.HintForeColor = System.Drawing.Color.Empty;
-            this.txtApellidos.HintText = "";
-            this.txtApellidos.isPassword = false;
-            this.txtApellidos.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtApellidos.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtApellidos.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtApellidos.LineThickness = 3;
-            this.txtApellidos.Location = new System.Drawing.Point(386, 127);
-            this.txtApellidos.Margin = new System.Windows.Forms.Padding(4);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(330, 31);
-            this.txtApellidos.TabIndex = 90;
-            this.txtApellidos.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // txtNombres
             // 
             this.txtNombres.BackColor = System.Drawing.Color.Gainsboro;
@@ -246,20 +224,9 @@
             this.txtNombres.Location = new System.Drawing.Point(48, 127);
             this.txtNombres.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(330, 31);
+            this.txtNombres.Size = new System.Drawing.Size(668, 31);
             this.txtNombres.TabIndex = 89;
             this.txtNombres.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuCustomLabel4
-            // 
-            this.bunifuCustomLabel4.AutoSize = true;
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(383, 108);
-            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(76, 16);
-            this.bunifuCustomLabel4.TabIndex = 88;
-            this.bunifuCustomLabel4.Text = "Apellidos:";
             // 
             // bunifuCustomLabel3
             // 
@@ -267,9 +234,9 @@
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.Location = new System.Drawing.Point(45, 107);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(74, 16);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(135, 16);
             this.bunifuCustomLabel3.TabIndex = 87;
-            this.bunifuCustomLabel3.Text = "Nombres:";
+            this.bunifuCustomLabel3.Text = "Nombre completo:";
             // 
             // bunifuCustomLabel2
             // 
@@ -471,7 +438,7 @@
             this.bunifuButton21.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton21.UseDefaultRadiusAndThickness = true;
             // 
-            // FrmAgregarCliente
+            // FrmAddCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -489,13 +456,11 @@
             this.Controls.Add(this.txtDui);
             this.Controls.Add(this.bunifuCustomLabel5);
             this.Controls.Add(this.bunifuCustomLabel6);
-            this.Controls.Add(this.txtApellidos);
             this.Controls.Add(this.txtNombres);
-            this.Controls.Add(this.bunifuCustomLabel4);
             this.Controls.Add(this.bunifuCustomLabel3);
             this.Controls.Add(this.bunifuCustomLabel2);
             this.Controls.Add(this.bunifuCustomLabel1);
-            this.Name = "FrmAgregarCliente";
+            this.Name = "FrmAddCustomers";
             this.Text = "FrmAgregarCliente";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -514,9 +479,7 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtDui;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtApellidos;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtNombres;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;

@@ -286,6 +286,9 @@
     <EmbeddedResource Include="View\CustomersView\FrmCustomers.resx">
       <DependentUpon>FrmCustomers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\CustomersView\FrmUpdateCustomer.resx">
+      <DependentUpon>FrmUpdateCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CustomersView\FrmUploadCustomers.resx">
       <DependentUpon>FrmUpdateCustomer.cs</DependentUpon>
     </EmbeddedResource>
