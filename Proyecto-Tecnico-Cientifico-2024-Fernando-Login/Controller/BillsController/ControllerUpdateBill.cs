@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PTC2024.Controller.ServicesController
+namespace PTC2024.Controller.BillsController
 {
-    internal class ControllerServices
+    internal class ControllerUpdateBill
     {
     }
 }

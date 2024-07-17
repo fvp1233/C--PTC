@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PTC2024.Controller.ServicesController
+namespace PTC2024.Model.DTO.LogInDTO
 {
-    internal class ControllerServices
+    internal class DTORegister
     {
     }
 }
