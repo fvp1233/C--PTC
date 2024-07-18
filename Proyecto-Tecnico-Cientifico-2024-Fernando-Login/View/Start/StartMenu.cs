@@ -15,6 +15,7 @@ namespace PTC2024.View.formularios.inicio
         public StartMenu()
         {
             InitializeComponent();
+
         }
 
     }
