@@ -22,12 +22,10 @@ namespace PTC2024
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< Updated upstream
-            Application.Run(new FrmAddService());
-=======
+
+
             Application.Run(new FrmRegister());
 
->>>>>>> Stashed changes
         }
     }
 }
