@@ -16,27 +16,59 @@ namespace PTC2024.Model.DAO.LogInDAO
     {
         readonly SqlCommand command = new SqlCommand();
 
-        public DataSet GetNames()
+        public int GetNames()
         {
             try
             {
                 command.Connection = getConnection();
-                string query = "SELECT * FROM tbuserData";
-                SqlCommand cmd = new SqlCommand(query, command.Connection);
-                cmd.ExecuteNonQuery();
+                string queryUser = "INSERT INTO tbEmployee VALUES (@names, @lastName, @birthDate,@Email,@DUI,@phone,@address) ";
 
-                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                SqlCommand cmdInsert = new SqlCommand(queryUser, command.Connection);
 
-                DataSet ds = new DataSet();
-                adp.Fill(ds, "tbuserData");
+                cmdInsert.Parameters.AddWithValue("DUI", DUI1);
+                cmdInsert.Parameters.AddWithValue("birthDate", Birth1);
+                cmdInsert.Parameters.AddWithValue("Email", Email);
+                cmdInsert.Parameters.AddWithValue("phone", Phone);
+                cmdInsert.Parameters.AddWithValue("address", Address);
+                cmdInsert.Parameters.AddWithValue("lastName", Lastnames);
+                cmdInsert.Parameters.AddWithValue("names", Names);
+               
+                
+              
 
-                return ds;
+                int respuesta = cmdInsert.ExecuteNonQuery();
+
+                if (respuesta ==1)
+                {
+
+                    string queryPerson = "INSERT INTO tbUserData VALUES (@username, @password)";
+                    SqlCommand cmdInsertData = new SqlCommand(queryPerson, command.Connection);
+                    cmdInsertData.Parameters.AddWithValue("username", User);
+                    cmdInsertData.Parameters.AddWithValue("password", Password);
+                    // falta agregar la tabla en base de datos cmdInsertData.Parameters.AddWithValue("confirmPassword", ConfirmPassword);
+                    respuesta = cmdInsertData.ExecuteNonQuery();
+
+                    if (respuesta == 1)
+                    {
+                        return 1;
+                    }
+
+                    else
+                    {
+                        return 0;
+                    }
+                }
+                else
+                {
+                    return 0;
+                }
+
             }
             catch (SqlException ex)
             {
 
                 MessageBox.Show($"{ex.Message}EC-005 ERROR BELLAKO: No se puedieron obtener los datos de los Nombres del usuario  ");
-                return null;
+                return -1;
             }
             finally
             {

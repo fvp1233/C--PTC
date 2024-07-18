@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PTC2024.Controller.LogInController;
 
 namespace PTC2024.View.login
 {
@@ -15,6 +16,7 @@ namespace PTC2024.View.login
         public FrmRegister()
         {
             InitializeComponent();
+            ControllerRegister objRegister = new ControllerRegister(this);
         }
 
       
