@@ -16,19 +16,19 @@ namespace PTC2024.Model.DAO.LogInDAO
     {
         readonly SqlCommand command = new SqlCommand();
 
-        public DataSet ObtainNames()
+        public DataSet GetNames()
         {
             try
             {
                 command.Connection = getConnection();
-                string query = "SELECT * FROM userData";
+                string query = "SELECT * FROM tbuserData";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.ExecuteNonQuery();
 
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
 
                 DataSet ds = new DataSet();
-                adp.Fill(ds, "tbName");
+                adp.Fill(ds, "tbuserData");
 
                 return ds;
             }

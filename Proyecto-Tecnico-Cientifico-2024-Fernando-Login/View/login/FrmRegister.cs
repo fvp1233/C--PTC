@@ -16,5 +16,7 @@ namespace PTC2024.View.login
         {
             InitializeComponent();
         }
+
+      
     }
 }
