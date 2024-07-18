@@ -8,5 +8,6 @@ namespace PTC2024.Model.DTO.ServicesDTO
 {
     internal class DTOUpdateService
     {
+
     }
 }

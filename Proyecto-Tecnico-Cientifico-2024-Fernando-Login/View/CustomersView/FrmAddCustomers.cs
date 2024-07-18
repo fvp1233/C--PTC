@@ -16,5 +16,15 @@ namespace PTC2024.View.Clientes
         {
             InitializeComponent();
         }
+
+        private void bunifuCustomLabel9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
