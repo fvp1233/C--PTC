@@ -21,32 +21,37 @@ namespace PTC2024.Model.DAO.LogInDAO
             try
             {
                 command.Connection = getConnection();
-                string queryUser = "INSERT INTO tbEmployee VALUES (@names, @lastName, @birthDate,@Email,@DUI,@phone,@address) ";
-
-                SqlCommand cmdInsert = new SqlCommand(queryUser, command.Connection);
-
-                cmdInsert.Parameters.AddWithValue("DUI", DUI1);
-                cmdInsert.Parameters.AddWithValue("birthDate", Birth1);
-                cmdInsert.Parameters.AddWithValue("Email", Email);
-                cmdInsert.Parameters.AddWithValue("phone", Phone);
-                cmdInsert.Parameters.AddWithValue("address", Address);
-                cmdInsert.Parameters.AddWithValue("lastName", Lastnames);
-                cmdInsert.Parameters.AddWithValue("names", Names);
+                string queryPerson = "INSERT INTO tbUserData VALUES (@username, @password, @business)";
+                SqlCommand cmdInsertData = new SqlCommand(queryPerson, command.Connection);
+                cmdInsertData.Parameters.AddWithValue("username", User);
+                cmdInsertData.Parameters.AddWithValue("password", Password);
+                cmdInsertData.Parameters.AddWithValue("business", BusinessP);
                
-                
-              
+                // falta agregar la tabla en base de datos cmdInsertData.Parameters.AddWithValue("confirmPassword", ConfirmPassword);
 
-                int respuesta = cmdInsert.ExecuteNonQuery();
 
-                if (respuesta ==1)
+
+                int respuesta = cmdInsertData.ExecuteNonQuery();
+
+                if (respuesta == 1)
                 {
 
-                    string queryPerson = "INSERT INTO tbUserData VALUES (@username, @password)";
-                    SqlCommand cmdInsertData = new SqlCommand(queryPerson, command.Connection);
-                    cmdInsertData.Parameters.AddWithValue("username", User);
-                    cmdInsertData.Parameters.AddWithValue("password", Password);
-                    // falta agregar la tabla en base de datos cmdInsertData.Parameters.AddWithValue("confirmPassword", ConfirmPassword);
-                    respuesta = cmdInsertData.ExecuteNonQuery();
+                    string queryUser = "INSERT INTO tbEmployee VALUES (@DUI, @birthDate, @Email,@phone,@address,@lastName,@names, @department, @typeE, @maritalStatus,@status) ";
+
+                    SqlCommand cmdInsert = new SqlCommand(queryUser, command.Connection);
+
+                    cmdInsert.Parameters.AddWithValue("DUI", DUI1);
+                    cmdInsert.Parameters.AddWithValue("birthDate", Birth);
+                    cmdInsert.Parameters.AddWithValue("Email", Email);
+                    cmdInsert.Parameters.AddWithValue("phone", Phone);
+                    cmdInsert.Parameters.AddWithValue("address", Address);
+                    cmdInsert.Parameters.AddWithValue("lastName", Lastnames);
+                    cmdInsert.Parameters.AddWithValue("names", Names);
+                    cmdInsertData.Parameters.AddWithValue("department", Department);
+                    cmdInsertData.Parameters.AddWithValue("typeE", TypeE);
+                    cmdInsertData.Parameters.AddWithValue("maritalStatus", MaritalStatus);
+                    cmdInsertData.Parameters.AddWithValue("status", MaritalStatus);
+                    respuesta = cmdInsert.ExecuteNonQuery();
 
                     if (respuesta == 1)
                     {
@@ -74,9 +79,10 @@ namespace PTC2024.Model.DAO.LogInDAO
             {
                 command.Connection.Close();
             }
-        
+
 
 
         }
     }
 }
+    
