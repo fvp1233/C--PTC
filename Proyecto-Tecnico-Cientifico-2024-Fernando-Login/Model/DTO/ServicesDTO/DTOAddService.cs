@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace PTC2024.Model.DTO.ServicesDTO
 {
-    internal class DTOAddService
+    internal class DTOAddService : dbContext
     {
+        string nombre;
+        string descripcion;
+        int categorias;
+        double monto;
+
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public int Categorias { get => categorias; set => categorias = value; }
+        public double Monto { get => monto; set => monto = value; }
     }
 }

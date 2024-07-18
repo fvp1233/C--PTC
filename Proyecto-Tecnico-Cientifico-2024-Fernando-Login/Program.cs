@@ -9,6 +9,7 @@ using PTC2024.View.InventarioServicios;
 using PTC2024.View.Facturacion;
 using PTC2024.View.formularios.inicio;
 using PTC2024.View.login;
+using PTC2024.View.InventarioServicios;
 
 namespace PTC2024
 {
@@ -22,8 +23,7 @@ namespace PTC2024
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmServices());
-
+            Application.Run(new FrmAddService());
         }
     }
 }
