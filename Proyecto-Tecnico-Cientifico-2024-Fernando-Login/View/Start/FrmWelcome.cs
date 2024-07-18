@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PTC2024.View.Empleados
+namespace PTC2024.View.Start
 {
-    public partial class FrmPayrolls : Form
+    public partial class FrmWelcome : Form
     {
-        public FrmPayrolls()
+        public FrmWelcome()
         {
             InitializeComponent();
-        }
-
-        private void bunifuPanel2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
