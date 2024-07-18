@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PTC2024.Controller.ServicesController;
 
 namespace PTC2024.View.InventarioServicios
 {
@@ -15,6 +16,7 @@ namespace PTC2024.View.InventarioServicios
         public FrmAddService()
         {
             InitializeComponent();
+            ControllerAddService objController = new ControllerAddService(this);
         }
 
     }
