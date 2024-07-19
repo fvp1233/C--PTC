@@ -221,7 +221,7 @@
             this.txtAddress.ShortcutsEnabled = true;
             this.txtAddress.Size = new System.Drawing.Size(260, 32);
             this.txtAddress.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtAddress.TabIndex = 30;
+            this.txtAddress.TabIndex = 7;
             this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtAddress.TextMarginBottom = 0;
             this.txtAddress.TextMarginLeft = 3;
@@ -316,7 +316,7 @@
             this.txtPhone.ShortcutsEnabled = true;
             this.txtPhone.Size = new System.Drawing.Size(260, 32);
             this.txtPhone.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtPhone.TabIndex = 28;
+            this.txtPhone.TabIndex = 6;
             this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtPhone.TextMarginBottom = 0;
             this.txtPhone.TextMarginLeft = 3;
@@ -411,7 +411,7 @@
             this.txtDUI.ShortcutsEnabled = true;
             this.txtDUI.Size = new System.Drawing.Size(260, 32);
             this.txtDUI.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtDUI.TabIndex = 26;
+            this.txtDUI.TabIndex = 5;
             this.txtDUI.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtDUI.TextMarginBottom = 0;
             this.txtDUI.TextMarginLeft = 3;
@@ -461,7 +461,7 @@
             this.dtBirth.MinimumSize = new System.Drawing.Size(4, 32);
             this.dtBirth.Name = "dtBirth";
             this.dtBirth.Size = new System.Drawing.Size(260, 32);
-            this.dtBirth.TabIndex = 24;
+            this.dtBirth.TabIndex = 3;
             this.dtBirth.Value = new System.DateTime(2024, 7, 13, 16, 30, 0, 0);
             // 
             // bunifuLabel3
@@ -550,7 +550,7 @@
             this.txtLastnames.ShortcutsEnabled = true;
             this.txtLastnames.Size = new System.Drawing.Size(260, 32);
             this.txtLastnames.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtLastnames.TabIndex = 22;
+            this.txtLastnames.TabIndex = 2;
             this.txtLastnames.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtLastnames.TextMarginBottom = 0;
             this.txtLastnames.TextMarginLeft = 3;
@@ -645,7 +645,7 @@
             this.txtNames.ShortcutsEnabled = true;
             this.txtNames.Size = new System.Drawing.Size(260, 32);
             this.txtNames.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtNames.TabIndex = 20;
+            this.txtNames.TabIndex = 1;
             this.txtNames.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtNames.TextMarginBottom = 0;
             this.txtNames.TextMarginLeft = 3;
@@ -740,7 +740,7 @@
             this.txtEmail.ShortcutsEnabled = true;
             this.txtEmail.Size = new System.Drawing.Size(260, 32);
             this.txtEmail.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtEmail.TabIndex = 14;
+            this.txtEmail.TabIndex = 4;
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtEmail.TextMarginBottom = 0;
             this.txtEmail.TextMarginLeft = 3;
@@ -818,7 +818,7 @@
             this.txtConfirmedPassword.ShortcutsEnabled = true;
             this.txtConfirmedPassword.Size = new System.Drawing.Size(260, 32);
             this.txtConfirmedPassword.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtConfirmedPassword.TabIndex = 13;
+            this.txtConfirmedPassword.TabIndex = 10;
             this.txtConfirmedPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtConfirmedPassword.TextMarginBottom = 0;
             this.txtConfirmedPassword.TextMarginLeft = 3;
@@ -912,7 +912,7 @@
             this.txtPassword.ShortcutsEnabled = true;
             this.txtPassword.Size = new System.Drawing.Size(260, 32);
             this.txtPassword.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtPassword.TabIndex = 11;
+            this.txtPassword.TabIndex = 9;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtPassword.TextMarginBottom = 0;
             this.txtPassword.TextMarginLeft = 3;
@@ -1025,6 +1025,7 @@
             this.btnRegister.TextMarginLeft = 0;
             this.btnRegister.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnRegister.UseDefaultRadiusAndThickness = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // txtUser
             // 
@@ -1095,7 +1096,7 @@
             this.txtUser.ShortcutsEnabled = true;
             this.txtUser.Size = new System.Drawing.Size(260, 32);
             this.txtUser.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtUser.TabIndex = 5;
+            this.txtUser.TabIndex = 8;
             this.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtUser.TextMarginBottom = 0;
             this.txtUser.TextMarginLeft = 3;

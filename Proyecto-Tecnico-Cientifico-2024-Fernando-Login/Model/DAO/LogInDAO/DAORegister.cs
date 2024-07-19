@@ -20,6 +20,22 @@ namespace PTC2024.Model.DAO.LogInDAO
         {
             try
             {
+                //Consulto si el usuario existe
+                command.Connection = getConnection();
+                string queryUserExist = "select username from dbo.tbUserData where username=@username";
+                SqlCommand cmdUserExist= new SqlCommand(queryUserExist, command.Connection);
+                cmdUserExist .Parameters.AddWithValue("username", User);
+                DataTable dt=new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(cmdUserExist);
+                adapter.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("Usuario ya Existe");
+                    return 1;
+                }
+              
+
                 command.Connection = getConnection();
                 string queryPerson = "INSERT INTO tbUserData VALUES (@username, @password, @business)";
                 SqlCommand cmdInsertData = new SqlCommand(queryPerson, command.Connection);
@@ -28,15 +44,12 @@ namespace PTC2024.Model.DAO.LogInDAO
                 cmdInsertData.Parameters.AddWithValue("business", BusinessP);
                
                 // falta agregar la tabla en base de datos cmdInsertData.Parameters.AddWithValue("confirmPassword", ConfirmPassword);
-
-
-
                 int respuesta = cmdInsertData.ExecuteNonQuery();
 
                 if (respuesta == 1)
                 {
 
-                    string queryUser = "INSERT INTO tbEmployee VALUES (@DUI, @birthDate, @Email,@phone,@address,@lastName,@names, @department, @typeE, @maritalStatus,@status) ";
+                    string queryUser = "INSERT INTO tbEmployee (DUI,birthDate,Email,phone,address,lastName,names,username,Id_Department,Id_TypeE,Id_MaritalS,Id_Status) VALUES (@DUI, @birthDate, @Email,@phone,@address,@lastName,@names,@username ,@Id_Department, @Id_TypeE, @Id_MaritalS,@Id_Status) ";
 
                     SqlCommand cmdInsert = new SqlCommand(queryUser, command.Connection);
 
@@ -47,10 +60,11 @@ namespace PTC2024.Model.DAO.LogInDAO
                     cmdInsert.Parameters.AddWithValue("address", Address);
                     cmdInsert.Parameters.AddWithValue("lastName", Lastnames);
                     cmdInsert.Parameters.AddWithValue("names", Names);
-                    cmdInsertData.Parameters.AddWithValue("department", Department);
-                    cmdInsertData.Parameters.AddWithValue("typeE", TypeE);
-                    cmdInsertData.Parameters.AddWithValue("maritalStatus", MaritalStatus);
-                    cmdInsertData.Parameters.AddWithValue("status", MaritalStatus);
+                    cmdInsert.Parameters.AddWithValue("userName",User );
+                    cmdInsert.Parameters.AddWithValue("Id_Department", Department);
+                    cmdInsert.Parameters.AddWithValue("Id_TypeE", TypeE);
+                    cmdInsert.Parameters.AddWithValue("Id_MaritalS", MaritalStatus);
+                    cmdInsert.Parameters.AddWithValue("Id_Status", Status);
                     respuesta = cmdInsert.ExecuteNonQuery();
 
                     if (respuesta == 1)

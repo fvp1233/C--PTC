@@ -35,7 +35,7 @@ namespace PTC2024.Controller.LogInController
             DAOInsertar.BusinessP = 1;
             DAOInsertar.Department = 1;
             DAOInsertar.TypeE = 1;
-            DAOInsertar.MaritalStatus = "Soltero";
+            DAOInsertar.MaritalStatus = 1;
             DAOInsertar.Status = 1;
 
             //Insercion de datos de tabla tbUserData
