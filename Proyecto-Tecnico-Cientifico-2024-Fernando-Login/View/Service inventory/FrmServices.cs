@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PTC2024.Controller.ServicesController;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace PTC2024.View.InventarioServicios
         public FrmServices()
         {
             InitializeComponent();
+            ControllerServices services = new ControllerServices(this);
         }
     }
 }
