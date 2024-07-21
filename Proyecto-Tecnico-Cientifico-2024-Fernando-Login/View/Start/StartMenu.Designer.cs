@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartMenu));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.ContainerPanel = new Bunifu.UI.WinForms.BunifuPanel();
+            this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.btnMenuDashboard = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMenuEmployee = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMenuPayroll = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -38,7 +38,7 @@
             this.btnMenuCustomers = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMenuBills = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.ContainerPanel = new Bunifu.UI.WinForms.BunifuPanel();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -60,20 +60,22 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(185, 687);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // ContainerPanel
+            // bunifuPictureBox1
             // 
-            this.ContainerPanel.BackgroundColor = System.Drawing.Color.LightGray;
-            this.ContainerPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ContainerPanel.BackgroundImage")));
-            this.ContainerPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ContainerPanel.BorderColor = System.Drawing.Color.Transparent;
-            this.ContainerPanel.BorderRadius = 3;
-            this.ContainerPanel.BorderThickness = 1;
-            this.ContainerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ContainerPanel.Location = new System.Drawing.Point(185, 0);
-            this.ContainerPanel.Name = "ContainerPanel";
-            this.ContainerPanel.ShowBorders = true;
-            this.ContainerPanel.Size = new System.Drawing.Size(1163, 687);
-            this.ContainerPanel.TabIndex = 2;
+            this.bunifuPictureBox1.AllowFocused = false;
+            this.bunifuPictureBox1.AutoSizeHeight = false;
+            this.bunifuPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuPictureBox1.BorderRadius = 0;
+            this.bunifuPictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
+            this.bunifuPictureBox1.IsCircle = false;
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(181, 91);
+            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuPictureBox1.TabIndex = 0;
+            this.bunifuPictureBox1.TabStop = false;
+            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Custom;
             // 
             // btnMenuDashboard
             // 
@@ -315,22 +317,22 @@
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // bunifuPictureBox1
+            // ContainerPanel
             // 
-            this.bunifuPictureBox1.AllowFocused = false;
-            this.bunifuPictureBox1.AutoSizeHeight = false;
-            this.bunifuPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuPictureBox1.BorderRadius = 0;
-            this.bunifuPictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
-            this.bunifuPictureBox1.IsCircle = false;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(181, 91);
-            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuPictureBox1.TabIndex = 0;
-            this.bunifuPictureBox1.TabStop = false;
-            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Custom;
+            this.ContainerPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ContainerPanel.BackgroundColor = System.Drawing.Color.LightGray;
+            this.ContainerPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ContainerPanel.BackgroundImage")));
+            this.ContainerPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ContainerPanel.BorderColor = System.Drawing.Color.Transparent;
+            this.ContainerPanel.BorderRadius = 3;
+            this.ContainerPanel.BorderThickness = 1;
+            this.ContainerPanel.Location = new System.Drawing.Point(185, 0);
+            this.ContainerPanel.Name = "ContainerPanel";
+            this.ContainerPanel.ShowBorders = true;
+            this.ContainerPanel.Size = new System.Drawing.Size(1163, 687);
+            this.ContainerPanel.TabIndex = 2;
             // 
             // StartMenu
             // 
