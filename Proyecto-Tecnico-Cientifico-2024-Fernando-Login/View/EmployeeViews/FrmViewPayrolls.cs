@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PTC2024.Controller.Employees;
+using PTC2024.Controller.EmployeesController;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,7 @@ namespace PTC2024.View.Empleados
         public FrmViewPayrolls()
         {
             InitializeComponent();
+            ControllerViewPayrolls objViewPayrorll = new ControllerViewPayrolls(this);
         }
     }
 }
