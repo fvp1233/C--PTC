@@ -16,5 +16,6 @@ namespace PTC2024.View.Facturacion
         {
             InitializeComponent();
         }
+
     }
 }

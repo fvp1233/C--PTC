@@ -39,8 +39,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtDescription = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtTotalP = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.cboBillStatus = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -66,18 +69,22 @@
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuButton22 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.bunifuButton21 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
-            this.bunifuDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSubtotalB = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel10.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -85,8 +92,8 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).BeginInit();
-            this.tableLayoutPanel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -104,6 +111,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.77496F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.22504F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1118, 934);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -112,8 +120,8 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.46847F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.53153F));
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel11, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel10, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel11, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel8, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel7, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 1, 2);
@@ -135,33 +143,90 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1110, 524);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // tableLayoutPanel10
+            // tableLayoutPanel11
             // 
-            this.tableLayoutPanel10.ColumnCount = 2;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 367F));
-            this.tableLayoutPanel10.Controls.Add(this.bunifuCustomLabel8, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.txtSubtotalB, 1, 0);
-            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(542, 386);
-            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(4);
-            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 1;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.73134F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(564, 134);
-            this.tableLayoutPanel10.TabIndex = 69;
+            this.tableLayoutPanel11.ColumnCount = 2;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 367F));
+            this.tableLayoutPanel11.Controls.Add(this.bunifuCustomLabel11, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.bunifuCustomLabel12, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.txtDescription, 1, 0);
+            this.tableLayoutPanel11.Controls.Add(this.txtTotalP, 1, 1);
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(542, 386);
+            this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 2;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.73134F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.26866F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(564, 134);
+            this.tableLayoutPanel11.TabIndex = 70;
             // 
-            // bunifuCustomLabel8
+            // bunifuCustomLabel11
             // 
-            this.bunifuCustomLabel8.AutoSize = true;
-            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(4, 0);
-            this.bunifuCustomLabel8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(117, 19);
-            this.bunifuCustomLabel8.TabIndex = 38;
-            this.bunifuCustomLabel8.Text = "Total a pagar:";
+            this.bunifuCustomLabel11.AutoSize = true;
+            this.bunifuCustomLabel11.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(4, 71);
+            this.bunifuCustomLabel11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
+            this.bunifuCustomLabel11.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuCustomLabel11.Size = new System.Drawing.Size(111, 19);
+            this.bunifuCustomLabel11.TabIndex = 39;
+            this.bunifuCustomLabel11.Text = "Total a pagar";
+            // 
+            // bunifuCustomLabel12
+            // 
+            this.bunifuCustomLabel12.AutoSize = true;
+            this.bunifuCustomLabel12.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel12.Location = new System.Drawing.Point(4, 0);
+            this.bunifuCustomLabel12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
+            this.bunifuCustomLabel12.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuCustomLabel12.Size = new System.Drawing.Size(108, 19);
+            this.bunifuCustomLabel12.TabIndex = 38;
+            this.bunifuCustomLabel12.Text = "Descripción:";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDescription.Dock = System.Windows.Forms.DockStyle.Right;
+            this.txtDescription.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtDescription.ForeColor = System.Drawing.Color.DimGray;
+            this.txtDescription.HintForeColor = System.Drawing.Color.Empty;
+            this.txtDescription.HintText = "";
+            this.txtDescription.isPassword = false;
+            this.txtDescription.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtDescription.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtDescription.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtDescription.LineThickness = 3;
+            this.txtDescription.Location = new System.Drawing.Point(202, 5);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(5);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(357, 61);
+            this.txtDescription.TabIndex = 40;
+            this.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txtTotalP
+            // 
+            this.txtTotalP.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtTotalP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTotalP.Dock = System.Windows.Forms.DockStyle.Right;
+            this.txtTotalP.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtTotalP.ForeColor = System.Drawing.Color.DimGray;
+            this.txtTotalP.HintForeColor = System.Drawing.Color.Empty;
+            this.txtTotalP.HintText = "";
+            this.txtTotalP.isPassword = false;
+            this.txtTotalP.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtTotalP.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtTotalP.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtTotalP.LineThickness = 3;
+            this.txtTotalP.Location = new System.Drawing.Point(202, 76);
+            this.txtTotalP.Margin = new System.Windows.Forms.Padding(5);
+            this.txtTotalP.Name = "txtTotalP";
+            this.txtTotalP.Size = new System.Drawing.Size(357, 53);
+            this.txtTotalP.TabIndex = 41;
+            this.txtTotalP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // tableLayoutPanel8
             // 
@@ -692,7 +757,7 @@
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 78F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 77F));
             this.tableLayoutPanel9.Size = new System.Drawing.Size(1110, 78);
             this.tableLayoutPanel9.TabIndex = 91;
             // 
@@ -878,6 +943,91 @@
             this.bunifuButton21.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton21.UseDefaultRadiusAndThickness = true;
             // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.ColumnCount = 2;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 367F));
+            this.tableLayoutPanel10.Controls.Add(this.bunifuCustomLabel8, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.bunifuCustomLabel9, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.bunifuMaterialTextbox1, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.bunifuMaterialTextbox2, 1, 1);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(4, 386);
+            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 2;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.73134F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.26866F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(530, 134);
+            this.tableLayoutPanel10.TabIndex = 71;
+            // 
+            // bunifuCustomLabel8
+            // 
+            this.bunifuCustomLabel8.AutoSize = true;
+            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(4, 71);
+            this.bunifuCustomLabel8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
+            this.bunifuCustomLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(99, 19);
+            this.bunifuCustomLabel8.TabIndex = 39;
+            this.bunifuCustomLabel8.Text = "Descuento:";
+            // 
+            // bunifuCustomLabel9
+            // 
+            this.bunifuCustomLabel9.AutoSize = true;
+            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(4, 0);
+            this.bunifuCustomLabel9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
+            this.bunifuCustomLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuCustomLabel9.Size = new System.Drawing.Size(89, 19);
+            this.bunifuCustomLabel9.TabIndex = 38;
+            this.bunifuCustomLabel9.Text = "Sub Total:";
+            // 
+            // bunifuMaterialTextbox1
+            // 
+            this.bunifuMaterialTextbox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuMaterialTextbox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.DimGray;
+            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Empty;
+            this.bunifuMaterialTextbox1.HintText = "";
+            this.bunifuMaterialTextbox1.isPassword = false;
+            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.Gray;
+            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.bunifuMaterialTextbox1.LineThickness = 3;
+            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(168, 5);
+            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(5);
+            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
+            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(357, 61);
+            this.bunifuMaterialTextbox1.TabIndex = 40;
+            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuMaterialTextbox2
+            // 
+            this.bunifuMaterialTextbox2.BackColor = System.Drawing.Color.Gainsboro;
+            this.bunifuMaterialTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bunifuMaterialTextbox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.bunifuMaterialTextbox2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.bunifuMaterialTextbox2.ForeColor = System.Drawing.Color.DimGray;
+            this.bunifuMaterialTextbox2.HintForeColor = System.Drawing.Color.Empty;
+            this.bunifuMaterialTextbox2.HintText = "";
+            this.bunifuMaterialTextbox2.isPassword = false;
+            this.bunifuMaterialTextbox2.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.bunifuMaterialTextbox2.LineIdleColor = System.Drawing.Color.Gray;
+            this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.bunifuMaterialTextbox2.LineThickness = 3;
+            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(168, 76);
+            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(5);
+            this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
+            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(357, 53);
+            this.bunifuMaterialTextbox2.TabIndex = 41;
+            this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // bunifuDataGridView1
             // 
             this.bunifuDataGridView1.AllowCustomTheming = true;
@@ -904,8 +1054,13 @@
             this.bunifuDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuDataGridView1.ColumnHeadersHeight = 60;
             this.bunifuDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Cliente,
+            this.Column3,
             this.Column1,
-            this.Column2});
+            this.Column2,
+            this.Column4,
+            this.Column5,
+            this.Column6});
             this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
@@ -963,6 +1118,18 @@
             this.bunifuDataGridView1.TabIndex = 90;
             this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
             // 
+            // Cliente
+            // 
+            this.Cliente.HeaderText = "Cliente";
+            this.Cliente.MinimumWidth = 6;
+            this.Cliente.Name = "Cliente";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Encargado";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            // 
             // Column1
             // 
             this.Column1.HeaderText = "Servicio";
@@ -975,111 +1142,23 @@
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             // 
-            // txtSubtotalB
+            // Column4
             // 
-            this.txtSubtotalB.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtSubtotalB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSubtotalB.Dock = System.Windows.Forms.DockStyle.Right;
-            this.txtSubtotalB.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtSubtotalB.ForeColor = System.Drawing.Color.DimGray;
-            this.txtSubtotalB.HintForeColor = System.Drawing.Color.Empty;
-            this.txtSubtotalB.HintText = "";
-            this.txtSubtotalB.isPassword = false;
-            this.txtSubtotalB.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtSubtotalB.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtSubtotalB.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtSubtotalB.LineThickness = 3;
-            this.txtSubtotalB.Location = new System.Drawing.Point(202, 5);
-            this.txtSubtotalB.Margin = new System.Windows.Forms.Padding(5);
-            this.txtSubtotalB.Name = "txtSubtotalB";
-            this.txtSubtotalB.Size = new System.Drawing.Size(357, 124);
-            this.txtSubtotalB.TabIndex = 40;
-            this.txtSubtotalB.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Column4.HeaderText = "Estado de factura";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
             // 
-            // tableLayoutPanel11
+            // Column5
             // 
-            this.tableLayoutPanel11.ColumnCount = 2;
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 367F));
-            this.tableLayoutPanel11.Controls.Add(this.bunifuCustomLabel11, 0, 1);
-            this.tableLayoutPanel11.Controls.Add(this.bunifuCustomLabel12, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.bunifuMaterialTextbox1, 1, 0);
-            this.tableLayoutPanel11.Controls.Add(this.bunifuMaterialTextbox2, 1, 1);
-            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(4, 386);
-            this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(4);
-            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
-            this.tableLayoutPanel11.RowCount = 2;
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.73134F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.26866F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(530, 134);
-            this.tableLayoutPanel11.TabIndex = 70;
+            this.Column5.HeaderText = "Mes";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
             // 
-            // bunifuCustomLabel11
+            // Column6
             // 
-            this.bunifuCustomLabel11.AutoSize = true;
-            this.bunifuCustomLabel11.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel11.Location = new System.Drawing.Point(4, 71);
-            this.bunifuCustomLabel11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
-            this.bunifuCustomLabel11.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuCustomLabel11.Size = new System.Drawing.Size(99, 19);
-            this.bunifuCustomLabel11.TabIndex = 39;
-            this.bunifuCustomLabel11.Text = "Descuento:";
-            // 
-            // bunifuCustomLabel12
-            // 
-            this.bunifuCustomLabel12.AutoSize = true;
-            this.bunifuCustomLabel12.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel12.Location = new System.Drawing.Point(4, 0);
-            this.bunifuCustomLabel12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
-            this.bunifuCustomLabel12.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuCustomLabel12.Size = new System.Drawing.Size(89, 19);
-            this.bunifuCustomLabel12.TabIndex = 38;
-            this.bunifuCustomLabel12.Text = "Sub Total:";
-            // 
-            // bunifuMaterialTextbox1
-            // 
-            this.bunifuMaterialTextbox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.DimGray;
-            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox1.HintText = "";
-            this.bunifuMaterialTextbox1.isPassword = false;
-            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.Gray;
-            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.bunifuMaterialTextbox1.LineThickness = 3;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(168, 5);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(357, 61);
-            this.bunifuMaterialTextbox1.TabIndex = 40;
-            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuMaterialTextbox2
-            // 
-            this.bunifuMaterialTextbox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.bunifuMaterialTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bunifuMaterialTextbox2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMaterialTextbox2.ForeColor = System.Drawing.Color.DimGray;
-            this.bunifuMaterialTextbox2.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox2.HintText = "";
-            this.bunifuMaterialTextbox2.isPassword = false;
-            this.bunifuMaterialTextbox2.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.bunifuMaterialTextbox2.LineIdleColor = System.Drawing.Color.Gray;
-            this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.bunifuMaterialTextbox2.LineThickness = 3;
-            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(168, 76);
-            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
-            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(357, 53);
-            this.bunifuMaterialTextbox2.TabIndex = 41;
-            this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Column6.HeaderText = "Método de Pago";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
             // 
             // FrmAddBills
             // 
@@ -1093,8 +1172,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel10.ResumeLayout(false);
-            this.tableLayoutPanel10.PerformLayout();
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
@@ -1108,9 +1187,9 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).EndInit();
-            this.tableLayoutPanel11.ResumeLayout(false);
-            this.tableLayoutPanel11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1136,15 +1215,10 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.UI.WinForms.BunifuDatePicker bunifuDatePicker2;
         private Bunifu.UI.WinForms.BunifuDropdown btnBillService;
-        private Bunifu.UI.WinForms.BunifuDataGridView bunifuDataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 bunifuButton22;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 bunifuButton21;
         private Bunifu.UI.WinForms.BunifuDropdown cboPaymentM;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtCustomerN;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtSalesman;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnOtherService;
@@ -1152,8 +1226,20 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox txtDescription;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox txtTotalP;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
         public Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
         public Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox2;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox txtSubtotalB;
+        private Bunifu.UI.WinForms.BunifuDataGridView bunifuDataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }
