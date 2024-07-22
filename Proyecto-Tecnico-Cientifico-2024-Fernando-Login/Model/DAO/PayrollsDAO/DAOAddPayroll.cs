@@ -21,7 +21,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             try
             {
                 command.Connection = getConnection();
-                string query = "SELECT CONCAT (Id_Employee,'.',names,' ',lastName) AS fullEmployeeInfo FROM tbEmployee";
+                string query = "SELECT CONCAT (Id_Employee,'. ',names,' ',lastName) AS fullEmployeeInfo FROM tbEmployee";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.ExecuteNonQuery();
 
