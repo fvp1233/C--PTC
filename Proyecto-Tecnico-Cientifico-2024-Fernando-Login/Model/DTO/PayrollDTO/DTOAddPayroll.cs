@@ -8,7 +8,7 @@ namespace PTC2024.Model.DTO.PayrollDTO
 {
     internal class DTOAddPayroll : dbContext
     {
-        private int nPayroll;
+        private int idPayroll;
         private string securityNumber;
         private float bonus;
         private float grossPay;
