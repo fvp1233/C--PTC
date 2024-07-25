@@ -22,9 +22,9 @@ namespace PTC2024.Controller.EmployeesController
         public void fillDropDownEmployee(object sender, EventArgs e)
         {
             //Se crea el objeto de la clase DaoAddPayroll
-            DAOAddPayroll daoAddPayroll = new DAOAddPayroll();
+            DAOAddPayroll daoAFillDropdown = new DAOAddPayroll();
             //Dropdown Empleados
-            DataSet dsEmloyeeName = daoAddPayroll.GetEmployeeName();
+            DataSet dsEmloyeeName = daoAFillDropdown.GetEmployeeName();
             objAddPayroll.comboEmployee.DataSource = dsEmloyeeName.Tables["tbEmployee"];
             //objAddPayroll.dropEmployee.DisplayMember = "name";
             objAddPayroll.comboEmployee.DisplayMember = "fullEmployeeInfo";
@@ -32,11 +32,11 @@ namespace PTC2024.Controller.EmployeesController
             objAddPayroll.comboEmployee.AutoCompleteSource = AutoCompleteSource.ListItems;
             objAddPayroll.comboEmployee.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
         }
-        public void ChangeDropDown()
-        {
-            objAddPayroll.comboEmployee.AutoCompleteMode= AutoCompleteMode.SuggestAppend;
-            objAddPayroll.comboEmployee.AutoCompleteSource = AutoCompleteSource.ListItems;
-        }
+        //public int AddNewPayroll(object sender, EventArgs e)
+        //{
+        //    DAOAddPayroll daoAddPayroll = new DAOAddPayroll();
+        //    daoAddPayroll.
+        //}
         public void CloseForm(object sender, EventArgs e)
         {
             objAddPayroll.Close();

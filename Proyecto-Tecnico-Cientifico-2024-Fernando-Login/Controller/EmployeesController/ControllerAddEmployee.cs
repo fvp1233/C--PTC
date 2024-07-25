@@ -20,8 +20,13 @@ namespace PTC2024.Controller
             objAddEmployee = View;
             objAddEmployee.Load += new EventHandler(CargarCombos);
             //objAddEmployee.BtnAgregarEmpleado.Click += new EventHandler(AgregarEmpleado);
-            //objAddEmployee.BtnCancelar.Click += new EventHandler(CancelarProceso);
+            objAddEmployee.BtnCancelar.Click += new EventHandler(CancelarProceso);
         }
+
+        //private void BtnAgregarEmpleado_Click(object sender, EventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public void CargarCombos(object sender, EventArgs e)
         {
@@ -61,7 +66,7 @@ namespace PTC2024.Controller
 
         public void AgregarEmpleado(object sender, EventArgs e)
         {
-            
+
         }
 
         public void CancelarProceso(object sender, EventArgs e)
