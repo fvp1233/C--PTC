@@ -29,6 +29,13 @@ namespace PTC2024.Controller.EmployeesController
             //objAddPayroll.dropEmployee.DisplayMember = "name";
             objAddPayroll.comboEmployee.DisplayMember = "fullEmployeeInfo";
             objAddPayroll.comboEmployee.ValueMember = "fullEmployeeInfo";
+            objAddPayroll.comboEmployee.AutoCompleteSource = AutoCompleteSource.ListItems;
+            objAddPayroll.comboEmployee.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+        }
+        public void ChangeDropDown()
+        {
+            objAddPayroll.comboEmployee.AutoCompleteMode= AutoCompleteMode.SuggestAppend;
+            objAddPayroll.comboEmployee.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
         public void CloseForm(object sender, EventArgs e)
         {
