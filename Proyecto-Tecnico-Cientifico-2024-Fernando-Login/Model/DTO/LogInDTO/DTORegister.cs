@@ -22,7 +22,7 @@ namespace PTC2024.Model.DTO.LogInDTO
         private int businessP;
         private int department;
         private int typeE;
-        private string maritalStatus;
+        private int maritalStatus;
         private int status;
 
         //Getter y Settersde los atributos
@@ -40,7 +40,7 @@ namespace PTC2024.Model.DTO.LogInDTO
         public DateTime Birth { get => birth; set => birth = value; }
         public int Department { get => department; set => department = value; }
         public int TypeE { get => typeE; set => typeE = value; }
-        public string MaritalStatus { get => maritalStatus; set => maritalStatus = value; }
+        public int MaritalStatus { get => maritalStatus; set => maritalStatus = value; }
         public int Status { get => status; set => status = value; }
     }
 }
