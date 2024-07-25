@@ -20,7 +20,7 @@ namespace PTC2024.Model.DTO.PayrollDTO
         private DateTime issueDate;
         private string firstName;
         private string lastName;
-
+        private int idEmployee;
         public string SecurityNumber { get => securityNumber; set => securityNumber = value; }
         public float Bonus { get => bonus; set => bonus = value; }
         public float GrossPay { get => grossPay; set => grossPay = value; }
@@ -32,5 +32,8 @@ namespace PTC2024.Model.DTO.PayrollDTO
         public DateTime IssueDate { get => issueDate; set => issueDate = value; }
         public string FirstName { get => firstName; set => firstName = value; }
         public string LastName { get => lastName; set => lastName = value; }
+        public int IdEmployee { get => idEmployee; set => idEmployee = value; }
+        public int IdEmployee1 { get => idEmployee; set => idEmployee = value; }
+        public int IdPayroll { get => idPayroll; set => idPayroll = value; }
     }
 }
