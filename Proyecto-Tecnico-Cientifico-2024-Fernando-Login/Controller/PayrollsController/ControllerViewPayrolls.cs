@@ -14,7 +14,7 @@ namespace PTC2024.Controller.EmployeesController
         public ControllerViewPayrolls(FrmViewPayrolls Vista)
         {
             objViewPayrolls = Vista;
-            objViewPayrolls.btnAddPayroll.Click += new EventHandler(AddEmployee);
+            //objViewPayrolls.btnAddPayroll.Click += new EventHandler(AddEmployee);
         }
         
         public void AddEmployee(object sender, EventArgs e)

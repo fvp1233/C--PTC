@@ -34,7 +34,6 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -54,7 +53,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.bunifuDropdown2 = new Bunifu.UI.WinForms.BunifuDropdown();
-            this.btnAddPayroll = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.bunifuDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -246,19 +244,16 @@
             // 
             // tableLayoutPanel10
             // 
-            this.tableLayoutPanel10.ColumnCount = 4;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 256F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 259F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 362F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel10.ColumnCount = 3;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel10.Controls.Add(this.bunifuDropdown1, 2, 1);
             this.tableLayoutPanel10.Controls.Add(this.label2, 2, 0);
             this.tableLayoutPanel10.Controls.Add(this.bunifuDropdown4, 1, 1);
+            this.tableLayoutPanel10.Controls.Add(this.bunifuDropdown2, 0, 1);
             this.tableLayoutPanel10.Controls.Add(this.label6, 1, 0);
             this.tableLayoutPanel10.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.bunifuDropdown2, 0, 1);
-            this.tableLayoutPanel10.Controls.Add(this.btnAddPayroll, 3, 1);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -304,7 +299,7 @@
             this.bunifuDropdown1.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.bunifuDropdown1.ItemHighLightForeColor = System.Drawing.Color.White;
             this.bunifuDropdown1.ItemTopMargin = 3;
-            this.bunifuDropdown1.Location = new System.Drawing.Point(535, 49);
+            this.bunifuDropdown1.Location = new System.Drawing.Point(744, 49);
             this.bunifuDropdown1.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.bunifuDropdown1.Name = "bunifuDropdown1";
             this.bunifuDropdown1.Size = new System.Drawing.Size(230, 32);
@@ -318,7 +313,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(535, 20);
+            this.label2.Location = new System.Drawing.Point(744, 20);
             this.label2.Margin = new System.Windows.Forms.Padding(20, 20, 3, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 25);
@@ -361,7 +356,7 @@
             this.bunifuDropdown4.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.bunifuDropdown4.ItemHighLightForeColor = System.Drawing.Color.White;
             this.bunifuDropdown4.ItemTopMargin = 3;
-            this.bunifuDropdown4.Location = new System.Drawing.Point(276, 49);
+            this.bunifuDropdown4.Location = new System.Drawing.Point(382, 49);
             this.bunifuDropdown4.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.bunifuDropdown4.Name = "bunifuDropdown4";
             this.bunifuDropdown4.Size = new System.Drawing.Size(230, 32);
@@ -375,7 +370,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(276, 20);
+            this.label6.Location = new System.Drawing.Point(382, 20);
             this.label6.Margin = new System.Windows.Forms.Padding(20, 20, 3, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(147, 25);
@@ -387,8 +382,8 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 20);
-            this.label4.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
+            this.label4.Location = new System.Drawing.Point(60, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(60, 20, 3, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(230, 25);
             this.label4.TabIndex = 5;
@@ -431,103 +426,13 @@
             this.bunifuDropdown2.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.bunifuDropdown2.ItemHighLightForeColor = System.Drawing.Color.White;
             this.bunifuDropdown2.ItemTopMargin = 3;
-            this.bunifuDropdown2.Location = new System.Drawing.Point(6, 49);
+            this.bunifuDropdown2.Location = new System.Drawing.Point(59, 49);
             this.bunifuDropdown2.Name = "bunifuDropdown2";
             this.bunifuDropdown2.Size = new System.Drawing.Size(243, 32);
             this.bunifuDropdown2.TabIndex = 1;
             this.bunifuDropdown2.Text = null;
             this.bunifuDropdown2.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.bunifuDropdown2.TextLeftMargin = 5;
-            // 
-            // btnAddPayroll
-            // 
-            this.btnAddPayroll.AllowAnimations = true;
-            this.btnAddPayroll.AllowMouseEffects = true;
-            this.btnAddPayroll.AllowToggling = false;
-            this.btnAddPayroll.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddPayroll.AnimationSpeed = 200;
-            this.btnAddPayroll.AutoGenerateColors = false;
-            this.btnAddPayroll.AutoRoundBorders = false;
-            this.btnAddPayroll.AutoSizeLeftIcon = true;
-            this.btnAddPayroll.AutoSizeRightIcon = true;
-            this.btnAddPayroll.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddPayroll.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnAddPayroll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddPayroll.BackgroundImage")));
-            this.btnAddPayroll.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnAddPayroll.ButtonText = "Agregar planilla";
-            this.btnAddPayroll.ButtonTextMarginLeft = 0;
-            this.btnAddPayroll.ColorContrastOnClick = 45;
-            this.btnAddPayroll.ColorContrastOnHover = 45;
-            this.btnAddPayroll.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnAddPayroll.CustomizableEdges = borderEdges1;
-            this.btnAddPayroll.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddPayroll.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnAddPayroll.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnAddPayroll.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnAddPayroll.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnAddPayroll.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnAddPayroll.ForeColor = System.Drawing.Color.White;
-            this.btnAddPayroll.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddPayroll.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnAddPayroll.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnAddPayroll.IconMarginLeft = 11;
-            this.btnAddPayroll.IconPadding = 10;
-            this.btnAddPayroll.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddPayroll.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnAddPayroll.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnAddPayroll.IconSize = 25;
-            this.btnAddPayroll.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnAddPayroll.IdleBorderRadius = 20;
-            this.btnAddPayroll.IdleBorderThickness = 1;
-            this.btnAddPayroll.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnAddPayroll.IdleIconLeftImage = null;
-            this.btnAddPayroll.IdleIconRightImage = null;
-            this.btnAddPayroll.IndicateFocus = false;
-            this.btnAddPayroll.Location = new System.Drawing.Point(895, 49);
-            this.btnAddPayroll.Name = "btnAddPayroll";
-            this.btnAddPayroll.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnAddPayroll.OnDisabledState.BorderRadius = 20;
-            this.btnAddPayroll.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnAddPayroll.OnDisabledState.BorderThickness = 1;
-            this.btnAddPayroll.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnAddPayroll.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnAddPayroll.OnDisabledState.IconLeftImage = null;
-            this.btnAddPayroll.OnDisabledState.IconRightImage = null;
-            this.btnAddPayroll.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnAddPayroll.onHoverState.BorderRadius = 20;
-            this.btnAddPayroll.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnAddPayroll.onHoverState.BorderThickness = 1;
-            this.btnAddPayroll.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnAddPayroll.onHoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnAddPayroll.onHoverState.IconLeftImage = null;
-            this.btnAddPayroll.onHoverState.IconRightImage = null;
-            this.btnAddPayroll.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnAddPayroll.OnIdleState.BorderRadius = 20;
-            this.btnAddPayroll.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnAddPayroll.OnIdleState.BorderThickness = 1;
-            this.btnAddPayroll.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnAddPayroll.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnAddPayroll.OnIdleState.IconLeftImage = null;
-            this.btnAddPayroll.OnIdleState.IconRightImage = null;
-            this.btnAddPayroll.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnAddPayroll.OnPressedState.BorderRadius = 20;
-            this.btnAddPayroll.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnAddPayroll.OnPressedState.BorderThickness = 1;
-            this.btnAddPayroll.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnAddPayroll.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnAddPayroll.OnPressedState.IconLeftImage = null;
-            this.btnAddPayroll.OnPressedState.IconRightImage = null;
-            this.btnAddPayroll.Size = new System.Drawing.Size(175, 52);
-            this.btnAddPayroll.TabIndex = 112;
-            this.btnAddPayroll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAddPayroll.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAddPayroll.TextMarginLeft = 0;
-            this.btnAddPayroll.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnAddPayroll.UseDefaultRadiusAndThickness = true;
             // 
             // bunifuDataGridView1
             // 
@@ -812,6 +717,5 @@
         private System.Windows.Forms.ToolStripMenuItem cmsDownloadPDF;
         public Bunifu.UI.WinForms.BunifuDataGridView bunifuDataGridView1;
         public System.Windows.Forms.ContextMenuStrip cmsPayroll;
-        public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnAddPayroll;
     }
 }
