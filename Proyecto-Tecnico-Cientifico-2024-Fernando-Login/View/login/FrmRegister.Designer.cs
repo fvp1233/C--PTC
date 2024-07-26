@@ -133,7 +133,7 @@
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(1001, 627);
+            this.bunifuPanel1.Size = new System.Drawing.Size(1020, 574);
             this.bunifuPanel1.TabIndex = 0;
             // 
             // bunifuLabel7
@@ -147,7 +147,7 @@
             this.bunifuLabel7.Name = "bunifuLabel7";
             this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel7.Size = new System.Drawing.Size(150, 20);
-            this.bunifuLabel7.TabIndex = 31;
+            this.bunifuLabel7.TabIndex = 22;
             this.bunifuLabel7.Text = "Confirmar Contraseña";
             this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
@@ -174,7 +174,7 @@
             this.txtAddress.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
             this.txtAddress.DefaultText = "Ingrese su dirección";
             this.txtAddress.FillColor = System.Drawing.Color.White;
-            this.txtAddress.ForeColor = System.Drawing.Color.Silver;
+            this.txtAddress.ForeColor = System.Drawing.Color.Black;
             this.txtAddress.HideSelection = true;
             this.txtAddress.IconLeft = null;
             this.txtAddress.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -196,8 +196,8 @@
             this.txtAddress.OnActiveState = stateProperties1;
             stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            stateProperties2.ForeColor = System.Drawing.Color.Black;
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtAddress.OnDisabledState = stateProperties2;
             stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties3.FillColor = System.Drawing.Color.Empty;
@@ -206,13 +206,13 @@
             this.txtAddress.OnHoverState = stateProperties3;
             stateProperties4.BorderColor = System.Drawing.Color.Silver;
             stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Silver;
+            stateProperties4.ForeColor = System.Drawing.Color.Black;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtAddress.OnIdleState = stateProperties4;
-            this.txtAddress.Padding = new System.Windows.Forms.Padding(3);
+            this.txtAddress.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtAddress.PasswordChar = '\0';
             this.txtAddress.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtAddress.PlaceholderText = "Enter text";
+            this.txtAddress.PlaceholderText = "Ingrese su dirección";
             this.txtAddress.ReadOnly = false;
             this.txtAddress.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtAddress.SelectedText = "";
@@ -226,7 +226,7 @@
             this.txtAddress.TextMarginBottom = 0;
             this.txtAddress.TextMarginLeft = 3;
             this.txtAddress.TextMarginTop = 1;
-            this.txtAddress.TextPlaceholder = "Enter text";
+            this.txtAddress.TextPlaceholder = "Ingrese su dirección";
             this.txtAddress.UseSystemPasswordChar = false;
             this.txtAddress.WordWrap = true;
             // 
@@ -242,7 +242,7 @@
             this.bunifuLabel6.Name = "bunifuLabel6";
             this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel6.Size = new System.Drawing.Size(65, 20);
-            this.bunifuLabel6.TabIndex = 29;
+            this.bunifuLabel6.TabIndex = 19;
             this.bunifuLabel6.Text = "Dirección";
             this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
@@ -269,7 +269,7 @@
             this.txtPhone.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
             this.txtPhone.DefaultText = "Ingrese su número teléfonico";
             this.txtPhone.FillColor = System.Drawing.Color.White;
-            this.txtPhone.ForeColor = System.Drawing.Color.Silver;
+            this.txtPhone.ForeColor = System.Drawing.Color.Black;
             this.txtPhone.HideSelection = true;
             this.txtPhone.IconLeft = null;
             this.txtPhone.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -291,8 +291,8 @@
             this.txtPhone.OnActiveState = stateProperties5;
             stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            stateProperties6.ForeColor = System.Drawing.Color.Black;
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtPhone.OnDisabledState = stateProperties6;
             stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties7.FillColor = System.Drawing.Color.Empty;
@@ -301,13 +301,13 @@
             this.txtPhone.OnHoverState = stateProperties7;
             stateProperties8.BorderColor = System.Drawing.Color.Silver;
             stateProperties8.FillColor = System.Drawing.Color.White;
-            stateProperties8.ForeColor = System.Drawing.Color.Silver;
+            stateProperties8.ForeColor = System.Drawing.Color.Black;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtPhone.OnIdleState = stateProperties8;
-            this.txtPhone.Padding = new System.Windows.Forms.Padding(3);
+            this.txtPhone.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtPhone.PasswordChar = '\0';
             this.txtPhone.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtPhone.PlaceholderText = "Enter text";
+            this.txtPhone.PlaceholderText = "Ingrese su número teléfonico";
             this.txtPhone.ReadOnly = false;
             this.txtPhone.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPhone.SelectedText = "";
@@ -321,7 +321,7 @@
             this.txtPhone.TextMarginBottom = 0;
             this.txtPhone.TextMarginLeft = 3;
             this.txtPhone.TextMarginTop = 1;
-            this.txtPhone.TextPlaceholder = "Enter text";
+            this.txtPhone.TextPlaceholder = "Ingrese su número teléfonico";
             this.txtPhone.UseSystemPasswordChar = false;
             this.txtPhone.WordWrap = true;
             // 
@@ -337,7 +337,7 @@
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel5.Size = new System.Drawing.Size(60, 20);
-            this.bunifuLabel5.TabIndex = 27;
+            this.bunifuLabel5.TabIndex = 18;
             this.bunifuLabel5.Text = "Teléfono";
             this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
@@ -364,7 +364,7 @@
             this.txtDUI.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
             this.txtDUI.DefaultText = "Ingrese su DUI";
             this.txtDUI.FillColor = System.Drawing.Color.White;
-            this.txtDUI.ForeColor = System.Drawing.Color.Silver;
+            this.txtDUI.ForeColor = System.Drawing.Color.Black;
             this.txtDUI.HideSelection = true;
             this.txtDUI.IconLeft = null;
             this.txtDUI.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -386,8 +386,8 @@
             this.txtDUI.OnActiveState = stateProperties9;
             stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            stateProperties10.ForeColor = System.Drawing.Color.Black;
+            stateProperties10.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtDUI.OnDisabledState = stateProperties10;
             stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties11.FillColor = System.Drawing.Color.Empty;
@@ -396,13 +396,13 @@
             this.txtDUI.OnHoverState = stateProperties11;
             stateProperties12.BorderColor = System.Drawing.Color.Silver;
             stateProperties12.FillColor = System.Drawing.Color.White;
-            stateProperties12.ForeColor = System.Drawing.Color.Silver;
+            stateProperties12.ForeColor = System.Drawing.Color.Black;
             stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtDUI.OnIdleState = stateProperties12;
-            this.txtDUI.Padding = new System.Windows.Forms.Padding(3);
+            this.txtDUI.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtDUI.PasswordChar = '\0';
             this.txtDUI.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtDUI.PlaceholderText = "Enter text";
+            this.txtDUI.PlaceholderText = "Ingrese su DUI";
             this.txtDUI.ReadOnly = false;
             this.txtDUI.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtDUI.SelectedText = "";
@@ -416,7 +416,7 @@
             this.txtDUI.TextMarginBottom = 0;
             this.txtDUI.TextMarginLeft = 3;
             this.txtDUI.TextMarginTop = 1;
-            this.txtDUI.TextPlaceholder = "Enter text";
+            this.txtDUI.TextPlaceholder = "Ingrese su DUI";
             this.txtDUI.UseSystemPasswordChar = false;
             this.txtDUI.WordWrap = true;
             // 
@@ -432,7 +432,7 @@
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel4.Size = new System.Drawing.Size(26, 20);
-            this.bunifuLabel4.TabIndex = 25;
+            this.bunifuLabel4.TabIndex = 17;
             this.bunifuLabel4.Text = "DUI";
             this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
@@ -476,7 +476,7 @@
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel3.Size = new System.Drawing.Size(144, 20);
-            this.bunifuLabel3.TabIndex = 20;
+            this.bunifuLabel3.TabIndex = 15;
             this.bunifuLabel3.Text = "Fecha de Nacimiento";
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
@@ -503,7 +503,7 @@
             this.txtLastnames.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
             this.txtLastnames.DefaultText = "Ingrese sus apellidos";
             this.txtLastnames.FillColor = System.Drawing.Color.White;
-            this.txtLastnames.ForeColor = System.Drawing.Color.Silver;
+            this.txtLastnames.ForeColor = System.Drawing.Color.Black;
             this.txtLastnames.HideSelection = true;
             this.txtLastnames.IconLeft = null;
             this.txtLastnames.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -525,8 +525,8 @@
             this.txtLastnames.OnActiveState = stateProperties13;
             stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            stateProperties14.ForeColor = System.Drawing.Color.Black;
+            stateProperties14.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtLastnames.OnDisabledState = stateProperties14;
             stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties15.FillColor = System.Drawing.Color.Empty;
@@ -535,13 +535,13 @@
             this.txtLastnames.OnHoverState = stateProperties15;
             stateProperties16.BorderColor = System.Drawing.Color.Silver;
             stateProperties16.FillColor = System.Drawing.Color.White;
-            stateProperties16.ForeColor = System.Drawing.Color.Silver;
+            stateProperties16.ForeColor = System.Drawing.Color.Black;
             stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtLastnames.OnIdleState = stateProperties16;
-            this.txtLastnames.Padding = new System.Windows.Forms.Padding(3);
+            this.txtLastnames.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtLastnames.PasswordChar = '\0';
             this.txtLastnames.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtLastnames.PlaceholderText = "Enter text";
+            this.txtLastnames.PlaceholderText = "Ingrese sus apellidos";
             this.txtLastnames.ReadOnly = false;
             this.txtLastnames.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtLastnames.SelectedText = "";
@@ -555,7 +555,7 @@
             this.txtLastnames.TextMarginBottom = 0;
             this.txtLastnames.TextMarginLeft = 3;
             this.txtLastnames.TextMarginTop = 1;
-            this.txtLastnames.TextPlaceholder = "Enter text";
+            this.txtLastnames.TextPlaceholder = "Ingrese sus apellidos";
             this.txtLastnames.UseSystemPasswordChar = false;
             this.txtLastnames.WordWrap = true;
             // 
@@ -571,7 +571,7 @@
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel2.Size = new System.Drawing.Size(63, 20);
-            this.bunifuLabel2.TabIndex = 21;
+            this.bunifuLabel2.TabIndex = 14;
             this.bunifuLabel2.Text = "Apellidos";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
@@ -598,7 +598,7 @@
             this.txtNames.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
             this.txtNames.DefaultText = "Ingrese sus nombres";
             this.txtNames.FillColor = System.Drawing.Color.White;
-            this.txtNames.ForeColor = System.Drawing.Color.Silver;
+            this.txtNames.ForeColor = System.Drawing.Color.Black;
             this.txtNames.HideSelection = true;
             this.txtNames.IconLeft = null;
             this.txtNames.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -620,8 +620,8 @@
             this.txtNames.OnActiveState = stateProperties17;
             stateProperties18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             stateProperties18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties18.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            stateProperties18.ForeColor = System.Drawing.Color.Black;
+            stateProperties18.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtNames.OnDisabledState = stateProperties18;
             stateProperties19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties19.FillColor = System.Drawing.Color.Empty;
@@ -630,13 +630,13 @@
             this.txtNames.OnHoverState = stateProperties19;
             stateProperties20.BorderColor = System.Drawing.Color.Silver;
             stateProperties20.FillColor = System.Drawing.Color.White;
-            stateProperties20.ForeColor = System.Drawing.Color.Silver;
+            stateProperties20.ForeColor = System.Drawing.Color.Black;
             stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtNames.OnIdleState = stateProperties20;
-            this.txtNames.Padding = new System.Windows.Forms.Padding(3);
+            this.txtNames.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtNames.PasswordChar = '\0';
             this.txtNames.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtNames.PlaceholderText = "Enter text";
+            this.txtNames.PlaceholderText = "Ingrese sus nombres\r\n";
             this.txtNames.ReadOnly = false;
             this.txtNames.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtNames.SelectedText = "";
@@ -650,7 +650,7 @@
             this.txtNames.TextMarginBottom = 0;
             this.txtNames.TextMarginLeft = 3;
             this.txtNames.TextMarginTop = 1;
-            this.txtNames.TextPlaceholder = "Enter text";
+            this.txtNames.TextPlaceholder = "Ingrese sus nombres\r\n";
             this.txtNames.UseSystemPasswordChar = false;
             this.txtNames.WordWrap = true;
             // 
@@ -666,7 +666,7 @@
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel1.Size = new System.Drawing.Size(63, 20);
-            this.bunifuLabel1.TabIndex = 19;
+            this.bunifuLabel1.TabIndex = 13;
             this.bunifuLabel1.Text = "Nombres";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
@@ -693,7 +693,7 @@
             this.txtEmail.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
             this.txtEmail.DefaultText = "Ingresa un correo electrónico";
             this.txtEmail.FillColor = System.Drawing.Color.White;
-            this.txtEmail.ForeColor = System.Drawing.Color.Silver;
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.HideSelection = true;
             this.txtEmail.IconLeft = null;
             this.txtEmail.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -715,8 +715,8 @@
             this.txtEmail.OnActiveState = stateProperties21;
             stateProperties22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             stateProperties22.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties22.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            stateProperties22.ForeColor = System.Drawing.Color.Black;
+            stateProperties22.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtEmail.OnDisabledState = stateProperties22;
             stateProperties23.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties23.FillColor = System.Drawing.Color.Empty;
@@ -725,13 +725,13 @@
             this.txtEmail.OnHoverState = stateProperties23;
             stateProperties24.BorderColor = System.Drawing.Color.Silver;
             stateProperties24.FillColor = System.Drawing.Color.White;
-            stateProperties24.ForeColor = System.Drawing.Color.Silver;
+            stateProperties24.ForeColor = System.Drawing.Color.Black;
             stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtEmail.OnIdleState = stateProperties24;
-            this.txtEmail.Padding = new System.Windows.Forms.Padding(3);
+            this.txtEmail.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtEmail.PlaceholderText = "Enter text";
+            this.txtEmail.PlaceholderText = "Ingresa un correo electrónico";
             this.txtEmail.ReadOnly = false;
             this.txtEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtEmail.SelectedText = "";
@@ -745,7 +745,7 @@
             this.txtEmail.TextMarginBottom = 0;
             this.txtEmail.TextMarginLeft = 3;
             this.txtEmail.TextMarginTop = 1;
-            this.txtEmail.TextPlaceholder = "Enter text";
+            this.txtEmail.TextPlaceholder = "Ingresa un correo electrónico";
             this.txtEmail.UseSystemPasswordChar = false;
             this.txtEmail.WordWrap = true;
             // 
@@ -771,7 +771,7 @@
             this.txtConfirmedPassword.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
             this.txtConfirmedPassword.DefaultText = "Confirme su contraseña";
             this.txtConfirmedPassword.FillColor = System.Drawing.Color.White;
-            this.txtConfirmedPassword.ForeColor = System.Drawing.Color.Silver;
+            this.txtConfirmedPassword.ForeColor = System.Drawing.Color.Black;
             this.txtConfirmedPassword.HideSelection = true;
             this.txtConfirmedPassword.IconLeft = null;
             this.txtConfirmedPassword.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -793,8 +793,8 @@
             this.txtConfirmedPassword.OnActiveState = stateProperties25;
             stateProperties26.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             stateProperties26.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties26.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            stateProperties26.ForeColor = System.Drawing.Color.Black;
+            stateProperties26.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtConfirmedPassword.OnDisabledState = stateProperties26;
             stateProperties27.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties27.FillColor = System.Drawing.Color.Empty;
@@ -803,13 +803,13 @@
             this.txtConfirmedPassword.OnHoverState = stateProperties27;
             stateProperties28.BorderColor = System.Drawing.Color.Silver;
             stateProperties28.FillColor = System.Drawing.Color.White;
-            stateProperties28.ForeColor = System.Drawing.Color.Silver;
+            stateProperties28.ForeColor = System.Drawing.Color.Black;
             stateProperties28.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtConfirmedPassword.OnIdleState = stateProperties28;
-            this.txtConfirmedPassword.Padding = new System.Windows.Forms.Padding(3);
-            this.txtConfirmedPassword.PasswordChar = '\0';
+            this.txtConfirmedPassword.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtConfirmedPassword.PasswordChar = '*';
             this.txtConfirmedPassword.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtConfirmedPassword.PlaceholderText = "Enter text";
+            this.txtConfirmedPassword.PlaceholderText = "Confirme su contraseña";
             this.txtConfirmedPassword.ReadOnly = false;
             this.txtConfirmedPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtConfirmedPassword.SelectedText = "";
@@ -823,8 +823,8 @@
             this.txtConfirmedPassword.TextMarginBottom = 0;
             this.txtConfirmedPassword.TextMarginLeft = 3;
             this.txtConfirmedPassword.TextMarginTop = 1;
-            this.txtConfirmedPassword.TextPlaceholder = "Enter text";
-            this.txtConfirmedPassword.UseSystemPasswordChar = false;
+            this.txtConfirmedPassword.TextPlaceholder = "Confirme su contraseña";
+            this.txtConfirmedPassword.UseSystemPasswordChar = true;
             this.txtConfirmedPassword.WordWrap = true;
             // 
             // lblEmail
@@ -838,7 +838,7 @@
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblEmail.Size = new System.Drawing.Size(127, 20);
-            this.lblEmail.TabIndex = 12;
+            this.lblEmail.TabIndex = 16;
             this.lblEmail.Text = "Correo electrónico";
             this.lblEmail.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblEmail.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
@@ -865,7 +865,7 @@
             this.txtPassword.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
             this.txtPassword.DefaultText = "Ingrese una contraseña";
             this.txtPassword.FillColor = System.Drawing.Color.White;
-            this.txtPassword.ForeColor = System.Drawing.Color.Silver;
+            this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.HideSelection = true;
             this.txtPassword.IconLeft = null;
             this.txtPassword.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -887,8 +887,8 @@
             this.txtPassword.OnActiveState = stateProperties29;
             stateProperties30.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             stateProperties30.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties30.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            stateProperties30.ForeColor = System.Drawing.Color.Black;
+            stateProperties30.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtPassword.OnDisabledState = stateProperties30;
             stateProperties31.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties31.FillColor = System.Drawing.Color.Empty;
@@ -897,13 +897,13 @@
             this.txtPassword.OnHoverState = stateProperties31;
             stateProperties32.BorderColor = System.Drawing.Color.Silver;
             stateProperties32.FillColor = System.Drawing.Color.White;
-            stateProperties32.ForeColor = System.Drawing.Color.Silver;
+            stateProperties32.ForeColor = System.Drawing.Color.Black;
             stateProperties32.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtPassword.OnIdleState = stateProperties32;
-            this.txtPassword.Padding = new System.Windows.Forms.Padding(3);
-            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtPassword.PlaceholderText = "Enter text";
+            this.txtPassword.PlaceholderText = "Ingrese una contraseña";
             this.txtPassword.ReadOnly = false;
             this.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPassword.SelectedText = "";
@@ -917,8 +917,8 @@
             this.txtPassword.TextMarginBottom = 0;
             this.txtPassword.TextMarginLeft = 3;
             this.txtPassword.TextMarginTop = 1;
-            this.txtPassword.TextPlaceholder = "Enter text";
-            this.txtPassword.UseSystemPasswordChar = false;
+            this.txtPassword.TextPlaceholder = "Ingrese una contraseña";
+            this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.WordWrap = true;
             // 
             // lblPassword
@@ -932,7 +932,7 @@
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblPassword.Size = new System.Drawing.Size(77, 20);
-            this.lblPassword.TabIndex = 10;
+            this.lblPassword.TabIndex = 21;
             this.lblPassword.Text = "Contraseña";
             this.lblPassword.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblPassword.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
@@ -1019,7 +1019,7 @@
             this.btnRegister.OnPressedState.IconLeftImage = null;
             this.btnRegister.OnPressedState.IconRightImage = null;
             this.btnRegister.Size = new System.Drawing.Size(153, 52);
-            this.btnRegister.TabIndex = 9;
+            this.btnRegister.TabIndex = 11;
             this.btnRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnRegister.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnRegister.TextMarginLeft = 0;
@@ -1049,7 +1049,7 @@
             this.txtUser.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
             this.txtUser.DefaultText = "Ingrese un nombre de usuario";
             this.txtUser.FillColor = System.Drawing.Color.White;
-            this.txtUser.ForeColor = System.Drawing.Color.Silver;
+            this.txtUser.ForeColor = System.Drawing.Color.Black;
             this.txtUser.HideSelection = true;
             this.txtUser.IconLeft = null;
             this.txtUser.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -1071,8 +1071,8 @@
             this.txtUser.OnActiveState = stateProperties33;
             stateProperties34.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             stateProperties34.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties34.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            stateProperties34.ForeColor = System.Drawing.Color.Black;
+            stateProperties34.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txtUser.OnDisabledState = stateProperties34;
             stateProperties35.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties35.FillColor = System.Drawing.Color.Empty;
@@ -1081,13 +1081,13 @@
             this.txtUser.OnHoverState = stateProperties35;
             stateProperties36.BorderColor = System.Drawing.Color.Silver;
             stateProperties36.FillColor = System.Drawing.Color.White;
-            stateProperties36.ForeColor = System.Drawing.Color.Silver;
+            stateProperties36.ForeColor = System.Drawing.Color.Black;
             stateProperties36.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtUser.OnIdleState = stateProperties36;
-            this.txtUser.Padding = new System.Windows.Forms.Padding(3);
+            this.txtUser.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtUser.PasswordChar = '\0';
             this.txtUser.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtUser.PlaceholderText = "Enter text";
+            this.txtUser.PlaceholderText = "Ingrese un nombre de usuario";
             this.txtUser.ReadOnly = false;
             this.txtUser.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtUser.SelectedText = "";
@@ -1101,7 +1101,7 @@
             this.txtUser.TextMarginBottom = 0;
             this.txtUser.TextMarginLeft = 3;
             this.txtUser.TextMarginTop = 1;
-            this.txtUser.TextPlaceholder = "Enter text";
+            this.txtUser.TextPlaceholder = "Ingrese un nombre de usuario";
             this.txtUser.UseSystemPasswordChar = false;
             this.txtUser.WordWrap = true;
             // 
@@ -1117,7 +1117,7 @@
             this.lblUser.Name = "lblUser";
             this.lblUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblUser.Size = new System.Drawing.Size(53, 20);
-            this.lblUser.TabIndex = 2;
+            this.lblUser.TabIndex = 20;
             this.lblUser.Text = "Usuario";
             this.lblUser.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblUser.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
@@ -1134,7 +1134,7 @@
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblInfo.Size = new System.Drawing.Size(285, 21);
-            this.lblInfo.TabIndex = 1;
+            this.lblInfo.TabIndex = 12;
             this.lblInfo.Text = "Ingresa tus datos para crear una cuenta";
             this.lblInfo.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblInfo.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
@@ -1171,9 +1171,9 @@
             // 
             this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(742, 0);
+            this.pictureBox5.Location = new System.Drawing.Point(761, 0);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(259, 627);
+            this.pictureBox5.Size = new System.Drawing.Size(259, 574);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 1;
             this.pictureBox5.TabStop = false;
@@ -1182,7 +1182,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1001, 627);
+            this.ClientSize = new System.Drawing.Size(1020, 574);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.bunifuPanel1);
             this.Name = "FrmRegister";

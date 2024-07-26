@@ -11,12 +11,12 @@ namespace PTC2024.Controller.ServicesController
     {
         FrmServices objServices;
 
-        public ControllerServices(FrmServices view) 
+        public ControllerServices(FrmServices view)
         {
             objServices = view;
 
             objServices.btnAgregarServicio.Click += new EventHandler(OpenAddService);
-            
+
         }
 
         public void OpenAddService(object sender, EventArgs e)
@@ -24,5 +24,7 @@ namespace PTC2024.Controller.ServicesController
             FrmAddService objAddService = new FrmAddService();
             objAddService.Show();
         }
+
+       
     }
 }
