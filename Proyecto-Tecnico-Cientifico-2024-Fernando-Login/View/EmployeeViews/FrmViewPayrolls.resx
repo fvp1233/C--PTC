@@ -336,6 +336,9 @@
   <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -348,16 +351,13 @@
   <metadata name="Column8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="cmsPayroll.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="cmsUpdatePayroll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAOkRJREFUeF7tnXn4blP5uL/X7/oNzjGPGTooZBaZSigZShkLScaEEpGvoZJUKpSk
+        vgAADr4B6kKxwAAAOkRJREFUeF7tnXn4blP5uL/X7/oNzjGPGTooZBaZSigZShkLScaEEpGvoZJUKpSk
         kFTGBtJEpmiiZCwZokiZReb5T7975Xm/tm2f85neYe+17vu67iudcz7vXutZz7Oez/u+e/gvERERERER
         ERERERERERERERERERERERERERERERERERERERERERERERERERH5D2+86IX/hf8b/w/+X5wNp+F0nB3n
         xLlwbpwn/jv92RyY/k36t+ln0s+m10iv9b/i5UVERGSi0EhTA14S18J34a54MH4ZT8eL8Dq8C5/FF4bg
@@ -612,7 +612,7 @@
   <data name="cmsDeletePayroll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAANspJREFUeF7tnXm8vWPV/58/zUSE50sDIlKGKDORCJVIpaJBZYqIFBlKhAyZItKj
+        vgAADr4B6kKxwAAANspJREFUeF7tnXm8vWPV/58/zUSE50sDIlKGKDORCJVIpaJBZYqIFBlKhAyZItKj
         DBkyZJ4iQ6Yyz7OQMWPTn8/vc/Usr76/1XW+zj5n77Pua93v9+v1/qfY12fd51rrPs7e+77+CwAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACM/1122bnl0vLD8sty
         D/l1+Wm5upzF/lEAAADoCrpBzye/JE+Sz8j/HYfXyu/KeexlAAAAYCrRTXhW+RF5uLxT1m7Yg/hT+VZ7
@@ -852,7 +852,7 @@
   <data name="cmsPayrollInformation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAKeBJREFUeF7t3XnwLlld33GrEivMSBhAQHEjCCYSCRSI0SQKI6USjCuRspSQEnVK
+        vwAADr8BOAVTJAAAKeBJREFUeF7t3XnwLlld33GrEivMSBhAQHEjCCYSCRSI0SQKI6USjCuRspSQEnVK
         cRnBjOLCZgpwiZYKJWFRXGZMIOAaYYxbcKdidEQUAwYJTNwZlELxz+TTeBwfe3pmvnd+3ed5Tj+vd9W7
         Sod7+yz9O/2+fe9veQ8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1037,7 +1037,7 @@
   <data name="cmsDownloadPDF.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAJntJREFUeF7t3XuwZVdd4PHE10RJQIHwiIFIlUIEeSlSUKMQhZQFygyDIhbBDKFQ
+        vwAADr8BOAVTJAAAJntJREFUeF7t3XuwZVdd4PHE10RJQIHwiIFIlUIEeSlSUKMQhZQFygyDIhbBDKFQ
         YRwolFIBGaQo7eAj5OED0SLQAoa2MVBCTNLVmGgCSaaIIHl090337XSSTjohDzpC4nvNb3Xvnm4v65LO
         3fucddben2/V99/eu/f67fW9+9xzzzkCAAAAAAAAAAAAAAAAAAAAAAAAAAA0yb333vvEcF34mXA5/Mcw
         kZyPN95449/dcMMN39zdkgDw4IiN5KXhlYduLCTnb8Q8LS0tfVHUARw2sXl8Q/g/ws8f2ExI1jUH/frr

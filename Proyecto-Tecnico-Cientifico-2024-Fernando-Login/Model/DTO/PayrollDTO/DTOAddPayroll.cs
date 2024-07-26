@@ -10,23 +10,22 @@ namespace PTC2024.Model.DTO.PayrollDTO
     {
         //EMPLEADO INFO
         private int idEmployee;
+        private string firstName;
+        private string lastName;
         private string dui;
         private DateTime birthDate;
         private string email;
-        private float salary;
         private string phone;
         private string address;
-        private string firstName;
-        private string lastName;
+        private float salary;
         private string username;
         private int departmentId;
-        private int typeEmployee;
-        private int maritalStatus;
-        private int status;
+        private int typeEmployeeId;
+        private int maritalStatusId;
+        private int statusId;
         //Planilla
         private int idPayroll;
         private string securityNumber;
-        private float bonus;
         private float grossPay;
         private float iss;
         private float afp;
@@ -35,7 +34,6 @@ namespace PTC2024.Model.DTO.PayrollDTO
         private string banckAccount;
         private DateTime issueDate;
         public string SecurityNumber { get => securityNumber; set => securityNumber = value; }
-        public float Bonus { get => bonus; set => bonus = value; }
         public float GrossPay { get => grossPay; set => grossPay = value; }
         public float Iss { get => iss; set => iss = value; }
         public float Afp { get => afp; set => afp = value; }
@@ -55,8 +53,9 @@ namespace PTC2024.Model.DTO.PayrollDTO
         public string Address { get => address; set => address = value; }
         public string Username { get => username; set => username = value; }
         public int DepartmentId { get => departmentId; set => departmentId = value; }
-        public int TypeEmployee { get => typeEmployee; set => typeEmployee = value; }
-        public int MaritalStatus { get => maritalStatus; set => maritalStatus = value; }
-        public int Status { get => status; set => status = value; }
+        public int DepartmentId1 { get => departmentId; set => departmentId = value; }
+        public int TypeEmployeeId { get => typeEmployeeId; set => typeEmployeeId = value; }
+        public int MaritalStatusId { get => maritalStatusId; set => maritalStatusId = value; }
+        public int StatusId { get => statusId; set => statusId = value; }
     }
 }

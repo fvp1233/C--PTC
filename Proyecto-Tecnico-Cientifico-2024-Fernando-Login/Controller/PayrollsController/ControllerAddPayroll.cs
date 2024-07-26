@@ -37,6 +37,8 @@ namespace PTC2024.Controller.EmployeesController
         //    DAOAddPayroll daoAddPayroll = new DAOAddPayroll();
         //    daoAddPayroll.
         //}
+
+
         public void CloseForm(object sender, EventArgs e)
         {
             objAddPayroll.Close();
