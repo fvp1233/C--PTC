@@ -43,14 +43,37 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 comand.Connection.Close();
             }
         }
-        public int AddPayroll()
+        public DataSet GetEmployee()
         {
             try
             {
                 comand.Connection = getConnection();
+                string queryEmployee = "SELECT * FROM tbEmployee";
+                SqlCommand cmdEmployeeInfo = new SqlCommand(@queryEmployee, comand.Connection);
+                cmdEmployeeInfo.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmdEmployeeInfo);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "tbEmployee");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+            
+        }
+        public int AddPayroll()
+        {
+            try
+            {
+                GetEmployee();
+                comand.Connection = getConnection();
                 string queryPayroll = "INSERT INTO tbPayroll VALUES (@gross_Pay,@net_Pay,@income,@bonus,@month,@security_Number, @AFP, @ISS, @bank_Account,@Id_Employee)";
                 SqlCommand cmdAddPayroll = new SqlCommand(@queryPayroll, comand.Connection);
-
                 cmdAddPayroll.Parameters.AddWithValue("gross_Pay", GrossPay);
                 cmdAddPayroll.Parameters.AddWithValue("net_Pay", NetPay);
                 cmdAddPayroll.Parameters.AddWithValue("income", Income);

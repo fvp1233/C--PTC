@@ -56,13 +56,14 @@
             this.bunifuProgressBar1.ProgressColorRight = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.bunifuProgressBar1.Size = new System.Drawing.Size(384, 28);
             this.bunifuProgressBar1.TabIndex = 0;
-            this.bunifuProgressBar1.Value = 50;
-            this.bunifuProgressBar1.ValueByTransition = 50;
+            this.bunifuProgressBar1.Value = 20;
+            this.bunifuProgressBar1.ValueByTransition = 20;
             // 
             // bunifuLabel1
             // 
             this.bunifuLabel1.AllowParentOverrides = false;
             this.bunifuLabel1.AutoEllipsis = false;
+            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 18F);
             this.bunifuLabel1.Location = new System.Drawing.Point(145, 38);
@@ -84,7 +85,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLoadPayroll";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmLoadPayroll";
             this.ResumeLayout(false);
             this.PerformLayout();
 
