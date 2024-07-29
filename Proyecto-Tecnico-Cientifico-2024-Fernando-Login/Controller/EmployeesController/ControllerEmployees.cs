@@ -16,22 +16,29 @@ namespace PTC2024.Controller.Employees
         {
             objEmployees = Vista;
             //Evento para cargar el dataGrid
-            objEmployees.Load += new EventHandler(CargarDataGridEmpleados);
-            objEmployees.BtnAddEmployee.Click += new EventHandler(NuevoEmpleado);
+            objEmployees.Load += new EventHandler(LoadDataGridEmployees);
+            objEmployees.BtnAddEmployee.Click += new EventHandler(NewEmployee);
+            objEmployees.cmsUpdateEmployee.Click += new EventHandler(UpdateEmployee);
             //Eventos de click de botones
             //objEmployees.BtnAgregarEmpleado.Click += new EventHandler(NuevoEmpleado);
         }
 
-        public void CargarDataGridEmpleados(object sender, EventArgs e)
+        public void LoadDataGridEmployees(object sender, EventArgs e)
         {
 
         }
 
-        public void NuevoEmpleado(object sender, EventArgs e)
+        public void NewEmployee(object sender, EventArgs e)
         {
             //Creando objeto del formulario FrmAddEmployee
             FrmAddEmployee abrirForm = new FrmAddEmployee();
             abrirForm.ShowDialog();
+        }
+
+        public void UpdateEmployee(object sender, EventArgs e) 
+        {
+            FrmUpdateEmployee abrirfForm = new FrmUpdateEmployee();
+            abrirfForm.ShowDialog();
         }
     }
 }

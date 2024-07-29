@@ -810,7 +810,7 @@
             this.BtnAgregarEmpleado.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.BtnAgregarEmpleado.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnAgregarEmpleado.BackgroundImage")));
             this.BtnAgregarEmpleado.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.BtnAgregarEmpleado.ButtonText = "Agregar";
+            this.BtnAgregarEmpleado.ButtonText = "Actualizar";
             this.BtnAgregarEmpleado.ButtonTextMarginLeft = 0;
             this.BtnAgregarEmpleado.ColorContrastOnClick = 45;
             this.BtnAgregarEmpleado.ColorContrastOnHover = 45;
@@ -900,7 +900,7 @@
             this.BtnCancelar.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.BtnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnCancelar.BackgroundImage")));
             this.BtnCancelar.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.BtnCancelar.ButtonText = "Regresar";
+            this.BtnCancelar.ButtonText = "Cancelar";
             this.BtnCancelar.ButtonTextMarginLeft = 0;
             this.BtnCancelar.ColorContrastOnClick = 45;
             this.BtnCancelar.ColorContrastOnHover = 45;
@@ -989,6 +989,7 @@
             this.Controls.Add(this.BtnCancelar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmUpdateEmployee";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Actualizar un empleado";
             this.bunifuGroupBox3.ResumeLayout(false);
             this.bunifuGroupBox3.PerformLayout();
