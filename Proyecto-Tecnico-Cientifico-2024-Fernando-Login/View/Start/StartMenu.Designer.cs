@@ -345,6 +345,7 @@
             this.MaximumSize = new System.Drawing.Size(2560, 1449);
             this.MinimumSize = new System.Drawing.Size(1364, 718);
             this.Name = "StartMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();

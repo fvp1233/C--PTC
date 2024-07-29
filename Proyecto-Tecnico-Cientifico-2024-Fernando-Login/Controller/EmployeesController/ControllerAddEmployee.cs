@@ -36,32 +36,32 @@ namespace PTC2024.Controller
             //Dropdown de Estados civiles
             DataSet dsEstadosCiviles = daoAddEmployee.ObtenerEstadosCiviles();
             objAddEmployee.comboEstadosCiviles.DataSource = dsEstadosCiviles.Tables["tbmaritalStatus"];
-            objAddEmployee.comboEstadosCiviles.DisplayMember = "marital_Status";
-            objAddEmployee.comboEstadosCiviles.ValueMember = "Id_MaritalS";
+            objAddEmployee.comboEstadosCiviles.DisplayMember = "maritalStatus";
+            objAddEmployee.comboEstadosCiviles.ValueMember = "IdMaritalS";
 
             //Dropdown de Departamentos
             DataSet dsDepartamentos = daoAddEmployee.ObtenerDepartamentos();
             objAddEmployee.comboDepartamento.DataSource = dsDepartamentos.Tables["tbDepartment"];
             objAddEmployee.comboDepartamento.DisplayMember = "departmentName";
-            objAddEmployee.comboDepartamento.ValueMember = "Id_Department";
+            objAddEmployee.comboDepartamento.ValueMember = "IdDepartment";
 
             //Dropdown de tipos de empleado
             DataSet dsTiposEmpleado = daoAddEmployee.ObtenerTiposEmpleado();
             objAddEmployee.comboTipoEmpleado.DataSource = dsTiposEmpleado.Tables["tbTypeE"];
             objAddEmployee.comboTipoEmpleado.DisplayMember = "typeEmployee";
-            objAddEmployee.comboTipoEmpleado.ValueMember = "Id_TypeE";
+            objAddEmployee.comboTipoEmpleado.ValueMember = "IdTypeE";
 
             //Dropdown de puestos de empleado
             DataSet dsPuestosEmpleado = daoAddEmployee.ObtenerPuestosEmpleado();
             objAddEmployee.comboPuestoEmpleado.DataSource = dsPuestosEmpleado.Tables["tbBusinessP"];
-            objAddEmployee.comboPuestoEmpleado.DisplayMember = "business_Position";
-            objAddEmployee.comboPuestoEmpleado.ValueMember = "Id_BusinessP";
+            objAddEmployee.comboPuestoEmpleado.DisplayMember = "businessPosition";
+            objAddEmployee.comboPuestoEmpleado.ValueMember = "IdBusinessP";
 
             //Dropdown de estado de empleado
             DataSet dsEstadosEmpleado = daoAddEmployee.ObtenerEstadosEmpleado();
-            objAddEmployee.comboEstadoEmpleado.DataSource = dsEstadosEmpleado.Tables["tbE_Status"];
-            objAddEmployee.comboEstadoEmpleado.DisplayMember = "employee_Status";
-            objAddEmployee.comboEstadoEmpleado.ValueMember = "Id_Status";
+            objAddEmployee.comboEstadoEmpleado.DataSource = dsEstadosEmpleado.Tables["tbEmployeeStatus"];
+            objAddEmployee.comboEstadoEmpleado.DisplayMember = "employeeStatus";
+            objAddEmployee.comboEstadoEmpleado.ValueMember = "IdStatus";
         }
 
         public void AgregarEmpleado(object sender, EventArgs e)

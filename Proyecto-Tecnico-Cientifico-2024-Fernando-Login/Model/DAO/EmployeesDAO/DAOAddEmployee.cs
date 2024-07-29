@@ -151,7 +151,7 @@ namespace PTC2024.Model.DAO
             try
             {
                 command.Connection = getConnection();
-                string query = "SELECT*FROM tbE_Status";
+                string query = "SELECT*FROM tbEmployeeStatus";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.ExecuteNonQuery();
 
@@ -162,7 +162,7 @@ namespace PTC2024.Model.DAO
                 DataSet ds = new DataSet();
 
                 //se llena el dataset "ds" con la información que recibió el adaptador "adp"
-                adp.Fill(ds, "tbE_Status");
+                adp.Fill(ds, "tbEmployeeStatus");
 
                 //se devuelve el dataset
                 return ds;

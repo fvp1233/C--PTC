@@ -17,7 +17,7 @@ namespace PTC2024.Controller.Employees
             objEmployees = Vista;
             //Evento para cargar el dataGrid
             objEmployees.Load += new EventHandler(CargarDataGridEmpleados);
-            objEmployees.btnAgregarEmpleado.Click += new EventHandler(NuevoEmpleado);
+            objEmployees.BtnAddEmployee.Click += new EventHandler(NuevoEmpleado);
             //Eventos de click de botones
             //objEmployees.BtnAgregarEmpleado.Click += new EventHandler(NuevoEmpleado);
         }
