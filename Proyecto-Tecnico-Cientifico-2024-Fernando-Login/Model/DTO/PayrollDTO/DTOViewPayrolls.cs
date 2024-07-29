@@ -18,20 +18,23 @@ namespace PTC2024.Model.DTO.PayrollDTO
         private string phone;
         private string address;
         private float salary;
+        private string securityNumber;
+        private string banckAccount;
         private string username;
         private int departmentId;
         private int typeEmployeeId;
         private int maritalStatusId;
         private int statusId;
+        //Cargos
+        private int BusinessId;
+        private string businessPossition;
+        private float businessBonus;
         //Planilla
         private int idPayroll;
-        private string securityNumber;
-        private float grossPay;
-        private float isss;
-        private float afp;
-        private float income;
-        private float netPay;
-        private string banckAccount;
+        private double isss;
+        private double afp;
+        private double income;
+        private double netPay;
         private DateTime issueDate;
 
         public int IdEmployee { get => idEmployee; set => idEmployee = value; }
@@ -50,12 +53,14 @@ namespace PTC2024.Model.DTO.PayrollDTO
         public int StatusId { get => statusId; set => statusId = value; }
         public int IdPayroll { get => idPayroll; set => idPayroll = value; }
         public string SecurityNumber { get => securityNumber; set => securityNumber = value; }
-        public float GrossPay { get => grossPay; set => grossPay = value; }
-        public float Isss { get => isss; set => isss = value; }
-        public float Afp { get => afp; set => afp = value; }
-        public float Income { get => income; set => income = value; }
-        public float NetPay { get => netPay; set => netPay = value; }
+        public double Isss { get => isss; set => isss = value; }
+        public double Afp { get => afp; set => afp = value; }
+        public double Income { get => income; set => income = value; }
+        public double NetPay { get => netPay; set => netPay = value; }
         public string BanckAccount { get => banckAccount; set => banckAccount = value; }
         public DateTime IssueDate { get => issueDate; set => issueDate = value; }
+        public int BusinessId1 { get => BusinessId; set => BusinessId = value; }
+        public string BusinessPossition { get => businessPossition; set => businessPossition = value; }
+        public float BusinessBonus { get => businessBonus; set => businessBonus = value; }
     }
 }

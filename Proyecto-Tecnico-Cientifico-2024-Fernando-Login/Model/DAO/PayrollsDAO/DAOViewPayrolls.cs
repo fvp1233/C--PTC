@@ -37,22 +37,86 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 getConnection().Close();
             }
         }
+        public DataSet GetUsername()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string queryUserData = "SELECT * FROM tbUserData";
+                SqlCommand cmdUserData = new SqlCommand(queryUserData, comand.Connection);
+                cmdUserData.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmdUserData);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "tbUserData");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet GetBonus()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string queryBonus = "SELECT * FROM tbBusinessP";
+                SqlCommand cmdBonus = new SqlCommand(queryBonus, comand.Connection);
+                cmdBonus.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmdBonus);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "tbBusinessP");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet GetPayroll()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string queryPayroll = "SELECT * FROM tbPayroll";
+                SqlCommand cmdPayroll = new SqlCommand(@queryPayroll, comand.Connection);
+                cmdPayroll.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmdPayroll);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "tbPayroll");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
         public int AddPayroll()
         {
             try
             {
                 GetEmployee();
                 comand.Connection = getConnection();
-                string queryPayroll = "INSERT INTO tbPayroll VALUES (@netPay,@income,@issueDate,@securityNumber,@AFP, @ISSS, @bankAccount,@IdEmployee)";
+                string queryPayroll = "INSERT INTO tbPayroll VALUES (@netPay,@income,@issueDate,@AFP, @ISSS,@IdEmployee)";
                 SqlCommand cmdAddPayroll = new SqlCommand(@queryPayroll, comand.Connection);
                 cmdAddPayroll.Parameters.AddWithValue("netPay", NetPay);
                 cmdAddPayroll.Parameters.AddWithValue("income", Income);
                 cmdAddPayroll.Parameters.AddWithValue("issueDate", IssueDate);
-                cmdAddPayroll.Parameters.AddWithValue("securityNumber", SecurityNumber);
                 cmdAddPayroll.Parameters.AddWithValue("AFP", Afp);
                 cmdAddPayroll.Parameters.AddWithValue("ISSS", Isss);
-                cmdAddPayroll.Parameters.AddWithValue("bank_Account", BanckAccount);
-                cmdAddPayroll.Parameters.AddWithValue("Id_Employee", IdPayroll);
+                cmdAddPayroll.Parameters.AddWithValue("IdEmployee", IdEmployee);
 
                 int answer = cmdAddPayroll.ExecuteNonQuery();
                 if (answer == 1)
