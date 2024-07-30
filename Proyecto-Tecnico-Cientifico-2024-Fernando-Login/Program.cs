@@ -9,6 +9,7 @@ using PTC2024.View.Facturacion;
 using PTC2024.View.formularios.inicio;
 using PTC2024.View.login;
 using PTC2024.View.InventarioServicios;
+using PTC2024.View.BillsViews;
 
 namespace PTC2024
 {
