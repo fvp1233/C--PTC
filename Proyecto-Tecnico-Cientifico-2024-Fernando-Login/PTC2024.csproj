@@ -191,6 +191,12 @@
     <Compile Include="View\EmployeeViews\FrmAddPayroll.Designer.cs">
       <DependentUpon>FrmAddPayroll.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\EmployeeViews\FrmLoadPayroll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EmployeeViews\FrmLoadPayroll.Designer.cs">
+      <DependentUpon>FrmLoadPayroll.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\EmployeeViews\FrmViewPayrolls.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmAddPayroll.resx">
       <DependentUpon>FrmAddPayroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\EmployeeViews\FrmLoadPayroll.resx">
+      <DependentUpon>FrmLoadPayroll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmViewPayrolls.resx">
       <DependentUpon>FrmViewPayrolls.cs</DependentUpon>

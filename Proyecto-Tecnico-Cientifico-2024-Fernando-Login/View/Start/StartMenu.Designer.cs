@@ -105,12 +105,12 @@
             this.btnMenuDashboard.OnHovercolor = System.Drawing.Color.DimGray;
             this.btnMenuDashboard.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMenuDashboard.selected = false;
-            this.btnMenuDashboard.Size = new System.Drawing.Size(181, 71);
+            this.btnMenuDashboard.Size = new System.Drawing.Size(181, 56);
             this.btnMenuDashboard.TabIndex = 2;
             this.btnMenuDashboard.Text = "Dashboard";
             this.btnMenuDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuDashboard.Textcolor = System.Drawing.Color.White;
-            this.btnMenuDashboard.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuDashboard.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btnMenuEmployee
             // 
@@ -133,18 +133,18 @@
             this.btnMenuEmployee.IconVisible = true;
             this.btnMenuEmployee.IconZoom = 90D;
             this.btnMenuEmployee.IsTab = false;
-            this.btnMenuEmployee.Location = new System.Drawing.Point(3, 179);
+            this.btnMenuEmployee.Location = new System.Drawing.Point(3, 164);
             this.btnMenuEmployee.Name = "btnMenuEmployee";
             this.btnMenuEmployee.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuEmployee.OnHovercolor = System.Drawing.Color.DimGray;
             this.btnMenuEmployee.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMenuEmployee.selected = false;
-            this.btnMenuEmployee.Size = new System.Drawing.Size(181, 71);
+            this.btnMenuEmployee.Size = new System.Drawing.Size(181, 56);
             this.btnMenuEmployee.TabIndex = 3;
             this.btnMenuEmployee.Text = "Empleados";
             this.btnMenuEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuEmployee.Textcolor = System.Drawing.Color.White;
-            this.btnMenuEmployee.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuEmployee.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btnMenuPayroll
             // 
@@ -167,18 +167,18 @@
             this.btnMenuPayroll.IconVisible = true;
             this.btnMenuPayroll.IconZoom = 90D;
             this.btnMenuPayroll.IsTab = false;
-            this.btnMenuPayroll.Location = new System.Drawing.Point(3, 256);
+            this.btnMenuPayroll.Location = new System.Drawing.Point(3, 226);
             this.btnMenuPayroll.Name = "btnMenuPayroll";
             this.btnMenuPayroll.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuPayroll.OnHovercolor = System.Drawing.Color.DimGray;
             this.btnMenuPayroll.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMenuPayroll.selected = false;
-            this.btnMenuPayroll.Size = new System.Drawing.Size(181, 71);
+            this.btnMenuPayroll.Size = new System.Drawing.Size(181, 56);
             this.btnMenuPayroll.TabIndex = 7;
             this.btnMenuPayroll.Text = "Planillas";
             this.btnMenuPayroll.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuPayroll.Textcolor = System.Drawing.Color.White;
-            this.btnMenuPayroll.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuPayroll.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btnMenuServices
             // 
@@ -201,18 +201,18 @@
             this.btnMenuServices.IconVisible = true;
             this.btnMenuServices.IconZoom = 90D;
             this.btnMenuServices.IsTab = false;
-            this.btnMenuServices.Location = new System.Drawing.Point(3, 333);
+            this.btnMenuServices.Location = new System.Drawing.Point(3, 288);
             this.btnMenuServices.Name = "btnMenuServices";
             this.btnMenuServices.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuServices.OnHovercolor = System.Drawing.Color.DimGray;
             this.btnMenuServices.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMenuServices.selected = false;
-            this.btnMenuServices.Size = new System.Drawing.Size(181, 71);
+            this.btnMenuServices.Size = new System.Drawing.Size(181, 56);
             this.btnMenuServices.TabIndex = 4;
             this.btnMenuServices.Text = "Servicios";
             this.btnMenuServices.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuServices.Textcolor = System.Drawing.Color.White;
-            this.btnMenuServices.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuServices.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btnMenuCustomers
             // 
@@ -235,18 +235,18 @@
             this.btnMenuCustomers.IconVisible = true;
             this.btnMenuCustomers.IconZoom = 90D;
             this.btnMenuCustomers.IsTab = false;
-            this.btnMenuCustomers.Location = new System.Drawing.Point(3, 410);
+            this.btnMenuCustomers.Location = new System.Drawing.Point(3, 350);
             this.btnMenuCustomers.Name = "btnMenuCustomers";
             this.btnMenuCustomers.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuCustomers.OnHovercolor = System.Drawing.Color.DimGray;
             this.btnMenuCustomers.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMenuCustomers.selected = false;
-            this.btnMenuCustomers.Size = new System.Drawing.Size(181, 71);
+            this.btnMenuCustomers.Size = new System.Drawing.Size(181, 56);
             this.btnMenuCustomers.TabIndex = 5;
             this.btnMenuCustomers.Text = "Clientes";
             this.btnMenuCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuCustomers.Textcolor = System.Drawing.Color.White;
-            this.btnMenuCustomers.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuCustomers.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btnMenuBills
             // 
@@ -269,18 +269,18 @@
             this.btnMenuBills.IconVisible = true;
             this.btnMenuBills.IconZoom = 90D;
             this.btnMenuBills.IsTab = false;
-            this.btnMenuBills.Location = new System.Drawing.Point(3, 487);
+            this.btnMenuBills.Location = new System.Drawing.Point(3, 412);
             this.btnMenuBills.Name = "btnMenuBills";
             this.btnMenuBills.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuBills.OnHovercolor = System.Drawing.Color.DimGray;
             this.btnMenuBills.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMenuBills.selected = false;
-            this.btnMenuBills.Size = new System.Drawing.Size(181, 71);
+            this.btnMenuBills.Size = new System.Drawing.Size(181, 56);
             this.btnMenuBills.TabIndex = 6;
             this.btnMenuBills.Text = "Facturación";
             this.btnMenuBills.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuBills.Textcolor = System.Drawing.Color.White;
-            this.btnMenuBills.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuBills.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // bunifuFlatButton1
             // 
@@ -291,6 +291,7 @@
             this.bunifuFlatButton1.ButtonText = "Cerrar Sesión";
             this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
             this.bunifuFlatButton1.Iconimage_right = null;
@@ -303,8 +304,8 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(3, 594);
-            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(3, 33, 3, 3);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(3, 611);
+            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(3, 140, 3, 3);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.Black;
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.DimGray;
