@@ -392,6 +392,7 @@
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.bunifuCustomLabel1);
             this.Name = "FrmUpdateService";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmUpdateService";
             this.ResumeLayout(false);
             this.PerformLayout();

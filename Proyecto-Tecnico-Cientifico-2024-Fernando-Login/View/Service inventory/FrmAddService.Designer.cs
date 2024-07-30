@@ -433,6 +433,7 @@
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.bunifuCustomLabel1);
             this.Name = "FrmAddService";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAgregarServicio";
             this.ResumeLayout(false);
             this.PerformLayout();
