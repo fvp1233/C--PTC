@@ -26,7 +26,7 @@ namespace PTC2024.Controller.ServicesController
             DataSet dsAddService = daoAddService.ObtenerCategoriasServicios();
             objAddService.comboTipoEmpleado.DataSource = dsAddService.Tables["tbCategoryS"];
             objAddService.comboTipoEmpleado.DisplayMember = "categoryName";
-            objAddService.comboTipoEmpleado.ValueMember = "Id_Category";
+            objAddService.comboTipoEmpleado.ValueMember = "IdCategory";
         }
 
         public void cerrarform(object sender, EventArgs e)

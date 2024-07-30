@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddEmployee));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -64,9 +64,9 @@
             this.bunifuMaterialTextbox3 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel18 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
-            this.bunifuGroupBox2 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.bunifuMaterialTextbox4 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel15 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuGroupBox2 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.bunifuGroupBox3 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -592,11 +592,11 @@
             this.BtnAgregarEmpleado.ColorContrastOnClick = 45;
             this.BtnAgregarEmpleado.ColorContrastOnHover = 45;
             this.BtnAgregarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.BtnAgregarEmpleado.CustomizableEdges = borderEdges3;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.BtnAgregarEmpleado.CustomizableEdges = borderEdges1;
             this.BtnAgregarEmpleado.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnAgregarEmpleado.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnAgregarEmpleado.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -682,11 +682,11 @@
             this.BtnCancelar.ColorContrastOnClick = 45;
             this.BtnCancelar.ColorContrastOnHover = 45;
             this.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.BtnCancelar.CustomizableEdges = borderEdges4;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.BtnCancelar.CustomizableEdges = borderEdges2;
             this.BtnCancelar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnCancelar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnCancelar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -865,28 +865,6 @@
             this.bunifuGroupBox1.TabStop = false;
             this.bunifuGroupBox1.Text = "Información para el inicio de sesión";
             // 
-            // bunifuGroupBox2
-            // 
-            this.bunifuGroupBox2.BorderColor = System.Drawing.Color.LightGray;
-            this.bunifuGroupBox2.BorderRadius = 8;
-            this.bunifuGroupBox2.BorderThickness = 2;
-            this.bunifuGroupBox2.Controls.Add(this.bunifuMaterialTextbox2);
-            this.bunifuGroupBox2.Controls.Add(this.bunifuCustomLabel16);
-            this.bunifuGroupBox2.Controls.Add(this.bunifuMaterialTextbox1);
-            this.bunifuGroupBox2.Controls.Add(this.bunifuCustomLabel17);
-            this.bunifuGroupBox2.Controls.Add(this.bunifuMaterialTextbox3);
-            this.bunifuGroupBox2.Controls.Add(this.bunifuCustomLabel18);
-            this.bunifuGroupBox2.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.bunifuGroupBox2.LabelAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bunifuGroupBox2.LabelIndent = 10;
-            this.bunifuGroupBox2.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
-            this.bunifuGroupBox2.Location = new System.Drawing.Point(26, 364);
-            this.bunifuGroupBox2.Name = "bunifuGroupBox2";
-            this.bunifuGroupBox2.Size = new System.Drawing.Size(1035, 88);
-            this.bunifuGroupBox2.TabIndex = 104;
-            this.bunifuGroupBox2.TabStop = false;
-            this.bunifuGroupBox2.Text = "Información financiera";
-            // 
             // bunifuMaterialTextbox4
             // 
             this.bunifuMaterialTextbox4.BackColor = System.Drawing.Color.Gainsboro;
@@ -916,6 +894,28 @@
             this.bunifuCustomLabel15.Size = new System.Drawing.Size(145, 16);
             this.bunifuCustomLabel15.TabIndex = 106;
             this.bunifuCustomLabel15.Text = "Nombre de usuario:";
+            // 
+            // bunifuGroupBox2
+            // 
+            this.bunifuGroupBox2.BorderColor = System.Drawing.Color.LightGray;
+            this.bunifuGroupBox2.BorderRadius = 8;
+            this.bunifuGroupBox2.BorderThickness = 2;
+            this.bunifuGroupBox2.Controls.Add(this.bunifuMaterialTextbox2);
+            this.bunifuGroupBox2.Controls.Add(this.bunifuCustomLabel16);
+            this.bunifuGroupBox2.Controls.Add(this.bunifuMaterialTextbox1);
+            this.bunifuGroupBox2.Controls.Add(this.bunifuCustomLabel17);
+            this.bunifuGroupBox2.Controls.Add(this.bunifuMaterialTextbox3);
+            this.bunifuGroupBox2.Controls.Add(this.bunifuCustomLabel18);
+            this.bunifuGroupBox2.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.bunifuGroupBox2.LabelAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuGroupBox2.LabelIndent = 10;
+            this.bunifuGroupBox2.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
+            this.bunifuGroupBox2.Location = new System.Drawing.Point(26, 364);
+            this.bunifuGroupBox2.Name = "bunifuGroupBox2";
+            this.bunifuGroupBox2.Size = new System.Drawing.Size(1035, 88);
+            this.bunifuGroupBox2.TabIndex = 104;
+            this.bunifuGroupBox2.TabStop = false;
+            this.bunifuGroupBox2.Text = "Información financiera";
             // 
             // bunifuGroupBox3
             // 
