@@ -18,7 +18,9 @@ namespace PTC2024.Controller.EmployeesController
         public ControllerViewPayrolls(FrmViewPayrolls Vista)
         {
             objViewPayrolls = Vista;
+            objViewPayrolls.Load += new EventHandler(LoadData);
             objViewPayrolls.btnCreatePayroll.Click += new EventHandler(CreatePayroll);
+            objViewPayrolls.cmsUpdatePayroll.Click += new EventHandler(OpenUpdatePayroll);
         }
         //Metodo para crear las planillas
         public void CreatePayroll(object sender, EventArgs e)
@@ -69,12 +71,16 @@ namespace PTC2024.Controller.EmployeesController
                                     DAOInsertPayroll.BusinessBonus = float.Parse(roleBonus.ToString());
                                     double calculatedSalary = double.Parse(roleBonus.ToString()) + double.Parse(row["salary"].ToString());
                                     DAOInsertPayroll.Username = row["username"].ToString();
-                                    DAOInsertPayroll.Isss = GetISS(calculatedSalary);
+                                    DAOInsertPayroll.Isss = GetISSS(calculatedSalary);
                                     DAOInsertPayroll.Afp = GetAFP(calculatedSalary);
-                                    DAOInsertPayroll.Income = GetRent(calculatedSalary);
+                                    DAOInsertPayroll.Rent = GetRent(calculatedSalary);
                                     DAOInsertPayroll.NetPay = GetNetSalary(calculatedSalary);
-                                    DAOInsertPayroll.IdEmployee = int.Parse(row["IdEmployee"].ToString());
+                                    DAOInsertPayroll.IsssEmployer =GetISSSEmployeer(calculatedSalary);
+                                    DAOInsertPayroll.AfpEmployer= GetAFPEmployer(calculatedSalary);
+                                    DAOInsertPayroll.DiscountEmployee= GetEmployeeDiscount(calculatedSalary);
+                                    DAOInsertPayroll.DiscountEmployer = GetEmployerDiscount(calculatedSalary);
                                     DAOInsertPayroll.IssueDate = DateTime.Now;
+                                    DAOInsertPayroll.IdEmployee = int.Parse(row["IdEmployee"].ToString());
                                 }
                             }
                             returnValue = DAOInsertPayroll.AddPayroll();
@@ -104,7 +110,7 @@ namespace PTC2024.Controller.EmployeesController
             return AFP;
         }
         //Metodo para obtener el ISS el cual es igual al 3% del salario co un techo de $1000
-        public double GetISS(double Salary)
+        public double GetISSS(double Salary)
         {
             double ISS;
             if (Salary >= 1000)
@@ -117,6 +123,16 @@ namespace PTC2024.Controller.EmployeesController
             }
             return ISS;
         }
+        public double GetAFPEmployer(double Salary)
+        {
+            double AFP = Salary * 0.0875;
+            return AFP;
+        }
+        public double GetISSSEmployeer(double Salary)
+        {
+            double ISSS = Salary * 0.075; ;
+            return ISSS;
+        }
         //Metodo para obtener la renta la cual es igual a 0 si la persona gana $472 del salario
         //Metodo para obtener la renta la cual es igual al 10% del salario + $17.67 si la persona arriba de $472 hasta $895.24
         //Metodo para obtener la renta la cual es igual al 20% del salario + $60 si la persona arriba de $895.24 hasta $2028.11
@@ -124,8 +140,8 @@ namespace PTC2024.Controller.EmployeesController
         public double GetRent(double Salary)
         {
             double rent;
-            double AFP_ISS = GetAFP(Salary) + GetISS(Salary);
-            double prerent = Salary - AFP_ISS;
+            double AFP_ISSS = GetAFP(Salary) + GetISSS(Salary);
+            double prerent = Salary - AFP_ISSS;
             if (prerent > 0 && prerent < 472.01)
             {
                 rent = 0;
@@ -148,23 +164,33 @@ namespace PTC2024.Controller.EmployeesController
         //Metodo para obtener el salario neto
         public double GetNetSalary(double Salary)
         {
-            double netSalary = Salary - (GetISS(Salary) + GetAFP(Salary) + GetRent(Salary));
+            double netSalary = Salary - (GetISSS(Salary) + GetAFP(Salary) + GetRent(Salary));
             return netSalary;
         }
-        public double GetBonus(double Salary, int IdRole)
+        public double GetEmployeeDiscount(double Salary)
         {
-            switch (IdRole)
-            {
-                case 1:
-                    Salary = Salary + 300.00;
-                    break;
-                case 2:
-                    Salary = Salary + 150.00;
-                    break;
-                default:
-                    break;
-            }
-            return Salary;
+            double employeeDiscount = Salary - GetNetSalary(Salary);
+            return employeeDiscount;
+        }
+        public double GetEmployerDiscount(double Salary)
+        {
+            double employerDiscount = GetAFPEmployer(Salary)+GetISSS(Salary)+GetRent(Salary);
+            return employerDiscount;
+        }
+        public void OpenUpdatePayroll(object sender, EventArgs e)
+        {
+            FrmUpdatePayroll openUpdatePayroll = new FrmUpdatePayroll();
+            openUpdatePayroll.ShowDialog();
+        }
+        public void LoadData(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+        public void RefreshData()
+        {
+            DAOViewPayrolls objRefresh = new DAOViewPayrolls();
+            DataSet ds = objRefresh.GetEmployeesDgv();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
         }
     }
 }

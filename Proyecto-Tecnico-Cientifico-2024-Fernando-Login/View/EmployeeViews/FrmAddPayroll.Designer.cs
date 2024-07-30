@@ -34,7 +34,6 @@
             this.txtNetPay = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtGrossPay = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.txtBankAccount = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtIncome = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -56,6 +55,7 @@
             this.BtnAgregarPlanilla = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnCancelar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.comboEmployee = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.SuspendLayout();
             // 
             // txtNetPay
@@ -107,18 +107,6 @@
             this.txtGrossPay.Size = new System.Drawing.Size(330, 31);
             this.txtGrossPay.TabIndex = 176;
             this.txtGrossPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(50, 69);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(639, 35);
-            this.bunifuSeparator1.TabIndex = 173;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
             // 
             // txtBankAccount
             // 
@@ -605,6 +593,18 @@
             this.comboEmployee.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.comboEmployee.TextLeftMargin = 5;
             // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(50, 69);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(639, 35);
+            this.bunifuSeparator1.TabIndex = 173;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
+            // 
             // FrmAddPayroll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -646,7 +646,6 @@
 
         #endregion
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
@@ -670,5 +669,6 @@
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtAFP;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtISS;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtNetPay;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
     }
 }
