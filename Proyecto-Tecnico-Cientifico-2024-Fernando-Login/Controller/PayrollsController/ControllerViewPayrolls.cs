@@ -60,7 +60,6 @@ namespace PTC2024.Controller.EmployeesController
                             {
                                 DataRow userRow = userRows[0];
                                 string businessRole = userRow["IdBusinessP"].ToString();
-
                                 // Buscar la fila correspondiente en la tabla roles (bonus)
                                 DataRow[] bonusRows = bonusDt.Select($"IdBusinessP = '{businessRole}'");
                                 if (bonusRows.Length > 0)
