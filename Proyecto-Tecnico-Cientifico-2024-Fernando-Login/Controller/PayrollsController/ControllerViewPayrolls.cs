@@ -29,12 +29,11 @@ namespace PTC2024.Controller.EmployeesController
             DAOViewPayrolls DAOInsertPayroll = new DAOViewPayrolls();
             //Accedemos a los datos de los empleados gracias al GetEmployee
             DAOInsertPayroll.GetEmployee();
-            var dataSetDemo = new DAOViewPayrolls();
             //Se crean los dataSets
-            DataSet employeeDs = dataSetDemo.GetEmployee();
-            DataSet bonusDs = dataSetDemo.GetBonus();
-            DataSet userDs = dataSetDemo.GetUsername();
-            DataSet payrollDs = dataSetDemo.GetPayroll();
+            DataSet employeeDs = DAOInsertPayroll.GetEmployee();
+            DataSet bonusDs = DAOInsertPayroll.GetBonus();
+            DataSet userDs = DAOInsertPayroll.GetUsername();
+            DataSet payrollDs = DAOInsertPayroll.GetPayroll();
             int returnValue = 0;
             //Se crea la condicion en la cual establecemos que las tablas no esten vacias
             if (employeeDs != null && employeeDs.Tables.Count > 0 && bonusDs != null && bonusDs.Tables.Count > 0 && userDs != null && userDs.Tables.Count > 0)
@@ -67,7 +66,7 @@ namespace PTC2024.Controller.EmployeesController
                                 if (bonusRows.Length > 0)
                                 {
                                     DataRow bonusRow = bonusRows[0];
-                                    var roleBonus = bonusRow["positionBonus"];
+                                    double roleBonus = double.Parse(bonusRow["positionBonus"].ToString());
                                     DAOInsertPayroll.BusinessBonus = float.Parse(roleBonus.ToString());
                                     double calculatedSalary = double.Parse(roleBonus.ToString()) + double.Parse(row["salary"].ToString());
                                     DAOInsertPayroll.Username = row["username"].ToString();
@@ -87,6 +86,7 @@ namespace PTC2024.Controller.EmployeesController
                         }
                     }
                 }
+                RefreshData();
             }
             if (returnValue == 1)
             {
