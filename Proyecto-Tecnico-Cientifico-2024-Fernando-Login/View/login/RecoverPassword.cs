@@ -16,7 +16,5 @@ namespace PTC2024.formularios.login
         {
             InitializeComponent();
         }
-
-       
     }
 }

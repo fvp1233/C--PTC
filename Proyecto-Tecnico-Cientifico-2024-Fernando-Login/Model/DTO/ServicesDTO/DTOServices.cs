@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PTC2024.Model.DTO.ServicesDTO
 {
-    internal class DTOServices
+    internal class DTOServices : dbContext
     {
     }
 }
