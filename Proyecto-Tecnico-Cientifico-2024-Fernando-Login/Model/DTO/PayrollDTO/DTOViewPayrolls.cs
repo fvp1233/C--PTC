@@ -33,8 +33,12 @@ namespace PTC2024.Model.DTO.PayrollDTO
         private int idPayroll;
         private double isss;
         private double afp;
-        private double income;
+        private double rent;
         private double netPay;
+        private double isssEmployer;
+        private double afpEmployer;
+        private double discountEmployee;
+        private double discountEmployer;
         private DateTime issueDate;
 
         public int IdEmployee { get => idEmployee; set => idEmployee = value; }
@@ -55,12 +59,16 @@ namespace PTC2024.Model.DTO.PayrollDTO
         public string SecurityNumber { get => securityNumber; set => securityNumber = value; }
         public double Isss { get => isss; set => isss = value; }
         public double Afp { get => afp; set => afp = value; }
-        public double Income { get => income; set => income = value; }
+        public double Rent { get => rent; set => rent = value; }
         public double NetPay { get => netPay; set => netPay = value; }
         public string BanckAccount { get => banckAccount; set => banckAccount = value; }
         public DateTime IssueDate { get => issueDate; set => issueDate = value; }
         public int BusinessId1 { get => BusinessId; set => BusinessId = value; }
         public string BusinessPossition { get => businessPossition; set => businessPossition = value; }
         public float BusinessBonus { get => businessBonus; set => businessBonus = value; }
+        public double IsssEmployer { get => isssEmployer; set => isssEmployer = value; }
+        public double AfpEmployer { get => afpEmployer; set => afpEmployer = value; }
+        public double DiscountEmployee { get => discountEmployee; set => discountEmployee = value; }
+        public double DiscountEmployer { get => discountEmployer; set => discountEmployer = value; }
     }
 }

@@ -109,13 +109,17 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             {
                 GetEmployee();
                 comand.Connection = getConnection();
-                string queryPayroll = "INSERT INTO tbPayroll VALUES (@netPay,@income,@issueDate,@AFP, @ISSS,@IdEmployee)";
+                string queryPayroll = "INSERT INTO tbPayroll VALUES (@netPay,@rent,@issueDate,@AFP, @ISSS,@ISSEmployer,@AFPEmployer,@employeeDiscount,@employerDiscount, @IdEmployee)";
                 SqlCommand cmdAddPayroll = new SqlCommand(@queryPayroll, comand.Connection);
                 cmdAddPayroll.Parameters.AddWithValue("netPay", NetPay);
-                cmdAddPayroll.Parameters.AddWithValue("income", Income);
+                cmdAddPayroll.Parameters.AddWithValue("rent", Rent);
                 cmdAddPayroll.Parameters.AddWithValue("issueDate", IssueDate);
                 cmdAddPayroll.Parameters.AddWithValue("AFP", Afp);
                 cmdAddPayroll.Parameters.AddWithValue("ISSS", Isss);
+                cmdAddPayroll.Parameters.AddWithValue("ISSEmployer", IsssEmployer);
+                cmdAddPayroll.Parameters.AddWithValue("AFPEmployer",AfpEmployer);
+                cmdAddPayroll.Parameters.AddWithValue("employeeDiscount", DiscountEmployee);
+                cmdAddPayroll.Parameters.AddWithValue("employerDiscount", DiscountEmployer);
                 cmdAddPayroll.Parameters.AddWithValue("IdEmployee", IdEmployee);
 
                 int answer = cmdAddPayroll.ExecuteNonQuery();
@@ -127,12 +131,39 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"EC-009: {ex.Message}", "Error Critico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"EC-002: {ex.Message}", "Error Critico", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
             {
                 comand.Connection.Close();
+            }
+        }
+        public DataSet GetEmployeesDgv()
+        {
+            try
+            {
+                //Acceder a la conexion de la base de datos
+                comand.Connection = getConnection();
+                string queryEmployeeDgv = "SELECT * FROM viewPayrolls";
+                //Creamos el sqlCommand al cual le pasaremos la instruccion de la db
+                SqlCommand cmd = new SqlCommand(queryEmployeeDgv, comand.Connection);
+                cmd.ExecuteNonQuery();
+                //Creamos un adaptador para llenar el dataset
+                SqlDataAdapter adpEmployeeDgv = new SqlDataAdapter(cmd);
+                //Creamos un objeto dataset que es done se devolveran los resultados
+                DataSet dsEmployeeDgv = new DataSet();
+                //Rellenamos con el adaptador el dataset y le indicamos de donde provienen los datos
+                adpEmployeeDgv.Fill(dsEmployeeDgv, "viewPayrolls");
+                return dsEmployeeDgv;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
             }
         }
     }
