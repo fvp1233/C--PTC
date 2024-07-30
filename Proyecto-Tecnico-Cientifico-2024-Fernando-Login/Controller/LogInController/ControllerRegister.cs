@@ -16,6 +16,7 @@ namespace PTC2024.Controller.LogInController
     internal class ControllerRegister
     {
         FrmRegister objNewUser;
+        int Cpassword = 0;
         public ControllerRegister(FrmRegister view)
         {
             objNewUser = view;
@@ -291,6 +292,12 @@ namespace PTC2024.Controller.LogInController
             {
                 objNewUser.txtConfirmedPassword.Text = "Confirme su contraseña";
             }
+        }
+        
+
+        private void ConfirmPassword (object sender, EventArgs e)
+        {
+            
         }
     }
 
