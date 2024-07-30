@@ -1,4 +1,4 @@
-﻿using PTC2024.Model.DAO.ServicesDAO;
+using PTC2024.Model.DAO.ServicesDAO;
 using PTC2024.View.InventarioServicios;
 using PTC2024.View.Service_inventory;
 using System;
@@ -20,6 +20,7 @@ namespace PTC2024.Controller.ServicesController
 
             objServices.Load += new EventHandler(ChargeData);
             objServices.btnAgregarServicio.Click += new EventHandler(OpenAddService);
+
             objServices.cmsUpdateService.Click += new EventHandler(OpenUpdateService);
 
         }
@@ -40,6 +41,7 @@ namespace PTC2024.Controller.ServicesController
         {
             FrmUpdateService objUpdateService = new FrmUpdateService();
             objUpdateService.Show();
+
         }
 
         public void OpenAddService(object sender, EventArgs e)
@@ -47,6 +49,7 @@ namespace PTC2024.Controller.ServicesController
             FrmAddService objAddService = new FrmAddService();
             objAddService.Show();
         }
+
 
     }
 }

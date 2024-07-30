@@ -49,22 +49,22 @@ namespace PTC2024.Model.DAO.LogInDAO
                 if (respuesta == 1)
                 {
 
-                    string queryUser = "INSERT INTO tbEmployee (DUI,birthDate,Email,phone,address,lastName,names,username,Id_Department,Id_TypeE,Id_MaritalS,Id_Status) VALUES (@DUI, @birthDate, @Email,@phone,@address,@lastName,@names,@username ,@Id_Department, @Id_TypeE, @Id_MaritalS,@Id_Status) ";
+                    string queryUser = "INSERT INTO tbEmployee (DUI,birthDate,email,phone,address,lastName,names,username,IdDepartment,IdTypeE,IdMaritalS,IdStatus) VALUES (@DUI, @birthDate, @Email,@phone,@address,@lastName,@names,@username ,@IdDepartment, @IdTypeE, @IdMaritalS,@IdStatus) ";
 
                     SqlCommand cmdInsert = new SqlCommand(queryUser, command.Connection);
 
                     cmdInsert.Parameters.AddWithValue("DUI", DUI1);
                     cmdInsert.Parameters.AddWithValue("birthDate", Birth);
-                    cmdInsert.Parameters.AddWithValue("Email", Email);
+                    cmdInsert.Parameters.AddWithValue("email", Email);
                     cmdInsert.Parameters.AddWithValue("phone", Phone);
                     cmdInsert.Parameters.AddWithValue("address", Address);
                     cmdInsert.Parameters.AddWithValue("lastName", Lastnames);
                     cmdInsert.Parameters.AddWithValue("names", Names);
                     cmdInsert.Parameters.AddWithValue("userName",User );
-                    cmdInsert.Parameters.AddWithValue("Id_Department", Department);
-                    cmdInsert.Parameters.AddWithValue("Id_TypeE", TypeE);
-                    cmdInsert.Parameters.AddWithValue("Id_MaritalS", MaritalStatus);
-                    cmdInsert.Parameters.AddWithValue("Id_Status", Status);
+                    cmdInsert.Parameters.AddWithValue("IdDepartment", Department);
+                    cmdInsert.Parameters.AddWithValue("IdTypeE", TypeE);
+                    cmdInsert.Parameters.AddWithValue("IdMaritalS", MaritalStatus);
+                    cmdInsert.Parameters.AddWithValue("IdStatus", Status);
                     respuesta = cmdInsert.ExecuteNonQuery();
 
                     if (respuesta == 1)
