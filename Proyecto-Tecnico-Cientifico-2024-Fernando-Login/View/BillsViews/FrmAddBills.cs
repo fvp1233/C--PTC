@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PTC2024.Controller;
+using PTC2024.Controller.BillsController;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +17,8 @@ namespace PTC2024.View.Facturacion
         public FrmAddBills()
         {
             InitializeComponent();
-        }
+            ControllerAddBills objAddBills = new ControllerAddBills(this);
 
+        }
     }
 }
