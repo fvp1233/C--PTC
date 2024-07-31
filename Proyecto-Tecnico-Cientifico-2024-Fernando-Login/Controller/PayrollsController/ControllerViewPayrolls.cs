@@ -55,10 +55,10 @@ namespace PTC2024.Controller.EmployeesController
                         int idEmployee = int.Parse(row["IdEmployee"].ToString());
                         DateTime hireDate = DateTime.Parse(row["hireDate"].ToString());
                         int startWork = hireDate.Month;
-                        int endWork = hireDate.Year;                      
-                        for (int month = startWork; month <= endWork; month++)
+                        int endWork = hireDate.Year;
+                        int month;
+                        for (month = startWork; month <= 12; month++)
                         {
-                            string dateFilter = $"{hireDate.Year}-{month:D2}";
                             DataRow[] existingPayrollRows = payrollDt.Select($"IdEmployee = {idEmployee}");
                             if (existingPayrollRows.Length == 0)
                             {
@@ -91,8 +91,7 @@ namespace PTC2024.Controller.EmployeesController
                                 }
                                 returnValue = DAOInsertPayroll.AddPayroll();
                             }
-                        }
-                    
+                        }                
                     }
                 }
                 RefreshData();
