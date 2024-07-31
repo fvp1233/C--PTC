@@ -12,10 +12,42 @@ using System.Web.Hosting;
 
 namespace PTC2024.Model.DAO.LogInDAO
 {
-    internal class DAORegister:DTORegister
+    internal class DAORegister : DTORegister
     {
         readonly SqlCommand command = new SqlCommand();
 
+        public DataSet ObtenerBanco()
+        {
+            try
+            {
+                command.Connection = getConnection();
+                string query = "SELECT*FROM tbBanks";
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                cmd.ExecuteNonQuery();
+
+                //El adaptador recibe la info que encontró el "cmd"
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                //el siguiente dataset va a ser el que el método va a devolver
+                DataSet ds = new DataSet();
+
+                //se llena el dataset "ds" con la información que recibió el adaptador "adp"
+                adp.Fill(ds, "tbBanks");
+
+                //se devuelve el dataset
+                return ds;
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("EC-002: No se puedieron obtener los datos de los Diferentes Bancos");
+                return null;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
         public int GetNames()
         {
             try
@@ -23,9 +55,9 @@ namespace PTC2024.Model.DAO.LogInDAO
                 //Consulto si el usuario existe
                 command.Connection = getConnection();
                 string queryUserExist = "select username from dbo.tbUserData where username=@username";
-                SqlCommand cmdUserExist= new SqlCommand(queryUserExist, command.Connection);
-                cmdUserExist .Parameters.AddWithValue("username", User);
-                DataTable dt=new DataTable();
+                SqlCommand cmdUserExist = new SqlCommand(queryUserExist, command.Connection);
+                cmdUserExist.Parameters.AddWithValue("username", User);
+                DataTable dt = new DataTable();
                 SqlDataAdapter adapter = new SqlDataAdapter(cmdUserExist);
                 adapter.Fill(dt);
 
@@ -34,7 +66,7 @@ namespace PTC2024.Model.DAO.LogInDAO
                     MessageBox.Show("Usuario ya Existe");
                     return 1;
                 }
-              
+
 
                 command.Connection = getConnection();
                 string queryPerson = "INSERT INTO tbUserData VALUES (@username, @password, @business)";
@@ -42,29 +74,34 @@ namespace PTC2024.Model.DAO.LogInDAO
                 cmdInsertData.Parameters.AddWithValue("username", User);
                 cmdInsertData.Parameters.AddWithValue("password", Password);
                 cmdInsertData.Parameters.AddWithValue("business", BusinessP);
-               
+
                 // falta agregar la tabla en base de datos cmdInsertData.Parameters.AddWithValue("confirmPassword", ConfirmPassword);
                 int respuesta = cmdInsertData.ExecuteNonQuery();
 
                 if (respuesta == 1)
                 {
 
-                    string queryUser = "INSERT INTO tbEmployee (DUI,birthDate,email,phone,address,lastName,names,username,IdDepartment,IdTypeE,IdMaritalS,IdStatus) VALUES (@DUI, @birthDate, @Email,@phone,@address,@lastName,@names,@username ,@IdDepartment, @IdTypeE, @IdMaritalS,@IdStatus) ";
+                    string queryUser = "INSERT INTO tbEmployee (names,lastName,DUI,birthDate,email,phone,address,salary,bankAccount,affiliationNumber, hireDate,IdBank,IdDepartment,IdTypeE,IdMaritalS,IdStatus,username) VALUES (@names,@lastName,@DUI,@birthDate,@email,@phone,@address,@salary,@bankAccount,@affiliationNumber,@hireDate,@IdBank,@IdDepartment,@IdTypeE,@IdMaritalS,@IdStatus,@username)";
 
                     SqlCommand cmdInsert = new SqlCommand(queryUser, command.Connection);
 
+                    cmdInsert.Parameters.AddWithValue("names", Names);
+                    cmdInsert.Parameters.AddWithValue("lastName", Lastnames);
                     cmdInsert.Parameters.AddWithValue("DUI", DUI1);
                     cmdInsert.Parameters.AddWithValue("birthDate", Birth);
                     cmdInsert.Parameters.AddWithValue("email", Email);
                     cmdInsert.Parameters.AddWithValue("phone", Phone);
                     cmdInsert.Parameters.AddWithValue("address", Address);
-                    cmdInsert.Parameters.AddWithValue("lastName", Lastnames);
-                    cmdInsert.Parameters.AddWithValue("names", Names);
-                    cmdInsert.Parameters.AddWithValue("userName",User );
+                    cmdInsert.Parameters.AddWithValue("salary", Salary);
+                    cmdInsert.Parameters.AddWithValue("bankAccount", BankAccount);
+                    cmdInsert.Parameters.AddWithValue("affiliationNumber", AffiliationNumber);
+                    cmdInsert.Parameters.AddWithValue("hireDate", HireDate);
+                    cmdInsert.Parameters.AddWithValue("IdBank", BankType);
                     cmdInsert.Parameters.AddWithValue("IdDepartment", Department);
                     cmdInsert.Parameters.AddWithValue("IdTypeE", TypeE);
                     cmdInsert.Parameters.AddWithValue("IdMaritalS", MaritalStatus);
                     cmdInsert.Parameters.AddWithValue("IdStatus", Status);
+                    cmdInsert.Parameters.AddWithValue("userName", User);
                     respuesta = cmdInsert.ExecuteNonQuery();
 
                     if (respuesta == 1)
@@ -81,8 +118,35 @@ namespace PTC2024.Model.DAO.LogInDAO
                 {
                     return 0;
                 }
+                if (respuesta == 1)
+                {
+                    string queryUser = "INSERT INTO tbBanks (BankName) VALUES (@BankName)";
+
+                    SqlCommand cmdInsert = new SqlCommand(queryUser, command.Connection);
+
+                    cmdInsert.Parameters.AddWithValue("BankName", BankType);
+
+                    if (respuesta == 1)
+                    {
+                        return 1;
+                    }
+
+                    else
+                    {
+                        return 0;
+                    }
+                }
+                else
+                {
+                    return 0;
+                }
+
 
             }
+
+
+
+
             catch (SqlException ex)
             {
 
@@ -99,4 +163,4 @@ namespace PTC2024.Model.DAO.LogInDAO
         }
     }
 }
-    
+
