@@ -24,6 +24,12 @@ namespace PTC2024.Model.DTO.LogInDTO
         private int typeE;
         private int maritalStatus;
         private int status;
+        private float salary;
+        private int bankType;
+        private int affiliationNumber;
+        private string bankAccount;
+        private DateTime hireDate;
+     
 
         //Getter y Settersde los atributos
         public string Names { get => names; set => names = value; }
@@ -42,5 +48,11 @@ namespace PTC2024.Model.DTO.LogInDTO
         public int TypeE { get => typeE; set => typeE = value; }
         public int MaritalStatus { get => maritalStatus; set => maritalStatus = value; }
         public int Status { get => status; set => status = value; }
+        public float Salary { get => salary; set => salary = value; }
+        public int BankType { get => bankType; set => bankType = value; }
+        public int AffiliationNumber { get => affiliationNumber; set => affiliationNumber = value; }
+        public string BankAccount { get => bankAccount; set => bankAccount = value; }
+        public DateTime HireDate { get => hireDate; set => hireDate = value; }
+        
     }
 }

@@ -7,6 +7,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PTC2024.Controller.Helper;
+using PTC2024.Model.DAO;
 using PTC2024.Model.DAO.LogInDAO;
 using PTC2024.View.formularios.inicio;
 using PTC2024.View.login;
@@ -20,6 +22,7 @@ namespace PTC2024.Controller.LogInController
         public ControllerRegister(FrmRegister view)
         {
             objNewUser = view;
+            objNewUser.Load += new EventHandler(LoadCombobox);
             objNewUser.btnRegister.Click += new EventHandler(RegisterData);
             //Evento para nombres
             objNewUser.txtNames.Enter += new EventHandler(EnterUsername);
@@ -48,18 +51,42 @@ namespace PTC2024.Controller.LogInController
             //Eventos para el confirmar contraseña
             objNewUser.txtConfirmedPassword.Enter += new EventHandler(EnterConfirmPassword);
             objNewUser.txtConfirmedPassword.Leave += new EventHandler(LeaveConfirmPassword);
+            //Eventos para la cuenta del banco
+            objNewUser.txtBankAccount.Enter += new EventHandler(EnterBankAccount);
+            objNewUser.txtBankAccount.Leave += new EventHandler(LeaveAfilliation);
+            //Eventos para la afiliacion
+            objNewUser.txtISSS.Enter += new EventHandler(EnterAfilliation);
+            objNewUser.txtISSS.Leave += new EventHandler(LeaveAfilliation);
+        }
+
+        public void LoadCombobox(object sender, EventArgs e)
+        {
+            DAORegister DAOCombobox = new DAORegister();
+            //Dropdown de diferentes bancos
+            DataSet dsBank = DAOCombobox.ObtenerBanco();
+            objNewUser.DdBankType.DataSource = dsBank.Tables["tbBanks"];
+            objNewUser.DdBankType.DisplayMember = "BankName";
+            objNewUser.DdBankType.ValueMember = "IdBank";
+
         }
 
         public void RegisterData(object sender, EventArgs e)
         {
             DAORegister DAOInsertar = new DAORegister();
+            CommonClasses commonClasses = new CommonClasses();
+
 
             //Insercion de datos de tabla tbEmployees
             DAOInsertar.Names = objNewUser.txtNames.Text;
             DAOInsertar.Lastnames = objNewUser.txtLastnames.Text;
+            DAOInsertar.DUI1 = objNewUser.txtDUI.Text;
             DAOInsertar.Birth = objNewUser.dtBirth.Value.Date;
             DAOInsertar.Email = objNewUser.txtEmail.Text;
-            DAOInsertar.DUI1 = objNewUser.txtDUI.Text;
+            DAOInsertar.Salary = 950;
+            DAOInsertar.BankAccount = objNewUser.txtBankAccount.Text;
+            DAOInsertar.AffiliationNumber = int.Parse(objNewUser.txtISSS.Text);
+            DAOInsertar.HireDate = objNewUser.dtHireDate.Value.Date;
+            DAOInsertar.BankType = int.Parse(objNewUser.DdBankType.SelectedValue.ToString());
             DAOInsertar.Phone = objNewUser.txtPhone.Text;
             DAOInsertar.Address = objNewUser.txtAddress.Text;
             DAOInsertar.BusinessP = 1;
@@ -68,13 +95,17 @@ namespace PTC2024.Controller.LogInController
             DAOInsertar.MaritalStatus = 1;
             DAOInsertar.Status = 1;
 
+
             //Insercion de datos de tabla tbUserData
             DAOInsertar.User = objNewUser.txtUser.Text;
-            DAOInsertar.Password = objNewUser.txtPassword.Text;
-            DAOInsertar.ConfirmPassword = objNewUser.txtConfirmedPassword.Text;
+            DAOInsertar.Password = commonClasses.ComputeSha256Hash(objNewUser.txtPassword.Text);
+            DAOInsertar.ConfirmPassword = commonClasses.ComputeSha256Hash(objNewUser.txtConfirmedPassword.Text);
+
+            //Insercion de datos de tabla tbBankAccount
             int returnn = DAOInsertar.GetNames();
 
-            if (returnn == 1) {
+            if (returnn == 1)
+            {
 
                 MessageBox.Show("Datos ingresados correctamente" + MessageBoxButtons.OK + MessageBoxIcon.Information);
 
@@ -90,14 +121,15 @@ namespace PTC2024.Controller.LogInController
 
         }
         //Username enter
-        private void EnterUsername (object sennder, EventArgs e )
+        private void EnterUsername(object sennder, EventArgs e)
         {
-            if (objNewUser.txtNames.Text.Trim().Equals("Ingrese sus nombres")) {
+            if (objNewUser.txtNames.Text.Trim().Equals("Ingrese sus nombres"))
+            {
                 {
                     objNewUser.txtNames.ForeColor = Color.Black;
                     objNewUser.txtNames.Clear();
                     objNewUser.txtNames.Focus();
-                    
+
 
                 }
             }
@@ -209,7 +241,7 @@ namespace PTC2024.Controller.LogInController
                 objNewUser.txtPhone.Text = "Ingrese su número teléfonico";
             }
         }
-        
+
         //Address Enter
         private void EnterAddress(object sender, EventArgs e)
         {
@@ -293,15 +325,57 @@ namespace PTC2024.Controller.LogInController
                 objNewUser.txtConfirmedPassword.Text = "Confirme su contraseña";
             }
         }
-        
 
-        private void ConfirmPassword (object sender, EventArgs e)
+
+        private void ConfirmPassword(object sender, EventArgs e)
         {
-            
+
         }
+
+        private void EnterBankAccount(object sender, EventArgs e)
+        {
+            if (objNewUser.txtBankAccount.Text.Trim().Equals("Ingrese la cuenta de su banco"))
+            {
+                {
+                    objNewUser.txtBankAccount.ForeColor = Color.Black;
+                    objNewUser.txtBankAccount.Clear();
+                    objNewUser.txtBankAccount.Focus();
+                }
+            }
+        }
+
+        //User Leave
+        private void LeaveBankAccount(object sender, EventArgs e)
+        {
+            if (objNewUser.txtBankAccount.Text.Trim().Equals(""))
+            {
+                objNewUser.txtBankAccount.Text = "Ingrese la cuenta de su banco";
+            }
+        }
+
+        private void EnterAfilliation(object sender, EventArgs e)
+        {
+            if (objNewUser.txtISSS.Text.Trim().Equals("Ingrese su número de afiliación"))
+            {
+                {
+                    objNewUser.txtISSS.ForeColor = Color.Black;
+                    objNewUser.txtISSS.Clear();
+                    objNewUser.txtISSS.Focus();
+                }
+            }
+        }
+
+        //User Leave
+        private void LeaveAfilliation(object sender, EventArgs e)
+        {
+            if (objNewUser.txtISSS.Text.Trim().Equals(""))
+            {
+                objNewUser.txtISSS.Text = "Ingrese su número de afiliación";
+            }
+        }
+
     }
 
-    
 
 }
 
