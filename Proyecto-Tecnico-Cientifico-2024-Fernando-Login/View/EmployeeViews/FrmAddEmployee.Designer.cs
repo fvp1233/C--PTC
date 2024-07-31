@@ -70,9 +70,9 @@
             this.bunifuGroupBox3 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuDropdown1 = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.comboBanks = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel19 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuDatePicker1 = new Bunifu.UI.WinForms.BunifuDatePicker();
+            this.dpHireDate = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.bunifuCustomLabel20 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGroupBox1.SuspendLayout();
             this.bunifuGroupBox2.SuspendLayout();
@@ -905,7 +905,7 @@
             this.bunifuGroupBox2.BorderRadius = 8;
             this.bunifuGroupBox2.BorderThickness = 2;
             this.bunifuGroupBox2.Controls.Add(this.bunifuCustomLabel19);
-            this.bunifuGroupBox2.Controls.Add(this.bunifuDropdown1);
+            this.bunifuGroupBox2.Controls.Add(this.comboBanks);
             this.bunifuGroupBox2.Controls.Add(this.txtBankAccount);
             this.bunifuGroupBox2.Controls.Add(this.bunifuCustomLabel16);
             this.bunifuGroupBox2.Controls.Add(this.txtSalary);
@@ -929,7 +929,7 @@
             this.bunifuGroupBox3.BorderRadius = 8;
             this.bunifuGroupBox3.BorderThickness = 2;
             this.bunifuGroupBox3.Controls.Add(this.bunifuCustomLabel20);
-            this.bunifuGroupBox3.Controls.Add(this.bunifuDatePicker1);
+            this.bunifuGroupBox3.Controls.Add(this.dpHireDate);
             this.bunifuGroupBox3.Controls.Add(this.txtAddress);
             this.bunifuGroupBox3.Controls.Add(this.bunifuCustomLabel3);
             this.bunifuGroupBox3.Controls.Add(this.bunifuCustomLabel4);
@@ -983,50 +983,50 @@
             this.bunifuCustomLabel1.TabIndex = 106;
             this.bunifuCustomLabel1.Text = "AGREGAR EMPLEADO";
             // 
-            // bunifuDropdown1
+            // comboBanks
             // 
-            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown1.BackgroundColor = System.Drawing.Color.LightGray;
-            this.bunifuDropdown1.BorderColor = System.Drawing.Color.Silver;
-            this.bunifuDropdown1.BorderRadius = 1;
-            this.bunifuDropdown1.Color = System.Drawing.Color.Silver;
-            this.bunifuDropdown1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuDropdown1.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.bunifuDropdown1.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.bunifuDropdown1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuDropdown1.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.bunifuDropdown1.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.bunifuDropdown1.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.bunifuDropdown1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.bunifuDropdown1.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.bunifuDropdown1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bunifuDropdown1.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.bunifuDropdown1.FillDropDown = true;
-            this.bunifuDropdown1.FillIndicator = false;
-            this.bunifuDropdown1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bunifuDropdown1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuDropdown1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuDropdown1.FormattingEnabled = true;
-            this.bunifuDropdown1.Icon = null;
-            this.bunifuDropdown1.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.bunifuDropdown1.IndicatorColor = System.Drawing.Color.DimGray;
-            this.bunifuDropdown1.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.bunifuDropdown1.IndicatorThickness = 2;
-            this.bunifuDropdown1.IsDropdownOpened = false;
-            this.bunifuDropdown1.ItemBackColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.ItemBorderColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.ItemForeColor = System.Drawing.Color.Black;
-            this.bunifuDropdown1.ItemHeight = 26;
-            this.bunifuDropdown1.ItemHighLightColor = System.Drawing.Color.LightGray;
-            this.bunifuDropdown1.ItemHighLightForeColor = System.Drawing.Color.Black;
-            this.bunifuDropdown1.ItemTopMargin = 3;
-            this.bunifuDropdown1.Location = new System.Drawing.Point(774, 41);
-            this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.Size = new System.Drawing.Size(245, 32);
-            this.bunifuDropdown1.TabIndex = 91;
-            this.bunifuDropdown1.Text = null;
-            this.bunifuDropdown1.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.bunifuDropdown1.TextLeftMargin = 5;
+            this.comboBanks.BackColor = System.Drawing.Color.Transparent;
+            this.comboBanks.BackgroundColor = System.Drawing.Color.LightGray;
+            this.comboBanks.BorderColor = System.Drawing.Color.Silver;
+            this.comboBanks.BorderRadius = 1;
+            this.comboBanks.Color = System.Drawing.Color.Silver;
+            this.comboBanks.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBanks.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.comboBanks.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.comboBanks.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.comboBanks.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.comboBanks.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.comboBanks.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.comboBanks.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBanks.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.comboBanks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBanks.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboBanks.FillDropDown = true;
+            this.comboBanks.FillIndicator = false;
+            this.comboBanks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBanks.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBanks.ForeColor = System.Drawing.Color.Black;
+            this.comboBanks.FormattingEnabled = true;
+            this.comboBanks.Icon = null;
+            this.comboBanks.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.comboBanks.IndicatorColor = System.Drawing.Color.DimGray;
+            this.comboBanks.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.comboBanks.IndicatorThickness = 2;
+            this.comboBanks.IsDropdownOpened = false;
+            this.comboBanks.ItemBackColor = System.Drawing.Color.White;
+            this.comboBanks.ItemBorderColor = System.Drawing.Color.White;
+            this.comboBanks.ItemForeColor = System.Drawing.Color.Black;
+            this.comboBanks.ItemHeight = 26;
+            this.comboBanks.ItemHighLightColor = System.Drawing.Color.LightGray;
+            this.comboBanks.ItemHighLightForeColor = System.Drawing.Color.Black;
+            this.comboBanks.ItemTopMargin = 3;
+            this.comboBanks.Location = new System.Drawing.Point(774, 41);
+            this.comboBanks.Name = "comboBanks";
+            this.comboBanks.Size = new System.Drawing.Size(245, 32);
+            this.comboBanks.TabIndex = 91;
+            this.comboBanks.Text = null;
+            this.comboBanks.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboBanks.TextLeftMargin = 5;
             // 
             // bunifuCustomLabel19
             // 
@@ -1039,32 +1039,32 @@
             this.bunifuCustomLabel19.TabIndex = 100;
             this.bunifuCustomLabel19.Text = "Banco:";
             // 
-            // bunifuDatePicker1
+            // dpHireDate
             // 
-            this.bunifuDatePicker1.BackColor = System.Drawing.Color.LightGray;
-            this.bunifuDatePicker1.BorderColor = System.Drawing.Color.Silver;
-            this.bunifuDatePicker1.BorderRadius = 1;
-            this.bunifuDatePicker1.Color = System.Drawing.Color.Silver;
-            this.bunifuDatePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuDatePicker1.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
-            this.bunifuDatePicker1.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
-            this.bunifuDatePicker1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDatePicker1.DisplayWeekNumbers = false;
-            this.bunifuDatePicker1.DPHeight = 0;
-            this.bunifuDatePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.bunifuDatePicker1.FillDatePicker = false;
-            this.bunifuDatePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuDatePicker1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuDatePicker1.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuDatePicker1.Icon")));
-            this.bunifuDatePicker1.IconColor = System.Drawing.Color.DimGray;
-            this.bunifuDatePicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
-            this.bunifuDatePicker1.LeftTextMargin = 5;
-            this.bunifuDatePicker1.Location = new System.Drawing.Point(350, 175);
-            this.bunifuDatePicker1.MinimumSize = new System.Drawing.Size(4, 32);
-            this.bunifuDatePicker1.Name = "bunifuDatePicker1";
-            this.bunifuDatePicker1.Size = new System.Drawing.Size(330, 32);
-            this.bunifuDatePicker1.TabIndex = 91;
-            this.bunifuDatePicker1.Value = new System.DateTime(2024, 7, 13, 16, 30, 0, 0);
+            this.dpHireDate.BackColor = System.Drawing.Color.LightGray;
+            this.dpHireDate.BorderColor = System.Drawing.Color.Silver;
+            this.dpHireDate.BorderRadius = 1;
+            this.dpHireDate.Color = System.Drawing.Color.Silver;
+            this.dpHireDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dpHireDate.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
+            this.dpHireDate.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
+            this.dpHireDate.DisabledColor = System.Drawing.Color.Gray;
+            this.dpHireDate.DisplayWeekNumbers = false;
+            this.dpHireDate.DPHeight = 0;
+            this.dpHireDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dpHireDate.FillDatePicker = false;
+            this.dpHireDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dpHireDate.ForeColor = System.Drawing.Color.Black;
+            this.dpHireDate.Icon = ((System.Drawing.Image)(resources.GetObject("dpHireDate.Icon")));
+            this.dpHireDate.IconColor = System.Drawing.Color.DimGray;
+            this.dpHireDate.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
+            this.dpHireDate.LeftTextMargin = 5;
+            this.dpHireDate.Location = new System.Drawing.Point(350, 175);
+            this.dpHireDate.MinimumSize = new System.Drawing.Size(4, 32);
+            this.dpHireDate.Name = "dpHireDate";
+            this.dpHireDate.Size = new System.Drawing.Size(330, 32);
+            this.dpHireDate.TabIndex = 91;
+            this.dpHireDate.Value = new System.DateTime(2024, 7, 13, 16, 30, 0, 0);
             // 
             // bunifuCustomLabel20
             // 
@@ -1142,9 +1142,9 @@
         private Bunifu.UI.WinForms.BunifuGroupBox bunifuGroupBox3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        public Bunifu.UI.WinForms.BunifuDropdown bunifuDropdown1;
+        public Bunifu.UI.WinForms.BunifuDropdown comboBanks;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel19;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel20;
-        public Bunifu.UI.WinForms.BunifuDatePicker bunifuDatePicker1;
+        public Bunifu.UI.WinForms.BunifuDatePicker dpHireDate;
     }
 }
