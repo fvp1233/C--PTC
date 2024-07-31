@@ -106,7 +106,7 @@
     <Compile Include="Controller\LogInController\ControllerLogin.cs" />
     <Compile Include="Controller\LogInController\ControllerRecoverPassword.cs" />
     <Compile Include="Controller\LogInController\ControllerRegister.cs" />
-    <Compile Include="Controller\PayrollsController\ControllerAddPayroll.cs" />
+    <Compile Include="Controller\PayrollsController\ControllerInfoPayroll.cs" />
     <Compile Include="Controller\EmployeesController\ControllerEmployees.cs" />
     <Compile Include="Controller\EmployeesController\ControllerPayrolls.cs" />
     <Compile Include="Controller\EmployeesController\ControllerUpdateEmployee.cs" />
@@ -128,7 +128,7 @@
     <Compile Include="Model\DAO\LogInDAO\DAOLogin.cs" />
     <Compile Include="Model\DAO\LogInDAO\DAORecoverPassword.cs" />
     <Compile Include="Model\DAO\LogInDAO\DAORegister.cs" />
-    <Compile Include="Model\DAO\PayrollsDAO\DAOAddPayroll.cs" />
+    <Compile Include="Model\DAO\PayrollsDAO\DAOInfoPayroll.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOUpdatePayroll.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOViewPayrolls.cs" />
     <Compile Include="Model\DAO\ServicesDAO\DAOAddService.cs" />
@@ -148,7 +148,7 @@
     <Compile Include="Model\DTO\LogInDTO\DTOLogin.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTORecoverPassword.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTORegister.cs" />
-    <Compile Include="Model\DTO\PayrollDTO\DTOAddPayroll.cs" />
+    <Compile Include="Model\DTO\PayrollDTO\DTOInfoPayroll.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOUpdatePayroll.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOViewPayrolls.cs" />
     <Compile Include="Model\DTO\ServicesDTO\DTOAddService.cs" />
@@ -191,11 +191,11 @@
     <Compile Include="View\EmployeeViews\FrmEmployees.Designer.cs">
       <DependentUpon>FrmEmployees.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\EmployeeViews\FrmAddPayroll.cs">
+    <Compile Include="View\EmployeeViews\FrmInfoPayroll.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\EmployeeViews\FrmAddPayroll.Designer.cs">
-      <DependentUpon>FrmAddPayroll.cs</DependentUpon>
+    <Compile Include="View\EmployeeViews\FrmInfoPayroll.Designer.cs">
+      <DependentUpon>FrmInfoPayroll.cs</DependentUpon>
     </Compile>
     <Compile Include="View\EmployeeViews\FrmLoadPayroll.cs">
       <SubType>Form</SubType>
@@ -307,8 +307,8 @@
     <EmbeddedResource Include="View\EmployeeViews\FrmEmployees.resx">
       <DependentUpon>FrmEmployees.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\EmployeeViews\FrmAddPayroll.resx">
-      <DependentUpon>FrmAddPayroll.cs</DependentUpon>
+    <EmbeddedResource Include="View\EmployeeViews\FrmInfoPayroll.resx">
+      <DependentUpon>FrmInfoPayroll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmLoadPayroll.resx">
       <DependentUpon>FrmLoadPayroll.cs</DependentUpon>

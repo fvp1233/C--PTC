@@ -166,5 +166,50 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 getConnection().Close();
             }
         }
+        public int DeletePayroll()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = "DELETE tbPayroll WHERE IdPayroll =@param1";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                cmd.Parameters.AddWithValue("param1", IdPayroll);
+                int respuesta = cmd.ExecuteNonQuery();
+                return respuesta;
+            }
+            catch (Exception)
+            {
+
+                return -1;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+
+        }
+        public DataSet SearchPayroll(string valor)
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE [DUI] LIKE '%{valor}%' OR [Empleado] LIKE '%{valor}%' OR [Cargo] LIKE '%{valor}%'";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds,"viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
     }
 }

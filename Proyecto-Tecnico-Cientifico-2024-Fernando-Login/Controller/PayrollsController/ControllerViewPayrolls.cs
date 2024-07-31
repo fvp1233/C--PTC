@@ -21,6 +21,9 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.Load += new EventHandler(LoadData);
             objViewPayrolls.btnCreatePayroll.Click += new EventHandler(CreatePayroll);
             objViewPayrolls.cmsUpdatePayroll.Click += new EventHandler(OpenUpdatePayroll);
+            objViewPayrolls.cmsDeletePayroll.Click += new EventHandler(DeletePayroll);
+            objViewPayrolls.cmsPayrollInformation.Click += new EventHandler(ViewInfoPayroll);
+            objViewPayrolls.txtSearch.KeyPress += new KeyPressEventHandler(SearchPayrollEvent);
         }
         //Metodo para crear las planillas
         public void CreatePayroll(object sender, EventArgs e)
@@ -176,6 +179,11 @@ namespace PTC2024.Controller.EmployeesController
             double employerDiscount = GetAFPEmployer(Salary)+GetISSS(Salary)+GetRent(Salary);
             return employerDiscount;
         }
+        //public void OpenInfoPayroll(object sender, EventArgs e)
+        //{
+        //    FrmInfoPayroll openInfoPayroll = new FrmInfoPayroll();
+        //    openInfoPayroll.ShowDialog();
+        //}
         public void OpenUpdatePayroll(object sender, EventArgs e)
         {
             FrmUpdatePayroll openUpdatePayroll = new FrmUpdatePayroll();
@@ -190,6 +198,63 @@ namespace PTC2024.Controller.EmployeesController
             DAOViewPayrolls objRefresh = new DAOViewPayrolls();
             DataSet ds = objRefresh.GetEmployeesDgv();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
+        private void DeletePayroll(object sender, EventArgs e)
+        {
+            int pos = objViewPayrolls.dgvPayrolls.CurrentRow.Index;
+            if (MessageBox.Show($"¿Esta seguro que desea elimar a:\n {objViewPayrolls.dgvPayrolls[1, pos].Value.ToString()} {objViewPayrolls.dgvPayrolls[2, pos].Value.ToString()}.\nConsidere que dicha acción no se podrá revertir.", "Confirmar acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                DAOViewPayrolls daoDelete = new DAOViewPayrolls();
+                daoDelete.IdPayroll = int.Parse(objViewPayrolls.dgvPayrolls[0, pos].Value.ToString());
+                int values = daoDelete.DeletePayroll();
+                if (values == 1)
+                {
+                    MessageBox.Show("Registro eliminado", "Acción completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RefreshData();
+                }
+                else
+                {
+                    MessageBox.Show("Registro no pudo ser eliminado, verifique que el registro no tenga datos asociados.", "Acción interrumpida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        public void SearchPayrollEvent(object sender, KeyPressEventArgs e)
+        {
+            SearchPayroll();
+        }
+        void SearchPayroll()
+        {
+            DAOViewPayrolls objAdmin = new DAOViewPayrolls();
+            DataSet ds = objAdmin.SearchPayroll(objViewPayrolls.txtSearch.Text.Trim());
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
+        private void ViewInfoPayroll(object sender, EventArgs e)
+        {
+            int pos = objViewPayrolls.dgvPayrolls.CurrentRow.Index;
+            int affiliationNumber;
+            string  employee, dui, possition, banckAccount;
+            double salary, bonus,afp, isss, rent, discountEmployee, netSalary, issEmployer, afpEmployer, discountEmployer;
+            DateTime issueDate;
+            dui = objViewPayrolls.dgvPayrolls[1,pos].Value.ToString();
+            employee = objViewPayrolls.dgvPayrolls[2, pos].Value.ToString();
+            salary = double.Parse(objViewPayrolls.dgvPayrolls[3,pos].Value.ToString());
+            possition = objViewPayrolls.dgvPayrolls[4,pos].Value.ToString();
+            bonus = double.Parse(objViewPayrolls.dgvPayrolls[5, pos].Value.ToString());
+            banckAccount = objViewPayrolls.dgvPayrolls[6, pos].Value.ToString();
+            affiliationNumber = int.Parse(objViewPayrolls.dgvPayrolls[7, pos].Value.ToString());
+            afp = double.Parse(objViewPayrolls.dgvPayrolls[8, pos].Value.ToString());
+            isss = double.Parse(objViewPayrolls.dgvPayrolls[9, pos].Value.ToString());
+            rent = double.Parse(objViewPayrolls.dgvPayrolls[10, pos].Value.ToString());
+            netSalary = double.Parse(objViewPayrolls.dgvPayrolls[11, pos].Value.ToString());
+            discountEmployee = isss + afp + rent;
+            double calculatedSalary = bonus + salary;
+            issueDate = DateTime.Parse(objViewPayrolls.dgvPayrolls[12,pos].Value.ToString());
+            issEmployer = GetISSSEmployeer(calculatedSalary);
+            afpEmployer = GetAFPEmployer(calculatedSalary);
+            discountEmployer = issEmployer + afpEmployer;
+            FrmInfoPayroll openForm = new FrmInfoPayroll(dui, employee, possition, bonus, banckAccount, affiliationNumber, salary, afp, isss, rent, netSalary, discountEmployee, issueDate, issEmployer, afpEmployer, discountEmployer);
+            openForm.ShowDialog();
+            RefreshData();
         }
     }
 }
