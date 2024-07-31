@@ -20,35 +20,59 @@ namespace PTC2024.Controller.ServicesController
 
             objServices.Load += new EventHandler(ChargeData);
             objServices.btnAgregarServicio.Click += new EventHandler(OpenAddService);
+            objServices.cmsDeleteService.Click += new EventHandler(DeleteService);
 
             objServices.cmsUpdateService.Click += new EventHandler(OpenUpdateService);
 
         }
+
 
         public void ChargeData(object sender, EventArgs e)
         {
             ChargeDgv();
         }
 
+
         public void ChargeDgv()
         {
             DAOServices dAOServices = new DAOServices();
             DataSet Result = dAOServices.GetDataTable();
-            objServices.DgvServicios.DataSource = Result.Tables["tbServices"];
+            objServices.DgvServices.DataSource = Result.Tables["tbServices"];
         }
 
-        public void OpenUpdateService(object sender, EventArgs e)
-        {
-            FrmUpdateService objUpdateService = new FrmUpdateService();
-            objUpdateService.Show();
-
-        }
 
         public void OpenAddService(object sender, EventArgs e)
         {
             FrmAddService objAddService = new FrmAddService();
             objAddService.Show();
+            ChargeDgv();
         }
+
+
+        public void OpenUpdateService(object sender, EventArgs e)
+        {
+            int pos = objServices.DgvServices.CurrentRow.Index;
+
+            int id = (int.Parse(objServices.DgvServices[0, pos].Value.ToString()));
+            string nombre = objServices.DgvServices[1, pos].Value.ToString();
+            string descripcion = objServices.DgvServices[2, pos].Value.ToString();
+            double monto = double.Parse(objServices.DgvServices[3, pos].Value.ToString());
+            string categoria = objServices.DgvServices[4, pos].Value.ToString();
+            FrmUpdateService openForm = new FrmUpdateService( id, nombre, descripcion, monto, categoria);
+            openForm.Show();
+
+            ChargeDgv();
+
+        }
+
+
+        public void DeleteService(object sender, EventArgs e)
+        {
+
+        }
+
+
+
 
 
     }
