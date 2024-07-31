@@ -53,39 +53,46 @@ namespace PTC2024.Controller.EmployeesController
                     foreach (DataRow row in employeeDt.Rows)
                     {
                         int idEmployee = int.Parse(row["IdEmployee"].ToString());
-
-                        DataRow[] existingPayrollRows = payrollDt.Select($"IdEmployee = {idEmployee}");
-                        if (existingPayrollRows.Length == 0)
+                        DateTime hireDate = DateTime.Parse(row["hireDate"].ToString());
+                        int startWork = hireDate.Month;
+                        int endWork = hireDate.Year;                      
+                        for (int month = startWork; month <= endWork; month++)
                         {
-                            string username = row["username"].ToString();
-                            DataRow[] userRows = userDt.Select($"username = '{username}'");
-                            if (userRows.Length > 0)
+                            string dateFilter = $"{hireDate.Year}-{month:D2}";
+                            DataRow[] existingPayrollRows = payrollDt.Select($"IdEmployee = {idEmployee}");
+                            if (existingPayrollRows.Length == 0)
                             {
-                                DataRow userRow = userRows[0];
-                                string businessRole = userRow["IdBusinessP"].ToString();
-                                // Buscar la fila correspondiente en la tabla roles (bonus)
-                                DataRow[] bonusRows = bonusDt.Select($"IdBusinessP = '{businessRole}'");
-                                if (bonusRows.Length > 0)
+                                string username = row["username"].ToString();
+                                DataRow[] userRows = userDt.Select($"username = '{username}'");
+                                if (userRows.Length > 0)
                                 {
-                                    DataRow bonusRow = bonusRows[0];
-                                    double roleBonus = double.Parse(bonusRow["positionBonus"].ToString());
-                                    DAOInsertPayroll.BusinessBonus = float.Parse(roleBonus.ToString());
-                                    double calculatedSalary = double.Parse(roleBonus.ToString()) + double.Parse(row["salary"].ToString());
-                                    DAOInsertPayroll.Username = row["username"].ToString();
-                                    DAOInsertPayroll.Isss = GetISSS(calculatedSalary);
-                                    DAOInsertPayroll.Afp = GetAFP(calculatedSalary);
-                                    DAOInsertPayroll.Rent = GetRent(calculatedSalary);
-                                    DAOInsertPayroll.NetPay = GetNetSalary(calculatedSalary);
-                                    DAOInsertPayroll.IsssEmployer =GetISSSEmployeer(calculatedSalary);
-                                    DAOInsertPayroll.AfpEmployer= GetAFPEmployer(calculatedSalary);
-                                    DAOInsertPayroll.DiscountEmployee= GetEmployeeDiscount(calculatedSalary);
-                                    DAOInsertPayroll.DiscountEmployer = GetEmployerDiscount(calculatedSalary);
-                                    DAOInsertPayroll.IssueDate = DateTime.Now;
-                                    DAOInsertPayroll.IdEmployee = int.Parse(row["IdEmployee"].ToString());
+                                    DataRow userRow = userRows[0];
+                                    string businessRole = userRow["IdBusinessP"].ToString();
+                                    // Buscar la fila correspondiente en la tabla roles (bonus)
+                                    DataRow[] bonusRows = bonusDt.Select($"IdBusinessP = '{businessRole}'");
+                                    if (bonusRows.Length > 0)
+                                    {
+                                        DataRow bonusRow = bonusRows[0];
+                                        double roleBonus = double.Parse(bonusRow["positionBonus"].ToString());
+                                        DAOInsertPayroll.BusinessBonus = float.Parse(roleBonus.ToString());
+                                        double calculatedSalary = double.Parse(roleBonus.ToString()) + double.Parse(row["salary"].ToString());
+                                        DAOInsertPayroll.Username = row["username"].ToString();
+                                        DAOInsertPayroll.Isss = GetISSS(calculatedSalary);
+                                        DAOInsertPayroll.Afp = GetAFP(calculatedSalary);
+                                        DAOInsertPayroll.Rent = GetRent(calculatedSalary);
+                                        DAOInsertPayroll.NetPay = GetNetSalary(calculatedSalary);
+                                        DAOInsertPayroll.IsssEmployer = GetISSSEmployeer(calculatedSalary);
+                                        DAOInsertPayroll.AfpEmployer = GetAFPEmployer(calculatedSalary);
+                                        DAOInsertPayroll.DiscountEmployee = GetEmployeeDiscount(calculatedSalary);
+                                        DAOInsertPayroll.DiscountEmployer = GetEmployerDiscount(calculatedSalary);
+                                        DAOInsertPayroll.IssueDate = new DateTime(hireDate.Year,month,1);
+                                        DAOInsertPayroll.IdEmployee = int.Parse(row["IdEmployee"].ToString());
+                                    }
                                 }
+                                returnValue = DAOInsertPayroll.AddPayroll();
                             }
-                            returnValue = DAOInsertPayroll.AddPayroll();
                         }
+                    
                     }
                 }
                 RefreshData();

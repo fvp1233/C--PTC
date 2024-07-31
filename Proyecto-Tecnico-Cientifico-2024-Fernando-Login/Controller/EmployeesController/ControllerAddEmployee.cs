@@ -85,7 +85,6 @@ namespace PTC2024.Controller
             daoInsertEmployee.Username = objAddEmployee.txtUsername.Text;
             daoInsertEmployee.Password = commonClasses.ComputeSha256Hash(objAddEmployee.txtUsername.Text + "PU123");
             daoInsertEmployee.BusinessPosition = int.Parse(objAddEmployee.comboBusinessP.SelectedValue.ToString());
-
             //AHORA INVOCAMOS EL MÉTODO RegisterEmployee A TRAVÉS DEL OBJETO daoInsertEmployee
             int valorRespuesta = daoInsertEmployee.RegisterEmployee();
             //Verificamos el valor que nos retorna dicho método
