@@ -103,6 +103,7 @@
     <Compile Include="Controller\CustomersController\ControllerCustomers.cs" />
     <Compile Include="Controller\CustomersController\ControllerUpdateCustomers.cs" />
     <Compile Include="Controller\EmployeesController\ControllerAddEmployee.cs" />
+    <Compile Include="Controller\Helper\CommonClasses.cs" />
     <Compile Include="Controller\LogInController\ControllerLogin.cs" />
     <Compile Include="Controller\LogInController\ControllerRecoverPassword.cs" />
     <Compile Include="Controller\LogInController\ControllerRegister.cs" />
@@ -380,7 +381,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Helpers\" />
     <Folder Include="View\Dashboard\" />
   </ItemGroup>
   <ItemGroup>

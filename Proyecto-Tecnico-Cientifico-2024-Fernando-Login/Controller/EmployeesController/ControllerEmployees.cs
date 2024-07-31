@@ -40,6 +40,7 @@ namespace PTC2024.Controller.Employees
             objEmployees.dgvEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             objEmployees.dgvEmployees.Columns[4].Visible = false;
             objEmployees.dgvEmployees.Columns[10].Visible = false;
+            objEmployees.dgvEmployees.Columns[13].Visible = false;
         }
 
         public void NewEmployee(object sender, EventArgs e)
@@ -47,17 +48,19 @@ namespace PTC2024.Controller.Employees
             //Creando objeto del formulario FrmAddEmployee
             FrmAddEmployee abrirForm = new FrmAddEmployee();
             abrirForm.ShowDialog();
+            RefreshDataGridEmployees();
         }
 
         public void UpdateEmployee(object sender, EventArgs e) 
         {
             FrmUpdateEmployee abrirfForm = new FrmUpdateEmployee();
             abrirfForm.ShowDialog();
+            RefreshDataGridEmployees();
         }
 
         public void DeleteEmployee(object sender, EventArgs e)
         {
-
+            RefreshDataGridEmployees();
         }
     }
 }

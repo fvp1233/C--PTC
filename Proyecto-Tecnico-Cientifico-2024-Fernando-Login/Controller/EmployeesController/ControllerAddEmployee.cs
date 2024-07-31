@@ -8,6 +8,7 @@ using PTC2024.Model.DAO;
 using PTC2024.View.Empleados;
 using System.Data;
 using System.Windows.Forms;
+using PTC2024.Controller.Helper;
 
 namespace PTC2024.Controller
 {
@@ -19,14 +20,10 @@ namespace PTC2024.Controller
         {
             objAddEmployee = View;
             objAddEmployee.Load += new EventHandler(CargarCombos);
-            //objAddEmployee.BtnAgregarEmpleado.Click += new EventHandler(AgregarEmpleado);
+            objAddEmployee.BtnAgregarEmpleado.Click += new EventHandler(AgregarEmpleado);
             objAddEmployee.BtnCancelar.Click += new EventHandler(CancelarProceso);
         }
 
-        //private void BtnAgregarEmpleado_Click(object sender, EventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
 
         public void CargarCombos(object sender, EventArgs e)
         {
@@ -35,38 +32,73 @@ namespace PTC2024.Controller
 
             //Dropdown de Estados civiles
             DataSet dsEstadosCiviles = daoAddEmployee.ObtenerEstadosCiviles();
-            objAddEmployee.comboEstadosCiviles.DataSource = dsEstadosCiviles.Tables["tbmaritalStatus"];
-            objAddEmployee.comboEstadosCiviles.DisplayMember = "maritalStatus";
-            objAddEmployee.comboEstadosCiviles.ValueMember = "IdMaritalS";
+            objAddEmployee.comboMaritalStatus.DataSource = dsEstadosCiviles.Tables["tbmaritalStatus"];
+            objAddEmployee.comboMaritalStatus.DisplayMember = "maritalStatus";
+            objAddEmployee.comboMaritalStatus.ValueMember = "IdMaritalS";
 
             //Dropdown de Departamentos
             DataSet dsDepartamentos = daoAddEmployee.ObtenerDepartamentos();
-            objAddEmployee.comboDepartamento.DataSource = dsDepartamentos.Tables["tbDepartment"];
-            objAddEmployee.comboDepartamento.DisplayMember = "departmentName";
-            objAddEmployee.comboDepartamento.ValueMember = "IdDepartment";
+            objAddEmployee.comboDepartment.DataSource = dsDepartamentos.Tables["tbDepartment"];
+            objAddEmployee.comboDepartment.DisplayMember = "departmentName";
+            objAddEmployee.comboDepartment.ValueMember = "IdDepartment";
 
             //Dropdown de tipos de empleado
             DataSet dsTiposEmpleado = daoAddEmployee.ObtenerTiposEmpleado();
-            objAddEmployee.comboTipoEmpleado.DataSource = dsTiposEmpleado.Tables["tbTypeE"];
-            objAddEmployee.comboTipoEmpleado.DisplayMember = "typeEmployee";
-            objAddEmployee.comboTipoEmpleado.ValueMember = "IdTypeE";
+            objAddEmployee.comboEmployeeType.DataSource = dsTiposEmpleado.Tables["tbTypeE"];
+            objAddEmployee.comboEmployeeType.DisplayMember = "typeEmployee";
+            objAddEmployee.comboEmployeeType.ValueMember = "IdTypeE";
 
             //Dropdown de puestos de empleado
             DataSet dsPuestosEmpleado = daoAddEmployee.ObtenerPuestosEmpleado();
-            objAddEmployee.comboPuestoEmpleado.DataSource = dsPuestosEmpleado.Tables["tbBusinessP"];
-            objAddEmployee.comboPuestoEmpleado.DisplayMember = "businessPosition";
-            objAddEmployee.comboPuestoEmpleado.ValueMember = "IdBusinessP";
+            objAddEmployee.comboBusinessP.DataSource = dsPuestosEmpleado.Tables["tbBusinessP"];
+            objAddEmployee.comboBusinessP.DisplayMember = "businessPosition";
+            objAddEmployee.comboBusinessP.ValueMember = "IdBusinessP";
 
             //Dropdown de estado de empleado
             DataSet dsEstadosEmpleado = daoAddEmployee.ObtenerEstadosEmpleado();
-            objAddEmployee.comboEstadoEmpleado.DataSource = dsEstadosEmpleado.Tables["tbEmployeeStatus"];
-            objAddEmployee.comboEstadoEmpleado.DisplayMember = "employeeStatus";
-            objAddEmployee.comboEstadoEmpleado.ValueMember = "IdStatus";
+            objAddEmployee.comboEmployeeStatus.DataSource = dsEstadosEmpleado.Tables["tbEmployeeStatus"];
+            objAddEmployee.comboEmployeeStatus.DisplayMember = "employeeStatus";
+            objAddEmployee.comboEmployeeStatus.ValueMember = "IdStatus";
         }
 
         public void AgregarEmpleado(object sender, EventArgs e)
         {
+            //Se crea un objeto de la clase DAOAddEmployee y de la clase CommonClasses
+            DAOAddEmployee daoInsertEmployee = new DAOAddEmployee();
+            CommonClasses commonClasses = new CommonClasses();
+            //Datos para la creación de un empleado
+            daoInsertEmployee.Names = objAddEmployee.txtNames.Text;
+            daoInsertEmployee.LastNames = objAddEmployee.txtLastNames.Text;
+            daoInsertEmployee.Document = objAddEmployee.txtDUI.Text;
+            daoInsertEmployee.BirthDate = objAddEmployee.dtBirthDate.Value.Date;
+            daoInsertEmployee.Email = objAddEmployee.txtEmail.Text;
+            daoInsertEmployee.Phone = objAddEmployee.txtPhone.Text;
+            daoInsertEmployee.Address = objAddEmployee.txtAddress.Text;
+            daoInsertEmployee.Salary = float.Parse(objAddEmployee.txtSalary.Text);
+            daoInsertEmployee.BankAccount = objAddEmployee.txtBankAccount.Text;
+            daoInsertEmployee.AffiliationNumber = int.Parse(objAddEmployee.txtAffiliationNumber.Text);
+            daoInsertEmployee.Department = int.Parse(objAddEmployee.comboDepartment.SelectedValue.ToString());
+            daoInsertEmployee.EmployeeType = int.Parse(objAddEmployee.comboEmployeeType.SelectedValue.ToString());
+            daoInsertEmployee.MaritalStatus = int.Parse(objAddEmployee.comboMaritalStatus.SelectedValue.ToString());
+            daoInsertEmployee.EmployeeStatus = int.Parse(objAddEmployee.comboEmployeeStatus.SelectedValue.ToString());
+            //Datos para la creación del usuario
+            daoInsertEmployee.Username = objAddEmployee.txtUsername.Text;
+            daoInsertEmployee.Password = commonClasses.ComputeSha256Hash(objAddEmployee.txtUsername.Text + "PU123");
+            daoInsertEmployee.BusinessPosition = int.Parse(objAddEmployee.comboBusinessP.SelectedValue.ToString());
 
+            //AHORA INVOCAMOS EL MÉTODO RegisterEmployee A TRAVÉS DEL OBJETO daoInsertEmployee
+            int valorRespuesta = daoInsertEmployee.RegisterEmployee();
+            //Verificamos el valor que nos retorna dicho método
+            if (valorRespuesta == 1)
+            {
+                MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                objAddEmployee.Close();
+            }
+            else
+            {
+                MessageBox.Show("Los datos no pudieron ser registrados", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            //Fin del mantenimiento de agregar empleado.
         }
 
         public void CancelarProceso(object sender, EventArgs e)

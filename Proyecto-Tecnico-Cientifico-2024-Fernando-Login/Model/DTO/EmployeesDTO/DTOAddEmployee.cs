@@ -9,31 +9,44 @@ namespace PTC2024.Model.DTO
     internal class DTOAddEmployee : dbContext
     {
         //Atributos de FrmAddEmployee
-        private string nombres;
-        private string apellidos;
-        private string documento;
-        private DateTime nacimiento;
-        private string direccion;
-        private string telefono;
+        //TABLA tbmployees
+        private string names;
+        private string lastNames;
+        private string document;
+        private DateTime birthDate;
         private string email;
-        private int estadoCivil;
-        private int departamento;
-        private int tipoEmpleado;
-        private int puestoEmpleado;
-        private int estadoEmpleado;
+        private string phone;
+        private string address;
+        private float salary;
+        private string bankAccount;
+        private int affiliationNumber;
+        private int department;
+        private int employeeType;
+        private int maritalStatus;
+        private int employeeStatus;
 
-        //Getters y setters
-        public string Nombres { get => nombres; set => nombres = value; }
-        public string Apellidos { get => apellidos; set => apellidos = value; }
-        public string Documento { get => documento; set => documento = value; }
-        public DateTime Nacimiento { get => nacimiento; set => nacimiento = value; }
-        public string Direccion { get => direccion; set => direccion = value; }
-        public string Telefono { get => telefono; set => telefono = value; }
+        //TABLA tbUserData
+        private string username;
+        private string password;
+        private int businessPosition;
+
+        //métodos getters y setters
+        public string Names { get => names; set => names = value; }
+        public string LastNames { get => lastNames; set => lastNames = value; }
+        public DateTime BirthDate { get => birthDate; set => birthDate = value; }
         public string Email { get => email; set => email = value; }
-        public int EstadoCivil { get => estadoCivil; set => estadoCivil = value; }
-        public int Departamento { get => departamento; set => departamento = value; }
-        public int TipoEmpleado { get => tipoEmpleado; set => tipoEmpleado = value; }
-        public int PuestoEmpleado { get => puestoEmpleado; set => puestoEmpleado = value; }
-        public int EstadoEmpleado { get => estadoEmpleado; set => estadoEmpleado = value; }
+        public string Phone { get => phone; set => phone = value; }
+        public string Address { get => address; set => address = value; }
+        public float Salary { get => salary; set => salary = value; }
+        public string BankAccount { get => bankAccount; set => bankAccount = value; }
+        public int AffiliationNumber { get => affiliationNumber; set => affiliationNumber = value; }
+        public int Department { get => department; set => department = value; }
+        public int EmployeeType { get => employeeType; set => employeeType = value; }
+        public int MaritalStatus { get => maritalStatus; set => maritalStatus = value; }
+        public int EmployeeStatus { get => employeeStatus; set => employeeStatus = value; }
+        public string Username { get => username; set => username = value; }
+        public string Password { get => password; set => password = value; }
+        public int BusinessPosition { get => businessPosition; set => businessPosition = value; }
+        public string Document { get => document; set => document = value; }
     }
 }
