@@ -180,6 +180,33 @@ namespace PTC2024.Model.DAO
             }
             
         }
+
+        public DataSet ObtainBanks()
+        {
+            try
+            {
+                command.Connection = getConnection();
+                string query = "SELECT*FROM tbBanks";
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                cmd.ExecuteNonQuery();
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+
+                adp.Fill(ds, "tbBanks");
+                return ds;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("No se pudieron obtener los datos de los Bancos");
+                return null;
+                
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
         #endregion
 
         public int RegisterEmployee()
