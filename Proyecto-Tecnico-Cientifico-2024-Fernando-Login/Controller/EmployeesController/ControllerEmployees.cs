@@ -60,6 +60,7 @@ namespace PTC2024.Controller.Employees
 
         public void DeleteEmployee(object sender, EventArgs e)
         {
+
             RefreshDataGridEmployees();
         }
     }
