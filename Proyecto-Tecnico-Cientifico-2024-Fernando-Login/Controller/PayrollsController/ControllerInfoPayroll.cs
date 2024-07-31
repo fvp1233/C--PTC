@@ -14,29 +14,31 @@ namespace PTC2024.Controller.EmployeesController
     {
         FrmInfoPayroll objInfoPayroll;
         //dui,employee,possition,bonus,banckAccount,affiliationNumber,afp,isss,rent, netSalary, discountEmployee, issueDate, issEmployer,afpEmployer, discountEmployer)
-        public ControllerInfoPayroll(FrmInfoPayroll Vista, string dui, string employee, string possition, double bonus, string backAccount, int affiliationNumber,double salary, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, double issEmployer, double afpEmployer, double discountEmployer )
+        public ControllerInfoPayroll(FrmInfoPayroll Vista, string dui, string employee, string possition, double bonus, string bankAccount, int affiliationNumber,double salary, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, double issEmployer, double afpEmployer, double discountEmployer )
         {
             objInfoPayroll = Vista;
-            ChargeValues(dui, employee, possition, bonus, backAccount, affiliationNumber, salary, afp, isss, rent, netSalary, discountEmployee, issueDate, issEmployer, afpEmployer, discountEmployer);
+            DisableComponents();
+            ChargeValues(dui, employee, possition, bonus, bankAccount, affiliationNumber, salary, afp, isss, rent, netSalary, discountEmployee, issueDate, issEmployer, afpEmployer, discountEmployer);
             objInfoPayroll.btnCancelar.Click += new EventHandler(CloseForm);
         }
-        public void ChargeValues(string dui, string employee, string possition, double bonus, string backAccount, int affiliationNumber, double salary, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, double issEmployer, double afpEmployer, double discountEmployer)
+        public void ChargeValues(string dui, string employee, string possition, double bonus, string bankAccount, int affiliationNumber, double salary, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, double issEmployer, double afpEmployer, double discountEmployer)
         {
             try
             {
                 objInfoPayroll.txtEmployee.Text = employee;
                 objInfoPayroll.txtDUI.Text = dui;
                 objInfoPayroll.txtPossition.Text = possition;
-                objInfoPayroll.txtBanckAccount.Text = backAccount;
+                objInfoPayroll.txtBankAccount.Text = bankAccount;
                 objInfoPayroll.txtAffiliationNumber.Text = affiliationNumber.ToString();
                 objInfoPayroll.txtSalary.Text = salary.ToString();
+                objInfoPayroll.txtBonus.Text = bonus.ToString();
                 objInfoPayroll.txtAFP.Text = afp.ToString();
                 objInfoPayroll.txtISSS.Text = isss.ToString();
                 objInfoPayroll.txtRent.Text = rent.ToString();
                 objInfoPayroll.txtNetSalary.Text = netSalary.ToString();
                 objInfoPayroll.txtEmployeeDiscount.Text = discountEmployee.ToString();
                 objInfoPayroll.dtpDate.Value = issueDate;
-                objInfoPayroll.txtEmployerISS.Text = issEmployer.ToString();
+                objInfoPayroll.txtEmployerISSS.Text = issEmployer.ToString();
                 objInfoPayroll.txtEmployerAFP.Text = afpEmployer.ToString();
                 objInfoPayroll.txtEmployerDiscount.Text = discountEmployer.ToString() ;
             }
@@ -45,6 +47,25 @@ namespace PTC2024.Controller.EmployeesController
 
                 throw;
             }
+        }
+        public void DisableComponents()
+        {
+            objInfoPayroll.txtEmployee.Enabled = false;
+            objInfoPayroll.txtDUI.Enabled = false;
+            objInfoPayroll.txtPossition.Enabled = false;
+            objInfoPayroll.txtBankAccount.Enabled = false;
+            objInfoPayroll.txtAffiliationNumber.Enabled = false;
+            objInfoPayroll.txtSalary.Enabled = false;
+            objInfoPayroll.txtBonus.Enabled = false;
+            objInfoPayroll.txtAFP.Enabled = false;
+            objInfoPayroll.txtISSS.Enabled = false;
+            objInfoPayroll.txtRent.Enabled = false;
+            objInfoPayroll.txtNetSalary.Enabled=false;
+            objInfoPayroll.txtEmployeeDiscount.Enabled = false;
+            objInfoPayroll.dtpDate.Enabled =false;
+            objInfoPayroll.txtEmployerISSS.Enabled = false;
+            objInfoPayroll.txtEmployerAFP.Enabled = false;
+            objInfoPayroll.txtEmployerDiscount.Enabled=false;
         }
         public void CloseForm(object sender, EventArgs e)
         {
