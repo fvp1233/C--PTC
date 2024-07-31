@@ -19,9 +19,6 @@ namespace PTC2024.View.login
             ControllerRegister objRegister = new ControllerRegister(this);
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
