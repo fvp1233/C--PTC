@@ -59,6 +59,12 @@ namespace PTC2024.Controller
             objAddEmployee.comboEmployeeStatus.DataSource = dsEstadosEmpleado.Tables["tbEmployeeStatus"];
             objAddEmployee.comboEmployeeStatus.DisplayMember = "employeeStatus";
             objAddEmployee.comboEmployeeStatus.ValueMember = "IdStatus";
+
+            //Dropdown de Bancos
+            DataSet dsBanks = daoAddEmployee.ObtainBanks();
+            objAddEmployee.comboBanks.DataSource = dsBanks.Tables["tbBanks"];
+            objAddEmployee.comboBanks.DisplayMember = "BankName";
+            objAddEmployee.comboBanks.ValueMember = "IdBank";
         }
 
         public void AgregarEmpleado(object sender, EventArgs e)
@@ -77,6 +83,8 @@ namespace PTC2024.Controller
             daoInsertEmployee.Salary = float.Parse(objAddEmployee.txtSalary.Text);
             daoInsertEmployee.BankAccount = objAddEmployee.txtBankAccount.Text;
             daoInsertEmployee.AffiliationNumber = int.Parse(objAddEmployee.txtAffiliationNumber.Text);
+            daoInsertEmployee.HireDate = objAddEmployee.dpHireDate.Value.Date;
+            daoInsertEmployee.Bank = int.Parse(objAddEmployee.comboBanks.SelectedValue.ToString());
             daoInsertEmployee.Department = int.Parse(objAddEmployee.comboDepartment.SelectedValue.ToString());
             daoInsertEmployee.EmployeeType = int.Parse(objAddEmployee.comboEmployeeType.SelectedValue.ToString());
             daoInsertEmployee.MaritalStatus = int.Parse(objAddEmployee.comboMaritalStatus.SelectedValue.ToString());

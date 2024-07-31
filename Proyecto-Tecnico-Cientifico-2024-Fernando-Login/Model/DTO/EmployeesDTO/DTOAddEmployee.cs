@@ -19,11 +19,13 @@ namespace PTC2024.Model.DTO
         private string address;
         private float salary;
         private string bankAccount;
+        private DateTime hireDate;
         private int affiliationNumber;
         private int department;
         private int employeeType;
         private int maritalStatus;
         private int employeeStatus;
+        private int bank;
 
         //TABLA tbUserData
         private string username;
@@ -48,5 +50,7 @@ namespace PTC2024.Model.DTO
         public string Password { get => password; set => password = value; }
         public int BusinessPosition { get => businessPosition; set => businessPosition = value; }
         public string Document { get => document; set => document = value; }
+        public DateTime HireDate { get => hireDate; set => hireDate = value; }
+        public int Bank { get => bank; set => bank = value; }
     }
 }
