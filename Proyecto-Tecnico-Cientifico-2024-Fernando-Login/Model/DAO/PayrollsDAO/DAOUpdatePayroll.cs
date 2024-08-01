@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PTC2024.Model.DAO.PayrollsDAO
 {
@@ -20,16 +21,16 @@ namespace PTC2024.Model.DAO.PayrollsDAO
 				Command.Connection = getConnection();
 				//Creamos el query
 				string query = "UPDATE tbPayroll SET IdPayrollStatus = @param1 WHERE IdPayroll = @param2";
-				SqlCommand cmd = new SqlCommand(query, Command.Connection);
-				cmd.Parameters.AddWithValue("param1", IdPayrollStatus);
-				cmd.Parameters.AddWithValue("param2", IdPayroll);
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("@param1", IdPayrollStatus);
+                cmd.Parameters.AddWithValue("@param2", IdPayroll);
 				int answer = cmd.ExecuteNonQuery();
 				return answer;
 
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
-
+				MessageBox.Show($"Excepcion{e}");
 				return -1;
 			}
 			finally 

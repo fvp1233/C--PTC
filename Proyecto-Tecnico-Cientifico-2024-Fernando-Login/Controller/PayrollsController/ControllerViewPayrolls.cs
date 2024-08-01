@@ -20,7 +20,7 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls = Vista;
             objViewPayrolls.Load += new EventHandler(LoadData);
             objViewPayrolls.btnCreatePayroll.Click += new EventHandler(CreatePayroll);
-            objViewPayrolls.cmsUpdatePayroll.Click += new EventHandler(UpdateUser);
+            objViewPayrolls.cmsUpdatePayroll.Click += new EventHandler(OpenUpdatePayroll);
             objViewPayrolls.cmsDeletePayroll.Click += new EventHandler(DeletePayroll);
             objViewPayrolls.cmsPayrollInformation.Click += new EventHandler(ViewInfoPayroll);
             objViewPayrolls.txtSearch.KeyPress += new KeyPressEventHandler(SearchPayrollEvent);
@@ -186,34 +186,35 @@ namespace PTC2024.Controller.EmployeesController
             double employerDiscount = GetAFPEmployer(Salary)+GetISSS(Salary)+GetRent(Salary);
             return employerDiscount;
         }
-        public void UpdateUser(object sender, EventArgs e)
-        {
-            int pos = objViewPayrolls.dgvPayrolls.CurrentRow.Index;
-            FrmUpdatePayroll openForm = new FrmUpdatePayroll(
-            objViewPayrolls.dgvPayrolls[1, pos].Value.ToString(),
-            objViewPayrolls.dgvPayrolls[2, pos].Value.ToString(),
-            double.Parse(objViewPayrolls.dgvPayrolls[3, pos].Value.ToString()),
-            objViewPayrolls.dgvPayrolls[4, pos].Value.ToString(),
-            double.Parse(objViewPayrolls.dgvPayrolls[5, pos].Value.ToString()),
-            objViewPayrolls.dgvPayrolls[6, pos].Value.ToString(),
-            int.Parse(objViewPayrolls.dgvPayrolls[7, pos].Value.ToString()),
-            double.Parse(objViewPayrolls.dgvPayrolls[8, pos].Value.ToString()),
-            double.Parse(objViewPayrolls.dgvPayrolls[8, pos].Value.ToString()),
-            double.Parse(objViewPayrolls.dgvPayrolls[9, pos].Value.ToString()),
-            double.Parse(objViewPayrolls.dgvPayrolls[10, pos].Value.ToString()),
-            double.Parse(objViewPayrolls.dgvPayrolls[11, pos].Value.ToString()),
-            DateTime.Parse(objViewPayrolls.dgvPayrolls[12, pos].Value.ToString()),
-            objViewPayrolls.dgvPayrolls[13, pos].Value.ToString());
-            openForm.ShowDialog();
-            RefreshData();
-        }
+        //public void UpdateUser(object sender, EventArgs e)
+        //{
+        //    int pos = objViewPayrolls.dgvPayrolls.CurrentRow.Index;
+        //    FrmUpdatePayroll openForm = new FrmUpdatePayroll(
+        //    int.Parse(objViewPayrolls.dgvPayrolls[0, pos].Value.ToString()),
+        //    objViewPayrolls.dgvPayrolls[1, pos].Value.ToString(),
+        //    objViewPayrolls.dgvPayrolls[2, pos].Value.ToString(),
+        //    double.Parse(objViewPayrolls.dgvPayrolls[3, pos].Value.ToString()),
+        //    objViewPayrolls.dgvPayrolls[4, pos].Value.ToString(),
+        //    double.Parse(objViewPayrolls.dgvPayrolls[5, pos].Value.ToString()),
+        //    objViewPayrolls.dgvPayrolls[6, pos].Value.ToString(),
+        //    int.Parse(objViewPayrolls.dgvPayrolls[7, pos].Value.ToString()),
+        //    double.Parse(objViewPayrolls.dgvPayrolls[8, pos].Value.ToString()),
+        //    double.Parse(objViewPayrolls.dgvPayrolls[9, pos].Value.ToString()),
+        //    double.Parse(objViewPayrolls.dgvPayrolls[10, pos].Value.ToString()),
+        //    double.Parse(objViewPayrolls.dgvPayrolls[11, pos].Value.ToString()),
+        //    DateTime.Parse(objViewPayrolls.dgvPayrolls[12, pos].Value.ToString()),
+        //    objViewPayrolls.dgvPayrolls[13, pos].Value.ToString());
+        //    openForm.ShowDialog();
+        //    RefreshData();
+        //}
         public void OpenUpdatePayroll(object sender, EventArgs e)
         {
             int pos = objViewPayrolls.dgvPayrolls.CurrentRow.Index;
-            int affiliationNumber;
+            int affiliationNumber, nP;
             string employee, dui, possition, bankAccount, payrollStatus;
             double salary, bonus, afp, isss, rent, discountEmployee, netSalary, issEmployer, afpEmployer, discountEmployer;
             DateTime issueDate;
+            nP = int.Parse(objViewPayrolls.dgvPayrolls[0, pos].Value.ToString());
             dui = objViewPayrolls.dgvPayrolls[1, pos].Value.ToString();
             employee = objViewPayrolls.dgvPayrolls[2, pos].Value.ToString();
             salary = double.Parse(objViewPayrolls.dgvPayrolls[3, pos].Value.ToString());
@@ -228,11 +229,8 @@ namespace PTC2024.Controller.EmployeesController
             discountEmployee = isss + afp + rent;
             double calculatedSalary = bonus + salary;
             issueDate = DateTime.Parse(objViewPayrolls.dgvPayrolls[12, pos].Value.ToString());
-            issEmployer = GetISSSEmployeer(calculatedSalary);
-            afpEmployer = GetAFPEmployer(calculatedSalary);
-            discountEmployer = issEmployer + afpEmployer;
             payrollStatus = objViewPayrolls.dgvPayrolls[13, pos].Value.ToString();
-            FrmUpdatePayroll openForm = new FrmUpdatePayroll(dui, employee, salary, possition, bonus, bankAccount, affiliationNumber, afp, isss, rent, netSalary, discountEmployee, issueDate, payrollStatus);
+            FrmUpdatePayroll openForm = new FrmUpdatePayroll(nP, dui, employee, salary, possition, bonus, bankAccount, affiliationNumber, afp, isss, rent, netSalary, discountEmployee, issueDate, payrollStatus);
             openForm.ShowDialog();
             RefreshData();
         }

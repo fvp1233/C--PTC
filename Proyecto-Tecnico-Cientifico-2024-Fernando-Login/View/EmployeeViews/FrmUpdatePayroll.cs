@@ -14,10 +14,10 @@ namespace PTC2024.View.Empleados
     public partial class FrmUpdatePayroll : Form
     {
 
-        public FrmUpdatePayroll(string dui, string employee, double salary, string possition, double bonus, string bankAccount, int affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate , string payrollStatus)
+        public FrmUpdatePayroll(int nP,string dui, string employee, double salary, string possition, double bonus, string bankAccount, int affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate , string payrollStatus)
         {
             InitializeComponent();
-            ControllerUpdatePayroll objUpdatePayroll = new ControllerUpdatePayroll(this, dui, employee, possition, bonus, bankAccount, affiliationNumber, salary, afp, isss, rent, netSalary, discountEmployee, issueDate , payrollStatus);
+            ControllerUpdatePayroll objUpdatePayroll = new ControllerUpdatePayroll(this, nP,dui, employee, salary, possition, bonus, bankAccount, affiliationNumber, afp, isss, rent, netSalary, discountEmployee, issueDate , payrollStatus);
         }
     }
 }
