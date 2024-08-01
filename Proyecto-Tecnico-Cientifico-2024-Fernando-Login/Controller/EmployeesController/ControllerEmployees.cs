@@ -26,7 +26,6 @@ namespace PTC2024.Controller.Employees
             objEmployees.BtnAddEmployee.Click += new EventHandler(NewEmployee);
             objEmployees.cmsUpdateEmployee.Click += new EventHandler(UpdateEmployee);
             objEmployees.cmsDeleteEmployee.Click += new EventHandler(DeleteEmployee);
-            objEmployees.txtEmployeeSearch.KeyPress += new KeyPressEventHandler(SearchEmployeeEvent);
         }
 
         public void LoadData (object sender, EventArgs e)
@@ -93,22 +92,5 @@ namespace PTC2024.Controller.Employees
 
             RefreshDataGridEmployees();
         }
-
-        public void SearchEmployeeEvent(object sender, KeyPressEventArgs e)
-        {
-            SearchEmployee();
-        }
-
-        void SearchEmployee()
-        {
-            DAOEmployees daoEmployees = new DAOEmployees();
-            DataSet ds = daoEmployees.SearchEmployee(objEmployees.txtEmployeeSearch.Text.Trim());
-            objEmployees.dgvEmployees.DataSource = ds.Tables["viewEmployees"];
-            if (objEmployees.txtEmployeeSearch.Text.Equals(""))
-            {
-                RefreshDataGridEmployees();
-            }
-        }
-
     }
 }
