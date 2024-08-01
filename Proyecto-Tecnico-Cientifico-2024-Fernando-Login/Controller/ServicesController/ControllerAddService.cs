@@ -37,8 +37,10 @@ namespace PTC2024.Controller.ServicesController
         public void AddService(object sender, EventArgs e)
         {
             DAOAddService dAOAddService = new DAOAddService();
-     /* Se le dan valores a los atributos del DAOAddService*/
-     dAOAddService.Nombre = objAddService.txtNombres.Text;
+     
+            /* Se le dan valores a los atributos del DAOAddService*/
+    
+            dAOAddService.Nombre = objAddService.txtNombres.Text;
             dAOAddService.Descripcion = objAddService.txtDescripcion.Text;
             dAOAddService.Categorias = (int)objAddService.comboTipoEmpleado.SelectedValue;
             dAOAddService.Monto = double.Parse(objAddService.txtMonto.Text);
@@ -46,14 +48,12 @@ namespace PTC2024.Controller.ServicesController
             if (respuesta == 1)
             {
                 MessageBox.Show("Los datos se ingresaron correctamente", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                objAddService.Close();
             }
             else
             {
                 MessageBox.Show("Los datos no pudieron ser ingresados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
+            objAddService.Close();
         }
 
         public void CloseAddService(object sender, EventArgs e)

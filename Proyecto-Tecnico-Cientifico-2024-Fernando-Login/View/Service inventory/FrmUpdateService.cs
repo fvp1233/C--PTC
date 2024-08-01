@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PTC2024.Controller.ServicesController;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace PTC2024.View.Service_inventory
 {
     public partial class FrmUpdateService : Form
     {
-        public FrmUpdateService()
+        public FrmUpdateService(int id, string nombre, string descripcion, double monto, string categoria)
         {
             InitializeComponent();
+            ControllerUpdateService update = new ControllerUpdateService(this, id, nombre, descripcion, monto, categoria);
         }
+
     }
 }
