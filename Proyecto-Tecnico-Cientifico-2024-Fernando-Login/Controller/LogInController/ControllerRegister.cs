@@ -6,8 +6,10 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using PTC2024.Controller.Helper;
+using PTC2024.formularios.login;
 using PTC2024.Model.DAO;
 using PTC2024.Model.DAO.LogInDAO;
 using PTC2024.View.formularios.inicio;
@@ -374,8 +376,15 @@ namespace PTC2024.Controller.LogInController
             }
         }
 
+        private void OpenLogin(object sender, EventArgs e)
+        {
+        
+
+        }
+
+                    }
     }
 
 
-}
+
 

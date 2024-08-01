@@ -99,5 +99,10 @@ namespace PTC2024.formularios.login
             }
 
         }
+
+        public static implicit operator System.Web.UI.WebControls.Login(Login v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
