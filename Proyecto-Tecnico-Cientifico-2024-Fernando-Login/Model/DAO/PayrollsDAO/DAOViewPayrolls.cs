@@ -203,7 +203,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
-
+                    
                 return null;
             }
             finally

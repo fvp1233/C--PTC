@@ -16,11 +16,13 @@ namespace PTC2024.Model.DAO.EmployeesDAO
         
         public DataSet GetEmployees()
         {
+          
             try
             {
                 Command.Connection = getConnection();
-                string query = "SELECT*FROM  viewEmployees";
+                string query = "SELECT*FROM viewEmployees WHERE Estado = @param1";
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("param1", "Activo");
                 cmd.ExecuteNonQuery();
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
                 DataSet dsEmployees = new DataSet();
@@ -79,6 +81,30 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             finally
             {
                 //Se cierra la conexión sin importar el resultado
+                Command.Connection.Close();
+            }
+        }
+
+        public DataSet SearchEmployee(string valor)
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string querySearch = $"SELECT * FROM viewEmployees WHERE [Empleado] LIKE '%{valor}%' OR [DUI] LIKE '%{valor}%' OR [Estado] LIKE '%{valor}%'";
+                SqlCommand cmdSearch = new SqlCommand (querySearch, Command.Connection);
+                SqlDataAdapter adpSearch = new SqlDataAdapter(cmdSearch);
+                cmdSearch.ExecuteNonQuery();
+                DataSet dsSearch = new DataSet();
+                adpSearch.Fill(dsSearch, "viewEmployees");
+                return dsSearch;
+            }
+            catch (SqlException ex)
+            {
+                //si ocurre un error en el try se devuelve un null
+                return null;
+            }
+            finally
+            {
                 Command.Connection.Close();
             }
         }
