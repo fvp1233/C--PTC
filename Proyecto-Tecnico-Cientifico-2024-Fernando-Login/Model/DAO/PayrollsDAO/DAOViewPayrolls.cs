@@ -109,7 +109,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             {
                 GetEmployee();
                 comand.Connection = getConnection();
-                string queryPayroll = "INSERT INTO tbPayroll VALUES (@netPay,@rent,@issueDate,@AFP, @ISSS,@ISSEmployer,@AFPEmployer,@employeeDiscount,@employerDiscount, @IdEmployee)";
+                string queryPayroll = "INSERT INTO tbPayroll VALUES (@netPay,@rent,@issueDate,@AFP, @ISSS,@ISSEmployer,@AFPEmployer,@employeeDiscount,@employerDiscount, @IdEmployee,@IdPayrollStatus)";
                 SqlCommand cmdAddPayroll = new SqlCommand(@queryPayroll, comand.Connection);
                 cmdAddPayroll.Parameters.AddWithValue("netPay", NetPay);
                 cmdAddPayroll.Parameters.AddWithValue("rent", Rent);
@@ -121,6 +121,8 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 cmdAddPayroll.Parameters.AddWithValue("employeeDiscount", DiscountEmployee);
                 cmdAddPayroll.Parameters.AddWithValue("employerDiscount", DiscountEmployer);
                 cmdAddPayroll.Parameters.AddWithValue("IdEmployee", IdEmployee);
+                cmdAddPayroll.Parameters.AddWithValue("@IdPayroll", IdPayroll);
+                cmdAddPayroll.Parameters.AddWithValue("IdPayrollStatus", IdPayrollStatus);
 
                 int answer = cmdAddPayroll.ExecuteNonQuery();
                 if (answer == 1)
