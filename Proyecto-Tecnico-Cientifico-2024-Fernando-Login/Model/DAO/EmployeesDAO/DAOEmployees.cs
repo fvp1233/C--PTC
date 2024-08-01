@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PTC2024.Model.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -9,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PTC2024.Model.DAO.EmployeesDAO
 {
-    internal class DAOEmployees : dbContext
+    internal class DAOEmployees : DTOAddEmployee
     {
         readonly SqlCommand Command = new SqlCommand();
         
@@ -34,6 +35,50 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
             finally
             {
+                Command.Connection.Close();
+            }
+        }
+
+        public int DeleteEmployee()
+        { 
+            try
+            {
+                Command.Connection = getConnection();
+                string queryDeleteEmployee = "UPDATE tbEmployee" +
+                                                "SET IdStatus = 2" +
+                                                "WHERE username = @param1";
+                SqlCommand cmdDeleteEmployee = new SqlCommand(queryDeleteEmployee, Command.Connection);
+                cmdDeleteEmployee.Parameters.AddWithValue("param1", Username);
+                //se obtendrá una respuesta int con el executeNonquery
+                int respuestaDisable = cmdDeleteEmployee.ExecuteNonQuery();
+                
+                //Se evalúa la respuesta para saber si procederemos a eliminar el usuario asociado al empleado
+                if (respuestaDisable == 1)
+                {
+                    //Si la respuesta es 1, entonces se eliminó correctamente el empleado
+                    string queryDeleteUser = "DELETE FROM tbUserData WHERE username = @param2";
+                    SqlCommand cmdDeleteUser = new SqlCommand(queryDeleteUser, Command.Connection);
+                    cmdDeleteUser.Parameters.AddWithValue("param2", Username);
+
+                    //Obtendremos una respuesta de este otro proceso para saber si la tarea de Eliminar un empleado junto con su usuario se completó.
+                    int respuestaDeleteUser = cmdDeleteUser.ExecuteNonQuery();
+                    //Se devuelve esta respuesta para saber si se completó todo el proceso
+                    return respuestaDeleteUser;
+                }
+                else
+                {
+                    //Si el proceso de eliminar empleado no se hizo, se devuelve un cero, para avisar al usuario.
+                    return 0;
+                }
+            }
+            catch (Exception)
+            {
+                //Si en caso ocurriera un error, se devuelve un -1
+                return -1;
+            }
+            finally
+            {
+                //Se cierra la conexión sin importar el resultado
                 Command.Connection.Close();
             }
         }
