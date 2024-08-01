@@ -8,11 +8,11 @@ namespace PTC2024.Model.DTO.ServicesDTO
 {
     internal class DTOUpdateService : dbContext
     {
-        string nombre;
-        string descripcion;
-        int categoria;
-        double monto;
-        int serviceId;
+        private string nombre;
+        private string descripcion;
+        private int categoria;
+        private double monto;
+        private int serviceId;
 
         public string Nombre { get => nombre; set => nombre = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }

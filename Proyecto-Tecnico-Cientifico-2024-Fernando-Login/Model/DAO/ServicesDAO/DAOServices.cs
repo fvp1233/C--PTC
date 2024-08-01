@@ -39,5 +39,46 @@ namespace PTC2024.Model.DAO.ServicesDAO
                 command.Connection.Close();
             }
         }
+
+        public int DeleteService()
+        {
+            try
+            {
+                command.Connection = getConnection();
+                string query = "Exec spDeleteService @Id";
+
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                cmd.Parameters.AddWithValue("@Id", IdService1);
+
+                int respuesta = cmd.ExecuteNonQuery();
+
+                return respuesta;
+
+            }
+            catch (Exception)
+            {
+
+                return -1;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
+
+        public DataSet SearchData (string consulta)
+        { 
+            command.Connection = getConnection();
+            string query = $"Select * From viewServices Where [Nombre servicio] Like '%{consulta}' Or [Descripción] Like '%{consulta}%'";
+            SqlCommand cmd = new SqlCommand (query, command.Connection);
+            cmd.ExecuteNonQuery();
+
+            SqlDataAdapter adp =new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+
+            adp.Fill(ds, "viewServices");
+            return ds;
+        }
     }
+
 }

@@ -46,7 +46,7 @@
             this.cmsServiceInformation = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.bunifuTextBox1 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.txtSearch = new Bunifu.UI.WinForms.BunifuTextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -159,7 +159,7 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 620F));
-            this.tableLayoutPanel2.Controls.Add(this.bunifuTextBox1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtSearch, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
@@ -171,83 +171,83 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1157, 86);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // bunifuTextBox1
+            // txtSearch
             // 
-            this.bunifuTextBox1.AcceptsReturn = false;
-            this.bunifuTextBox1.AcceptsTab = false;
-            this.bunifuTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuTextBox1.AnimationSpeed = 200;
-            this.bunifuTextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.bunifuTextBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.bunifuTextBox1.AutoSizeHeight = true;
-            this.bunifuTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTextBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextBox1.BackgroundImage")));
-            this.bunifuTextBox1.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.bunifuTextBox1.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuTextBox1.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.bunifuTextBox1.BorderColorIdle = System.Drawing.Color.Silver;
-            this.bunifuTextBox1.BorderRadius = 20;
-            this.bunifuTextBox1.BorderThickness = 1;
-            this.bunifuTextBox1.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
-            this.bunifuTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox1.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.bunifuTextBox1.DefaultText = "";
-            this.bunifuTextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.bunifuTextBox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuTextBox1.HideSelection = true;
-            this.bunifuTextBox1.IconLeft = null;
-            this.bunifuTextBox1.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox1.IconPadding = 10;
-            this.bunifuTextBox1.IconRight = ((System.Drawing.Image)(resources.GetObject("bunifuTextBox1.IconRight")));
-            this.bunifuTextBox1.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox1.Lines = new string[0];
-            this.bunifuTextBox1.Location = new System.Drawing.Point(565, 23);
-            this.bunifuTextBox1.MaxLength = 32767;
-            this.bunifuTextBox1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.bunifuTextBox1.Modified = false;
-            this.bunifuTextBox1.Multiline = false;
-            this.bunifuTextBox1.Name = "bunifuTextBox1";
+            this.txtSearch.AcceptsReturn = false;
+            this.txtSearch.AcceptsTab = false;
+            this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtSearch.AnimationSpeed = 200;
+            this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtSearch.AutoSizeHeight = true;
+            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
+            this.txtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtSearch.BackgroundImage")));
+            this.txtSearch.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txtSearch.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtSearch.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txtSearch.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txtSearch.BorderRadius = 20;
+            this.txtSearch.BorderThickness = 1;
+            this.txtSearch.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
+            this.txtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtSearch.ForeColor = System.Drawing.Color.White;
+            this.txtSearch.HideSelection = true;
+            this.txtSearch.IconLeft = null;
+            this.txtSearch.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.IconPadding = 10;
+            this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
+            this.txtSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.Lines = new string[0];
+            this.txtSearch.Location = new System.Drawing.Point(565, 23);
+            this.txtSearch.MaxLength = 32767;
+            this.txtSearch.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtSearch.Modified = false;
+            this.txtSearch.Multiline = false;
+            this.txtSearch.Name = "txtSearch";
             stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
             stateProperties1.FillColor = System.Drawing.Color.Empty;
             stateProperties1.ForeColor = System.Drawing.Color.Empty;
             stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.bunifuTextBox1.OnActiveState = stateProperties1;
+            this.txtSearch.OnActiveState = stateProperties1;
             stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.bunifuTextBox1.OnDisabledState = stateProperties2;
+            this.txtSearch.OnDisabledState = stateProperties2;
             stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties3.FillColor = System.Drawing.Color.Empty;
             stateProperties3.ForeColor = System.Drawing.Color.Empty;
             stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.bunifuTextBox1.OnHoverState = stateProperties3;
+            this.txtSearch.OnHoverState = stateProperties3;
             stateProperties4.BorderColor = System.Drawing.Color.Silver;
             stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             stateProperties4.ForeColor = System.Drawing.Color.White;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.bunifuTextBox1.OnIdleState = stateProperties4;
-            this.bunifuTextBox1.Padding = new System.Windows.Forms.Padding(3);
-            this.bunifuTextBox1.PasswordChar = '\0';
-            this.bunifuTextBox1.PlaceholderForeColor = System.Drawing.Color.White;
-            this.bunifuTextBox1.PlaceholderText = "Buscar un servicio...";
-            this.bunifuTextBox1.ReadOnly = false;
-            this.bunifuTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.bunifuTextBox1.SelectedText = "";
-            this.bunifuTextBox1.SelectionLength = 0;
-            this.bunifuTextBox1.SelectionStart = 0;
-            this.bunifuTextBox1.ShortcutsEnabled = true;
-            this.bunifuTextBox1.Size = new System.Drawing.Size(564, 39);
-            this.bunifuTextBox1.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.bunifuTextBox1.TabIndex = 6;
-            this.bunifuTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.bunifuTextBox1.TextMarginBottom = 0;
-            this.bunifuTextBox1.TextMarginLeft = 3;
-            this.bunifuTextBox1.TextMarginTop = 1;
-            this.bunifuTextBox1.TextPlaceholder = "Buscar un servicio...";
-            this.bunifuTextBox1.UseSystemPasswordChar = false;
-            this.bunifuTextBox1.WordWrap = true;
+            this.txtSearch.OnIdleState = stateProperties4;
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(3);
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txtSearch.PlaceholderText = "Buscar un servicio...";
+            this.txtSearch.ReadOnly = false;
+            this.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.SelectionLength = 0;
+            this.txtSearch.SelectionStart = 0;
+            this.txtSearch.ShortcutsEnabled = true;
+            this.txtSearch.Size = new System.Drawing.Size(564, 39);
+            this.txtSearch.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txtSearch.TabIndex = 6;
+            this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSearch.TextMarginBottom = 0;
+            this.txtSearch.TextMarginLeft = 3;
+            this.txtSearch.TextMarginTop = 1;
+            this.txtSearch.TextPlaceholder = "Buscar un servicio...";
+            this.txtSearch.UseSystemPasswordChar = false;
+            this.txtSearch.WordWrap = true;
             // 
             // tableLayoutPanel5
             // 
@@ -508,7 +508,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.87805F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 290F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 284F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 285F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel13, 4, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel11, 3, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel9, 2, 1);
@@ -531,11 +531,11 @@
             this.tableLayoutPanel13.Controls.Add(this.flowLayoutPanel4, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 1, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(617, 29);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(616, 29);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(279, 94);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(280, 94);
             this.tableLayoutPanel13.TabIndex = 9;
             // 
             // flowLayoutPanel4
@@ -778,7 +778,7 @@
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(241, 88);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(242, 88);
             this.tableLayoutPanel14.TabIndex = 1;
             // 
             // tableLayoutPanel11
@@ -789,7 +789,7 @@
             this.tableLayoutPanel11.Controls.Add(this.flowLayoutPanel3, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel12, 1, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(467, 29);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(466, 29);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -882,7 +882,7 @@
             this.tableLayoutPanel9.Controls.Add(this.flowLayoutPanel2, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(177, 29);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(176, 29);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1177,7 +1177,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(133, 94);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(132, 94);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -1189,7 +1189,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(25, 88);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(24, 88);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // bunifuCheckBox1
@@ -1413,7 +1413,7 @@
             this.tableLayoutPanel7.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(34, 3);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(33, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 4;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1496,7 +1496,6 @@
         private System.Windows.Forms.ToolStripMenuItem cmsServiceInformation;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private Bunifu.UI.WinForms.BunifuTextBox bunifuTextBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -1538,5 +1537,6 @@
         public System.Windows.Forms.ToolStripMenuItem cmsUpdateService;
         public Bunifu.UI.WinForms.BunifuDataGridView DgvServices;
         public System.Windows.Forms.ToolStripMenuItem cmsDeleteService;
+        public Bunifu.UI.WinForms.BunifuTextBox txtSearch;
     }
 }

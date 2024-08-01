@@ -48,17 +48,12 @@ namespace PTC2024.Controller.ServicesController
             if (respuesta == 1)
             {
                 MessageBox.Show("Los datos se ingresaron correctamente", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                objAddService.Close();
             }
             else
             {
                 MessageBox.Show("Los datos no pudieron ser ingresados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            FrmServices service = new FrmServices();
-            ControllerServices objServices = new ControllerServices(service);
-            objServices.ChargeDgv();
-
-
+            objAddService.Close();
         }
 
         public void CloseAddService(object sender, EventArgs e)

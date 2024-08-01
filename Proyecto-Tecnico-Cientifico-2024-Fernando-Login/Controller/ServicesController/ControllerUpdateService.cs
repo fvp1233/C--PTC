@@ -59,8 +59,7 @@ namespace PTC2024.Controller.ServicesController
             {
                 MessageBox.Show("Los datos no pudieron ser actualizados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-
+            objUpdateService.Close(); 
 
         }
 
