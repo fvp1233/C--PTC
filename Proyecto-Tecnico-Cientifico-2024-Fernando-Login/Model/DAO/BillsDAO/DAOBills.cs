@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Linq;
@@ -15,29 +14,20 @@ namespace PTC2024.Model.DAO.BillsDAO
     {
         readonly SqlCommand Command = new SqlCommand();
 
-        public DataSet Bills()
-        {
-            try
-            {
-                Command.Connection = getConnection();
-                string query = "SELECT * FROM viewBills";
-                SqlCommand comd = new SqlCommand(query, Command.Connection);
-                comd.ExecuteNonQuery();
-                SqlDataAdapter adap = new SqlDataAdapter(comd);
-                DataSet ds = new DataSet();
-                adap.Fill(ds, "viewBills");
-                return ds;
+        //public DataSet CompleteCombo()
+        //{
+        //    try
+        //    {
+        //        Command.Connection = getConnection();
+        //        string query = "SELECT * FROM tbStatusBill";
+        //        string query = "SELECT * FROM tbMethodP";
+        //        SqlCommand cmd
+        //    }
+        //    catch (Exception)
+        //    {
 
-            }
-            catch (Exception)
-            {
-                return null;
-                throw;
-            }
-            finally
-            {
-                getConnection().Close();
-            }
-        }
+        //        throw;
+        //    }
+        //}
     }
 }

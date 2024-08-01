@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dtfiscalPeriod.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="bunifuDatePicker3.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGASURBVFhH7ZZNTsMwEIWDuAGNkLgAS5asOQAXyY4blBMg
@@ -131,7 +131,7 @@
         AAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnmore.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddBills.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAO4AAAAfCAYAAADgIPGeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGJSURBVHhe7d2tTgNBFIbhz0Fnm4BEIrkELoGbIMGQIJHg
@@ -144,7 +144,7 @@
         V6zbIhIYYaYAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="dtFinalDate.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="bunifuDatePicker2.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGASURBVFhH7ZZNTsMwEIWDuAGNkLgAS5asOQAXyY4blBMg
@@ -157,7 +157,7 @@
         AAAASUVORK5CYII=
 </value>
   </data>
-  <data name="dtStartDate.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="bunifuDatePicker1.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGASURBVFhH7ZZNTsMwEIWDuAGNkLgAS5asOQAXyY4blBMg
@@ -186,21 +186,6 @@
 </value>
   </data>
   <data name="btnAddBill.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAALQAAAAwCAYAAAC47FD8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAICSURBVHhe7d0xSxxBGIfxt1NnhVhaWvoRUqa0tLS08VtY
-        +AEEIV9gvbtSsBOshFSWV6QXLGyUQ0VJ4CzM/z0n6J1zkiruvDwDPxRnd6uHYXYLx+aN1myxb82WnMhQ
-        buQZ+ATe3rBny2d9S9utfVnJmf7b0E0besCoZ+n+zUOBT9ez5kE/b9XmTs51/vDydcOx3/D2IUD3pDu1
-        et5aWs35Tg+PWRdeynj6RqC7Bmq2tYW1nPHryCszMaNGw5zxy8h7ZrYZqJIW40fZm8Scv2aMZi8C6pJG
-        rS2v++q8rbr9zbFwEVAHNfyklg+0d/Zve+WLgJroBfFCK3RzNTsB1MhXaa3Q6VdpEqiRr9DFCaBGBI1Q
-        CBqhEDRCIWiEQtAIhaARCkEjFIJGKASNUAgaoRA0QiFohELQCIWgEQpBIxSCRigEjVAIGqEQNEIhaIRC
-        0AiFoBEKQSMUgkYoBI1Q/B+dP5UmgBr5Cs3pVgjDV+jz0gRQoSut0Gl3YOl3YRKoTDoyP0FIv3C+Cqqm
-        ncZd35Y2J+esHFra1x84lgK1Gh9aczqJ2YcfHKRtx09FXboY6Lh0/e64ZD9BSBN88UBl0mhgzbec8fRo
-        bemrLrrs8ZKI7hv7yjw35r/j5dzC9F14UUQnacG91/b4x7ttxkfDy1fUR35z6aHA/5YPuDqRrZzpzDD7
-        A/C82V4XIVfpAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnRectify.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALQAAAAwCAYAAAC47FD8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAICSURBVHhe7d0xSxxBGIfxt1NnhVhaWvoRUqa0tLS08VtY

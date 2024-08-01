@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PTC2024.Model.DTO.BillsDTO
 {
-    internal class DTOAddBills:dbContext
+    internal class DTOAddBills
     {
     }
 }

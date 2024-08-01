@@ -14,16 +14,11 @@ namespace PTC2024.View.Facturacion
 {
     public partial class FrmAddBills : Form
     {
-        public FrmAddBills(int accions)
+        public FrmAddBills()
         {
             InitializeComponent();
-            ControllerAddBills objAddBills = new ControllerAddBills(this, accions);
-        }
-        public FrmAddBills(int accions, int id, string companyName, int NIT, int NRC, int customer, int serviceName, double discount, double subtoralPay, double totalPay, int methodP, DateTime startDate, DateTime FinalDate, int employee, int statusBill, DateTime fiscalPeriod)
-        {
-            InitializeComponent();
-            ControllerAddBills objAddBills = new ControllerAddBills(this, accions, id, companyName, NIT, NRC, customer, serviceName,  discount, subtoralPay, totalPay, methodP, startDate, FinalDate, employee, statusBill, fiscalPeriod);
-        }
+            ControllerAddBills objAddBills = new ControllerAddBills(this);
 
+        }
     }
 }
