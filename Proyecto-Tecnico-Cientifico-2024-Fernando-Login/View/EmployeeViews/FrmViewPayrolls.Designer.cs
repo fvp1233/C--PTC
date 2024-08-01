@@ -289,7 +289,7 @@
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.dgvPayrolls, 0, 1);
@@ -298,22 +298,22 @@
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.89474F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.10526F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 172F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(1135, 532);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // tableLayoutPanel6
             // 
+            this.tableLayoutPanel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel10, 0, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1094, 169);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1094, 166);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // tableLayoutPanel10
@@ -326,7 +326,7 @@
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.23077F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(1088, 163);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(1088, 160);
             this.tableLayoutPanel10.TabIndex = 11;
             // 
             // tableLayoutPanel7
@@ -342,7 +342,7 @@
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1082, 157);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1082, 154);
             this.tableLayoutPanel7.TabIndex = 6;
             // 
             // btnCreatePayroll
@@ -393,7 +393,7 @@
             this.btnCreatePayroll.IdleIconLeftImage = null;
             this.btnCreatePayroll.IdleIconRightImage = null;
             this.btnCreatePayroll.IndicateFocus = false;
-            this.btnCreatePayroll.Location = new System.Drawing.Point(896, 52);
+            this.btnCreatePayroll.Location = new System.Drawing.Point(896, 51);
             this.btnCreatePayroll.Name = "btnCreatePayroll";
             this.btnCreatePayroll.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCreatePayroll.OnDisabledState.BorderRadius = 20;
@@ -455,7 +455,7 @@
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.42857F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.57143F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(854, 149);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(854, 146);
             this.tableLayoutPanel8.TabIndex = 2;
             // 
             // tableLayoutPanel13
@@ -470,7 +470,7 @@
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(279, 112);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(279, 109);
             this.tableLayoutPanel13.TabIndex = 9;
             // 
             // flowLayoutPanel4
@@ -481,7 +481,7 @@
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(26, 106);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(26, 103);
             this.flowLayoutPanel4.TabIndex = 0;
             // 
             // bunifuCheckBox12
@@ -661,7 +661,7 @@
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(241, 106);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(241, 103);
             this.tableLayoutPanel14.TabIndex = 1;
             // 
             // label18
@@ -669,7 +669,7 @@
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(3, 60);
+            this.label18.Location = new System.Drawing.Point(3, 56);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(235, 16);
             this.label18.TabIndex = 2;
@@ -680,7 +680,7 @@
             this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(3, 32);
+            this.label19.Location = new System.Drawing.Point(3, 29);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(235, 16);
             this.label19.TabIndex = 1;
@@ -691,7 +691,7 @@
             this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(3, 5);
+            this.label20.Location = new System.Drawing.Point(3, 4);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(235, 16);
             this.label20.TabIndex = 0;
@@ -709,7 +709,7 @@
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(192, 112);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(192, 109);
             this.tableLayoutPanel11.TabIndex = 8;
             // 
             // flowLayoutPanel3
@@ -721,7 +721,7 @@
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(22, 106);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(22, 103);
             this.flowLayoutPanel3.TabIndex = 0;
             // 
             // bunifuCheckBox4
@@ -957,7 +957,7 @@
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(158, 106);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(158, 103);
             this.tableLayoutPanel12.TabIndex = 1;
             // 
             // label15
@@ -965,7 +965,7 @@
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(3, 81);
+            this.label15.Location = new System.Drawing.Point(3, 78);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(152, 16);
             this.label15.TabIndex = 3;
@@ -976,7 +976,7 @@
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(3, 3);
+            this.label16.Location = new System.Drawing.Point(3, 2);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(152, 16);
             this.label16.TabIndex = 0;
@@ -987,7 +987,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 27);
+            this.label7.Location = new System.Drawing.Point(3, 24);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(152, 16);
             this.label7.TabIndex = 1;
@@ -998,7 +998,7 @@
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(3, 52);
+            this.label14.Location = new System.Drawing.Point(3, 49);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(152, 16);
             this.label14.TabIndex = 2;
@@ -1016,7 +1016,7 @@
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(184, 112);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(184, 109);
             this.tableLayoutPanel9.TabIndex = 7;
             // 
             // flowLayoutPanel2
@@ -1028,7 +1028,7 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(31, 106);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(31, 103);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // bunifuCheckBox5
@@ -1263,7 +1263,7 @@
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(141, 106);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(141, 103);
             this.tableLayoutPanel15.TabIndex = 1;
             // 
             // label10
@@ -1271,7 +1271,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 56);
+            this.label10.Location = new System.Drawing.Point(3, 52);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(135, 16);
             this.label10.TabIndex = 2;
@@ -1282,7 +1282,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 29);
+            this.label11.Location = new System.Drawing.Point(3, 26);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(135, 16);
             this.label11.TabIndex = 1;
@@ -1293,7 +1293,7 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 4);
+            this.label12.Location = new System.Drawing.Point(3, 3);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(135, 16);
             this.label12.TabIndex = 0;
@@ -1304,7 +1304,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 84);
+            this.label9.Location = new System.Drawing.Point(3, 80);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(135, 16);
             this.label9.TabIndex = 3;
@@ -1338,7 +1338,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 34);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(175, 112);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(175, 109);
             this.flowLayoutPanel1.TabIndex = 10;
             // 
             // bunifuPanel1
@@ -1617,7 +1617,7 @@
             this.dgvPayrolls.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
             this.dgvPayrolls.HeaderBgColor = System.Drawing.Color.Empty;
             this.dgvPayrolls.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvPayrolls.Location = new System.Drawing.Point(3, 178);
+            this.dgvPayrolls.Location = new System.Drawing.Point(3, 175);
             this.dgvPayrolls.Name = "dgvPayrolls";
             this.dgvPayrolls.ReadOnly = true;
             this.dgvPayrolls.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1643,7 +1643,7 @@
             this.dgvPayrolls.RowTemplate.Height = 50;
             this.dgvPayrolls.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvPayrolls.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPayrolls.Size = new System.Drawing.Size(1094, 351);
+            this.dgvPayrolls.Size = new System.Drawing.Size(1094, 354);
             this.dgvPayrolls.TabIndex = 1;
             this.dgvPayrolls.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
             // 
@@ -1657,7 +1657,7 @@
             this.cmsPayrollInformation,
             this.cmsDownloadPDF});
             this.cmsPayroll.Name = "cmsPlanillas";
-            this.cmsPayroll.Size = new System.Drawing.Size(210, 130);
+            this.cmsPayroll.Size = new System.Drawing.Size(210, 108);
             // 
             // cmsUpdatePayroll
             // 
@@ -1707,7 +1707,7 @@
             this.bunifuVScrollBar1.BorderThickness = 1;
             this.bunifuVScrollBar1.DurationBeforeShrink = 2000;
             this.bunifuVScrollBar1.LargeChange = 10;
-            this.bunifuVScrollBar1.Location = new System.Drawing.Point(1106, 178);
+            this.bunifuVScrollBar1.Location = new System.Drawing.Point(1106, 175);
             this.bunifuVScrollBar1.Maximum = 100;
             this.bunifuVScrollBar1.Minimum = 0;
             this.bunifuVScrollBar1.MinimumThumbLength = 18;
@@ -1718,7 +1718,7 @@
             this.bunifuVScrollBar1.ScrollBarBorderColor = System.Drawing.Color.Silver;
             this.bunifuVScrollBar1.ScrollBarColor = System.Drawing.Color.Silver;
             this.bunifuVScrollBar1.ShrinkSizeLimit = 3;
-            this.bunifuVScrollBar1.Size = new System.Drawing.Size(22, 351);
+            this.bunifuVScrollBar1.Size = new System.Drawing.Size(22, 354);
             this.bunifuVScrollBar1.SmallChange = 1;
             this.bunifuVScrollBar1.TabIndex = 3;
             this.bunifuVScrollBar1.ThumbColor = System.Drawing.Color.Gray;
