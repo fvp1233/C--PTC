@@ -14,7 +14,8 @@ namespace PTC2024.Model
         {
 			try
 			{
-                string server = "PC-GERARDO\\SQLEXPRESS ";
+
+                string server = "DESKTOP-L1S3JL8";
                 string database = "DBPTC_H2C24";
 
                 SqlConnection conexion = new SqlConnection($"Server = {server}; DataBase = {database}; Integrated Security = true");

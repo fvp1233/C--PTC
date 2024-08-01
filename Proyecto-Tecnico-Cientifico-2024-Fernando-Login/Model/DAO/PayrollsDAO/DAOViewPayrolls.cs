@@ -193,7 +193,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             try
             {
                 comand.Connection = getConnection();
-                string query = $"SELECT * FROM viewPayrolls WHERE [DUI] LIKE '%{valor}%' OR [Empleado] LIKE '%{valor}%' OR [Cargo] LIKE '%{valor}%'";
+                string query = $"SELECT * FROM viewPayrolls WHERE [DUI] LIKE '%{valor}%' OR [Empleado] LIKE '%{valor}%' OR [Fecha de emisión] LIKE '%{valor}%'";
                 SqlCommand cmd = new SqlCommand(query, comand.Connection);
                 cmd.ExecuteNonQuery();
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
