@@ -19,7 +19,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             try
             {
                 Command.Connection = getConnection();
-                string query = "SELECT*FROM  viewEmployees";
+                string query = "SELECT*FROM viewEmployees WHERE [Estado] = 'Activo' OR [Estado] = 'Maternidad' OR [Estado] = 'Incapacidad'";
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
                 cmd.ExecuteNonQuery();
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
@@ -39,37 +39,64 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
         }
 
-        public int DeleteEmployee()
+        public DataSet EmployeeSearch(string valor)
+        {
+            try
+            {
+                Command.Connection= getConnection();
+                string querySearch = $"SELECT * FROM viewEmployees WHERE [Empleado] LIKE '%{valor}%' OR [DUI] LIKE '%{valor}%'";
+                SqlCommand cmdSearch = new SqlCommand(querySearch, Command.Connection);
+                cmdSearch.ExecuteNonQuery();
+
+                SqlDataAdapter adpSearch = new SqlDataAdapter(cmdSearch);
+                DataSet dsSearch = new DataSet();
+                adpSearch.Fill(dsSearch, "viewEmployees");
+                return dsSearch;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
+
+        public int DisableEmployee()
         { 
             try
             {
                 Command.Connection = getConnection();
                 string queryDeleteEmployee = "UPDATE tbEmployee" +
                                                 "SET IdStatus = 2" +
-                                                "WHERE username = @param1";
+                                                "WHERE IdEmployee = @param1";
                 SqlCommand cmdDeleteEmployee = new SqlCommand(queryDeleteEmployee, Command.Connection);
-                cmdDeleteEmployee.Parameters.AddWithValue("param1", Username);
+                cmdDeleteEmployee.Parameters.AddWithValue("param1", IdEmployee);
                 //se obtendrá una respuesta int con el executeNonquery
                 int respuestaDisable = cmdDeleteEmployee.ExecuteNonQuery();
-                
-                //Se evalúa la respuesta para saber si procederemos a eliminar el usuario asociado al empleado
-                if (respuestaDisable == 1)
-                {
-                    //Si la respuesta es 1, entonces se eliminó correctamente el empleado
-                    string queryDeleteUser = "DELETE FROM tbUserData WHERE username = @param2";
-                    SqlCommand cmdDeleteUser = new SqlCommand(queryDeleteUser, Command.Connection);
-                    cmdDeleteUser.Parameters.AddWithValue("param2", Username);
 
-                    //Obtendremos una respuesta de este otro proceso para saber si la tarea de Eliminar un empleado junto con su usuario se completó.
-                    int respuestaDeleteUser = cmdDeleteUser.ExecuteNonQuery();
-                    //Se devuelve esta respuesta para saber si se completó todo el proceso
-                    return respuestaDeleteUser;
-                }
-                else
-                {
-                    //Si el proceso de eliminar empleado no se hizo, se devuelve un cero, para avisar al usuario.
-                    return 0;
-                }
+                #region EN CASO DE QUE QUERAMOS DESHABILITAR EL USUARIO TMB
+                //Se evalúa la respuesta para saber si procederemos a eliminar el usuario asociado al empleado
+                //if (respuestaDisable == 1)
+                //{
+                //    //Si la respuesta es 1, entonces se eliminó correctamente el empleado
+                //    string queryDeleteUser = "DELETE FROM tbUserData WHERE username = @param2";
+                //    SqlCommand cmdDeleteUser = new SqlCommand(queryDeleteUser, Command.Connection);
+                //    cmdDeleteUser.Parameters.AddWithValue("param2", Username);
+
+                //    //Obtendremos una respuesta de este otro proceso para saber si la tarea de Eliminar un empleado junto con su usuario se completó.
+                //    int respuestaDeleteUser = cmdDeleteUser.ExecuteNonQuery();
+                //    //Se devuelve esta respuesta para saber si se completó todo el proceso
+                //    return respuestaDeleteUser;
+                //}
+                //else
+                //{
+                //    //Si el proceso de eliminar empleado no se hizo, se devuelve un cero, para avisar al usuario.
+                //    return 0;
+                //}
+                #endregion
+                return respuestaDisable;
             }
             catch (Exception)
             {
@@ -82,5 +109,6 @@ namespace PTC2024.Model.DAO.EmployeesDAO
                 Command.Connection.Close();
             }
         }
+
     }
 }
