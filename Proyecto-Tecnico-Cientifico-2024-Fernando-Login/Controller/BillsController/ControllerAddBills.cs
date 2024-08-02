@@ -21,39 +21,46 @@ namespace PTC2024.Controller.BillsController
     {
         FrmAddBills objAddBills;
         private int accions;
+        private string IdServices;
         public ControllerAddBills(FrmAddBills View, int accions)
         {
             objAddBills = View;
             this.accions = accions;
 
             chooseAccions();
-            objAddBills.Load += new EventHandler (LoadDataServices);
+            objAddBills.Load += new EventHandler(LoadDataServices);
 
             objAddBills.btnAddBill.Click += new EventHandler(NewBill);
             objAddBills.btnmore.Click += new EventHandler(More);
             objAddBills.btnBack.Click += new EventHandler(BackProcess);
+            objAddBills.btnDeletemore.Click += new EventHandler(DataProcessS);
         }
         public ControllerAddBills(FrmAddBills view, int accions, int id, string companyName, string NIT, string NRC, string customer, string serviceName, double discount, double subtoralPay, double totalPay, string methodP, DateTime startDate, DateTime FinalDate, string employee, string statusBill, DateTime fiscalPeriod)
         {
             objAddBills = view;
             this.accions = accions;
 
-            objAddBills.Load += new EventHandler (LoadDataServices);
+            objAddBills.Load += new EventHandler(LoadDataServices);
             chooseAccions();
             ChargeValues(id, companyName, NIT, NRC, customer, discount, subtoralPay, totalPay, startDate, FinalDate, employee, fiscalPeriod);
+
+            //objAddBills.btnRectify.Click += new EventHandler(RectifyBills);
+        }
+        public ControllerAddBills(FrmAddBills view, int accions, int id, string IdServices)
+        {
+            objAddBills = view;
+            this.accions = accions;
+            this.IdServices = IdServices;
+
+            objAddBills.Load += new EventHandler(LoadDataServices);
+            chooseAccions();
+            ChargeV(id, IdServices);
 
             //objAddBills.btnRectify.Click += new EventHandler(RectifyBills);
         }
         public void LoadDataServices(object sender, EventArgs e)
         {
             InitialCharge();
-        }
-        public void More(object sender, EventArgs e)
-        {
-            InitialCharge();
-
-            DAOAddBills dAOAddBills = new DAOAddBills();
-            dAOAddBills.Services = (string)objAddBills.comboServiceBill.SelectedValue;
         }
         public void InitialCharge()
         {
@@ -73,8 +80,9 @@ namespace PTC2024.Controller.BillsController
             objAddBills.comboServiceBill.DisplayMember = "serviceName";
             objAddBills.comboServiceBill.ValueMember = "IdServices";
 
-            DataSet dsDgvS = objBills.ViewDataS();
-            objAddBills.dgvdetails.DataSource = dsDgvS.Tables["viewDetail"];
+            DAOAddBills objBillsD = new DAOAddBills();
+            DataSet ds = objBillsD.BillsD();
+            objAddBills.dgvData.DataSource = ds.Tables["viewDetail"];
         }
         public void chooseAccions()
         {
@@ -88,6 +96,58 @@ namespace PTC2024.Controller.BillsController
                 objAddBills.btnAddBill.Enabled = false;
                 objAddBills.btnRectify.Enabled = true;
             }
+            else if (accions == 3) 
+            {
+                objAddBills.btnmore.Enabled = true;
+            }
+        }
+        public void More(object sender, EventArgs e)
+        {
+            DAOAddBills dAOAdd = new DAOAddBills();
+            dAOAdd.IdServices1 = int.Parse(objAddBills.comboServiceBill.SelectedValue.ToString());
+            int An = dAOAdd.DataB();
+            //Verificamos el valor que nos retorna dicho método
+            if (An == 1)
+            {
+                MessageBox.Show("Servicio seleccionado con exito", "Proceso Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Por favor vuelva a seleccionar el servicio", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                objAddBills.Close();
+
+            }
+            InitialCharge();
+
+        }
+        public void DataProcessS(object sender, EventArgs e)
+        {
+            if (objAddBills.dgvData.SelectedRows.Count > 0)
+            {
+                // Verifica que las filas puedan ser eliminadas
+                if (objAddBills.dgvData.AllowUserToDeleteRows)
+                {
+                    // Elimina la fila seleccionada del DataGridView
+                    foreach (DataGridViewRow row in objAddBills.dgvData.SelectedRows)
+                    {
+                        // Verifica que la fila no sea una nueva fila
+                        if (!row.IsNewRow)
+                        {
+                            objAddBills.dgvData.Rows.Remove(row);
+                        }
+                    }
+                }
+                else
+                {
+
+                    MessageBox.Show("No está permitido eliminar filas en esta tabla.", "Operación no permitida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una fila para eliminar.", "Sin selección", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
         public void NewBill(object sender, EventArgs e)
         {
@@ -130,6 +190,10 @@ namespace PTC2024.Controller.BillsController
             objAddBills.txtEmployee.Text = employee.ToString();
             objAddBills.dtfiscalPeriod.Value = fiscalPeriod;
 
+        }
+        public void ChargeV(int id, string IdServices1)
+        {
+            objAddBills.comboServiceBill.SelectedValue.ToString();
         }
     }
 }

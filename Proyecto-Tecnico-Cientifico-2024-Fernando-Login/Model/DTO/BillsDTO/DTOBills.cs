@@ -39,7 +39,6 @@ namespace PTC2024.Model.DTO.BillsDTO
         public DateTime FinalDate1 { get => FinalDate; set => FinalDate = value; }
         public DateTime FiscalPeriod { get => fiscalPeriod; set => fiscalPeriod = value; }
         public int IdDetail1 { get => IdDetail; set => IdDetail = value; }
-        public int IdServices1 { get => IdServices; set => IdServices = value; }
         public int IdfiscalPeriod1 { get => IdfiscalPeriod; set => IdfiscalPeriod = value; }
         public string NIT1 { get => NIT; set => NIT = value; }
         public string NRC1 { get => NRC; set => NRC = value; }
@@ -48,5 +47,6 @@ namespace PTC2024.Model.DTO.BillsDTO
         public string Customer { get => customer; set => customer = value; }
         public string Employee { get => employee; set => employee = value; }
         public string MethodP { get => methodP; set => methodP = value; }
+        public int IdServices1 { get => IdServices; set => IdServices = value; }
     }
 }
