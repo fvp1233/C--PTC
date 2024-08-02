@@ -24,6 +24,11 @@ namespace PTC2024.Controller.ServicesController
             objServices.cmsDeleteService.Click += new EventHandler(DeleteService);
             objServices.cmsUpdateService.Click += new EventHandler(OpenUpdateService);
             objServices.txtSearch.KeyPress += new KeyPressEventHandler(Search);
+            objServices.CbSeguridad.Click += new EventHandler(SearchCheckBox);
+            objServices.CbInfraestructura.Click += new EventHandler(SearchCheckBox);
+            objServices.CbProgramacion.Click += new EventHandler(SearchCheckBox);
+            objServices.CbMantenimiento.Click += new EventHandler(SearchCheckBox);
+            objServices.CbSoporte.Click += new EventHandler(SearchCheckBox);
 
         }
 
@@ -95,6 +100,65 @@ namespace PTC2024.Controller.ServicesController
             objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
         }
 
+        public void SearchCheckBox(object sender, EventArgs e)
+        {
+            DAOServices dAOServices = new DAOServices();
 
+            string categoria = "";
+            if (objServices.CbSeguridad.Checked)
+            {
+                categoria = objServices.CbSeguridad.Tag.ToString();
+                objServices.CbInfraestructura.Enabled = false;
+                objServices.CbMantenimiento.Enabled = false;
+                objServices.CbSoporte.Enabled = false;
+                objServices.CbProgramacion.Enabled = false;
+            }
+            else if (objServices.CbInfraestructura.Checked) 
+            {
+                categoria = objServices.CbInfraestructura.Tag.ToString();
+                objServices.CbSeguridad.Enabled = false;
+                objServices.CbMantenimiento.Enabled = false;
+                objServices.CbSoporte.Enabled = false;
+                objServices.CbProgramacion.Enabled = false;
+            }
+            else if(objServices.CbMantenimiento.Checked)
+            {
+                categoria = objServices.CbMantenimiento.Tag.ToString();
+                objServices.CbSeguridad.Enabled = false;
+                objServices.CbInfraestructura.Enabled = false;
+                objServices.CbSoporte.Enabled = false;
+                objServices.CbProgramacion.Enabled = false;
+            }
+            else if (objServices.CbSoporte.Checked)
+            {
+                categoria = objServices.CbMantenimiento.Tag.ToString();
+                objServices.CbSeguridad.Enabled = false;
+                objServices.CbInfraestructura.Enabled = false;
+                objServices.CbMantenimiento.Enabled = false;
+                objServices.CbProgramacion.Enabled = false;
+            }
+            else if (objServices.CbProgramacion.Checked)
+            {
+                categoria = objServices.CbMantenimiento.Tag.ToString();
+                objServices.CbSeguridad.Enabled = false;
+                objServices.CbInfraestructura.Enabled = false;
+                objServices.CbSoporte.Enabled = false;
+                objServices.CbMantenimiento.Enabled = false;
+            }
+            else
+            {
+                objServices.CbProgramacion.Enabled = true;
+                objServices.CbSeguridad.Enabled = true;
+                objServices.CbInfraestructura.Enabled = true;
+                objServices.CbSoporte.Enabled = true;
+                objServices.CbMantenimiento.Enabled = true;
+                ChargeDgv();
+            }
+
+
+            DataSet respuesta = dAOServices.SearchDataCb(categoria);
+            objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
+
+        }
     }
 }

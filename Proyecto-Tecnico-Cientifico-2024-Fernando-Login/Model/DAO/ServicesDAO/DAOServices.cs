@@ -93,6 +93,33 @@ namespace PTC2024.Model.DAO.ServicesDAO
                 command.Connection.Close();
             }
         }
+
+        public DataSet SearchDataCb(string categoria)
+        {
+            try
+            {
+                command.Connection = getConnection();
+                string query = "SELECT * FROM viewServices Where [Categoría] = @categoria";
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                cmd.Parameters.AddWithValue("@categoria", categoria);
+                cmd.ExecuteNonQuery();
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataSet ds = new DataSet();
+
+                adp.Fill(ds, "viewServices");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                command.Connection.Close(); 
+            }
+        }
     }
 
 }
