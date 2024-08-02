@@ -14,14 +14,14 @@ namespace PTC2024.Controller.EmployeesController
     {
         FrmInfoPayroll objInfoPayroll;
         //dui,employee,possition,bonus,banckAccount,affiliationNumber,afp,isss,rent, netSalary, discountEmployee, issueDate, issEmployer,afpEmployer, discountEmployer)
-        public ControllerInfoPayroll(FrmInfoPayroll Vista, string dui, string employee, string possition, double bonus, string bankAccount, int affiliationNumber,double salary, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, double issEmployer, double afpEmployer, double discountEmployer,string payrollStatus)
+        public ControllerInfoPayroll(FrmInfoPayroll Vista, string dui, string employee, string possition, double bonus, string bankAccount, int affiliationNumber,double salary, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, double christmasBonus, double issEmployer, double afpEmployer, double discountEmployer,string payrollStatus)
         {
             objInfoPayroll = Vista;
             DisableComponents();
-            ChargeValues(dui, employee, possition, bonus, bankAccount, affiliationNumber, salary, afp, isss, rent, netSalary, discountEmployee, issueDate, issEmployer, afpEmployer, discountEmployer, payrollStatus);
+            ChargeValues(dui, employee, possition, bonus, bankAccount, affiliationNumber, salary, afp, isss, rent, netSalary, discountEmployee, issueDate, christmasBonus, issEmployer, afpEmployer, discountEmployer, payrollStatus);
             objInfoPayroll.btnCancelar.Click += new EventHandler(CloseForm);
         }
-        public void ChargeValues(string dui, string employee, string possition, double bonus, string bankAccount, int affiliationNumber, double salary, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, double issEmployer, double afpEmployer, double discountEmployer, string payrollStatus)
+        public void ChargeValues(string dui, string employee, string possition, double bonus, string bankAccount, int affiliationNumber, double salary, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate,double christmasBonus, double issEmployer, double afpEmployer, double discountEmployer, string payrollStatus)
         {
             try
             {
@@ -38,6 +38,7 @@ namespace PTC2024.Controller.EmployeesController
                 objInfoPayroll.txtNetSalary.Text = netSalary.ToString();
                 objInfoPayroll.txtEmployeeDiscount.Text = discountEmployee.ToString();
                 objInfoPayroll.dtpDate.Value = issueDate;
+                objInfoPayroll.txtChristmasBonus.Text = christmasBonus.ToString();
                 objInfoPayroll.txtEmployerISSS.Text = issEmployer.ToString();
                 objInfoPayroll.txtEmployerAFP.Text = afpEmployer.ToString();
                 objInfoPayroll.txtEmployerDiscount.Text = discountEmployer.ToString();
@@ -68,6 +69,7 @@ namespace PTC2024.Controller.EmployeesController
             objInfoPayroll.txtEmployerAFP.Enabled = false;
             objInfoPayroll.txtEmployerDiscount.Enabled=false;
             objInfoPayroll.txtPayrollStatus.Enabled = false;
+            objInfoPayroll.txtChristmasBonus.Enabled = false;
         }
         public void CloseForm(object sender, EventArgs e)
         {

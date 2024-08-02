@@ -100,7 +100,6 @@
             this.cmsDeletePayroll = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsPayrollInformation = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDownloadPDF = new System.Windows.Forms.ToolStripMenuItem();
-            this.bunifuVScrollBar1 = new Bunifu.UI.WinForms.BunifuVScrollBar();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -288,12 +287,11 @@
             // 
             // tableLayoutPanel5
             // 
-            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.dgvPayrolls, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.bunifuVScrollBar1, 1, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -309,7 +307,7 @@
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel10, 0, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(20, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -1568,6 +1566,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dgvPayrolls.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPayrolls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPayrolls.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPayrolls.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvPayrolls.BackgroundColor = System.Drawing.Color.White;
@@ -1611,7 +1612,6 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPayrolls.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPayrolls.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPayrolls.EnableHeadersVisualStyles = false;
             this.dgvPayrolls.GridColor = System.Drawing.Color.Silver;
             this.dgvPayrolls.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
@@ -1641,9 +1641,9 @@
             this.dgvPayrolls.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.dgvPayrolls.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.dgvPayrolls.RowTemplate.Height = 50;
-            this.dgvPayrolls.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvPayrolls.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPayrolls.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPayrolls.Size = new System.Drawing.Size(1094, 354);
+            this.dgvPayrolls.Size = new System.Drawing.Size(1129, 354);
             this.dgvPayrolls.TabIndex = 1;
             this.dgvPayrolls.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
             // 
@@ -1686,46 +1686,6 @@
             this.cmsDownloadPDF.Name = "cmsDownloadPDF";
             this.cmsDownloadPDF.Size = new System.Drawing.Size(209, 26);
             this.cmsDownloadPDF.Text = "Descargar Planilla PDF";
-            // 
-            // bunifuVScrollBar1
-            // 
-            this.bunifuVScrollBar1.AllowCursorChanges = true;
-            this.bunifuVScrollBar1.AllowHomeEndKeysDetection = false;
-            this.bunifuVScrollBar1.AllowIncrementalClickMoves = true;
-            this.bunifuVScrollBar1.AllowMouseDownEffects = true;
-            this.bunifuVScrollBar1.AllowMouseHoverEffects = true;
-            this.bunifuVScrollBar1.AllowScrollingAnimations = true;
-            this.bunifuVScrollBar1.AllowScrollKeysDetection = true;
-            this.bunifuVScrollBar1.AllowScrollOptionsMenu = true;
-            this.bunifuVScrollBar1.AllowShrinkingOnFocusLost = false;
-            this.bunifuVScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.bunifuVScrollBar1.BackgroundColor = System.Drawing.Color.Silver;
-            this.bunifuVScrollBar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuVScrollBar1.BackgroundImage")));
-            this.bunifuVScrollBar1.BindingContainer = null;
-            this.bunifuVScrollBar1.BorderColor = System.Drawing.Color.Silver;
-            this.bunifuVScrollBar1.BorderRadius = 14;
-            this.bunifuVScrollBar1.BorderThickness = 1;
-            this.bunifuVScrollBar1.DurationBeforeShrink = 2000;
-            this.bunifuVScrollBar1.LargeChange = 10;
-            this.bunifuVScrollBar1.Location = new System.Drawing.Point(1106, 175);
-            this.bunifuVScrollBar1.Maximum = 100;
-            this.bunifuVScrollBar1.Minimum = 0;
-            this.bunifuVScrollBar1.MinimumThumbLength = 18;
-            this.bunifuVScrollBar1.Name = "bunifuVScrollBar1";
-            this.bunifuVScrollBar1.OnDisable.ScrollBarBorderColor = System.Drawing.Color.Silver;
-            this.bunifuVScrollBar1.OnDisable.ScrollBarColor = System.Drawing.Color.Transparent;
-            this.bunifuVScrollBar1.OnDisable.ThumbColor = System.Drawing.Color.Silver;
-            this.bunifuVScrollBar1.ScrollBarBorderColor = System.Drawing.Color.Silver;
-            this.bunifuVScrollBar1.ScrollBarColor = System.Drawing.Color.Silver;
-            this.bunifuVScrollBar1.ShrinkSizeLimit = 3;
-            this.bunifuVScrollBar1.Size = new System.Drawing.Size(22, 354);
-            this.bunifuVScrollBar1.SmallChange = 1;
-            this.bunifuVScrollBar1.TabIndex = 3;
-            this.bunifuVScrollBar1.ThumbColor = System.Drawing.Color.Gray;
-            this.bunifuVScrollBar1.ThumbLength = 34;
-            this.bunifuVScrollBar1.ThumbMargin = 1;
-            this.bunifuVScrollBar1.ThumbStyle = Bunifu.UI.WinForms.BunifuVScrollBar.ThumbStyles.Inset;
-            this.bunifuVScrollBar1.Value = 0;
             // 
             // FrmViewPayrolls
             // 
@@ -1775,7 +1735,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private Bunifu.UI.WinForms.BunifuVScrollBar bunifuVScrollBar1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.ToolStripMenuItem cmsDownloadPDF;
         public Bunifu.UI.WinForms.BunifuDataGridView dgvPayrolls;

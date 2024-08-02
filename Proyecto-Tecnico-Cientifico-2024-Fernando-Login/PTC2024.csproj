@@ -104,6 +104,7 @@
     <Compile Include="Controller\CustomersController\ControllerCustomers.cs" />
     <Compile Include="Controller\CustomersController\ControllerUpdateCustomers.cs" />
     <Compile Include="Controller\EmployeesController\ControllerAddEmployee.cs" />
+    <Compile Include="Controller\EmployeesController\ControllerInfoEmployee.cs" />
     <Compile Include="Controller\Helper\CommonClasses.cs" />
     <Compile Include="Controller\LogInController\ControllerLogin.cs" />
     <Compile Include="Controller\LogInController\ControllerRecoverPassword.cs" />
@@ -198,6 +199,12 @@
     </Compile>
     <Compile Include="View\EmployeeViews\FrmEmployees.Designer.cs">
       <DependentUpon>FrmEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\EmployeeViews\FrmInfoEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EmployeeViews\FrmInfoEmployee.Designer.cs">
+      <DependentUpon>FrmInfoEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="View\EmployeeViews\FrmInfoPayroll.cs">
       <SubType>Form</SubType>
@@ -317,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmEmployees.resx">
       <DependentUpon>FrmEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\EmployeeViews\FrmInfoEmployee.resx">
+      <DependentUpon>FrmInfoEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmInfoPayroll.resx">
       <DependentUpon>FrmInfoPayroll.cs</DependentUpon>

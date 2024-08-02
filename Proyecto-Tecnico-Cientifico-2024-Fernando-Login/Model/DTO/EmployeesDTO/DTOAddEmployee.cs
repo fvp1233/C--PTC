@@ -10,6 +10,7 @@ namespace PTC2024.Model.DTO
     {
         //Atributos de FrmAddEmployee
         //TABLA tbmployees
+        private int idEmployee;
         private string names;
         private string lastNames;
         private string document;
@@ -52,5 +53,6 @@ namespace PTC2024.Model.DTO
         public string Document { get => document; set => document = value; }
         public DateTime HireDate { get => hireDate; set => hireDate = value; }
         public int Bank { get => bank; set => bank = value; }
+        public int IdEmployee { get => idEmployee; set => idEmployee = value; }
     }
 }

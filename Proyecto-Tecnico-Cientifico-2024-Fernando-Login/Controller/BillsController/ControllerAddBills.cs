@@ -10,6 +10,10 @@ using PTC2024.Model.DAO;
 using PTC2024.Model.DAO.BillsDAO;
 using System.Data;
 using PTC2024.Model.DTO;
+using PTC2024.Model.DAO.ServicesDAO;
+using System.Windows.Forms;
+using System.Web.UI.Design.WebControls;
+using PTC2024.Model.DTO.ServicesDTO;
 
 namespace PTC2024.Controller.BillsController
 {
@@ -17,29 +21,48 @@ namespace PTC2024.Controller.BillsController
     {
         FrmAddBills objAddBills;
         private int accions;
+        private string IdServices;
         public ControllerAddBills(FrmAddBills View, int accions)
         {
             objAddBills = View;
             this.accions = accions;
 
             chooseAccions();
-            objAddBills.Load += new EventHandler(InitialCharge);
+            objAddBills.Load += new EventHandler(LoadDataServices);
 
             objAddBills.btnAddBill.Click += new EventHandler(NewBill);
+            objAddBills.btnmore.Click += new EventHandler(More);
             objAddBills.btnBack.Click += new EventHandler(BackProcess);
+            objAddBills.btnDeletemore.Click += new EventHandler(DataProcessS);
         }
-        public ControllerAddBills(FrmAddBills view, int accions, int id, string companyName, int NIT, int NRC, int customer, int serviceName, double discount, double subtoralPay, double totalPay, int methodP, DateTime startDate, DateTime FinalDate, int employee, int statusBill, DateTime fiscalPeriod)
+        public ControllerAddBills(FrmAddBills view, int accions, int id, string companyName, string NIT, string NRC, string customer, string serviceName, double discount, double subtoralPay, double totalPay, string methodP, DateTime startDate, DateTime FinalDate, string employee, string statusBill, DateTime fiscalPeriod)
         {
             objAddBills = view;
             this.accions = accions;
 
-            objAddBills.Load += new EventHandler(InitialCharge);
+            objAddBills.Load += new EventHandler(LoadDataServices);
             chooseAccions();
             ChargeValues(id, companyName, NIT, NRC, customer, discount, subtoralPay, totalPay, startDate, FinalDate, employee, fiscalPeriod);
 
             //objAddBills.btnRectify.Click += new EventHandler(RectifyBills);
         }
-        public void InitialCharge(object sender, EventArgs e)
+        public ControllerAddBills(FrmAddBills view, int accions, int id, string IdServices)
+        {
+            objAddBills = view;
+            this.accions = accions;
+            this.IdServices = IdServices;
+
+            objAddBills.Load += new EventHandler(LoadDataServices);
+            chooseAccions();
+            ChargeV(id, IdServices);
+
+            //objAddBills.btnRectify.Click += new EventHandler(RectifyBills);
+        }
+        public void LoadDataServices(object sender, EventArgs e)
+        {
+            InitialCharge();
+        }
+        public void InitialCharge()
         {
             DAOAddBills objBills = new DAOAddBills();
             DataSet dsMethodP = objBills.Methodp();
@@ -57,6 +80,9 @@ namespace PTC2024.Controller.BillsController
             objAddBills.comboServiceBill.DisplayMember = "serviceName";
             objAddBills.comboServiceBill.ValueMember = "IdServices";
 
+            DAOAddBills objBillsD = new DAOAddBills();
+            DataSet ds = objBillsD.BillsD();
+            objAddBills.dgvData.DataSource = ds.Tables["viewDetail"];
         }
         public void chooseAccions()
         {
@@ -70,23 +96,75 @@ namespace PTC2024.Controller.BillsController
                 objAddBills.btnAddBill.Enabled = false;
                 objAddBills.btnRectify.Enabled = true;
             }
+            else if (accions == 3) 
+            {
+                objAddBills.btnmore.Enabled = true;
+            }
+        }
+        public void More(object sender, EventArgs e)
+        {
+            DAOAddBills dAOAdd = new DAOAddBills();
+            dAOAdd.IdServices1 = int.Parse(objAddBills.comboServiceBill.SelectedValue.ToString());
+            int An = dAOAdd.DataB();
+            //Verificamos el valor que nos retorna dicho método
+            if (An == 1)
+            {
+                MessageBox.Show("Servicio seleccionado con exito", "Proceso Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Por favor vuelva a seleccionar el servicio", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                objAddBills.Close();
+
+            }
+            InitialCharge();
+
+        }
+        public void DataProcessS(object sender, EventArgs e)
+        {
+            if (objAddBills.dgvData.SelectedRows.Count > 0)
+            {
+                // Verifica que las filas puedan ser eliminadas
+                if (objAddBills.dgvData.AllowUserToDeleteRows)
+                {
+                    // Elimina la fila seleccionada del DataGridView
+                    foreach (DataGridViewRow row in objAddBills.dgvData.SelectedRows)
+                    {
+                        // Verifica que la fila no sea una nueva fila
+                        if (!row.IsNewRow)
+                        {
+                            objAddBills.dgvData.Rows.Remove(row);
+                        }
+                    }
+                }
+                else
+                {
+
+                    MessageBox.Show("No está permitido eliminar filas en esta tabla.", "Operación no permitida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una fila para eliminar.", "Sin selección", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
         public void NewBill(object sender, EventArgs e)
         {
             DAOAddBills daoNew = new DAOAddBills();
             daoNew.CompanyName = objAddBills.txtRazónsocial.Text.Trim();
-            daoNew.NIT1 = int.Parse(objAddBills.txtNITCompany.ToString());
-            daoNew.NRC1 = int.Parse(objAddBills.txtNRCompany.ToString());
-            daoNew.Discount = int.Parse(objAddBills.txtDiscount.ToString());
-            daoNew.SubtotalPay = int.Parse(objAddBills.txtSubTotal.ToString());
-            daoNew.TotalPay = int.Parse(objAddBills.txtTotalPay.ToString());
+            daoNew.NIT1 = objAddBills.txtNITCompany.Text.Trim();
+            daoNew.NRC1 = objAddBills.txtNRCompany.Text.Trim();
+            daoNew.Discount = double.Parse(objAddBills.txtDiscount.Text.ToString());
+            daoNew.SubtotalPay = double.Parse(objAddBills.txtSubTotal.Text.ToString());
+            daoNew.TotalPay = double.Parse(objAddBills.txtTotalPay.Text.ToString());
             daoNew.StartDate = objAddBills.dtStartDate.Value.Date;
             daoNew.FinalDate1 = objAddBills.dtFinalDate.Value.Date;
-            daoNew.Services = int.Parse(objAddBills.comboServiceBill.SelectedValue.ToString());
-            daoNew.StatusBills = int.Parse(objAddBills.comboStatusBill.SelectedValue.ToString());
-            daoNew.Customer = int.Parse(objAddBills.txtCustomerName.ToString());
-            daoNew.Employee = int.Parse(objAddBills.txtEmployee.ToString());
-            daoNew.MethodP = int.Parse(objAddBills.comboMethodP.SelectedValue.ToString());
+            daoNew.Services = objAddBills.comboServiceBill.SelectedValue.ToString();
+            daoNew.StatusBills = objAddBills.comboStatusBill.SelectedValue.ToString();
+            daoNew.Customer = objAddBills.txtCustomerName.ToString();
+            daoNew.Employee = objAddBills.txtEmployee.ToString();
+            daoNew.MethodP = objAddBills.comboMethodP.SelectedValue.ToString();
             daoNew.FiscalPeriod = objAddBills.dtfiscalPeriod.Value.Date;
 
         }
@@ -98,7 +176,7 @@ namespace PTC2024.Controller.BillsController
         {
             objAddBills.Close();
         }
-        public void ChargeValues(int id, string companyName, int NIT, int NRC, int customer, double discount, double subtoralPay, double totalPay, DateTime startDate, DateTime FinalDate, int employee, DateTime fiscalPeriod)
+        public void ChargeValues(int id, string companyName, string NIT, string NRC, string customer, double discount, double subtoralPay, double totalPay, DateTime startDate, DateTime FinalDate, string employee, DateTime fiscalPeriod)
         {
             objAddBills.txtRazónsocial.Text = companyName;
             objAddBills.txtNITCompany.Text = NIT.ToString();
@@ -109,8 +187,13 @@ namespace PTC2024.Controller.BillsController
             objAddBills.txtTotalPay.Text = totalPay.ToString();
             objAddBills.dtStartDate.Value = startDate;
             objAddBills.dtFinalDate.Value = FinalDate;
+            objAddBills.txtEmployee.Text = employee.ToString();
             objAddBills.dtfiscalPeriod.Value = fiscalPeriod;
 
+        }
+        public void ChargeV(int id, string IdServices1)
+        {
+            objAddBills.comboServiceBill.SelectedValue.ToString();
         }
     }
 }
