@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PTC2024.Model.DTO.PayrollDTO
 {
-    internal class DTOViewPayrolls:dbContext
+    internal class DTOViewPayrolls : dbContext
     {
         //EMPLEADO INFO
         private int idEmployee;
@@ -40,6 +40,7 @@ namespace PTC2024.Model.DTO.PayrollDTO
         private double discountEmployee;
         private double discountEmployer;
         private DateTime issueDate;
+        private double christmasBonus;
         //Estatus de planilla
         private int idPayrollStatus;
         private int statusPayroll;
@@ -75,5 +76,6 @@ namespace PTC2024.Model.DTO.PayrollDTO
         public double DiscountEmployer { get => discountEmployer; set => discountEmployer = value; }
         public int IdPayrollStatus { get => idPayrollStatus; set => idPayrollStatus = value; }
         public int StatusPayroll { get => statusPayroll; set => statusPayroll = value; }
+        public double ChristmasBonus { get => christmasBonus; set => christmasBonus = value; }
     }
 }

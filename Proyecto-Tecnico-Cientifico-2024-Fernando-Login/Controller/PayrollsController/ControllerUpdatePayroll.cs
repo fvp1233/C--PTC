@@ -14,66 +14,37 @@ namespace PTC2024.Controller.EmployeesController
     internal class ControllerUpdatePayroll
     {
         FrmUpdatePayroll objUpdatePayroll;
-        public ControllerUpdatePayroll(FrmUpdatePayroll Vista, int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, int affiliationNumber, double afp, double isss, double rent, double netSalary,double discountEmployee, DateTime issueDate, string payrollStatus)
+        public ControllerUpdatePayroll(FrmUpdatePayroll Vista, int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, int affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, string payrollStatus)
         {
             objUpdatePayroll = Vista;
             DisableComponents();
-            ChargeValues(nP,dui, employee, salary, possition, bonus, bankAccount, affiliationNumber, isss, afp, rent, netSalary,discountEmployee, issueDate, payrollStatus);
+            ChargeValues(nP, dui, employee, salary, possition, bonus, bankAccount, affiliationNumber, isss, afp, rent, netSalary, discountEmployee, issueDate, payrollStatus);
             objUpdatePayroll.Load += new EventHandler(ChargeStatus);
             objUpdatePayroll.btnConfirm.Click += new EventHandler(UpdatePayrollStatus);
             objUpdatePayroll.btnCancelar.Click += new EventHandler(CloseForm);
         }
         public void UpdatePayrollStatus(object sender, EventArgs e)
         {
-            try
+
+            DAOUpdatePayroll daoUpdatePayroll = new DAOUpdatePayroll();
+            daoUpdatePayroll.IdPayrollStatus = (int)objUpdatePayroll.cmbPayrollStatus.SelectedValue;
+            daoUpdatePayroll.IdPayroll = int.Parse(objUpdatePayroll.txtIdPayroll.Text.Trim());
+            int value = daoUpdatePayroll.UpdatePayroll();
+            if (value == 1)
             {
-                DAOUpdatePayroll daoUpdatePayroll = new DAOUpdatePayroll();
-                daoUpdatePayroll.IdPayrollStatus = (int)objUpdatePayroll.cmbPayrollStatus.SelectedValue;
-                daoUpdatePayroll.IdPayroll = int.Parse(objUpdatePayroll.txtIdPayroll.Text.Trim());
-                int value = daoUpdatePayroll.UpdatePayroll();
-                if (value == 1)
-                {
-                    MessageBox.Show("Los datos han sido actualizado exitosamente",
-                                    "Proceso completado",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Los datos no pudieron ser actualizados. Verifica los valores ingresados.",
-                                    "Proceso interrumpido",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Los datos han sido actualizado exitosamente",
+                                "Proceso completado",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Ocurrió un error: {ex.Message}",
-                                "Error",
+                MessageBox.Show("Los datos no pudieron ser actualizados. Verifica los valores ingresados.",
+                                "Proceso interrumpido",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
             }
         }
-        //public void UpdatePayrollStatus(object sender, EventArgs e)
-        //{
-        //    DAOUpdatePayroll daoUpdatePayroll = new DAOUpdatePayroll();
-        //    daoUpdatePayroll.IdPayrollStatus = (int)objUpdatePayroll.cmbPayrollStatus.SelectedValue;
-        //    int value = daoUpdatePayroll.UpdatePayroll();
-        //    if (value == 1)
-        //    {
-        //        MessageBox.Show("Los datos han sido actualizado exitosamente",
-        //                        "Proceso completado",
-        //                        MessageBoxButtons.OK,
-        //                        MessageBoxIcon.Information);
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Los datos no pudieron ser actualizados debido a un erroraso",
-        //                       "Proceso interrumpido",
-        //                       MessageBoxButtons.OK,
-        //                       MessageBoxIcon.Error);
-        //    }
-        //}
         public void ChargeStatus(object sender, EventArgs e)
         {
             DAOUpdatePayroll objFill = new DAOUpdatePayroll();
@@ -82,7 +53,7 @@ namespace PTC2024.Controller.EmployeesController
             objUpdatePayroll.cmbPayrollStatus.ValueMember = "IdPayrollStatus";
             objUpdatePayroll.cmbPayrollStatus.DisplayMember = "payrollStatus";
         }
-        public void ChargeValues(int nP,string dui, string employee, double salary, string possition, double bonus, string bankAccount, int affiliationNumber, double afp, double isss, double rent, double netSalary,double discountEmployee, DateTime issueDate, string payrollStatus)
+        public void ChargeValues(int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, int affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, string payrollStatus)
         {
             try
             {
