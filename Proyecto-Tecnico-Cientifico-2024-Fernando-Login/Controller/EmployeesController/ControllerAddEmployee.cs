@@ -22,6 +22,8 @@ namespace PTC2024.Controller
             objAddEmployee.Load += new EventHandler(CargarCombos);
             objAddEmployee.BtnAgregarEmpleado.Click += new EventHandler(AgregarEmpleado);
             objAddEmployee.BtnCancelar.Click += new EventHandler(CancelarProceso);
+            objAddEmployee.txtSalary.Enter += new EventHandler(EnterSalary);
+            objAddEmployee.txtSalary.Leave += new EventHandler(LeaveSalary);
         }
 
 
@@ -67,43 +69,79 @@ namespace PTC2024.Controller
             objAddEmployee.comboBanks.ValueMember = "IdBank";
         }
 
+        public void EnterSalary(object sender, EventArgs e)
+        {
+            if (objAddEmployee.txtSalary.Text.Trim().Equals("Ingrese con dos decimales"))
+            {
+                objAddEmployee.txtSalary.Text = "";
+            }
+        }
+        public void LeaveSalary(object sender, EventArgs e)
+        {
+            if (objAddEmployee.txtSalary.Text.Trim().Equals(""))
+            {
+                objAddEmployee.txtSalary.Text = "Ingrese con dos decimales";
+            }
+        }
         public void AgregarEmpleado(object sender, EventArgs e)
         {
-            //Se crea un objeto de la clase DAOAddEmployee y de la clase CommonClasses
-            DAOAddEmployee daoInsertEmployee = new DAOAddEmployee();
-            CommonClasses commonClasses = new CommonClasses();
-            //Datos para la creación de un empleado
-            daoInsertEmployee.Names = objAddEmployee.txtNames.Text;
-            daoInsertEmployee.LastNames = objAddEmployee.txtLastNames.Text;
-            daoInsertEmployee.Document = objAddEmployee.txtDUI.Text;
-            daoInsertEmployee.BirthDate = objAddEmployee.dtBirthDate.Value.Date;
-            daoInsertEmployee.Email = objAddEmployee.txtEmail.Text;
-            daoInsertEmployee.Phone = objAddEmployee.txtPhone.Text;
-            daoInsertEmployee.Address = objAddEmployee.txtAddress.Text;
-            daoInsertEmployee.Salary = float.Parse(objAddEmployee.txtSalary.Text);
-            daoInsertEmployee.BankAccount = objAddEmployee.txtBankAccount.Text;
-            daoInsertEmployee.AffiliationNumber = int.Parse(objAddEmployee.txtAffiliationNumber.Text);
-            daoInsertEmployee.HireDate = objAddEmployee.dpHireDate.Value.Date;
-            daoInsertEmployee.Bank = int.Parse(objAddEmployee.comboBanks.SelectedValue.ToString());
-            daoInsertEmployee.Department = int.Parse(objAddEmployee.comboDepartment.SelectedValue.ToString());
-            daoInsertEmployee.EmployeeType = int.Parse(objAddEmployee.comboEmployeeType.SelectedValue.ToString());
-            daoInsertEmployee.MaritalStatus = int.Parse(objAddEmployee.comboMaritalStatus.SelectedValue.ToString());
-            daoInsertEmployee.EmployeeStatus = int.Parse(objAddEmployee.comboEmployeeStatus.SelectedValue.ToString());
-            //Datos para la creación del usuario
-            daoInsertEmployee.Username = objAddEmployee.txtUsername.Text;
-            daoInsertEmployee.Password = commonClasses.ComputeSha256Hash(objAddEmployee.txtUsername.Text + "PU123");
-            daoInsertEmployee.BusinessPosition = int.Parse(objAddEmployee.comboBusinessP.SelectedValue.ToString());
-            //AHORA INVOCAMOS EL MÉTODO RegisterEmployee A TRAVÉS DEL OBJETO daoInsertEmployee
-            int valorRespuesta = daoInsertEmployee.RegisterEmployee();
-            //Verificamos el valor que nos retorna dicho método
-            if (valorRespuesta == 1)
+            if (!(string.IsNullOrEmpty(objAddEmployee.txtNames.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddEmployee.txtLastNames.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddEmployee.txtDUI.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddEmployee.txtAddress.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddEmployee.txtPhone.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddEmployee.txtEmail.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddEmployee.txtDUI.Text.Trim()) ||
+                objAddEmployee.txtSalary.Text.Equals("Ingrese con dos decimales") ||
+                string.IsNullOrEmpty(objAddEmployee.txtAffiliationNumber.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddEmployee.txtBankAccount.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddEmployee.txtUsername.Text.Trim())
+                ))
             {
-                MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                objAddEmployee.Close();
+                //Se crea un objeto de la clase DAOAddEmployee y de la clase CommonClasses
+                DAOAddEmployee daoInsertEmployee = new DAOAddEmployee();
+                CommonClasses commonClasses = new CommonClasses();
+                //Datos para la creación de un empleado
+                daoInsertEmployee.Names = objAddEmployee.txtNames.Text;
+                daoInsertEmployee.LastNames = objAddEmployee.txtLastNames.Text;
+                daoInsertEmployee.Document = objAddEmployee.txtDUI.Text;
+                daoInsertEmployee.BirthDate = objAddEmployee.dtBirthDate.Value.Date;
+                daoInsertEmployee.Email = objAddEmployee.txtEmail.Text;
+                daoInsertEmployee.Phone = objAddEmployee.txtPhone.Text;
+                daoInsertEmployee.Address = objAddEmployee.txtAddress.Text;
+                daoInsertEmployee.Salary = float.Parse(objAddEmployee.txtSalary.Text);
+                daoInsertEmployee.BankAccount = objAddEmployee.txtBankAccount.Text;
+                daoInsertEmployee.AffiliationNumber = int.Parse(objAddEmployee.txtAffiliationNumber.Text);
+                daoInsertEmployee.HireDate = objAddEmployee.dpHireDate.Value.Date;
+                daoInsertEmployee.Bank = int.Parse(objAddEmployee.comboBanks.SelectedValue.ToString());
+                daoInsertEmployee.Department = int.Parse(objAddEmployee.comboDepartment.SelectedValue.ToString());
+                daoInsertEmployee.EmployeeType = int.Parse(objAddEmployee.comboEmployeeType.SelectedValue.ToString());
+                daoInsertEmployee.MaritalStatus = int.Parse(objAddEmployee.comboMaritalStatus.SelectedValue.ToString());
+                daoInsertEmployee.EmployeeStatus = int.Parse(objAddEmployee.comboEmployeeStatus.SelectedValue.ToString());
+                //Datos para la creación del usuario
+                daoInsertEmployee.Username = objAddEmployee.txtUsername.Text;
+                daoInsertEmployee.Password = commonClasses.ComputeSha256Hash(objAddEmployee.txtUsername.Text + "PU123");
+                daoInsertEmployee.BusinessPosition = int.Parse(objAddEmployee.comboBusinessP.SelectedValue.ToString());
+                daoInsertEmployee.UserSatus = true;
+                //AHORA INVOCAMOS EL MÉTODO RegisterEmployee A TRAVÉS DEL OBJETO daoInsertEmployee
+                int valorRespuesta = daoInsertEmployee.RegisterEmployee();
+                //Verificamos el valor que nos retorna dicho método
+                if (valorRespuesta == 1)
+                {
+                    MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    objAddEmployee.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Los datos no pudieron ser registrados", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Los datos no pudieron ser registrados", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Todos los campos son obligatorios y existen algunos vacíos, llene todos los apartados.",
+                                    "Proceso interrumpido",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
             }
             //Fin del mantenimiento de agregar empleado.
         }

@@ -69,7 +69,9 @@ namespace PTC2024.Controller.Employees
             objEmployees.dgvEmployees.Columns[9].Visible = false;
             objEmployees.dgvEmployees.Columns[10].Visible = false;
             objEmployees.dgvEmployees.Columns[13].Visible = false;
+            objEmployees.dgvEmployees.Columns[14].Visible = false;
             objEmployees.dgvEmployees.Columns[16].Visible = false;
+            objEmployees.dgvEmployees.Columns[17].Visible = false;
         }
         public void ViewEmployeeInfo(object sender, EventArgs e)
         {
