@@ -13,6 +13,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Web.UI.WebControls;
 using RestSharp;
 using System.Runtime.InteropServices.ComTypes;
+using PTC2024.Model.DAO.ServicesDAO;
 
 namespace PTC2024.Model.DAO.BillsDAO
 {
@@ -91,6 +92,32 @@ namespace PTC2024.Model.DAO.BillsDAO
             {
                 getConnection().Close();
             }
+        }
+        public DataSet ViewDataS()
+        {
+            try
+            {
+               
+                    Command.Connection = getConnection();
+                    string query = "SELECT * FROM viewDetail";
+                    SqlCommand comd = new SqlCommand(query, Command.Connection);
+                    comd.ExecuteNonQuery();
+                    SqlDataAdapter adap = new SqlDataAdapter(comd);
+                    DataSet ds = new DataSet();
+                    adap.Fill(ds, "viewDetail");
+                    return ds;
+
+                }
+                catch (Exception)
+                {
+                    return null;
+                    throw;
+                }
+                finally
+                {
+                    getConnection().Close();
+                }
+                      
         }
         public int RegisterBills()
         {
