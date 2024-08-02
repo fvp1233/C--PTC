@@ -142,112 +142,7 @@ namespace PTC2024.Controller.EmployeesController
                                 MessageBoxIcon.Error);
             }
         }
-
-        //public void CreatePayroll(object sender, EventArgs e)
-        //{
-        //    //Creamos un objeto del DaoViewPayrolls
-        //    DAOViewPayrolls DAOInsertPayroll = new DAOViewPayrolls();
-        //    //Accedemos a los datos de los empleados gracias al GetEmployee
-        //    DAOInsertPayroll.GetEmployee();
-        //    //Se crean los dataSets
-        //    DataSet employeeDs = DAOInsertPayroll.GetEmployee();
-        //    DataSet bonusDs = DAOInsertPayroll.GetBonus();
-        //    DataSet userDs = DAOInsertPayroll.GetUsername();
-        //    DataSet payrollDs = DAOInsertPayroll.GetPayroll();
-        //    int returnValue = 0;
-        //    //Se crea la condicion en la cual establecemos que las tablas no esten vacias
-        //    if (employeeDs != null && employeeDs.Tables.Count > 0 && bonusDs != null && bonusDs.Tables.Count > 0 && userDs != null && userDs.Tables.Count > 0)
-        //    {
-        //        //Creamos los dataTable
-        //        DataTable employeeDt = employeeDs.Tables["tbEmployee"];
-        //        DataTable bonusDt = bonusDs.Tables["tbBusinessP"];
-        //        DataTable userDt = userDs.Tables["tbUserData"];
-        //        DataTable payrollDt = payrollDs.Tables["tbPayroll"];
-        //        //Verificamos que los datatable no esten vacias
-        //        if (employeeDt != null && bonusDt != null && userDt != null)
-        //        {
-        //            //Iteramos a traves de todas las filas de la tabla employee
-        //            foreach (DataRow row in employeeDt.Rows)
-        //            {
-        //                int idEmployee = int.Parse(row["IdEmployee"].ToString());
-        //                DateTime hireDate = DateTime.Parse(row["hireDate"].ToString());
-        //                int startWork = hireDate.Month;
-        //                int month;
-        //                double calculatedSalary=0;
-        //                for (month = startWork; month <= 12; month++)
-        //                {
-        //                    DataRow[] existingPayrollRows = payrollDt.Select($"IdEmployee = {idEmployee}");
-        //                    if (existingPayrollRows.Length == 0)
-        //                    {
-        //                        string username = row["username"].ToString();
-        //                        DataRow[] userRows = userDt.Select($"username = '{username}'");
-        //                        if (userRows.Length > 0)
-        //                        {
-        //                            DataRow userRow = userRows[0];
-        //                            string businessRole = userRow["IdBusinessP"].ToString();
-        //                            // Buscar la fila correspondiente en la tabla roles (bonus)
-        //                            DataRow[] bonusRows = bonusDt.Select($"IdBusinessP = '{businessRole}'");
-        //                            if (bonusRows.Length > 0)
-        //                            {
-        //                                DataRow bonusRow = bonusRows[0];
-        //                                double roleBonus = double.Parse(bonusRow["positionBonus"].ToString());
-        //                                DAOInsertPayroll.BusinessBonus = float.Parse(roleBonus.ToString());                                        
-        //                                double salary = double.Parse(row["salary"].ToString());
-        //                                double christmasBonus = GetChristmasBonus(salary,hireDate);
-        //                                if (month == 12)
-        //                                {                                                                                    
-        //                                    if(christmasBonus > 730)
-        //                                    {
-        //                                        calculatedSalary = double.Parse(roleBonus.ToString()) + salary + GetChristmasBonus(salary, hireDate);
-        //                                        DAOInsertPayroll.ChristmasBonus = christmasBonus;
-        //                                    }
-        //                                    else
-        //                                    {
-        //                                        DAOInsertPayroll.ChristmasBonus = christmasBonus;
-        //                                    }                      
-        //                                }
-        //                                else
-        //                                {
-        //                                    calculatedSalary = double.Parse(roleBonus.ToString()) + double.Parse(row["salary"].ToString());
-        //                                    DAOInsertPayroll.ChristmasBonus = 0;
-        //                                }
-        //                                DAOInsertPayroll.Username = row["username"].ToString();
-        //                                DAOInsertPayroll.Isss = GetISSS(calculatedSalary);
-        //                                DAOInsertPayroll.Afp = GetAFP(calculatedSalary);
-        //                                DAOInsertPayroll.Rent = GetRent(calculatedSalary);
-        //                                DAOInsertPayroll.NetPay = GetNetSalary(calculatedSalary);
-        //                                DAOInsertPayroll.IsssEmployer = GetISSSEmployeer(calculatedSalary);
-        //                                DAOInsertPayroll.AfpEmployer = GetAFPEmployer(calculatedSalary);
-        //                                DAOInsertPayroll.DiscountEmployee = GetEmployeeDiscount(calculatedSalary);
-        //                                DAOInsertPayroll.DiscountEmployer = GetEmployerDiscount(calculatedSalary);
-        //                                DAOInsertPayroll.IssueDate = new DateTime(hireDate.Year, month, 1);
-        //                                DAOInsertPayroll.IdEmployee = int.Parse(row["IdEmployee"].ToString());
-        //                                DAOInsertPayroll.IdPayrollStatus = 2;
-        //                            }
-        //                        }
-        //                        returnValue = DAOInsertPayroll.AddPayroll();
-        //                    }
-        //                }
-        //            }
-        //        }
-        //        RefreshData();
-        //    }
-        //    if (returnValue == 1)
-        //    {
-        //        MessageBox.Show("Los datos han sido registrados exitosamente",
-        //                                        "Proceso completado",
-        //                                        MessageBoxButtons.OK,
-        //                                        MessageBoxIcon.Information);
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Los datos no pudieron ser registrados",
-        //                       "Proceso interrumpido",
-        //                       MessageBoxButtons.OK,
-        //                       MessageBoxIcon.Error);
-        //    }
-        //}
-        //--------------------------METODOS $$$$$$$---------------------------//
+         //--------------------------METODOS $$$$$$$---------------------------//
 
         //Metodo para obtener el AFP el cual es igual al 7.5% del salario
         public double GetAFP(double Salary)
@@ -334,7 +229,7 @@ namespace PTC2024.Controller.EmployeesController
             }
 
             int workedYears = year - hireDate.Year;
-            double christmasBonus = 0;
+            double christmasBonus;
 
             if (workedYears >= 1 && workedYears < 3)
             {
@@ -368,6 +263,70 @@ namespace PTC2024.Controller.EmployeesController
             DataSet ds = objAdmin.SearchPayroll(objViewPayrolls.txtSearch.Text.Trim());
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
         }
+        //public void SearchByJune(object sender, ItemCheckedEventArgs e)
+        //{
+        //    DAOViewPayrolls objSearch = new DAOViewPayrolls();
+        //    int selectedMonth;
+        //    if (objViewPayrolls.chJanuary.Checked)
+        //    {
+        //        selectedMonth = 1;
+        //    }
+        //}
+        //public void SearchBy(object sender, ItemCheckedEventArgs e)
+        //{
+        //    DAOViewPayrolls objSearch = new DAOViewPayrolls();
+        //    int selectedMonth;
+
+        //    if (objViewPayrolls.chJanuary.Checked)
+        //    {
+        //        selectedMonth = 1;
+        //    }
+        //    else if (objViewPayrolls.chFebruary.Checked)
+        //    {
+        //        selectedMonth = 2;
+        //    }           
+        //    else if (objViewPayrolls.chMarch.Checked)
+        //    {
+        //        selectedMonth = 3;
+        //    }
+        //    else if (objViewPayrolls.chApril.Checked)
+        //    {
+        //        selectedMonth = 4;
+        //    }
+        //    else if (objViewPayrolls.chMay.Checked)
+        //    {
+        //        selectedMonth = 5;
+        //    }
+        //    else if (objViewPayrolls.chJune.Checked)
+        //    {
+        //        selectedMonth = 6;
+        //    }
+        //    else if (objViewPayrolls.chJuly.Checked)
+        //    {
+        //        selectedMonth = 7;
+        //    }
+        //    else if (objViewPayrolls.chAgust.Checked)
+        //    {
+        //        selectedMonth = 8;
+        //    }
+        //    else if (objViewPayrolls.chSeptember.Checked)
+        //    {
+        //        selectedMonth = 9;
+        //    }
+        //    else if (objViewPayrolls.chOctober.Checked)
+        //    {
+        //        selectedMonth = 10;
+        //    }
+        //    else if (objViewPayrolls.chNovember.Checked)
+        //    {
+        //        selectedMonth = 11;
+        //    }
+        //    else if (objViewPayrolls.chDecember.Checked)
+        //    {
+        //        selectedMonth = 12;
+        //    }
+        //}
+
         public void LoadData(object sender, EventArgs e)
         {
             RefreshData();

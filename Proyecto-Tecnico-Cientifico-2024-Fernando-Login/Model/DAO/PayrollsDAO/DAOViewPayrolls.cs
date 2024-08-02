@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace PTC2024.Model.DAO.PayrollsDAO
 {
-    internal class DAOViewPayrolls: DTOViewPayrolls
+    internal class DAOViewPayrolls : DTOViewPayrolls
     {
         readonly SqlCommand comand = new SqlCommand();
 
@@ -117,7 +117,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 cmdAddPayroll.Parameters.AddWithValue("AFP", Afp);
                 cmdAddPayroll.Parameters.AddWithValue("ISSS", Isss);
                 cmdAddPayroll.Parameters.AddWithValue("ISSEmployer", IsssEmployer);
-                cmdAddPayroll.Parameters.AddWithValue("AFPEmployer",AfpEmployer);
+                cmdAddPayroll.Parameters.AddWithValue("AFPEmployer", AfpEmployer);
                 cmdAddPayroll.Parameters.AddWithValue("employeeDiscount", DiscountEmployee);
                 cmdAddPayroll.Parameters.AddWithValue("employerDiscount", DiscountEmployer);
                 cmdAddPayroll.Parameters.AddWithValue("christmasBonus", ChristmasBonus);
@@ -201,7 +201,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 cmd.ExecuteNonQuery();
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
-                adp.Fill(ds,"viewPayrolls");
+                adp.Fill(ds, "viewPayrolls");
                 return ds;
             }
             catch (Exception)
@@ -214,5 +214,29 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 getConnection().Close();
             }
         }
+        public DataSet SearchPayrollByMonth(int month)
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) = @month";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                cmd.Parameters.AddWithValue("@month", month);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+
+
     }
 }
