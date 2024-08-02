@@ -44,6 +44,8 @@ namespace PTC2024.Controller.EmployeesController
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
             }
+            objUpdatePayroll.Close();
+
         }
         public void ChargeStatus(object sender, EventArgs e)
         {

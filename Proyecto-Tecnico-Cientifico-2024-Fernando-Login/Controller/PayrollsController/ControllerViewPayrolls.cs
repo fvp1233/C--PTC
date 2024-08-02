@@ -22,12 +22,25 @@ namespace PTC2024.Controller.EmployeesController
         {
             objViewPayrolls = Vista;
             objViewPayrolls.Load += new EventHandler(LoadData);
+            objViewPayrolls.ch1.CheckedChanged += new EventHandler(SearchByMonth1);
+            objViewPayrolls.ch2.CheckedChanged += new EventHandler(SearchByMonth2);
+            objViewPayrolls.ch3.CheckedChanged += new EventHandler(SearchByMonth3);
+            objViewPayrolls.ch4.CheckedChanged += new EventHandler(SearchByMonth4);
+            objViewPayrolls.ch5.CheckedChanged += new EventHandler(SearchByMonth5);
+            objViewPayrolls.ch6.CheckedChanged += new EventHandler(SearchByMonth6);
+            objViewPayrolls.ch7.CheckedChanged += new EventHandler(SearchByMonth7);
+            objViewPayrolls.ch8.CheckedChanged += new EventHandler(SearchByMonth8);
+            objViewPayrolls.ch9.CheckedChanged += new EventHandler(SearchByMonth9);
+            objViewPayrolls.ch10.CheckedChanged += new EventHandler(SearchByMonth10);
+            objViewPayrolls.ch11.CheckedChanged += new EventHandler(SearchByMonth11);
+            objViewPayrolls.ch12.CheckedChanged += new EventHandler(SearchByMonth12);
             objViewPayrolls.btnCreatePayroll.Click += new EventHandler(CreatePayroll);
             objViewPayrolls.cmsUpdatePayroll.Click += new EventHandler(OpenUpdatePayroll);
             objViewPayrolls.cmsDeletePayroll.Click += new EventHandler(DeletePayroll);
             objViewPayrolls.cmsPayrollInformation.Click += new EventHandler(ViewInfoPayroll);
             objViewPayrolls.txtSearch.KeyPress += new KeyPressEventHandler(SearchPayrollEvent);
         }
+
         public void CreatePayroll(object sender, EventArgs e)
         {
             // Creamos un objeto del DaoViewPayrolls
@@ -40,14 +53,18 @@ namespace PTC2024.Controller.EmployeesController
             DataSet userDs = DAOInsertPayroll.GetUsername();
             DataSet payrollDs = DAOInsertPayroll.GetPayroll();
             int returnValue = 0;
+
             // Se crea la condición en la cual establecemos que las tablas no estén vacías
-            if (employeeDs != null && employeeDs.Tables.Count > 0 && bonusDs != null && bonusDs.Tables.Count > 0 && userDs != null && userDs.Tables.Count > 0)
+            if (employeeDs != null && employeeDs.Tables.Count > 0 &&
+                bonusDs != null && bonusDs.Tables.Count > 0 &&
+                userDs != null && userDs.Tables.Count > 0)
             {
                 // Creamos los dataTable
                 DataTable employeeDt = employeeDs.Tables["tbEmployee"];
                 DataTable bonusDt = bonusDs.Tables["tbBusinessP"];
                 DataTable userDt = userDs.Tables["tbUserData"];
                 DataTable payrollDt = payrollDs.Tables["tbPayroll"];
+
                 // Verificamos que los dataTable no estén vacíos
                 if (employeeDt != null && bonusDt != null && userDt != null)
                 {
@@ -60,6 +77,7 @@ namespace PTC2024.Controller.EmployeesController
                         int startWorkMonth = hireDate.Month;
                         // Año actual
                         int currentYear = DateTime.Now.Year;
+
                         // Iteramos desde el año de contratación hasta el siguiente año
                         for (int year = startWorkYear; year <= currentYear; year++)
                         {
@@ -83,25 +101,37 @@ namespace PTC2024.Controller.EmployeesController
                                             double roleBonus = double.Parse(bonusRow["positionBonus"].ToString());
                                             DAOInsertPayroll.BusinessBonus = float.Parse(roleBonus.ToString());
                                             double salary = double.Parse(row["salary"].ToString());
-                                            double christmasBonus = GetChristmasBonus(salary, hireDate, year);
                                             double calculatedSalary = 0;
 
+                                            // Calcular el salario para el primer mes de trabajo
+                                            if (year == startWorkYear && month == startWorkMonth)
+                                            {
+                                                int daysInMonth = DateTime.DaysInMonth(year, month);
+                                                int workedDays = daysInMonth - hireDate.Day + 1;
+                                                double dailySalary = salary / daysInMonth;
+                                                calculatedSalary = (dailySalary * workedDays) + roleBonus;
+                                            }
+                                            else
+                                            {
+                                                calculatedSalary = salary + roleBonus;
+                                            }
+
+                                            // Resto del código para calcular descuentos, ISSS, AFP, etc.
+                                            double christmasBonus = GetChristmasBonus(salary, hireDate, year);
                                             if (month == 12)
                                             {
                                                 if (christmasBonus > 730)
                                                 {
-                                                    calculatedSalary = roleBonus + salary + christmasBonus;
+                                                    calculatedSalary += christmasBonus;
                                                     DAOInsertPayroll.ChristmasBonus = christmasBonus;
                                                 }
                                                 else
                                                 {
-                                                    calculatedSalary = roleBonus + salary;
                                                     DAOInsertPayroll.ChristmasBonus = christmasBonus;
                                                 }
                                             }
                                             else
                                             {
-                                                calculatedSalary = roleBonus + salary;
                                                 DAOInsertPayroll.ChristmasBonus = 0;
                                             }
 
@@ -127,6 +157,7 @@ namespace PTC2024.Controller.EmployeesController
                 }
                 RefreshData();
             }
+
             if (returnValue == 1)
             {
                 MessageBox.Show("Los datos han sido registrados exitosamente",
@@ -142,7 +173,7 @@ namespace PTC2024.Controller.EmployeesController
                                 MessageBoxIcon.Error);
             }
         }
-         //--------------------------METODOS $$$$$$$---------------------------//
+        //--------------------------METODOS $$$$$$$---------------------------//
 
         //Metodo para obtener el AFP el cual es igual al 7.5% del salario
         public double GetAFP(double Salary)
@@ -221,19 +252,19 @@ namespace PTC2024.Controller.EmployeesController
         public double GetChristmasBonus(double salary, DateTime hireDate, int year)
         {
             // Determinar el tiempo trabajado hasta el 15 de diciembre del año específico
-            DateTime endDate = new DateTime(year, 12, 15);
+            DateTime endDate = new DateTime(year, 12, 12);
             if (hireDate > endDate)
             {
                 // Si la fecha de contratación es después del 15 de diciembre, el aguinaldo es 0
                 return 0;
             }
-
+            double rent;
             int workedYears = year - hireDate.Year;
             double christmasBonus;
 
             if (workedYears >= 1 && workedYears < 3)
-            {
-                christmasBonus = (salary / 30) * 15;
+            {               
+                christmasBonus = (salary / 30) * 15;           
             }
             else if (workedYears >= 3 && workedYears < 10)
             {
@@ -263,70 +294,6 @@ namespace PTC2024.Controller.EmployeesController
             DataSet ds = objAdmin.SearchPayroll(objViewPayrolls.txtSearch.Text.Trim());
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
         }
-        //public void SearchByJune(object sender, ItemCheckedEventArgs e)
-        //{
-        //    DAOViewPayrolls objSearch = new DAOViewPayrolls();
-        //    int selectedMonth;
-        //    if (objViewPayrolls.chJanuary.Checked)
-        //    {
-        //        selectedMonth = 1;
-        //    }
-        //}
-        //public void SearchBy(object sender, ItemCheckedEventArgs e)
-        //{
-        //    DAOViewPayrolls objSearch = new DAOViewPayrolls();
-        //    int selectedMonth;
-
-        //    if (objViewPayrolls.chJanuary.Checked)
-        //    {
-        //        selectedMonth = 1;
-        //    }
-        //    else if (objViewPayrolls.chFebruary.Checked)
-        //    {
-        //        selectedMonth = 2;
-        //    }           
-        //    else if (objViewPayrolls.chMarch.Checked)
-        //    {
-        //        selectedMonth = 3;
-        //    }
-        //    else if (objViewPayrolls.chApril.Checked)
-        //    {
-        //        selectedMonth = 4;
-        //    }
-        //    else if (objViewPayrolls.chMay.Checked)
-        //    {
-        //        selectedMonth = 5;
-        //    }
-        //    else if (objViewPayrolls.chJune.Checked)
-        //    {
-        //        selectedMonth = 6;
-        //    }
-        //    else if (objViewPayrolls.chJuly.Checked)
-        //    {
-        //        selectedMonth = 7;
-        //    }
-        //    else if (objViewPayrolls.chAgust.Checked)
-        //    {
-        //        selectedMonth = 8;
-        //    }
-        //    else if (objViewPayrolls.chSeptember.Checked)
-        //    {
-        //        selectedMonth = 9;
-        //    }
-        //    else if (objViewPayrolls.chOctober.Checked)
-        //    {
-        //        selectedMonth = 10;
-        //    }
-        //    else if (objViewPayrolls.chNovember.Checked)
-        //    {
-        //        selectedMonth = 11;
-        //    }
-        //    else if (objViewPayrolls.chDecember.Checked)
-        //    {
-        //        selectedMonth = 12;
-        //    }
-        //}
-
         public void LoadData(object sender, EventArgs e)
         {
             RefreshData();
@@ -417,7 +384,79 @@ namespace PTC2024.Controller.EmployeesController
             openForm.ShowDialog();
             RefreshData();
         }
-
-
+        #region Aca estan los metodos para los checkbox
+        public void SearchByMonth1(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SearchPayrollJanuary();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
+        public void SearchByMonth2(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SearchPayrollFebruary();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
+        public void SearchByMonth3(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SearchPayrollMarch();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
+        public void SearchByMonth4(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SearchPayrollApril();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
+        public void SearchByMonth5(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SearchPayrollMay();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
+        public void SearchByMonth6(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SearchPayrollJune();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
+        public void SearchByMonth7(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SearchPayrollJuly();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
+        public void SearchByMonth8(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SearchPayrollAgust();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
+        public void SearchByMonth9(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SearchPayrollSeptember();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
+        public void SearchByMonth10(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SearchPayrollOctober();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
+        public void SearchByMonth11(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SearchPayrollNovember();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
+        public void SearchByMonth12(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SearchPayrollDecember();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
+        #endregion
     }
 }

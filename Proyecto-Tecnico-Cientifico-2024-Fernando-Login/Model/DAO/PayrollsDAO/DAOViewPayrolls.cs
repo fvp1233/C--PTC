@@ -174,7 +174,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             try
             {
                 comand.Connection = getConnection();
-                string query = "DELETE tbPayroll WHERE IdPayroll =@param1";
+                string query = "DELETE tbPayroll WHERE IdPayroll = @param1";
                 SqlCommand cmd = new SqlCommand(query, comand.Connection);
                 cmd.Parameters.AddWithValue("param1", IdPayroll);
                 int respuesta = cmd.ExecuteNonQuery();
@@ -214,14 +214,245 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 getConnection().Close();
             }
         }
-        public DataSet SearchPayrollByMonth(int month)
+        public DataSet SearchPayrollJanuary()
         {
             try
             {
                 comand.Connection = getConnection();
-                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) = @month";
+                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) = 1";
                 SqlCommand cmd = new SqlCommand(query, comand.Connection);
-                cmd.Parameters.AddWithValue("@month", month);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+
+        public DataSet SearchPayrollFebruary()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) = 2";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearchPayrollMarch()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) = 3";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearchPayrollApril()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) = 4";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearchPayrollMay()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) = 5";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearchPayrollJune()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) = 6";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearchPayrollJuly()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) = 7";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearchPayrollAgust()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) = 8";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearchPayrollSeptember()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) = 8";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearchPayrollOctober()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) = 10";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearchPayrollNovember()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) = 11";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearchPayrollDecember()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) = 12";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 adp.Fill(ds, "viewPayrolls");
