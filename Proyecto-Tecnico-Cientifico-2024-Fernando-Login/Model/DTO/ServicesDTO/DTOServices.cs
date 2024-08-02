@@ -8,5 +8,13 @@ namespace PTC2024.Model.DTO.ServicesDTO
 {
     internal class DTOServices : dbContext
     {
+        int IdService;
+
+        public int IdService1 { get => IdService; set => IdService = value; }
+
+
+        string Search;
+
+        public string Search1 { get => Search; set => Search = value; }
     }
 }
