@@ -46,24 +46,24 @@ namespace PTC2024.Controller.BillsController
         public void RectifyBills(object sender, EventArgs e)
         {
             int pos = objFormBills.dgvBills.CurrentRow.Index;
-            int id, NIT, NRC, serviceName, statusBill, customer, employee, methodP;
-            string companyName;
+            int id;
+            string companyName, NIT, NRC, serviceName, statusBill, customer, employee, methodP;
             DateTime startDate, FinalDate, fiscalPeriod;
             Double discount, subtotalPay, totalPay;
             id = int.Parse(objFormBills.dgvBills[0, pos].Value.ToString());
             companyName = objFormBills.dgvBills[1, pos].Value.ToString();
-            NIT = int.Parse(objFormBills.dgvBills[2, pos].Value.ToString());
-            NRC = int.Parse(objFormBills.dgvBills[3, pos].Value.ToString());
-            customer = int.Parse(objFormBills.dgvBills[3, pos].Value.ToString());
-            serviceName = int.Parse(objFormBills.dgvBills[4, pos].Value.ToString());
+            NIT = objFormBills.dgvBills[2, pos].Value.ToString();
+            NRC = objFormBills.dgvBills[3, pos].Value.ToString();
+            customer = objFormBills.dgvBills[3, pos].Value.ToString();
+            serviceName = objFormBills.dgvBills[4, pos].Value.ToString();
             discount = double.Parse(objFormBills.dgvBills[6, pos].Value.ToString());
             subtotalPay = double.Parse(objFormBills.dgvBills[7, pos].Value.ToString());
             totalPay = double.Parse(objFormBills.dgvBills[8, pos].Value.ToString());
-            methodP = int.Parse(objFormBills.dgvBills[9, pos].Value.ToString());
+            methodP = objFormBills.dgvBills[9, pos].Value.ToString();
             startDate = DateTime.Parse(objFormBills.dgvBills[10, pos].Value.ToString());
             FinalDate = DateTime.Parse(objFormBills.dgvBills[11, pos].Value.ToString());
-            employee = int.Parse(objFormBills.dgvBills[12, pos].Value.ToString());
-            statusBill = int.Parse(objFormBills.dgvBills[13, pos].Value.ToString());
+            employee = objFormBills.dgvBills[12, pos].Value.ToString();
+            statusBill = objFormBills.dgvBills[13, pos].Value.ToString();
             fiscalPeriod = DateTime.Parse(objFormBills.dgvBills[14, pos].Value.ToString());
 
             FrmAddBills rectifyBill = new FrmAddBills(2, id, companyName, NIT, NRC, customer, serviceName, discount, subtotalPay, totalPay, methodP, startDate, FinalDate, employee, statusBill, fiscalPeriod);

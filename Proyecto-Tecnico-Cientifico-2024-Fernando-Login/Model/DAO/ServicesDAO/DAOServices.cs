@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PTC2024.Model.DTO.ServicesDTO;
+using System.Windows.Forms;
 
 namespace PTC2024.Model.DAO.ServicesDAO
 {
@@ -39,5 +40,61 @@ namespace PTC2024.Model.DAO.ServicesDAO
                 command.Connection.Close();
             }
         }
+
+        public int DeleteService()
+        {
+            try
+            {
+                command.Connection = getConnection();
+                string query = "Exec spDeleteService @Id";
+
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                cmd.Parameters.AddWithValue("@Id", IdService1);
+
+                int respuesta = cmd.ExecuteNonQuery();
+
+                return respuesta;
+
+            }
+            catch (Exception)
+            {
+
+                return -1;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
+
+        public DataSet SearchData(string consulta)
+        {
+            try
+            {
+                command.Connection = getConnection();
+                string query = "SELECT * FROM viewServices WHERE [Nombre servicio] LIKE @consulta OR [Descripción] LIKE @consulta";
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                cmd.Parameters.AddWithValue("@consulta", "%" + consulta + "%");
+                cmd.ExecuteNonQuery();
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+
+                adp.Fill(ds, "viewServices");
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null;
+            }
+            finally 
+            {
+                command.Connection.Close();
+            }
+        }
     }
+
 }
+
+
