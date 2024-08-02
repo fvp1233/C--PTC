@@ -14,6 +14,7 @@ using System.Web.UI.WebControls;
 using RestSharp;
 using System.Runtime.InteropServices.ComTypes;
 using PTC2024.Model.DAO.ServicesDAO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace PTC2024.Model.DAO.BillsDAO
 {
@@ -93,32 +94,61 @@ namespace PTC2024.Model.DAO.BillsDAO
                 getConnection().Close();
             }
         }
-        public DataSet ViewDataS()
+        public DataSet BillsD()
         {
             try
             {
-               
-                    Command.Connection = getConnection();
-                    string query = "SELECT * FROM viewDetail";
-                    SqlCommand comd = new SqlCommand(query, Command.Connection);
-                    comd.ExecuteNonQuery();
-                    SqlDataAdapter adap = new SqlDataAdapter(comd);
-                    DataSet ds = new DataSet();
-                    adap.Fill(ds, "viewDetail");
-                    return ds;
-
-                }
-                catch (Exception)
-                {
-                    return null;
-                    throw;
-                }
-                finally
-                {
-                    getConnection().Close();
-                }
-                      
+                Command.Connection = getConnection();
+                string query3 = "SELECT * FROM viewDetail";
+                SqlCommand comd3 = new SqlCommand(query3, Command.Connection);
+                comd3.ExecuteNonQuery();
+                SqlDataAdapter adap = new SqlDataAdapter(comd3);
+                DataSet ds = new DataSet();
+                adap.Fill(ds, "viewDetail");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+                throw;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
         }
+        public int DataB()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query3 = "INSERT INTO tbBillDataS(IdServices) VALUES (@param1)";
+                SqlCommand comd3 = new SqlCommand(query3, Command.Connection);
+                comd3.Parameters.AddWithValue("param1", IdServices1);
+                /*comd3.ExecuteNonQuery();*/
+                int An = comd3.ExecuteNonQuery();
+                if (An == 1)
+                {
+                    return An;
+                }
+               else
+                {
+                    return 0;
+                }
+
+             
+            }
+            catch (Exception)
+            {
+                return -1;
+                throw;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        
         public int RegisterBills()
         {
             try
