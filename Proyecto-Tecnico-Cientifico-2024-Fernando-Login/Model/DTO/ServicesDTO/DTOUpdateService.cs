@@ -8,6 +8,8 @@ namespace PTC2024.Model.DTO.ServicesDTO
 {
     internal class DTOUpdateService : dbContext
     {
+
+        /*Se declaran los atributos*/
         private int serviceId;
         private string nombre;
         private string descripcion;
