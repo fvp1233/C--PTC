@@ -128,21 +128,31 @@ namespace PTC2024.Model.DAO.ServicesDAO
             }
         }
 
+        /*Este metodo es para filtrar los servicios por medio de checkbox*/
+        /*El parametro en este caso es la categoria por la cual el usuario quiere filtrar*/
         public DataSet SearchDataCb(string categoria)
         {
             try
             {
+                /*Se declara y abre la conexion*/
                 command.Connection = getConnection();
+                /*Se declara la consulta*/
                 string query = "SELECT * FROM viewServices Where [Categoría] = @categoria";
+                /*Se delcara el comando con la consulta y la conexion*/
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
+                /*Se le da valor al parametro de la consulta*/
                 cmd.Parameters.AddWithValue("@categoria", categoria);
+                /*Se ejecuta la consulta*/
                 cmd.ExecuteNonQuery();
 
+                /*Se captura la respuesta con el adp*/
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
 
                 DataSet ds = new DataSet();
 
+                /*Se llena el DataSet*/
                 adp.Fill(ds, "viewServices");
+                /*Se retorna el DataSet*/
                 return ds;
             }
             catch (Exception)
@@ -151,6 +161,7 @@ namespace PTC2024.Model.DAO.ServicesDAO
             }
             finally
             {
+                /*Se cierra la conexion*/
                 command.Connection.Close(); 
             }
         }

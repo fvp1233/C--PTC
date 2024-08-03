@@ -124,11 +124,16 @@ namespace PTC2024.Controller.ServicesController
             objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
         }
 
+        /*Este se ejecutara cuando se haga click en cualquier checkbox*/
         public void SearchCheckBox(object sender, EventArgs e)
         {
             DAOServices dAOServices = new DAOServices();
 
+            /*Se crea una variable cuyo valor dependera de cual checkbox este checkeado*/
             string categoria = "";
+
+            /*Se verificara cual checkbox esta checkeado*/
+            /*Los demas checkbox estaran desabilitados si uno esta checkeado*/
             if (objServices.CbSeguridad.Checked)
             {
                 categoria = objServices.CbSeguridad.Tag.ToString();
@@ -181,6 +186,7 @@ namespace PTC2024.Controller.ServicesController
             }
             else
             {
+                /*En caso que ninguno este checkeado todos estaran habilitados*/
                 objServices.CbProgramacion.Enabled = true;
                 objServices.CbSeguridad.Enabled = true;
                 objServices.CbInfraestructura.Enabled = true;
@@ -189,6 +195,7 @@ namespace PTC2024.Controller.ServicesController
                 DataSet respuesta = dAOServices.SearchDataCb(categoria);
                 objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
 
+                /*Se regrescara el DataGridview*/
                 ChargeDgv();
             }
 
