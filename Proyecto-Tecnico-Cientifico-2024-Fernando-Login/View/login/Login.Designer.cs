@@ -250,7 +250,7 @@
             this.txtPasswordBunifu.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPasswordBunifu.SelectedText = "";
             this.txtPasswordBunifu.SelectionLength = 0;
-            this.txtPasswordBunifu.SelectionStart = 10;
+            this.txtPasswordBunifu.SelectionStart = 0;
             this.txtPasswordBunifu.ShortcutsEnabled = true;
             this.txtPasswordBunifu.Size = new System.Drawing.Size(358, 39);
             this.txtPasswordBunifu.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
@@ -327,7 +327,7 @@
             this.TxtUserBunifu.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TxtUserBunifu.SelectedText = "";
             this.TxtUserBunifu.SelectionLength = 0;
-            this.TxtUserBunifu.SelectionStart = 7;
+            this.TxtUserBunifu.SelectionStart = 0;
             this.TxtUserBunifu.ShortcutsEnabled = true;
             this.TxtUserBunifu.Size = new System.Drawing.Size(358, 39);
             this.TxtUserBunifu.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;

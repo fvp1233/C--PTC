@@ -444,72 +444,120 @@ namespace PTC2024.Controller.EmployeesController
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SearchPayrollJanuary();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+            if (objViewPayrolls.ch1.Checked == false)
+            {
+                RefreshData();
+            }
         }
         public void SearchByMonth2(object sender, EventArgs e)
         {
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SearchPayrollFebruary();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+            if (objViewPayrolls.ch2.Checked == false)
+            {
+                RefreshData();
+            }
         }
         public void SearchByMonth3(object sender, EventArgs e)
         {
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SearchPayrollMarch();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+            if (objViewPayrolls.ch3.Checked == false)
+            {
+                RefreshData();
+            }
         }
         public void SearchByMonth4(object sender, EventArgs e)
         {
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SearchPayrollApril();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+            if (objViewPayrolls.ch4.Checked == false)
+            {
+                RefreshData();
+            }
         }
         public void SearchByMonth5(object sender, EventArgs e)
         {
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SearchPayrollMay();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+            if (objViewPayrolls.ch5.Checked == false)
+            {
+                RefreshData();
+            }
         }
         public void SearchByMonth6(object sender, EventArgs e)
         {
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SearchPayrollJune();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+            if (objViewPayrolls.ch6.Checked == false)
+            {
+                RefreshData();
+            }
         }
         public void SearchByMonth7(object sender, EventArgs e)
         {
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SearchPayrollJuly();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+            if (objViewPayrolls.ch7.Checked == false)
+            {
+                RefreshData();
+            }
         }
         public void SearchByMonth8(object sender, EventArgs e)
         {
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SearchPayrollAgust();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+            if (objViewPayrolls.ch8.Checked == false)
+            {
+                RefreshData();
+            }
         }
         public void SearchByMonth9(object sender, EventArgs e)
         {
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SearchPayrollSeptember();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+            if (objViewPayrolls.ch9.Checked == false)
+            {
+                RefreshData();
+            }
         }
         public void SearchByMonth10(object sender, EventArgs e)
         {
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SearchPayrollOctober();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+            if (objViewPayrolls.ch10.Checked == false)
+            {
+                RefreshData();
+            }
         }
         public void SearchByMonth11(object sender, EventArgs e)
         {
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SearchPayrollNovember();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+            if (objViewPayrolls.ch11.Checked == false)
+            {
+                RefreshData();
+            }
         }
         public void SearchByMonth12(object sender, EventArgs e)
         {
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SearchPayrollDecember();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+            if (objViewPayrolls.ch12.Checked == false)
+            {
+                RefreshData();
+            }
         }
         #endregion
     }

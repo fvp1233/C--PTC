@@ -19,6 +19,10 @@ namespace PTC2024.Controller.LogInController
         {
             objLogIn = Vista;
             objLogIn.btnLoginBunifu.Click += new EventHandler(DataAccess);
+            objLogIn.TxtUserBunifu.Enter += new EventHandler(EnterUsername);
+            objLogIn.TxtUserBunifu.Leave += new EventHandler(LeaveUsername);
+            objLogIn.txtPasswordBunifu.Enter += new EventHandler(EnterPassword);
+            objLogIn.txtPasswordBunifu.Enter += new EventHandler(LeavePassword);
         }
         private void DataAccess(object sender, EventArgs e)
         {
@@ -41,5 +45,36 @@ namespace PTC2024.Controller.LogInController
                 MessageBox.Show("Datos incorrectos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        private void EnterUsername(object sender, EventArgs e)
+        {
+            if (objLogIn.TxtUserBunifu.Text.Trim().Equals("Usuario"))
+            {
+                objLogIn.TxtUserBunifu.Clear();
+                objLogIn.TxtUserBunifu.Visible = true;
+            }
+        }
+        private void LeaveUsername(object sender, EventArgs e)
+        {
+            if (objLogIn.TxtUserBunifu.Text.Trim().Equals(""))
+            {
+                objLogIn.TxtUserBunifu.Text = "Usuario";
+            }
+        }
+        private void EnterPassword(object sender, EventArgs e)
+        {
+            if (objLogIn.txtPasswordBunifu.Text.Trim().Equals("Contraseña"))
+            {
+                objLogIn.txtPasswordBunifu.UseSystemPasswordChar = true;
+                objLogIn.txtPasswordBunifu.Clear();
+            }
+        }
+        private void LeavePassword(object sender, EventArgs e)
+        {
+            if (objLogIn.txtPasswordBunifu.Text.Trim().Equals(""))
+            {
+                objLogIn.txtPasswordBunifu.Text = "Contraseña";
+            }
+        }
+
     }
 }

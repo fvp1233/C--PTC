@@ -1,4 +1,5 @@
-﻿using PTC2024.View.Clientes;
+﻿using PTC2024.Controller.Helper;
+using PTC2024.View.Clientes;
 using PTC2024.View.Empleados;
 using PTC2024.View.Facturacion;
 using PTC2024.View.formularios.inicio;
@@ -22,13 +23,32 @@ namespace PTC2024.Controller.StartMenuController
         {
             objStartMenu = View;
             View.Load += new EventHandler(LoadDefaultForm);
+            View.Load += new EventHandler(InitialAccess);
+            objStartMenu.btnIcon.Click += new EventHandler(LoadDefaultForm);
             objStartMenu.btnMenuDashboard.Click += new EventHandler(LoadDefaultForm);
             objStartMenu.btnMenuEmployee.Click += new EventHandler(LoadEmployeeForm);
             objStartMenu.btnMenuPayroll.Click += new EventHandler(LoadPayrollForm);
             objStartMenu.btnMenuServices.Click += new EventHandler(LoadServiceForm);
             objStartMenu.btnMenuCustomers.Click += new EventHandler(LoadCustomersForm);
             objStartMenu.btnMenuBills.Click += new EventHandler(LoadBillsForm);
-        }    
+        }
+        void InitialAccess(object sender, EventArgs e)
+        {
+            Access();
+        }
+        public void Access()
+        {
+            switch (SessionVar.Access)
+            {
+                case "Administrador":
+                    break;
+                case "Empleado":
+                    objStartMenu.btnMenuEmployee.Visible = false;
+                    objStartMenu.btnMenuPayroll.Visible = false;
+                    objStartMenu.btnMenuServices.Visible = false;
+                    break;
+            }
+        }
 
         private void LoadDefaultForm(object sender, EventArgs e)
         {

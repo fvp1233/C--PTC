@@ -120,6 +120,7 @@
     <Compile Include="Controller\ServicesController\ControllerServices.cs" />
     <Compile Include="Controller\ServicesController\ControllerUpdateService.cs" />
     <Compile Include="Controller\StartMenuController\ControllerStartMenu.cs" />
+    <Compile Include="Controller\StartMenuController\ControllerWellcome.cs" />
     <Compile Include="Model\DAO\BillsDAO\DAOAddBills.cs" />
     <Compile Include="Model\DAO\BillsDAO\DAOBills.cs" />
     <Compile Include="Model\DAO\BillsDAO\DAOUpdateBill.cs" />

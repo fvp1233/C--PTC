@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartMenu));
-            this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.btnIcon = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.btnMenuDashboard = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMenuEmployee = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMenuPayroll = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -38,31 +38,31 @@
             this.btnMenuBills = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.ContainerPanel = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnIcon)).BeginInit();
             this.bunifuPanel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // bunifuPictureBox1
+            // btnIcon
             // 
-            this.bunifuPictureBox1.AllowFocused = false;
-            this.bunifuPictureBox1.AutoSizeHeight = false;
-            this.bunifuPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuPictureBox1.BorderRadius = 0;
-            this.bunifuPictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
-            this.bunifuPictureBox1.IsCircle = false;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(181, 91);
-            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuPictureBox1.TabIndex = 0;
-            this.bunifuPictureBox1.TabStop = false;
-            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Custom;
+            this.btnIcon.AllowFocused = false;
+            this.btnIcon.AutoSizeHeight = false;
+            this.btnIcon.BackColor = System.Drawing.Color.Transparent;
+            this.btnIcon.BorderRadius = 0;
+            this.btnIcon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnIcon.Image = ((System.Drawing.Image)(resources.GetObject("btnIcon.Image")));
+            this.btnIcon.IsCircle = false;
+            this.btnIcon.Location = new System.Drawing.Point(3, 3);
+            this.btnIcon.Name = "btnIcon";
+            this.btnIcon.Size = new System.Drawing.Size(181, 91);
+            this.btnIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnIcon.TabIndex = 0;
+            this.btnIcon.TabStop = false;
+            this.btnIcon.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Custom;
             // 
             // btnMenuDashboard
             // 
@@ -320,20 +320,10 @@
             this.bunifuPanel1.Size = new System.Drawing.Size(185, 687);
             this.bunifuPanel1.TabIndex = 3;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Black;
-            this.flowLayoutPanel1.Controls.Add(this.bunifuFlatButton1);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 610);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(185, 77);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.Black;
-            this.flowLayoutPanel2.Controls.Add(this.bunifuPictureBox1);
+            this.flowLayoutPanel2.Controls.Add(this.btnIcon);
             this.flowLayoutPanel2.Controls.Add(this.btnMenuDashboard);
             this.flowLayoutPanel2.Controls.Add(this.btnMenuEmployee);
             this.flowLayoutPanel2.Controls.Add(this.btnMenuPayroll);
@@ -345,6 +335,16 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(185, 610);
             this.flowLayoutPanel2.TabIndex = 1;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Black;
+            this.flowLayoutPanel1.Controls.Add(this.bunifuFlatButton1);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 610);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(185, 77);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // ContainerPanel
             // 
@@ -368,10 +368,10 @@
             this.Name = "StartMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "H2C";
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnIcon)).EndInit();
             this.bunifuPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -384,10 +384,10 @@
         public Bunifu.Framework.UI.BunifuFlatButton btnMenuCustomers;
         public Bunifu.Framework.UI.BunifuFlatButton btnMenuBills;
         public Bunifu.Framework.UI.BunifuFlatButton btnMenuPayroll;
-        private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         public System.Windows.Forms.Panel ContainerPanel;
+        public Bunifu.UI.WinForms.BunifuPictureBox btnIcon;
     }
 }
