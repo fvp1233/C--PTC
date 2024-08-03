@@ -8,6 +8,7 @@ namespace PTC2024.Model.DTO.ServicesDTO
 {
     internal class DTOAddService : dbContext
     {
+        /*Se declaran los atributos*/
         string nombre;
         string descripcion;
         int categorias;

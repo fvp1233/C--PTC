@@ -45,7 +45,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             try
             {
                 Command.Connection= getConnection();
-                string querySearch = $"SELECT * FROM viewEmployees WHERE [Empleado] LIKE '%{valor}%' OR [DUI] LIKE '%{valor}%'";
+                string querySearch = $"SELECT * FROM viewEmployees WHERE [Nombres] LIKE '%{valor}%' OR [Apellidos] LIKE '%{valor}%' OR [DUI] LIKE '%{valor}%'";
                 SqlCommand cmdSearch = new SqlCommand(querySearch, Command.Connection);
                 cmdSearch.ExecuteNonQuery();
 
