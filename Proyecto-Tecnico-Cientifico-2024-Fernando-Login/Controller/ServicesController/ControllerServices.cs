@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace PTC2024.Controller.ServicesController
 {
+
     internal class ControllerServices
     {
         FrmServices objServices;
@@ -135,6 +136,8 @@ namespace PTC2024.Controller.ServicesController
                 objServices.CbMantenimiento.Enabled = false;
                 objServices.CbSoporte.Enabled = false;
                 objServices.CbProgramacion.Enabled = false;
+                DataSet respuesta = dAOServices.SearchDataCb(categoria);
+                objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
             }
             else if (objServices.CbInfraestructura.Checked) 
             {
@@ -143,6 +146,18 @@ namespace PTC2024.Controller.ServicesController
                 objServices.CbMantenimiento.Enabled = false;
                 objServices.CbSoporte.Enabled = false;
                 objServices.CbProgramacion.Enabled = false;
+                DataSet respuesta = dAOServices.SearchDataCb(categoria);
+                objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
+            }
+            else if (objServices.CbSoporte.Checked)
+            {
+                categoria = objServices.CbSoporte.Tag.ToString();
+                objServices.CbSeguridad.Enabled = false;
+                objServices.CbInfraestructura.Enabled = false;
+                objServices.CbMantenimiento.Enabled = false;
+                objServices.CbProgramacion.Enabled = false;
+                DataSet respuesta = dAOServices.SearchDataCb(categoria);
+                objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
             }
             else if(objServices.CbMantenimiento.Checked)
             {
@@ -151,22 +166,18 @@ namespace PTC2024.Controller.ServicesController
                 objServices.CbInfraestructura.Enabled = false;
                 objServices.CbSoporte.Enabled = false;
                 objServices.CbProgramacion.Enabled = false;
-            }
-            else if (objServices.CbSoporte.Checked)
-            {
-                categoria = objServices.CbMantenimiento.Tag.ToString();
-                objServices.CbSeguridad.Enabled = false;
-                objServices.CbInfraestructura.Enabled = false;
-                objServices.CbMantenimiento.Enabled = false;
-                objServices.CbProgramacion.Enabled = false;
+                DataSet respuesta = dAOServices.SearchDataCb(categoria);
+                objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
             }
             else if (objServices.CbProgramacion.Checked)
             {
-                categoria = objServices.CbMantenimiento.Tag.ToString();
+                categoria = objServices.CbProgramacion.Tag.ToString();
                 objServices.CbSeguridad.Enabled = false;
                 objServices.CbInfraestructura.Enabled = false;
                 objServices.CbSoporte.Enabled = false;
                 objServices.CbMantenimiento.Enabled = false;
+                DataSet respuesta = dAOServices.SearchDataCb(categoria);
+                objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
             }
             else
             {
@@ -175,10 +186,12 @@ namespace PTC2024.Controller.ServicesController
                 objServices.CbInfraestructura.Enabled = true;
                 objServices.CbSoporte.Enabled = true;
                 objServices.CbMantenimiento.Enabled = true;
+                DataSet respuesta = dAOServices.SearchDataCb(categoria);
+                objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
+
                 ChargeDgv();
             }
-            DataSet respuesta = dAOServices.SearchDataCb(categoria);
-            objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
+
 
         }
     }
