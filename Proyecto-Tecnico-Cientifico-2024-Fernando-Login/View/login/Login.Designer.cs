@@ -115,7 +115,7 @@
             this.btnLoginBunifu.ButtonTextMarginLeft = 0;
             this.btnLoginBunifu.ColorContrastOnClick = 45;
             this.btnLoginBunifu.ColorContrastOnHover = 45;
-            this.btnLoginBunifu.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnLoginBunifu.Cursor = System.Windows.Forms.Cursors.Hand;
             borderEdges1.BottomLeft = true;
             borderEdges1.BottomRight = true;
             borderEdges1.TopLeft = true;
@@ -245,7 +245,7 @@
             this.txtPasswordBunifu.Padding = new System.Windows.Forms.Padding(3);
             this.txtPasswordBunifu.PasswordChar = '\0';
             this.txtPasswordBunifu.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtPasswordBunifu.PlaceholderText = "Enter text";
+            this.txtPasswordBunifu.PlaceholderText = "";
             this.txtPasswordBunifu.ReadOnly = false;
             this.txtPasswordBunifu.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPasswordBunifu.SelectedText = "";
@@ -259,7 +259,7 @@
             this.txtPasswordBunifu.TextMarginBottom = 0;
             this.txtPasswordBunifu.TextMarginLeft = 3;
             this.txtPasswordBunifu.TextMarginTop = 1;
-            this.txtPasswordBunifu.TextPlaceholder = "Enter text";
+            this.txtPasswordBunifu.TextPlaceholder = "";
             this.txtPasswordBunifu.UseSystemPasswordChar = false;
             this.txtPasswordBunifu.WordWrap = true;
             // 
@@ -322,7 +322,7 @@
             this.TxtUserBunifu.Padding = new System.Windows.Forms.Padding(3);
             this.TxtUserBunifu.PasswordChar = '\0';
             this.TxtUserBunifu.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.TxtUserBunifu.PlaceholderText = "Enter text";
+            this.TxtUserBunifu.PlaceholderText = "";
             this.TxtUserBunifu.ReadOnly = false;
             this.TxtUserBunifu.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TxtUserBunifu.SelectedText = "";
@@ -336,7 +336,7 @@
             this.TxtUserBunifu.TextMarginBottom = 0;
             this.TxtUserBunifu.TextMarginLeft = 3;
             this.TxtUserBunifu.TextMarginTop = 1;
-            this.TxtUserBunifu.TextPlaceholder = "Enter text";
+            this.TxtUserBunifu.TextPlaceholder = "";
             this.TxtUserBunifu.UseSystemPasswordChar = false;
             this.TxtUserBunifu.WordWrap = true;
             // 

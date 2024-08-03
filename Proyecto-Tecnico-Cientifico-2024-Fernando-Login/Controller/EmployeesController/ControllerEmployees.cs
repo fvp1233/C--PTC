@@ -121,6 +121,7 @@ namespace PTC2024.Controller.Employees
             int row = objEmployees.dgvEmployees.CurrentRow.Index;
             //se manda a llamar al formulario para la actualización de empleados por medio de un objeto con los parámetros necesarios.
             FrmUpdateEmployee abrirfForm = new FrmUpdateEmployee(
+                int.Parse(objEmployees.dgvEmployees[0, row].Value.ToString()),
                 objEmployees.dgvEmployees[1, row].Value.ToString(),
                 objEmployees.dgvEmployees[2, row].Value.ToString(),
                 objEmployees.dgvEmployees[3, row].Value.ToString(),

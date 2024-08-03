@@ -67,12 +67,16 @@ namespace PTC2024.Controller
             objAddEmployee.comboBanks.DataSource = dsBanks.Tables["tbBanks"];
             objAddEmployee.comboBanks.DisplayMember = "BankName";
             objAddEmployee.comboBanks.ValueMember = "IdBank";
+
+            objAddEmployee.lblSalaryRequest.Visible = false;
         }
 
         public void EnterSalary(object sender, EventArgs e)
         {
             if (objAddEmployee.txtSalary.Text.Trim().Equals("Ingrese con dos decimales"))
             {
+                objAddEmployee.lblSalary.Visible = false;
+                objAddEmployee.lblSalaryRequest.Visible = true;
                 objAddEmployee.txtSalary.Text = "";
             }
         }
@@ -80,6 +84,8 @@ namespace PTC2024.Controller
         {
             if (objAddEmployee.txtSalary.Text.Trim().Equals(""))
             {
+                objAddEmployee.lblSalary.Visible = true;
+                objAddEmployee.lblSalaryRequest.Visible = false;
                 objAddEmployee.txtSalary.Text = "Ingrese con dos decimales";
             }
         }

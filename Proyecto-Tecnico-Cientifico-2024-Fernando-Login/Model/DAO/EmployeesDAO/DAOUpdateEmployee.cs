@@ -29,7 +29,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
                                        "birthDate = @param4, " +
                                        "email = @param5, " +
                                        "phone = @param6, " +
-                                       "adress = @param7, " +
+                                       "address = @param7, " +
                                        "salary = @param8, " +
                                        "bankAccount = @param9, " +
                                        "affiliationNumber = @param10, " +
@@ -79,7 +79,15 @@ namespace PTC2024.Model.DAO.EmployeesDAO
                     //Se declara una variable int como respuesta del proceso
                     int valueUserUpdate = cmdUpdateU.ExecuteNonQuery();
                     //retornamos este ultimo valor para saber si se completó todo el proceso.
-                    return valueUserUpdate;
+                    if (valueUserUpdate == 1)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Los datos del empleado fueron actualizados, pero debido a un error su nombre de usuario y el puesto no pudieron ser actualizados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return 1;
+                    }
                 }
                 else
                 {
