@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PTC2024.Controller.EmployeesController
@@ -35,12 +36,11 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.ch11.CheckedChanged += new EventHandler(SearchByMonth11);
             objViewPayrolls.ch12.CheckedChanged += new EventHandler(SearchByMonth12);
             objViewPayrolls.btnCreatePayroll.Click += new EventHandler(CreatePayroll);
+            objViewPayrolls.btnDeletePayrolls.Click += new EventHandler(DeletePayrolls);
             objViewPayrolls.cmsUpdatePayroll.Click += new EventHandler(OpenUpdatePayroll);
-            objViewPayrolls.cmsDeletePayroll.Click += new EventHandler(DeletePayroll);
             objViewPayrolls.cmsPayrollInformation.Click += new EventHandler(ViewInfoPayroll);
             objViewPayrolls.txtSearch.KeyPress += new KeyPressEventHandler(SearchPayrollEvent);
         }
-
         public void CreatePayroll(object sender, EventArgs e)
         {
             // Creamos un objeto del DaoViewPayrolls
@@ -54,7 +54,7 @@ namespace PTC2024.Controller.EmployeesController
             DataSet payrollDs = DAOInsertPayroll.GetPayroll();
             int returnValue = 0;
 
-            // Se crea la condición en la cual establecemos que las tablas no estén vacías
+            // Se crea la condición en la cual establecemos que los data set no estén vacios
             if (employeeDs != null && employeeDs.Tables.Count > 0 &&
                 bonusDs != null && bonusDs.Tables.Count > 0 &&
                 userDs != null && userDs.Tables.Count > 0)
@@ -71,6 +71,13 @@ namespace PTC2024.Controller.EmployeesController
                     // Iteramos a través de todas las filas de la tabla employee
                     foreach (DataRow row in employeeDt.Rows)
                     {
+                        // Verificar el estado del empleado
+                        string status = row["IdStatus"].ToString();
+                        if (status.Equals("2", StringComparison.OrdinalIgnoreCase))
+                        {
+                            // Si el empleado está inactivo, no se crea planilla
+                            continue;
+                        }
                         int idEmployee = int.Parse(row["IdEmployee"].ToString());
                         DateTime hireDate = DateTime.Parse(row["hireDate"].ToString());
                         int startWorkYear = hireDate.Year;
@@ -102,7 +109,6 @@ namespace PTC2024.Controller.EmployeesController
                                             DAOInsertPayroll.BusinessBonus = float.Parse(roleBonus.ToString());
                                             double salary = double.Parse(row["salary"].ToString());
                                             double calculatedSalary = 0;
-
                                             // Calcular el salario para el primer mes de trabajo
                                             if (year == startWorkYear && month == startWorkMonth)
                                             {
@@ -258,7 +264,6 @@ namespace PTC2024.Controller.EmployeesController
                 // Si la fecha de contratación es después del 15 de diciembre, el aguinaldo es 0
                 return 0;
             }
-            double rent;
             int workedYears = year - hireDate.Year;
             double christmasBonus;
 
@@ -307,7 +312,109 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.dgvPayrolls.Columns[7].Visible = false;
 
         }
+        public void DeletePayrolls(object sender, EventArgs e)
+        {
+            // Creamos un objeto del DaoViewPayrolls
+            DAOViewPayrolls DAOInsertPayroll = new DAOViewPayrolls();
+            // Accedemos a los datos de los empleados y planillas
+            DataSet employeeDs = DAOInsertPayroll.GetEmployee();
+            DataSet payrollDs = DAOInsertPayroll.GetPayroll();
+            int returnValue = 0;
+                DataTable employeeDt = employeeDs.Tables["tbEmployee"];
+                DataTable payrollDt = payrollDs.Tables["tbPayroll"];
 
+                foreach (DataRow row in employeeDt.Rows)
+                {
+                    // Verificar el estado del empleado (inactivo en este caso)
+                    string employeeStatus = row["IdStatus"].ToString();
+                    if (employeeStatus.Equals("2", StringComparison.OrdinalIgnoreCase)) // Asegúrate de que el valor sea correcto
+                    {
+                        int idEmployee = int.Parse(row["IdEmployee"].ToString());
+                        // Seleccionar todas las planillas no pagadas de este empleado
+                        DataRow[] unpaidPayrolls = payrollDt.Select($"IdEmployee = {idEmployee} AND IdPayrollStatus = 2");
+
+                        // Eliminar cada planilla no pagada encontrada
+                        foreach (DataRow payrollRow in unpaidPayrolls)
+                        {
+                            int idPayroll = int.Parse(payrollRow["IdPayroll"].ToString());
+
+                            // Asignar el ID de la planilla a eliminar
+                            DAOInsertPayroll.IdPayroll = idPayroll;
+
+                            // Eliminar la planilla
+                            returnValue = DAOInsertPayroll.DeletePayroll();
+                        }
+                    }
+                }           
+            // Refrescar los datos después de la eliminación
+            RefreshData();
+            if (returnValue == 1)
+            {
+                MessageBox.Show("Los datos han sido eliminados exitosamente",
+                                "Proceso completado",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Los datos no pudieron ser eliminados",
+                                "Proceso interrumpido",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
+
+        //public void DeletePayrolls(object sender, EventArgs e)
+        //{
+        //    // Creamos un objeto del DaoViewPayrolls
+        //    DAOViewPayrolls DAOInsertPayroll = new DAOViewPayrolls();
+        //    // Accedemos a los datos de los empleados y planillas
+        //    DataSet employeeDs = DAOInsertPayroll.GetEmployee();
+        //    DataSet payrollDs = DAOInsertPayroll.GetPayroll();
+        //    int returnValue = 0;
+
+        //    if (employeeDs != null && employeeDs.Tables.Count > 0 && payrollDs != null && payrollDs.Tables.Count > 0)
+        //    {
+        //        DataTable employeeDt = employeeDs.Tables["tbEmployee"];
+        //        DataTable payrollDt = payrollDs.Tables["tbPayroll"];
+
+        //        foreach (DataRow row in employeeDt.Rows)
+        //        {
+        //            // Verificar el estado del empleado
+        //            string employeeStatus = row["IdStatus"].ToString();
+        //            if (employeeStatus.Equals("2", StringComparison.OrdinalIgnoreCase))
+        //            {
+        //                int idEmployee = int.Parse(row["IdEmployee"].ToString());
+        //                // Seleccionar todas las planillas no pagadas de este empleado
+        //                DataRow[] unpaidPayrolls = payrollDt.Select($"IdEmployee = {idEmployee} AND IdPayrollStatus = 2");
+
+        //                // Eliminar cada planilla no pagada encontrada
+        //                foreach (DataRow payrollRow in unpaidPayrolls)
+        //                {
+        //                    int pos = objViewPayrolls.dgvPayrolls.CurrentRow.Index;
+        //                    int idPayroll = int.Parse(payrollRow["IdPayroll"].ToString());
+        //                    DAOInsertPayroll.IdPayroll = int.Parse(objViewPayrolls.dgvPayrolls[0, pos].Value.ToString());
+        //                    returnValue = DAOInsertPayroll.DeletePayroll();
+        //                }
+        //            }
+        //        }
+        //    }
+        //    RefreshData();
+        //    if (returnValue == 1)
+        //    {
+        //        MessageBox.Show("Los datos han sido registrados exitosamente",
+        //                         "Proceso completado",
+        //                         MessageBoxButtons.OK,
+        //                         MessageBoxIcon.Information);
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Los datos no pudieron ser registrados",
+        //                        "Proceso interrumpido",
+        //                        MessageBoxButtons.OK,
+        //                        MessageBoxIcon.Error);
+        //    }
+        //}
         //----------------------Metodos de interaccion con otros formularios---------------------------//
         public void OpenUpdatePayroll(object sender, EventArgs e)
         {
