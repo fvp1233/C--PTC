@@ -34,12 +34,13 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -55,10 +56,22 @@
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            this.ch12 = new System.Windows.Forms.CheckBox();
+            this.ch11 = new System.Windows.Forms.CheckBox();
+            this.ch10 = new System.Windows.Forms.CheckBox();
+            this.ch9 = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.ch6 = new System.Windows.Forms.CheckBox();
+            this.ch5 = new System.Windows.Forms.CheckBox();
+            this.ch7 = new System.Windows.Forms.CheckBox();
+            this.ch8 = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.ch4 = new System.Windows.Forms.CheckBox();
+            this.ch3 = new System.Windows.Forms.CheckBox();
+            this.ch2 = new System.Windows.Forms.CheckBox();
+            this.ch1 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -75,18 +88,8 @@
             this.cmsDeletePayroll = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsPayrollInformation = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDownloadPDF = new System.Windows.Forms.ToolStripMenuItem();
-            this.ch1 = new System.Windows.Forms.CheckBox();
-            this.ch2 = new System.Windows.Forms.CheckBox();
-            this.ch3 = new System.Windows.Forms.CheckBox();
-            this.ch4 = new System.Windows.Forms.CheckBox();
-            this.ch8 = new System.Windows.Forms.CheckBox();
-            this.ch9 = new System.Windows.Forms.CheckBox();
-            this.ch10 = new System.Windows.Forms.CheckBox();
-            this.ch11 = new System.Windows.Forms.CheckBox();
-            this.ch12 = new System.Windows.Forms.CheckBox();
-            this.ch7 = new System.Windows.Forms.CheckBox();
-            this.ch5 = new System.Windows.Forms.CheckBox();
-            this.ch6 = new System.Windows.Forms.CheckBox();
+            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnDeletePayrolls = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -106,6 +109,7 @@
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayrolls)).BeginInit();
             this.cmsPayroll.SuspendLayout();
+            this.tableLayoutPanel16.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -317,8 +321,8 @@
             this.tableLayoutPanel7.ColumnCount = 2;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.74569F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.25431F));
-            this.tableLayoutPanel7.Controls.Add(this.btnCreatePayroll, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel16, 1, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -347,11 +351,11 @@
             this.btnCreatePayroll.ColorContrastOnClick = 45;
             this.btnCreatePayroll.ColorContrastOnHover = 45;
             this.btnCreatePayroll.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnCreatePayroll.CustomizableEdges = borderEdges1;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnCreatePayroll.CustomizableEdges = borderEdges2;
             this.btnCreatePayroll.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCreatePayroll.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCreatePayroll.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -375,7 +379,7 @@
             this.btnCreatePayroll.IdleIconLeftImage = null;
             this.btnCreatePayroll.IdleIconRightImage = null;
             this.btnCreatePayroll.IndicateFocus = false;
-            this.btnCreatePayroll.Location = new System.Drawing.Point(896, 51);
+            this.btnCreatePayroll.Location = new System.Drawing.Point(31, 10);
             this.btnCreatePayroll.Name = "btnCreatePayroll";
             this.btnCreatePayroll.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCreatePayroll.OnDisabledState.BorderRadius = 20;
@@ -473,6 +477,50 @@
             this.tableLayoutPanel14.Size = new System.Drawing.Size(273, 103);
             this.tableLayoutPanel14.TabIndex = 1;
             // 
+            // ch12
+            // 
+            this.ch12.AutoSize = true;
+            this.ch12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ch12.Location = new System.Drawing.Point(3, 82);
+            this.ch12.Name = "ch12";
+            this.ch12.Size = new System.Drawing.Size(83, 18);
+            this.ch12.TabIndex = 16;
+            this.ch12.Text = "Diciembre";
+            this.ch12.UseVisualStyleBackColor = true;
+            // 
+            // ch11
+            // 
+            this.ch11.AutoSize = true;
+            this.ch11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ch11.Location = new System.Drawing.Point(3, 53);
+            this.ch11.Name = "ch11";
+            this.ch11.Size = new System.Drawing.Size(86, 19);
+            this.ch11.TabIndex = 15;
+            this.ch11.Text = "Noviembre";
+            this.ch11.UseVisualStyleBackColor = true;
+            // 
+            // ch10
+            // 
+            this.ch10.AutoSize = true;
+            this.ch10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ch10.Location = new System.Drawing.Point(3, 28);
+            this.ch10.Name = "ch10";
+            this.ch10.Size = new System.Drawing.Size(69, 19);
+            this.ch10.TabIndex = 14;
+            this.ch10.Text = "Octubre";
+            this.ch10.UseVisualStyleBackColor = true;
+            // 
+            // ch9
+            // 
+            this.ch9.AutoSize = true;
+            this.ch9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ch9.Location = new System.Drawing.Point(3, 3);
+            this.ch9.Name = "ch9";
+            this.ch9.Size = new System.Drawing.Size(90, 19);
+            this.ch9.TabIndex = 13;
+            this.ch9.Text = "Septiembre";
+            this.ch9.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel11
             // 
             this.tableLayoutPanel11.ColumnCount = 1;
@@ -507,6 +555,50 @@
             this.tableLayoutPanel12.Size = new System.Drawing.Size(186, 103);
             this.tableLayoutPanel12.TabIndex = 1;
             // 
+            // ch6
+            // 
+            this.ch6.AutoSize = true;
+            this.ch6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ch6.Location = new System.Drawing.Point(3, 28);
+            this.ch6.Name = "ch6";
+            this.ch6.Size = new System.Drawing.Size(56, 19);
+            this.ch6.TabIndex = 15;
+            this.ch6.Text = "Junio";
+            this.ch6.UseVisualStyleBackColor = true;
+            // 
+            // ch5
+            // 
+            this.ch5.AutoSize = true;
+            this.ch5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ch5.Location = new System.Drawing.Point(3, 3);
+            this.ch5.Name = "ch5";
+            this.ch5.Size = new System.Drawing.Size(56, 19);
+            this.ch5.TabIndex = 14;
+            this.ch5.Text = "Mayo";
+            this.ch5.UseVisualStyleBackColor = true;
+            // 
+            // ch7
+            // 
+            this.ch7.AutoSize = true;
+            this.ch7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ch7.Location = new System.Drawing.Point(3, 56);
+            this.ch7.Name = "ch7";
+            this.ch7.Size = new System.Drawing.Size(52, 17);
+            this.ch7.TabIndex = 13;
+            this.ch7.Text = "Julio";
+            this.ch7.UseVisualStyleBackColor = true;
+            // 
+            // ch8
+            // 
+            this.ch8.AutoSize = true;
+            this.ch8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ch8.Location = new System.Drawing.Point(3, 79);
+            this.ch8.Name = "ch8";
+            this.ch8.Size = new System.Drawing.Size(63, 19);
+            this.ch8.TabIndex = 12;
+            this.ch8.Text = "Agosto";
+            this.ch8.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel9
             // 
             this.tableLayoutPanel9.ColumnCount = 1;
@@ -540,6 +632,50 @@
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel15.Size = new System.Drawing.Size(178, 103);
             this.tableLayoutPanel15.TabIndex = 1;
+            // 
+            // ch4
+            // 
+            this.ch4.AutoSize = true;
+            this.ch4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ch4.Location = new System.Drawing.Point(3, 77);
+            this.ch4.Name = "ch4";
+            this.ch4.Size = new System.Drawing.Size(50, 19);
+            this.ch4.TabIndex = 14;
+            this.ch4.Text = "Abril";
+            this.ch4.UseVisualStyleBackColor = true;
+            // 
+            // ch3
+            // 
+            this.ch3.AutoSize = true;
+            this.ch3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ch3.Location = new System.Drawing.Point(3, 49);
+            this.ch3.Name = "ch3";
+            this.ch3.Size = new System.Drawing.Size(61, 19);
+            this.ch3.TabIndex = 13;
+            this.ch3.Text = "Marzo";
+            this.ch3.UseVisualStyleBackColor = true;
+            // 
+            // ch2
+            // 
+            this.ch2.AutoSize = true;
+            this.ch2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ch2.Location = new System.Drawing.Point(3, 26);
+            this.ch2.Name = "ch2";
+            this.ch2.Size = new System.Drawing.Size(69, 17);
+            this.ch2.TabIndex = 12;
+            this.ch2.Text = "Febrero";
+            this.ch2.UseVisualStyleBackColor = true;
+            // 
+            // ch1
+            // 
+            this.ch1.AutoSize = true;
+            this.ch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ch1.Location = new System.Drawing.Point(3, 3);
+            this.ch1.Name = "ch1";
+            this.ch1.Size = new System.Drawing.Size(59, 17);
+            this.ch1.TabIndex = 11;
+            this.ch1.Text = "Enero";
+            this.ch1.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -920,137 +1056,110 @@
             this.cmsDownloadPDF.Size = new System.Drawing.Size(209, 26);
             this.cmsDownloadPDF.Text = "Descargar Planilla PDF";
             // 
-            // ch1
+            // tableLayoutPanel16
             // 
-            this.ch1.AutoSize = true;
-            this.ch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ch1.Location = new System.Drawing.Point(3, 3);
-            this.ch1.Name = "ch1";
-            this.ch1.Size = new System.Drawing.Size(59, 17);
-            this.ch1.TabIndex = 11;
-            this.ch1.Text = "Enero";
-            this.ch1.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel16.ColumnCount = 1;
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel16.Controls.Add(this.btnDeletePayrolls, 0, 1);
+            this.tableLayoutPanel16.Controls.Add(this.btnCreatePayroll, 0, 0);
+            this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(865, 4);
+            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
+            this.tableLayoutPanel16.RowCount = 2;
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(213, 146);
+            this.tableLayoutPanel16.TabIndex = 3;
             // 
-            // ch2
+            // btnDeletePayrolls
             // 
-            this.ch2.AutoSize = true;
-            this.ch2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ch2.Location = new System.Drawing.Point(3, 26);
-            this.ch2.Name = "ch2";
-            this.ch2.Size = new System.Drawing.Size(69, 17);
-            this.ch2.TabIndex = 12;
-            this.ch2.Text = "Febrero";
-            this.ch2.UseVisualStyleBackColor = true;
-            // 
-            // ch3
-            // 
-            this.ch3.AutoSize = true;
-            this.ch3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ch3.Location = new System.Drawing.Point(3, 49);
-            this.ch3.Name = "ch3";
-            this.ch3.Size = new System.Drawing.Size(61, 19);
-            this.ch3.TabIndex = 13;
-            this.ch3.Text = "Marzo";
-            this.ch3.UseVisualStyleBackColor = true;
-            // 
-            // ch4
-            // 
-            this.ch4.AutoSize = true;
-            this.ch4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ch4.Location = new System.Drawing.Point(3, 77);
-            this.ch4.Name = "ch4";
-            this.ch4.Size = new System.Drawing.Size(50, 19);
-            this.ch4.TabIndex = 14;
-            this.ch4.Text = "Abril";
-            this.ch4.UseVisualStyleBackColor = true;
-            // 
-            // ch8
-            // 
-            this.ch8.AutoSize = true;
-            this.ch8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ch8.Location = new System.Drawing.Point(3, 79);
-            this.ch8.Name = "ch8";
-            this.ch8.Size = new System.Drawing.Size(63, 19);
-            this.ch8.TabIndex = 12;
-            this.ch8.Text = "Agosto";
-            this.ch8.UseVisualStyleBackColor = true;
-            // 
-            // ch9
-            // 
-            this.ch9.AutoSize = true;
-            this.ch9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ch9.Location = new System.Drawing.Point(3, 3);
-            this.ch9.Name = "ch9";
-            this.ch9.Size = new System.Drawing.Size(90, 19);
-            this.ch9.TabIndex = 13;
-            this.ch9.Text = "Septiembre";
-            this.ch9.UseVisualStyleBackColor = true;
-            // 
-            // ch10
-            // 
-            this.ch10.AutoSize = true;
-            this.ch10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ch10.Location = new System.Drawing.Point(3, 28);
-            this.ch10.Name = "ch10";
-            this.ch10.Size = new System.Drawing.Size(69, 19);
-            this.ch10.TabIndex = 14;
-            this.ch10.Text = "Octubre";
-            this.ch10.UseVisualStyleBackColor = true;
-            // 
-            // ch11
-            // 
-            this.ch11.AutoSize = true;
-            this.ch11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ch11.Location = new System.Drawing.Point(3, 53);
-            this.ch11.Name = "ch11";
-            this.ch11.Size = new System.Drawing.Size(86, 19);
-            this.ch11.TabIndex = 15;
-            this.ch11.Text = "Noviembre";
-            this.ch11.UseVisualStyleBackColor = true;
-            // 
-            // ch12
-            // 
-            this.ch12.AutoSize = true;
-            this.ch12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ch12.Location = new System.Drawing.Point(3, 82);
-            this.ch12.Name = "ch12";
-            this.ch12.Size = new System.Drawing.Size(83, 18);
-            this.ch12.TabIndex = 16;
-            this.ch12.Text = "Diciembre";
-            this.ch12.UseVisualStyleBackColor = true;
-            // 
-            // ch7
-            // 
-            this.ch7.AutoSize = true;
-            this.ch7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ch7.Location = new System.Drawing.Point(3, 56);
-            this.ch7.Name = "ch7";
-            this.ch7.Size = new System.Drawing.Size(52, 17);
-            this.ch7.TabIndex = 13;
-            this.ch7.Text = "Julio";
-            this.ch7.UseVisualStyleBackColor = true;
-            // 
-            // ch5
-            // 
-            this.ch5.AutoSize = true;
-            this.ch5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ch5.Location = new System.Drawing.Point(3, 3);
-            this.ch5.Name = "ch5";
-            this.ch5.Size = new System.Drawing.Size(56, 19);
-            this.ch5.TabIndex = 14;
-            this.ch5.Text = "Mayo";
-            this.ch5.UseVisualStyleBackColor = true;
-            // 
-            // ch6
-            // 
-            this.ch6.AutoSize = true;
-            this.ch6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ch6.Location = new System.Drawing.Point(3, 28);
-            this.ch6.Name = "ch6";
-            this.ch6.Size = new System.Drawing.Size(56, 19);
-            this.ch6.TabIndex = 15;
-            this.ch6.Text = "Junio";
-            this.ch6.UseVisualStyleBackColor = true;
+            this.btnDeletePayrolls.AllowAnimations = true;
+            this.btnDeletePayrolls.AllowMouseEffects = true;
+            this.btnDeletePayrolls.AllowToggling = false;
+            this.btnDeletePayrolls.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDeletePayrolls.AnimationSpeed = 200;
+            this.btnDeletePayrolls.AutoGenerateColors = false;
+            this.btnDeletePayrolls.AutoRoundBorders = false;
+            this.btnDeletePayrolls.AutoSizeLeftIcon = true;
+            this.btnDeletePayrolls.AutoSizeRightIcon = true;
+            this.btnDeletePayrolls.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeletePayrolls.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnDeletePayrolls.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeletePayrolls.BackgroundImage")));
+            this.btnDeletePayrolls.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnDeletePayrolls.ButtonText = "Eliminar planillas";
+            this.btnDeletePayrolls.ButtonTextMarginLeft = 0;
+            this.btnDeletePayrolls.ColorContrastOnClick = 45;
+            this.btnDeletePayrolls.ColorContrastOnHover = 45;
+            this.btnDeletePayrolls.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnDeletePayrolls.CustomizableEdges = borderEdges1;
+            this.btnDeletePayrolls.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDeletePayrolls.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnDeletePayrolls.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnDeletePayrolls.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnDeletePayrolls.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
+            this.btnDeletePayrolls.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnDeletePayrolls.ForeColor = System.Drawing.Color.White;
+            this.btnDeletePayrolls.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeletePayrolls.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnDeletePayrolls.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnDeletePayrolls.IconMarginLeft = 11;
+            this.btnDeletePayrolls.IconPadding = 10;
+            this.btnDeletePayrolls.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeletePayrolls.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnDeletePayrolls.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnDeletePayrolls.IconSize = 25;
+            this.btnDeletePayrolls.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnDeletePayrolls.IdleBorderRadius = 20;
+            this.btnDeletePayrolls.IdleBorderThickness = 1;
+            this.btnDeletePayrolls.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnDeletePayrolls.IdleIconLeftImage = null;
+            this.btnDeletePayrolls.IdleIconRightImage = null;
+            this.btnDeletePayrolls.IndicateFocus = false;
+            this.btnDeletePayrolls.Location = new System.Drawing.Point(31, 83);
+            this.btnDeletePayrolls.Name = "btnDeletePayrolls";
+            this.btnDeletePayrolls.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnDeletePayrolls.OnDisabledState.BorderRadius = 20;
+            this.btnDeletePayrolls.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnDeletePayrolls.OnDisabledState.BorderThickness = 1;
+            this.btnDeletePayrolls.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnDeletePayrolls.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnDeletePayrolls.OnDisabledState.IconLeftImage = null;
+            this.btnDeletePayrolls.OnDisabledState.IconRightImage = null;
+            this.btnDeletePayrolls.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnDeletePayrolls.onHoverState.BorderRadius = 20;
+            this.btnDeletePayrolls.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnDeletePayrolls.onHoverState.BorderThickness = 1;
+            this.btnDeletePayrolls.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnDeletePayrolls.onHoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnDeletePayrolls.onHoverState.IconLeftImage = null;
+            this.btnDeletePayrolls.onHoverState.IconRightImage = null;
+            this.btnDeletePayrolls.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnDeletePayrolls.OnIdleState.BorderRadius = 20;
+            this.btnDeletePayrolls.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnDeletePayrolls.OnIdleState.BorderThickness = 1;
+            this.btnDeletePayrolls.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnDeletePayrolls.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnDeletePayrolls.OnIdleState.IconLeftImage = null;
+            this.btnDeletePayrolls.OnIdleState.IconRightImage = null;
+            this.btnDeletePayrolls.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnDeletePayrolls.OnPressedState.BorderRadius = 20;
+            this.btnDeletePayrolls.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnDeletePayrolls.OnPressedState.BorderThickness = 1;
+            this.btnDeletePayrolls.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnDeletePayrolls.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnDeletePayrolls.OnPressedState.IconLeftImage = null;
+            this.btnDeletePayrolls.OnPressedState.IconRightImage = null;
+            this.btnDeletePayrolls.Size = new System.Drawing.Size(151, 52);
+            this.btnDeletePayrolls.TabIndex = 94;
+            this.btnDeletePayrolls.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDeletePayrolls.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDeletePayrolls.TextMarginLeft = 0;
+            this.btnDeletePayrolls.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnDeletePayrolls.UseDefaultRadiusAndThickness = true;
             // 
             // FrmViewPayrolls
             // 
@@ -1086,6 +1195,7 @@
             this.bunifuPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayrolls)).EndInit();
             this.cmsPayroll.ResumeLayout(false);
+            this.tableLayoutPanel16.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1139,5 +1249,7 @@
         public System.Windows.Forms.CheckBox ch6;
         public System.Windows.Forms.CheckBox ch5;
         public System.Windows.Forms.CheckBox ch7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
+        public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnDeletePayrolls;
     }
 }

@@ -63,46 +63,46 @@ namespace PTC2024.Controller.Employees
             objEmployees.dgvEmployees.DataSource = ds.Tables["viewEmployees"];
             objEmployees.dgvEmployees.Columns[0].DividerWidth = 1;
             objEmployees.dgvEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            objEmployees.dgvEmployees.Columns[3].Visible = false;
             objEmployees.dgvEmployees.Columns[4].Visible = false;
-            objEmployees.dgvEmployees.Columns[8].Visible = false;
             objEmployees.dgvEmployees.Columns[9].Visible = false;
             objEmployees.dgvEmployees.Columns[10].Visible = false;
-            objEmployees.dgvEmployees.Columns[13].Visible = false;
+            objEmployees.dgvEmployees.Columns[11].Visible = false;
+            objEmployees.dgvEmployees.Columns[12].Visible = false;
             objEmployees.dgvEmployees.Columns[14].Visible = false;
-            objEmployees.dgvEmployees.Columns[16].Visible = false;
-            objEmployees.dgvEmployees.Columns[17].Visible = false;
+            objEmployees.dgvEmployees.Columns[15].Visible = false;
+            objEmployees.dgvEmployees.Columns[18].Visible = false;
         }
         public void ViewEmployeeInfo(object sender, EventArgs e)
         {
             int row = objEmployees.dgvEmployees.CurrentRow.Index;
 
             int affiliationNumber;
-            string employee, dui, adress, phone, email, maritalStatus, typeEmployee, statusEmployee, bankAccount, username, businessP, department, bank;
+            string names, lastNames, dui, adress, phone, email, maritalStatus, typeEmployee, statusEmployee, bankAccount, username, businessP, department, bank;
             DateTime birthDate, hireDate;
             double salary;
 
             //Asignación de valores a la variables que se colocaran en los textbox del formulario.
-            employee = objEmployees.dgvEmployees[1, row].Value.ToString();
-            dui = objEmployees.dgvEmployees[2, row].Value.ToString();
-            birthDate = DateTime.Parse(objEmployees.dgvEmployees[3, row].Value.ToString());
-            adress = objEmployees.dgvEmployees[6, row].Value.ToString();
-            phone = objEmployees.dgvEmployees[5, row].Value.ToString();
-            email = objEmployees.dgvEmployees[4, row].Value.ToString();
-            hireDate = DateTime.Parse(objEmployees.dgvEmployees[11, row].Value.ToString());
-            maritalStatus = objEmployees.dgvEmployees[14, row].Value.ToString();
-            typeEmployee = objEmployees.dgvEmployees[13, row].Value.ToString();
-            statusEmployee = objEmployees.dgvEmployees[15, row].Value.ToString();
-            salary = double.Parse(objEmployees.dgvEmployees[7, row].Value.ToString());
-            affiliationNumber = int.Parse(objEmployees.dgvEmployees[10, row].Value.ToString());
-            bankAccount = objEmployees.dgvEmployees[8, row].Value.ToString();
-            username = objEmployees.dgvEmployees[16, row].Value.ToString();
-            businessP = objEmployees.dgvEmployees[18, row].Value.ToString();
-            department = objEmployees.dgvEmployees[12, row].Value.ToString();
-            bank = objEmployees.dgvEmployees[9, row].Value.ToString();
+            names = objEmployees.dgvEmployees[1, row].Value.ToString();
+            lastNames = objEmployees.dgvEmployees[2, row].Value.ToString();
+            dui = objEmployees.dgvEmployees[3, row].Value.ToString();
+            birthDate = DateTime.Parse(objEmployees.dgvEmployees[4, row].Value.ToString());
+            adress = objEmployees.dgvEmployees[7, row].Value.ToString();
+            phone = objEmployees.dgvEmployees[6, row].Value.ToString();
+            email = objEmployees.dgvEmployees[5, row].Value.ToString();
+            hireDate = DateTime.Parse(objEmployees.dgvEmployees[12, row].Value.ToString());
+            maritalStatus = objEmployees.dgvEmployees[15, row].Value.ToString();
+            typeEmployee = objEmployees.dgvEmployees[14, row].Value.ToString();
+            statusEmployee = objEmployees.dgvEmployees[16, row].Value.ToString();
+            salary = double.Parse(objEmployees.dgvEmployees[8, row].Value.ToString());
+            affiliationNumber = int.Parse(objEmployees.dgvEmployees[11, row].Value.ToString());
+            bankAccount = objEmployees.dgvEmployees[9, row].Value.ToString();
+            username = objEmployees.dgvEmployees[17, row].Value.ToString();
+            businessP = objEmployees.dgvEmployees[19, row].Value.ToString();
+            department = objEmployees.dgvEmployees[13, row].Value.ToString();
+            bank = objEmployees.dgvEmployees[10, row].Value.ToString();
 
             //Se crea instancia del formulario para abrirlo
-            FrmInfoEmployee openForm = new FrmInfoEmployee(employee, dui, birthDate, adress, phone, email, hireDate, maritalStatus, typeEmployee, statusEmployee, salary, affiliationNumber, bankAccount, username, businessP, department, bank);
+            FrmInfoEmployee openForm = new FrmInfoEmployee(names, lastNames, dui, birthDate, adress, phone, email, hireDate, maritalStatus, typeEmployee, statusEmployee, salary, affiliationNumber, bankAccount, username, businessP, department, bank);
             openForm.ShowDialog();
             RefreshDataGridEmployees();
         }
@@ -117,7 +117,29 @@ namespace PTC2024.Controller.Employees
 
         public void UpdateEmployee(object sender, EventArgs e) 
         {
-            FrmUpdateEmployee abrirfForm = new FrmUpdateEmployee();
+            //Se crea una variable para saber la fila del empleado al que se le dio click
+            int row = objEmployees.dgvEmployees.CurrentRow.Index;
+            //se manda a llamar al formulario para la actualización de empleados por medio de un objeto con los parámetros necesarios.
+            FrmUpdateEmployee abrirfForm = new FrmUpdateEmployee(
+                objEmployees.dgvEmployees[1, row].Value.ToString(),
+                objEmployees.dgvEmployees[2, row].Value.ToString(),
+                objEmployees.dgvEmployees[3, row].Value.ToString(),
+                DateTime.Parse(objEmployees.dgvEmployees[4, row].Value.ToString()),
+                objEmployees.dgvEmployees[5, row].Value.ToString(),
+                objEmployees.dgvEmployees[6, row].Value.ToString(),
+                objEmployees.dgvEmployees[7, row].Value.ToString(),
+                double.Parse(objEmployees.dgvEmployees[8, row].Value.ToString()),
+                objEmployees.dgvEmployees[9, row].Value.ToString(),
+                objEmployees.dgvEmployees[10, row].Value.ToString(),
+                int.Parse(objEmployees.dgvEmployees[11, row].Value.ToString()),
+                DateTime.Parse(objEmployees.dgvEmployees[12, row].Value.ToString()),
+                objEmployees.dgvEmployees[13, row].Value.ToString(),
+                objEmployees.dgvEmployees[14, row].Value.ToString(),
+                objEmployees.dgvEmployees[15, row].Value.ToString(),
+                objEmployees.dgvEmployees[16, row].Value.ToString(),
+                objEmployees.dgvEmployees[17, row].Value.ToString(),
+                objEmployees.dgvEmployees[19, row].Value.ToString()
+                );
             abrirfForm.ShowDialog();
             RefreshDataGridEmployees();
         }
@@ -139,7 +161,7 @@ namespace PTC2024.Controller.Employees
                 //Creamos un objeto de la clase DAOEmployees 
                 DAOEmployees daoEmployees = new DAOEmployees();
                 //Le damos valor al getter IdEmployee 
-                daoEmployees.Username = objEmployees.dgvEmployees[16, row].Value.ToString();
+                daoEmployees.Username = objEmployees.dgvEmployees[17, row].Value.ToString();
                 //Mandamos a llamar el proceso de la eliminación de empleado del DAOEmployees para evaluar el valor que el metodo nos retorna 
                 int value = daoEmployees.DisableEmployee();
                 if (value == 1)
