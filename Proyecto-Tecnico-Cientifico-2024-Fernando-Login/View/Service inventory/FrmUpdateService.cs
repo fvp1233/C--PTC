@@ -20,4 +20,5 @@ namespace PTC2024.View.Service_inventory
         }
 
     }
+
 }

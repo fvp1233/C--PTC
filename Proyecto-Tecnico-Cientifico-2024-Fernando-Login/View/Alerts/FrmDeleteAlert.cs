@@ -1,5 +1,4 @@
-﻿using PTC2024.Controller.StartMenuController;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PTC2024.View.Start
+namespace PTC2024.View.Alerts
 {
-    public partial class FrmWelcome : Form
+    public partial class FrmDeleteAlert : Form
     {
-        public FrmWelcome()
+        public FrmDeleteAlert()
         {
             InitializeComponent();
-            ControllerWellcome control = new ControllerWellcome(this);
         }
     }
 }

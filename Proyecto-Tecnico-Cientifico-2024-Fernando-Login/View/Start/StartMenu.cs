@@ -13,10 +13,10 @@ namespace PTC2024.View.formularios.inicio
 {
     public partial class StartMenu : Form
     {
-        public StartMenu()
+        public StartMenu(string username)
         {
             InitializeComponent();
-            ControllerStartMenu objStart = new ControllerStartMenu(this);
+            ControllerStartMenu objStart = new ControllerStartMenu(this, username);
         }
 
     }

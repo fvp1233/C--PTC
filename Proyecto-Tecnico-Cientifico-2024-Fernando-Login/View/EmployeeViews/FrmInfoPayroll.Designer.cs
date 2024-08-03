@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInfoPayroll));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.txtSalary = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -51,6 +51,8 @@
             this.txtPossition = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGroupBox2 = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.txtPayrollStatus = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuCustomLabel17 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtEmployerDiscount = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtEmployerAFP = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -67,6 +69,8 @@
             this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtISSS = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtBonus = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtChristmasBonus = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuCustomLabel18 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGroupBox1.SuspendLayout();
             this.bunifuGroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -193,11 +197,11 @@
             this.btnCancelar.ColorContrastOnClick = 45;
             this.btnCancelar.ColorContrastOnHover = 45;
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnCancelar.CustomizableEdges = borderEdges4;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnCancelar.CustomizableEdges = borderEdges1;
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCancelar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCancelar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -221,7 +225,7 @@
             this.btnCancelar.IdleIconLeftImage = null;
             this.btnCancelar.IdleIconRightImage = null;
             this.btnCancelar.IndicateFocus = false;
-            this.btnCancelar.Location = new System.Drawing.Point(339, 480);
+            this.btnCancelar.Location = new System.Drawing.Point(339, 481);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCancelar.OnDisabledState.BorderRadius = 20;
@@ -455,7 +459,11 @@
             this.bunifuGroupBox2.BorderColor = System.Drawing.Color.LightGray;
             this.bunifuGroupBox2.BorderRadius = 8;
             this.bunifuGroupBox2.BorderThickness = 2;
+            this.bunifuGroupBox2.Controls.Add(this.bunifuCustomLabel18);
+            this.bunifuGroupBox2.Controls.Add(this.txtPayrollStatus);
+            this.bunifuGroupBox2.Controls.Add(this.bunifuCustomLabel17);
             this.bunifuGroupBox2.Controls.Add(this.txtEmployerDiscount);
+            this.bunifuGroupBox2.Controls.Add(this.txtChristmasBonus);
             this.bunifuGroupBox2.Controls.Add(this.bunifuCustomLabel11);
             this.bunifuGroupBox2.Controls.Add(this.txtEmployerAFP);
             this.bunifuGroupBox2.Controls.Add(this.bunifuCustomLabel10);
@@ -486,6 +494,37 @@
             this.bunifuGroupBox2.TabStop = false;
             this.bunifuGroupBox2.Text = "Información salarial";
             // 
+            // txtPayrollStatus
+            // 
+            this.txtPayrollStatus.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtPayrollStatus.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPayrollStatus.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtPayrollStatus.ForeColor = System.Drawing.Color.Black;
+            this.txtPayrollStatus.HintForeColor = System.Drawing.Color.Empty;
+            this.txtPayrollStatus.HintText = "";
+            this.txtPayrollStatus.isPassword = false;
+            this.txtPayrollStatus.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtPayrollStatus.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtPayrollStatus.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtPayrollStatus.LineThickness = 3;
+            this.txtPayrollStatus.Location = new System.Drawing.Point(605, 186);
+            this.txtPayrollStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPayrollStatus.Name = "txtPayrollStatus";
+            this.txtPayrollStatus.Size = new System.Drawing.Size(163, 31);
+            this.txtPayrollStatus.TabIndex = 203;
+            this.txtPayrollStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuCustomLabel17
+            // 
+            this.bunifuCustomLabel17.AutoSize = true;
+            this.bunifuCustomLabel17.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel17.Location = new System.Drawing.Point(602, 166);
+            this.bunifuCustomLabel17.Name = "bunifuCustomLabel17";
+            this.bunifuCustomLabel17.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuCustomLabel17.Size = new System.Drawing.Size(55, 16);
+            this.bunifuCustomLabel17.TabIndex = 202;
+            this.bunifuCustomLabel17.Text = "Estado";
+            // 
             // txtEmployerDiscount
             // 
             this.txtEmployerDiscount.BackColor = System.Drawing.Color.Gainsboro;
@@ -499,7 +538,7 @@
             this.txtEmployerDiscount.LineIdleColor = System.Drawing.Color.Gray;
             this.txtEmployerDiscount.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtEmployerDiscount.LineThickness = 3;
-            this.txtEmployerDiscount.Location = new System.Drawing.Point(414, 181);
+            this.txtEmployerDiscount.Location = new System.Drawing.Point(413, 186);
             this.txtEmployerDiscount.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmployerDiscount.Name = "txtEmployerDiscount";
             this.txtEmployerDiscount.Size = new System.Drawing.Size(163, 31);
@@ -510,7 +549,7 @@
             // 
             this.bunifuCustomLabel11.AutoSize = true;
             this.bunifuCustomLabel11.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel11.Location = new System.Drawing.Point(411, 161);
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(410, 166);
             this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
             this.bunifuCustomLabel11.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuCustomLabel11.Size = new System.Drawing.Size(162, 16);
@@ -530,7 +569,7 @@
             this.txtEmployerAFP.LineIdleColor = System.Drawing.Color.Gray;
             this.txtEmployerAFP.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtEmployerAFP.LineThickness = 3;
-            this.txtEmployerAFP.Location = new System.Drawing.Point(222, 181);
+            this.txtEmployerAFP.Location = new System.Drawing.Point(221, 186);
             this.txtEmployerAFP.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmployerAFP.Name = "txtEmployerAFP";
             this.txtEmployerAFP.Size = new System.Drawing.Size(163, 31);
@@ -541,7 +580,7 @@
             // 
             this.bunifuCustomLabel10.AutoSize = true;
             this.bunifuCustomLabel10.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(219, 161);
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(218, 166);
             this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
             this.bunifuCustomLabel10.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuCustomLabel10.Size = new System.Drawing.Size(113, 16);
@@ -561,7 +600,7 @@
             this.txtEmployerISSS.LineIdleColor = System.Drawing.Color.Gray;
             this.txtEmployerISSS.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtEmployerISSS.LineThickness = 3;
-            this.txtEmployerISSS.Location = new System.Drawing.Point(30, 181);
+            this.txtEmployerISSS.Location = new System.Drawing.Point(30, 186);
             this.txtEmployerISSS.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmployerISSS.Name = "txtEmployerISSS";
             this.txtEmployerISSS.Size = new System.Drawing.Size(163, 31);
@@ -572,7 +611,7 @@
             // 
             this.bunifuCustomLabel9.AutoSize = true;
             this.bunifuCustomLabel9.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(27, 161);
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(33, 166);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
             this.bunifuCustomLabel9.Size = new System.Drawing.Size(117, 16);
             this.bunifuCustomLabel9.TabIndex = 196;
@@ -613,7 +652,7 @@
             // 
             this.bunifuCustomLabel14.AutoSize = true;
             this.bunifuCustomLabel14.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel14.Location = new System.Drawing.Point(219, 97);
+            this.bunifuCustomLabel14.Location = new System.Drawing.Point(411, 97);
             this.bunifuCustomLabel14.Name = "bunifuCustomLabel14";
             this.bunifuCustomLabel14.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuCustomLabel14.Size = new System.Drawing.Size(91, 16);
@@ -633,7 +672,7 @@
             this.txtEmployeeDiscount.LineIdleColor = System.Drawing.Color.Gray;
             this.txtEmployeeDiscount.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtEmployeeDiscount.LineThickness = 3;
-            this.txtEmployeeDiscount.Location = new System.Drawing.Point(414, 117);
+            this.txtEmployeeDiscount.Location = new System.Drawing.Point(222, 117);
             this.txtEmployeeDiscount.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmployeeDiscount.Name = "txtEmployeeDiscount";
             this.txtEmployeeDiscount.Size = new System.Drawing.Size(163, 31);
@@ -644,7 +683,7 @@
             // 
             this.bunifuCustomLabel13.AutoSize = true;
             this.bunifuCustomLabel13.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel13.Location = new System.Drawing.Point(411, 97);
+            this.bunifuCustomLabel13.Location = new System.Drawing.Point(219, 97);
             this.bunifuCustomLabel13.Name = "bunifuCustomLabel13";
             this.bunifuCustomLabel13.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuCustomLabel13.Size = new System.Drawing.Size(156, 16);
@@ -664,7 +703,7 @@
             this.txtNetSalary.LineIdleColor = System.Drawing.Color.Gray;
             this.txtNetSalary.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtNetSalary.LineThickness = 3;
-            this.txtNetSalary.Location = new System.Drawing.Point(222, 117);
+            this.txtNetSalary.Location = new System.Drawing.Point(414, 117);
             this.txtNetSalary.Margin = new System.Windows.Forms.Padding(4);
             this.txtNetSalary.Name = "txtNetSalary";
             this.txtNetSalary.Size = new System.Drawing.Size(163, 31);
@@ -742,11 +781,41 @@
             this.txtBonus.TabIndex = 177;
             this.txtBonus.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // txtChristmasBonus
+            // 
+            this.txtChristmasBonus.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtChristmasBonus.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtChristmasBonus.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtChristmasBonus.ForeColor = System.Drawing.Color.Black;
+            this.txtChristmasBonus.HintForeColor = System.Drawing.Color.Empty;
+            this.txtChristmasBonus.HintText = "";
+            this.txtChristmasBonus.isPassword = false;
+            this.txtChristmasBonus.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtChristmasBonus.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtChristmasBonus.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtChristmasBonus.LineThickness = 3;
+            this.txtChristmasBonus.Location = new System.Drawing.Point(605, 117);
+            this.txtChristmasBonus.Margin = new System.Windows.Forms.Padding(4);
+            this.txtChristmasBonus.Name = "txtChristmasBonus";
+            this.txtChristmasBonus.Size = new System.Drawing.Size(163, 31);
+            this.txtChristmasBonus.TabIndex = 204;
+            this.txtChristmasBonus.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuCustomLabel18
+            // 
+            this.bunifuCustomLabel18.AutoSize = true;
+            this.bunifuCustomLabel18.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel18.Location = new System.Drawing.Point(602, 97);
+            this.bunifuCustomLabel18.Name = "bunifuCustomLabel18";
+            this.bunifuCustomLabel18.Size = new System.Drawing.Size(77, 16);
+            this.bunifuCustomLabel18.TabIndex = 205;
+            this.bunifuCustomLabel18.Text = "Aguinaldo";
+            // 
             // FrmInfoPayroll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 549);
+            this.ClientSize = new System.Drawing.Size(833, 550);
             this.Controls.Add(this.bunifuGroupBox2);
             this.Controls.Add(this.bunifuGroupBox1);
             this.Controls.Add(this.btnCancelar);
@@ -803,5 +872,9 @@
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtAffiliationNumber;
         private Bunifu.Framework.UI.BunifuCustomLabel dtpIssueDate;
         public Bunifu.UI.WinForms.BunifuDatePicker dtpDate;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel17;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox txtPayrollStatus;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox txtChristmasBonus;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel18;
     }
 }

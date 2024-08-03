@@ -40,6 +40,10 @@ namespace PTC2024.Model.DTO.PayrollDTO
         private double discountEmployee;
         private double discountEmployer;
         private DateTime issueDate;
+        private double christmasBonus;
+        //Estatus de planilla
+        private int idPayrollStatus;
+        private string statusPayroll;
 
         public int IdEmployee { get => idEmployee; set => idEmployee = value; }
         public string FirstName { get => firstName; set => firstName = value; }
@@ -70,5 +74,8 @@ namespace PTC2024.Model.DTO.PayrollDTO
         public double AfpEmployer { get => afpEmployer; set => afpEmployer = value; }
         public double DiscountEmployee { get => discountEmployee; set => discountEmployee = value; }
         public double DiscountEmployer { get => discountEmployer; set => discountEmployer = value; }
+        public int IdPayrollStatus { get => idPayrollStatus; set => idPayrollStatus = value; }
+        public string StatusPayroll { get => statusPayroll; set => statusPayroll = value; }
+        public double ChristmasBonus { get => christmasBonus; set => christmasBonus = value; }
     }
 }

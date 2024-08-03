@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUpdateService));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges13 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.txtMonto = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -43,9 +43,9 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnUpdateService = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnCloseUpdateService = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
-            this.comboTipoEmpleado = new Bunifu.UI.WinForms.BunifuDropdown();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.txtId = new System.Windows.Forms.ToolStripTextBox();
+            this.comboTipoEmpleado = new Bunifu.UI.WinForms.BunifuDropdown();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -201,11 +201,11 @@
             this.btnUpdateService.ColorContrastOnClick = 45;
             this.btnUpdateService.ColorContrastOnHover = 45;
             this.btnUpdateService.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges13.BottomLeft = true;
-            borderEdges13.BottomRight = true;
-            borderEdges13.TopLeft = true;
-            borderEdges13.TopRight = true;
-            this.btnUpdateService.CustomizableEdges = borderEdges13;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnUpdateService.CustomizableEdges = borderEdges1;
             this.btnUpdateService.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnUpdateService.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnUpdateService.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -291,11 +291,11 @@
             this.btnCloseUpdateService.ColorContrastOnClick = 45;
             this.btnCloseUpdateService.ColorContrastOnHover = 45;
             this.btnCloseUpdateService.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges14.BottomLeft = true;
-            borderEdges14.BottomRight = true;
-            borderEdges14.TopLeft = true;
-            borderEdges14.TopRight = true;
-            this.btnCloseUpdateService.CustomizableEdges = borderEdges14;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnCloseUpdateService.CustomizableEdges = borderEdges2;
             this.btnCloseUpdateService.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCloseUpdateService.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCloseUpdateService.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -361,6 +361,23 @@
             this.btnCloseUpdateService.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnCloseUpdateService.UseDefaultRadiusAndThickness = true;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.txtId});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(454, 24);
+            this.menuStrip1.TabIndex = 95;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // txtId
+            // 
+            this.txtId.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 23);
+            this.txtId.Visible = false;
+            // 
             // comboTipoEmpleado
             // 
             this.comboTipoEmpleado.BackColor = System.Drawing.Color.Transparent;
@@ -398,30 +415,13 @@
             this.comboTipoEmpleado.ItemHighLightColor = System.Drawing.Color.LightGray;
             this.comboTipoEmpleado.ItemHighLightForeColor = System.Drawing.Color.Black;
             this.comboTipoEmpleado.ItemTopMargin = 3;
-            this.comboTipoEmpleado.Location = new System.Drawing.Point(64, 318);
+            this.comboTipoEmpleado.Location = new System.Drawing.Point(64, 313);
             this.comboTipoEmpleado.Name = "comboTipoEmpleado";
             this.comboTipoEmpleado.Size = new System.Drawing.Size(331, 32);
-            this.comboTipoEmpleado.TabIndex = 95;
+            this.comboTipoEmpleado.TabIndex = 96;
             this.comboTipoEmpleado.Text = null;
             this.comboTipoEmpleado.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.comboTipoEmpleado.TextLeftMargin = 5;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.txtId});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(454, 27);
-            this.menuStrip1.TabIndex = 96;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // txtId
-            // 
-            this.txtId.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 23);
-            this.txtId.Visible = false;
             // 
             // FrmUpdateService
             // 
@@ -442,6 +442,7 @@
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.bunifuCustomLabel1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmUpdateService";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -463,11 +464,11 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnUpdateService;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnCloseUpdateService;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox txtDescripcion;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox txtNombres;
-        public Bunifu.UI.WinForms.BunifuDropdown comboTipoEmpleado;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox txtMonto;
         private System.Windows.Forms.MenuStrip menuStrip1;
         public System.Windows.Forms.ToolStripTextBox txtId;
+        public Bunifu.UI.WinForms.BunifuDropdown comboTipoEmpleado;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox txtNombres;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox txtDescripcion;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox txtMonto;
     }
 }

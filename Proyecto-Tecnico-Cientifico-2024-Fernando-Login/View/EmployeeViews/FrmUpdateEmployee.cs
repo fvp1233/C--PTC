@@ -14,10 +14,11 @@ namespace PTC2024.View.Empleados
 {
     public partial class FrmUpdateEmployee : Form
     {
-        public FrmUpdateEmployee()
+        //Constructor del formulario updateEmployees
+        public FrmUpdateEmployee(string names, string lastNames, string dui, DateTime birthDate, string email, string phone, string adress, double salary, string bankAccount, string bank, int affiliationNumber, DateTime hireDate, string department, string employeeType, string maritalStatus, string status, string username, string businessP)
         {
             InitializeComponent();
-            ControllerUpdateEmployee objControl = new ControllerUpdateEmployee(this);
+            ControllerUpdateEmployee objControl = new ControllerUpdateEmployee(this, names, lastNames, dui, birthDate, email, phone, adress, salary, bankAccount, bank, affiliationNumber, hireDate, department, employeeType, maritalStatus, status, username, businessP);
         }
     }
 }
