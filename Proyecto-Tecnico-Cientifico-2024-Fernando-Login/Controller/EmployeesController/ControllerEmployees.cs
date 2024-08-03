@@ -161,7 +161,7 @@ namespace PTC2024.Controller.Employees
                 //Creamos un objeto de la clase DAOEmployees 
                 DAOEmployees daoEmployees = new DAOEmployees();
                 //Le damos valor al getter IdEmployee 
-                daoEmployees.Username = objEmployees.dgvEmployees[16, row].Value.ToString();
+                daoEmployees.Username = objEmployees.dgvEmployees[17, row].Value.ToString();
                 //Mandamos a llamar el proceso de la eliminación de empleado del DAOEmployees para evaluar el valor que el metodo nos retorna 
                 int value = daoEmployees.DisableEmployee();
                 if (value == 1)
