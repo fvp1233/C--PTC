@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PTC2024.Model.DTO.EmployeesDTO
+namespace PTC2024.Controller.EmployeesController
 {
-    internal class DTOUpdateEmployee
+    internal class ControllerPayrolls
     {
     }
 }

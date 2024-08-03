@@ -33,15 +33,11 @@
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGroupBox3 = new Bunifu.UI.WinForms.BunifuGroupBox();
-            this.txtEmployeeStatus = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtEmployeeType = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtDepartment = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtMaritalS = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel20 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.dpHireDate = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.txtAddress = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtNames = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtEmployee = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtDUI = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -56,7 +52,6 @@
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtEmail = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuGroupBox2 = new Bunifu.UI.WinForms.BunifuGroupBox();
-            this.txtBank = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel19 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtBankAccount = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel16 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -65,14 +60,17 @@
             this.txtAffiliationNumber = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel18 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
-            this.txtBusinessP = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtUsername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel15 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.txtMaritalS = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtDepartment = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtEmployeeType = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtEmployeeStatus = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtBank = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtBusinessP = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.BtnCancelar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
-            this.txtLastNames = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGroupBox3.SuspendLayout();
             this.bunifuGroupBox2.SuspendLayout();
             this.bunifuGroupBox1.SuspendLayout();
@@ -102,8 +100,6 @@
             this.bunifuGroupBox3.BorderColor = System.Drawing.Color.LightGray;
             this.bunifuGroupBox3.BorderRadius = 8;
             this.bunifuGroupBox3.BorderThickness = 2;
-            this.bunifuGroupBox3.Controls.Add(this.bunifuCustomLabel4);
-            this.bunifuGroupBox3.Controls.Add(this.txtLastNames);
             this.bunifuGroupBox3.Controls.Add(this.txtEmployeeStatus);
             this.bunifuGroupBox3.Controls.Add(this.txtEmployeeType);
             this.bunifuGroupBox3.Controls.Add(this.txtDepartment);
@@ -112,7 +108,7 @@
             this.bunifuGroupBox3.Controls.Add(this.dpHireDate);
             this.bunifuGroupBox3.Controls.Add(this.txtAddress);
             this.bunifuGroupBox3.Controls.Add(this.bunifuCustomLabel3);
-            this.bunifuGroupBox3.Controls.Add(this.txtNames);
+            this.bunifuGroupBox3.Controls.Add(this.txtEmployee);
             this.bunifuGroupBox3.Controls.Add(this.bunifuCustomLabel6);
             this.bunifuGroupBox3.Controls.Add(this.bunifuCustomLabel5);
             this.bunifuGroupBox3.Controls.Add(this.txtDUI);
@@ -136,86 +132,6 @@
             this.bunifuGroupBox3.TabIndex = 112;
             this.bunifuGroupBox3.TabStop = false;
             this.bunifuGroupBox3.Text = "Información personal del empleado";
-            // 
-            // txtEmployeeStatus
-            // 
-            this.txtEmployeeStatus.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtEmployeeStatus.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmployeeStatus.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtEmployeeStatus.ForeColor = System.Drawing.Color.DimGray;
-            this.txtEmployeeStatus.HintForeColor = System.Drawing.Color.Empty;
-            this.txtEmployeeStatus.HintText = "";
-            this.txtEmployeeStatus.isPassword = false;
-            this.txtEmployeeStatus.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtEmployeeStatus.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtEmployeeStatus.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtEmployeeStatus.LineThickness = 3;
-            this.txtEmployeeStatus.Location = new System.Drawing.Point(688, 237);
-            this.txtEmployeeStatus.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEmployeeStatus.Name = "txtEmployeeStatus";
-            this.txtEmployeeStatus.Size = new System.Drawing.Size(330, 31);
-            this.txtEmployeeStatus.TabIndex = 96;
-            this.txtEmployeeStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // txtEmployeeType
-            // 
-            this.txtEmployeeType.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtEmployeeType.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmployeeType.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtEmployeeType.ForeColor = System.Drawing.Color.DimGray;
-            this.txtEmployeeType.HintForeColor = System.Drawing.Color.Empty;
-            this.txtEmployeeType.HintText = "";
-            this.txtEmployeeType.isPassword = false;
-            this.txtEmployeeType.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtEmployeeType.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtEmployeeType.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtEmployeeType.LineThickness = 3;
-            this.txtEmployeeType.Location = new System.Drawing.Point(350, 237);
-            this.txtEmployeeType.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEmployeeType.Name = "txtEmployeeType";
-            this.txtEmployeeType.Size = new System.Drawing.Size(330, 31);
-            this.txtEmployeeType.TabIndex = 95;
-            this.txtEmployeeType.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // txtDepartment
-            // 
-            this.txtDepartment.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtDepartment.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDepartment.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtDepartment.ForeColor = System.Drawing.Color.DimGray;
-            this.txtDepartment.HintForeColor = System.Drawing.Color.Empty;
-            this.txtDepartment.HintText = "";
-            this.txtDepartment.isPassword = false;
-            this.txtDepartment.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtDepartment.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtDepartment.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtDepartment.LineThickness = 3;
-            this.txtDepartment.Location = new System.Drawing.Point(12, 237);
-            this.txtDepartment.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDepartment.Name = "txtDepartment";
-            this.txtDepartment.Size = new System.Drawing.Size(330, 31);
-            this.txtDepartment.TabIndex = 94;
-            this.txtDepartment.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // txtMaritalS
-            // 
-            this.txtMaritalS.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtMaritalS.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaritalS.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtMaritalS.ForeColor = System.Drawing.Color.DimGray;
-            this.txtMaritalS.HintForeColor = System.Drawing.Color.Empty;
-            this.txtMaritalS.HintText = "";
-            this.txtMaritalS.isPassword = false;
-            this.txtMaritalS.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtMaritalS.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtMaritalS.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtMaritalS.LineThickness = 3;
-            this.txtMaritalS.Location = new System.Drawing.Point(688, 177);
-            this.txtMaritalS.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaritalS.Name = "txtMaritalS";
-            this.txtMaritalS.Size = new System.Drawing.Size(330, 31);
-            this.txtMaritalS.TabIndex = 93;
-            this.txtMaritalS.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel20
             // 
@@ -280,29 +196,29 @@
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.Location = new System.Drawing.Point(9, 29);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(74, 16);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(80, 16);
             this.bunifuCustomLabel3.TabIndex = 33;
-            this.bunifuCustomLabel3.Text = "Nombres:";
+            this.bunifuCustomLabel3.Text = "Empleado:";
             // 
-            // txtNames
+            // txtEmployee
             // 
-            this.txtNames.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtNames.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNames.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtNames.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNames.HintForeColor = System.Drawing.Color.Empty;
-            this.txtNames.HintText = "";
-            this.txtNames.isPassword = false;
-            this.txtNames.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtNames.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtNames.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtNames.LineThickness = 3;
-            this.txtNames.Location = new System.Drawing.Point(12, 49);
-            this.txtNames.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNames.Name = "txtNames";
-            this.txtNames.Size = new System.Drawing.Size(330, 31);
-            this.txtNames.TabIndex = 1;
-            this.txtNames.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtEmployee.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtEmployee.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmployee.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtEmployee.ForeColor = System.Drawing.Color.DimGray;
+            this.txtEmployee.HintForeColor = System.Drawing.Color.Empty;
+            this.txtEmployee.HintText = "";
+            this.txtEmployee.isPassword = false;
+            this.txtEmployee.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtEmployee.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtEmployee.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtEmployee.LineThickness = 3;
+            this.txtEmployee.Location = new System.Drawing.Point(12, 49);
+            this.txtEmployee.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmployee.Name = "txtEmployee";
+            this.txtEmployee.Size = new System.Drawing.Size(668, 31);
+            this.txtEmployee.TabIndex = 1;
+            this.txtEmployee.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel6
             // 
@@ -509,26 +425,6 @@
             this.bunifuGroupBox2.TabStop = false;
             this.bunifuGroupBox2.Text = "Información financiera";
             // 
-            // txtBank
-            // 
-            this.txtBank.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtBank.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBank.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtBank.ForeColor = System.Drawing.Color.DimGray;
-            this.txtBank.HintForeColor = System.Drawing.Color.Empty;
-            this.txtBank.HintText = "";
-            this.txtBank.isPassword = false;
-            this.txtBank.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtBank.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtBank.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtBank.LineThickness = 3;
-            this.txtBank.Location = new System.Drawing.Point(773, 42);
-            this.txtBank.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBank.Name = "txtBank";
-            this.txtBank.Size = new System.Drawing.Size(245, 31);
-            this.txtBank.TabIndex = 101;
-            this.txtBank.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // bunifuCustomLabel19
             // 
             this.bunifuCustomLabel19.AutoSize = true;
@@ -653,26 +549,6 @@
             this.bunifuGroupBox1.TabStop = false;
             this.bunifuGroupBox1.Text = "Información para el inicio de sesión";
             // 
-            // txtBusinessP
-            // 
-            this.txtBusinessP.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtBusinessP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBusinessP.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtBusinessP.ForeColor = System.Drawing.Color.DimGray;
-            this.txtBusinessP.HintForeColor = System.Drawing.Color.Empty;
-            this.txtBusinessP.HintText = "";
-            this.txtBusinessP.isPassword = false;
-            this.txtBusinessP.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtBusinessP.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtBusinessP.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtBusinessP.LineThickness = 3;
-            this.txtBusinessP.Location = new System.Drawing.Point(688, 46);
-            this.txtBusinessP.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBusinessP.Name = "txtBusinessP";
-            this.txtBusinessP.Size = new System.Drawing.Size(330, 31);
-            this.txtBusinessP.TabIndex = 98;
-            this.txtBusinessP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // txtUsername
             // 
             this.txtUsername.BackColor = System.Drawing.Color.Gainsboro;
@@ -724,6 +600,126 @@
             this.bunifuSeparator1.TabIndex = 174;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
+            // 
+            // txtMaritalS
+            // 
+            this.txtMaritalS.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtMaritalS.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaritalS.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtMaritalS.ForeColor = System.Drawing.Color.DimGray;
+            this.txtMaritalS.HintForeColor = System.Drawing.Color.Empty;
+            this.txtMaritalS.HintText = "";
+            this.txtMaritalS.isPassword = false;
+            this.txtMaritalS.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtMaritalS.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtMaritalS.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtMaritalS.LineThickness = 3;
+            this.txtMaritalS.Location = new System.Drawing.Point(688, 177);
+            this.txtMaritalS.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaritalS.Name = "txtMaritalS";
+            this.txtMaritalS.Size = new System.Drawing.Size(330, 31);
+            this.txtMaritalS.TabIndex = 93;
+            this.txtMaritalS.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txtDepartment
+            // 
+            this.txtDepartment.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtDepartment.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDepartment.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtDepartment.ForeColor = System.Drawing.Color.DimGray;
+            this.txtDepartment.HintForeColor = System.Drawing.Color.Empty;
+            this.txtDepartment.HintText = "";
+            this.txtDepartment.isPassword = false;
+            this.txtDepartment.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtDepartment.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtDepartment.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtDepartment.LineThickness = 3;
+            this.txtDepartment.Location = new System.Drawing.Point(12, 237);
+            this.txtDepartment.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDepartment.Name = "txtDepartment";
+            this.txtDepartment.Size = new System.Drawing.Size(330, 31);
+            this.txtDepartment.TabIndex = 94;
+            this.txtDepartment.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txtEmployeeType
+            // 
+            this.txtEmployeeType.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtEmployeeType.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmployeeType.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtEmployeeType.ForeColor = System.Drawing.Color.DimGray;
+            this.txtEmployeeType.HintForeColor = System.Drawing.Color.Empty;
+            this.txtEmployeeType.HintText = "";
+            this.txtEmployeeType.isPassword = false;
+            this.txtEmployeeType.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtEmployeeType.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtEmployeeType.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtEmployeeType.LineThickness = 3;
+            this.txtEmployeeType.Location = new System.Drawing.Point(350, 237);
+            this.txtEmployeeType.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmployeeType.Name = "txtEmployeeType";
+            this.txtEmployeeType.Size = new System.Drawing.Size(330, 31);
+            this.txtEmployeeType.TabIndex = 95;
+            this.txtEmployeeType.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txtEmployeeStatus
+            // 
+            this.txtEmployeeStatus.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtEmployeeStatus.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmployeeStatus.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtEmployeeStatus.ForeColor = System.Drawing.Color.DimGray;
+            this.txtEmployeeStatus.HintForeColor = System.Drawing.Color.Empty;
+            this.txtEmployeeStatus.HintText = "";
+            this.txtEmployeeStatus.isPassword = false;
+            this.txtEmployeeStatus.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtEmployeeStatus.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtEmployeeStatus.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtEmployeeStatus.LineThickness = 3;
+            this.txtEmployeeStatus.Location = new System.Drawing.Point(688, 237);
+            this.txtEmployeeStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmployeeStatus.Name = "txtEmployeeStatus";
+            this.txtEmployeeStatus.Size = new System.Drawing.Size(330, 31);
+            this.txtEmployeeStatus.TabIndex = 96;
+            this.txtEmployeeStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txtBank
+            // 
+            this.txtBank.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBank.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBank.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtBank.ForeColor = System.Drawing.Color.DimGray;
+            this.txtBank.HintForeColor = System.Drawing.Color.Empty;
+            this.txtBank.HintText = "";
+            this.txtBank.isPassword = false;
+            this.txtBank.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtBank.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtBank.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtBank.LineThickness = 3;
+            this.txtBank.Location = new System.Drawing.Point(773, 42);
+            this.txtBank.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBank.Name = "txtBank";
+            this.txtBank.Size = new System.Drawing.Size(245, 31);
+            this.txtBank.TabIndex = 101;
+            this.txtBank.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txtBusinessP
+            // 
+            this.txtBusinessP.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBusinessP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBusinessP.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtBusinessP.ForeColor = System.Drawing.Color.DimGray;
+            this.txtBusinessP.HintForeColor = System.Drawing.Color.Empty;
+            this.txtBusinessP.HintText = "";
+            this.txtBusinessP.isPassword = false;
+            this.txtBusinessP.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtBusinessP.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtBusinessP.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtBusinessP.LineThickness = 3;
+            this.txtBusinessP.Location = new System.Drawing.Point(688, 46);
+            this.txtBusinessP.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBusinessP.Name = "txtBusinessP";
+            this.txtBusinessP.Size = new System.Drawing.Size(330, 31);
+            this.txtBusinessP.TabIndex = 98;
+            this.txtBusinessP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // BtnCancelar
             // 
@@ -815,36 +811,6 @@
             this.BtnCancelar.TextPadding = new System.Windows.Forms.Padding(0);
             this.BtnCancelar.UseDefaultRadiusAndThickness = true;
             // 
-            // txtLastNames
-            // 
-            this.txtLastNames.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtLastNames.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtLastNames.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtLastNames.ForeColor = System.Drawing.Color.DimGray;
-            this.txtLastNames.HintForeColor = System.Drawing.Color.Empty;
-            this.txtLastNames.HintText = "";
-            this.txtLastNames.isPassword = false;
-            this.txtLastNames.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtLastNames.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtLastNames.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtLastNames.LineThickness = 3;
-            this.txtLastNames.Location = new System.Drawing.Point(350, 49);
-            this.txtLastNames.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLastNames.Name = "txtLastNames";
-            this.txtLastNames.Size = new System.Drawing.Size(330, 31);
-            this.txtLastNames.TabIndex = 97;
-            this.txtLastNames.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuCustomLabel4
-            // 
-            this.bunifuCustomLabel4.AutoSize = true;
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(349, 29);
-            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(76, 16);
-            this.bunifuCustomLabel4.TabIndex = 98;
-            this.bunifuCustomLabel4.Text = "Apellidos:";
-            // 
             // FrmInfoEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -881,7 +847,7 @@
         public Bunifu.UI.WinForms.BunifuDatePicker dpHireDate;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtAddress;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox txtNames;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox txtEmployee;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtDUI;
@@ -915,7 +881,5 @@
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtBank;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtBusinessP;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 BtnCancelar;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox txtLastNames;
     }
 }

@@ -14,10 +14,10 @@ namespace PTC2024.View.EmployeeViews
     public partial class FrmInfoEmployee : Form
     {
         
-        public FrmInfoEmployee(string names, string lastNames, string dui, DateTime birthDate, string adress, string phone, string email, DateTime hireDate, string maritalStatus, string typeEmployee, string statusEmployee, double salary, int affiliationNumber, string bankAccount, string username, string businessP, string department, string bank)
+        public FrmInfoEmployee(string employee, string dui, DateTime birthDate, string adress, string phone, string email, DateTime hireDate, string maritalStatus, string typeEmployee, string statusEmployee, double salary, int affiliationNumber, string bankAccount, string username, string businessP, string department, string bank)
         {
             InitializeComponent();
-            ControllerInfoEmployee objInfoEmployee = new ControllerInfoEmployee(this, names, lastNames, dui, birthDate, adress, phone, email, hireDate, maritalStatus, typeEmployee, statusEmployee, salary, affiliationNumber, bankAccount, username, businessP, department, bank);
+            ControllerInfoEmployee objInfoEmployee = new ControllerInfoEmployee(this, employee, dui, birthDate, adress, phone, email, hireDate, maritalStatus, typeEmployee, statusEmployee, salary, affiliationNumber, bankAccount, username, businessP, department, bank);
 
         }
     }
