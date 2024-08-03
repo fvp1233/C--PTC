@@ -15,10 +15,10 @@ namespace PTC2024.View.Empleados
     public partial class FrmUpdateEmployee : Form
     {
         //Constructor del formulario updateEmployees
-        public FrmUpdateEmployee(string names, string lastNames, string dui, DateTime birthDate, string email, string phone, string adress, double salary, string bankAccount, string bank, int affiliationNumber, DateTime hireDate, string department, string employeeType, string maritalStatus, string status, string username, string businessP)
+        public FrmUpdateEmployee(int employeeId, string names, string lastNames, string dui, DateTime birthDate, string email, string phone, string address, double salary, string bankAccount, string bank, int affiliationNumber, DateTime hireDate, string department, string employeeType, string maritalStatus, string status, string username, string businessP)
         {
             InitializeComponent();
-            ControllerUpdateEmployee objControl = new ControllerUpdateEmployee(this, names, lastNames, dui, birthDate, email, phone, adress, salary, bankAccount, bank, affiliationNumber, hireDate, department, employeeType, maritalStatus, status, username, businessP);
+            ControllerUpdateEmployee objControl = new ControllerUpdateEmployee(this, employeeId, names, lastNames, dui, birthDate, email, phone, address, salary, bankAccount, bank, affiliationNumber, hireDate, department, employeeType, maritalStatus, status, username, businessP);
         }
     }
 }
