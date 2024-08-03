@@ -18,7 +18,7 @@ namespace PTC2024.Controller.StartMenuController
     {
         StartMenu objStartMenu;
         Form currentForm;
-        public ControllerStartMenu(StartMenu View) 
+        public ControllerStartMenu(StartMenu View, string username) 
         {
             objStartMenu = View;
             View.Load += new EventHandler(LoadDefaultForm);

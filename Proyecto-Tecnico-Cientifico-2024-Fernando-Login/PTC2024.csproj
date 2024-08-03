@@ -106,6 +106,7 @@
     <Compile Include="Controller\EmployeesController\ControllerAddEmployee.cs" />
     <Compile Include="Controller\EmployeesController\ControllerInfoEmployee.cs" />
     <Compile Include="Controller\Helper\CommonClasses.cs" />
+    <Compile Include="Controller\Helper\SessionVar.cs" />
     <Compile Include="Controller\LogInController\ControllerLogin.cs" />
     <Compile Include="Controller\LogInController\ControllerRecoverPassword.cs" />
     <Compile Include="Controller\LogInController\ControllerRegister.cs" />

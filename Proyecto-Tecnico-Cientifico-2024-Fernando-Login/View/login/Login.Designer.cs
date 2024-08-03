@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -37,24 +38,23 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.dataLogin = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLoginBunifu = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.txtPasswordBunifu = new Bunifu.UI.WinForms.BunifuTextBox();
             this.TxtUserBunifu = new Bunifu.UI.WinForms.BunifuTextBox();
             this.linkLabel = new System.Windows.Forms.LinkLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.txtContraseña = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.Label();
+            this.lbPassword = new System.Windows.Forms.Label();
+            this.lbUser = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.dataLogin.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataLogin
@@ -67,14 +67,35 @@
             this.dataLogin.Controls.Add(this.linkLabel);
             this.dataLogin.Controls.Add(this.pictureBox2);
             this.dataLogin.Controls.Add(this.pictureBox3);
-            this.dataLogin.Controls.Add(this.txtContraseña);
-            this.dataLogin.Controls.Add(this.txtUsuario);
+            this.dataLogin.Controls.Add(this.lbPassword);
+            this.dataLogin.Controls.Add(this.lbUser);
             this.dataLogin.Controls.Add(this.txtLogin);
             this.dataLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLogin.Location = new System.Drawing.Point(0, 0);
             this.dataLogin.Name = "dataLogin";
             this.dataLogin.Size = new System.Drawing.Size(788, 409);
             this.dataLogin.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(488, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(300, 409);
+            this.panel1.TabIndex = 15;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(300, 409);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // btnLoginBunifu
             // 
@@ -164,7 +185,6 @@
             this.btnLoginBunifu.TextMarginLeft = 0;
             this.btnLoginBunifu.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnLoginBunifu.UseDefaultRadiusAndThickness = true;
-            this.btnLoginBunifu.Click += new System.EventHandler(this.btnLoginBunifu_Click);
             // 
             // txtPasswordBunifu
             // 
@@ -242,8 +262,6 @@
             this.txtPasswordBunifu.TextPlaceholder = "Enter text";
             this.txtPasswordBunifu.UseSystemPasswordChar = false;
             this.txtPasswordBunifu.WordWrap = true;
-            this.txtPasswordBunifu.Enter += new System.EventHandler(this.txtPasswordBunifu_Enter);
-            this.txtPasswordBunifu.Leave += new System.EventHandler(this.txtPasswordBunifu_Leave);
             // 
             // TxtUserBunifu
             // 
@@ -321,8 +339,6 @@
             this.TxtUserBunifu.TextPlaceholder = "Enter text";
             this.TxtUserBunifu.UseSystemPasswordChar = false;
             this.TxtUserBunifu.WordWrap = true;
-            this.TxtUserBunifu.Enter += new System.EventHandler(this.TxtUserBunifu_Enter);
-            this.TxtUserBunifu.Leave += new System.EventHandler(this.TxtUserBunifu_Leave);
             // 
             // linkLabel
             // 
@@ -359,27 +375,27 @@
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
             // 
-            // txtContraseña
+            // lbPassword
             // 
-            this.txtContraseña.AutoSize = true;
-            this.txtContraseña.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtContraseña.Location = new System.Drawing.Point(35, 178);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(89, 21);
-            this.txtContraseña.TabIndex = 4;
-            this.txtContraseña.Text = "Contraseña";
+            this.lbPassword.AutoSize = true;
+            this.lbPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPassword.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbPassword.Location = new System.Drawing.Point(35, 178);
+            this.lbPassword.Name = "lbPassword";
+            this.lbPassword.Size = new System.Drawing.Size(89, 21);
+            this.lbPassword.TabIndex = 4;
+            this.lbPassword.Text = "Contraseña";
             // 
-            // txtUsuario
+            // lbUser
             // 
-            this.txtUsuario.AutoSize = true;
-            this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtUsuario.Location = new System.Drawing.Point(35, 93);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(64, 21);
-            this.txtUsuario.TabIndex = 1;
-            this.txtUsuario.Text = "Usuario";
+            this.lbUser.AutoSize = true;
+            this.lbUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUser.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbUser.Location = new System.Drawing.Point(35, 93);
+            this.lbUser.Name = "lbUser";
+            this.lbUser.Size = new System.Drawing.Size(64, 21);
+            this.lbUser.TabIndex = 1;
+            this.lbUser.Text = "Usuario";
             // 
             // txtLogin
             // 
@@ -391,27 +407,6 @@
             this.txtLogin.Size = new System.Drawing.Size(120, 47);
             this.txtLogin.TabIndex = 0;
             this.txtLogin.Text = "LOGIN";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(300, 409);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(488, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 409);
-            this.panel1.TabIndex = 15;
             // 
             // Login
             // 
@@ -426,10 +421,10 @@
             this.Text = "Login";
             this.dataLogin.ResumeLayout(false);
             this.dataLogin.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -438,15 +433,15 @@
 
         private System.Windows.Forms.Panel dataLogin;
         private System.Windows.Forms.Label txtLogin;
-        private System.Windows.Forms.Label txtUsuario;
-        private System.Windows.Forms.Label txtContraseña;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.LinkLabel linkLabel;
-        private Bunifu.UI.WinForms.BunifuTextBox TxtUserBunifu;
-        private Bunifu.UI.WinForms.BunifuTextBox txtPasswordBunifu;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnLoginBunifu;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Label lbUser;
+        public System.Windows.Forms.Label lbPassword;
+        public Bunifu.UI.WinForms.BunifuTextBox TxtUserBunifu;
+        public Bunifu.UI.WinForms.BunifuTextBox txtPasswordBunifu;
+        public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnLoginBunifu;
     }
 }
