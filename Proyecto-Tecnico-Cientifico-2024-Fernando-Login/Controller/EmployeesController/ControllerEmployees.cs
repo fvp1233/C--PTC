@@ -117,7 +117,29 @@ namespace PTC2024.Controller.Employees
 
         public void UpdateEmployee(object sender, EventArgs e) 
         {
-            FrmUpdateEmployee abrirfForm = new FrmUpdateEmployee();
+            //Se crea una variable para saber la fila del empleado al que se le dio click
+            int row = objEmployees.dgvEmployees.CurrentRow.Index;
+            //se manda a llamar al formulario para la actualización de empleados por medio de un objeto con los parámetros necesarios.
+            FrmUpdateEmployee abrirfForm = new FrmUpdateEmployee(
+                objEmployees.dgvEmployees[1, row].Value.ToString(),
+                objEmployees.dgvEmployees[2, row].Value.ToString(),
+                objEmployees.dgvEmployees[3, row].Value.ToString(),
+                DateTime.Parse(objEmployees.dgvEmployees[4, row].Value.ToString()),
+                objEmployees.dgvEmployees[5, row].Value.ToString(),
+                objEmployees.dgvEmployees[6, row].Value.ToString(),
+                objEmployees.dgvEmployees[7, row].Value.ToString(),
+                double.Parse(objEmployees.dgvEmployees[8, row].Value.ToString()),
+                objEmployees.dgvEmployees[9, row].Value.ToString(),
+                objEmployees.dgvEmployees[10, row].Value.ToString(),
+                int.Parse(objEmployees.dgvEmployees[11, row].Value.ToString()),
+                DateTime.Parse(objEmployees.dgvEmployees[12, row].Value.ToString()),
+                objEmployees.dgvEmployees[13, row].Value.ToString(),
+                objEmployees.dgvEmployees[14, row].Value.ToString(),
+                objEmployees.dgvEmployees[15, row].Value.ToString(),
+                objEmployees.dgvEmployees[16, row].Value.ToString(),
+                objEmployees.dgvEmployees[17, row].Value.ToString(),
+                objEmployees.dgvEmployees[19, row].Value.ToString()
+                );
             abrirfForm.ShowDialog();
             RefreshDataGridEmployees();
         }
