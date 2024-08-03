@@ -77,31 +77,32 @@ namespace PTC2024.Controller.Employees
             int row = objEmployees.dgvEmployees.CurrentRow.Index;
 
             int affiliationNumber;
-            string employee, dui, adress, phone, email, maritalStatus, typeEmployee, statusEmployee, bankAccount, username, businessP, department, bank;
+            string names, lastNames, dui, adress, phone, email, maritalStatus, typeEmployee, statusEmployee, bankAccount, username, businessP, department, bank;
             DateTime birthDate, hireDate;
             double salary;
 
             //Asignación de valores a la variables que se colocaran en los textbox del formulario.
-            employee = objEmployees.dgvEmployees[1, row].Value.ToString();
-            dui = objEmployees.dgvEmployees[2, row].Value.ToString();
-            birthDate = DateTime.Parse(objEmployees.dgvEmployees[3, row].Value.ToString());
-            adress = objEmployees.dgvEmployees[6, row].Value.ToString();
-            phone = objEmployees.dgvEmployees[5, row].Value.ToString();
-            email = objEmployees.dgvEmployees[4, row].Value.ToString();
-            hireDate = DateTime.Parse(objEmployees.dgvEmployees[11, row].Value.ToString());
-            maritalStatus = objEmployees.dgvEmployees[14, row].Value.ToString();
-            typeEmployee = objEmployees.dgvEmployees[13, row].Value.ToString();
-            statusEmployee = objEmployees.dgvEmployees[15, row].Value.ToString();
-            salary = double.Parse(objEmployees.dgvEmployees[7, row].Value.ToString());
-            affiliationNumber = int.Parse(objEmployees.dgvEmployees[10, row].Value.ToString());
-            bankAccount = objEmployees.dgvEmployees[8, row].Value.ToString();
-            username = objEmployees.dgvEmployees[16, row].Value.ToString();
-            businessP = objEmployees.dgvEmployees[18, row].Value.ToString();
-            department = objEmployees.dgvEmployees[12, row].Value.ToString();
-            bank = objEmployees.dgvEmployees[9, row].Value.ToString();
+            names = objEmployees.dgvEmployees[1, row].Value.ToString();
+            lastNames = objEmployees.dgvEmployees[2, row].Value.ToString();
+            dui = objEmployees.dgvEmployees[3, row].Value.ToString();
+            birthDate = DateTime.Parse(objEmployees.dgvEmployees[4, row].Value.ToString());
+            adress = objEmployees.dgvEmployees[7, row].Value.ToString();
+            phone = objEmployees.dgvEmployees[6, row].Value.ToString();
+            email = objEmployees.dgvEmployees[5, row].Value.ToString();
+            hireDate = DateTime.Parse(objEmployees.dgvEmployees[12, row].Value.ToString());
+            maritalStatus = objEmployees.dgvEmployees[15, row].Value.ToString();
+            typeEmployee = objEmployees.dgvEmployees[14, row].Value.ToString();
+            statusEmployee = objEmployees.dgvEmployees[16, row].Value.ToString();
+            salary = double.Parse(objEmployees.dgvEmployees[8, row].Value.ToString());
+            affiliationNumber = int.Parse(objEmployees.dgvEmployees[11, row].Value.ToString());
+            bankAccount = objEmployees.dgvEmployees[9, row].Value.ToString();
+            username = objEmployees.dgvEmployees[17, row].Value.ToString();
+            businessP = objEmployees.dgvEmployees[19, row].Value.ToString();
+            department = objEmployees.dgvEmployees[13, row].Value.ToString();
+            bank = objEmployees.dgvEmployees[10, row].Value.ToString();
 
             //Se crea instancia del formulario para abrirlo
-            FrmInfoEmployee openForm = new FrmInfoEmployee(employee, dui, birthDate, adress, phone, email, hireDate, maritalStatus, typeEmployee, statusEmployee, salary, affiliationNumber, bankAccount, username, businessP, department, bank);
+            FrmInfoEmployee openForm = new FrmInfoEmployee(names, lastNames, dui, birthDate, adress, phone, email, hireDate, maritalStatus, typeEmployee, statusEmployee, salary, affiliationNumber, bankAccount, username, businessP, department, bank);
             openForm.ShowDialog();
             RefreshDataGridEmployees();
         }
