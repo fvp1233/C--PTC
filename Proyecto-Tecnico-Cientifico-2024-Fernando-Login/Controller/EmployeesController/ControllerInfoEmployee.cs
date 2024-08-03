@@ -12,11 +12,11 @@ namespace PTC2024.Controller.EmployeesController
     {
         FrmInfoEmployee objInfoEmployees;
         //CONSTRUCTOR 
-        public ControllerInfoEmployee(FrmInfoEmployee Vista, string employee, string dui, DateTime birthDate, string adress, string phone, string email, DateTime hireDate, string maritalStatus, string typeEmployee, string statusEmployee, double salary, int affiliationNumber, string bankAccount, string username, string businessP, string department, string bank)
+        public ControllerInfoEmployee(FrmInfoEmployee Vista, string names,string lastNames, string dui, DateTime birthDate, string adress, string phone, string email, DateTime hireDate, string maritalStatus, string typeEmployee, string statusEmployee, double salary, int affiliationNumber, string bankAccount, string username, string businessP, string department, string bank)
         {
             objInfoEmployees = Vista;
             DisableComponents();
-            ChargeValues(employee, dui, birthDate, adress, phone, email, hireDate, maritalStatus, typeEmployee, statusEmployee, salary, affiliationNumber, bankAccount, username, businessP, department, bank);
+            ChargeValues(names,lastNames, dui, birthDate, adress, phone, email, hireDate, maritalStatus, typeEmployee, statusEmployee, salary, affiliationNumber, bankAccount, username, businessP, department, bank);
             //Botón regresar
             objInfoEmployees.BtnCancelar.Click += new EventHandler(CloseForm);
 
@@ -24,7 +24,8 @@ namespace PTC2024.Controller.EmployeesController
 
         public void DisableComponents()
         {
-            objInfoEmployees.txtEmployee.Enabled = false;
+            objInfoEmployees.txtNames.Enabled = false;
+            objInfoEmployees.txtLastNames.Enabled = false;
             objInfoEmployees.txtDUI.Enabled = false;
             objInfoEmployees.dtBirthDate.Enabled = false;
             objInfoEmployees.txtAddress.Enabled = false;
@@ -44,9 +45,10 @@ namespace PTC2024.Controller.EmployeesController
 
         }
 
-        public void ChargeValues(string employee, string dui, DateTime birthDate, string adress, string phone, string email, DateTime hireDate, string maritalStatus, string typeEmployee, string statusEmployee, double salary, int affiliationNumber, string bankAccount, string username, string businessP, string department, string bank)
+        public void ChargeValues(string names, string lastNames, string dui, DateTime birthDate, string adress, string phone, string email, DateTime hireDate, string maritalStatus, string typeEmployee, string statusEmployee, double salary, int affiliationNumber, string bankAccount, string username, string businessP, string department, string bank)
         {
-            objInfoEmployees.txtEmployee.Text = employee;
+            objInfoEmployees.txtNames.Text = names;
+            objInfoEmployees.txtLastNames.Text = lastNames;
             objInfoEmployees.txtDUI.Text = dui;
             objInfoEmployees.dtBirthDate.Value = birthDate;
             objInfoEmployees.txtAddress.Text = adress;

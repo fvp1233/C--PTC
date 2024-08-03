@@ -111,7 +111,6 @@
     <Compile Include="Controller\LogInController\ControllerRegister.cs" />
     <Compile Include="Controller\PayrollsController\ControllerInfoPayroll.cs" />
     <Compile Include="Controller\EmployeesController\ControllerEmployees.cs" />
-    <Compile Include="Controller\EmployeesController\ControllerPayrolls.cs" />
     <Compile Include="Controller\EmployeesController\ControllerUpdateEmployee.cs" />
     <Compile Include="Controller\PayrollsController\ControllerUpdatePayroll.cs" />
     <Compile Include="Controller\PayrollsController\ControllerViewPayrolls.cs" />
