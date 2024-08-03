@@ -69,7 +69,9 @@ namespace PTC2024.Controller.Employees
             objEmployees.dgvEmployees.Columns[9].Visible = false;
             objEmployees.dgvEmployees.Columns[10].Visible = false;
             objEmployees.dgvEmployees.Columns[13].Visible = false;
+            objEmployees.dgvEmployees.Columns[14].Visible = false;
             objEmployees.dgvEmployees.Columns[16].Visible = false;
+            objEmployees.dgvEmployees.Columns[17].Visible = false;
         }
         public void ViewEmployeeInfo(object sender, EventArgs e)
         {
@@ -124,48 +126,49 @@ namespace PTC2024.Controller.Employees
         {
             //Se declara la variable row, que va a guardar el número de la fila del registro escogido para eliminar
             int row = objEmployees.dgvEmployees.CurrentRow.Index;
-            #region Intento de usar la alerta personalizada :(
-            ////Creamos un objeto del formulario que servirá para confirmar la accion de eliminar - Comentario
-            //FrmDeleteAlert openDeleteAlert = new FrmDeleteAlert();
-            ////Creamos una instancia del controlador del formulario que usaremos para confirmar la acción a partir de un valor int que este nos va enviar. - Comentario
-            //ControllerDeleteAlert objControllerDeleteAlert = new ControllerDeleteAlert(openDeleteAlert);
-            //openDeleteAlert.FormBorderStyle = FormBorderStyle.None;
-            //openDeleteAlert.ShowDialog();
-            ////Evaluamos la respuesta que nos envió el formulario despues de presionar uno de los botones -Comentario
-            //if (objControllerDeleteAlert.ConfirmValue == 1)
+
+            //Creamos un objeto del formulario que servirá para confirmar la accion de eliminar - 
+            FrmDeleteAlert openDeleteAlert = new FrmDeleteAlert();
+            //Creamos una instancia del controlador del formulario que usaremos para confirmar la acción a partir de un valor int que este nos va enviar. 
+            ControllerDeleteAlert objControllerDeleteAlert = new ControllerDeleteAlert(openDeleteAlert);
+            openDeleteAlert.FormBorderStyle = FormBorderStyle.None;
+            openDeleteAlert.ShowDialog();
+            //Evaluamos la respuesta que nos envió el formulario despues de presionar uno de los botones 
+            if (objControllerDeleteAlert.ConfirmValue == 1)
+            {
+                //Creamos un objeto de la clase DAOEmployees 
+                DAOEmployees daoEmployees = new DAOEmployees();
+                //Le damos valor al getter IdEmployee 
+                daoEmployees.Username = objEmployees.dgvEmployees[16, row].Value.ToString();
+                //Mandamos a llamar el proceso de la eliminación de empleado del DAOEmployees para evaluar el valor que el metodo nos retorna 
+                int value = daoEmployees.DisableEmployee();
+                if (value == 1)
+                {
+                    openDeleteAlert.Close();
+                    MessageBox.Show("El empleado fue deshabilitado junto a su usuario de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    openDeleteAlert.Close();
+                    MessageBox.Show("Ocurrió un error, el empleado no pudo ser deshabilitado", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            #region disable con messagebox de windows
+            //if (MessageBox.Show($"Esta seguro que desea eliminar a:\n {objEmployees.dgvEmployees[1, row].Value.ToString()}. \n Esta acción no puede ser revertida. ", "Confirme su acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             //{
-            //    //Creamos un objeto de la clase DAOEmployees - Comentario
             //    DAOEmployees daoEmployees = new DAOEmployees();
-            //    //Le damos valor al getter IdEmployee -Comentario
-            //    daoEmployees.IdEmployee = int.Parse(objEmployees.dgvEmployees[0, row].Value.ToString());
-            //    //Mandamos a llamar el proceso de la eliminación de empleado del DAOEmployees para evaluar el valor que el metodo nos retorna -Comentario
+            //    daoEmployees.Username = objEmployees.dgvEmployees[16, row].Value.ToString();
             //    int value = daoEmployees.DisableEmployee();
             //    if (value == 1)
             //    {
-            //        openDeleteAlert.Close();
             //        MessageBox.Show("El empleado fue deshabilitado de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //    }
             //    else
             //    {
-            //        openDeleteAlert.Close();
             //        MessageBox.Show("Ocurrió un error, el empleado no pudo ser deshabilitado", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //    }
             //}
             #endregion
-            if (MessageBox.Show($"Esta seguro que desea eliminar a:\n {objEmployees.dgvEmployees[1, row].Value.ToString()}. \n Esta acción no puede ser revertida. ", "Confirme su acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                DAOEmployees daoEmployees = new DAOEmployees();
-                daoEmployees.IdEmployee = int.Parse(objEmployees.dgvEmployees[0, row].Value.ToString());
-                int value = daoEmployees.DisableEmployee();
-                if (value == 1)
-                {
-                    MessageBox.Show("El empleado fue deshabilitado de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Ocurrió un error, el empleado no pudo ser deshabilitado", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
             RefreshDataGridEmployees();
         }
     }
