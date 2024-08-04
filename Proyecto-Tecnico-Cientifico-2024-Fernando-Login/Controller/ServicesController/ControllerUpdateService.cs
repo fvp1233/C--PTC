@@ -48,29 +48,49 @@ namespace PTC2024.Controller.ServicesController
         /*Este metodo se ejecutara cuando se vayan actualizar los datos*/
         public void UpdateService(object sender, EventArgs e)
         {
-            DAOUpdateService dAOUpdateService = new DAOUpdateService();
 
-            /*Se les asigna el valor a los atributos de la clase*/
-            dAOUpdateService.ServiceId = int.Parse(objUpdateService.txtId.Text);
-            dAOUpdateService.Nombre = objUpdateService.txtNombres.Text;
-            dAOUpdateService.Descripcion = objUpdateService.txtDescripcion.Text;
-            dAOUpdateService.Categoria = int.Parse(objUpdateService.comboTipoEmpleado.SelectedValue.ToString());
-            dAOUpdateService.Monto = double.Parse(objUpdateService.txtMonto.Text);
-
-            /*Se obtiene el valor retornado por el metodo UpdateService y se guarda en la variable ValorRetornado*/
-            int ValorRetornado = dAOUpdateService.UpdateService();
-
-            /*Se valida el valor retornado*/
-            if (ValorRetornado == 1)
+            bool Update;
+            /*Se verifica si los campos no estan vacios*/
+            if (objUpdateService.txtNombres.Text.Trim() == "" || objUpdateService.txtMonto.Text.Trim() == "")
             {
-                MessageBox.Show("Los datos se actualizaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Update = false;
+                MessageBox.Show("Favor llenar los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("Los datos no pudieron ser actualizados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Update= true;
             }
-            /*Al haberse ejecutado todo se cerrara el formulario automaticamente*/
-            objUpdateService.Close();
+
+
+            /*Si los campos no estan vacios entonces se siguq con el proceso*/
+            if (Update == true)
+            {
+                DAOUpdateService dAOUpdateService = new DAOUpdateService();
+
+                /*Se les asigna el valor a los atributos de la clase*/
+                dAOUpdateService.ServiceId = int.Parse(objUpdateService.txtId.Text);
+                dAOUpdateService.Nombre = objUpdateService.txtNombres.Text;
+                dAOUpdateService.Descripcion = objUpdateService.txtDescripcion.Text;
+                dAOUpdateService.Categoria = int.Parse(objUpdateService.comboTipoEmpleado.SelectedValue.ToString());
+                dAOUpdateService.Monto = double.Parse(objUpdateService.txtMonto.Text);
+
+                /*Se obtiene el valor retornado por el metodo UpdateService y se guarda en la variable ValorRetornado*/
+                int ValorRetornado = dAOUpdateService.UpdateService();
+
+                /*Se valida el valor retornado*/
+                if (ValorRetornado == 1)
+                {
+                    MessageBox.Show("Los datos se actualizaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Los datos no pudieron ser actualizados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                /*Al haberse ejecutado todo se cerrara el formulario automaticamente*/
+                objUpdateService.Close();
+
+            }
+
 
         }
 
