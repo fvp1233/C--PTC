@@ -18,13 +18,14 @@ namespace PTC2024.Controller.LogInController
         public ControllerLogin(FrmLogin Vista)
         {
             objLogIn = Vista;
+            objLogIn.Load += new EventHandler(InitialCharge);
             objLogIn.btnLoginBunifu.Click += new EventHandler(DataAccess);
-            objLogIn.TxtUserBunifu.Enter += new EventHandler(EnterUsername);
-            objLogIn.TxtUserBunifu.Leave += new EventHandler(LeaveUsername);
-            objLogIn.txtPasswordBunifu.Enter += new EventHandler(EnterPassword);
-            objLogIn.txtPasswordBunifu.Enter += new EventHandler(LeavePassword);
-            objLogIn.btnPasswordHide.Click += new EventHandler(HidePassword);
-            objLogIn.btnPasswordVisible.Click += new EventHandler(ShowPassword);
+            //objLogIn.TxtUserBunifu.Enter += new EventHandler(EnterUsername);
+            //objLogIn.TxtUserBunifu.Leave += new EventHandler(LeaveUsername);
+            //objLogIn.txtPasswordBunifu.Enter += new EventHandler(EnterPassword);
+            //objLogIn.txtPasswordBunifu.Leave += new EventHandler(LeavePassword);
+            objLogIn.HidePassword.Click += new EventHandler(HidePassword);
+            objLogIn.ShowPassword.Click += new EventHandler(ShowPassword);
         }
         private void DataAccess(object sender, EventArgs e)
         {
@@ -47,45 +48,52 @@ namespace PTC2024.Controller.LogInController
                 MessageBox.Show("Datos incorrectos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        private void EnterUsername(object sender, EventArgs e)
-        {
-            if (objLogIn.TxtUserBunifu.Text.Trim().Equals("Usuario"))
-            {
-                objLogIn.TxtUserBunifu.Clear();
-                objLogIn.TxtUserBunifu.Visible = true;
-            }
-        }
-        private void LeaveUsername(object sender, EventArgs e)
-        {
-            if (objLogIn.TxtUserBunifu.Text.Trim().Equals(""))
-            {
-                objLogIn.TxtUserBunifu.Text = "Usuario";
-            }
-        }
-        private void EnterPassword(object sender, EventArgs e)
-        {
-            if (objLogIn.txtPasswordBunifu.Text.Trim().Equals("Contraseña"))
-            {
-                objLogIn.txtPasswordBunifu.UseSystemPasswordChar = true;
-                objLogIn.txtPasswordBunifu.Clear();
-            }
-        }
-        private void LeavePassword(object sender, EventArgs e)
-        {
-            if (objLogIn.txtPasswordBunifu.Text.Trim().Equals(""))
-            {
-                objLogIn.txtPasswordBunifu.Text = "Contraseña";
-            }
-        }
+        //private void EnterUsername(object sender, EventArgs e)
+        //{
+        //    objLogIn.lblUser.Visible = true;
+        //    objLogIn.TxtUserBunifu.PlaceholderText = "";
+        //}
+        //private void LeaveUsername(object sender, EventArgs e)
+        //{
+        //    if (objLogIn.TxtUserBunifu.Text.Trim().Equals(""))
+        //    {
+        //        objLogIn.lblUser.Visible = false;
+        //        objLogIn.TxtUserBunifu.PlaceholderText = "Usuario";
+        //    }
+        //}
+
+        //private void EnterPassword(object sender, EventArgs e)
+        //{
+        //    objLogIn.lblPassword.Visible = true;
+        //    objLogIn.txtPasswordBunifu.PlaceholderText = "";
+        //}
+        //private void LeavePassword(object sender, EventArgs e)
+        //{
+        //    if (objLogIn.txtPasswordBunifu.Text.Trim().Equals(""))
+        //    {
+        //        objLogIn.lblPassword.Visible = false;
+        //        objLogIn.txtPasswordBunifu.PlaceholderText = "Contraseña";
+        //    }
+        //}
 
         public void ShowPassword(object sender, EventArgs e)
         {
-
+            objLogIn.txtPasswordBunifu.PasswordChar = '\0';
+            objLogIn.ShowPassword.Visible = false;
+            objLogIn.HidePassword.Visible = true;
         }
 
         public void HidePassword(object sender, EventArgs e)
         {
+            objLogIn.txtPasswordBunifu.PasswordChar = '*';
+            objLogIn.HidePassword.Visible = false;
+            objLogIn.ShowPassword.Visible = true;
+        }
 
+        public void InitialCharge(object sender, EventArgs e)
+        {
+            objLogIn.txtPasswordBunifu.PasswordChar = '*';
+            objLogIn.HidePassword.Visible = false;
         }
     }
 }
