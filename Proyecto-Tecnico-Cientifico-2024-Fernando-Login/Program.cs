@@ -10,8 +10,8 @@ using PTC2024.View.formularios.inicio;
 using PTC2024.View.login;
 using PTC2024.View.InventarioServicios;
 using PTC2024.View.BillsViews;
-using PTC2024.Controller;
-using PTC2024.Controller.Helper;
+using PTC2024.View.Clientes;
+using System.Web.UI.WebControls;
 
 namespace PTC2024
 {

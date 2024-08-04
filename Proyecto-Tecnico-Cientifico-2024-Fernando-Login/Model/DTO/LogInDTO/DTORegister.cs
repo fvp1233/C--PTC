@@ -29,7 +29,8 @@ namespace PTC2024.Model.DTO.LogInDTO
         private int affiliationNumber;
         private string bankAccount;
         private DateTime hireDate;
-     
+        private int userStatus;
+
 
         //Getter y Settersde los atributos
         public string Names { get => names; set => names = value; }
@@ -53,6 +54,6 @@ namespace PTC2024.Model.DTO.LogInDTO
         public int AffiliationNumber { get => affiliationNumber; set => affiliationNumber = value; }
         public string BankAccount { get => bankAccount; set => bankAccount = value; }
         public DateTime HireDate { get => hireDate; set => hireDate = value; }
-        
+        public int UserStatus { get => userStatus; set => userStatus = value; }
     }
 }

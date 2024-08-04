@@ -19,5 +19,10 @@ namespace PTC2024.formularios.login
             InitializeComponent();
             ControllerLogin control = new ControllerLogin(this);
         }
+
+        public static implicit operator System.Web.UI.WebControls.Login(Login v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

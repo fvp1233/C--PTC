@@ -6,8 +6,10 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using PTC2024.Controller.Helper;
+using PTC2024.formularios.login;
 using PTC2024.Model.DAO;
 using PTC2024.Model.DAO.LogInDAO;
 using PTC2024.View.formularios.inicio;
@@ -19,6 +21,8 @@ namespace PTC2024.Controller.LogInController
     {
         FrmRegister objNewUser;
         int Cpassword = 0;
+        formularios.login.Login log;
+        
         public ControllerRegister(FrmRegister view)
         {
             objNewUser = view;
@@ -100,6 +104,8 @@ namespace PTC2024.Controller.LogInController
             DAOInsertar.User = objNewUser.txtUser.Text;
             DAOInsertar.Password = commonClasses.ComputeSha256Hash(objNewUser.txtPassword.Text);
             DAOInsertar.ConfirmPassword = commonClasses.ComputeSha256Hash(objNewUser.txtConfirmedPassword.Text);
+            DAOInsertar.Status=1;
+
 
             //Insercion de datos de tabla tbBankAccount
             int returnn = DAOInsertar.GetNames();
@@ -108,6 +114,11 @@ namespace PTC2024.Controller.LogInController
             {
 
                 MessageBox.Show("Datos ingresados correctamente" + MessageBoxButtons.OK + MessageBoxIcon.Information);
+                objNewUser.Hide();
+                log = new formularios.login.Login();
+                log.Show();
+                
+               
 
             }
 
@@ -374,8 +385,15 @@ namespace PTC2024.Controller.LogInController
             }
         }
 
+        private void OpenLogin(object sender, EventArgs e)
+        {
+        
+
+        }
+
+                    }
     }
 
 
-}
+
 

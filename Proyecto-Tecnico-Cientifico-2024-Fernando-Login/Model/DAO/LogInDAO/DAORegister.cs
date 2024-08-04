@@ -9,6 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Web.Hosting;
+using PTC2024.View.login;
 
 namespace PTC2024.Model.DAO.LogInDAO
 {
@@ -69,13 +70,14 @@ namespace PTC2024.Model.DAO.LogInDAO
 
 
                 command.Connection = getConnection();
-                string queryPerson = "INSERT INTO tbUserData VALUES (@username, @password, @business)";
+                string queryPerson = "INSERT INTO tbUserData VALUES (@username, @password, @IdbusinessP,@IdStatus)";
                 SqlCommand cmdInsertData = new SqlCommand(queryPerson, command.Connection);
                 cmdInsertData.Parameters.AddWithValue("username", User);
                 cmdInsertData.Parameters.AddWithValue("password", Password);
-                cmdInsertData.Parameters.AddWithValue("business", BusinessP);
+                cmdInsertData.Parameters.AddWithValue("IdbusinessP", BusinessP);
+                cmdInsertData.Parameters.AddWithValue("IdStatus", UserStatus);
 
-                // falta agregar la tabla en base de datos cmdInsertData.Parameters.AddWithValue("confirmPassword", ConfirmPassword);
+               
                 int respuesta = cmdInsertData.ExecuteNonQuery();
 
                 if (respuesta == 1)
@@ -128,7 +130,10 @@ namespace PTC2024.Model.DAO.LogInDAO
 
                     if (respuesta == 1)
                     {
+                        
                         return 1;
+
+
                     }
 
                     else
@@ -150,7 +155,7 @@ namespace PTC2024.Model.DAO.LogInDAO
             catch (SqlException ex)
             {
 
-                MessageBox.Show($"{ex.Message}EC-005 ERROR BELLAKO: No se puedieron obtener los datos de los Nombres del usuario  ");
+                MessageBox.Show($"{ex.Message}EC-005  No se puedieron ingresar los datos de los datos del usuario  ");
                 return -1;
             }
             finally
