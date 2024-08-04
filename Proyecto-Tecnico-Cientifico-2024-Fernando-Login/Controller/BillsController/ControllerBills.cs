@@ -9,6 +9,7 @@ using PTC2024.Model.DAO;
 using PTC2024.Model.DTO;
 using PTC2024.Model.DAO.BillsDAO;
 using System.Data;
+using System.Windows.Forms;
 
 namespace PTC2024.Controller.BillsController
 {
@@ -32,7 +33,17 @@ namespace PTC2024.Controller.BillsController
         {
             DAOBills objBills = new DAOBills();
             DataSet ds = objBills.Bills();
-            objFormBills.dgvBills.DataSource = ds.Tables["viewBills"];
+            if (ds != null && ds.Tables.Contains("viewBills"))
+            {
+                objFormBills.dgvBills.DataSource = ds.Tables["viewBills"];
+            }
+            else
+            {
+                MessageBox.Show("No se encontraron datos para cargar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            //DataSet ds = objBills.Bills();
+            //objFormBills.dgvBills.DataSource = ds.Tables["viewBills"];
         }
         public void printBills(object sender, EventArgs e)
         {
@@ -48,7 +59,7 @@ namespace PTC2024.Controller.BillsController
             int pos = objFormBills.dgvBills.CurrentRow.Index;
             int id;
             string companyName, NIT, NRC, serviceName, statusBill, customer, employee, methodP;
-            DateTime startDate, FinalDate, fiscalPeriod;
+            DateTime startDate, FinalDate, Dateissued;
             float discount, subtotalPay, totalPay;
             id = int.Parse(objFormBills.dgvBills[0, pos].Value.ToString());
             companyName = objFormBills.dgvBills[1, pos].Value.ToString();
@@ -64,9 +75,9 @@ namespace PTC2024.Controller.BillsController
             FinalDate = DateTime.Parse(objFormBills.dgvBills[11, pos].Value.ToString());
             employee = objFormBills.dgvBills[12, pos].Value.ToString();
             statusBill = objFormBills.dgvBills[13, pos].Value.ToString();
-            // fiscalPeriod = DateTime.Parse(objFormBills.dgvBills[14, pos].Value.ToString());
+            Dateissued = DateTime.Parse(objFormBills.dgvBills[14, pos].Value.ToString());
 
-            FrmAddBills rectifyBill = new FrmAddBills(2, id, companyName, NIT, NRC, customer, serviceName, discount, subtotalPay, totalPay, methodP, startDate, FinalDate, employee, statusBill);
+            FrmAddBills rectifyBill = new FrmAddBills(2, id, companyName, NIT, NRC, customer, serviceName, discount, subtotalPay, totalPay, methodP, startDate, FinalDate, Dateissued, employee, statusBill);
                 //, fiscalPeriod);
 
             rectifyBill.ShowDialog();
