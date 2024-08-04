@@ -24,7 +24,6 @@ namespace PTC2024.Model.DTO.BillsDTO
         private string customer;
         private string employee;
         private string methodP;
-        private DateTime fiscalPeriod;
         //TABLE BILL DETAIL
         private int IdDetail;
         private int IdServices;
