@@ -239,7 +239,7 @@
             this.txtBankAccount.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtBankAccount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBankAccount.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txtBankAccount.DefaultText = "Ingrese la cuenta de su banco";
+            this.txtBankAccount.DefaultText = "";
             this.txtBankAccount.FillColor = System.Drawing.Color.White;
             this.txtBankAccount.ForeColor = System.Drawing.Color.Black;
             this.txtBankAccount.HideSelection = true;
@@ -248,8 +248,7 @@
             this.txtBankAccount.IconPadding = 10;
             this.txtBankAccount.IconRight = null;
             this.txtBankAccount.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBankAccount.Lines = new string[] {
-        "Ingrese la cuenta de su banco"};
+            this.txtBankAccount.Lines = new string[0];
             this.txtBankAccount.Location = new System.Drawing.Point(376, 356);
             this.txtBankAccount.MaxLength = 32767;
             this.txtBankAccount.MinimumSize = new System.Drawing.Size(1, 1);
@@ -351,7 +350,7 @@
             this.txtISSS.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtISSS.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtISSS.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txtISSS.DefaultText = "Ingrese su número de afiliación";
+            this.txtISSS.DefaultText = "";
             this.txtISSS.FillColor = System.Drawing.Color.White;
             this.txtISSS.ForeColor = System.Drawing.Color.Black;
             this.txtISSS.HideSelection = true;
@@ -360,8 +359,7 @@
             this.txtISSS.IconPadding = 10;
             this.txtISSS.IconRight = null;
             this.txtISSS.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtISSS.Lines = new string[] {
-        "Ingrese su número de afiliación"};
+            this.txtISSS.Lines = new string[0];
             this.txtISSS.Location = new System.Drawing.Point(53, 428);
             this.txtISSS.MaxLength = 32767;
             this.txtISSS.MinimumSize = new System.Drawing.Size(1, 1);
@@ -506,7 +504,7 @@
             this.txtAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAddress.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txtAddress.DefaultText = "Ingrese su dirección";
+            this.txtAddress.DefaultText = "";
             this.txtAddress.FillColor = System.Drawing.Color.White;
             this.txtAddress.ForeColor = System.Drawing.Color.Black;
             this.txtAddress.HideSelection = true;
@@ -515,8 +513,7 @@
             this.txtAddress.IconPadding = 10;
             this.txtAddress.IconRight = null;
             this.txtAddress.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAddress.Lines = new string[] {
-        "Ingrese su dirección"};
+            this.txtAddress.Lines = new string[0];
             this.txtAddress.Location = new System.Drawing.Point(53, 356);
             this.txtAddress.MaxLength = 32767;
             this.txtAddress.MinimumSize = new System.Drawing.Size(1, 1);
@@ -601,7 +598,7 @@
             this.txtPhone.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPhone.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txtPhone.DefaultText = "Ingrese su número teléfonico";
+            this.txtPhone.DefaultText = "";
             this.txtPhone.FillColor = System.Drawing.Color.White;
             this.txtPhone.ForeColor = System.Drawing.Color.Black;
             this.txtPhone.HideSelection = true;
@@ -610,8 +607,7 @@
             this.txtPhone.IconPadding = 10;
             this.txtPhone.IconRight = null;
             this.txtPhone.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPhone.Lines = new string[] {
-        "Ingrese su número teléfonico"};
+            this.txtPhone.Lines = new string[0];
             this.txtPhone.Location = new System.Drawing.Point(376, 288);
             this.txtPhone.MaxLength = 32767;
             this.txtPhone.MinimumSize = new System.Drawing.Size(1, 1);
@@ -696,7 +692,7 @@
             this.txtDUI.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtDUI.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDUI.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txtDUI.DefaultText = "Ingrese su DUI";
+            this.txtDUI.DefaultText = "";
             this.txtDUI.FillColor = System.Drawing.Color.White;
             this.txtDUI.ForeColor = System.Drawing.Color.Black;
             this.txtDUI.HideSelection = true;
@@ -705,8 +701,7 @@
             this.txtDUI.IconPadding = 10;
             this.txtDUI.IconRight = null;
             this.txtDUI.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDUI.Lines = new string[] {
-        "Ingrese su DUI"};
+            this.txtDUI.Lines = new string[0];
             this.txtDUI.Location = new System.Drawing.Point(53, 288);
             this.txtDUI.MaxLength = 32767;
             this.txtDUI.MinimumSize = new System.Drawing.Size(1, 1);
@@ -776,6 +771,7 @@
             this.dtBirth.BackColor = System.Drawing.Color.White;
             this.dtBirth.BorderColor = System.Drawing.Color.Silver;
             this.dtBirth.BorderRadius = 1;
+            this.dtBirth.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dtBirth.Color = System.Drawing.Color.Silver;
             this.dtBirth.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtBirth.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
@@ -835,7 +831,7 @@
             this.txtLastnames.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtLastnames.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtLastnames.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txtLastnames.DefaultText = "Ingrese sus apellidos";
+            this.txtLastnames.DefaultText = "";
             this.txtLastnames.FillColor = System.Drawing.Color.White;
             this.txtLastnames.ForeColor = System.Drawing.Color.Black;
             this.txtLastnames.HideSelection = true;
@@ -844,8 +840,7 @@
             this.txtLastnames.IconPadding = 10;
             this.txtLastnames.IconRight = null;
             this.txtLastnames.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtLastnames.Lines = new string[] {
-        "Ingrese sus apellidos"};
+            this.txtLastnames.Lines = new string[0];
             this.txtLastnames.Location = new System.Drawing.Point(376, 156);
             this.txtLastnames.MaxLength = 32767;
             this.txtLastnames.MinimumSize = new System.Drawing.Size(1, 1);
@@ -930,7 +925,7 @@
             this.txtNames.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtNames.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNames.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txtNames.DefaultText = "Ingrese sus nombres";
+            this.txtNames.DefaultText = "";
             this.txtNames.FillColor = System.Drawing.Color.White;
             this.txtNames.ForeColor = System.Drawing.Color.Black;
             this.txtNames.HideSelection = true;
@@ -939,8 +934,7 @@
             this.txtNames.IconPadding = 10;
             this.txtNames.IconRight = null;
             this.txtNames.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNames.Lines = new string[] {
-        "Ingrese sus nombres"};
+            this.txtNames.Lines = new string[0];
             this.txtNames.Location = new System.Drawing.Point(53, 156);
             this.txtNames.MaxLength = 32767;
             this.txtNames.MinimumSize = new System.Drawing.Size(1, 1);
@@ -970,7 +964,7 @@
             this.txtNames.Padding = new System.Windows.Forms.Padding(3);
             this.txtNames.PasswordChar = '\0';
             this.txtNames.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtNames.PlaceholderText = "Ingrese sus nombres\r\n";
+            this.txtNames.PlaceholderText = "Ingrese sus nombres";
             this.txtNames.ReadOnly = false;
             this.txtNames.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtNames.SelectedText = "";
@@ -984,7 +978,7 @@
             this.txtNames.TextMarginBottom = 0;
             this.txtNames.TextMarginLeft = 3;
             this.txtNames.TextMarginTop = 1;
-            this.txtNames.TextPlaceholder = "Ingrese sus nombres\r\n";
+            this.txtNames.TextPlaceholder = "Ingrese sus nombres";
             this.txtNames.UseSystemPasswordChar = false;
             this.txtNames.WordWrap = true;
             // 
@@ -1025,7 +1019,7 @@
             this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmail.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txtEmail.DefaultText = "Ingresa un correo electrónico";
+            this.txtEmail.DefaultText = "";
             this.txtEmail.FillColor = System.Drawing.Color.White;
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.HideSelection = true;
@@ -1034,8 +1028,7 @@
             this.txtEmail.IconPadding = 10;
             this.txtEmail.IconRight = null;
             this.txtEmail.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.Lines = new string[] {
-        "Ingresa un correo electrónico"};
+            this.txtEmail.Lines = new string[0];
             this.txtEmail.Location = new System.Drawing.Point(376, 222);
             this.txtEmail.MaxLength = 32767;
             this.txtEmail.MinimumSize = new System.Drawing.Size(1, 1);
@@ -1103,7 +1096,7 @@
             this.txtConfirmedPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtConfirmedPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtConfirmedPassword.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txtConfirmedPassword.DefaultText = "Confirme su contraseña";
+            this.txtConfirmedPassword.DefaultText = "";
             this.txtConfirmedPassword.FillColor = System.Drawing.Color.White;
             this.txtConfirmedPassword.ForeColor = System.Drawing.Color.Black;
             this.txtConfirmedPassword.HideSelection = true;
@@ -1112,8 +1105,7 @@
             this.txtConfirmedPassword.IconPadding = 10;
             this.txtConfirmedPassword.IconRight = null;
             this.txtConfirmedPassword.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtConfirmedPassword.Lines = new string[] {
-        "Confirme su contraseña"};
+            this.txtConfirmedPassword.Lines = new string[0];
             this.txtConfirmedPassword.Location = new System.Drawing.Point(376, 579);
             this.txtConfirmedPassword.MaxLength = 32767;
             this.txtConfirmedPassword.MinimumSize = new System.Drawing.Size(1, 1);
@@ -1197,7 +1189,7 @@
             this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txtPassword.DefaultText = "Ingrese una contraseña";
+            this.txtPassword.DefaultText = "";
             this.txtPassword.FillColor = System.Drawing.Color.White;
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.HideSelection = true;
@@ -1206,8 +1198,7 @@
             this.txtPassword.IconPadding = 10;
             this.txtPassword.IconRight = null;
             this.txtPassword.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.Lines = new string[] {
-        "Ingrese una contraseña"};
+            this.txtPassword.Lines = new string[0];
             this.txtPassword.Location = new System.Drawing.Point(53, 579);
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.MinimumSize = new System.Drawing.Size(1, 1);
@@ -1242,7 +1233,7 @@
             this.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPassword.SelectedText = "";
             this.txtPassword.SelectionLength = 0;
-            this.txtPassword.SelectionStart = 22;
+            this.txtPassword.SelectionStart = 0;
             this.txtPassword.ShortcutsEnabled = true;
             this.txtPassword.Size = new System.Drawing.Size(260, 32);
             this.txtPassword.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
@@ -1380,7 +1371,7 @@
             this.txtUser.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUser.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txtUser.DefaultText = "Ingrese un nombre de usuario";
+            this.txtUser.DefaultText = "";
             this.txtUser.FillColor = System.Drawing.Color.White;
             this.txtUser.ForeColor = System.Drawing.Color.Black;
             this.txtUser.HideSelection = true;
@@ -1389,8 +1380,7 @@
             this.txtUser.IconPadding = 10;
             this.txtUser.IconRight = null;
             this.txtUser.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUser.Lines = new string[] {
-        "Ingrese un nombre de usuario"};
+            this.txtUser.Lines = new string[0];
             this.txtUser.Location = new System.Drawing.Point(376, 504);
             this.txtUser.MaxLength = 32767;
             this.txtUser.MinimumSize = new System.Drawing.Size(1, 1);

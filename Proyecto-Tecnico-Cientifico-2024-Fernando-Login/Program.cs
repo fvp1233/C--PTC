@@ -26,7 +26,10 @@ namespace PTC2024
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+
             ControllerInitialView.InitialView();
+
         }
 
     }
