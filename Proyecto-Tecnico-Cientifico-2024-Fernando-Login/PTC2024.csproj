@@ -106,6 +106,7 @@
     <Compile Include="Controller\EmployeesController\ControllerAddEmployee.cs" />
     <Compile Include="Controller\EmployeesController\ControllerInfoEmployee.cs" />
     <Compile Include="Controller\Helper\CommonClasses.cs" />
+    <Compile Include="Controller\Helper\ControllerInitialView.cs" />
     <Compile Include="Controller\Helper\SessionVar.cs" />
     <Compile Include="Controller\LogInController\ControllerLogin.cs" />
     <Compile Include="Controller\LogInController\ControllerRecoverPassword.cs" />
@@ -292,11 +293,11 @@
     <Compile Include="View\Service inventory\FrmServices.Designer.cs">
       <DependentUpon>FrmServices.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\login\Login.cs">
+    <Compile Include="View\login\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\login\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="View\login\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="View\login\RecoverPassword.cs">
       <SubType>Form</SubType>
@@ -372,8 +373,8 @@
     <EmbeddedResource Include="View\Service inventory\FrmServices.resx">
       <DependentUpon>FrmServices.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\login\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="View\login\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\login\RecoverPassword.resx">
       <DependentUpon>RecoverPassword.cs</DependentUpon>
@@ -408,6 +409,8 @@
   <ItemGroup>
     <Content Include="Resources\ActualizarEmpleado.png" />
     <Content Include="Resources\AgregarEmpleado.png" />
+    <Content Include="Resources\ojoAbierto.png" />
+    <Content Include="Resources\ojoCerrado.png" />
     <Content Include="Resources\usuarioRegister.png" />
     <None Include="Resources\User.png" />
     <None Include="Resources\AgregarEmpleado1.png" />

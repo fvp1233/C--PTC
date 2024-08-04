@@ -3220,7 +3220,7 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAIBL9dFH/wc9ndQMxwhTgQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bunifuFlatButton1.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnLogOut.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAADjlJREFUeF7t3WuopXX1wHGngghzLCkzk5DuZAVpZHSHioIio4tRFChJRSEY0YsI

@@ -11,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PTC2024.View.login;
+using PTC2024.formularios.login;
 
 namespace PTC2024.Controller.StartMenuController
 {
@@ -31,6 +33,9 @@ namespace PTC2024.Controller.StartMenuController
             objStartMenu.btnMenuServices.Click += new EventHandler(LoadServiceForm);
             objStartMenu.btnMenuCustomers.Click += new EventHandler(LoadCustomersForm);
             objStartMenu.btnMenuBills.Click += new EventHandler(LoadBillsForm);
+            objStartMenu.btnLogOut.Click += new EventHandler(LogingOut);
+            objStartMenu.FormClosed += new FormClosedEventHandler(CloseProgram);
+            
         }
         void InitialAccess(object sender, EventArgs e)
         {
@@ -111,6 +116,52 @@ namespace PTC2024.Controller.StartMenuController
             {
                 form.BringToFront();
             }
+
+        }
+
+        public void LogingOut(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Quiere cerrar la sesión?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                ClearVarSession();
+                FrmLogin backToLogin = new FrmLogin();
+                backToLogin.Show();
+                objStartMenu.Dispose();
+            }
+        }
+
+        public void LogOut()
+        {
+            if (MessageBox.Show("¿Quiere cerrar la sesión?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                ClearVarSession();
+                FrmLogin backToLogin = new FrmLogin();
+                backToLogin.Show();
+                objStartMenu.Dispose();
+            }
+        }
+
+        public void ClearVarSession()
+        {
+            SessionVar.Username = string.Empty;
+            SessionVar.Password = string.Empty;
+            SessionVar.FullName = string.Empty;
+            SessionVar.Access = string.Empty;
+            SessionVar.IdBussinesP = 0;
+        }
+        
+        public void CloseProgram(object sender, EventArgs e)
+        {
+            EndProgram();
+        }
+
+        public void EndProgram()
+        {
+            if(MessageBox.Show("¿Desea cerrar el programa? \n La sesión se cerrará automáticamente", "Cerar programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+            
         }
     }
 }

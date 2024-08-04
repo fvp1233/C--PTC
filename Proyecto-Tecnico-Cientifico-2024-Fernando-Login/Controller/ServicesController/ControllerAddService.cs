@@ -45,28 +45,46 @@ namespace PTC2024.Controller.ServicesController
         /*Metodo para añadir servicio*/
         public void AddService(object sender, EventArgs e)
         {
-            DAOAddService dAOAddService = new DAOAddService();
+            bool Add;
 
-            /* Se le dan valores a los atributos del DAOAddService*/
-            dAOAddService.Nombre = objAddService.txtNombres.Text;
-            dAOAddService.Descripcion = objAddService.txtDescripcion.Text;
-            dAOAddService.Categorias = (int)objAddService.comboTipoEmpleado.SelectedValue;
-            dAOAddService.Monto = double.Parse(objAddService.txtMonto.Text);
-
-            /*Se obtiene el valor que retorno el metodo InsertService*/
-            int respuesta = dAOAddService.InsertService();
-
-            /*Se valida la respuesta*/
-            if (respuesta == 1)
+            /*Se verifica si los campos no estan vacios*/
+            if (objAddService.txtNombres.Text.Trim() == "" || objAddService.txtMonto.Text.Trim() == "")
             {
-                MessageBox.Show("Los datos se ingresaron correctamente", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                objAddService.Close();
+                Add = false;
+                MessageBox.Show("Favor rellenar los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                MessageBox.Show("Los datos no pudieron ser ingresados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Add = true;
             }
 
+
+            /*Si los campos no estan vacios entonces se siguq con el proceso*/
+            if (Add == true)
+            {
+                DAOAddService dAOAddService = new DAOAddService();
+
+                /* Se le dan valores a los atributos del DAOAddService*/
+                dAOAddService.Nombre = objAddService.txtNombres.Text;
+                dAOAddService.Descripcion = objAddService.txtDescripcion.Text;
+                dAOAddService.Categorias = (int)objAddService.comboTipoEmpleado.SelectedValue;
+                dAOAddService.Monto = double.Parse(objAddService.txtMonto.Text);
+
+                /*Se obtiene el valor que retorno el metodo InsertService*/
+                int respuesta = dAOAddService.InsertService();
+
+                /*Se valida la respuesta*/
+                if (respuesta == 1)
+                {
+                    MessageBox.Show("Los datos se ingresaron correctamente", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    objAddService.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Los datos no pudieron ser ingresados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
 
         }
 
@@ -76,5 +94,6 @@ namespace PTC2024.Controller.ServicesController
             /*Se cierra el formulario*/
             objAddService.Close();
         }
+
     }
 }

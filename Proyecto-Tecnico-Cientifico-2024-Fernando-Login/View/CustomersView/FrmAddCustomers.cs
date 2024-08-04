@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PTC2024.Controller;
+using PTC2024.Controller.CustomersController;
 
 namespace PTC2024.View.Clientes
 {
@@ -15,6 +17,9 @@ namespace PTC2024.View.Clientes
         public FrmAddCustomers()
         {
             InitializeComponent();
+            ControllerAddCustomers objControl = new ControllerAddCustomers(this);
         }
+
+        
     }
 }
