@@ -284,5 +284,35 @@ namespace PTC2024.Model.DAO
             SqlCommand cmdDeleteUser = new SqlCommand(queryDeleteUser, command.Connection);
             cmdDeleteUser.Parameters.AddWithValue("username", Username);
         }
+
+        public int ValidateFirstUse()
+        {
+            //Este método revisará en la base si ya existe algún empleado que pueda iniciar sesión
+            try
+            {
+                command.Connection = getConnection();
+                //creamos query con las acciones a realizar
+                string queryValidateE = "SELECT COUNT(*) FROM viewLogIn";
+                SqlCommand cmdValidateE = new SqlCommand( queryValidateE, command.Connection);
+                int totalUsers = (int)cmdValidateE.ExecuteScalar();
+                return totalUsers;
+            }
+            catch (SqlException sqlEx)
+            {
+                //Si sucede un error en el try se devuelve un -1
+                MessageBox.Show(sqlEx.Message);
+                return -1;
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return -1;
+            }
+            finally 
+            { 
+                command.Connection.Close(); 
+            } 
+        }
     }
 }

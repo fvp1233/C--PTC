@@ -14,8 +14,8 @@ namespace PTC2024.Controller.LogInController
 {
     internal class ControllerLogin
     {
-        Login objLogIn;
-        public ControllerLogin(Login Vista)
+        FrmLogin objLogIn;
+        public ControllerLogin(FrmLogin Vista)
         {
             objLogIn = Vista;
             objLogIn.btnLoginBunifu.Click += new EventHandler(DataAccess);
