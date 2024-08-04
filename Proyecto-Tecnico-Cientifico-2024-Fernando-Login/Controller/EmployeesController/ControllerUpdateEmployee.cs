@@ -231,5 +231,7 @@ namespace PTC2024.Controller.EmployeesController
                 objUpdateEmployee.lblSalaryRequest.Visible = true;
             }
         }
+
+
     }
 }
