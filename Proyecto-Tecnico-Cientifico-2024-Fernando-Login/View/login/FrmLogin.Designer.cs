@@ -47,23 +47,25 @@
             this.linkLabel = new System.Windows.Forms.LinkLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.lbPassword = new System.Windows.Forms.Label();
-            this.lbUser = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.Label();
-            this.btnPasswordVisible = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.btnPasswordHide = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.ShowPassword = new System.Windows.Forms.PictureBox();
+            this.HidePassword = new System.Windows.Forms.PictureBox();
             this.dataLogin.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HidePassword)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLogin
             // 
             this.dataLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
-            this.dataLogin.Controls.Add(this.btnPasswordHide);
-            this.dataLogin.Controls.Add(this.btnPasswordVisible);
+            this.dataLogin.Controls.Add(this.HidePassword);
+            this.dataLogin.Controls.Add(this.ShowPassword);
             this.dataLogin.Controls.Add(this.panel1);
             this.dataLogin.Controls.Add(this.btnLoginBunifu);
             this.dataLogin.Controls.Add(this.txtPasswordBunifu);
@@ -71,8 +73,8 @@
             this.dataLogin.Controls.Add(this.linkLabel);
             this.dataLogin.Controls.Add(this.pictureBox2);
             this.dataLogin.Controls.Add(this.pictureBox3);
-            this.dataLogin.Controls.Add(this.lbPassword);
-            this.dataLogin.Controls.Add(this.lbUser);
+            this.dataLogin.Controls.Add(this.lblPassword);
+            this.dataLogin.Controls.Add(this.lblUser);
             this.dataLogin.Controls.Add(this.txtLogin);
             this.dataLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLogin.Location = new System.Drawing.Point(0, 0);
@@ -209,7 +211,7 @@
             this.txtPasswordBunifu.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtPasswordBunifu.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPasswordBunifu.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPasswordBunifu.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtPasswordBunifu.DefaultFont = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPasswordBunifu.DefaultText = "";
             this.txtPasswordBunifu.FillColor = System.Drawing.Color.White;
             this.txtPasswordBunifu.HideSelection = true;
@@ -219,7 +221,7 @@
             this.txtPasswordBunifu.IconRight = null;
             this.txtPasswordBunifu.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPasswordBunifu.Lines = new string[0];
-            this.txtPasswordBunifu.Location = new System.Drawing.Point(91, 216);
+            this.txtPasswordBunifu.Location = new System.Drawing.Point(84, 214);
             this.txtPasswordBunifu.MaxLength = 32767;
             this.txtPasswordBunifu.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPasswordBunifu.Modified = false;
@@ -246,9 +248,9 @@
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtPasswordBunifu.OnIdleState = stateProperties4;
             this.txtPasswordBunifu.Padding = new System.Windows.Forms.Padding(3);
-            this.txtPasswordBunifu.PasswordChar = '*';
+            this.txtPasswordBunifu.PasswordChar = '\0';
             this.txtPasswordBunifu.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtPasswordBunifu.PlaceholderText = "Contraseña";
+            this.txtPasswordBunifu.PlaceholderText = "";
             this.txtPasswordBunifu.ReadOnly = false;
             this.txtPasswordBunifu.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPasswordBunifu.SelectedText = "";
@@ -262,7 +264,7 @@
             this.txtPasswordBunifu.TextMarginBottom = 0;
             this.txtPasswordBunifu.TextMarginLeft = 3;
             this.txtPasswordBunifu.TextMarginTop = 1;
-            this.txtPasswordBunifu.TextPlaceholder = "Contraseña";
+            this.txtPasswordBunifu.TextPlaceholder = "";
             this.txtPasswordBunifu.UseSystemPasswordChar = false;
             this.txtPasswordBunifu.WordWrap = true;
             // 
@@ -285,7 +287,7 @@
             this.TxtUserBunifu.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.TxtUserBunifu.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.TxtUserBunifu.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtUserBunifu.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.TxtUserBunifu.DefaultFont = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtUserBunifu.DefaultText = "";
             this.TxtUserBunifu.FillColor = System.Drawing.Color.White;
             this.TxtUserBunifu.HideSelection = true;
@@ -295,7 +297,7 @@
             this.TxtUserBunifu.IconRight = null;
             this.TxtUserBunifu.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtUserBunifu.Lines = new string[0];
-            this.TxtUserBunifu.Location = new System.Drawing.Point(91, 127);
+            this.TxtUserBunifu.Location = new System.Drawing.Point(84, 125);
             this.TxtUserBunifu.MaxLength = 32767;
             this.TxtUserBunifu.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtUserBunifu.Modified = false;
@@ -324,7 +326,7 @@
             this.TxtUserBunifu.Padding = new System.Windows.Forms.Padding(3);
             this.TxtUserBunifu.PasswordChar = '\0';
             this.TxtUserBunifu.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.TxtUserBunifu.PlaceholderText = "Usuario";
+            this.TxtUserBunifu.PlaceholderText = "";
             this.TxtUserBunifu.ReadOnly = false;
             this.TxtUserBunifu.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TxtUserBunifu.SelectedText = "";
@@ -338,7 +340,7 @@
             this.TxtUserBunifu.TextMarginBottom = 0;
             this.TxtUserBunifu.TextMarginLeft = 3;
             this.TxtUserBunifu.TextMarginTop = 1;
-            this.TxtUserBunifu.TextPlaceholder = "Usuario";
+            this.TxtUserBunifu.TextPlaceholder = "";
             this.TxtUserBunifu.UseSystemPasswordChar = false;
             this.TxtUserBunifu.WordWrap = true;
             // 
@@ -359,7 +361,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(25, 117);
+            this.pictureBox2.Location = new System.Drawing.Point(33, 116);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(60, 58);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -370,115 +372,69 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(25, 202);
+            this.pictureBox3.Location = new System.Drawing.Point(32, 205);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(60, 58);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
             // 
-            // lbPassword
+            // lblPassword
             // 
-            this.lbPassword.AutoSize = true;
-            this.lbPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPassword.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbPassword.Location = new System.Drawing.Point(95, 192);
-            this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(89, 21);
-            this.lbPassword.TabIndex = 4;
-            this.lbPassword.Text = "Contraseña";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblPassword.Location = new System.Drawing.Point(88, 190);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(96, 21);
+            this.lblPassword.TabIndex = 4;
+            this.lblPassword.Text = "Contraseña";
             // 
-            // lbUser
+            // lblUser
             // 
-            this.lbUser.AutoSize = true;
-            this.lbUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUser.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbUser.Location = new System.Drawing.Point(95, 103);
-            this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(64, 21);
-            this.lbUser.TabIndex = 1;
-            this.lbUser.Text = "Usuario";
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblUser.Location = new System.Drawing.Point(88, 101);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(69, 21);
+            this.lblUser.TabIndex = 1;
+            this.lblUser.Text = "Usuario";
             // 
             // txtLogin
             // 
             this.txtLogin.AutoSize = true;
-            this.txtLogin.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLogin.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogin.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtLogin.Location = new System.Drawing.Point(183, 37);
+            this.txtLogin.Location = new System.Drawing.Point(187, 37);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(120, 47);
+            this.txtLogin.Size = new System.Drawing.Size(127, 41);
             this.txtLogin.TabIndex = 0;
             this.txtLogin.Text = "LOGIN";
             // 
-            // btnPasswordVisible
+            // ShowPassword
             // 
-            this.btnPasswordVisible.ActiveImage = null;
-            this.btnPasswordVisible.AllowAnimations = true;
-            this.btnPasswordVisible.AllowBuffering = false;
-            this.btnPasswordVisible.AllowToggling = false;
-            this.btnPasswordVisible.AllowZooming = false;
-            this.btnPasswordVisible.AllowZoomingOnFocus = false;
-            this.btnPasswordVisible.BackColor = System.Drawing.Color.White;
-            this.btnPasswordVisible.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPasswordVisible.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnPasswordVisible.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnPasswordVisible.ErrorImage")));
-            this.btnPasswordVisible.FadeWhenInactive = false;
-            this.btnPasswordVisible.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.btnPasswordVisible.Image = ((System.Drawing.Image)(resources.GetObject("btnPasswordVisible.Image")));
-            this.btnPasswordVisible.ImageActive = null;
-            this.btnPasswordVisible.ImageLocation = null;
-            this.btnPasswordVisible.ImageMargin = 5;
-            this.btnPasswordVisible.ImageSize = new System.Drawing.Size(28, 28);
-            this.btnPasswordVisible.ImageZoomSize = new System.Drawing.Size(33, 33);
-            this.btnPasswordVisible.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnPasswordVisible.InitialImage")));
-            this.btnPasswordVisible.Location = new System.Drawing.Point(408, 219);
-            this.btnPasswordVisible.Name = "btnPasswordVisible";
-            this.btnPasswordVisible.Rotation = 0;
-            this.btnPasswordVisible.ShowActiveImage = true;
-            this.btnPasswordVisible.ShowCursorChanges = false;
-            this.btnPasswordVisible.ShowImageBorders = true;
-            this.btnPasswordVisible.ShowSizeMarkers = false;
-            this.btnPasswordVisible.Size = new System.Drawing.Size(33, 33);
-            this.btnPasswordVisible.TabIndex = 16;
-            this.btnPasswordVisible.ToolTipText = "";
-            this.btnPasswordVisible.WaitOnLoad = false;
-            this.btnPasswordVisible.Zoom = 5;
-            this.btnPasswordVisible.ZoomSpeed = 10;
+            this.ShowPassword.BackColor = System.Drawing.Color.White;
+            this.ShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ShowPassword.Image = ((System.Drawing.Image)(resources.GetObject("ShowPassword.Image")));
+            this.ShowPassword.Location = new System.Drawing.Point(404, 218);
+            this.ShowPassword.Name = "ShowPassword";
+            this.ShowPassword.Size = new System.Drawing.Size(30, 30);
+            this.ShowPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ShowPassword.TabIndex = 16;
+            this.ShowPassword.TabStop = false;
             // 
-            // btnPasswordHide
+            // HidePassword
             // 
-            this.btnPasswordHide.ActiveImage = null;
-            this.btnPasswordHide.AllowAnimations = true;
-            this.btnPasswordHide.AllowBuffering = false;
-            this.btnPasswordHide.AllowToggling = false;
-            this.btnPasswordHide.AllowZooming = false;
-            this.btnPasswordHide.AllowZoomingOnFocus = false;
-            this.btnPasswordHide.BackColor = System.Drawing.Color.White;
-            this.btnPasswordHide.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPasswordHide.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnPasswordHide.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnPasswordHide.ErrorImage")));
-            this.btnPasswordHide.FadeWhenInactive = false;
-            this.btnPasswordHide.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.btnPasswordHide.Image = ((System.Drawing.Image)(resources.GetObject("btnPasswordHide.Image")));
-            this.btnPasswordHide.ImageActive = null;
-            this.btnPasswordHide.ImageLocation = null;
-            this.btnPasswordHide.ImageMargin = 5;
-            this.btnPasswordHide.ImageSize = new System.Drawing.Size(28, 28);
-            this.btnPasswordHide.ImageZoomSize = new System.Drawing.Size(33, 33);
-            this.btnPasswordHide.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnPasswordHide.InitialImage")));
-            this.btnPasswordHide.Location = new System.Drawing.Point(408, 219);
-            this.btnPasswordHide.Name = "btnPasswordHide";
-            this.btnPasswordHide.Rotation = 0;
-            this.btnPasswordHide.ShowActiveImage = true;
-            this.btnPasswordHide.ShowCursorChanges = false;
-            this.btnPasswordHide.ShowImageBorders = true;
-            this.btnPasswordHide.ShowSizeMarkers = false;
-            this.btnPasswordHide.Size = new System.Drawing.Size(33, 33);
-            this.btnPasswordHide.TabIndex = 17;
-            this.btnPasswordHide.ToolTipText = "";
-            this.btnPasswordHide.WaitOnLoad = false;
-            this.btnPasswordHide.Zoom = 5;
-            this.btnPasswordHide.ZoomSpeed = 10;
+            this.HidePassword.BackColor = System.Drawing.Color.White;
+            this.HidePassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HidePassword.Image = ((System.Drawing.Image)(resources.GetObject("HidePassword.Image")));
+            this.HidePassword.Location = new System.Drawing.Point(404, 218);
+            this.HidePassword.Name = "HidePassword";
+            this.HidePassword.Size = new System.Drawing.Size(30, 30);
+            this.HidePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HidePassword.TabIndex = 17;
+            this.HidePassword.TabStop = false;
             // 
             // FrmLogin
             // 
@@ -497,6 +453,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HidePassword)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -510,12 +468,12 @@
         private System.Windows.Forms.LinkLabel linkLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        public System.Windows.Forms.Label lbUser;
-        public System.Windows.Forms.Label lbPassword;
+        public System.Windows.Forms.Label lblUser;
+        public System.Windows.Forms.Label lblPassword;
         public Bunifu.UI.WinForms.BunifuTextBox TxtUserBunifu;
         public Bunifu.UI.WinForms.BunifuTextBox txtPasswordBunifu;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnLoginBunifu;
-        public Bunifu.UI.WinForms.BunifuImageButton btnPasswordVisible;
-        public Bunifu.UI.WinForms.BunifuImageButton btnPasswordHide;
+        public System.Windows.Forms.PictureBox ShowPassword;
+        public System.Windows.Forms.PictureBox HidePassword;
     }
 }
