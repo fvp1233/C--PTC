@@ -27,7 +27,7 @@ namespace PTC2024.Controller.Helper
             }
             else
             {
-                Application.Run(new Login());
+                Application.Run(new FrmLogin());
             }
 
         }

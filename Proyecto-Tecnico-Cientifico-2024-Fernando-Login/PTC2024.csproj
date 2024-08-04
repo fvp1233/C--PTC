@@ -293,11 +293,11 @@
     <Compile Include="View\Service inventory\FrmServices.Designer.cs">
       <DependentUpon>FrmServices.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\login\Login.cs">
+    <Compile Include="View\login\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\login\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="View\login\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="View\login\RecoverPassword.cs">
       <SubType>Form</SubType>
@@ -373,8 +373,8 @@
     <EmbeddedResource Include="View\Service inventory\FrmServices.resx">
       <DependentUpon>FrmServices.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\login\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="View\login\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\login\RecoverPassword.resx">
       <DependentUpon>RecoverPassword.cs</DependentUpon>

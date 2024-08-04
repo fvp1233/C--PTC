@@ -21,7 +21,7 @@ namespace PTC2024.Controller.LogInController
     {
         FrmRegister objNewUser;
         int Cpassword = 0;
-        formularios.login.Login log;
+
         
         public ControllerRegister(FrmRegister view)
         {
@@ -115,8 +115,7 @@ namespace PTC2024.Controller.LogInController
 
                 MessageBox.Show("Datos ingresados correctamente" + MessageBoxButtons.OK + MessageBoxIcon.Information);
                 objNewUser.Hide();
-                log = new formularios.login.Login();
-                log.Show();
+
                 
                
 
