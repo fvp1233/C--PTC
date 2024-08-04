@@ -121,7 +121,13 @@ namespace PTC2024.Controller.StartMenuController
 
         public void LogingOut(object sender, EventArgs e)
         {
-            LogOut();
+            if (MessageBox.Show("¿Quiere cerrar la sesión?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                ClearVarSession();
+                FrmLogin backToLogin = new FrmLogin();
+                backToLogin.Show();
+                objStartMenu.Dispose();
+            }
         }
 
         public void LogOut()
