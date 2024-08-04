@@ -22,7 +22,7 @@ namespace PTC2024.Model.DAO.BillsDAO
                 Command.Connection = getConnection();
                 string query = "SELECT * FROM viewBills";
                 SqlCommand comd = new SqlCommand(query, Command.Connection);
-                comd.ExecuteNonQuery();
+                //comd.ExecuteNonQuery();
                 SqlDataAdapter adap = new SqlDataAdapter(comd);
                 DataSet ds = new DataSet();
                 adap.Fill(ds, "viewBills");

@@ -188,7 +188,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             {
                 // Conexión con la base de datos
                 Command.Connection = getConnection();
-                string queryAddBill = "INSERT INTO tbBills(companyName, NIT, NRC, discount, subtotalPay, totalPay, startDate, finalDate, IdServices, IdStatusBill, IdCustomer, IdEmployee, IdMethodP) " +
+                string queryAddBill = "INSERT INTO tbBills(companyName, NIT, NRC, discount, subtotalPay, totalPay, startDate, finalDate,dateissued, IdServices, IdStatusBill, IdCustomer, IdEmployee, IdMethodP) " +
                                       "VALUES (@CompanyName, @NIT1, @NRC1, @Discount, @SubtotalPay, @TotalPay, @StartDate, @FinalDate, @Services, @StatusBills, @Customer, @Employee, @MethodP)";
 
                 // Se crea el comando SQL con la conexión y el query
@@ -203,6 +203,7 @@ namespace PTC2024.Model.DAO.BillsDAO
                 cmdAddBills.Parameters.AddWithValue("@TotalPay", TotalPay);
                 cmdAddBills.Parameters.AddWithValue("@StartDate", StartDate);
                 cmdAddBills.Parameters.AddWithValue("@FinalDate", FinalDate1);
+                cmdAddBills.Parameters.AddWithValue("dateissued",Dateissued);
                 cmdAddBills.Parameters.AddWithValue("@Services", Services);
                 cmdAddBills.Parameters.AddWithValue("@StatusBills", StatusBills);
                 cmdAddBills.Parameters.AddWithValue("@Customer", Customer);
