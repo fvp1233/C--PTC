@@ -23,6 +23,8 @@ namespace PTC2024.Controller.LogInController
             objLogIn.TxtUserBunifu.Leave += new EventHandler(LeaveUsername);
             objLogIn.txtPasswordBunifu.Enter += new EventHandler(EnterPassword);
             objLogIn.txtPasswordBunifu.Enter += new EventHandler(LeavePassword);
+            objLogIn.btnPasswordHide.Click += new EventHandler(HidePassword);
+            objLogIn.btnPasswordVisible.Click += new EventHandler(ShowPassword);
         }
         private void DataAccess(object sender, EventArgs e)
         {
@@ -76,5 +78,14 @@ namespace PTC2024.Controller.LogInController
             }
         }
 
+        public void ShowPassword(object sender, EventArgs e)
+        {
+
+        }
+
+        public void HidePassword(object sender, EventArgs e)
+        {
+
+        }
     }
 }

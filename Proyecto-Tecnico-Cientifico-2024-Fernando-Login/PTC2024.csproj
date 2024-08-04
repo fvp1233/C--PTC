@@ -409,6 +409,8 @@
   <ItemGroup>
     <Content Include="Resources\ActualizarEmpleado.png" />
     <Content Include="Resources\AgregarEmpleado.png" />
+    <Content Include="Resources\ojoAbierto.png" />
+    <Content Include="Resources\ojoCerrado.png" />
     <Content Include="Resources\usuarioRegister.png" />
     <None Include="Resources\User.png" />
     <None Include="Resources\AgregarEmpleado1.png" />
