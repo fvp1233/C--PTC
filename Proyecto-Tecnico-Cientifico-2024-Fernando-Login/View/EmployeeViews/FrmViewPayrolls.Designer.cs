@@ -30,17 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmViewPayrolls));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -52,7 +53,6 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnCreatePayroll = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
@@ -82,14 +82,16 @@
             this.bunifuCheckBox3 = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.bunifuCheckBox2 = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.bunifuCheckBox1 = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCreatePayroll = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.dgvPayrolls = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.cmsPayroll = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsUpdatePayroll = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDeletePayroll = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsPayrollInformation = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDownloadPDF = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDeletePayrolls = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
+            this.btnActualizarPlanillas = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -107,9 +109,9 @@
             this.tableLayoutPanel15.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.bunifuPanel1.SuspendLayout();
+            this.tableLayoutPanel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayrolls)).BeginInit();
             this.cmsPayroll.SuspendLayout();
-            this.tableLayoutPanel16.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -219,26 +221,26 @@
             this.txtSearch.Modified = false;
             this.txtSearch.Multiline = false;
             this.txtSearch.Name = "txtSearch";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtSearch.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtSearch.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtSearch.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            stateProperties4.ForeColor = System.Drawing.Color.White;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtSearch.OnIdleState = stateProperties4;
+            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtSearch.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtSearch.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtSearch.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Silver;
+            stateProperties8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            stateProperties8.ForeColor = System.Drawing.Color.White;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtSearch.OnIdleState = stateProperties8;
             this.txtSearch.Padding = new System.Windows.Forms.Padding(3);
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.White;
@@ -284,7 +286,7 @@
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 172F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 202F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(1135, 532);
             this.tableLayoutPanel5.TabIndex = 2;
@@ -295,11 +297,11 @@
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel10, 0, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(20, 3);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1094, 166);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1129, 196);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // tableLayoutPanel10
@@ -312,7 +314,7 @@
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.23077F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(1088, 160);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(1123, 190);
             this.tableLayoutPanel10.TabIndex = 11;
             // 
             // tableLayoutPanel7
@@ -328,98 +330,8 @@
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1082, 154);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1117, 184);
             this.tableLayoutPanel7.TabIndex = 6;
-            // 
-            // btnCreatePayroll
-            // 
-            this.btnCreatePayroll.AllowAnimations = true;
-            this.btnCreatePayroll.AllowMouseEffects = true;
-            this.btnCreatePayroll.AllowToggling = false;
-            this.btnCreatePayroll.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCreatePayroll.AnimationSpeed = 200;
-            this.btnCreatePayroll.AutoGenerateColors = false;
-            this.btnCreatePayroll.AutoRoundBorders = false;
-            this.btnCreatePayroll.AutoSizeLeftIcon = true;
-            this.btnCreatePayroll.AutoSizeRightIcon = true;
-            this.btnCreatePayroll.BackColor = System.Drawing.Color.Transparent;
-            this.btnCreatePayroll.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnCreatePayroll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCreatePayroll.BackgroundImage")));
-            this.btnCreatePayroll.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnCreatePayroll.ButtonText = "Generar planillas";
-            this.btnCreatePayroll.ButtonTextMarginLeft = 0;
-            this.btnCreatePayroll.ColorContrastOnClick = 45;
-            this.btnCreatePayroll.ColorContrastOnHover = 45;
-            this.btnCreatePayroll.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnCreatePayroll.CustomizableEdges = borderEdges2;
-            this.btnCreatePayroll.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnCreatePayroll.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnCreatePayroll.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnCreatePayroll.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnCreatePayroll.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnCreatePayroll.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnCreatePayroll.ForeColor = System.Drawing.Color.White;
-            this.btnCreatePayroll.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreatePayroll.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnCreatePayroll.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnCreatePayroll.IconMarginLeft = 11;
-            this.btnCreatePayroll.IconPadding = 10;
-            this.btnCreatePayroll.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCreatePayroll.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnCreatePayroll.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnCreatePayroll.IconSize = 25;
-            this.btnCreatePayroll.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnCreatePayroll.IdleBorderRadius = 20;
-            this.btnCreatePayroll.IdleBorderThickness = 1;
-            this.btnCreatePayroll.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnCreatePayroll.IdleIconLeftImage = null;
-            this.btnCreatePayroll.IdleIconRightImage = null;
-            this.btnCreatePayroll.IndicateFocus = false;
-            this.btnCreatePayroll.Location = new System.Drawing.Point(31, 10);
-            this.btnCreatePayroll.Name = "btnCreatePayroll";
-            this.btnCreatePayroll.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnCreatePayroll.OnDisabledState.BorderRadius = 20;
-            this.btnCreatePayroll.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnCreatePayroll.OnDisabledState.BorderThickness = 1;
-            this.btnCreatePayroll.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnCreatePayroll.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnCreatePayroll.OnDisabledState.IconLeftImage = null;
-            this.btnCreatePayroll.OnDisabledState.IconRightImage = null;
-            this.btnCreatePayroll.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnCreatePayroll.onHoverState.BorderRadius = 20;
-            this.btnCreatePayroll.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnCreatePayroll.onHoverState.BorderThickness = 1;
-            this.btnCreatePayroll.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnCreatePayroll.onHoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnCreatePayroll.onHoverState.IconLeftImage = null;
-            this.btnCreatePayroll.onHoverState.IconRightImage = null;
-            this.btnCreatePayroll.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnCreatePayroll.OnIdleState.BorderRadius = 20;
-            this.btnCreatePayroll.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnCreatePayroll.OnIdleState.BorderThickness = 1;
-            this.btnCreatePayroll.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnCreatePayroll.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnCreatePayroll.OnIdleState.IconLeftImage = null;
-            this.btnCreatePayroll.OnIdleState.IconRightImage = null;
-            this.btnCreatePayroll.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnCreatePayroll.OnPressedState.BorderRadius = 20;
-            this.btnCreatePayroll.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnCreatePayroll.OnPressedState.BorderThickness = 1;
-            this.btnCreatePayroll.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnCreatePayroll.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnCreatePayroll.OnPressedState.IconLeftImage = null;
-            this.btnCreatePayroll.OnPressedState.IconRightImage = null;
-            this.btnCreatePayroll.Size = new System.Drawing.Size(151, 52);
-            this.btnCreatePayroll.TabIndex = 93;
-            this.btnCreatePayroll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCreatePayroll.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnCreatePayroll.TextMarginLeft = 0;
-            this.btnCreatePayroll.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnCreatePayroll.UseDefaultRadiusAndThickness = true;
             // 
             // tableLayoutPanel8
             // 
@@ -441,7 +353,7 @@
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.42857F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.57143F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(854, 146);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(882, 176);
             this.tableLayoutPanel8.TabIndex = 2;
             // 
             // tableLayoutPanel13
@@ -451,17 +363,17 @@
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 0, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(572, 34);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(600, 40);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(279, 109);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(279, 133);
             this.tableLayoutPanel13.TabIndex = 9;
             // 
             // tableLayoutPanel14
             // 
             this.tableLayoutPanel14.ColumnCount = 1;
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel14.Controls.Add(this.ch12, 0, 3);
             this.tableLayoutPanel14.Controls.Add(this.ch11, 0, 2);
             this.tableLayoutPanel14.Controls.Add(this.ch10, 0, 1);
@@ -470,20 +382,20 @@
             this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 4;
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(273, 103);
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(273, 127);
             this.tableLayoutPanel14.TabIndex = 1;
             // 
             // ch12
             // 
             this.ch12.AutoSize = true;
             this.ch12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ch12.Location = new System.Drawing.Point(3, 82);
+            this.ch12.Location = new System.Drawing.Point(3, 78);
             this.ch12.Name = "ch12";
-            this.ch12.Size = new System.Drawing.Size(83, 18);
+            this.ch12.Size = new System.Drawing.Size(83, 19);
             this.ch12.TabIndex = 16;
             this.ch12.Text = "Diciembre";
             this.ch12.UseVisualStyleBackColor = true;
@@ -528,17 +440,17 @@
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel12, 0, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(374, 34);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(402, 40);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(192, 109);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(192, 133);
             this.tableLayoutPanel11.TabIndex = 8;
             // 
             // tableLayoutPanel12
             // 
             this.tableLayoutPanel12.ColumnCount = 1;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel12.Controls.Add(this.ch6, 0, 1);
             this.tableLayoutPanel12.Controls.Add(this.ch5, 0, 0);
             this.tableLayoutPanel12.Controls.Add(this.ch7, 0, 2);
@@ -547,12 +459,11 @@
             this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 4;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.42857F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.57143F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(186, 103);
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(186, 127);
             this.tableLayoutPanel12.TabIndex = 1;
             // 
             // ch6
@@ -581,9 +492,9 @@
             // 
             this.ch7.AutoSize = true;
             this.ch7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ch7.Location = new System.Drawing.Point(3, 56);
+            this.ch7.Location = new System.Drawing.Point(3, 53);
             this.ch7.Name = "ch7";
-            this.ch7.Size = new System.Drawing.Size(52, 17);
+            this.ch7.Size = new System.Drawing.Size(52, 19);
             this.ch7.TabIndex = 13;
             this.ch7.Text = "Julio";
             this.ch7.UseVisualStyleBackColor = true;
@@ -592,7 +503,7 @@
             // 
             this.ch8.AutoSize = true;
             this.ch8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ch8.Location = new System.Drawing.Point(3, 79);
+            this.ch8.Location = new System.Drawing.Point(3, 78);
             this.ch8.Name = "ch8";
             this.ch8.Size = new System.Drawing.Size(63, 19);
             this.ch8.TabIndex = 12;
@@ -606,17 +517,17 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel15, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(184, 34);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(212, 40);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(184, 109);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(184, 133);
             this.tableLayoutPanel9.TabIndex = 7;
             // 
             // tableLayoutPanel15
             // 
             this.tableLayoutPanel15.ColumnCount = 1;
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel15.Controls.Add(this.ch4, 0, 3);
             this.tableLayoutPanel15.Controls.Add(this.ch3, 0, 2);
             this.tableLayoutPanel15.Controls.Add(this.ch2, 0, 1);
@@ -625,19 +536,18 @@
             this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 4;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(178, 103);
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(178, 127);
             this.tableLayoutPanel15.TabIndex = 1;
             // 
             // ch4
             // 
             this.ch4.AutoSize = true;
             this.ch4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ch4.Location = new System.Drawing.Point(3, 77);
+            this.ch4.Location = new System.Drawing.Point(3, 78);
             this.ch4.Name = "ch4";
             this.ch4.Size = new System.Drawing.Size(50, 19);
             this.ch4.TabIndex = 14;
@@ -648,7 +558,7 @@
             // 
             this.ch3.AutoSize = true;
             this.ch3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ch3.Location = new System.Drawing.Point(3, 49);
+            this.ch3.Location = new System.Drawing.Point(3, 53);
             this.ch3.Name = "ch3";
             this.ch3.Size = new System.Drawing.Size(61, 19);
             this.ch3.TabIndex = 13;
@@ -659,9 +569,9 @@
             // 
             this.ch2.AutoSize = true;
             this.ch2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ch2.Location = new System.Drawing.Point(3, 26);
+            this.ch2.Location = new System.Drawing.Point(3, 28);
             this.ch2.Name = "ch2";
-            this.ch2.Size = new System.Drawing.Size(69, 17);
+            this.ch2.Size = new System.Drawing.Size(69, 19);
             this.ch2.TabIndex = 12;
             this.ch2.Text = "Febrero";
             this.ch2.UseVisualStyleBackColor = true;
@@ -672,7 +582,7 @@
             this.ch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ch1.Location = new System.Drawing.Point(3, 3);
             this.ch1.Name = "ch1";
-            this.ch1.Size = new System.Drawing.Size(59, 17);
+            this.ch1.Size = new System.Drawing.Size(59, 19);
             this.ch1.TabIndex = 11;
             this.ch1.Text = "Enero";
             this.ch1.UseVisualStyleBackColor = true;
@@ -682,7 +592,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 13);
+            this.label2.Location = new System.Drawing.Point(3, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 18);
             this.label2.TabIndex = 0;
@@ -693,7 +603,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(184, 13);
+            this.label8.Location = new System.Drawing.Point(212, 19);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(42, 18);
             this.label8.TabIndex = 2;
@@ -703,9 +613,9 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.bunifuPanel1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 34);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 40);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(175, 109);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(203, 133);
             this.flowLayoutPanel1.TabIndex = 10;
             // 
             // bunifuPanel1
@@ -923,18 +833,125 @@
             this.bunifuCheckBox1.ThreeState = false;
             this.bunifuCheckBox1.ToolTipText = null;
             // 
+            // tableLayoutPanel16
+            // 
+            this.tableLayoutPanel16.ColumnCount = 1;
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel16.Controls.Add(this.btnCreatePayroll, 0, 0);
+            this.tableLayoutPanel16.Controls.Add(this.btnDeletePayrolls, 0, 2);
+            this.tableLayoutPanel16.Controls.Add(this.btnActualizarPlanillas, 0, 1);
+            this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(893, 4);
+            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
+            this.tableLayoutPanel16.RowCount = 3;
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(220, 176);
+            this.tableLayoutPanel16.TabIndex = 3;
+            // 
+            // btnCreatePayroll
+            // 
+            this.btnCreatePayroll.AllowAnimations = true;
+            this.btnCreatePayroll.AllowMouseEffects = true;
+            this.btnCreatePayroll.AllowToggling = false;
+            this.btnCreatePayroll.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCreatePayroll.AnimationSpeed = 200;
+            this.btnCreatePayroll.AutoGenerateColors = false;
+            this.btnCreatePayroll.AutoRoundBorders = false;
+            this.btnCreatePayroll.AutoSizeLeftIcon = true;
+            this.btnCreatePayroll.AutoSizeRightIcon = true;
+            this.btnCreatePayroll.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreatePayroll.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnCreatePayroll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCreatePayroll.BackgroundImage")));
+            this.btnCreatePayroll.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnCreatePayroll.ButtonText = "Generar planillas";
+            this.btnCreatePayroll.ButtonTextMarginLeft = 0;
+            this.btnCreatePayroll.ColorContrastOnClick = 45;
+            this.btnCreatePayroll.ColorContrastOnHover = 45;
+            this.btnCreatePayroll.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnCreatePayroll.CustomizableEdges = borderEdges4;
+            this.btnCreatePayroll.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCreatePayroll.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnCreatePayroll.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnCreatePayroll.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnCreatePayroll.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
+            this.btnCreatePayroll.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnCreatePayroll.ForeColor = System.Drawing.Color.White;
+            this.btnCreatePayroll.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreatePayroll.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnCreatePayroll.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnCreatePayroll.IconMarginLeft = 11;
+            this.btnCreatePayroll.IconPadding = 10;
+            this.btnCreatePayroll.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCreatePayroll.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnCreatePayroll.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnCreatePayroll.IconSize = 25;
+            this.btnCreatePayroll.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnCreatePayroll.IdleBorderRadius = 20;
+            this.btnCreatePayroll.IdleBorderThickness = 1;
+            this.btnCreatePayroll.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnCreatePayroll.IdleIconLeftImage = null;
+            this.btnCreatePayroll.IdleIconRightImage = null;
+            this.btnCreatePayroll.IndicateFocus = false;
+            this.btnCreatePayroll.Location = new System.Drawing.Point(34, 4);
+            this.btnCreatePayroll.Name = "btnCreatePayroll";
+            this.btnCreatePayroll.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnCreatePayroll.OnDisabledState.BorderRadius = 20;
+            this.btnCreatePayroll.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnCreatePayroll.OnDisabledState.BorderThickness = 1;
+            this.btnCreatePayroll.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnCreatePayroll.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnCreatePayroll.OnDisabledState.IconLeftImage = null;
+            this.btnCreatePayroll.OnDisabledState.IconRightImage = null;
+            this.btnCreatePayroll.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnCreatePayroll.onHoverState.BorderRadius = 20;
+            this.btnCreatePayroll.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnCreatePayroll.onHoverState.BorderThickness = 1;
+            this.btnCreatePayroll.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnCreatePayroll.onHoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnCreatePayroll.onHoverState.IconLeftImage = null;
+            this.btnCreatePayroll.onHoverState.IconRightImage = null;
+            this.btnCreatePayroll.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnCreatePayroll.OnIdleState.BorderRadius = 20;
+            this.btnCreatePayroll.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnCreatePayroll.OnIdleState.BorderThickness = 1;
+            this.btnCreatePayroll.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnCreatePayroll.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnCreatePayroll.OnIdleState.IconLeftImage = null;
+            this.btnCreatePayroll.OnIdleState.IconRightImage = null;
+            this.btnCreatePayroll.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnCreatePayroll.OnPressedState.BorderRadius = 20;
+            this.btnCreatePayroll.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnCreatePayroll.OnPressedState.BorderThickness = 1;
+            this.btnCreatePayroll.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnCreatePayroll.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnCreatePayroll.OnPressedState.IconLeftImage = null;
+            this.btnCreatePayroll.OnPressedState.IconRightImage = null;
+            this.btnCreatePayroll.Size = new System.Drawing.Size(151, 52);
+            this.btnCreatePayroll.TabIndex = 93;
+            this.btnCreatePayroll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCreatePayroll.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnCreatePayroll.TextMarginLeft = 0;
+            this.btnCreatePayroll.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnCreatePayroll.UseDefaultRadiusAndThickness = true;
+            // 
             // dgvPayrolls
             // 
             this.dgvPayrolls.AllowCustomTheming = true;
             this.dgvPayrolls.AllowDrop = true;
             this.dgvPayrolls.AllowUserToAddRows = false;
             this.dgvPayrolls.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvPayrolls.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvPayrolls.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPayrolls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -945,14 +962,14 @@
             this.dgvPayrolls.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPayrolls.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvPayrolls.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPayrolls.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPayrolls.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPayrolls.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPayrolls.ContextMenuStrip = this.cmsPayroll;
             this.dgvPayrolls.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
@@ -973,37 +990,37 @@
             this.dgvPayrolls.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvPayrolls.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.dgvPayrolls.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPayrolls.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPayrolls.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPayrolls.EnableHeadersVisualStyles = false;
             this.dgvPayrolls.GridColor = System.Drawing.Color.Silver;
             this.dgvPayrolls.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
             this.dgvPayrolls.HeaderBgColor = System.Drawing.Color.Empty;
             this.dgvPayrolls.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvPayrolls.Location = new System.Drawing.Point(3, 175);
+            this.dgvPayrolls.Location = new System.Drawing.Point(3, 205);
             this.dgvPayrolls.Name = "dgvPayrolls";
             this.dgvPayrolls.ReadOnly = true;
             this.dgvPayrolls.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPayrolls.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPayrolls.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvPayrolls.RowHeadersVisible = false;
             this.dgvPayrolls.RowHeadersWidth = 40;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvPayrolls.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvPayrolls.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvPayrolls.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.dgvPayrolls.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvPayrolls.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
@@ -1012,7 +1029,7 @@
             this.dgvPayrolls.RowTemplate.Height = 50;
             this.dgvPayrolls.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPayrolls.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPayrolls.Size = new System.Drawing.Size(1129, 354);
+            this.dgvPayrolls.Size = new System.Drawing.Size(1129, 324);
             this.dgvPayrolls.TabIndex = 1;
             this.dgvPayrolls.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
             // 
@@ -1056,21 +1073,6 @@
             this.cmsDownloadPDF.Size = new System.Drawing.Size(209, 26);
             this.cmsDownloadPDF.Text = "Descargar Planilla PDF";
             // 
-            // tableLayoutPanel16
-            // 
-            this.tableLayoutPanel16.ColumnCount = 1;
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel16.Controls.Add(this.btnDeletePayrolls, 0, 1);
-            this.tableLayoutPanel16.Controls.Add(this.btnCreatePayroll, 0, 0);
-            this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(865, 4);
-            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
-            this.tableLayoutPanel16.RowCount = 2;
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(213, 146);
-            this.tableLayoutPanel16.TabIndex = 3;
-            // 
             // btnDeletePayrolls
             // 
             this.btnDeletePayrolls.AllowAnimations = true;
@@ -1091,11 +1093,11 @@
             this.btnDeletePayrolls.ColorContrastOnClick = 45;
             this.btnDeletePayrolls.ColorContrastOnHover = 45;
             this.btnDeletePayrolls.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnDeletePayrolls.CustomizableEdges = borderEdges1;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.btnDeletePayrolls.CustomizableEdges = borderEdges5;
             this.btnDeletePayrolls.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnDeletePayrolls.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDeletePayrolls.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1119,7 +1121,7 @@
             this.btnDeletePayrolls.IdleIconLeftImage = null;
             this.btnDeletePayrolls.IdleIconRightImage = null;
             this.btnDeletePayrolls.IndicateFocus = false;
-            this.btnDeletePayrolls.Location = new System.Drawing.Point(31, 83);
+            this.btnDeletePayrolls.Location = new System.Drawing.Point(34, 125);
             this.btnDeletePayrolls.Name = "btnDeletePayrolls";
             this.btnDeletePayrolls.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDeletePayrolls.OnDisabledState.BorderRadius = 20;
@@ -1153,13 +1155,103 @@
             this.btnDeletePayrolls.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnDeletePayrolls.OnPressedState.IconLeftImage = null;
             this.btnDeletePayrolls.OnPressedState.IconRightImage = null;
-            this.btnDeletePayrolls.Size = new System.Drawing.Size(151, 52);
+            this.btnDeletePayrolls.Size = new System.Drawing.Size(151, 48);
             this.btnDeletePayrolls.TabIndex = 94;
             this.btnDeletePayrolls.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDeletePayrolls.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnDeletePayrolls.TextMarginLeft = 0;
             this.btnDeletePayrolls.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnDeletePayrolls.UseDefaultRadiusAndThickness = true;
+            // 
+            // btnActualizarPlanillas
+            // 
+            this.btnActualizarPlanillas.AllowAnimations = true;
+            this.btnActualizarPlanillas.AllowMouseEffects = true;
+            this.btnActualizarPlanillas.AllowToggling = false;
+            this.btnActualizarPlanillas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnActualizarPlanillas.AnimationSpeed = 200;
+            this.btnActualizarPlanillas.AutoGenerateColors = false;
+            this.btnActualizarPlanillas.AutoRoundBorders = false;
+            this.btnActualizarPlanillas.AutoSizeLeftIcon = true;
+            this.btnActualizarPlanillas.AutoSizeRightIcon = true;
+            this.btnActualizarPlanillas.BackColor = System.Drawing.Color.Transparent;
+            this.btnActualizarPlanillas.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnActualizarPlanillas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnActualizarPlanillas.BackgroundImage")));
+            this.btnActualizarPlanillas.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnActualizarPlanillas.ButtonText = "Refrescar Datos";
+            this.btnActualizarPlanillas.ButtonTextMarginLeft = 0;
+            this.btnActualizarPlanillas.ColorContrastOnClick = 45;
+            this.btnActualizarPlanillas.ColorContrastOnHover = 45;
+            this.btnActualizarPlanillas.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.btnActualizarPlanillas.CustomizableEdges = borderEdges6;
+            this.btnActualizarPlanillas.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnActualizarPlanillas.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnActualizarPlanillas.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnActualizarPlanillas.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnActualizarPlanillas.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
+            this.btnActualizarPlanillas.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnActualizarPlanillas.ForeColor = System.Drawing.Color.White;
+            this.btnActualizarPlanillas.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizarPlanillas.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnActualizarPlanillas.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnActualizarPlanillas.IconMarginLeft = 11;
+            this.btnActualizarPlanillas.IconPadding = 10;
+            this.btnActualizarPlanillas.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnActualizarPlanillas.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnActualizarPlanillas.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnActualizarPlanillas.IconSize = 25;
+            this.btnActualizarPlanillas.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnActualizarPlanillas.IdleBorderRadius = 20;
+            this.btnActualizarPlanillas.IdleBorderThickness = 1;
+            this.btnActualizarPlanillas.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnActualizarPlanillas.IdleIconLeftImage = null;
+            this.btnActualizarPlanillas.IdleIconRightImage = null;
+            this.btnActualizarPlanillas.IndicateFocus = false;
+            this.btnActualizarPlanillas.Location = new System.Drawing.Point(34, 65);
+            this.btnActualizarPlanillas.Name = "btnActualizarPlanillas";
+            this.btnActualizarPlanillas.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnActualizarPlanillas.OnDisabledState.BorderRadius = 20;
+            this.btnActualizarPlanillas.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnActualizarPlanillas.OnDisabledState.BorderThickness = 1;
+            this.btnActualizarPlanillas.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnActualizarPlanillas.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnActualizarPlanillas.OnDisabledState.IconLeftImage = null;
+            this.btnActualizarPlanillas.OnDisabledState.IconRightImage = null;
+            this.btnActualizarPlanillas.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnActualizarPlanillas.onHoverState.BorderRadius = 20;
+            this.btnActualizarPlanillas.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnActualizarPlanillas.onHoverState.BorderThickness = 1;
+            this.btnActualizarPlanillas.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnActualizarPlanillas.onHoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnActualizarPlanillas.onHoverState.IconLeftImage = null;
+            this.btnActualizarPlanillas.onHoverState.IconRightImage = null;
+            this.btnActualizarPlanillas.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnActualizarPlanillas.OnIdleState.BorderRadius = 20;
+            this.btnActualizarPlanillas.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnActualizarPlanillas.OnIdleState.BorderThickness = 1;
+            this.btnActualizarPlanillas.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnActualizarPlanillas.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnActualizarPlanillas.OnIdleState.IconLeftImage = null;
+            this.btnActualizarPlanillas.OnIdleState.IconRightImage = null;
+            this.btnActualizarPlanillas.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnActualizarPlanillas.OnPressedState.BorderRadius = 20;
+            this.btnActualizarPlanillas.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnActualizarPlanillas.OnPressedState.BorderThickness = 1;
+            this.btnActualizarPlanillas.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnActualizarPlanillas.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnActualizarPlanillas.OnPressedState.IconLeftImage = null;
+            this.btnActualizarPlanillas.OnPressedState.IconRightImage = null;
+            this.btnActualizarPlanillas.Size = new System.Drawing.Size(151, 52);
+            this.btnActualizarPlanillas.TabIndex = 95;
+            this.btnActualizarPlanillas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnActualizarPlanillas.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnActualizarPlanillas.TextMarginLeft = 0;
+            this.btnActualizarPlanillas.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnActualizarPlanillas.UseDefaultRadiusAndThickness = true;
             // 
             // FrmViewPayrolls
             // 
@@ -1193,9 +1285,9 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel1.PerformLayout();
+            this.tableLayoutPanel16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayrolls)).EndInit();
             this.cmsPayroll.ResumeLayout(false);
-            this.tableLayoutPanel16.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1251,5 +1343,6 @@
         public System.Windows.Forms.CheckBox ch7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnDeletePayrolls;
+        public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnActualizarPlanillas;
     }
 }

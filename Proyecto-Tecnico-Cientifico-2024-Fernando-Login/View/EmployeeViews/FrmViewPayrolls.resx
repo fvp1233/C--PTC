@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="cmsPayroll.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txtSearch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -372,21 +375,6 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnDeletePayrolls.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAJcAAAA0CAYAAACHF6o5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIFSURBVHhe7d2xSmNBFIfx063OFdbScst9BEtLS0tLG9/C
-        wgdYEHyBa5JSsBOshK0sU2wvWNgoQRfFhVjs/k8c0cSJaxxP5TfwQ3HuvdXHZGJxx6aN1myua826HEpf
-        LuUvPj3voN+xheOupY3Wvi7mZN42dNOqHjDoWPr97KHAmI41N/p5pU42czrTh1eoGw78hucPAV6XrtXN
-        SWtpKac0PjwsXXgmw/EbgbfpqZ/WvnzLST2NvGIRFmr1c1IPI++x+ChENS1St7I9Cit/KxxMXgS8Xxq0
-        tvDdV60Nlea7/sJFwOzU07262tFey/9fUb4IeC9t7k+1cjXnkxNALV+9tHKlu9IkUMtXruIEUIu4EIa4
-        EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4
-        EIa4EIa4EIa4EIa4EIa4EIa4EIa4EMZftHtfmgBq+crFyRgI4SvXSWkCqHSulStt9Sz9KUwCFdK++YkH
-        +oV30OPD6NPwumvza6N30e9Z+qE/8LpwfIThnjVHo7B8+EEH+mj8pcBKFwMzSBcvjsnzEw80wTdHVEiD
-        njUrOanx0dr8si4667DBx2yGvmJNDetxPJwFlHaFTT7+yw981Xbq50wnxnqFCmyf02JRkg/H8COq13My
-        E8PsHyNks6NdO2KiAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="btnCreatePayroll.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJcAAAA0CAYAAACHF6o5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -402,9 +390,6 @@
         E8PsHyNks6NdO2KiAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="cmsPayroll.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="cmsUpdatePayroll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -1253,6 +1238,36 @@
         JL/Wt3TbJrC4xKC+JPT7dJIsu77bLoHFJwb26WH+/VBpmElyiv5b+OZumwTaIQb3EeGZ4X1habhJcipe
         Fj632x6BNokhfmyY3wG/JywNOkmO1Y+FJ3XbITAeYrCfFb42/LXw9PAskhyJvxu+Pfzf4X8Lj+m2PgAA
         AAAAAAAAAAAAAAAAAAAAAAAA0BJHHPH/AHvblSQo7EsGAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnDeletePayrolls.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAJcAAAAwCAYAAAAchugvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH5SURBVHhe7d2xSmNBFIfx063OFdbScst9BEtLS0tLG9/C
+        wgdYEHyBa5JSsBOshK0sU2wvWNgoQRfFhVjs/k8c0cSJaxxP5TfwQ3HuvdXHZGIx16aN1myua826HEpf
+        LuUvPj3voN+xheOupY3Wvi7mZN42dNOqHjDoWPr97KHAmI41N/p5pU42czrTh1eoGw78hucPAV6XrtXN
+        SWtpKac0PjwsXXgmw/EbgbfpqZ/WvnzLST2NvGIRFmr1c1IPI++x+ChENS1St7I9Cit/KxxMXgS8Xxq0
+        tvDdV60Nlea7/sJFwOzU07262tFey/9fUb4IeC9t7k+1cjXnkxNALV+9tHKlu9IkUMtXruIEUIu4EIa4
+        EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4
+        EIa4EIa4EIa4EMYPfbsvTQC1fOXilGaE8JXrpDQBVDrXypW2epb+FCaBCmnf/PRd/cJ5qPgw+jS87tr8
+        2uhc1D1LP/QHjq7ERxjuWXM0CsuHH7qrj8ZfCqx0MTCDdPHilS1++q4m+OaICmnQs2YlJzU+Wptf1kVn
+        HTb4mM3QV6ypYT2Oh3Pp066wycd/+cvHtJ36OdPby7xCBbbPm8tQkg9q9tclrudkJobZP7ZCwZdm+9XU
+        AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnActualizarPlanillas.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAJcAAAA0CAYAAACHF6o5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIFSURBVHhe7d2xSmNBFIfx063OFdbScst9BEtLS0tLG9/C
+        wgdYEHyBa5JSsBOshK0sU2wvWNgoQRfFhVjs/k8c0cSJaxxP5TfwQ3HuvdXHZGJxx6aN1myua826HEpf
+        LuUvPj3voN+xheOupY3Wvi7mZN42dNOqHjDoWPr97KHAmI41N/p5pU42czrTh1eoGw78hucPAV6XrtXN
+        SWtpKac0PjwsXXgmw/EbgbfpqZ/WvnzLST2NvGIRFmr1c1IPI++x+ChENS1St7I9Cit/KxxMXgS8Xxq0
+        tvDdV60Nlea7/sJFwOzU07262tFey/9fUb4IeC9t7k+1cjXnkxNALV+9tHKlu9IkUMtXruIEUIu4EIa4
+        EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4EIa4
+        EIa4EIa4EIa4EIa4EIa4EIa4EIa4EMZftHtfmgBq+crFyRgI4SvXSWkCqHSulStt9Sz9KUwCFdK++YkH
+        +oV30OPD6NPwumvza6N30e9Z+qE/8LpwfIThnjVHo7B8+EEH+mj8pcBKFwMzSBcvjsnzEw80wTdHVEiD
+        njUrOanx0dr8si4667DBx2yGvmJNDetxPJwFlHaFTT7+yw981Xbq50wnxnqFCmyf02JRkg/H8COq13My
+        E8PsHyNks6NdO2KiAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

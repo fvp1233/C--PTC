@@ -191,6 +191,40 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
 
         }
+        public int UpdatePayroll()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = "UPDATE tbPayroll SET netPay = @netPay, rent = @rent, AFP = @AFP, ISSS = @ISSS, ISSSEmployer = @ISSSEmployer, AFPEmployer = @AFPEmployer, employeeDiscount = @employeeDiscount, employerDiscount = @employerDiscount, christmasBonus = @christmasBonus WHERE IdPayroll = @IdPayroll AND IdPayrollStatus = 2";
+                SqlCommand cmdUpdatePayroll = new SqlCommand(query, comand.Connection);
+
+                cmdUpdatePayroll.Parameters.AddWithValue("netPay", NetPay);
+                cmdUpdatePayroll.Parameters.AddWithValue("rent", Rent);
+                cmdUpdatePayroll.Parameters.AddWithValue("AFP", Afp);
+                cmdUpdatePayroll.Parameters.AddWithValue("ISSS", Isss);
+                cmdUpdatePayroll.Parameters.AddWithValue("ISSSEmployer", IsssEmployer);
+                cmdUpdatePayroll.Parameters.AddWithValue("AFPEmployer", AfpEmployer);
+                cmdUpdatePayroll.Parameters.AddWithValue("employeeDiscount", DiscountEmployee);
+                cmdUpdatePayroll.Parameters.AddWithValue("employerDiscount", DiscountEmployer);
+                cmdUpdatePayroll.Parameters.AddWithValue("christmasBonus", ChristmasBonus);
+                cmdUpdatePayroll.Parameters.AddWithValue("IdPayroll", IdPayroll);
+                cmdUpdatePayroll.Parameters.AddWithValue("IdPayrollStatus", IdPayrollStatus);
+
+                int answer = cmdUpdatePayroll.ExecuteNonQuery();
+                return answer;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"EC-003: {ex.Message}", "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
+            }
+            finally
+            {
+                comand.Connection.Close();
+            }
+        }
+
         public DataSet SearchPayroll(string valor)
         {
             try
