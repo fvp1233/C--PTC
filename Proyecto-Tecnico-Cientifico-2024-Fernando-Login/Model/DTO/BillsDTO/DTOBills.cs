@@ -18,6 +18,7 @@ namespace PTC2024.Model.DTO.BillsDTO
         private float totalPay;
         private DateTime startDate;
         private DateTime FinalDate;
+        private DateTime dateissued;
         private string services;
         private string statusBills;
         private string customer;
@@ -35,7 +36,6 @@ namespace PTC2024.Model.DTO.BillsDTO
         public string CompanyName { get => companyName; set => companyName = value; }
         public DateTime StartDate { get => startDate; set => startDate = value; }
         public DateTime FinalDate1 { get => FinalDate; set => FinalDate = value; }
-        public DateTime FiscalPeriod { get => fiscalPeriod; set => fiscalPeriod = value; }
         public int IdDetail1 { get => IdDetail; set => IdDetail = value; }
         public int IdfiscalPeriod1 { get => IdfiscalPeriod; set => IdfiscalPeriod = value; }
         public string NIT1 { get => NIT; set => NIT = value; }
@@ -50,5 +50,6 @@ namespace PTC2024.Model.DTO.BillsDTO
         public float Discount { get => discount; set => discount = value; }
         public float SubtotalPay { get => subtotalPay; set => subtotalPay = value; }
         public float TotalPay { get => totalPay; set => totalPay = value; }
+        public DateTime Dateissued { get => dateissued; set => dateissued = value; }
     }
 }
