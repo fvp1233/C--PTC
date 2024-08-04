@@ -75,7 +75,7 @@ namespace PTC2024.Model.DAO.LogInDAO
                 cmdInsertData.Parameters.AddWithValue("password", Password);
                 cmdInsertData.Parameters.AddWithValue("business", BusinessP);
 
-                // falta agregar la tabla en base de datos cmdInsertData.Parameters.AddWithValue("confirmPassword", ConfirmPassword);
+               
                 int respuesta = cmdInsertData.ExecuteNonQuery();
 
                 if (respuesta == 1)
@@ -150,7 +150,7 @@ namespace PTC2024.Model.DAO.LogInDAO
             catch (SqlException ex)
             {
 
-                MessageBox.Show($"{ex.Message}EC-005 ERROR BELLAKO: No se puedieron obtener los datos de los Nombres del usuario  ");
+                MessageBox.Show($"{ex.Message}EC-005  No se puedieron ingresar los datos de los datos del usuario  ");
                 return -1;
             }
             finally
