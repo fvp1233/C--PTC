@@ -83,6 +83,8 @@ namespace PTC2024.Controller.LogInController
 
                 MessageBox.Show("Datos ingresados correctamente" + MessageBoxButtons.OK + MessageBoxIcon.Information);
                 objNewUser.Hide();
+                FrmLogin log = new FrmLogin();
+                log.Show();
 
                 
                
