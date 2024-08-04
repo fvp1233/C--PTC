@@ -11,6 +11,7 @@ using PTC2024.View.login;
 using PTC2024.View.InventarioServicios;
 using PTC2024.View.BillsViews;
 using PTC2024.View.Clientes;
+using System.Web.UI.WebControls;
 
 namespace PTC2024
 {
@@ -24,7 +25,7 @@ namespace PTC2024
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmAddCustomers());
+            Application.Run(new Login());
         }
 
     }

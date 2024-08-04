@@ -21,6 +21,8 @@ namespace PTC2024.Controller.LogInController
     {
         FrmRegister objNewUser;
         int Cpassword = 0;
+        formularios.login.Login log;
+        
         public ControllerRegister(FrmRegister view)
         {
             objNewUser = view;
@@ -102,6 +104,8 @@ namespace PTC2024.Controller.LogInController
             DAOInsertar.User = objNewUser.txtUser.Text;
             DAOInsertar.Password = commonClasses.ComputeSha256Hash(objNewUser.txtPassword.Text);
             DAOInsertar.ConfirmPassword = commonClasses.ComputeSha256Hash(objNewUser.txtConfirmedPassword.Text);
+            DAOInsertar.Status=1;
+
 
             //Insercion de datos de tabla tbBankAccount
             int returnn = DAOInsertar.GetNames();
@@ -110,6 +114,11 @@ namespace PTC2024.Controller.LogInController
             {
 
                 MessageBox.Show("Datos ingresados correctamente" + MessageBoxButtons.OK + MessageBoxIcon.Information);
+                objNewUser.Hide();
+                log = new formularios.login.Login();
+                log.Show();
+                
+               
 
             }
 

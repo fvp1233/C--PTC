@@ -9,6 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Web.Hosting;
+using PTC2024.View.login;
 
 namespace PTC2024.Model.DAO.LogInDAO
 {
@@ -69,11 +70,12 @@ namespace PTC2024.Model.DAO.LogInDAO
 
 
                 command.Connection = getConnection();
-                string queryPerson = "INSERT INTO tbUserData VALUES (@username, @password, @business)";
+                string queryPerson = "INSERT INTO tbUserData VALUES (@username, @password, @IdbusinessP,@IdStatus)";
                 SqlCommand cmdInsertData = new SqlCommand(queryPerson, command.Connection);
                 cmdInsertData.Parameters.AddWithValue("username", User);
                 cmdInsertData.Parameters.AddWithValue("password", Password);
-                cmdInsertData.Parameters.AddWithValue("business", BusinessP);
+                cmdInsertData.Parameters.AddWithValue("IdbusinessP", BusinessP);
+                cmdInsertData.Parameters.AddWithValue("IdStatus", UserStatus);
 
                
                 int respuesta = cmdInsertData.ExecuteNonQuery();
@@ -128,7 +130,10 @@ namespace PTC2024.Model.DAO.LogInDAO
 
                     if (respuesta == 1)
                     {
+                        
                         return 1;
+
+
                     }
 
                     else
