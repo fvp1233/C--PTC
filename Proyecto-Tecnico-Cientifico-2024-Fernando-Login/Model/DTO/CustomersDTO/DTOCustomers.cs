@@ -8,5 +8,22 @@ namespace PTC2024.Model.DTO.CustomersDTO
 {
     internal class DTOCustomers
     {
+        private int IdCustomer;
+        private string DUI;
+        private string names;
+        private string lastNames;
+        private string phone;
+        private string email;
+        private string address;
+        private string IdtypeC;
+
+        public int IdCustomer1 { get => IdCustomer; set => IdCustomer = value; }
+        public string DUI1 { get => DUI; set => DUI = value; }
+        public string Names { get => names; set => names = value; }
+        public string LastNames { get => lastNames; set => lastNames = value; }
+        public string Phone { get => phone; set => phone = value; }
+        public string Email { get => email; set => email = value; }
+        public string Address { get => address; set => address = value; }
+        public string IdtypeC1 { get => IdtypeC; set => IdtypeC = value; }
     }
 }

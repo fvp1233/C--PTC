@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
@@ -31,6 +32,7 @@ namespace PTC2024.View.Facturacion
             InitializeComponent();
             ControllerAddBills objAddBills = new ControllerAddBills (this, accions, id, IdServices1, Price1);
         }
+
 
     }
 }
