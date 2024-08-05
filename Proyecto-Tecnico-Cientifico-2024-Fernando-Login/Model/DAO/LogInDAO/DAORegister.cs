@@ -134,6 +134,7 @@ namespace PTC2024.Model.DAO.LogInDAO
             string queryDeleteUser = "DELETE FROM tbUserData WHERE username = @username";
             SqlCommand cmdDeleteUser = new SqlCommand(queryDeleteUser, command.Connection);
             cmdDeleteUser.Parameters.AddWithValue("username", Username);
+            int returnValue = cmdDeleteUser.ExecuteNonQuery();
         }
 
         #region CÓDIGO ANTERIOR

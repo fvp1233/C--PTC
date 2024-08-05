@@ -20,6 +20,7 @@ namespace PTC2024.Controller.EmployeesController
         private string maritalStatus;
         private string status;
         private string businessP;
+        bool emailValidation;
         //CONSTRUCTOR
         public ControllerUpdateEmployee(FrmUpdateEmployee View, int employeeId, string names, string lastNames, string dui, DateTime birthDate, string email, string phone, string address, double salary, string bankAccount, string bank, int affiliationNumber, DateTime hireDate, string department, string employeeType, string maritalStatus, string status, string username, string businessP)
         {
@@ -65,41 +66,51 @@ namespace PTC2024.Controller.EmployeesController
                 string.IsNullOrEmpty(objUpdateEmployee.txtUsername.Text.Trim())
                 ))
             {
-                //CREAMOS OBJETO DEL DAOUpdateEmployees
-                DAOUpdateEmployee daoUpdateEmployee = new DAOUpdateEmployee();
-                daoUpdateEmployee.Names = objUpdateEmployee.txtNames.Text.Trim();
-                daoUpdateEmployee.LastNames = objUpdateEmployee.txtLastNames.Text.Trim();
-                daoUpdateEmployee.Document = objUpdateEmployee.txtDUI.Text.Trim();
-                daoUpdateEmployee.BirthDate = objUpdateEmployee.dtBirthDate.Value;
-                daoUpdateEmployee.Address = objUpdateEmployee.txtAddress.Text.Trim();
-                daoUpdateEmployee.Phone = objUpdateEmployee.txtPhone.Text.Trim();
-                daoUpdateEmployee.Email = objUpdateEmployee.txtEmail.Text.Trim();
-                daoUpdateEmployee.HireDate = objUpdateEmployee.dpHireDate.Value;
-                daoUpdateEmployee.MaritalStatus = (int)objUpdateEmployee.comboMaritalStatus.SelectedValue;
-                daoUpdateEmployee.Department = (int)objUpdateEmployee.comboDepartment.SelectedValue;
-                daoUpdateEmployee.EmployeeType = (int)objUpdateEmployee.comboEmployeeType.SelectedValue;
-                daoUpdateEmployee.EmployeeStatus = (int)objUpdateEmployee.comboEmployeeStatus.SelectedValue;
-                daoUpdateEmployee.Salary = double.Parse(objUpdateEmployee.txtSalary.Text.Trim());
-                daoUpdateEmployee.AffiliationNumber = int.Parse(objUpdateEmployee.txtAffiliationNumber.Text.Trim());
-                daoUpdateEmployee.BankAccount = objUpdateEmployee.txtBankAccount.Text.Trim();
-                daoUpdateEmployee.Bank = (int)objUpdateEmployee.comboBanks.SelectedValue;
-                daoUpdateEmployee.IdEmployee = int.Parse(objUpdateEmployee.txtEmployeeId.Text.Trim());
-                //Datos para los getters de la tabla userData
-                daoUpdateEmployee.Username = objUpdateEmployee.txtUsername.Text.Trim();
-                daoUpdateEmployee.BusinessPosition = (int)objUpdateEmployee.comboBusinessP.SelectedValue;
-
-                //variable para saber la respuesta del proceso de update en el DAOUpdateEmployees
-                int updateAnswer = daoUpdateEmployee.UpdateEmployee();
-                //la evaluamos
-                if (updateAnswer == 1)
+                //validación del dominio del correo 
+                emailValidation = ValidateEmail();
+                if (emailValidation == true)
                 {
-                    MessageBox.Show("Los datos del empleado han sido actualizados con éxito.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    objUpdateEmployee.Close();
+                    //CREAMOS OBJETO DEL DAOUpdateEmployees
+                    DAOUpdateEmployee daoUpdateEmployee = new DAOUpdateEmployee();
+                    daoUpdateEmployee.Names = objUpdateEmployee.txtNames.Text.Trim();
+                    daoUpdateEmployee.LastNames = objUpdateEmployee.txtLastNames.Text.Trim();
+                    daoUpdateEmployee.Document = objUpdateEmployee.txtDUI.Text.Trim();
+                    daoUpdateEmployee.BirthDate = objUpdateEmployee.dtBirthDate.Value;
+                    daoUpdateEmployee.Address = objUpdateEmployee.txtAddress.Text.Trim();
+                    daoUpdateEmployee.Phone = objUpdateEmployee.txtPhone.Text.Trim();
+                    daoUpdateEmployee.Email = objUpdateEmployee.txtEmail.Text.Trim();
+                    daoUpdateEmployee.HireDate = objUpdateEmployee.dpHireDate.Value;
+                    daoUpdateEmployee.MaritalStatus = (int)objUpdateEmployee.comboMaritalStatus.SelectedValue;
+                    daoUpdateEmployee.Department = (int)objUpdateEmployee.comboDepartment.SelectedValue;
+                    daoUpdateEmployee.EmployeeType = (int)objUpdateEmployee.comboEmployeeType.SelectedValue;
+                    daoUpdateEmployee.EmployeeStatus = (int)objUpdateEmployee.comboEmployeeStatus.SelectedValue;
+                    daoUpdateEmployee.Salary = double.Parse(objUpdateEmployee.txtSalary.Text.Trim());
+                    daoUpdateEmployee.AffiliationNumber = int.Parse(objUpdateEmployee.txtAffiliationNumber.Text.Trim());
+                    daoUpdateEmployee.BankAccount = objUpdateEmployee.txtBankAccount.Text.Trim();
+                    daoUpdateEmployee.Bank = (int)objUpdateEmployee.comboBanks.SelectedValue;
+                    daoUpdateEmployee.IdEmployee = int.Parse(objUpdateEmployee.txtEmployeeId.Text.Trim());
+                    //Datos para los getters de la tabla userData
+                    daoUpdateEmployee.Username = objUpdateEmployee.txtUsername.Text.Trim();
+                    daoUpdateEmployee.BusinessPosition = (int)objUpdateEmployee.comboBusinessP.SelectedValue;
+
+                    //variable para saber la respuesta del proceso de update en el DAOUpdateEmployees
+                    int updateAnswer = daoUpdateEmployee.UpdateEmployee();
+                    //la evaluamos
+                    if (updateAnswer == 1)
+                    {
+                        MessageBox.Show("Los datos del empleado han sido actualizados con éxito.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        objUpdateEmployee.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Los datos del empleado no pudieron ser actualizados.", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Los datos del empleado no pudieron ser actualizados.", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
+                
             }
             else
             {
@@ -210,11 +221,9 @@ namespace PTC2024.Controller.EmployeesController
                 objUpdateEmployee.lblSalary.Visible = false;
                 objUpdateEmployee.lblSalaryRequest.Visible = true;
             }
-            else
-            {
-                objUpdateEmployee.lblSalary.Visible = false;
-                objUpdateEmployee.lblSalaryRequest.Visible = true;
-            }
+
+            objUpdateEmployee.lblSalary.Visible = false;
+            objUpdateEmployee.lblSalaryRequest.Visible = true;
 
         }
         public void LeaveSalary(object sender, EventArgs e)
@@ -225,13 +234,34 @@ namespace PTC2024.Controller.EmployeesController
                 objUpdateEmployee.lblSalaryRequest.Visible = false;
                 objUpdateEmployee.txtSalary.Text = "Ingrese con dos decimales";
             }
-            else
-            {
-                objUpdateEmployee.lblSalary.Visible = false;
-                objUpdateEmployee.lblSalaryRequest.Visible = true;
-            }
+
+            objUpdateEmployee.lblSalary.Visible = true;
+            objUpdateEmployee.lblSalaryRequest.Visible = false;
         }
 
+        //validación de email
+        private bool ValidateEmail()
+        {
+            string email = objUpdateEmployee.txtEmail.Text.Trim();
+            if (!(email.Contains("@")))
+            {
+                MessageBox.Show("El formato del correo es incorrecto, verifique que contenga '@'.", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            //validación de dominio del correo
+            string[] allowedDomains = { "gmail.com", "ricaldone.edu.sv" };
+            //La variable domain guarda la cadena de carácteres que se presente después de la arroba en el campo de correo
+            string domain = email.Substring(email.LastIndexOf('@') + 1);
+            //Si la cadena de carácteres después de la arroba NO es uno de los dominios permitidos, nos envía un mensaje de error.
+            if (!allowedDomains.Contains(domain))
+            {
+                MessageBox.Show("Dominio de correo inválido. \n El sistema solo admite los dominios '@gmail.com' y '@ricaldone.edu.sv'", "Dominio no permitido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            //Si no se detecta ningún fallo en el email, se devuelve directamente un true.
+            return true;
+        }
 
     }
 }

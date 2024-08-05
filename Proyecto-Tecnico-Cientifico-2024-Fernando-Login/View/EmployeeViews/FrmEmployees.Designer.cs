@@ -496,12 +496,12 @@
             this.BtnAddEmployee.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.BtnAddEmployee.OnIdleState.IconLeftImage = global::PTC2024.Properties.Resources.AgregarEmpleado;
             this.BtnAddEmployee.OnIdleState.IconRightImage = null;
-            this.BtnAddEmployee.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.BtnAddEmployee.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.BtnAddEmployee.OnPressedState.BorderRadius = 15;
             this.BtnAddEmployee.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.BtnAddEmployee.OnPressedState.BorderThickness = 1;
-            this.BtnAddEmployee.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.BtnAddEmployee.OnPressedState.ForeColor = System.Drawing.Color.Black;
+            this.BtnAddEmployee.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.BtnAddEmployee.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnAddEmployee.OnPressedState.IconLeftImage = null;
             this.BtnAddEmployee.OnPressedState.IconRightImage = null;
             this.BtnAddEmployee.Size = new System.Drawing.Size(197, 51);
@@ -519,7 +519,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.49619F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 198F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 284F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 285F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel13, 4, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel11, 3, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel9, 2, 1);
@@ -544,11 +544,11 @@
             this.tableLayoutPanel13.Controls.Add(this.flowLayoutPanel4, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 1, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(633, 29);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(632, 29);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(279, 92);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(280, 92);
             this.tableLayoutPanel13.TabIndex = 9;
             // 
             // flowLayoutPanel4
@@ -791,7 +791,7 @@
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(241, 86);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(242, 86);
             this.tableLayoutPanel14.TabIndex = 1;
             // 
             // label17
@@ -801,7 +801,7 @@
             this.label17.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(3, 66);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(235, 16);
+            this.label17.Size = new System.Drawing.Size(236, 16);
             this.label17.TabIndex = 3;
             this.label17.Text = "Incapacidad";
             // 
@@ -812,7 +812,7 @@
             this.label18.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(3, 44);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(235, 16);
+            this.label18.Size = new System.Drawing.Size(236, 16);
             this.label18.TabIndex = 2;
             this.label18.Text = "Maternidad";
             // 
@@ -823,7 +823,7 @@
             this.label19.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(3, 23);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(235, 16);
+            this.label19.Size = new System.Drawing.Size(236, 16);
             this.label19.TabIndex = 1;
             this.label19.Text = "Inactivo";
             // 
@@ -834,7 +834,7 @@
             this.label20.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(3, 2);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(235, 16);
+            this.label20.Size = new System.Drawing.Size(236, 16);
             this.label20.TabIndex = 0;
             this.label20.Text = "Activo";
             // 
@@ -846,7 +846,7 @@
             this.tableLayoutPanel11.Controls.Add(this.flowLayoutPanel3, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel12, 1, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(435, 29);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(434, 29);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -950,7 +950,7 @@
             this.tableLayoutPanel9.Controls.Add(this.flowLayoutPanel2, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(276, 29);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(275, 29);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1267,7 +1267,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(228, 92);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(227, 92);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -1510,7 +1510,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(189, 86);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(188, 86);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // label7
@@ -1520,7 +1520,7 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(3, 67);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(183, 16);
+            this.label7.Size = new System.Drawing.Size(182, 16);
             this.label7.TabIndex = 3;
             this.label7.Text = "Interno";
             // 
@@ -1531,7 +1531,7 @@
             this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(3, 45);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(183, 16);
+            this.label6.Size = new System.Drawing.Size(182, 16);
             this.label6.TabIndex = 2;
             this.label6.Text = "Becario";
             // 
@@ -1542,7 +1542,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(183, 16);
+            this.label5.Size = new System.Drawing.Size(182, 16);
             this.label5.TabIndex = 1;
             this.label5.Text = "Voluntario";
             // 
@@ -1553,7 +1553,7 @@
             this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 2);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(183, 16);
+            this.label4.Size = new System.Drawing.Size(182, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "Tiempo completo";
             // 
@@ -1562,7 +1562,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(276, 8);
+            this.label8.Location = new System.Drawing.Point(275, 8);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(119, 18);
             this.label8.TabIndex = 2;
@@ -1573,7 +1573,7 @@
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(633, 8);
+            this.label13.Location = new System.Drawing.Point(632, 8);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(60, 18);
             this.label13.TabIndex = 10;
