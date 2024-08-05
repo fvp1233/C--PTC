@@ -124,54 +124,7 @@ namespace PTC2024.Model.DAO.BillsDAO
                 getConnection().Close();
             }
         }
-                public string GetCustomerByName(string name)
-        {
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                MessageBox.Show("El nombre no puede estar vacío o ser solo espacios en blanco.");
-                return null;
-            }
-
-            using (SqlConnection connection = getConnection())
-            {
-                try
-                {
-                    connection.Open();
-
-                    string query = "SELECT Names, LastNames, Phone, Email, DUI FROM tbCustomer WHERE Names LIKE @Name + '%'";
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@Name", name.Trim());
-
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                return string.Join("|",
-                                    reader["Names"].ToString(),
-                                    reader["LastNames"].ToString(),
-                                    reader["Phone"].ToString(),
-                                    reader["Email"].ToString(),
-                                    reader["DUI"].ToString());
-                            }
-                            else
-                            {
-                                MessageBox.Show("No se encontraron datos para el nombre proporcionado.");
-                                return null;
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    // Manejo de errores
-                    MessageBox.Show("Error al obtener los datos del cliente: " + ex.Message);
-                    return null;
-                }
-            }
-        }
-
-
+      
         public int DataB()
         {
             try

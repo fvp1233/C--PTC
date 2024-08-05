@@ -39,7 +39,6 @@ namespace PTC2024.Controller.BillsController
             objAddBills.txtSubTotal.TextChanged += new EventHandler(CalculateTotal);
             objAddBills.txtDiscount.TextChanged += new EventHandler(TxtDiscount_TextChanged);
             objAddBills.txtDiscount.KeyUp += new KeyEventHandler(txtDiscount_KeyPress);
-            objAddBills.txtCustomerName.KeyUp += new KeyEventHandler(txtCustomerName_KeyUp);
             objAddBills.txtTotalPay.TextChanged += new EventHandler(CalculateTotal);
             objAddBills.dgvData.CellValueChanged += new DataGridViewCellEventHandler(CalculateTotal);
             objAddBills.dgvData.RowsAdded += new DataGridViewRowsAddedEventHandler(CalculateTotal);
@@ -146,62 +145,6 @@ namespace PTC2024.Controller.BillsController
             }
         }
 
-
-        public void txtCustomerName_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (char.IsLetterOrDigit((char)e.KeyCode) ||
-            e.KeyCode == Keys.Back ||
-            e.KeyCode == Keys.Delete ||
-            e.KeyCode == Keys.Left ||
-            e.KeyCode == Keys.Right)
-            {
-                // Obtener el nombre desde el TextBox
-                string name = objAddBills.txtCustomerName.Text.Trim();
-
-                if (!string.IsNullOrEmpty(name))
-                {
-                    // Crear una instancia de DAOAddBills y obtener los datos del cliente como un string
-                    DAOAddBills daoAddBills = new DAOAddBills();
-                    string customerData = daoAddBills.GetCustomerByName(name);
-
-                    if (!string.IsNullOrEmpty(customerData))
-                    {
-                        // Dividir los datos obtenidos y asignarlos a los TextBoxes
-                        var customerParts = customerData.Split('|');
-
-                        // Asegúrate de tener el número correcto de partes
-                        if (customerParts.Length == 5)
-                        {
-                            objAddBills.txtCustomerName.Text = customerParts[0];
-                            objAddBills.txtCustomerLastname.Text = customerParts[1];
-                            objAddBills.txtCustomerPhone.Text = customerParts[2];
-                            objAddBills.txtCustomerEmail.Text = customerParts[3];
-                            objAddBills.txtDUICustomer.Text = customerParts[4];
-                        }
-                    }
-                    else
-                    {
-                        // Si no se encuentra el cliente, limpiar los campos
-                        ClearCustomerFields();
-                    }
-                }
-                else
-                {
-                    // Limpiar los campos si el nombre está vacío
-                    ClearCustomerFields();
-                }
-            }
-        }
-
-        // Método para limpiar los campos de texto
-        private void ClearCustomerFields()
-        {
-            objAddBills.txtCustomerName.ResetText();
-            objAddBills.txtCustomerLastname.ResetText();
-            objAddBills.txtCustomerPhone.ResetText();
-            objAddBills.txtCustomerEmail.ResetText();
-            objAddBills.txtDUICustomer.ResetText();
-        }
 
         public void TxtDiscount_TextChanged(object sender, EventArgs e)
         {
