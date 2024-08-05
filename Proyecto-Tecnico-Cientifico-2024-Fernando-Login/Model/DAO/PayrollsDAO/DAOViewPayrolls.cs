@@ -501,7 +501,69 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 getConnection().Close();
             }
         }
-
+        public DataSet SearchPaidPayrols()
+        {
+            try
+            {
+                comand.Connection= getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE ([Estado]) = 'Pagada'";
+                SqlCommand cmd = new SqlCommand (query, comand.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearchUnpaidPayrols()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE ([Estado]) = 'No Pagada'";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearcCompensationPayrols()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE ([Estado]) = 'Liquidación'";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
 
     }
 }

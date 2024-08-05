@@ -33,7 +33,11 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.ch10.CheckedChanged += new EventHandler(SearchByMonth10);
             objViewPayrolls.ch11.CheckedChanged += new EventHandler(SearchByMonth11);
             objViewPayrolls.ch12.CheckedChanged += new EventHandler(SearchByMonth12);
+            objViewPayrolls.chPaid.CheckedChanged += new EventHandler(SearchByPaid);
+            objViewPayrolls.chuUnpaid.CheckedChanged += new EventHandler(SearchByUnpaid);
+            objViewPayrolls.chCompensation.CheckedChanged += new EventHandler(SearchByCompensation);
             objViewPayrolls.btnCreatePayroll.Click += new EventHandler(CreatePayroll);
+            objViewPayrolls.btnCompensation.Click += new EventHandler(CreateCompensationPayroll);
             objViewPayrolls.btnActualizarPlanillas.Click += new EventHandler(RefreshData);
             objViewPayrolls.btnDeletePayrolls.Click += new EventHandler(DeletePayrolls);
             objViewPayrolls.cmsUpdatePayroll.Click += new EventHandler(OpenUpdatePayroll);
@@ -71,101 +75,84 @@ namespace PTC2024.Controller.EmployeesController
                     foreach (DataRow row in employeeDt.Rows)
                     {
                         // Verificar el estado del empleado
-                        string status = row["IdStatus"].ToString();
+                        int status = int.Parse(row["IdStatus"].ToString());
                         int idEmployee = int.Parse(row["IdEmployee"].ToString());
                         DateTime hireDate = DateTime.Parse(row["hireDate"].ToString());
                         int startWorkYear = hireDate.Year;
                         int startWorkMonth = hireDate.Month;
                         int currentYear = DateTime.Now.Year;
                         double salary = double.Parse(row["salary"].ToString());
-                        //Generacion de planillas para empleados inactivos
-                        int totalYearsWorked = currentYear - startWorkYear;
-                        double severancePay = salary * totalYearsWorked;
-                        if (status.Equals("2", StringComparison.OrdinalIgnoreCase))
+                        // Generar planillas empleados activos
+                        if (status != 2)
                         {
-                            DAOInsertPayroll.Username = row["username"].ToString();
-                            DAOInsertPayroll.Isss = 0;
-                            DAOInsertPayroll.Afp = 0;
-                            DAOInsertPayroll.Rent = 0;
-                            DAOInsertPayroll.NetPay = salary * totalYearsWorked;
-                            DAOInsertPayroll.IsssEmployer = 0;
-                            DAOInsertPayroll.AfpEmployer = 0;
-                            DAOInsertPayroll.DiscountEmployee = 0;
-                            DAOInsertPayroll.DiscountEmployer = 0;
-                            DAOInsertPayroll.IssueDate = DateTime.Now;
-                            DAOInsertPayroll.IdEmployee = idEmployee;
-                            DAOInsertPayroll.IdPayrollStatus = 2;
-                            DAOInsertPayroll.ChristmasBonus = 0;
-                            returnValue = DAOInsertPayroll.AddPayroll();
-                            continue;
-                        }
-                        //Generar planillas empleados activos
-                        for (int year = startWorkYear; year <= currentYear; year++)
-                        {
-                            int startMonth = (year == startWorkYear) ? startWorkMonth : 1;
-                            for (int month = startMonth; month <= 12; month++)
+                            for (int year = startWorkYear; year <= currentYear; year++)
                             {
-                                DataRow[] existingPayrollRows = payrollDt.Select($"IdEmployee = {idEmployee} AND IssueDate = '{year}-{month:D2}-01'");
-                                if (existingPayrollRows.Length == 0)
+                                int startMonth = (year == startWorkYear) ? startWorkMonth : 1;
+                                for (int month = startMonth; month <= 12; month++)
                                 {
-                                    string username = row["username"].ToString();
-                                    DataRow[] userRows = userDt.Select($"username = '{username}'");
-                                    if (userRows.Length > 0)
+                                    DataRow[] existingPayrollRows = payrollDt.Select($"IdEmployee = {idEmployee} AND IssueDate = '{year}-{month:D2}-01'");
+                                    if (existingPayrollRows.Length == 0)
                                     {
-                                        DataRow userRow = userRows[0];
-                                        string businessRole = userRow["IdBusinessP"].ToString();
-                                        DataRow[] bonusRows = bonusDt.Select($"IdBusinessP = '{businessRole}'");
-                                        if (bonusRows.Length > 0)
+                                        string username = row["username"].ToString();
+                                        DataRow[] userRows = userDt.Select($"username = '{username}'");
+                                        if (userRows.Length > 0)
                                         {
-                                            DataRow bonusRow = bonusRows[0];
-                                            double roleBonus = double.Parse(bonusRow["positionBonus"].ToString());
-                                            DAOInsertPayroll.BusinessBonus = float.Parse(roleBonus.ToString());
-                                            double calculatedSalary = 0;
+                                            DataRow userRow = userRows[0];
+                                            string businessRole = userRow["IdBusinessP"].ToString();
+                                            DataRow[] bonusRows = bonusDt.Select($"IdBusinessP = '{businessRole}'");
+                                            if (bonusRows.Length > 0)
+                                            {
+                                                DataRow bonusRow = bonusRows[0];
+                                                double roleBonus = double.Parse(bonusRow["positionBonus"].ToString());
+                                                double calculatedSalary = 0;
 
-                                            if (year == startWorkYear && month == startWorkMonth)
-                                            {
-                                                int daysInMonth = DateTime.DaysInMonth(year, month);
-                                                int workedDays = daysInMonth - hireDate.Day + 1;
-                                                double dailySalary = salary / daysInMonth;
-                                                calculatedSalary = (dailySalary * workedDays) + roleBonus;
-                                            }
-                                            else
-                                            {
-                                                calculatedSalary = salary + roleBonus;
-                                            }
-
-                                            // Resto del código para calcular descuentos, ISSS, AFP, etc.
-                                            double christmasBonus = GetChristmasBonus(salary, hireDate, year);
-                                            if (month == 12)
-                                            {
-                                                if (christmasBonus > 730)
+                                                if (year == startWorkYear && month == startWorkMonth)
                                                 {
-                                                    calculatedSalary += christmasBonus;
-                                                    DAOInsertPayroll.ChristmasBonus = christmasBonus;
+                                                    int daysInMonth = DateTime.DaysInMonth(year, month);
+                                                    int workedDays = daysInMonth - hireDate.Day + 1;
+                                                    double dailySalary = salary / daysInMonth;
+                                                    calculatedSalary = (dailySalary * workedDays) + roleBonus;
                                                 }
                                                 else
                                                 {
-                                                    DAOInsertPayroll.ChristmasBonus = christmasBonus;
+                                                    calculatedSalary = salary + roleBonus;
                                                 }
-                                            }
-                                            else
-                                            {
-                                                DAOInsertPayroll.ChristmasBonus = 0;
-                                            }
 
-                                            DAOInsertPayroll.Username = row["username"].ToString();
-                                            DAOInsertPayroll.Isss = GetISSS(calculatedSalary);
-                                            DAOInsertPayroll.Afp = GetAFP(calculatedSalary);
-                                            DAOInsertPayroll.Rent = GetRent(calculatedSalary);
-                                            DAOInsertPayroll.NetPay = GetNetSalary(calculatedSalary);
-                                            DAOInsertPayroll.IsssEmployer = GetISSSEmployeer(calculatedSalary);
-                                            DAOInsertPayroll.AfpEmployer = GetAFPEmployer(calculatedSalary);
-                                            DAOInsertPayroll.DiscountEmployee = GetEmployeeDiscount(calculatedSalary);
-                                            DAOInsertPayroll.DiscountEmployer = GetEmployerDiscount(calculatedSalary);
-                                            DAOInsertPayroll.IssueDate = new DateTime(year, month, 1);
-                                            DAOInsertPayroll.IdEmployee = idEmployee;
-                                            DAOInsertPayroll.IdPayrollStatus = 2;
-                                            returnValue = DAOInsertPayroll.AddPayroll();
+                                                // Crear y llenar un nuevo objeto DAOViewPayrolls
+                                                DAOInsertPayroll = new DAOViewPayrolls
+                                                {
+                                                    BusinessBonus = float.Parse(roleBonus.ToString()),
+                                                    ChristmasBonus = 0,
+                                                    Username = row["username"].ToString(),
+                                                    Isss = GetISSS(calculatedSalary),
+                                                    Afp = GetAFP(calculatedSalary),
+                                                    Rent = GetRent(calculatedSalary),
+                                                    NetPay = GetNetSalary(calculatedSalary),
+                                                    IsssEmployer = GetISSSEmployeer(calculatedSalary),
+                                                    AfpEmployer = GetAFPEmployer(calculatedSalary),
+                                                    DiscountEmployee = GetEmployeeDiscount(calculatedSalary),
+                                                    DiscountEmployer = GetEmployerDiscount(calculatedSalary),
+                                                    IssueDate = new DateTime(year, month, 1),
+                                                    IdEmployee = idEmployee,
+                                                    IdPayrollStatus = 2
+                                                };
+                                                if (month == 12)
+                                                {
+                                                    double christmasBonus = GetChristmasBonus(salary, hireDate, year);
+                                                    if (christmasBonus > 1500)
+                                                    {
+
+                                                        christmasBonus = GetChristmasBonusRent(christmasBonus);
+                                                        DAOInsertPayroll.ChristmasBonus = christmasBonus;
+                                                    }
+                                                    else
+                                                    {
+                                                        DAOInsertPayroll.ChristmasBonus = christmasBonus;
+                                                    }
+                                                }
+
+                                                returnValue = DAOInsertPayroll.AddPayroll();
+                                            }
                                         }
                                     }
                                 }
@@ -186,6 +173,234 @@ namespace PTC2024.Controller.EmployeesController
             else
             {
                 MessageBox.Show("Los datos no pudieron ser registrados",
+                                "Proceso interrumpido",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
+        public void CreateCompensationPayroll(object sender, EventArgs e)
+        {
+            // Creamos un objeto del DaoViewPayrolls
+            DAOViewPayrolls DAOInsertPayroll = new DAOViewPayrolls();
+            // Accedemos a los datos de los empleados
+            DAOInsertPayroll.GetEmployee();
+            // Se crean los dataSets
+            DataSet employeeDs = DAOInsertPayroll.GetEmployee();
+            DataSet payrollDs = DAOInsertPayroll.GetPayroll();
+            int returnValue = 0;
+
+            // Se crea la condición en la cual establecemos que los data set no estén vacios
+            if (employeeDs != null && employeeDs.Tables.Count > 0 &&
+                payrollDs != null && payrollDs.Tables.Count > 0)
+            {
+                // Creamos los dataTable
+                DataTable employeeDt = employeeDs.Tables["tbEmployee"];
+                DataTable payrollDt = payrollDs.Tables["tbPayroll"];
+
+                // Verificamos que los dataTable no estén vacíos
+                if (employeeDt != null && payrollDt != null)
+                {
+                    // Iteramos a través de todas las filas de la tabla employee
+                    foreach (DataRow row in employeeDt.Rows)
+                    {
+                        // Verificar el estado del empleado
+                        int status = int.Parse(row["IdStatus"].ToString());
+                        int idEmployee = int.Parse(row["IdEmployee"].ToString());
+                        DateTime hireDate = DateTime.Parse(row["hireDate"].ToString());
+                        int currentYear = DateTime.Now.Year;
+                        double salary = double.Parse(row["salary"].ToString());
+                        // Generacion de planillas para empleados inactivos
+                        double totalYearsWorked = currentYear - hireDate.Year;
+                        double compensation = salary * totalYearsWorked;
+
+                        if (status == 2)
+                        {
+                            // Comprobar si ya existe una planilla de liquidación para el empleado
+                            DataRow[] existingCompansationPayroll = payrollDt.Select($"IdEmployee = {idEmployee} AND IdPayrollStatus = 3");
+                            if (existingCompansationPayroll.Length == 0)
+                            {
+                                // Calcular la renta aplicable a la indemnización
+                                double netPay = compensation;
+
+                                // Crear y llenar un nuevo objeto DAOViewPayrolls para la planilla de liquidación
+                                DAOInsertPayroll = new DAOViewPayrolls
+                                {
+                                    //En las liquidaciones se tienen que tener ciertos parametros
+                                    Username = row["username"].ToString(),
+                                    Isss = 0.00,
+                                    Afp = 0.00,
+                                    Rent = 0.00, // Renta calculada sobre la indemnización(solo si supera los $1500)
+                                    NetPay = netPay,
+                                    IsssEmployer = 0.00,
+                                    AfpEmployer = 0.00,
+                                    DiscountEmployee = 0.00,
+                                    DiscountEmployer = 0.00,
+                                    IssueDate = DateTime.Now,
+                                    IdEmployee = idEmployee,
+                                    IdPayrollStatus = 3,
+                                    ChristmasBonus = 0.00
+                                };
+                                returnValue = DAOInsertPayroll.AddPayroll();
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (returnValue == 1)
+            {
+                MessageBox.Show("Las planillas de liquidación han sido registradas exitosamente",
+                                 "Proceso completado",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Las planillas de liquidación no pudieron ser registradas",
+                                "Proceso interrumpido",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
+        public void RefreshData(object sender, EventArgs e)
+        {
+            DAOViewPayrolls DAOUpdatePayroll = new DAOViewPayrolls();
+            DataSet employeeDs = DAOUpdatePayroll.GetEmployee();
+            DataSet bonusDs = DAOUpdatePayroll.GetBonus();
+            DataSet userDs = DAOUpdatePayroll.GetUsername();
+            DataSet payrollDs = DAOUpdatePayroll.GetPayroll();
+            int totalRowsAffected = 0;
+
+            if (employeeDs != null && payrollDs != null && bonusDs != null && userDs != null)
+            {
+                DataTable employeeDt = employeeDs.Tables["tbEmployee"];
+                DataTable payrollDt = payrollDs.Tables["tbPayroll"];
+                DataTable bonusDt = bonusDs.Tables["tbBusinessP"];
+                DataTable userDt = userDs.Tables["tbUserData"];
+
+                foreach (DataRow row in employeeDt.Rows)
+                {
+                    int status = int.Parse(row["IdStatus"].ToString());
+                    int idEmployee = int.Parse(row["IdEmployee"].ToString());
+                    double currentSalary = double.Parse(row["salary"].ToString());
+
+                    if (status == 1)
+                    {
+                        DataRow[] unpaidPayrolls = payrollDt.Select($"IdEmployee = {idEmployee} AND IdPayrollStatus = 2");
+
+                        foreach (DataRow payrollRow in unpaidPayrolls)
+                        {
+                            int idPayroll = int.Parse(payrollRow["IdPayroll"].ToString());
+                            DateTime issueDate = DateTime.Parse(payrollRow["issueDate"].ToString());
+
+                            // Obtener el rol del negocio del empleado
+                            DataRow[] userRows = userDt.Select($"username = '{row["username"]}'");
+                            double roleBonus = 0;
+                            if (userRows.Length > 0)
+                            {
+                                DataRow userRow = userRows[0];
+                                string businessRole = userRow["IdBusinessP"].ToString();
+                                DataRow[] bonusRows = bonusDt.Select($"IdBusinessP = '{businessRole}'");
+                                if (bonusRows.Length > 0)
+                                {
+                                    DataRow bonusRow = bonusRows[0];
+                                    roleBonus = double.Parse(bonusRow["positionBonus"].ToString());
+                                }
+                            }
+
+                            // Recalcular el salario base y agregar el bono del cargo
+                            double calculatedSalary = currentSalary + roleBonus;
+                            double christmasBonus = 0;
+                            if (issueDate.Month == 12)
+                            {
+                                christmasBonus = GetChristmasBonus(currentSalary, DateTime.Parse(row["hireDate"].ToString()), issueDate.Year);
+                                if (christmasBonus > 730)
+                                {
+                                    calculatedSalary += christmasBonus;
+                                }
+                            }
+                            // Aplicar descuentos
+                            double isss = GetISSS(calculatedSalary);
+                            double afp = GetAFP(calculatedSalary);
+                            double rent = GetRent(calculatedSalary);
+                            double netPay = calculatedSalary - isss - afp - rent;
+                            // Asignar valores al objeto DAOUpdatePayroll
+                            DAOUpdatePayroll.IdPayroll = idPayroll;
+                            DAOUpdatePayroll.NetPay = netPay;
+                            DAOUpdatePayroll.Rent = rent;
+                            DAOUpdatePayroll.Afp = afp;
+                            DAOUpdatePayroll.Isss = isss;
+                            DAOUpdatePayroll.IsssEmployer = GetISSSEmployeer(calculatedSalary);
+                            DAOUpdatePayroll.AfpEmployer = GetAFPEmployer(calculatedSalary);
+                            DAOUpdatePayroll.DiscountEmployee = GetEmployeeDiscount(calculatedSalary);
+                            DAOUpdatePayroll.DiscountEmployer = GetEmployerDiscount(calculatedSalary);
+                            DAOUpdatePayroll.ChristmasBonus = christmasBonus;
+                            DAOUpdatePayroll.IdPayrollStatus = 2;
+                            totalRowsAffected = DAOUpdatePayroll.UpdatePayroll();
+                        }
+                    }
+                }
+                RefreshData();
+            }
+            if (totalRowsAffected > 0)
+            {
+                MessageBox.Show("Los datos han sido actualizados exitosamente",
+                                 "Proceso completado",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Los datos no pudieron ser actualizados",
+                                "Proceso interrumpido",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
+        public void DeletePayrolls(object sender, EventArgs e)
+        {
+            // Creamos un objeto del DaoViewPayrolls
+            DAOViewPayrolls DAOInsertPayroll = new DAOViewPayrolls();
+            // Accedemos a los datos de los empleados y planillas
+            DataSet employeeDs = DAOInsertPayroll.GetEmployee();
+            DataSet payrollDs = DAOInsertPayroll.GetPayroll();
+            int returnValue = 0;
+            DataTable employeeDt = employeeDs.Tables["tbEmployee"];
+            DataTable payrollDt = payrollDs.Tables["tbPayroll"];
+
+            foreach (DataRow row in employeeDt.Rows)
+            {
+                // Verificar el estado del empleado (inactivo en este caso)
+                int employeeStatus = int.Parse(row["IdStatus"].ToString());
+                if (employeeStatus == 2)
+                {
+                    int idEmployee = int.Parse(row["IdEmployee"].ToString());
+                    // Seleccionar todas las planillas no pagadas de este empleado
+                    DataRow[] unpaidPayrolls = payrollDt.Select($"IdEmployee = {idEmployee} AND IdPayrollStatus = 2");
+
+                    // Eliminar cada planilla no pagada encontrada
+                    foreach (DataRow payrollRow in unpaidPayrolls)
+                    {
+                        int idPayroll = int.Parse(payrollRow["IdPayroll"].ToString());
+                        // Asignar el ID de la planilla a eliminar
+                        DAOInsertPayroll.IdPayroll = idPayroll;
+                        // Eliminar la planilla
+                        returnValue = DAOInsertPayroll.DeletePayroll();
+                    }
+                }
+            }
+            // Refrescar los datos después de la eliminación
+            RefreshData();
+            if (returnValue == 1)
+            {
+                MessageBox.Show("Los datos han sido eliminados exitosamente",
+                                "Proceso completado",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Los datos no pudieron ser eliminados",
                                 "Proceso interrumpido",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
@@ -248,6 +463,24 @@ namespace PTC2024.Controller.EmployeesController
             else
             {
                 rent = ((prerent - 2038.10) * 0.3) + 288.57;
+            }
+            double retencion = rent;
+            return retencion;
+        }
+        public double GetChristmasBonusRent(double Salary)
+        {
+            double rent;
+            if (Salary > 1500 && Salary < 2038.11)
+            {
+                rent = ((Salary - 895.24) * 0.2) + 60;
+            }
+            else if (Salary > 2028.11)
+            {
+                rent = ((Salary - 2038.10) * 0.3) + 288.57;
+            }
+            else
+            {
+                rent = 0;
             }
             double retencion = rent;
             return retencion;
@@ -326,153 +559,7 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.dgvPayrolls.Columns[7].Visible = false;
 
         }
-        public void RefreshData(object sender, EventArgs e)
-        {
-            DAOViewPayrolls DAOUpdatePayroll = new DAOViewPayrolls();
-            DataSet employeeDs = DAOUpdatePayroll.GetEmployee();
-            DataSet bonusDs = DAOUpdatePayroll.GetBonus();
-            DataSet userDs = DAOUpdatePayroll.GetUsername();
-            DataSet payrollDs = DAOUpdatePayroll.GetPayroll();
-            int totalRowsAffected = 0;
-
-            if (employeeDs != null && payrollDs != null && bonusDs != null && userDs != null)
-            {
-                DataTable employeeDt = employeeDs.Tables["tbEmployee"];
-                DataTable payrollDt = payrollDs.Tables["tbPayroll"];
-                DataTable bonusDt = bonusDs.Tables["tbBusinessP"];
-                DataTable userDt = userDs.Tables["tbUserData"];
-
-                foreach (DataRow row in employeeDt.Rows)
-                {
-                    int status = int.Parse(row["IdStatus"].ToString());
-                    int idEmployee = int.Parse(row["IdEmployee"].ToString());
-                    double currentSalary = double.Parse(row["salary"].ToString());
-
-                    if (status == 1)
-                    {
-                        DataRow[] unpaidPayrolls = payrollDt.Select($"IdEmployee = {idEmployee} AND IdPayrollStatus = 2");
-
-                        foreach (DataRow payrollRow in unpaidPayrolls)
-                        {
-                            int idPayroll = int.Parse(payrollRow["IdPayroll"].ToString());
-                            DateTime issueDate = DateTime.Parse(payrollRow["issueDate"].ToString());
-
-                            // Obtener el rol del negocio del empleado
-                            DataRow[] userRows = userDt.Select($"username = '{row["username"]}'");
-                            double roleBonus = 0;
-                            if (userRows.Length > 0)
-                            {
-                                DataRow userRow = userRows[0];
-                                string businessRole = userRow["IdBusinessP"].ToString();
-                                DataRow[] bonusRows = bonusDt.Select($"IdBusinessP = '{businessRole}'");
-                                if (bonusRows.Length > 0)
-                                {
-                                    DataRow bonusRow = bonusRows[0];
-                                    roleBonus = double.Parse(bonusRow["positionBonus"].ToString());
-                                }
-                            }
-
-                            // Recalcular el salario base y agregar el bono del cargo
-                            double calculatedSalary = currentSalary + roleBonus;
-                            double christmasBonus = 0;
-                            if (issueDate.Month == 12)
-                            {
-                                christmasBonus = GetChristmasBonus(currentSalary, DateTime.Parse(row["hireDate"].ToString()), issueDate.Year);
-                                if (christmasBonus > 730)
-                                {
-                                    calculatedSalary += christmasBonus;
-                                }
-                            }
-
-                            // Aplicar descuentos
-                            double isss = GetISSS(calculatedSalary);
-                            double afp = GetAFP(calculatedSalary);
-                            double rent = GetRent(calculatedSalary);
-                            double netPay = calculatedSalary - isss - afp - rent;
-
-                            // Asignar valores al objeto DAOUpdatePayroll
-                            DAOUpdatePayroll.IdPayroll = idPayroll;
-                            DAOUpdatePayroll.NetPay = netPay;
-                            DAOUpdatePayroll.Rent = rent;
-                            DAOUpdatePayroll.Afp = afp;
-                            DAOUpdatePayroll.Isss = isss;
-                            DAOUpdatePayroll.IsssEmployer = GetISSSEmployeer(calculatedSalary);
-                            DAOUpdatePayroll.AfpEmployer = GetAFPEmployer(calculatedSalary);
-                            DAOUpdatePayroll.DiscountEmployee = GetEmployeeDiscount(calculatedSalary);
-                            DAOUpdatePayroll.DiscountEmployer = GetEmployerDiscount(calculatedSalary);
-                            DAOUpdatePayroll.ChristmasBonus = christmasBonus;
-                            DAOUpdatePayroll.IdPayrollStatus = 2;
-                            totalRowsAffected = DAOUpdatePayroll.UpdatePayroll();
-                        }
-                    }
-                }
-                RefreshData();
-            }
-
-            if (totalRowsAffected > 0)
-            {
-                MessageBox.Show("Los datos han sido actualizados exitosamente",
-                                 "Proceso completado",
-                                 MessageBoxButtons.OK,
-                                 MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Los datos no pudieron ser actualizados",
-                                "Proceso interrumpido",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-            }
-        }
-        public void DeletePayrolls(object sender, EventArgs e)
-        {
-            // Creamos un objeto del DaoViewPayrolls
-            DAOViewPayrolls DAOInsertPayroll = new DAOViewPayrolls();
-            // Accedemos a los datos de los empleados y planillas
-            DataSet employeeDs = DAOInsertPayroll.GetEmployee();
-            DataSet payrollDs = DAOInsertPayroll.GetPayroll();
-            int returnValue = 0;
-            DataTable employeeDt = employeeDs.Tables["tbEmployee"];
-            DataTable payrollDt = payrollDs.Tables["tbPayroll"];
-
-            foreach (DataRow row in employeeDt.Rows)
-            {
-                // Verificar el estado del empleado (inactivo en este caso)
-                int employeeStatus = int.Parse(row["IdStatus"].ToString());
-                if (employeeStatus == 2)
-                {
-                    int idEmployee = int.Parse(row["IdEmployee"].ToString());
-                    // Seleccionar todas las planillas no pagadas de este empleado
-                    DataRow[] unpaidPayrolls = payrollDt.Select($"IdEmployee = {idEmployee} AND IdPayrollStatus = 2");
-
-                    // Eliminar cada planilla no pagada encontrada
-                    foreach (DataRow payrollRow in unpaidPayrolls)
-                    {
-                        int idPayroll = int.Parse(payrollRow["IdPayroll"].ToString());
-                        // Asignar el ID de la planilla a eliminar
-                        DAOInsertPayroll.IdPayroll = idPayroll;
-                        // Eliminar la planilla
-                        returnValue = DAOInsertPayroll.DeletePayroll();
-                    }
-                }
-            }
-            // Refrescar los datos después de la eliminación
-            RefreshData();
-            if (returnValue == 1)
-            {
-                MessageBox.Show("Los datos han sido eliminados exitosamente",
-                                "Proceso completado",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Los datos no pudieron ser eliminados",
-                                "Proceso interrumpido",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-            }
-        }
+       
         //----------------------Metodos de interaccion con otros formularios---------------------------//
         public void OpenUpdatePayroll(object sender, EventArgs e)
         {
@@ -648,6 +735,36 @@ namespace PTC2024.Controller.EmployeesController
             DataSet ds = objSearch.SearchPayrollDecember();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
             if (objViewPayrolls.ch12.Checked == false)
+            {
+                RefreshData();
+            }
+        }
+        public void SearchByPaid(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SearchPaidPayrols();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+            if (objViewPayrolls.chPaid.Checked == false)
+            {
+                RefreshData();
+            }
+        }
+        public void SearchByUnpaid(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SearchUnpaidPayrols();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+            if (objViewPayrolls.chuUnpaid.Checked == false)
+            {
+                RefreshData();
+            }
+        }
+        public void SearchByCompensation(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SearcCompensationPayrols();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+            if (objViewPayrolls.chCompensation.Checked == false)
             {
                 RefreshData();
             }
