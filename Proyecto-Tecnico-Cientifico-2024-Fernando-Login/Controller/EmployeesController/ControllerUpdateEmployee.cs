@@ -22,7 +22,7 @@ namespace PTC2024.Controller.EmployeesController
         private string businessP;
         bool emailValidation;
         //CONSTRUCTOR
-        public ControllerUpdateEmployee(FrmUpdateEmployee View, int employeeId, string names, string lastNames, string dui, DateTime birthDate, string email, string phone, string address, double salary, string bankAccount, string bank, int affiliationNumber, DateTime hireDate, string department, string employeeType, string maritalStatus, string status, string username, string businessP)
+        public ControllerUpdateEmployee(FrmUpdateEmployee View, int employeeId, string names, string lastNames, string dui, DateTime birthDate, string email, string phone, string address, double salary, string bankAccount, string bank, string affiliationNumber, DateTime hireDate, string department, string employeeType, string maritalStatus, string status, string username, string businessP)
         {
             objUpdateEmployee = View;
             //variables para que los combobox aparezcan seleccionados según los datos del registro
@@ -85,7 +85,7 @@ namespace PTC2024.Controller.EmployeesController
                     daoUpdateEmployee.EmployeeType = (int)objUpdateEmployee.comboEmployeeType.SelectedValue;
                     daoUpdateEmployee.EmployeeStatus = (int)objUpdateEmployee.comboEmployeeStatus.SelectedValue;
                     daoUpdateEmployee.Salary = double.Parse(objUpdateEmployee.txtSalary.Text.Trim());
-                    daoUpdateEmployee.AffiliationNumber = int.Parse(objUpdateEmployee.txtAffiliationNumber.Text.Trim());
+                    daoUpdateEmployee.AffiliationNumber = objUpdateEmployee.txtAffiliationNumber.Text.Trim();
                     daoUpdateEmployee.BankAccount = objUpdateEmployee.txtBankAccount.Text.Trim();
                     daoUpdateEmployee.Bank = (int)objUpdateEmployee.comboBanks.SelectedValue;
                     daoUpdateEmployee.IdEmployee = int.Parse(objUpdateEmployee.txtEmployeeId.Text.Trim());
@@ -181,7 +181,7 @@ namespace PTC2024.Controller.EmployeesController
             objUpdateEmployee.txtUsername.Enabled = false;
         }
 
-        public void ChargeValues( int employeeId, string names, string lastNames, string dui, DateTime birthDate, string email, string phone, string address, double salary, string bankAccount, string bank, int affiliationNumber, DateTime hireDate, string department, string employeeType, string maritalStatus, string status, string username, string businessP)
+        public void ChargeValues( int employeeId, string names, string lastNames, string dui, DateTime birthDate, string email, string phone, string address, double salary, string bankAccount, string bank, string affiliationNumber, DateTime hireDate, string department, string employeeType, string maritalStatus, string status, string username, string businessP)
         {
             try
             {

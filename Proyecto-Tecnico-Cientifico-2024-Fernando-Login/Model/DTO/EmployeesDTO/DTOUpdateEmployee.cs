@@ -20,7 +20,7 @@ namespace PTC2024.Model.DTO.EmployeesDTO
         private double salary;
         private string bankAccount;
         private DateTime hireDate;
-        private int affiliationNumber;
+        private string affiliationNumber;
         private int department;
         private int employeeType;
         private int maritalStatus;
@@ -40,7 +40,7 @@ namespace PTC2024.Model.DTO.EmployeesDTO
         public string Address { get => address; set => address = value; }
         public double Salary { get => salary; set => salary = value; }
         public string BankAccount { get => bankAccount; set => bankAccount = value; }
-        public int AffiliationNumber { get => affiliationNumber; set => affiliationNumber = value; }
+        public string AffiliationNumber { get => affiliationNumber; set => affiliationNumber = value; }
         public int Department { get => department; set => department = value; }
         public int EmployeeType { get => employeeType; set => employeeType = value; }
         public int MaritalStatus { get => maritalStatus; set => maritalStatus = value; }

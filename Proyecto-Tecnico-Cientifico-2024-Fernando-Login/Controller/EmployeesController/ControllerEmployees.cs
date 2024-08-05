@@ -132,7 +132,7 @@ namespace PTC2024.Controller.Employees
                 double.Parse(objEmployees.dgvEmployees[8, row].Value.ToString()),
                 objEmployees.dgvEmployees[9, row].Value.ToString(),
                 objEmployees.dgvEmployees[10, row].Value.ToString(),
-                int.Parse(objEmployees.dgvEmployees[11, row].Value.ToString()),
+                objEmployees.dgvEmployees[11, row].Value.ToString(),
                 DateTime.Parse(objEmployees.dgvEmployees[12, row].Value.ToString()),
                 objEmployees.dgvEmployees[13, row].Value.ToString(),
                 objEmployees.dgvEmployees[14, row].Value.ToString(),
