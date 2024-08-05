@@ -548,7 +548,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             try
             {
                 comand.Connection = getConnection();
-                string query = $"SELECT * FROM viewPayrolls WHERE ([Estado]) = 'Liquidación'";
+                string query = $"SELECT * FROM viewPayrolls WHERE ([Estado]) = 'Indemnización'";
                 SqlCommand cmd = new SqlCommand(query, comand.Connection);
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
