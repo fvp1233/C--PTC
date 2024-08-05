@@ -55,11 +55,20 @@ namespace PTC2024.Controller.ServicesController
             }
             else
             {
-                Add = true;
+                Add = false;
+                if (double.TryParse(objAddService.txtMonto.Text,out double result))
+                {
+                    Add = true;
+                }
+                else
+                {
+                    Add = false;
+                    MessageBox.Show("Favor ingresar un valor numerico valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
 
 
-            /*Si los campos no estan vacios entonces se siguq con el proceso*/
+            /*Si los campos no estan vacios entonces se sigue con el proceso*/
             if (Add == true)
             {
                 DAOAddService dAOAddService = new DAOAddService();

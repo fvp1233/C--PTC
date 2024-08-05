@@ -58,7 +58,16 @@ namespace PTC2024.Controller.ServicesController
             }
             else
             {
-                Update= true;
+                Update= false;
+                if (double.TryParse(objUpdateService.txtMonto.Text, out double result))
+                {
+                    Update = true;
+                }
+                else
+                {
+                    Update = false;
+                    MessageBox.Show("Favor ingresar un valor numerico valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
 
 
