@@ -125,5 +125,117 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             cmdEnableEmployee.Parameters.AddWithValue("param4", Username);
             MessageBox.Show("El usuario del empleado no pudo ser deshabilitado", "Proceso incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        //Método para la filtración por checkbox de tipo de empleado
+        public DataSet CheckboxFiltersTypeE(string employeeType)
+        {
+            try
+            {
+                //Abrimos conexión con la base
+                Command.Connection = getConnection();
+                //Creamos el query para la filtración de los checkbox
+                string queryCheckboxTypeE = "SELECT * FROM viewEmployees WHERE [Tipo] = @employeeType";
+                SqlCommand cmdCheckboxTypeE = new SqlCommand(queryCheckboxTypeE, Command.Connection);
+                //Le damos valor a los parámetros de la consulta
+                cmdCheckboxTypeE.Parameters.AddWithValue("employeeType", employeeType);
+                //Ejecutamos el query
+                cmdCheckboxTypeE.ExecuteNonQuery();
+
+                //capturamos la respuesta con un adp
+                SqlDataAdapter adpCheckBoxTypeE = new SqlDataAdapter(cmdCheckboxTypeE);
+                //Creamos un dataset
+                DataSet dsCheckBoxTypeE = new DataSet();
+                //Llenamos el data set
+                adpCheckBoxTypeE.Fill(dsCheckBoxTypeE, "viewEmployees");
+                //retornamos el dataset
+                return dsCheckBoxTypeE;
+            }
+            catch (Exception ex)
+            {
+                //Si ocurre un error en el try, devolvemos un null
+                MessageBox.Show(ex.Message);
+                return null;
+               
+            }
+            finally 
+            {
+                Command.Connection.Close(); 
+            }
+        }
+
+        //Método para la filtración de checkbox de departamento
+
+        public DataSet CheckboxFiltersDepartment(string department)
+        {
+            try
+            {
+                //Abrimos conexión con la base
+                Command.Connection = getConnection();
+                //Creamos el query para la filtración de los checkbox
+                string queryCheckboxDepartment = "SELECT * FROM viewEmployees WHERE [Dpto.] = @department";
+                SqlCommand cmdCheckboxDepartment = new SqlCommand(queryCheckboxDepartment, Command.Connection);
+                //Le damos valor a los parámetros de la consulta
+                cmdCheckboxDepartment.Parameters.AddWithValue("department", department);
+                //Ejecutamos el query
+                cmdCheckboxDepartment.ExecuteNonQuery();
+
+                //capturamos la respuesta con un adp
+                SqlDataAdapter adpCheckBoxDepartment = new SqlDataAdapter(cmdCheckboxDepartment);
+                //Creamos un dataset
+                DataSet dsCheckBoxDepartment = new DataSet();
+                //Llenamos el data set
+                adpCheckBoxDepartment.Fill(dsCheckBoxDepartment, "viewEmployees");
+                //retornamos el dataset
+                return dsCheckBoxDepartment;
+            }
+            catch (Exception ex)
+            {
+                //Si ocurre un error en el try, devolvemos un null
+                MessageBox.Show(ex.Message);
+                return null;
+
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
+
+        //Método para filtración de datos por checkbox de Estado de empleado
+        public DataSet CheckboxFiltersStatus(string status)
+        {
+            try
+            {
+                //Abrimos conexión con la base
+                Command.Connection = getConnection();
+                //Creamos el query para la filtración de los checkbox
+                string queryCheckboxStatus = "SELECT * FROM viewEmployees WHERE [Estado] = @department";
+                SqlCommand cmdCheckboxStatus = new SqlCommand(queryCheckboxStatus, Command.Connection);
+                //Le damos valor a los parámetros de la consulta
+                cmdCheckboxStatus.Parameters.AddWithValue("department", status);
+                //Ejecutamos el query
+                cmdCheckboxStatus.ExecuteNonQuery();
+
+                //capturamos la respuesta con un adp
+                SqlDataAdapter adpCheckBoxStatus = new SqlDataAdapter(cmdCheckboxStatus);
+                //Creamos un dataset
+                DataSet dsCheckBoxStatus = new DataSet();
+                //Llenamos el data set
+                adpCheckBoxStatus.Fill(dsCheckBoxStatus, "viewEmployees");
+                //retornamos el dataset
+                return dsCheckBoxStatus;
+            }
+            catch (Exception ex)
+            {
+                //Si ocurre un error en el try, devolvemos un null
+                MessageBox.Show(ex.Message);
+                return null;
+
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
     }
 }
