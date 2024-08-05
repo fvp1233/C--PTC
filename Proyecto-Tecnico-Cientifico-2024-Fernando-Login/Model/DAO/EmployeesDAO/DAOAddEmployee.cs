@@ -256,12 +256,20 @@ namespace PTC2024.Model.DAO
                     //se ejecuta el comando ya con todos los valores de los parámetros
                     respuesta = cmdInsertEmployee.ExecuteNonQuery();
                     //Si el valor del executeNonQuery es 1, los valores fueron ingresados
-                    return respuesta;
+                    if (respuesta == 1)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        //si la respuesta no es 1, entonces el empleado no se agregó, por lo que tenemos que eliminar el usuario que se había creado para dicho empleado. Esto se hace en el método RollBack
+                        RollBack();
+                        return 0;
+                    }
                 }
                 else
                 {
-                    //si la respuesta no es 1, entonces el empleado no se agregó, por lo que tenemos que eliminar el usuario que se había creado para dicho empleado. Esto se hace en el método RollBack
-                    RollBack();
+                    //si el usuario no se ingresó, se regresa un 0
                     return 0;
                 }
             }

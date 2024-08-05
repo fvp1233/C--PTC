@@ -108,16 +108,16 @@ namespace PTC2024.Controller
                 DAOAddEmployee daoInsertEmployee = new DAOAddEmployee();
                 CommonClasses commonClasses = new CommonClasses();
                 //Datos para la creación de un empleado
-                daoInsertEmployee.Names = objAddEmployee.txtNames.Text;
-                daoInsertEmployee.LastNames = objAddEmployee.txtLastNames.Text;
-                daoInsertEmployee.Document = objAddEmployee.txtDUI.Text;
+                daoInsertEmployee.Names = objAddEmployee.txtNames.Text.Trim();
+                daoInsertEmployee.LastNames = objAddEmployee.txtLastNames.Text.Trim();
+                daoInsertEmployee.Document = objAddEmployee.txtDUI.Text.Trim();
                 daoInsertEmployee.BirthDate = objAddEmployee.dtBirthDate.Value.Date;
-                daoInsertEmployee.Email = objAddEmployee.txtEmail.Text;
-                daoInsertEmployee.Phone = objAddEmployee.txtPhone.Text;
-                daoInsertEmployee.Address = objAddEmployee.txtAddress.Text;
-                daoInsertEmployee.Salary = float.Parse(objAddEmployee.txtSalary.Text);
-                daoInsertEmployee.BankAccount = objAddEmployee.txtBankAccount.Text;
-                daoInsertEmployee.AffiliationNumber = int.Parse(objAddEmployee.txtAffiliationNumber.Text);
+                daoInsertEmployee.Email = objAddEmployee.txtEmail.Text.Trim();
+                daoInsertEmployee.Phone = objAddEmployee.txtPhone.Text.Trim();
+                daoInsertEmployee.Address = objAddEmployee.txtAddress.Text.Trim();
+                daoInsertEmployee.Salary = double.Parse(objAddEmployee.txtSalary.Text.Trim());
+                daoInsertEmployee.BankAccount = objAddEmployee.txtBankAccount.Text.Trim();
+                daoInsertEmployee.AffiliationNumber = int.Parse(objAddEmployee.txtAffiliationNumber.Text.Trim());
                 daoInsertEmployee.HireDate = objAddEmployee.dpHireDate.Value.Date;
                 daoInsertEmployee.Bank = int.Parse(objAddEmployee.comboBanks.SelectedValue.ToString());
                 daoInsertEmployee.Department = int.Parse(objAddEmployee.comboDepartment.SelectedValue.ToString());
@@ -125,7 +125,7 @@ namespace PTC2024.Controller
                 daoInsertEmployee.MaritalStatus = int.Parse(objAddEmployee.comboMaritalStatus.SelectedValue.ToString());
                 daoInsertEmployee.EmployeeStatus = int.Parse(objAddEmployee.comboEmployeeStatus.SelectedValue.ToString());
                 //Datos para la creación del usuario
-                daoInsertEmployee.Username = objAddEmployee.txtUsername.Text;
+                daoInsertEmployee.Username = objAddEmployee.txtUsername.Text.Trim();
                 daoInsertEmployee.Password = commonClasses.ComputeSha256Hash(objAddEmployee.txtUsername.Text + "PU123");
                 daoInsertEmployee.BusinessPosition = int.Parse(objAddEmployee.comboBusinessP.SelectedValue.ToString());
                 daoInsertEmployee.UserSatus = true;

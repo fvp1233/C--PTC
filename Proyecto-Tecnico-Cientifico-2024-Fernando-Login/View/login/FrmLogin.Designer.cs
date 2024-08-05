@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -37,8 +38,9 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.dataLogin = new System.Windows.Forms.Panel();
+            this.HidePassword = new System.Windows.Forms.PictureBox();
+            this.ShowPassword = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLoginBunifu = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
@@ -50,15 +52,13 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.Label();
-            this.ShowPassword = new System.Windows.Forms.PictureBox();
-            this.HidePassword = new System.Windows.Forms.PictureBox();
             this.dataLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HidePassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowPassword)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ShowPassword)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HidePassword)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLogin
@@ -81,6 +81,30 @@
             this.dataLogin.Name = "dataLogin";
             this.dataLogin.Size = new System.Drawing.Size(788, 409);
             this.dataLogin.TabIndex = 0;
+            // 
+            // HidePassword
+            // 
+            this.HidePassword.BackColor = System.Drawing.Color.White;
+            this.HidePassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HidePassword.Image = ((System.Drawing.Image)(resources.GetObject("HidePassword.Image")));
+            this.HidePassword.Location = new System.Drawing.Point(404, 218);
+            this.HidePassword.Name = "HidePassword";
+            this.HidePassword.Size = new System.Drawing.Size(30, 30);
+            this.HidePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HidePassword.TabIndex = 17;
+            this.HidePassword.TabStop = false;
+            // 
+            // ShowPassword
+            // 
+            this.ShowPassword.BackColor = System.Drawing.Color.White;
+            this.ShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ShowPassword.Image = ((System.Drawing.Image)(resources.GetObject("ShowPassword.Image")));
+            this.ShowPassword.Location = new System.Drawing.Point(404, 218);
+            this.ShowPassword.Name = "ShowPassword";
+            this.ShowPassword.Size = new System.Drawing.Size(30, 30);
+            this.ShowPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ShowPassword.TabIndex = 16;
+            this.ShowPassword.TabStop = false;
             // 
             // panel1
             // 
@@ -412,30 +436,6 @@
             this.txtLogin.TabIndex = 0;
             this.txtLogin.Text = "LOGIN";
             // 
-            // ShowPassword
-            // 
-            this.ShowPassword.BackColor = System.Drawing.Color.White;
-            this.ShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ShowPassword.Image = ((System.Drawing.Image)(resources.GetObject("ShowPassword.Image")));
-            this.ShowPassword.Location = new System.Drawing.Point(404, 218);
-            this.ShowPassword.Name = "ShowPassword";
-            this.ShowPassword.Size = new System.Drawing.Size(30, 30);
-            this.ShowPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ShowPassword.TabIndex = 16;
-            this.ShowPassword.TabStop = false;
-            // 
-            // HidePassword
-            // 
-            this.HidePassword.BackColor = System.Drawing.Color.White;
-            this.HidePassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.HidePassword.Image = ((System.Drawing.Image)(resources.GetObject("HidePassword.Image")));
-            this.HidePassword.Location = new System.Drawing.Point(404, 218);
-            this.HidePassword.Name = "HidePassword";
-            this.HidePassword.Size = new System.Drawing.Size(30, 30);
-            this.HidePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.HidePassword.TabIndex = 17;
-            this.HidePassword.TabStop = false;
-            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -449,12 +449,12 @@
             this.Text = "Login";
             this.dataLogin.ResumeLayout(false);
             this.dataLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HidePassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowPassword)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ShowPassword)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HidePassword)).EndInit();
             this.ResumeLayout(false);
 
         }

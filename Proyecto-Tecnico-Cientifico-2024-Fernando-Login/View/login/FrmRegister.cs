@@ -18,7 +18,5 @@ namespace PTC2024.View.login
             InitializeComponent();
             ControllerRegister objRegister = new ControllerRegister(this);
         }
-
-        
     }
 }
