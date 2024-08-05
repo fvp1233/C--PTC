@@ -14,6 +14,8 @@
     using System.Windows.Forms;
     using System.Web.UI.Design.WebControls;
     using PTC2024.Model.DTO.ServicesDTO;
+using System.Numerics;
+using PTC2024.Model.DTO.CustomersDTO;
 
 namespace PTC2024.Controller.BillsController
 {
@@ -37,6 +39,7 @@ namespace PTC2024.Controller.BillsController
             objAddBills.txtSubTotal.TextChanged += new EventHandler(CalculateTotal);
             objAddBills.txtDiscount.TextChanged += new EventHandler(TxtDiscount_TextChanged);
             objAddBills.txtDiscount.KeyUp += new KeyEventHandler(txtDiscount_KeyPress);
+            objAddBills.txtCustomerName.KeyUp += new KeyEventHandler(txtCustomerName_KeyUp);
             objAddBills.txtTotalPay.TextChanged += new EventHandler(CalculateTotal);
             objAddBills.dgvData.CellValueChanged += new DataGridViewCellEventHandler(CalculateTotal);
             objAddBills.dgvData.RowsAdded += new DataGridViewRowsAddedEventHandler(CalculateTotal);
@@ -86,7 +89,6 @@ namespace PTC2024.Controller.BillsController
 
             DataSet dsServices = objBills.DataServices();
             objAddBills.comboServiceBill.DataSource = dsServices.Tables["tbServices"];
-            objAddBills.comboServiceBill.ValueMember = "serviceAmount";
             objAddBills.comboServiceBill.DisplayMember = "serviceName";
             objAddBills.comboServiceBill.ValueMember = "IdServices";
             //Data grid de detalle de servicio
@@ -112,33 +114,95 @@ namespace PTC2024.Controller.BillsController
                 objAddBills.btnmore.Enabled = true;
             }
         }
+
         public void More(object sender, EventArgs e)
         {
             DAOAddBills dAOAdd = new DAOAddBills();
-            dAOAdd.IdServices1 = int.Parse(objAddBills.comboServiceBill.SelectedValue.ToString());
-            int selectedServiceId = int.Parse(objAddBills.comboServiceBill.SelectedValue.ToString());
-
-            // Obtener el precio del servicio seleccionado
-            float price = dAOAdd.GetServicePrice(selectedServiceId);
-
-            // Añadir el servicio y precio a la base de datos
-            dAOAdd.IdServices1 = selectedServiceId;
-            dAOAdd.Price1 = price;
-            int An = dAOAdd.DataB();
-            //Verificamos el valor que nos retorna dicho método
-            if (An == 1)
+            if (int.TryParse(objAddBills.comboServiceBill.SelectedValue.ToString(), out int selectedServiceId))
             {
-                MessageBox.Show("Servicio seleccionado con exito", "Proceso Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Obtener el precio del servicio seleccionado
+                float price = dAOAdd.GetServicePrice(selectedServiceId);
+
+                // Añadir el servicio y precio a la base de datos
+                dAOAdd.IdServices1 = selectedServiceId;
+                dAOAdd.Price1 = price;
+                int An = dAOAdd.DataB();
+
+                // Verificamos el valor que nos retorna dicho método
+                if (An == 1)
+                {
+                    MessageBox.Show("Servicio seleccionado con éxito", "Proceso Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Por favor vuelva a seleccionar el servicio", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    objAddBills.Close();
+                }
+                InitialCharge();
             }
             else
             {
-                MessageBox.Show("Por favor vuelva a seleccionar el servicio", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                objAddBills.Close();
-
+                MessageBox.Show("El valor seleccionado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            InitialCharge();
-
         }
+
+
+        public void txtCustomerName_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (char.IsLetterOrDigit((char)e.KeyCode) ||
+            e.KeyCode == Keys.Back ||
+            e.KeyCode == Keys.Delete ||
+            e.KeyCode == Keys.Left ||
+            e.KeyCode == Keys.Right)
+            {
+                // Obtener el nombre desde el TextBox
+                string name = objAddBills.txtCustomerName.Text.Trim();
+
+                if (!string.IsNullOrEmpty(name))
+                {
+                    // Crear una instancia de DAOAddBills y obtener los datos del cliente como un string
+                    DAOAddBills daoAddBills = new DAOAddBills();
+                    string customerData = daoAddBills.GetCustomerByName(name);
+
+                    if (!string.IsNullOrEmpty(customerData))
+                    {
+                        // Dividir los datos obtenidos y asignarlos a los TextBoxes
+                        var customerParts = customerData.Split('|');
+
+                        // Asegúrate de tener el número correcto de partes
+                        if (customerParts.Length == 5)
+                        {
+                            objAddBills.txtCustomerName.Text = customerParts[0];
+                            objAddBills.txtCustomerLastname.Text = customerParts[1];
+                            objAddBills.txtCustomerPhone.Text = customerParts[2];
+                            objAddBills.txtCustomerEmail.Text = customerParts[3];
+                            objAddBills.txtDUICustomer.Text = customerParts[4];
+                        }
+                    }
+                    else
+                    {
+                        // Si no se encuentra el cliente, limpiar los campos
+                        ClearCustomerFields();
+                    }
+                }
+                else
+                {
+                    // Limpiar los campos si el nombre está vacío
+                    ClearCustomerFields();
+                }
+            }
+        }
+
+        // Método para limpiar los campos de texto
+        private void ClearCustomerFields()
+        {
+            objAddBills.txtCustomerName.ResetText();
+            objAddBills.txtCustomerLastname.ResetText();
+            objAddBills.txtCustomerPhone.ResetText();
+            objAddBills.txtCustomerEmail.ResetText();
+            objAddBills.txtDUICustomer.ResetText();
+        }
+
         public void TxtDiscount_TextChanged(object sender, EventArgs e)
         {
             CalculateTotal(null, null);
@@ -223,38 +287,61 @@ namespace PTC2024.Controller.BillsController
         }
         public void NewBill(object sender, EventArgs e)
         {
-            DAOAddBills daoNew = new DAOAddBills();
-            daoNew.CompanyName = objAddBills.txtRazónsocial.Text.Trim();
-            daoNew.NIT1 = objAddBills.txtNITCompany.Text.Trim();
-            daoNew.NRC1 = objAddBills.txtNRCompany.Text.Trim();
-            daoNew.Discount = float.Parse(objAddBills.txtDiscount.Text.ToString()); 
-            daoNew.SubtotalPay = float.Parse(objAddBills.txtSubTotal.Text.ToString()); 
-            daoNew.TotalPay = float.Parse(objAddBills.txtTotalPay.Text.ToString()); 
-            daoNew.StartDate = objAddBills.dtStartDate.Value.Date;
-            daoNew.FinalDate1 = objAddBills.dtFinalDate.Value.Date;
-            daoNew.Dateissued= objAddBills.dtfiscalPeriod.Value.Date;
-            daoNew.Services = objAddBills.comboServiceBill.SelectedValue.ToString();
-            daoNew.StatusBills = objAddBills.comboStatusBill.SelectedValue.ToString();
-            daoNew.Customer = objAddBills.txtCustomerName.ToString();
-            daoNew.Employee = objAddBills.txtEmployee.ToString();
-            daoNew.MethodP = objAddBills.comboMethodP.SelectedValue.ToString();
-           // daoNew.FiscalPeriod = objAddBills.dtfiscalPeriod.Value.Date;
-            int checks = daoNew.RegisterBills();
-            //Verificamos el valor que nos retorna dicho método
-            if (checks == 1)
+            if (!(string.IsNullOrEmpty(objAddBills.txtCompany.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtNITCompany.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtNRCompany.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtDiscount.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtSubTotal.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtTotalPay.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtCustomerName.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtCustomerLastname.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtCustomerEmail.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtCustomerPhone.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtDUICustomer.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtEmployee.Text.Trim())))
             {
-                MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                objAddBills.Close();
+                DAOAddBills daoNew = new DAOAddBills();
+                daoNew.CompanyName = objAddBills.txtRazónsocial.Text.Trim();
+                daoNew.NIT1 = objAddBills.txtNITCompany.Text.Trim();
+                daoNew.NRC1 = objAddBills.txtNRCompany.Text.Trim();
+                daoNew.Discount = float.Parse(objAddBills.txtDiscount.Text);
+                daoNew.SubtotalPay = float.Parse(objAddBills.txtSubTotal.Text);
+                daoNew.TotalPay = float.Parse(objAddBills.txtTotalPay.Text);
+                daoNew.StartDate = objAddBills.dtStartDate.Value.Date;
+                daoNew.FinalDate1 = objAddBills.dtFinalDate.Value.Date;
+                daoNew.Dateissued = objAddBills.dtfiscalPeriod.Value.Date;
+                daoNew.Services = objAddBills.comboServiceBill.SelectedValue.ToString();
+                daoNew.StatusBills = objAddBills.comboStatusBill.SelectedValue.ToString();
+                daoNew.Customer = objAddBills.txtCustomerName.Text.Trim();
+                daoNew.Customer = objAddBills.txtCustomerLastname.Text.Trim();
+                daoNew.Customer = objAddBills.txtCustomerEmail.Text.Trim();
+                daoNew.Customer = objAddBills.txtCustomerPhone.Text.Trim();
+                daoNew.Customer = objAddBills.txtDUICustomer.Text.Trim();
+                daoNew.Employee = objAddBills.txtEmployee.Text.Trim();
+                daoNew.MethodP = objAddBills.comboMethodP.SelectedValue.ToString();
+                int checks = daoNew.RegisterBills();
+
+                // Verificamos el valor que nos retorna dicho método
+                if (checks == 1)
+                {
+                    MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    objAddBills.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, complete todos los campos requeridos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+    
 
 
 
-            // public void RectifyBills()
-            //{
+    // public void RectifyBills()
+    //{
 
-            // }
-            public void BackProcess(object sender, EventArgs e)
+    // }
+    public void BackProcess(object sender, EventArgs e)
             {
                 objAddBills.Close();
             }

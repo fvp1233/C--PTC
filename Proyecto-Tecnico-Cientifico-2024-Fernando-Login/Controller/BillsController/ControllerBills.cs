@@ -10,6 +10,8 @@ using PTC2024.Model.DTO;
 using PTC2024.Model.DAO.BillsDAO;
 using System.Data;
 using System.Windows.Forms;
+using System.Numerics;
+using PTC2024.Model.DAO.ServicesDAO;
 
 namespace PTC2024.Controller.BillsController
 {
@@ -24,6 +26,7 @@ namespace PTC2024.Controller.BillsController
             objFormBills.cmsBills.Click += new EventHandler(printBills);
             objFormBills.cmsBills.Click += new EventHandler(RectifyBills);
             objFormBills.cmsBills.Click += new EventHandler(OverrideBills);
+            objFormBills.txtSearchB.Click += new EventHandler(SearchBills);
         }
         public void LoadDataBills(object sender, EventArgs e)
         {
@@ -58,7 +61,8 @@ namespace PTC2024.Controller.BillsController
         {
             int pos = objFormBills.dgvBills.CurrentRow.Index;
             int id;
-            string companyName, NIT, NRC, serviceName, statusBill, customer, employee, methodP;
+            string NIT, NRC;
+            string companyName, serviceName, statusBill, customer, employee, methodP;
             DateTime startDate, FinalDate, Dateissued;
             float discount, subtotalPay, totalPay;
             id = int.Parse(objFormBills.dgvBills[0, pos].Value.ToString());
@@ -88,6 +92,17 @@ namespace PTC2024.Controller.BillsController
         {
             FrmOverrideBill overrideBill = new FrmOverrideBill();
             overrideBill.ShowDialog();
+        }
+        public void SearchBills(object sender, EventArgs e)
+        {
+            DAOBills dAOBills = new DAOBills();
+            /*Aca se le da valor al atributo de la clase*/
+            dAOBills.Search = objFormBills.txtSearchB.Text;
+
+            /*Se captura la respuesta de l metodo SearchData y se le agrega su respectivo parametro*/
+            DataSet ans = dAOBills.SearchDataB(dAOBills.Search);
+            /*Se le dice al DataGridView lo que tiene que mostrar*/
+            objFormBills.dgvBills.DataSource = ans.Tables["ViewBills"];
         }
     }
 }
