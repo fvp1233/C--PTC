@@ -199,7 +199,7 @@
             this.ShowPassword.BackColor = System.Drawing.Color.White;
             this.ShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ShowPassword.Image = ((System.Drawing.Image)(resources.GetObject("ShowPassword.Image")));
-            this.ShowPassword.Location = new System.Drawing.Point(516, 55);
+            this.ShowPassword.Location = new System.Drawing.Point(516, 58);
             this.ShowPassword.Name = "ShowPassword";
             this.ShowPassword.Size = new System.Drawing.Size(25, 25);
             this.ShowPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -211,7 +211,7 @@
             this.HidePassword.BackColor = System.Drawing.Color.White;
             this.HidePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HidePassword.Image = ((System.Drawing.Image)(resources.GetObject("HidePassword.Image")));
-            this.HidePassword.Location = new System.Drawing.Point(516, 55);
+            this.HidePassword.Location = new System.Drawing.Point(516, 58);
             this.HidePassword.Name = "HidePassword";
             this.HidePassword.Size = new System.Drawing.Size(25, 25);
             this.HidePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -335,7 +335,7 @@
             this.txtUser.SelectionLength = 0;
             this.txtUser.SelectionStart = 0;
             this.txtUser.ShortcutsEnabled = true;
-            this.txtUser.Size = new System.Drawing.Size(260, 32);
+            this.txtUser.Size = new System.Drawing.Size(260, 37);
             this.txtUser.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtUser.TabIndex = 12;
             this.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -412,7 +412,7 @@
             this.txtPassword.SelectionLength = 0;
             this.txtPassword.SelectionStart = 0;
             this.txtPassword.ShortcutsEnabled = true;
-            this.txtPassword.Size = new System.Drawing.Size(260, 32);
+            this.txtPassword.Size = new System.Drawing.Size(260, 37);
             this.txtPassword.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtPassword.TabIndex = 13;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -489,7 +489,7 @@
             this.txtConfirmedPassword.SelectionLength = 0;
             this.txtConfirmedPassword.SelectionStart = 0;
             this.txtConfirmedPassword.ShortcutsEnabled = true;
-            this.txtConfirmedPassword.Size = new System.Drawing.Size(260, 32);
+            this.txtConfirmedPassword.Size = new System.Drawing.Size(260, 37);
             this.txtConfirmedPassword.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtConfirmedPassword.TabIndex = 14;
             this.txtConfirmedPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -641,7 +641,7 @@
             this.txtAffiliationNumber.SelectionLength = 0;
             this.txtAffiliationNumber.SelectionStart = 0;
             this.txtAffiliationNumber.ShortcutsEnabled = true;
-            this.txtAffiliationNumber.Size = new System.Drawing.Size(260, 32);
+            this.txtAffiliationNumber.Size = new System.Drawing.Size(260, 37);
             this.txtAffiliationNumber.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtAffiliationNumber.TabIndex = 9;
             this.txtAffiliationNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -718,7 +718,7 @@
             this.txtBankAccount.SelectionLength = 0;
             this.txtBankAccount.SelectionStart = 0;
             this.txtBankAccount.ShortcutsEnabled = true;
-            this.txtBankAccount.Size = new System.Drawing.Size(260, 32);
+            this.txtBankAccount.Size = new System.Drawing.Size(260, 37);
             this.txtBankAccount.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtBankAccount.TabIndex = 10;
             this.txtBankAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -734,7 +734,7 @@
             this.comboBank.BackColor = System.Drawing.Color.Transparent;
             this.comboBank.BackgroundColor = System.Drawing.Color.White;
             this.comboBank.BorderColor = System.Drawing.Color.Silver;
-            this.comboBank.BorderRadius = 8;
+            this.comboBank.BorderRadius = 7;
             this.comboBank.Color = System.Drawing.Color.Silver;
             this.comboBank.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBank.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
@@ -762,13 +762,13 @@
             this.comboBank.ItemBackColor = System.Drawing.Color.White;
             this.comboBank.ItemBorderColor = System.Drawing.Color.White;
             this.comboBank.ItemForeColor = System.Drawing.Color.Black;
-            this.comboBank.ItemHeight = 26;
+            this.comboBank.ItemHeight = 30;
             this.comboBank.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.comboBank.ItemHighLightForeColor = System.Drawing.Color.White;
             this.comboBank.ItemTopMargin = 3;
             this.comboBank.Location = new System.Drawing.Point(548, 51);
             this.comboBank.Name = "comboBank";
-            this.comboBank.Size = new System.Drawing.Size(260, 32);
+            this.comboBank.Size = new System.Drawing.Size(260, 36);
             this.comboBank.TabIndex = 11;
             this.comboBank.Text = null;
             this.comboBank.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
@@ -920,7 +920,7 @@
             this.txtLastNames.SelectionLength = 0;
             this.txtLastNames.SelectionStart = 0;
             this.txtLastNames.ShortcutsEnabled = true;
-            this.txtLastNames.Size = new System.Drawing.Size(260, 32);
+            this.txtLastNames.Size = new System.Drawing.Size(260, 37);
             this.txtLastNames.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtLastNames.TabIndex = 2;
             this.txtLastNames.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -951,7 +951,7 @@
             this.dtHireDate.IconColor = System.Drawing.Color.Gray;
             this.dtHireDate.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dtHireDate.LeftTextMargin = 5;
-            this.dtHireDate.Location = new System.Drawing.Point(548, 176);
+            this.dtHireDate.Location = new System.Drawing.Point(548, 178);
             this.dtHireDate.MinimumSize = new System.Drawing.Size(4, 32);
             this.dtHireDate.Name = "dtHireDate";
             this.dtHireDate.Size = new System.Drawing.Size(260, 32);
@@ -1040,7 +1040,7 @@
             this.txtEmail.SelectionLength = 0;
             this.txtEmail.SelectionStart = 0;
             this.txtEmail.ShortcutsEnabled = true;
-            this.txtEmail.Size = new System.Drawing.Size(260, 32);
+            this.txtEmail.Size = new System.Drawing.Size(260, 37);
             this.txtEmail.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtEmail.TabIndex = 5;
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1134,7 +1134,7 @@
             this.txtNames.SelectionLength = 0;
             this.txtNames.SelectionStart = 0;
             this.txtNames.ShortcutsEnabled = true;
-            this.txtNames.Size = new System.Drawing.Size(260, 32);
+            this.txtNames.Size = new System.Drawing.Size(260, 37);
             this.txtNames.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtNames.TabIndex = 1;
             this.txtNames.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1200,7 +1200,7 @@
             this.dtBirth.IconColor = System.Drawing.Color.DimGray;
             this.dtBirth.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dtBirth.LeftTextMargin = 5;
-            this.dtBirth.Location = new System.Drawing.Point(548, 49);
+            this.dtBirth.Location = new System.Drawing.Point(548, 52);
             this.dtBirth.MinimumSize = new System.Drawing.Size(4, 32);
             this.dtBirth.Name = "dtBirth";
             this.dtBirth.Size = new System.Drawing.Size(260, 32);
@@ -1273,7 +1273,7 @@
             this.txtDUI.SelectionLength = 0;
             this.txtDUI.SelectionStart = 0;
             this.txtDUI.ShortcutsEnabled = true;
-            this.txtDUI.Size = new System.Drawing.Size(260, 32);
+            this.txtDUI.Size = new System.Drawing.Size(260, 37);
             this.txtDUI.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtDUI.TabIndex = 4;
             this.txtDUI.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1367,7 +1367,7 @@
             this.txtAddress.SelectionLength = 0;
             this.txtAddress.SelectionStart = 0;
             this.txtAddress.ShortcutsEnabled = true;
-            this.txtAddress.Size = new System.Drawing.Size(526, 32);
+            this.txtAddress.Size = new System.Drawing.Size(526, 37);
             this.txtAddress.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtAddress.TabIndex = 7;
             this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1461,7 +1461,7 @@
             this.txtPhone.SelectionLength = 0;
             this.txtPhone.SelectionStart = 0;
             this.txtPhone.ShortcutsEnabled = true;
-            this.txtPhone.Size = new System.Drawing.Size(260, 32);
+            this.txtPhone.Size = new System.Drawing.Size(260, 37);
             this.txtPhone.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtPhone.TabIndex = 6;
             this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
