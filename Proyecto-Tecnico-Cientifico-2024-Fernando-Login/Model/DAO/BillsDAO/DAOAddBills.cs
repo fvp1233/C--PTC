@@ -19,6 +19,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Net;
 using System.Xml.Linq;
+using System.Security.Cryptography;
+using PTC2024.Model.DTO.CustomersDTO;
+using PTC2024.Model.DAO.CustomersDAO;
+using System.Collections;
+using System.Windows.Input;
 
 namespace PTC2024.Model.DAO.BillsDAO
 {
@@ -73,6 +78,98 @@ namespace PTC2024.Model.DAO.BillsDAO
                 getConnection().Close();
             }
         }
+
+        public bool VerificarClienteExistente(string customer)
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = "SELECT COUNT(*) FROM tbCustomer WHERE Names = @customer";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("@customer", customer);
+                int count = (int)cmd.ExecuteScalar();
+
+                return count > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("EC-012: Error al verificar la existencia del cliente. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+
+        public bool CustomerIdentificator(string customer)
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = "SELECT COUNT(*) FROM tbCustomer WHERE LastNames = @customer";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("@customer", customer);
+                int count = (int)cmd.ExecuteScalar();
+
+                return count > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("EC-012: Error al verificar la existencia del cliente. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public bool CustomerD(string customer)
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = "SELECT COUNT(*) FROM tbCustomer WHERE DUI = @DUI1";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("@DUI1", customer);
+                int count = (int)cmd.ExecuteScalar();
+
+                return count > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("EC-012: Error al verificar la existencia del cliente. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        /*
+        public DataSet GetCustomer()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string queryCustomer = "SELECT * FROM tbCustomer";
+                SqlCommand cmd = new SqlCommand(queryCustomer, Command.Connection);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "tbCustomer");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        */
         public DataSet DataServices()
         {
             try
@@ -121,6 +218,7 @@ namespace PTC2024.Model.DAO.BillsDAO
                 getConnection().Close();
             }
         }
+      
         public int DataB()
         {
             try
@@ -182,35 +280,35 @@ namespace PTC2024.Model.DAO.BillsDAO
                 getConnection().Close();
             }
         }
+
+        
         public int RegisterBills()
         {
             try
             {
                 // Conexión con la base de datos
                 Command.Connection = getConnection();
-                string queryAddBill = "INSERT INTO tbBills(companyName, NIT, NRC, discount, subtotalPay, totalPay, startDate, finalDate,dateissued, dateissuance, IdServices, IdStatusBill, IdCustomer, IdEmployee, IdMethodP) " +
-                                      "VALUES (@CompanyName, @NIT1, @NRC1, @Discount, @SubtotalPay, @TotalPay, @StartDate, @FinalDate, @Dateissued, @Services, @StatusBills, @Customer, @Employee, @MethodP)";
+                string queryAddBill = "INSERT INTO tbBills(companyName, NIT, NRC, discount, subtotalPay, totalPay, startDate, finalDate,dateissuance, IdServices, IdStatusBill, IdCustomer, IdEmployee, IdMethodP) " +
+                                      "VALUES (@param1, @param2, @param3, @param4, @param5, @param6, @param7, @param8, @param9, @param10, @param11, @param12, @param13, @param14)";
 
                 // Se crea el comando SQL con la conexión y el query
                 SqlCommand cmdAddBills = new SqlCommand(queryAddBill, Command.Connection);
 
                 // Se asigna un valor a cada parámetro con los atributos del DTO
-                cmdAddBills.Parameters.AddWithValue("@CompanyName", CompanyName);
-                cmdAddBills.Parameters.AddWithValue("@NIT1", NIT1);
-                cmdAddBills.Parameters.AddWithValue("@NRC1", NRC1);
-                cmdAddBills.Parameters.AddWithValue("@Discount", Discount);
-                cmdAddBills.Parameters.AddWithValue("@SubtotalPay", SubtotalPay);
-                cmdAddBills.Parameters.AddWithValue("@TotalPay", TotalPay);
-                cmdAddBills.Parameters.AddWithValue("@StartDate", StartDate);
-                cmdAddBills.Parameters.AddWithValue("@FinalDate", FinalDate1);
-                cmdAddBills.Parameters.AddWithValue("@Dateissued", Dateissued);
-                cmdAddBills.Parameters.AddWithValue("@Services", Services);
-                cmdAddBills.Parameters.AddWithValue("@StatusBills", StatusBills);
-                cmdAddBills.Parameters.AddWithValue("@Customer", Customer);
-                cmdAddBills.Parameters.AddWithValue("@Employee", Employee);
-                cmdAddBills.Parameters.AddWithValue("@MethodP", MethodP);
-                //cmdAddBills.Parameters.AddWithValue("@FiscalPeriod", FiscalPeriod);
-
+                cmdAddBills.Parameters.AddWithValue("@param1", CompanyName);
+                cmdAddBills.Parameters.AddWithValue("@param2", NIT1);
+                cmdAddBills.Parameters.AddWithValue("@param3", NRC1);
+                cmdAddBills.Parameters.AddWithValue("@param4", Discount);
+                cmdAddBills.Parameters.AddWithValue("@param5", SubtotalPay);
+                cmdAddBills.Parameters.AddWithValue("@param6", TotalPay);
+                cmdAddBills.Parameters.AddWithValue("@param7", StartDate);
+                cmdAddBills.Parameters.AddWithValue("@param8", FinalDate1);
+                cmdAddBills.Parameters.AddWithValue("@param9", Dateissued);
+                cmdAddBills.Parameters.AddWithValue("@param10", Services);
+                cmdAddBills.Parameters.AddWithValue("@param11", StatusBills);
+                cmdAddBills.Parameters.AddWithValue("@param12", Customer);
+                cmdAddBills.Parameters.AddWithValue("@param13", Employee);
+                cmdAddBills.Parameters.AddWithValue("@param14", MethodP);
                 int checks = cmdAddBills.ExecuteNonQuery();
                 return checks == 1 ? checks : 0;
 

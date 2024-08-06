@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddEmployee));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -66,6 +66,8 @@
             this.txtUsername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel15 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGroupBox2 = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.lblSalaryRequest = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblSalary = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel19 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.comboBanks = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuGroupBox3 = new Bunifu.UI.WinForms.BunifuGroupBox();
@@ -73,8 +75,6 @@
             this.dpHireDate = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblSalaryRequest = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lblSalary = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGroupBox1.SuspendLayout();
             this.bunifuGroupBox2.SuspendLayout();
             this.bunifuGroupBox3.SuspendLayout();
@@ -597,11 +597,11 @@
             this.BtnAgregarEmpleado.ColorContrastOnClick = 45;
             this.BtnAgregarEmpleado.ColorContrastOnHover = 45;
             this.BtnAgregarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges7.BottomLeft = true;
-            borderEdges7.BottomRight = true;
-            borderEdges7.TopLeft = true;
-            borderEdges7.TopRight = true;
-            this.BtnAgregarEmpleado.CustomizableEdges = borderEdges7;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.BtnAgregarEmpleado.CustomizableEdges = borderEdges1;
             this.BtnAgregarEmpleado.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnAgregarEmpleado.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnAgregarEmpleado.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -687,11 +687,11 @@
             this.BtnCancelar.ColorContrastOnClick = 45;
             this.BtnCancelar.ColorContrastOnHover = 45;
             this.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges8.BottomLeft = true;
-            borderEdges8.BottomRight = true;
-            borderEdges8.TopLeft = true;
-            borderEdges8.TopRight = true;
-            this.BtnCancelar.CustomizableEdges = borderEdges8;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.BtnCancelar.CustomizableEdges = borderEdges2;
             this.BtnCancelar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnCancelar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnCancelar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -741,11 +741,11 @@
             this.BtnCancelar.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.BtnCancelar.OnIdleState.IconLeftImage = null;
             this.BtnCancelar.OnIdleState.IconRightImage = null;
-            this.BtnCancelar.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.BtnCancelar.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.BtnCancelar.OnPressedState.BorderRadius = 20;
             this.BtnCancelar.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.BtnCancelar.OnPressedState.BorderThickness = 1;
-            this.BtnCancelar.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.BtnCancelar.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.BtnCancelar.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnCancelar.OnPressedState.IconLeftImage = null;
             this.BtnCancelar.OnPressedState.IconRightImage = null;
@@ -915,6 +915,32 @@
             this.bunifuGroupBox2.TabStop = false;
             this.bunifuGroupBox2.Text = "Información financiera";
             // 
+            // lblSalaryRequest
+            // 
+            this.lblSalaryRequest.AllowParentOverrides = false;
+            this.lblSalaryRequest.AutoEllipsis = false;
+            this.lblSalaryRequest.CursorType = null;
+            this.lblSalaryRequest.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalaryRequest.Location = new System.Drawing.Point(13, 23);
+            this.lblSalaryRequest.Name = "lblSalaryRequest";
+            this.lblSalaryRequest.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblSalaryRequest.Size = new System.Drawing.Size(238, 16);
+            this.lblSalaryRequest.TabIndex = 109;
+            this.lblSalaryRequest.Text = "Con punto y dos decimales de ser necesario";
+            this.lblSalaryRequest.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblSalaryRequest.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // lblSalary
+            // 
+            this.lblSalary.AutoSize = true;
+            this.lblSalary.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalary.Location = new System.Drawing.Point(10, 23);
+            this.lblSalary.Name = "lblSalary";
+            this.lblSalary.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblSalary.Size = new System.Drawing.Size(59, 16);
+            this.lblSalary.TabIndex = 108;
+            this.lblSalary.Text = "Salario:";
+            // 
             // bunifuCustomLabel19
             // 
             this.bunifuCustomLabel19.AutoSize = true;
@@ -1067,32 +1093,6 @@
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(312, 32);
             this.bunifuCustomLabel1.TabIndex = 106;
             this.bunifuCustomLabel1.Text = "AGREGAR EMPLEADO";
-            // 
-            // lblSalaryRequest
-            // 
-            this.lblSalaryRequest.AllowParentOverrides = false;
-            this.lblSalaryRequest.AutoEllipsis = false;
-            this.lblSalaryRequest.CursorType = null;
-            this.lblSalaryRequest.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalaryRequest.Location = new System.Drawing.Point(13, 23);
-            this.lblSalaryRequest.Name = "lblSalaryRequest";
-            this.lblSalaryRequest.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSalaryRequest.Size = new System.Drawing.Size(238, 16);
-            this.lblSalaryRequest.TabIndex = 109;
-            this.lblSalaryRequest.Text = "Con punto y dos decimales de ser necesario";
-            this.lblSalaryRequest.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblSalaryRequest.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // lblSalary
-            // 
-            this.lblSalary.AutoSize = true;
-            this.lblSalary.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalary.Location = new System.Drawing.Point(10, 23);
-            this.lblSalary.Name = "lblSalary";
-            this.lblSalary.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSalary.Size = new System.Drawing.Size(59, 16);
-            this.lblSalary.TabIndex = 108;
-            this.lblSalary.Text = "Salario:";
             // 
             // FrmAddEmployee
             // 

@@ -48,6 +48,8 @@ namespace PTC2024.Controller.LogInController
                 MessageBox.Show("Datos incorrectos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        #region ???
         //private void EnterUsername(object sender, EventArgs e)
         //{
         //    objLogIn.lblUser.Visible = true;
@@ -75,7 +77,7 @@ namespace PTC2024.Controller.LogInController
         //        objLogIn.txtPasswordBunifu.PlaceholderText = "Contraseña";
         //    }
         //}
-
+        #endregion
         public void ShowPassword(object sender, EventArgs e)
         {
             objLogIn.txtPasswordBunifu.PasswordChar = '\0';

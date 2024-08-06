@@ -31,6 +31,19 @@ namespace PTC2024.Controller.Employees
             objEmployees.cmsDeleteEmployee.Click += new EventHandler(DisableEmployee);
             objEmployees.cmsEmployeeInformation.Click += new EventHandler(ViewEmployeeInfo);
             objEmployees.txtEmployeeSearch.KeyPress += new KeyPressEventHandler(SearchEmployeeEvent);
+            objEmployees.cbTiempoCompleto.Click += new EventHandler(CheckBoxFilterTypeEmployee);
+            objEmployees.cbVoluntario.Click += new EventHandler(CheckBoxFilterTypeEmployee);
+            objEmployees.cbBecario.Click += new EventHandler(CheckBoxFilterTypeEmployee);
+            objEmployees.cbInterno.Click += new EventHandler(CheckBoxFilterTypeEmployee);
+            objEmployees.cbAdmin.Click += new EventHandler(CheckBoxFilterDepartment);
+            objEmployees.cbDesarrollo.Click += new EventHandler(CheckBoxFilterDepartment);
+            objEmployees.cbSoporte.Click += new EventHandler(CheckBoxFilterDepartment);
+            objEmployees.cbRecursosH.Click += new EventHandler(CheckBoxFilterDepartment);
+            objEmployees.cbMarketing.Click += new EventHandler(CheckBoxFilterDepartment);
+            objEmployees.cbActivo.Click += new EventHandler(CheckboxFilterStatus);
+            objEmployees.cbInactivo.Click += new EventHandler(CheckboxFilterStatus);
+            objEmployees.cbIncapacidad.Click += new EventHandler(CheckboxFilterStatus);
+            objEmployees.cbMaternidad.Click += new EventHandler(CheckboxFilterStatus);
         }
 
         public void LoadData (object sender, EventArgs e)
@@ -132,7 +145,7 @@ namespace PTC2024.Controller.Employees
                 double.Parse(objEmployees.dgvEmployees[8, row].Value.ToString()),
                 objEmployees.dgvEmployees[9, row].Value.ToString(),
                 objEmployees.dgvEmployees[10, row].Value.ToString(),
-                int.Parse(objEmployees.dgvEmployees[11, row].Value.ToString()),
+                objEmployees.dgvEmployees[11, row].Value.ToString(),
                 DateTime.Parse(objEmployees.dgvEmployees[12, row].Value.ToString()),
                 objEmployees.dgvEmployees[13, row].Value.ToString(),
                 objEmployees.dgvEmployees[14, row].Value.ToString(),
@@ -194,5 +207,334 @@ namespace PTC2024.Controller.Employees
             #endregion
             RefreshDataGridEmployees();
         }
+
+        public void CheckBoxFilterTypeEmployee(object sender, EventArgs e)
+        {
+            //Creamos objeto del DAOEmployee
+            DAOEmployees daoEmployees = new DAOEmployees();
+            //Creamos una variable string que dependerá de que checkbox esta activado
+            string employeeType;
+            //Si un checkbox esta activado, todos los demás no
+            if (objEmployees.cbTiempoCompleto.Checked == true)
+            {
+                employeeType = objEmployees.cbTiempoCompleto.Tag.ToString();
+                objEmployees.cbVoluntario.Enabled = false;
+                objEmployees.cbBecario.Enabled = false;
+                objEmployees.cbInterno.Enabled = false;
+                objEmployees.cbAdmin.Enabled = false;
+                objEmployees.cbDesarrollo.Enabled = false;
+                objEmployees.cbSoporte.Enabled = false;
+                objEmployees.cbRecursosH.Enabled = false;
+                objEmployees.cbMarketing.Enabled = false;
+                objEmployees.cbActivo.Enabled = false;
+                objEmployees.cbInactivo.Enabled = false;
+                objEmployees.cbIncapacidad.Enabled = false;
+                objEmployees.cbMaternidad.Enabled = false;
+                //Creamos un dataset para capturar el que nos va a devolver el método en el DAO, y le enviamos la variable string que este tiene como parámetro
+                DataSet dsEmployeeType = daoEmployees.CheckboxFiltersTypeE(employeeType);
+                //Le damos el valor al datagrid
+                objEmployees.dgvEmployees.DataSource = dsEmployeeType.Tables["viewEmployees"];
+
+            }
+            else if (objEmployees.cbVoluntario.Checked == true)
+            {
+                //Repetimos el mismo proceso anterior para todos los checkbox
+                employeeType = objEmployees.cbVoluntario.Tag.ToString();
+                objEmployees.cbTiempoCompleto.Enabled = false;
+                objEmployees.cbBecario.Enabled = false;
+                objEmployees.cbInterno.Enabled = false;
+                objEmployees.cbAdmin.Enabled = false;
+                objEmployees.cbDesarrollo.Enabled = false;
+                objEmployees.cbSoporte.Enabled = false;
+                objEmployees.cbRecursosH.Enabled = false;
+                objEmployees.cbMarketing.Enabled = false;
+                objEmployees.cbActivo.Enabled = false;
+                objEmployees.cbInactivo.Enabled = false;
+                objEmployees.cbIncapacidad.Enabled = false;
+                objEmployees.cbMaternidad.Enabled = false;
+
+                DataSet dsEmployeeType = daoEmployees.CheckboxFiltersTypeE(employeeType);
+                objEmployees.dgvEmployees.DataSource = dsEmployeeType.Tables["viewEmployees"];
+            }
+            else if (objEmployees.cbBecario.Checked == true)
+            {
+                employeeType = objEmployees.cbBecario.Tag.ToString();
+                objEmployees.cbTiempoCompleto.Enabled = false;
+                objEmployees.cbVoluntario.Enabled = false;
+                objEmployees.cbInterno.Enabled = false;
+                objEmployees.cbAdmin.Enabled = false;
+                objEmployees.cbDesarrollo.Enabled = false;
+                objEmployees.cbSoporte.Enabled = false;
+                objEmployees.cbRecursosH.Enabled = false;
+                objEmployees.cbMarketing.Enabled = false;
+                objEmployees.cbActivo.Enabled = false;
+                objEmployees.cbInactivo.Enabled = false;
+                objEmployees.cbIncapacidad.Enabled = false;
+                objEmployees.cbMaternidad.Enabled = false;
+
+                DataSet dsEmployeeType = daoEmployees.CheckboxFiltersTypeE(employeeType);
+                objEmployees.dgvEmployees.DataSource = dsEmployeeType.Tables["viewEmployees"];
+            }
+            else if (objEmployees.cbInterno.Checked == true)
+            {
+                employeeType = objEmployees.cbInterno.Tag.ToString();
+                objEmployees.cbTiempoCompleto.Enabled = false;
+                objEmployees.cbVoluntario.Enabled = false;
+                objEmployees.cbBecario.Enabled = false;
+                objEmployees.cbAdmin.Enabled = false;
+                objEmployees.cbDesarrollo.Enabled = false;
+                objEmployees.cbSoporte.Enabled = false;
+                objEmployees.cbRecursosH.Enabled = false;
+                objEmployees.cbMarketing.Enabled = false;
+                objEmployees.cbActivo.Enabled = false;
+                objEmployees.cbInactivo.Enabled = false;
+                objEmployees.cbIncapacidad.Enabled = false;
+                objEmployees.cbMaternidad.Enabled = false;
+
+                DataSet dsEmployeeType = daoEmployees.CheckboxFiltersTypeE(employeeType);
+                objEmployees.dgvEmployees.DataSource = dsEmployeeType.Tables["viewEmployees"];
+            }
+            else
+            {
+                //en caso de que ninguno esté checkeado, todos estarán habilitados y se refrescará el datagrid
+                objEmployees.cbTiempoCompleto.Enabled = true;
+                objEmployees.cbVoluntario.Enabled = true;
+                objEmployees.cbBecario.Enabled = true;
+                objEmployees.cbInterno.Enabled = true;
+                objEmployees.cbAdmin.Enabled = true;
+                objEmployees.cbDesarrollo.Enabled = true;
+                objEmployees.cbSoporte.Enabled = true;
+                objEmployees.cbRecursosH.Enabled = true;
+                objEmployees.cbMarketing.Enabled = true;
+                objEmployees.cbActivo.Enabled = true;
+                objEmployees.cbInactivo.Enabled = true;
+                objEmployees.cbIncapacidad.Enabled = true;
+                objEmployees.cbMaternidad.Enabled = true;
+                RefreshDataGridEmployees();
+            }
+        }
+
+        //Método para la filtración de datos de checkbox del apartado departamento
+        public void CheckBoxFilterDepartment(object sender, EventArgs e)
+        {
+            //Creamos objeto del DAOEmployee
+            DAOEmployees daoEmployees = new DAOEmployees();
+            //Creamos una variable string que dependerá de que checkbox esta activado
+            string department;
+            //Si un checkbox esta activado, todos los demás no
+            if (objEmployees.cbAdmin.Checked == true)
+            {
+                department = objEmployees.cbAdmin.Tag.ToString();
+                objEmployees.cbDesarrollo.Enabled = false;
+                objEmployees.cbSoporte.Enabled = false;
+                objEmployees.cbRecursosH.Enabled = false;
+                objEmployees.cbMarketing.Enabled = false;
+                objEmployees.cbTiempoCompleto.Enabled = false;
+                objEmployees.cbVoluntario.Enabled = false;
+                objEmployees.cbBecario.Enabled = false;
+                objEmployees.cbInterno.Enabled = false;
+                objEmployees.cbActivo.Enabled = false;
+                objEmployees.cbInactivo.Enabled = false;
+                objEmployees.cbIncapacidad.Enabled = false;
+                objEmployees.cbMaternidad.Enabled = false;
+                DataSet ds = daoEmployees.CheckboxFiltersDepartment(department);
+                objEmployees.dgvEmployees.DataSource = ds.Tables["viewEmployees"];
+            }
+            else if (objEmployees.cbDesarrollo.Checked == true)
+            {
+                department = objEmployees.cbDesarrollo.Tag.ToString();
+                objEmployees.cbAdmin.Enabled = false;
+                objEmployees.cbSoporte.Enabled = false;
+                objEmployees.cbRecursosH.Enabled = false;
+                objEmployees.cbMarketing.Enabled = false;
+                objEmployees.cbTiempoCompleto.Enabled = false;
+                objEmployees.cbVoluntario.Enabled = false;
+                objEmployees.cbBecario.Enabled = false;
+                objEmployees.cbInterno.Enabled = false;
+                objEmployees.cbActivo.Enabled = false;
+                objEmployees.cbInactivo.Enabled = false;
+                objEmployees.cbIncapacidad.Enabled = false;
+                objEmployees.cbMaternidad.Enabled = false;
+                DataSet ds = daoEmployees.CheckboxFiltersDepartment(department);
+                objEmployees.dgvEmployees.DataSource = ds.Tables["viewEmployees"];
+            }
+            else if (objEmployees.cbSoporte.Checked == true)
+            {
+                department = objEmployees.cbSoporte.Tag.ToString();
+                objEmployees.cbAdmin.Enabled = false;
+                objEmployees.cbDesarrollo.Enabled = false;
+                objEmployees.cbRecursosH.Enabled = false;
+                objEmployees.cbMarketing.Enabled = false;
+                objEmployees.cbTiempoCompleto.Enabled = false;
+                objEmployees.cbVoluntario.Enabled = false;
+                objEmployees.cbBecario.Enabled = false;
+                objEmployees.cbInterno.Enabled = false;
+                objEmployees.cbActivo.Enabled = false;
+                objEmployees.cbInactivo.Enabled = false;
+                objEmployees.cbIncapacidad.Enabled = false;
+                objEmployees.cbMaternidad.Enabled = false;
+                DataSet ds = daoEmployees.CheckboxFiltersDepartment(department);
+                objEmployees.dgvEmployees.DataSource = ds.Tables["viewEmployees"];
+            }
+            else if (objEmployees.cbRecursosH.Checked == true)
+            {
+                department = objEmployees.cbRecursosH.Tag.ToString();
+                objEmployees.cbAdmin.Enabled = false;
+                objEmployees.cbDesarrollo.Enabled = false;
+                objEmployees.cbSoporte.Enabled = false;
+                objEmployees.cbMarketing.Enabled = false;
+                objEmployees.cbTiempoCompleto.Enabled = false;
+                objEmployees.cbVoluntario.Enabled = false;
+                objEmployees.cbBecario.Enabled = false;
+                objEmployees.cbInterno.Enabled = false;
+                objEmployees.cbActivo.Enabled = false;
+                objEmployees.cbInactivo.Enabled = false;
+                objEmployees.cbIncapacidad.Enabled = false;
+                objEmployees.cbMaternidad.Enabled = false;
+                DataSet ds = daoEmployees.CheckboxFiltersDepartment(department);
+                objEmployees.dgvEmployees.DataSource = ds.Tables["viewEmployees"];
+            }
+            else if (objEmployees.cbMarketing.Checked == true)
+            {
+                department = objEmployees.cbMarketing.Tag.ToString();
+                objEmployees.cbAdmin.Enabled = false;
+                objEmployees.cbDesarrollo.Enabled = false;
+                objEmployees.cbSoporte.Enabled = false;
+                objEmployees.cbRecursosH.Enabled = false;
+                objEmployees.cbTiempoCompleto.Enabled = false;
+                objEmployees.cbVoluntario.Enabled = false;
+                objEmployees.cbBecario.Enabled = false;
+                objEmployees.cbInterno.Enabled = false;
+                objEmployees.cbActivo.Enabled = false;
+                objEmployees.cbInactivo.Enabled = false;
+                objEmployees.cbIncapacidad.Enabled = false;
+                objEmployees.cbMaternidad.Enabled = false;
+                DataSet ds = daoEmployees.CheckboxFiltersDepartment(department);
+                objEmployees.dgvEmployees.DataSource = ds.Tables["viewEmployees"];
+            }
+            else
+            {
+                //Si ningún checkbox esta marcado, todos estan activados y se refresca el datagrid
+                objEmployees.cbTiempoCompleto.Enabled = true;
+                objEmployees.cbVoluntario.Enabled = true;
+                objEmployees.cbBecario.Enabled = true;
+                objEmployees.cbInterno.Enabled = true;
+                objEmployees.cbAdmin.Enabled = true;
+                objEmployees.cbDesarrollo.Enabled = true;
+                objEmployees.cbSoporte.Enabled = true;
+                objEmployees.cbRecursosH.Enabled = true;
+                objEmployees.cbMarketing.Enabled = true;
+                objEmployees.cbActivo.Enabled = true;
+                objEmployees.cbInactivo.Enabled = true;
+                objEmployees.cbIncapacidad.Enabled = true;
+                objEmployees.cbMaternidad.Enabled = true;
+                RefreshDataGridEmployees();
+            }
+        }
+
+        //Método de filtracion para los checkbox del apartado de Estado 
+        public void CheckboxFilterStatus(object senderl, EventArgs e)
+        {
+            //Creamos objeto del DAOEmployee
+            DAOEmployees daoEmployees = new DAOEmployees();
+            //Creamos una variable string que dependerá de que checkbox esta activado
+            string status;
+            //Si un checkbox esta activado, todos los demás no
+            if (objEmployees.cbActivo.Checked == true)
+            {
+                status = objEmployees.cbActivo.Tag.ToString();
+                objEmployees.cbInactivo.Enabled = false;
+                objEmployees.cbIncapacidad.Enabled = false;
+                objEmployees.cbMaternidad.Enabled = false;
+                objEmployees.cbTiempoCompleto.Enabled = false;
+                objEmployees.cbVoluntario.Enabled = false;
+                objEmployees.cbBecario.Enabled = false;
+                objEmployees.cbInterno.Enabled = false;
+                objEmployees.cbAdmin.Enabled = false;
+                objEmployees.cbDesarrollo.Enabled = false;
+                objEmployees.cbSoporte.Enabled = false;
+                objEmployees.cbRecursosH.Enabled = false;
+                objEmployees.cbMarketing.Enabled = false;
+                //se crea un dataset que capturará el que nos envía el método en el DAO y le enviamos la variable string que necesita
+                DataSet ds = daoEmployees.CheckboxFiltersStatus(status);
+                objEmployees.dgvEmployees.DataSource = ds.Tables["viewEmployees"];
+            }
+            else if (objEmployees.cbInactivo.Checked == true)
+            {
+                status = objEmployees.cbInactivo.Tag.ToString();
+                objEmployees.cbActivo.Enabled = false;
+                objEmployees.cbIncapacidad.Enabled = false;
+                objEmployees.cbMaternidad.Enabled = false;
+                objEmployees.cbTiempoCompleto.Enabled = false;
+                objEmployees.cbVoluntario.Enabled = false;
+                objEmployees.cbBecario.Enabled = false;
+                objEmployees.cbInterno.Enabled = false;
+                objEmployees.cbAdmin.Enabled = false;
+                objEmployees.cbDesarrollo.Enabled = false;
+                objEmployees.cbSoporte.Enabled = false;
+                objEmployees.cbRecursosH.Enabled = false;
+                objEmployees.cbMarketing.Enabled = false;
+
+                DataSet ds = daoEmployees.CheckboxFiltersStatus(status);
+                objEmployees.dgvEmployees.DataSource = ds.Tables["viewEmployees"];
+            }
+            else if (objEmployees.cbIncapacidad.Checked == true)
+            {
+                status = objEmployees.cbIncapacidad.Tag.ToString();
+                objEmployees.cbActivo.Enabled = false;
+                objEmployees.cbInactivo.Enabled = false;
+                objEmployees.cbMaternidad.Enabled = false;
+                objEmployees.cbTiempoCompleto.Enabled = false;
+                objEmployees.cbVoluntario.Enabled = false;
+                objEmployees.cbBecario.Enabled = false;
+                objEmployees.cbInterno.Enabled = false;
+                objEmployees.cbAdmin.Enabled = false;
+                objEmployees.cbDesarrollo.Enabled = false;
+                objEmployees.cbSoporte.Enabled = false;
+                objEmployees.cbRecursosH.Enabled = false;
+                objEmployees.cbMarketing.Enabled = false;
+
+                DataSet ds = daoEmployees.CheckboxFiltersStatus(status);
+                objEmployees.dgvEmployees.DataSource = ds.Tables["viewEmployees"];
+            }
+            else if (objEmployees.cbMaternidad.Checked == true)
+            {
+                status = "Maternidad";
+                objEmployees.cbActivo.Enabled = false;
+                objEmployees.cbInactivo.Enabled = false;
+                objEmployees.cbIncapacidad.Enabled = false;
+                objEmployees.cbTiempoCompleto.Enabled = false;
+                objEmployees.cbVoluntario.Enabled = false;
+                objEmployees.cbBecario.Enabled = false;
+                objEmployees.cbInterno.Enabled = false;
+                objEmployees.cbAdmin.Enabled = false;
+                objEmployees.cbDesarrollo.Enabled = false;
+                objEmployees.cbSoporte.Enabled = false;
+                objEmployees.cbRecursosH.Enabled = false;
+                objEmployees.cbMarketing.Enabled = false;
+
+                DataSet ds = daoEmployees.CheckboxFiltersStatus(status);
+                objEmployees.dgvEmployees.DataSource = ds.Tables["viewEmployees"];
+            }
+            else
+            {
+                //Si ningún checkbox esta activo, todos estaran habilitados y se refrescará el datagrid.
+                objEmployees.cbTiempoCompleto.Enabled = true;
+                objEmployees.cbVoluntario.Enabled = true;
+                objEmployees.cbBecario.Enabled = true;
+                objEmployees.cbInterno.Enabled = true;
+                objEmployees.cbAdmin.Enabled = true;
+                objEmployees.cbDesarrollo.Enabled = true;
+                objEmployees.cbSoporte.Enabled = true;
+                objEmployees.cbRecursosH.Enabled = true;
+                objEmployees.cbMarketing.Enabled = true;
+                objEmployees.cbActivo.Enabled = true;
+                objEmployees.cbInactivo.Enabled = true;
+                objEmployees.cbIncapacidad.Enabled = true;
+                objEmployees.cbMaternidad.Enabled = true;
+                RefreshDataGridEmployees();
+            }
+        }
+
     }
 }
