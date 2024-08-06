@@ -12,28 +12,33 @@ using PTC2024.formularios.login;
 
 namespace PTC2024.Controller.Helper
 {
+
     internal class ControllerInitialView
     {
         //Método para determinar que formulario se enseñará al iniciar el programa
-        public static void InitialView()
-        {
-            //Creamos los objetos de las clases DAOAddEmployee para llamar al método que usaremos
+         public static void InitialView()
+         {
+             //Creamos los objetos de las clases DAOAddEmployee para llamar al método que usaremos
             DAOAddEmployee daoAddEmployee = new DAOAddEmployee();
 
-            int firstUser = daoAddEmployee.ValidateFirstUse();
-            if (firstUser == 0)
-            {
-                Application.Run(new FrmRegister());
-            }
-            else
-            {
-                Application.Run(new FrmLogin());
-            }
+             int firstUser = daoAddEmployee.ValidateFirstUse();
+             if (firstUser == 0)
+             {
+                 Application.Run(new FrmRegister());
+             }
+             else
+             {
+                 Application.Run(new FrmLogin());
+             }
 
-        }
+         }
+            
+
+
+
+     }
         
-
         
-
     }
-}
+    
+

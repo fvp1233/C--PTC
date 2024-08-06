@@ -13,6 +13,7 @@ using PTC2024.View.BillsViews;
 using PTC2024.Controller.Helper;
 using PTC2024.View.Clientes;
 using System.Web.UI.WebControls;
+using PTC2024.View.Start;
 
 namespace PTC2024
 {
@@ -27,7 +28,7 @@ namespace PTC2024
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-
+            
             ControllerInitialView.InitialView();
 
         }

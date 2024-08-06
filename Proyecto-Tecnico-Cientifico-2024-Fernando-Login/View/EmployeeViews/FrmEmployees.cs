@@ -19,5 +19,7 @@ namespace PTC2024.View.Empleados
             //CONSTRUCTOR DEL FORMULARIO
             ControllerEmployees objEmployees = new ControllerEmployees(this);
         }
+
+        
     }
 }

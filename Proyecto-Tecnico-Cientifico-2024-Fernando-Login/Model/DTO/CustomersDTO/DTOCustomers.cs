@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace PTC2024.Model.DTO.CustomersDTO
 {
-    internal class DTOCustomers
+    internal class DTOCustomers: dbContext
     {
+       
+        private string names;
+
+        
+        public string Names { get => names; set => names = value; }
     }
 }
