@@ -1,4 +1,5 @@
-﻿using PTC2024.Model.DAO;
+﻿using PTC2024.Controller.Helper;
+using PTC2024.Model.DAO;
 using PTC2024.Model.DAO.EmployeesDAO;
 using PTC2024.View.Empleados;
 using System;
@@ -39,6 +40,8 @@ namespace PTC2024.Controller.EmployeesController
             objUpdateEmployee.btnEmployeUpdate.Click += new EventHandler(UpdateEmployee);
             objUpdateEmployee.txtSalary.Enter += new EventHandler(EnterSalary);
             objUpdateEmployee.txtSalary.Leave += new EventHandler(LeaveSalary);
+            objUpdateEmployee.btnRestorePass.Click += new EventHandler(RestorePassword);
+
         }
 
         public void ChargeInfo(object sender, EventArgs e)
@@ -261,6 +264,30 @@ namespace PTC2024.Controller.EmployeesController
             }
             //Si no se detecta ningún fallo en el email, se devuelve directamente un true.
             return true;
+        }
+
+        private void RestorePassword(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Seguro que quiere restaurar la contraseña del usuario {objUpdateEmployee.txtUsername.Text.Trim()}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                //Creamos objeto del DAOUpdataEmployee y del commonClasses
+                DAOUpdateEmployee daoUpdateEmployee = new DAOUpdateEmployee();
+                CommonClasses commonClasses = new CommonClasses();
+                //Le damos valor a los getters 
+                daoUpdateEmployee.Username = objUpdateEmployee.txtUsername.Text.Trim();
+                daoUpdateEmployee.Password = commonClasses.ComputeSha256Hash(objUpdateEmployee.txtUsername.Text.Trim() + "PU123");
+                //invocamos al método en el DAO
+                int restoreAnswer = daoUpdateEmployee.PasswordRestore();
+                //evaluamos la respuesta que nos devolvió dicho método
+                if (restoreAnswer == 1)
+                {
+                    MessageBox.Show($"La contraseña se restableció correctamente. \n Nueva contraseña: {objUpdateEmployee.txtUsername.Text.Trim()}PU123", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("La contraseña no pudo ser restablecida, intente de nuevo", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
     }

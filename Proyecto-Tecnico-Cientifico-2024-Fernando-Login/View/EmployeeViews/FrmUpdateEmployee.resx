@@ -177,4 +177,21 @@
   <data name="lblSalaryRequest.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Century Gothic'; font-size: 8.25pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
+  <data name="btnRestorePass.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKsAAAAjCAYAAADrC/qsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKNSURBVHhe7dwhbBNhFAfw5+C+awJyEolEIpHISQweQwIJ
+        YjgMmgSBICHHtQJRhSBBYSsQDapqc6gCHdsYhAn4v7s3th5vpbu16yP5v+SX23Zfv6v477vvu2tP2lQh
+        naulpA141pV8aH4RnaDKSCl5CY8Kya5blJZThaQ1PRgOOkZIv2J7YG+E6LQmdYZSH7m6ZhE7exVy6TI6
+        fYqgakC9AxOdxbaFds0i1650uEZn+l/wvXEAooXSwRA5u23RO12hg/tI/LjZKdHypC+6DrIIzlddyV7g
+        hRO/Q6JlSjsYZV9bFGdXVzoPbQHldES0fMjfvg6YFkm/epLfQEOe+imAakrgz2F1NYYGn/wXEq1C+qzX
+        9C2iR4Vh9znmCrx2SqGU0nlnEa2rkAtXuKCioCZTd7wQ1L7TiCiKoUVVhKt/igzT0z29k/rnLlWzAVEU
+        Npje0inAEy6sKL7UR1jzN3/vIIoDg6luRxpWfhaV/gdjDau3gygcDeumDbNEYekiS/QOgbeTKJKe5FsI
+        a/VVFbcBURTI6QDTgGwdP2x7DYhiSD+Q0XtSiFzEL/zaCkW2q59fsdut+cBpQBRCNV89LIysN/FH3nKl
+        iHZKye5aVOviVQGKaGpUPSx92AB2cqFFYdQL/2zdIjpd2PkYjRhYWjmc+vdxtn9l0fTrpeRv0fhn88VE
+        5+y9XqmyWPqlDXqSPqAxA0srkkbVh63nKQ2sjrD8BgGdJz31Y4sRdc6gHi994AVSPsFc1u2caFF0MaVz
+        1H+e+meVPvgCnY3qlZl/IKK2MOXcw3Z84qq/TWln6PQj7MI3PRBRSwc2xURI0wOL2OJL79FibnEHI+1A
+        L9g23gTRLDrYDRHUDfdJKzNL5DfT21QY/BEtxAAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

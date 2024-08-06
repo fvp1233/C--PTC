@@ -30,6 +30,9 @@ namespace PTC2024.Model.DTO.EmployeesDTO
         //TABLA tbUserData
         private string username;
         private int businessPosition;
+        //en caso de restauraciónd de contraseña
+        private string password;
+
 
         //métodos getters y setters
         public string Names { get => names; set => names = value; }
@@ -51,6 +54,7 @@ namespace PTC2024.Model.DTO.EmployeesDTO
         public DateTime HireDate { get => hireDate; set => hireDate = value; }
         public int Bank { get => bank; set => bank = value; }
         public int IdEmployee { get => idEmployee; set => idEmployee = value; }
+        public string Password { get => password; set => password = value; }
     }
 }
 
