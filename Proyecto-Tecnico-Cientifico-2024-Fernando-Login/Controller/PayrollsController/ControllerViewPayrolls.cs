@@ -262,6 +262,7 @@ namespace PTC2024.Controller.EmployeesController
                         }
                     }
                 }
+                RefreshData();
             }
 
             if (returnValue == 1)
