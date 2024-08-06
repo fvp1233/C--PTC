@@ -68,11 +68,11 @@ namespace PTC2024.Controller
             objAddEmployee.comboBanks.DisplayMember = "BankName";
             objAddEmployee.comboBanks.ValueMember = "IdBank";
 
-            //Dropdown de Empresas
-            DataSet dsBusiness = daoAddEmployee.ObtainBusiness();
-            objAddEmployee.comboBusinessInfo.DataSource = dsBusiness.Tables["tbBusinessInfo"];
-            objAddEmployee.comboBusinessInfo.DisplayMember = "nameBusiness";
-            objAddEmployee.comboBusinessInfo.ValueMember = "idBusiness";
+            ////Dropdown de Empresas
+            //DataSet dsBusiness = daoAddEmployee.ObtainBusiness();
+            //objAddEmployee.comboBusinessInfo.DataSource = dsBusiness.Tables["tbBusinessInfo"];
+            //objAddEmployee.comboBusinessInfo.DisplayMember = "nameBusiness";
+            //objAddEmployee.comboBusinessInfo.ValueMember = "idBusiness";
 
             objAddEmployee.lblSalaryRequest.Visible = false;
         }
@@ -143,7 +143,7 @@ namespace PTC2024.Controller
                     daoInsertEmployee.Password = commonClasses.ComputeSha256Hash(objAddEmployee.txtUsername.Text.Trim() + "PU123");
                     daoInsertEmployee.BusinessPosition = int.Parse(objAddEmployee.comboBusinessP.SelectedValue.ToString());
                     daoInsertEmployee.UserSatus = true;
-                    daoInsertEmployee.BusinessInfo = int.Parse(objAddEmployee.comboBusinessInfo.SelectedValue.ToString());
+                    daoInsertEmployee.BusinessInfo = 1;
                     //AHORA INVOCAMOS EL MÉTODO RegisterEmployee A TRAVÉS DEL OBJETO daoInsertEmployee
                     int valorRespuesta = daoInsertEmployee.RegisterEmployee();
                     //Verificamos el valor que nos retorna dicho método
