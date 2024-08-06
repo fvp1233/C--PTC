@@ -1,5 +1,4 @@
-﻿using PTC2024.Controller.Alerts;
-using PTC2024.Controller.BillsController;
+﻿using PTC2024.Controller.FirstUseController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,14 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PTC2024.View.BillsViews
+namespace PTC2024.View.FirstUse
 {
-    public partial class FrmOverrideBill : Form
+    public partial class FrmFirstUse : Form
     {
-        public FrmOverrideBill()
+        public FrmFirstUse()
         {
             InitializeComponent();
-            ControllerOverride objOverride = new ControllerOverride(this);
+            ControllerFirstUse controller = new ControllerFirstUse(this);
         }
     }
 }

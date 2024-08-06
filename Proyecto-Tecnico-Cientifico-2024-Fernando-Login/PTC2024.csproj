@@ -99,12 +99,14 @@
     <Compile Include="Controller\Alerts\ControllerDeleteAlert.cs" />
     <Compile Include="Controller\BillsController\ControllerAddBills.cs" />
     <Compile Include="Controller\BillsController\ControllerBills.cs" />
+    <Compile Include="Controller\BillsController\ControllerOverride.cs" />
     <Compile Include="Controller\BillsController\ControllerUpdateBill.cs" />
     <Compile Include="Controller\CustomersController\ControllerAddCustomers.cs" />
     <Compile Include="Controller\CustomersController\ControllerCustomers.cs" />
     <Compile Include="Controller\CustomersController\ControllerUpdateCustomers.cs" />
     <Compile Include="Controller\EmployeesController\ControllerAddEmployee.cs" />
     <Compile Include="Controller\EmployeesController\ControllerInfoEmployee.cs" />
+    <Compile Include="Controller\FirstUseController\ControllerFirstUse.cs" />
     <Compile Include="Controller\Helper\CommonClasses.cs" />
     <Compile Include="Controller\Helper\ControllerInitialView.cs" />
     <Compile Include="Controller\Helper\SessionVar.cs" />
@@ -131,6 +133,7 @@
     <Compile Include="Model\DAO\EmployeesDAO\DAOAddEmployee.cs" />
     <Compile Include="Model\DAO\EmployeesDAO\DAOEmployees.cs" />
     <Compile Include="Model\DAO\EmployeesDAO\DAOUpdateEmployee.cs" />
+    <Compile Include="Model\DAO\FirstUseDAO\DAOFirstUse.cs" />
     <Compile Include="Model\DAO\LogInDAO\DAOLogin.cs" />
     <Compile Include="Model\DAO\LogInDAO\DAORecoverPassword.cs" />
     <Compile Include="Model\DAO\LogInDAO\DAORegister.cs" />
@@ -151,6 +154,7 @@
     <Compile Include="Model\DTO\EmployeesDTO\DTOAddEmployee.cs" />
     <Compile Include="Model\DTO\EmployeesDTO\DTOEmployees.cs" />
     <Compile Include="Model\DTO\EmployeesDTO\DTOUpdateEmployee.cs" />
+    <Compile Include="Model\DTO\FirstUseDTO\DTOFistUse.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTOLogin.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTORecoverPassword.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTORegister.cs" />
@@ -257,6 +261,12 @@
     <Compile Include="View\BillsViews\FrmBills.Designer.cs">
       <DependentUpon>FrmBills.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FirstUse\FrmFirstUse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FirstUse\FrmFirstUse.Designer.cs">
+      <DependentUpon>FrmFirstUse.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\login\FrmRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -354,6 +364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\BillsViews\FrmBills.resx">
       <DependentUpon>FrmBills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FirstUse\FrmFirstUse.resx">
+      <DependentUpon>FrmFirstUse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\login\FrmRegister.resx">
       <DependentUpon>FrmRegister.cs</DependentUpon>

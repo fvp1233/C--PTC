@@ -85,8 +85,12 @@ namespace PTC2024.Controller.EmployeesController
                         // Generar planillas empleados activos
                         if (status != 2)
                         {
+                            //Generacion de planillas por año iniciado
                             for (int year = startWorkYear; year <= currentYear; year++)
                             {
+                                //Si year == startWordkYear quiere dicir que empesaremos por el mes en el cual ingreso a la empres
+                                //Si no, quiere decir que el empleado ya lleva mas de un año por lo cual le crearemos las del siguiente año
+                                //Desde enero
                                 int startMonth = (year == startWorkYear) ? startWorkMonth : 1;
                                 for (int month = startMonth; month <= 12; month++)
                                 {
@@ -207,29 +211,42 @@ namespace PTC2024.Controller.EmployeesController
                         int status = int.Parse(row["IdStatus"].ToString());
                         int idEmployee = int.Parse(row["IdEmployee"].ToString());
                         DateTime hireDate = DateTime.Parse(row["hireDate"].ToString());
-                        int currentYear = DateTime.Now.Year;
                         double salary = double.Parse(row["salary"].ToString());
+                        DateTime now = DateTime.Now;
                         // Generacion de planillas para empleados inactivos
-                        double totalYearsWorked = currentYear - hireDate.Year;
-                        double compensation = salary * totalYearsWorked;
+                        int totalMonthsWorked = ((now.Year - hireDate.Year) * 12) + now.Month - hireDate.Month;
+                        double monthlyCompensation = salary / 12;
+                        double compensation = 0.0;
 
                         if (status == 2)
                         {
-                            // Comprobar si ya existe una planilla de liquidación para el empleado
-                            DataRow[] existingCompansationPayroll = payrollDt.Select($"IdEmployee = {idEmployee} AND IdPayrollStatus = 3");
-                            if (existingCompansationPayroll.Length == 0)
+                            if (totalMonthsWorked > 12)
                             {
-                                // Calcular la renta aplicable a la indemnización
+                                // Caso de empleados que han trabajado un año o más
+                                double totalYearsWorked = now.Year - hireDate.Year;
+                                compensation = salary * totalYearsWorked;
+                            }
+                            else
+                            {
+                                // Caso de empleados que se van antes de un año
+                                compensation = monthlyCompensation * totalMonthsWorked;
+                            }
+
+                            // Comprobar si ya existe una planilla de liquidación para el empleado
+                            DataRow[] existingCompensationPayroll = payrollDt.Select($"IdEmployee = {idEmployee} AND IdPayrollStatus = 3");
+                            if (existingCompensationPayroll.Length == 0)
+                            {
+                                // Calcular la renta aplicable a la indemnización (si corresponde)
                                 double netPay = compensation;
 
                                 // Crear y llenar un nuevo objeto DAOViewPayrolls para la planilla de liquidación
                                 DAOInsertPayroll = new DAOViewPayrolls
                                 {
-                                    //En las liquidaciones se tienen que tener ciertos parametros
+                                    //En las liquidaciones se tienen que tener ciertos parámetros
                                     Username = row["username"].ToString(),
                                     Isss = 0.00,
                                     Afp = 0.00,
-                                    Rent = 0.00, // Renta calculada sobre la indemnización(solo si supera los $1500)
+                                    Rent = 0.00,
                                     NetPay = netPay,
                                     IsssEmployer = 0.00,
                                     AfpEmployer = 0.00,
@@ -245,6 +262,7 @@ namespace PTC2024.Controller.EmployeesController
                         }
                     }
                 }
+                RefreshData();
             }
 
             if (returnValue == 1)
@@ -287,7 +305,6 @@ namespace PTC2024.Controller.EmployeesController
                     if (status == 1)
                     {
                         DataRow[] unpaidPayrolls = payrollDt.Select($"IdEmployee = {idEmployee} AND IdPayrollStatus = 2");
-
                         foreach (DataRow payrollRow in unpaidPayrolls)
                         {
                             int idPayroll = int.Parse(payrollRow["IdPayroll"].ToString());
@@ -559,7 +576,7 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.dgvPayrolls.Columns[7].Visible = false;
 
         }
-       
+
         //----------------------Metodos de interaccion con otros formularios---------------------------//
         public void OpenUpdatePayroll(object sender, EventArgs e)
         {
