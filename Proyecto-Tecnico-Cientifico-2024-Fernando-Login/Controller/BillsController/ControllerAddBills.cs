@@ -43,7 +43,12 @@ namespace PTC2024.Controller.BillsController
             objAddBills.dgvData.CellValueChanged += new DataGridViewCellEventHandler(CalculateTotal);
             objAddBills.dgvData.RowsAdded += new DataGridViewRowsAddedEventHandler(CalculateTotal);
             objAddBills.dgvData.RowsRemoved += new DataGridViewRowsRemovedEventHandler(CalculateTotal);
-
+            objAddBills.txtCustomerName.KeyUp += new KeyEventHandler(txtCustomer_KeyPress);
+            objAddBills.txtCustomerName.Leave += new EventHandler(txtCustomer_Leave);
+            objAddBills.txtCustomerLastname.KeyUp += new KeyEventHandler(txtCustomerLastName_KeyPress);
+            objAddBills.txtCustomerLastname.Leave += new EventHandler(txtCustomerLastName_Leave);
+            objAddBills.txtDUICustomer.KeyUp += new KeyEventHandler(txtCustomerD_KeyPress);
+            objAddBills.txtDUICustomer.Leave += new EventHandler(txtCustomerD_Leave);
         }
         public ControllerAddBills(FrmAddBills view, int accions, int id, string companyName, string NIT, string NRC, string customer, string serviceName, float discount, float subtoralPay, float totalPay, string methodP, DateTime startDate, DateTime FinalDate, DateTime Dateissued, string employee, string statusBill)
         {
@@ -68,6 +73,8 @@ namespace PTC2024.Controller.BillsController
 
             //objAddBills.btnRectify.Click += new EventHandler(RectifyBills);
         }
+
+        
         public void LoadDataServices(object sender, EventArgs e)
         {
             InitialCharge();
@@ -176,6 +183,108 @@ namespace PTC2024.Controller.BillsController
                 MessageBox.Show("Error al calcular el total: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        // Evento para manejar la tecla presionada (Enter)
+        private void txtCustomer_KeyPress(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                VerificarCliente();
+            }
+        }
+
+        // Evento para manejar la salida del TextBox
+        private void txtCustomer_Leave(object sender, EventArgs e)
+        {
+            VerificarCliente();
+        }
+
+        // Método para verificar si el cliente ya existe en la base de datos
+        private void VerificarCliente()
+        {
+            string customer = objAddBills.txtCustomerName.Text.Trim();
+            if (!string.IsNullOrEmpty(customer))
+            {
+                DAOAddBills daoAddBills = new DAOAddBills();
+                bool existeCliente = daoAddBills.VerificarClienteExistente(customer);
+
+                if (existeCliente)
+                {
+                    MessageBox.Show("El cliente ya existe en la base de datos.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("El cliente no está registrado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        private void txtCustomerLastName_KeyPress(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                VerificarCliente();
+            }
+        }
+
+        // Evento para manejar la salida del TextBox
+        private void txtCustomerLastName_Leave(object sender, EventArgs e)
+        {
+            CustomerIdentificator();
+        }
+
+        // Método para verificar si el cliente ya existe en la base de datos
+        private void CustomerIdentificator()
+        {
+            string customer = objAddBills.txtCustomerLastname.Text.Trim();
+            if (!string.IsNullOrEmpty(customer))
+            {
+                DAOAddBills daoAddBills = new DAOAddBills();
+                bool existeCliente = daoAddBills.CustomerIdentificator(customer);
+
+                if (existeCliente)
+                {
+                    MessageBox.Show("El cliente ya existe en la base de datos.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Puedes realizar otras acciones si el cliente ya existe
+                }
+                else
+                {
+                    MessageBox.Show("El cliente no está registrado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+        private void txtCustomerD_KeyPress(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                VerificarCliente();
+            }
+        }
+
+        // Evento para manejar la salida del TextBox
+        private void txtCustomerD_Leave(object sender, EventArgs e)
+        {
+            CustomerD();
+        }
+
+        // Método para verificar si el cliente ya existe en la base de datos
+        private void CustomerD()
+        {
+            string customer = objAddBills.txtDUICustomer.Text.Trim();
+            if (!string.IsNullOrEmpty(customer))
+            {
+                DAOAddBills daoAddBills = new DAOAddBills();
+                bool existeCliente = daoAddBills.CustomerIdentificator(customer);
+
+                if (existeCliente)
+                {
+                    MessageBox.Show("El cliente ya existe en la base de datos.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("El cliente no está registrado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
         public void txtDiscount_KeyPress(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -230,20 +339,22 @@ namespace PTC2024.Controller.BillsController
         }
         public void NewBill(object sender, EventArgs e)
         {
-            if (!(string.IsNullOrEmpty(objAddBills.txtCompany.Text.Trim()) ||
+            if (!(
                 string.IsNullOrEmpty(objAddBills.txtNITCompany.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddBills.txtNRCompany.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddBills.txtDiscount.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddBills.txtSubTotal.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddBills.txtTotalPay.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddBills.txtCustomerName.Text.Trim()) ||
-                string.IsNullOrEmpty(objAddBills.txtCustomerLastname.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddBills.txtCustomerEmail.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddBills.txtCustomerPhone.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddBills.txtDUICustomer.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddBills.txtEmployee.Text.Trim())))
             {
                 DAOAddBills daoNew = new DAOAddBills();
+                //daoNew.GetCustomer();
+                // Se crean los dataSets
+                //DataSet dataSet = daoNew.GetCustomer();
                 daoNew.CompanyName = objAddBills.txtRazónsocial.Text.Trim();
                 daoNew.NIT1 = objAddBills.txtNITCompany.Text.Trim();
                 daoNew.NRC1 = objAddBills.txtNRCompany.Text.Trim();
@@ -255,11 +366,11 @@ namespace PTC2024.Controller.BillsController
                 daoNew.Dateissued = objAddBills.dtfiscalPeriod.Value.Date;
                 daoNew.Services = objAddBills.comboServiceBill.SelectedValue.ToString();
                 daoNew.StatusBills = objAddBills.comboStatusBill.SelectedValue.ToString();
-                daoNew.Customer = objAddBills.txtCustomerName.Text.Trim();
-                daoNew.Customer = objAddBills.txtCustomerLastname.Text.Trim();
+                daoNew.Customer = objAddBills.txtCustomerName.Text.ToString();
+                daoNew.Customer = objAddBills.txtCustomerLastname.Text.ToString();
                 daoNew.Customer = objAddBills.txtCustomerEmail.Text.Trim();
                 daoNew.Customer = objAddBills.txtCustomerPhone.Text.Trim();
-                daoNew.Customer = objAddBills.txtDUICustomer.Text.Trim();
+                daoNew.Customer = objAddBills.txtDUICustomer.Text.ToString();
                 daoNew.Employee = objAddBills.txtEmployee.Text.Trim();
                 daoNew.MethodP = objAddBills.comboMethodP.SelectedValue.ToString();
                 int checks = daoNew.RegisterBills();
@@ -307,5 +418,6 @@ namespace PTC2024.Controller.BillsController
             {
                 objAddBills.comboServiceBill.SelectedValue.ToString();
             }
-        }
+
+    }
     }
