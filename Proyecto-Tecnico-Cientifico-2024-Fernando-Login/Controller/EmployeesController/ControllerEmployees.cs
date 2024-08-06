@@ -117,7 +117,6 @@ namespace PTC2024.Controller.Employees
             //Se crea instancia del formulario para abrirlo
             FrmInfoEmployee openForm = new FrmInfoEmployee(names, lastNames, dui, birthDate, adress, phone, email, hireDate, maritalStatus, typeEmployee, statusEmployee, salary, affiliationNumber, bankAccount, username, businessP, department, bank);
             openForm.ShowDialog();
-            RefreshDataGridEmployees();
         }
 
         public void NewEmployee(object sender, EventArgs e)
@@ -162,7 +161,9 @@ namespace PTC2024.Controller.Employees
         {
             //Se declara la variable row, que va a guardar el número de la fila del registro escogido para eliminar
             int row = objEmployees.dgvEmployees.CurrentRow.Index;
-
+            //Le damos valor al getter IdEmployee para la verificación de primer usuario.
+            DAOEmployees daoEmployees = new DAOEmployees();
+            daoEmployees.IdEmployee = int.Parse(objEmployees.dgvEmployees[0,row].Value.ToString());
             //Creamos un objeto del formulario que servirá para confirmar la accion de eliminar - 
             FrmDeleteAlert openDeleteAlert = new FrmDeleteAlert();
             //Creamos una instancia del controlador del formulario que usaremos para confirmar la acción a partir de un valor int que este nos va enviar. 
@@ -172,22 +173,28 @@ namespace PTC2024.Controller.Employees
             //Evaluamos la respuesta que nos envió el formulario despues de presionar uno de los botones 
             if (objControllerDeleteAlert.ConfirmValue == 1)
             {
-                //Creamos un objeto de la clase DAOEmployees 
-                DAOEmployees daoEmployees = new DAOEmployees();
-                //Le damos valor al getter IdEmployee 
-                daoEmployees.Username = objEmployees.dgvEmployees[17, row].Value.ToString();
-                //Mandamos a llamar el proceso de la eliminación de empleado del DAOEmployees para evaluar el valor que el metodo nos retorna 
-                int value = daoEmployees.DisableEmployee();
-                if (value == 1)
+                if (!(daoEmployees.IdEmployee == 20240001))
                 {
-                    openDeleteAlert.Close();
-                    MessageBox.Show("El empleado fue deshabilitado junto a su usuario de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //Le damos valor al getter IdEmployee 
+                    daoEmployees.Username = objEmployees.dgvEmployees[17, row].Value.ToString();
+                    //Mandamos a llamar el proceso de la eliminación de empleado del DAOEmployees para evaluar el valor que el metodo nos retorna 
+                    int value = daoEmployees.DisableEmployee();
+                    if (value == 1)
+                    {
+                        openDeleteAlert.Close();
+                        MessageBox.Show("El empleado fue deshabilitado junto a su usuario de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        openDeleteAlert.Close();
+                        MessageBox.Show("Ocurrió un error, el empleado no pudo ser deshabilitado", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    openDeleteAlert.Close();
-                    MessageBox.Show("Ocurrió un error, el empleado no pudo ser deshabilitado", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Este es el primer empleado registrado en el sistema, por lo que no puede ser eliminado", "Proceso imposible", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                
             }
             #region disable con messagebox de windows
             //if (MessageBox.Show($"Esta seguro que desea eliminar a:\n {objEmployees.dgvEmployees[1, row].Value.ToString()}. \n Esta acción no puede ser revertida. ", "Confirme su acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

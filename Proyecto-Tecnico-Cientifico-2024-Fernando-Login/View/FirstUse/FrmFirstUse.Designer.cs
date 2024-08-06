@@ -53,6 +53,7 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.picBusiness = new System.Windows.Forms.PictureBox();
             this.btnAddImage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.bunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
@@ -69,11 +70,10 @@
             this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtPhone = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtLogin = new System.Windows.Forms.Label();
-            this.picBusiness = new System.Windows.Forms.PictureBox();
             this.bunifuPanel1.SuspendLayout();
             this.bunifuPanel2.SuspendLayout();
-            this.bunifuGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBusiness)).BeginInit();
+            this.bunifuGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuPanel1
@@ -91,7 +91,7 @@
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(988, 494);
+            this.bunifuPanel1.Size = new System.Drawing.Size(917, 494);
             this.bunifuPanel1.TabIndex = 0;
             // 
             // bunifuPanel2
@@ -105,11 +105,21 @@
             this.bunifuPanel2.Controls.Add(this.picBusiness);
             this.bunifuPanel2.Controls.Add(this.btnAddImage);
             this.bunifuPanel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bunifuPanel2.Location = new System.Drawing.Point(721, 0);
+            this.bunifuPanel2.Location = new System.Drawing.Point(650, 0);
             this.bunifuPanel2.Name = "bunifuPanel2";
             this.bunifuPanel2.ShowBorders = true;
             this.bunifuPanel2.Size = new System.Drawing.Size(267, 494);
             this.bunifuPanel2.TabIndex = 49;
+            // 
+            // picBusiness
+            // 
+            this.picBusiness.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picBusiness.Location = new System.Drawing.Point(0, 0);
+            this.picBusiness.Name = "picBusiness";
+            this.picBusiness.Size = new System.Drawing.Size(267, 283);
+            this.picBusiness.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBusiness.TabIndex = 95;
+            this.picBusiness.TabStop = false;
             // 
             // btnAddImage
             // 
@@ -130,7 +140,7 @@
             this.btnAddImage.ButtonTextMarginLeft = 0;
             this.btnAddImage.ColorContrastOnClick = 45;
             this.btnAddImage.ColorContrastOnHover = 45;
-            this.btnAddImage.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnAddImage.Cursor = System.Windows.Forms.Cursors.Hand;
             borderEdges1.BottomLeft = true;
             borderEdges1.BottomRight = true;
             borderEdges1.TopLeft = true;
@@ -141,7 +151,7 @@
             this.btnAddImage.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnAddImage.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnAddImage.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnAddImage.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnAddImage.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddImage.ForeColor = System.Drawing.Color.White;
             this.btnAddImage.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddImage.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -159,7 +169,7 @@
             this.btnAddImage.IdleIconLeftImage = null;
             this.btnAddImage.IdleIconRightImage = null;
             this.btnAddImage.IndicateFocus = false;
-            this.btnAddImage.Location = new System.Drawing.Point(61, 289);
+            this.btnAddImage.Location = new System.Drawing.Point(64, 365);
             this.btnAddImage.Name = "btnAddImage";
             this.btnAddImage.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAddImage.OnDisabledState.BorderRadius = 20;
@@ -225,7 +235,7 @@
             this.bunifuGroupBox1.LabelAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.bunifuGroupBox1.LabelIndent = 10;
             this.bunifuGroupBox1.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
-            this.bunifuGroupBox1.Location = new System.Drawing.Point(85, 61);
+            this.bunifuGroupBox1.Location = new System.Drawing.Point(41, 76);
             this.bunifuGroupBox1.Name = "bunifuGroupBox1";
             this.bunifuGroupBox1.Size = new System.Drawing.Size(566, 382);
             this.bunifuGroupBox1.TabIndex = 48;
@@ -279,7 +289,7 @@
             this.btnSave.IdleIconLeftImage = null;
             this.btnSave.IdleIconRightImage = null;
             this.btnSave.IndicateFocus = false;
-            this.btnSave.Location = new System.Drawing.Point(329, 318);
+            this.btnSave.Location = new System.Drawing.Point(340, 313);
             this.btnSave.Name = "btnSave";
             this.btnSave.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSave.OnDisabledState.BorderRadius = 20;
@@ -368,7 +378,7 @@
             this.txtPBX.IconRight = null;
             this.txtPBX.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPBX.Lines = new string[0];
-            this.txtPBX.Location = new System.Drawing.Point(20, 333);
+            this.txtPBX.Location = new System.Drawing.Point(16, 333);
             this.txtPBX.MaxLength = 32767;
             this.txtPBX.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPBX.Modified = false;
@@ -404,7 +414,7 @@
             this.txtPBX.SelectionLength = 0;
             this.txtPBX.SelectionStart = 0;
             this.txtPBX.ShortcutsEnabled = true;
-            this.txtPBX.Size = new System.Drawing.Size(260, 37);
+            this.txtPBX.Size = new System.Drawing.Size(264, 32);
             this.txtPBX.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtPBX.TabIndex = 23;
             this.txtPBX.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -481,7 +491,7 @@
             this.txtEmail.SelectionLength = 0;
             this.txtEmail.SelectionStart = 0;
             this.txtEmail.ShortcutsEnabled = true;
-            this.txtEmail.Size = new System.Drawing.Size(526, 37);
+            this.txtEmail.Size = new System.Drawing.Size(533, 37);
             this.txtEmail.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtEmail.TabIndex = 5;
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -591,7 +601,7 @@
             this.txtNameBusiness.SelectionLength = 0;
             this.txtNameBusiness.SelectionStart = 0;
             this.txtNameBusiness.ShortcutsEnabled = true;
-            this.txtNameBusiness.Size = new System.Drawing.Size(526, 37);
+            this.txtNameBusiness.Size = new System.Drawing.Size(533, 37);
             this.txtNameBusiness.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtNameBusiness.TabIndex = 1;
             this.txtNameBusiness.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -640,10 +650,10 @@
             this.dtCreationDate.IconColor = System.Drawing.Color.DimGray;
             this.dtCreationDate.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dtCreationDate.LeftTextMargin = 5;
-            this.dtCreationDate.Location = new System.Drawing.Point(20, 264);
+            this.dtCreationDate.Location = new System.Drawing.Point(16, 264);
             this.dtCreationDate.MinimumSize = new System.Drawing.Size(4, 32);
             this.dtCreationDate.Name = "dtCreationDate";
-            this.dtCreationDate.Size = new System.Drawing.Size(260, 32);
+            this.dtCreationDate.Size = new System.Drawing.Size(264, 32);
             this.dtCreationDate.TabIndex = 3;
             this.dtCreationDate.Value = new System.DateTime(2024, 7, 13, 16, 30, 0, 0);
             // 
@@ -730,7 +740,7 @@
             this.txtAddress.SelectionLength = 0;
             this.txtAddress.SelectionStart = 0;
             this.txtAddress.ShortcutsEnabled = true;
-            this.txtAddress.Size = new System.Drawing.Size(526, 37);
+            this.txtAddress.Size = new System.Drawing.Size(533, 37);
             this.txtAddress.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtAddress.TabIndex = 7;
             this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -824,7 +834,7 @@
             this.txtPhone.SelectionLength = 0;
             this.txtPhone.SelectionStart = 0;
             this.txtPhone.ShortcutsEnabled = true;
-            this.txtPhone.Size = new System.Drawing.Size(260, 37);
+            this.txtPhone.Size = new System.Drawing.Size(264, 32);
             this.txtPhone.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtPhone.TabIndex = 6;
             this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -841,36 +851,26 @@
             this.txtLogin.BackColor = System.Drawing.Color.Transparent;
             this.txtLogin.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogin.ForeColor = System.Drawing.Color.Transparent;
-            this.txtLogin.Location = new System.Drawing.Point(145, 9);
+            this.txtLogin.Location = new System.Drawing.Point(112, 22);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(452, 36);
             this.txtLogin.TabIndex = 47;
             this.txtLogin.Text = "CONFIGURACIÓN DE NEGOCIO";
             // 
-            // picBusiness
-            // 
-            this.picBusiness.Dock = System.Windows.Forms.DockStyle.Top;
-            this.picBusiness.Location = new System.Drawing.Point(0, 0);
-            this.picBusiness.Name = "picBusiness";
-            this.picBusiness.Size = new System.Drawing.Size(267, 283);
-            this.picBusiness.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBusiness.TabIndex = 95;
-            this.picBusiness.TabStop = false;
-            // 
             // FrmFirstUse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(988, 494);
+            this.ClientSize = new System.Drawing.Size(917, 494);
             this.Controls.Add(this.bunifuPanel1);
             this.Name = "FrmFirstUse";
             this.Text = "FirstUse";
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel1.PerformLayout();
             this.bunifuPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBusiness)).EndInit();
             this.bunifuGroupBox1.ResumeLayout(false);
             this.bunifuGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBusiness)).EndInit();
             this.ResumeLayout(false);
 
         }

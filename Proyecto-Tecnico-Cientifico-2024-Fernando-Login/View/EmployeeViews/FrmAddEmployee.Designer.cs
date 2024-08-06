@@ -607,7 +607,7 @@
             this.BtnAgregarEmpleado.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.BtnAgregarEmpleado.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.BtnAgregarEmpleado.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.BtnAgregarEmpleado.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.BtnAgregarEmpleado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregarEmpleado.ForeColor = System.Drawing.Color.White;
             this.BtnAgregarEmpleado.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAgregarEmpleado.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -682,7 +682,7 @@
             this.BtnCancelar.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.BtnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnCancelar.BackgroundImage")));
             this.BtnCancelar.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.BtnCancelar.ButtonText = "Regresar";
+            this.BtnCancelar.ButtonText = "Volver";
             this.BtnCancelar.ButtonTextMarginLeft = 0;
             this.BtnCancelar.ColorContrastOnClick = 45;
             this.BtnCancelar.ColorContrastOnHover = 45;
@@ -697,7 +697,7 @@
             this.BtnCancelar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.BtnCancelar.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.BtnCancelar.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.BtnCancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.BtnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.ForeColor = System.Drawing.Color.White;
             this.BtnCancelar.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnCancelar.IconLeftCursor = System.Windows.Forms.Cursors.Default;
