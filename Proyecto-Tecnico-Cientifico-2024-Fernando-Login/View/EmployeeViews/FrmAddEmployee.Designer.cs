@@ -75,6 +75,8 @@
             this.dpHireDate = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.comboBusinessInfo = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.bunifuCustomLabel16 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGroupBox1.SuspendLayout();
             this.bunifuGroupBox2.SuspendLayout();
             this.bunifuGroupBox3.SuspendLayout();
@@ -84,7 +86,7 @@
             // 
             this.bunifuCustomLabel14.AutoSize = true;
             this.bunifuCustomLabel14.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel14.Location = new System.Drawing.Point(694, 27);
+            this.bunifuCustomLabel14.Location = new System.Drawing.Point(771, 27);
             this.bunifuCustomLabel14.Name = "bunifuCustomLabel14";
             this.bunifuCustomLabel14.Size = new System.Drawing.Size(159, 16);
             this.bunifuCustomLabel14.TabIndex = 50;
@@ -364,7 +366,7 @@
             this.comboMaritalStatus.ItemTopMargin = 3;
             this.comboMaritalStatus.Location = new System.Drawing.Point(688, 176);
             this.comboMaritalStatus.Name = "comboMaritalStatus";
-            this.comboMaritalStatus.Size = new System.Drawing.Size(331, 32);
+            this.comboMaritalStatus.Size = new System.Drawing.Size(330, 32);
             this.comboMaritalStatus.TabIndex = 9;
             this.comboMaritalStatus.Text = null;
             this.comboMaritalStatus.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
@@ -524,9 +526,9 @@
             this.comboBusinessP.ItemHighLightColor = System.Drawing.Color.LightGray;
             this.comboBusinessP.ItemHighLightForeColor = System.Drawing.Color.Black;
             this.comboBusinessP.ItemTopMargin = 3;
-            this.comboBusinessP.Location = new System.Drawing.Point(693, 46);
+            this.comboBusinessP.Location = new System.Drawing.Point(774, 46);
             this.comboBusinessP.Name = "comboBusinessP";
-            this.comboBusinessP.Size = new System.Drawing.Size(331, 32);
+            this.comboBusinessP.Size = new System.Drawing.Size(244, 32);
             this.comboBusinessP.TabIndex = 18;
             this.comboBusinessP.Text = null;
             this.comboBusinessP.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
@@ -569,9 +571,9 @@
             this.comboEmployeeStatus.ItemHighLightColor = System.Drawing.Color.LightGray;
             this.comboEmployeeStatus.ItemHighLightForeColor = System.Drawing.Color.Black;
             this.comboEmployeeStatus.ItemTopMargin = 3;
-            this.comboEmployeeStatus.Location = new System.Drawing.Point(689, 236);
+            this.comboEmployeeStatus.Location = new System.Drawing.Point(688, 236);
             this.comboEmployeeStatus.Name = "comboEmployeeStatus";
-            this.comboEmployeeStatus.Size = new System.Drawing.Size(331, 32);
+            this.comboEmployeeStatus.Size = new System.Drawing.Size(330, 32);
             this.comboEmployeeStatus.TabIndex = 12;
             this.comboEmployeeStatus.Text = null;
             this.comboEmployeeStatus.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
@@ -775,7 +777,6 @@
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(250, 31);
             this.txtSalary.TabIndex = 13;
-            this.txtSalary.Text = "Ingrese con dos decimales";
             this.txtSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txtBankAccount
@@ -845,6 +846,8 @@
             this.bunifuGroupBox1.BorderColor = System.Drawing.Color.LightGray;
             this.bunifuGroupBox1.BorderRadius = 8;
             this.bunifuGroupBox1.BorderThickness = 2;
+            this.bunifuGroupBox1.Controls.Add(this.bunifuCustomLabel16);
+            this.bunifuGroupBox1.Controls.Add(this.comboBusinessInfo);
             this.bunifuGroupBox1.Controls.Add(this.txtUsername);
             this.bunifuGroupBox1.Controls.Add(this.bunifuCustomLabel15);
             this.bunifuGroupBox1.Controls.Add(this.comboBusinessP);
@@ -873,10 +876,10 @@
             this.txtUsername.LineIdleColor = System.Drawing.Color.Gray;
             this.txtUsername.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtUsername.LineThickness = 3;
-            this.txtUsername.Location = new System.Drawing.Point(18, 46);
+            this.txtUsername.Location = new System.Drawing.Point(13, 46);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(668, 31);
+            this.txtUsername.Size = new System.Drawing.Size(501, 32);
             this.txtUsername.TabIndex = 17;
             this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -991,7 +994,7 @@
             this.comboBanks.ItemTopMargin = 3;
             this.comboBanks.Location = new System.Drawing.Point(774, 41);
             this.comboBanks.Name = "comboBanks";
-            this.comboBanks.Size = new System.Drawing.Size(245, 32);
+            this.comboBanks.Size = new System.Drawing.Size(244, 32);
             this.comboBanks.TabIndex = 16;
             this.comboBanks.Text = null;
             this.comboBanks.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
@@ -1094,6 +1097,61 @@
             this.bunifuCustomLabel1.TabIndex = 106;
             this.bunifuCustomLabel1.Text = "AGREGAR EMPLEADO";
             // 
+            // comboBusinessInfo
+            // 
+            this.comboBusinessInfo.BackColor = System.Drawing.Color.Transparent;
+            this.comboBusinessInfo.BackgroundColor = System.Drawing.Color.LightGray;
+            this.comboBusinessInfo.BorderColor = System.Drawing.Color.Silver;
+            this.comboBusinessInfo.BorderRadius = 1;
+            this.comboBusinessInfo.Color = System.Drawing.Color.Silver;
+            this.comboBusinessInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBusinessInfo.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.comboBusinessInfo.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.comboBusinessInfo.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.comboBusinessInfo.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.comboBusinessInfo.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.comboBusinessInfo.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.comboBusinessInfo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBusinessInfo.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.comboBusinessInfo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBusinessInfo.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboBusinessInfo.FillDropDown = true;
+            this.comboBusinessInfo.FillIndicator = false;
+            this.comboBusinessInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBusinessInfo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBusinessInfo.ForeColor = System.Drawing.Color.Black;
+            this.comboBusinessInfo.FormattingEnabled = true;
+            this.comboBusinessInfo.Icon = null;
+            this.comboBusinessInfo.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.comboBusinessInfo.IndicatorColor = System.Drawing.Color.DimGray;
+            this.comboBusinessInfo.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.comboBusinessInfo.IndicatorThickness = 2;
+            this.comboBusinessInfo.IsDropdownOpened = false;
+            this.comboBusinessInfo.ItemBackColor = System.Drawing.Color.White;
+            this.comboBusinessInfo.ItemBorderColor = System.Drawing.Color.White;
+            this.comboBusinessInfo.ItemForeColor = System.Drawing.Color.Black;
+            this.comboBusinessInfo.ItemHeight = 26;
+            this.comboBusinessInfo.ItemHighLightColor = System.Drawing.Color.LightGray;
+            this.comboBusinessInfo.ItemHighLightForeColor = System.Drawing.Color.Black;
+            this.comboBusinessInfo.ItemTopMargin = 3;
+            this.comboBusinessInfo.Location = new System.Drawing.Point(522, 46);
+            this.comboBusinessInfo.Name = "comboBusinessInfo";
+            this.comboBusinessInfo.Size = new System.Drawing.Size(245, 32);
+            this.comboBusinessInfo.TabIndex = 107;
+            this.comboBusinessInfo.Text = null;
+            this.comboBusinessInfo.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboBusinessInfo.TextLeftMargin = 5;
+            // 
+            // bunifuCustomLabel16
+            // 
+            this.bunifuCustomLabel16.AutoSize = true;
+            this.bunifuCustomLabel16.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel16.Location = new System.Drawing.Point(519, 27);
+            this.bunifuCustomLabel16.Name = "bunifuCustomLabel16";
+            this.bunifuCustomLabel16.Size = new System.Drawing.Size(72, 16);
+            this.bunifuCustomLabel16.TabIndex = 108;
+            this.bunifuCustomLabel16.Text = "Empresa:";
+            // 
             // FrmAddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1165,5 +1223,7 @@
         public Bunifu.UI.WinForms.BunifuDatePicker dpHireDate;
         public Bunifu.UI.WinForms.BunifuLabel lblSalaryRequest;
         public Bunifu.Framework.UI.BunifuCustomLabel lblSalary;
+        public Bunifu.UI.WinForms.BunifuDropdown comboBusinessInfo;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel16;
     }
 }
