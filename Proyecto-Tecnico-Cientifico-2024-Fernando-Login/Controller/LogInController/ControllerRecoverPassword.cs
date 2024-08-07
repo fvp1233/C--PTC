@@ -18,7 +18,8 @@ namespace PTC2024.Controller.LogInController
         FrmRecoverPasswords objPassword;
         public ControllerRecoverPassword(FrmRecoverPasswords View)
         {
-
+            objPassword = View;
+            objPassword.btnSend.Click += new EventHandler(RecoverPassword);
         }
         public void RecoverPassword(object sender, EventArgs e)
         {

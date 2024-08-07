@@ -19,7 +19,7 @@ namespace PTC2024.Model.DAO.LogInDAO
             string query = "SELECT * FROM viewPasswordRecover where(username = @username OR email = @email)";
             SqlCommand cmd = new SqlCommand(query, Command.Connection);
             cmd.Parameters.AddWithValue("@username",User);
-            cmd.Parameters.AddWithValue("@email", Email);
+            //cmd.Parameters.AddWithValue("@email", Email);
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
@@ -30,7 +30,7 @@ namespace PTC2024.Model.DAO.LogInDAO
 
                 Random random = new Random();
 
-                const string chars = "";
+                const string chars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz0123456789";
                 const int cLength = 61;
 
                 var buffer = new char[6];
@@ -41,7 +41,7 @@ namespace PTC2024.Model.DAO.LogInDAO
                 }
                 string newPass = new string(buffer);
                 Password = newPass;
-                if (UpdatePassword(User))
+                if (UpdatePassword(user))
                 {
                     var mailService = new Email();
                     mailService.Send(email, "h2c.soporte.usuarios@gmail.com", "H2C: Recuperación de contraseña", "Hola " + user + ",\n\nHas solicitado recuperar tu contraseña. \n"+ "Tu contraseña nueva es: " + newPass);
@@ -73,7 +73,6 @@ namespace PTC2024.Model.DAO.LogInDAO
                 Command.Connection.Close();
                 return false;
             }
-
         }
     }
 }
