@@ -1,23 +1,9 @@
 ﻿using PTC2024.View.Facturacion;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using PTC2024.View.BillsViews;
-using PTC2024.Model.DAO;
-using PTC2024.Model.DTO;
 using PTC2024.Model.DAO.BillsDAO;
 using System.Data;
 using System.Windows.Forms;
-using System.Numerics;
-using PTC2024.Model.DAO.ServicesDAO;
-using RestSharp;
-using System.Runtime.InteropServices.ComTypes;
-using System.Web.UI.WebControls;
-using PTC2024.View.login;
-using PTC2024.formularios.login;
-using PTC2024.Model.DAO.LogInDAO;
 using System.Security.Cryptography;
 
 namespace PTC2024.Controller.BillsController
@@ -32,7 +18,7 @@ namespace PTC2024.Controller.BillsController
             objFormBills.btnNewBills.Click += new EventHandler(AddBills);
             objFormBills.cmsPrintBill.Click += new EventHandler(printBills);
             objFormBills.cmsRectifyBill.Click += new EventHandler(RectifyBills);
-            objFormBills.cmsOverrideBill.Click += new EventHandler(OverrideBills);
+           // objFormBills.cmsOverrideBill.Click += new EventHandler(OverrideBills);
             objFormBills.txtSearchB.Click += new EventHandler(SearchBills);
         }
         public void LoadDataBills(object sender, EventArgs e)
@@ -160,7 +146,7 @@ namespace PTC2024.Controller.BillsController
         private string GetStoredAdminPasswordHash()
         {
            
-            return ; 
+            return "x" ; 
         }
 
 

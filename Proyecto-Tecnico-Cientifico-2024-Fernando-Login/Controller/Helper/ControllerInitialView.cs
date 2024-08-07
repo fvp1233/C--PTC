@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using PTC2024.formularios.login;
 using PTC2024.Model.DAO.FirstUseDAO;
 using PTC2024.View.FirstUse;
+using PTC2024.View.Clientes;
+using PTC2024.View.Empleados;
 
 namespace PTC2024.Controller.Helper
 {
@@ -20,7 +22,8 @@ namespace PTC2024.Controller.Helper
         public static void InitialView()
         {
             //Creamos los objetos de las clases DAOAddEmployee para llamar al método que usaremos
-            DAOLogin daoLogin = new DAOLogin();
+
+            /*DAOLogin daoLogin = new DAOLogin();
             DAOFirstUse daoFirstUse = new DAOFirstUse();
             DAOAddEmployee daoAddEmployee = new DAOAddEmployee();
             int firstBusiness = daoFirstUse.VerifyRegister();
@@ -37,10 +40,11 @@ namespace PTC2024.Controller.Helper
             {
                 Application.Run(new FrmLogin());
             }
-
+            */
+            Application.Run(new FrmCustomers());
         }
         
-
+            
         
 
     }
