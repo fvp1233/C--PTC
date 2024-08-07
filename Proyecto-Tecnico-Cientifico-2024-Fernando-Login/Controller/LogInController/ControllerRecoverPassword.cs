@@ -21,6 +21,7 @@ namespace PTC2024.Controller.LogInController
             objPassword = View;
             objPassword.btnSend.Click += new EventHandler(RecoverPassword);
         }
+
         public void RecoverPassword(object sender, EventArgs e)
         {
             string aRecover = objPassword.txtEmail.Text;
