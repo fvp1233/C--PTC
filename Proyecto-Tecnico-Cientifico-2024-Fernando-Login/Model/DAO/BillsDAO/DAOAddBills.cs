@@ -22,6 +22,8 @@ using System.Xml.Linq;
 using System.Security.Cryptography;
 using PTC2024.Model.DTO.CustomersDTO;
 using PTC2024.Model.DAO.CustomersDAO;
+using System.Collections;
+using System.Windows.Input;
 
 namespace PTC2024.Model.DAO.BillsDAO
 {
@@ -76,6 +78,98 @@ namespace PTC2024.Model.DAO.BillsDAO
                 getConnection().Close();
             }
         }
+
+        public bool VerificarClienteExistente(string customer)
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = "SELECT COUNT(*) FROM tbCustomer WHERE Names = @customer";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("@customer", customer);
+                int count = (int)cmd.ExecuteScalar();
+
+                return count > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("EC-012: Error al verificar la existencia del cliente. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+
+        public bool CustomerIdentificator(string customer)
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = "SELECT COUNT(*) FROM tbCustomer WHERE LastNames = @customer";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("@customer", customer);
+                int count = (int)cmd.ExecuteScalar();
+
+                return count > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("EC-012: Error al verificar la existencia del cliente. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public bool CustomerD(string customer)
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = "SELECT COUNT(*) FROM tbCustomer WHERE DUI = @DUI1";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("@DUI1", customer);
+                int count = (int)cmd.ExecuteScalar();
+
+                return count > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("EC-012: Error al verificar la existencia del cliente. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        /*
+        public DataSet GetCustomer()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string queryCustomer = "SELECT * FROM tbCustomer";
+                SqlCommand cmd = new SqlCommand(queryCustomer, Command.Connection);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "tbCustomer");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        */
         public DataSet DataServices()
         {
             try
@@ -186,6 +280,8 @@ namespace PTC2024.Model.DAO.BillsDAO
                 getConnection().Close();
             }
         }
+
+        
         public int RegisterBills()
         {
             try

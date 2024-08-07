@@ -207,6 +207,34 @@ namespace PTC2024.Model.DAO
                 command.Connection.Close();
             }
         }
+
+        public DataSet ObtainBusiness()
+        {
+            try
+            {
+                command.Connection= getConnection();
+                string query = "SELECT * FROM tbBusinessInfo";
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                cmd.ExecuteNonQuery();
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+
+                adp.Fill(ds, "tbBusinessInfo");
+                return ds;
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudieron obtener los datos de las empresas.");
+                return null;
+                
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
         #endregion
 
         public int RegisterEmployee()
@@ -216,7 +244,7 @@ namespace PTC2024.Model.DAO
                 //Conexión con la base de datos
                 command.Connection = getConnection();
                 //Se crea el query con la sentencia SQL para insertar los datos en la base para la tabla "tbUserData"
-                string queryInsertUser = "INSERT INTO tbUserData(username, password, IdBusinessP, userStatus) VALUES (@username, @password, @IdBusinessP, @userStatus)";
+                string queryInsertUser = "INSERT INTO tbUserData(username, password, IdBusinessP, userStatus, idBusiness) VALUES (@username, @password, @IdBusinessP, @userStatus, @idBusiness)";
                 //Se crea el comando SQL que contendrá la conexión a la base y el query
                 SqlCommand cmdInsertUser = new SqlCommand(queryInsertUser, command.Connection);
                 //Se le asignan los valores a los parámetros del query con los atributos provenientes del DTO
@@ -224,6 +252,7 @@ namespace PTC2024.Model.DAO
                 cmdInsertUser.Parameters.AddWithValue("password", Password);
                 cmdInsertUser.Parameters.AddWithValue("IdBusinessP", BusinessPosition);
                 cmdInsertUser.Parameters.AddWithValue("userStatus", UserSatus);
+                cmdInsertUser.Parameters.AddWithValue("idBusiness", BusinessInfo);
                 //Se ejecuta el query con los valores asignados a cada parámetro
                 //Para devolver una respuesta usamos el ExecuteNonQuery
                 int respuesta = cmdInsertUser.ExecuteNonQuery();

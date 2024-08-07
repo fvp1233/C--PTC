@@ -33,6 +33,7 @@ namespace PTC2024.Model.DTO
         private string password;
         private int businessPosition;
         private bool userSatus;
+        private int businessInfo;
 
         //métodos getters y setters
         public string Names { get => names; set => names = value; }
@@ -56,5 +57,6 @@ namespace PTC2024.Model.DTO
         public int Bank { get => bank; set => bank = value; }
         public int IdEmployee { get => idEmployee; set => idEmployee = value; }
         public bool UserSatus { get => userSatus; set => userSatus = value; }
+        public int BusinessInfo { get => businessInfo; set => businessInfo = value; }
     }
 }

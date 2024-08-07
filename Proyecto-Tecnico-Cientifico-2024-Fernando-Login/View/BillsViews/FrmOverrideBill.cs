@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PTC2024.Controller.Alerts;
+using PTC2024.Controller.BillsController;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,7 @@ namespace PTC2024.View.BillsViews
         public FrmOverrideBill()
         {
             InitializeComponent();
+            ControllerOverride objOverride = new ControllerOverride(this);
         }
     }
 }

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUpdateEmployee));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnEmployeUpdate = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
@@ -77,6 +78,7 @@
             this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtEmployeeId = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.lblEmployeeId = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnRestorePass = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuGroupBox3.SuspendLayout();
             this.bunifuGroupBox2.SuspendLayout();
             this.bunifuGroupBox1.SuspendLayout();
@@ -132,7 +134,7 @@
             this.btnEmployeUpdate.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnEmployeUpdate.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnEmployeUpdate.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnEmployeUpdate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnEmployeUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployeUpdate.ForeColor = System.Drawing.Color.White;
             this.btnEmployeUpdate.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmployeUpdate.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -207,7 +209,7 @@
             this.BtnCancelar.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.BtnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnCancelar.BackgroundImage")));
             this.BtnCancelar.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.BtnCancelar.ButtonText = "Cancelar";
+            this.BtnCancelar.ButtonText = "Volver";
             this.BtnCancelar.ButtonTextMarginLeft = 0;
             this.BtnCancelar.ColorContrastOnClick = 45;
             this.BtnCancelar.ColorContrastOnHover = 45;
@@ -222,7 +224,7 @@
             this.BtnCancelar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.BtnCancelar.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.BtnCancelar.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.BtnCancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.BtnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.ForeColor = System.Drawing.Color.White;
             this.BtnCancelar.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnCancelar.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -1128,11 +1130,103 @@
             this.lblEmployeeId.TabIndex = 93;
             this.lblEmployeeId.Text = "idEmployee";
             // 
+            // btnRestorePass
+            // 
+            this.btnRestorePass.AllowAnimations = true;
+            this.btnRestorePass.AllowMouseEffects = true;
+            this.btnRestorePass.AllowToggling = false;
+            this.btnRestorePass.AnimationSpeed = 200;
+            this.btnRestorePass.AutoGenerateColors = false;
+            this.btnRestorePass.AutoRoundBorders = false;
+            this.btnRestorePass.AutoSizeLeftIcon = true;
+            this.btnRestorePass.AutoSizeRightIcon = true;
+            this.btnRestorePass.BackColor = System.Drawing.Color.Transparent;
+            this.btnRestorePass.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.btnRestorePass.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRestorePass.BackgroundImage")));
+            this.btnRestorePass.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRestorePass.ButtonText = "Restablecer contraseña";
+            this.btnRestorePass.ButtonTextMarginLeft = 0;
+            this.btnRestorePass.ColorContrastOnClick = 45;
+            this.btnRestorePass.ColorContrastOnHover = 45;
+            this.btnRestorePass.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnRestorePass.CustomizableEdges = borderEdges3;
+            this.btnRestorePass.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnRestorePass.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnRestorePass.DisabledFillColor = System.Drawing.Color.Empty;
+            this.btnRestorePass.DisabledForecolor = System.Drawing.Color.Empty;
+            this.btnRestorePass.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnRestorePass.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestorePass.ForeColor = System.Drawing.Color.White;
+            this.btnRestorePass.IconLeft = null;
+            this.btnRestorePass.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRestorePass.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestorePass.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnRestorePass.IconMarginLeft = 11;
+            this.btnRestorePass.IconPadding = 10;
+            this.btnRestorePass.IconRight = null;
+            this.btnRestorePass.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRestorePass.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestorePass.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnRestorePass.IconSize = 25;
+            this.btnRestorePass.IdleBorderColor = System.Drawing.Color.Empty;
+            this.btnRestorePass.IdleBorderRadius = 0;
+            this.btnRestorePass.IdleBorderThickness = 0;
+            this.btnRestorePass.IdleFillColor = System.Drawing.Color.Empty;
+            this.btnRestorePass.IdleIconLeftImage = null;
+            this.btnRestorePass.IdleIconRightImage = null;
+            this.btnRestorePass.IndicateFocus = false;
+            this.btnRestorePass.Location = new System.Drawing.Point(891, 29);
+            this.btnRestorePass.Name = "btnRestorePass";
+            this.btnRestorePass.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnRestorePass.OnDisabledState.BorderRadius = 35;
+            this.btnRestorePass.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRestorePass.OnDisabledState.BorderThickness = 1;
+            this.btnRestorePass.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnRestorePass.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnRestorePass.OnDisabledState.IconLeftImage = null;
+            this.btnRestorePass.OnDisabledState.IconRightImage = null;
+            this.btnRestorePass.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnRestorePass.onHoverState.BorderRadius = 35;
+            this.btnRestorePass.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRestorePass.onHoverState.BorderThickness = 1;
+            this.btnRestorePass.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnRestorePass.onHoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnRestorePass.onHoverState.IconLeftImage = null;
+            this.btnRestorePass.onHoverState.IconRightImage = null;
+            this.btnRestorePass.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnRestorePass.OnIdleState.BorderRadius = 35;
+            this.btnRestorePass.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRestorePass.OnIdleState.BorderThickness = 1;
+            this.btnRestorePass.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnRestorePass.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnRestorePass.OnIdleState.IconLeftImage = null;
+            this.btnRestorePass.OnIdleState.IconRightImage = null;
+            this.btnRestorePass.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnRestorePass.OnPressedState.BorderRadius = 35;
+            this.btnRestorePass.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRestorePass.OnPressedState.BorderThickness = 1;
+            this.btnRestorePass.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnRestorePass.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnRestorePass.OnPressedState.IconLeftImage = null;
+            this.btnRestorePass.OnPressedState.IconRightImage = null;
+            this.btnRestorePass.Size = new System.Drawing.Size(171, 35);
+            this.btnRestorePass.TabIndex = 118;
+            this.btnRestorePass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnRestorePass.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnRestorePass.TextMarginLeft = 0;
+            this.btnRestorePass.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnRestorePass.UseDefaultRadiusAndThickness = true;
+            // 
             // FrmUpdateEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 647);
+            this.Controls.Add(this.btnRestorePass);
             this.Controls.Add(this.lblEmployeeId);
             this.Controls.Add(this.txtEmployeeId);
             this.Controls.Add(this.bunifuGroupBox3);
@@ -1205,5 +1299,6 @@
         public Bunifu.Framework.UI.BunifuCustomLabel lblEmployeeId;
         public Bunifu.UI.WinForms.BunifuLabel lblSalaryRequest;
         public Bunifu.Framework.UI.BunifuCustomLabel lblSalary;
+        public Bunifu.UI.WinForms.BunifuButton.BunifuButton btnRestorePass;
     }
 }

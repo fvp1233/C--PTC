@@ -99,6 +99,7 @@
     <Compile Include="Controller\Alerts\ControllerDeleteAlert.cs" />
     <Compile Include="Controller\BillsController\ControllerAddBills.cs" />
     <Compile Include="Controller\BillsController\ControllerBills.cs" />
+    <Compile Include="Controller\BillsController\ControllerOverride.cs" />
     <Compile Include="Controller\BillsController\ControllerUpdateBill.cs" />
     <Compile Include="Controller\CustomersController\ControllerAddCustomers.cs" />
     <Compile Include="Controller\CustomersController\ControllerCustomers.cs" />
@@ -165,6 +166,12 @@
     <Compile Include="Model\DTO\ServicesDTO\DTOServices.cs" />
     <Compile Include="Model\DTO\ServicesDTO\DTOUpdateService.cs" />
     <Compile Include="Model\DTO\StartMenuDTO\DTOStartMenu.cs" />
+    <Compile Include="View\Alerts\FrmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Alerts\FrmChangePassword.Designer.cs">
+      <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Alerts\FrmDeleteAlert.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,6 +324,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\Alerts\FrmChangePassword.resx">
+      <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Alerts\FrmDeleteAlert.resx">
       <DependentUpon>FrmDeleteAlert.cs</DependentUpon>
     </EmbeddedResource>

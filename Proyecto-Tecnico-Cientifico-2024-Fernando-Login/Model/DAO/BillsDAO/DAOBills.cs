@@ -78,5 +78,30 @@ namespace PTC2024.Model.DAO.BillsDAO
                 Command.Connection.Close();
             }
         }
+        public bool OverBill(int idBill)
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                Command.CommandText = "UPDATE tbBills SET IdStatusBill = (SELECT IdStatusBill FROM tbStatusBill WHERE StatusName = 'Anulado') WHERE IdBill = @IdBill";
+                Command.Parameters.Clear();
+                Command.Parameters.AddWithValue("@IdBill", idBill);
+
+                Command.Connection.Open();
+                int rowsAffected = Command.ExecuteNonQuery();
+                return rowsAffected > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+
+        }
+
     }
 }

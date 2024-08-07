@@ -107,6 +107,48 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
         }
 
+        public int PasswordRestore()
+        {
+            try
+            {
+                //Abrimos conexión con la base
+                Command.Connection = getConnection();
+                //Creamos el query
+                string queryRestorePassword = "UPDATE tbUserData SET password = @param1 WHERE username = @param2";
+                //creamos comando con el query y la conexión
+                SqlCommand cmdRestorePassword = new SqlCommand (queryRestorePassword, Command.Connection);
+                //le damos valor a los parámetros
+                cmdRestorePassword.Parameters.AddWithValue("param1", Password);
+                cmdRestorePassword.Parameters.AddWithValue("param2", Username);
+                //Creamos variable int para saber el resultado del proceso
+                int restoreAnswer = cmdRestorePassword.ExecuteNonQuery();
+                if (restoreAnswer == 1)
+                {
+                    //si la respuesta es 1, entonces la contraseña se restableció correctamente
+                    //retornamos 1
+                    return 1;
+                }
+                else
+                {
+                    //si no se pudo restablecer, se retorna un 0
+                    MessageBox.Show("La contraseña no pudo ser restablecida.", "Ocurrió un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return 0;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //si ocurre un error en el try retornamos un -1
+                MessageBox.Show(ex.Message);
+                return -1;
+                
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
+
         #region OBTENCIÓN DE DATOS PARA LOS DROPDOWNS DEL FORMULARIO
         public DataSet ObtenerEstadosCiviles()
         {
