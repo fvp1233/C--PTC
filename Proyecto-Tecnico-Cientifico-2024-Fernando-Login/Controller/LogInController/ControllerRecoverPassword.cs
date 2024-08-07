@@ -8,5 +8,6 @@ namespace PTC2024.Controller.LogInController
 {
     internal class ControllerRecoverPassword
     {
+
     }
 }

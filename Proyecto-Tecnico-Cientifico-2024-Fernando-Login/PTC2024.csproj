@@ -108,6 +108,7 @@
     <Compile Include="Controller\FirstUseController\ControllerFirstUse.cs" />
     <Compile Include="Controller\Helper\CommonClasses.cs" />
     <Compile Include="Controller\Helper\ControllerInitialView.cs" />
+    <Compile Include="Controller\Helper\Email.cs" />
     <Compile Include="Controller\Helper\SessionVar.cs" />
     <Compile Include="Controller\LogInController\ControllerLogin.cs" />
     <Compile Include="Controller\LogInController\ControllerRecoverPassword.cs" />

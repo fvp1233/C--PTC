@@ -168,7 +168,7 @@
             this.bunifuButton21.IdleIconLeftImage = null;
             this.bunifuButton21.IdleIconRightImage = null;
             this.bunifuButton21.IndicateFocus = false;
-            this.bunifuButton21.Location = new System.Drawing.Point(183, 407);
+            this.bunifuButton21.Location = new System.Drawing.Point(194, 407);
             this.bunifuButton21.Name = "bunifuButton21";
             this.bunifuButton21.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton21.OnDisabledState.BorderRadius = 20;
@@ -239,7 +239,7 @@
             this.bunifuTextBox3.IconRight = null;
             this.bunifuTextBox3.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuTextBox3.Lines = new string[0];
-            this.bunifuTextBox3.Location = new System.Drawing.Point(68, 367);
+            this.bunifuTextBox3.Location = new System.Drawing.Point(74, 367);
             this.bunifuTextBox3.MaxLength = 32767;
             this.bunifuTextBox3.MinimumSize = new System.Drawing.Size(1, 1);
             this.bunifuTextBox3.Modified = false;
@@ -333,7 +333,7 @@
             this.btnEnviarBunifu.IdleIconLeftImage = null;
             this.btnEnviarBunifu.IdleIconRightImage = null;
             this.btnEnviarBunifu.IndicateFocus = false;
-            this.btnEnviarBunifu.Location = new System.Drawing.Point(183, 255);
+            this.btnEnviarBunifu.Location = new System.Drawing.Point(194, 260);
             this.btnEnviarBunifu.Name = "btnEnviarBunifu";
             this.btnEnviarBunifu.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnEnviarBunifu.OnDisabledState.BorderRadius = 20;
