@@ -32,7 +32,7 @@ namespace PTC2024.Controller.BillsController
             objFormBills.btnNewBills.Click += new EventHandler(AddBills);
             objFormBills.cmsPrintBill.Click += new EventHandler(printBills);
             objFormBills.cmsRectifyBill.Click += new EventHandler(RectifyBills);
-            objFormBills.cmsOverrideBill.Click += new EventHandler(OverrideBills);
+            //objFormBills.cmsOverrideBill.Click += new EventHandler(OverrideBills);
             objFormBills.txtSearchB.Click += new EventHandler(SearchBills);
         }
         public void LoadDataBills(object sender, EventArgs e)
@@ -157,11 +157,11 @@ namespace PTC2024.Controller.BillsController
             }
         }
         */
-        private string GetStoredAdminPasswordHash()
-        {
+        //private string GetStoredAdminPasswordHash()
+        //{
            
-            return ; 
-        }
+        //    return ; 
+        //}
 
 
         public void SearchBills(object sender, EventArgs e)
