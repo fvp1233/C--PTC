@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PTC2024.View.Alerts;
 
 namespace PTC2024.Controller.LogInController
 {
@@ -38,9 +39,20 @@ namespace PTC2024.Controller.LogInController
             bool answer = DAOData.ValidarLogin();
             if (answer == true)
             {
-                objLogIn.Hide();
-                StartMenu startMenu = new StartMenu(objLogIn.TxtUserBunifu.Text);
-                startMenu.Show();
+                bool passwordFilter = ValidatePassword();
+                if (passwordFilter == true)
+                {
+                    ChangePassword();
+                    objLogIn.Hide();
+                    StartMenu startMenu = new StartMenu(objLogIn.TxtUserBunifu.Text);
+                    startMenu.Show();
+                }
+                else
+                {
+                    objLogIn.Hide();
+                    StartMenu startMenu = new StartMenu(objLogIn.TxtUserBunifu.Text);
+                    startMenu.Show();
+                }              
 
             }
             else
@@ -96,6 +108,43 @@ namespace PTC2024.Controller.LogInController
         {
             objLogIn.txtPasswordBunifu.PasswordChar = '*';
             objLogIn.HidePassword.Visible = false;
+        }
+
+        public void ChangePassword()
+        {
+            //Creamos instancia del FrmPassword pasandole el parámetro que necesita, que sería el username
+            FrmChangePassword abrirForm = new FrmChangePassword(objLogIn.TxtUserBunifu.Text.Trim());
+            //Ahora abrimos el form
+            abrirForm.FormBorderStyle = FormBorderStyle.None;
+            abrirForm.ShowDialog();
+
+        }
+
+        //método para validar si el usuario esta ingresando con una contraseña de primer uso
+        public bool ValidatePassword()
+        {
+            //La variable password es el texto colocado en el textbox de contraseña
+            string password = objLogIn.txtPasswordBunifu.Text.Trim();
+            //Si la variable es menor que 6, definitivamente es una contraseña ya actualizada y se regresa un false directamente, pero si es igual o mayor a 6 pasamos a evaluarla.
+            if (password.Length >= 6)
+            {
+                //la variable lastFiveChars captura los últimos 5 carácteres que tenga el texto ingresado en el textbox de la contraseña
+                string lastFiveChars = password.Substring(password.Length - 5);
+                //Si los ultimos 5 carácteres son "PU123" entonces es una contraseña de primer uso y se retorna un true, si no, simplemente se retorna un false.
+                if (lastFiveChars == "PU123")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+                      
         }
     }
 }

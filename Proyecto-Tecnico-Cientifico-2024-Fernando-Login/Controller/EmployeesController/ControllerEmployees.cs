@@ -163,6 +163,7 @@ namespace PTC2024.Controller.Employees
             int row = objEmployees.dgvEmployees.CurrentRow.Index;
             //Le damos valor al getter IdEmployee para la verificación de primer usuario.
             DAOEmployees daoEmployees = new DAOEmployees();
+            //Damos valor al getter idEmployee para hacer una validación mas abajo.
             daoEmployees.IdEmployee = int.Parse(objEmployees.dgvEmployees[0,row].Value.ToString());
             //Creamos un objeto del formulario que servirá para confirmar la accion de eliminar - 
             FrmDeleteAlert openDeleteAlert = new FrmDeleteAlert();
@@ -173,6 +174,7 @@ namespace PTC2024.Controller.Employees
             //Evaluamos la respuesta que nos envió el formulario despues de presionar uno de los botones 
             if (objControllerDeleteAlert.ConfirmValue == 1)
             {
+                //Validación para saber si es el primer empleado registrado en el sistema, si lo es, este no podrá ser deshabilitado.
                 if (!(daoEmployees.IdEmployee == 20240001))
                 {
                     //Le damos valor al getter IdEmployee 
