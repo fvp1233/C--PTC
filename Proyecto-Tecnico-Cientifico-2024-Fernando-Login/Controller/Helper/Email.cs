@@ -12,7 +12,7 @@ namespace PTC2024.Controller.Helper
     {
         public SmtpClient Client = new SmtpClient();
         public MailMessage msg = new MailMessage();
-        public System.Net.NetworkCredential creds = new System.Net.NetworkCredential("h2c.soporte.usuarios@gmail.com", "fuwewqqwzkifercp");
+        public System.Net.NetworkCredential creds = new System.Net.NetworkCredential("h2c.soporte.usuarios@gmail.com", "pgcrsydunvshbwih");
         public void Send(string para, string de, string subject, string message)
         {
             try

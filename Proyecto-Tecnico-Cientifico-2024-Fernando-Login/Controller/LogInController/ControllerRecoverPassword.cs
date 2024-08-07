@@ -19,23 +19,42 @@ namespace PTC2024.Controller.LogInController
         public ControllerRecoverPassword(FrmRecoverPasswords View)
         {
             objPassword = View;
-            objPassword.btnSend.Click += new EventHandler(RecoverPassword);
+            objPassword.btnConfirm.Click += new EventHandler(RecoverPassword);
         }
 
         public void RecoverPassword(object sender, EventArgs e)
         {
-            string aRecover = objPassword.txtEmail.Text;
-            string result = "Error";
-            if (string.IsNullOrEmpty(aRecover) || aRecover.Length == 0 || aRecover == "")
+            bool validateAnswer = AccessRecover();
+            if (validateAnswer == true)
             {
-                MessageBox.Show("Debe ingresar su email", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string result = "Error";
+                if (string.IsNullOrEmpty(objPassword.txtEmail.Text) || objPassword.txtEmail.Text.Length == 0 || objPassword.txtEmail.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar su email", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    DAORecoverPassword daoRecoverPassword = new DAORecoverPassword();
+                    daoRecoverPassword.User = objPassword.txtUser.Text.Trim();
+                    daoRecoverPassword.Email = objPassword.txtEmail.Text.Trim();
+                    result = daoRecoverPassword.recoverPassword();
+                }
+                MessageBox.Show(result);
             }
             else
             {
-                DAORecoverPassword user = new DAORecoverPassword();
-                result = user.recoverPassword(aRecover);
+                MessageBox.Show("Datos incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            MessageBox.Show(result);
+           
+        }
+        public bool AccessRecover()
+        {
+            DAORecoverPassword DAORecover = new DAORecoverPassword();
+            DAORecover.User = objPassword.txtUser.Text.Trim();
+            DAORecover.Email = objPassword.txtEmail.Text.Trim();
+            bool answer = DAORecover.ValidateCredentials();
+
+            return answer;
         }
     }
 }

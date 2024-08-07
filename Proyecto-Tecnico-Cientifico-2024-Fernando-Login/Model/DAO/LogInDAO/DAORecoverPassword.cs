@@ -7,19 +7,20 @@ using System.Text;
 using System.Threading.Tasks;
 using PTC2024.Controller.Helper;
 using Microsoft.VisualBasic.ApplicationServices;
+using System.Windows.Forms;
 
 namespace PTC2024.Model.DAO.LogInDAO
 {
     internal class DAORecoverPassword : DTORecoverPassword
     {
         readonly SqlCommand Command = new SqlCommand();
-        public string recoverPassword(string recover)
+        public string recoverPassword()
         {
             Command.Connection = getConnection();
-            string query = "SELECT * FROM viewPasswordRecover where(username = @username OR email = @email)";
+            string query = "SELECT * FROM viewPasswordRecover WHERE username = @username AND email = @email";
             SqlCommand cmd = new SqlCommand(query, Command.Connection);
             cmd.Parameters.AddWithValue("@username",User);
-            //cmd.Parameters.AddWithValue("@email", Email);
+            cmd.Parameters.AddWithValue("@email", Email);
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
@@ -72,6 +73,40 @@ namespace PTC2024.Model.DAO.LogInDAO
             {
                 Command.Connection.Close();
                 return false;
+            }
+        }
+        public bool ValidateCredentials()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = "SELECT * FROM viewPasswordRecover WHERE username = @username AND email = @email";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("@username", User);
+                cmd.Parameters.AddWithValue("@email", Email);
+                SqlDataReader rd = cmd.ExecuteReader();
+                while(rd.Read())
+                {
+                    IdEmployee = rd.GetInt32(0);
+                    Email = rd.GetString(1); 
+                    User = rd.GetString(2);
+                    Password = rd.GetString(3);
+                }
+                return rd.HasRows;
+            }
+            catch (SqlException sqlex)
+            {
+                MessageBox.Show(sqlex.Message);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                getConnection().Close();
             }
         }
     }
