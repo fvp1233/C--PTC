@@ -274,6 +274,12 @@
     <Compile Include="View\FirstUse\FrmFirstUse.Designer.cs">
       <DependentUpon>FrmFirstUse.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\login\FrmRecoverPasswords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\login\FrmRecoverPasswords.Designer.cs">
+      <DependentUpon>FrmRecoverPasswords.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\login\FrmRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,12 +321,6 @@
     </Compile>
     <Compile Include="View\login\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\login\RecoverPassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\login\RecoverPassword.Designer.cs">
-      <DependentUpon>RecoverPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -378,6 +378,9 @@
     <EmbeddedResource Include="View\FirstUse\FrmFirstUse.resx">
       <DependentUpon>FrmFirstUse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\login\FrmRecoverPasswords.resx">
+      <DependentUpon>FrmRecoverPasswords.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\login\FrmRegister.resx">
       <DependentUpon>FrmRegister.cs</DependentUpon>
     </EmbeddedResource>
@@ -398,9 +401,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\login\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\login\RecoverPassword.resx">
-      <DependentUpon>RecoverPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

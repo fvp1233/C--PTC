@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PTC2024.Controller.LogInController;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,13 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PTC2024.formularios.login
+namespace PTC2024.View.login
 {
-    public partial class Recuperar_contraseña : Form
+    public partial class FrmRecoverPasswords : Form
     {
-        public Recuperar_contraseña()
+        public FrmRecoverPasswords()
         {
             InitializeComponent();
+            ControllerRecoverPassword objController = new ControllerRecoverPassword(this);
         }
     }
 }
