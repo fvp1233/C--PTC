@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PTC2024.Controller.Helper;
 using PTC2024.Model.DTO;
 using PTC2024.Model.DTO.BillsDTO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PTC2024.Model.DAO.BillsDAO
 {
@@ -23,7 +25,7 @@ namespace PTC2024.Model.DAO.BillsDAO
                 Command.Connection = getConnection();
                 string query = "SELECT * FROM viewBills";
                 SqlCommand comd = new SqlCommand(query, Command.Connection);
-                //comd.ExecuteNonQuery();
+                comd.ExecuteNonQuery();
                 SqlDataAdapter adap = new SqlDataAdapter(comd);
                 DataSet ds = new DataSet();
                 adap.Fill(ds, "viewBills");
@@ -102,6 +104,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             }
 
         }
-
+       
+       
     }
 }
