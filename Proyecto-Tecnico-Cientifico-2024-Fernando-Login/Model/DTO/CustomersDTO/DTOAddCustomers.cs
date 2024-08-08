@@ -15,7 +15,6 @@ namespace PTC2024.Model.DTO.CustomersDTO
         private string names;
         private string lastnames;
         private string DUI;
-        private DateTime birthDate;
         private string address;
         private string email;
         private string phone;
@@ -26,7 +25,6 @@ namespace PTC2024.Model.DTO.CustomersDTO
         public string Names { get => names; set => names = value; }
         public string Lastnames { get => lastnames; set => lastnames = value; }
         public string DUI1 { get => DUI; set => DUI = value; }
-        public DateTime BirthDate { get => birthDate; set => birthDate = value; }
         public string Address { get => address; set => address = value; }
         public string Email { get => email; set => email = value; }
         public string Phone { get => phone; set => phone = value; }
