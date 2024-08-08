@@ -14,13 +14,17 @@ namespace PTC2024.Controller.CustomersController
     {
         FrmUploadCustomers objUpdateCustomers;
 
+        //Se declara el constructor con sus respectivos parametros
         public ControllerUpdateCustomers(FrmUploadCustomers View, int idClient, string dui,string names, string lastnames,  string phone, string email, string address)
         {
 
             objUpdateCustomers = View;
             ChargeValues(idClient, dui, names, lastnames, phone, email, address);
+            //Evento para cargar los combos
             objUpdateCustomers.Load += new EventHandler(CargarCombos);
+            //Evento para actulizar los clientes
             objUpdateCustomers.BtnActualizarCliente.Click += new EventHandler(UpdateCustomers);
+            //Evento para cancelar el proceso
             objUpdateCustomers.BtnCancelar.Click += new EventHandler(CancelarProceso);
         }
 
