@@ -106,12 +106,12 @@
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(502, 18);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(113, 32);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(133, 32);
             this.bunifuCustomLabel1.TabIndex = 110;
-            this.bunifuCustomLabel1.Text = "Factura";
+            this.bunifuCustomLabel1.Text = "FACTURA";
             // 
             // bunifuGroupBox3
             // 
@@ -152,7 +152,7 @@
             this.txtEmployee.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtEmployee.LineThickness = 3;
             this.txtEmployee.Location = new System.Drawing.Point(12, 167);
-            this.txtEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmployee.Name = "txtEmployee";
             this.txtEmployee.Size = new System.Drawing.Size(200, 31);
             this.txtEmployee.TabIndex = 46;
@@ -182,7 +182,7 @@
             this.txtNRCompany.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtNRCompany.LineThickness = 3;
             this.txtNRCompany.Location = new System.Drawing.Point(235, 112);
-            this.txtNRCompany.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNRCompany.Margin = new System.Windows.Forms.Padding(4);
             this.txtNRCompany.Name = "txtNRCompany";
             this.txtNRCompany.Size = new System.Drawing.Size(201, 31);
             this.txtNRCompany.TabIndex = 42;
@@ -213,7 +213,7 @@
             this.txtNITCompany.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtNITCompany.LineThickness = 3;
             this.txtNITCompany.Location = new System.Drawing.Point(12, 112);
-            this.txtNITCompany.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNITCompany.Margin = new System.Windows.Forms.Padding(4);
             this.txtNITCompany.Name = "txtNITCompany";
             this.txtNITCompany.Size = new System.Drawing.Size(200, 31);
             this.txtNITCompany.TabIndex = 40;
@@ -264,7 +264,7 @@
             this.txtRazónsocial.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtRazónsocial.LineThickness = 3;
             this.txtRazónsocial.Location = new System.Drawing.Point(12, 49);
-            this.txtRazónsocial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRazónsocial.Margin = new System.Windows.Forms.Padding(4);
             this.txtRazónsocial.Name = "txtRazónsocial";
             this.txtRazónsocial.Size = new System.Drawing.Size(424, 31);
             this.txtRazónsocial.TabIndex = 1;
@@ -308,7 +308,7 @@
             this.txtCustomerPhone.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtCustomerPhone.LineThickness = 3;
             this.txtCustomerPhone.Location = new System.Drawing.Point(316, 108);
-            this.txtCustomerPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCustomerPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerPhone.Name = "txtCustomerPhone";
             this.txtCustomerPhone.Size = new System.Drawing.Size(278, 31);
             this.txtCustomerPhone.TabIndex = 103;
@@ -339,7 +339,7 @@
             this.txtCustomerEmail.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtCustomerEmail.LineThickness = 3;
             this.txtCustomerEmail.Location = new System.Drawing.Point(17, 164);
-            this.txtCustomerEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCustomerEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerEmail.Name = "txtCustomerEmail";
             this.txtCustomerEmail.Size = new System.Drawing.Size(578, 31);
             this.txtCustomerEmail.TabIndex = 101;
@@ -382,7 +382,7 @@
             this.txtCustomerName.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtCustomerName.LineThickness = 3;
             this.txtCustomerName.Location = new System.Drawing.Point(17, 42);
-            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(578, 31);
             this.txtCustomerName.TabIndex = 94;
@@ -402,7 +402,7 @@
             this.txtDUICustomer.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtDUICustomer.LineThickness = 3;
             this.txtDUICustomer.Location = new System.Drawing.Point(17, 108);
-            this.txtDUICustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDUICustomer.Margin = new System.Windows.Forms.Padding(4);
             this.txtDUICustomer.Name = "txtDUICustomer";
             this.txtDUICustomer.Size = new System.Drawing.Size(276, 31);
             this.txtDUICustomer.TabIndex = 98;
@@ -811,7 +811,7 @@
             this.txtTotalPay.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtTotalPay.LineThickness = 3;
             this.txtTotalPay.Location = new System.Drawing.Point(284, 107);
-            this.txtTotalPay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTotalPay.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotalPay.Name = "txtTotalPay";
             this.txtTotalPay.Size = new System.Drawing.Size(235, 31);
             this.txtTotalPay.TabIndex = 105;
@@ -831,7 +831,7 @@
             this.txtDiscount.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtDiscount.LineThickness = 3;
             this.txtDiscount.Location = new System.Drawing.Point(284, 51);
-            this.txtDiscount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiscount.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(235, 31);
             this.txtDiscount.TabIndex = 104;
@@ -873,7 +873,7 @@
             this.txtSubTotal.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtSubTotal.LineThickness = 3;
             this.txtSubTotal.Location = new System.Drawing.Point(17, 163);
-            this.txtSubTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSubTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtSubTotal.Name = "txtSubTotal";
             this.txtSubTotal.Size = new System.Drawing.Size(250, 31);
             this.txtSubTotal.TabIndex = 101;
