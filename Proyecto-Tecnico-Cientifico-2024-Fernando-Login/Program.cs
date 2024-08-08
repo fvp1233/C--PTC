@@ -26,9 +26,7 @@ namespace PTC2024
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmBills());
-
-            //ControllerInitialView.InitialView();
+            ControllerInitialView.InitialView();
         }
 
     }
