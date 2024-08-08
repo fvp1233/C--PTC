@@ -15,14 +15,17 @@ namespace PTC2024.Model.DAO.CustomersDAO
         
         readonly SqlCommand command = new SqlCommand();
 
+        //Metodo para actualizar Clientes
         public int updateCustomers()
         {
             try
             {
                 command.Connection = getConnection();
 
+                //Se declara la consulta
                 string query = "UPDATE tbCustomer SET DUI = @DUI, names = @Names, lastNames = @LastNames, phone = @Phone, email= @Email, address = @Address WHERE IdCustomer = @Id";
 
+                //Se le asignan los valores a los parametros
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.Parameters.AddWithValue("@DUI", Dui);
                 cmd.Parameters.AddWithValue("@Names", Name);
@@ -31,6 +34,7 @@ namespace PTC2024.Model.DAO.CustomersDAO
                 cmd.Parameters.AddWithValue("@Email", Email);
                 cmd.Parameters.AddWithValue("@Address", Address);
                 cmd.Parameters.AddWithValue("@Id", IdClient);
+                //La consulta la guardara en la variable respuesta
                 int respuesta = cmd.ExecuteNonQuery();
 
                 if (respuesta == 1) {
