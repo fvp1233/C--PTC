@@ -98,9 +98,7 @@ namespace PTC2024.Controller.EmployeesController
             objUpdatePayroll.txtNetSalary.Enabled = false;
             objUpdatePayroll.txtEmployeeDiscount.Enabled = false;
             objUpdatePayroll.dtpDate.Enabled = false;
-            objUpdatePayroll.txtEmployerISSS.Enabled = false;
-            objUpdatePayroll.txtEmployerAFP.Enabled = false;
-            objUpdatePayroll.txtEmployerDiscount.Enabled = false;
+           
         }
         public void CloseForm(object sender, EventArgs e)
         {

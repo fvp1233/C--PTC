@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PTC2024.Model.DTO.EmployeesDTO
+namespace PTC2024.Model.DTO.AlertsDTO
 {
-    internal class DTOEmployees : dbContext
+    internal class DTOChangePassword : dbContext
     {
+        //atributos
         private string username;
-        private int idEmployee;
+        private string password;
 
+        //getters y setters
         public string Username { get => username; set => username = value; }
-        public int IdEmployee { get => idEmployee; set => idEmployee = value; }
+        public string Password { get => password; set => password = value; }
     }
 }

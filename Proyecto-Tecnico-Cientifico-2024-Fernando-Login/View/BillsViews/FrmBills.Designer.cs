@@ -77,11 +77,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.dgvBills = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.cmsBills = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsPrintBill = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsRectifyBill = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsOverrideBill = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvBills = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -97,8 +97,8 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBills)).BeginInit();
             this.cmsBills.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBills)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -385,7 +385,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.17172F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.82828F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 275F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 480F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 481F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel11, 3, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel9, 2, 1);
             this.tableLayoutPanel4.Controls.Add(this.label3, 1, 0);
@@ -409,12 +409,12 @@
             this.tableLayoutPanel11.Controls.Add(this.flowLayoutPanel3, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel12, 1, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(744, 34);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(743, 34);
             this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(473, 106);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(474, 106);
             this.tableLayoutPanel11.TabIndex = 8;
             // 
             // flowLayoutPanel3
@@ -551,7 +551,7 @@
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(421, 98);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(422, 98);
             this.tableLayoutPanel12.TabIndex = 1;
             // 
             // label9
@@ -562,7 +562,7 @@
             this.label9.Location = new System.Drawing.Point(4, 2);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(413, 19);
+            this.label9.Size = new System.Drawing.Size(414, 19);
             this.label9.TabIndex = 4;
             this.label9.Text = "Anulada";
             // 
@@ -574,7 +574,7 @@
             this.label16.Location = new System.Drawing.Point(4, 25);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(413, 19);
+            this.label16.Size = new System.Drawing.Size(414, 19);
             this.label16.TabIndex = 0;
             this.label16.Text = "Pendiente";
             // 
@@ -586,7 +586,7 @@
             this.tableLayoutPanel9.Controls.Add(this.flowLayoutPanel2, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(469, 34);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(468, 34);
             this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
@@ -828,7 +828,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(177, 7);
+            this.label3.Location = new System.Drawing.Point(176, 7);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(173, 23);
@@ -843,7 +843,7 @@
             this.tableLayoutPanel6.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(177, 34);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(176, 34);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
@@ -1085,23 +1085,54 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(469, 7);
+            this.label8.Location = new System.Drawing.Point(468, 7);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 23);
             this.label8.TabIndex = 2;
             this.label8.Text = "Estado:";
             // 
+            // cmsBills
+            // 
+            this.cmsBills.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmsBills.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsPrintBill,
+            this.cmsRectifyBill,
+            this.cmsOverrideBill});
+            this.cmsBills.Name = "cmsBills";
+            this.cmsBills.Size = new System.Drawing.Size(145, 82);
+            // 
+            // cmsPrintBill
+            // 
+            this.cmsPrintBill.Image = ((System.Drawing.Image)(resources.GetObject("cmsPrintBill.Image")));
+            this.cmsPrintBill.Name = "cmsPrintBill";
+            this.cmsPrintBill.Size = new System.Drawing.Size(144, 26);
+            this.cmsPrintBill.Text = "Imprimir";
+            // 
+            // cmsRectifyBill
+            // 
+            this.cmsRectifyBill.Name = "cmsRectifyBill";
+            this.cmsRectifyBill.Size = new System.Drawing.Size(144, 26);
+            this.cmsRectifyBill.Text = "Rectificar";
+            // 
+            // cmsOverrideBill
+            // 
+            this.cmsOverrideBill.Image = ((System.Drawing.Image)(resources.GetObject("cmsOverrideBill.Image")));
+            this.cmsOverrideBill.Name = "cmsOverrideBill";
+            this.cmsOverrideBill.Size = new System.Drawing.Size(144, 26);
+            this.cmsOverrideBill.Text = "Anular";
+            // 
             // dgvBills
             // 
             this.dgvBills.AllowCustomTheming = true;
-            this.dgvBills.AllowUserToOrderColumns = true;
+            this.dgvBills.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dgvBills.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvBills.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvBills.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBills.BackgroundColor = System.Drawing.Color.White;
             this.dgvBills.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -1143,7 +1174,6 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBills.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvBills.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBills.EnableHeadersVisualStyles = false;
             this.dgvBills.GridColor = System.Drawing.Color.Silver;
             this.dgvBills.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
@@ -1152,6 +1182,7 @@
             this.dgvBills.Location = new System.Drawing.Point(4, 176);
             this.dgvBills.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBills.Name = "dgvBills";
+            this.dgvBills.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1169,40 +1200,11 @@
             this.dgvBills.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvBills.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.dgvBills.RowTemplate.Height = 40;
+            this.dgvBills.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvBills.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBills.Size = new System.Drawing.Size(1548, 569);
-            this.dgvBills.TabIndex = 2;
+            this.dgvBills.TabIndex = 113;
             this.dgvBills.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
-            // 
-            // cmsBills
-            // 
-            this.cmsBills.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.cmsBills.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmsPrintBill,
-            this.cmsRectifyBill,
-            this.cmsOverrideBill});
-            this.cmsBills.Name = "cmsBills";
-            this.cmsBills.Size = new System.Drawing.Size(215, 110);
-            // 
-            // cmsPrintBill
-            // 
-            this.cmsPrintBill.Image = ((System.Drawing.Image)(resources.GetObject("cmsPrintBill.Image")));
-            this.cmsPrintBill.Name = "cmsPrintBill";
-            this.cmsPrintBill.Size = new System.Drawing.Size(214, 26);
-            this.cmsPrintBill.Text = "Imprimir";
-            // 
-            // cmsRectifyBill
-            // 
-            this.cmsRectifyBill.Name = "cmsRectifyBill";
-            this.cmsRectifyBill.Size = new System.Drawing.Size(214, 26);
-            this.cmsRectifyBill.Text = "Rectificar";
-            // 
-            // cmsOverrideBill
-            // 
-            this.cmsOverrideBill.Image = ((System.Drawing.Image)(resources.GetObject("cmsOverrideBill.Image")));
-            this.cmsOverrideBill.Name = "cmsOverrideBill";
-            this.cmsOverrideBill.Size = new System.Drawing.Size(214, 26);
-            this.cmsOverrideBill.Text = "Anular";
             // 
             // FrmBills
             // 
@@ -1233,8 +1235,8 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBills)).EndInit();
             this.cmsBills.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBills)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1278,10 +1280,10 @@
         private Bunifu.UI.WinForms.BunifuCheckBox bunifuCheckBox4;
         private System.Windows.Forms.Label label9;
         public System.Windows.Forms.ContextMenuStrip cmsBills;
-        public Bunifu.UI.WinForms.BunifuDataGridView dgvBills;
         public Bunifu.UI.WinForms.BunifuTextBox txtSearchB;
         public System.Windows.Forms.ToolStripMenuItem cmsPrintBill;
         public System.Windows.Forms.ToolStripMenuItem cmsOverrideBill;
         public System.Windows.Forms.ToolStripMenuItem cmsRectifyBill;
+        public Bunifu.UI.WinForms.BunifuDataGridView dgvBills;
     }
 }

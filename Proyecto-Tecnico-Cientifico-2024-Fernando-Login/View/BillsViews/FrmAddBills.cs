@@ -22,10 +22,10 @@ namespace PTC2024.View.Facturacion
             ControllerAddBills objAddBills = new ControllerAddBills(this, accions);
 
         }
-        public FrmAddBills(int accions, int id, string companyName, string NIT, string NRC, string customer, string serviceName, float discount, float subtoralPay, float totalPay, string methodP, DateTime startDate, DateTime FinalDate,DateTime Dateissued, string employee, string statusBill)
+        public FrmAddBills(int accions, int id, string companyName, string NIT, string NRC, string customer, string serviceName, float discount, float subtoralPay, float totalPay, string methodP, DateTime startDate, DateTime FinalDate,DateTime Dateissued, string employee, string statusBill, string CustomerDui, string CustomerPhone, string CustomerEmail)
         {
             InitializeComponent();
-            ControllerAddBills objAddBills = new ControllerAddBills(this, accions, id, companyName, NIT, NRC, customer, serviceName, discount, subtoralPay, totalPay, methodP, startDate, FinalDate, Dateissued,employee, statusBill);
+            ControllerAddBills objAddBills = new ControllerAddBills(this, accions, id, companyName, NIT, NRC, customer, serviceName, discount, subtoralPay, totalPay, methodP, startDate, FinalDate, Dateissued,employee, statusBill, CustomerDui, CustomerPhone, CustomerEmail);
         }
         public FrmAddBills(int accions, int id, string IdServices1, float Price1)
         {

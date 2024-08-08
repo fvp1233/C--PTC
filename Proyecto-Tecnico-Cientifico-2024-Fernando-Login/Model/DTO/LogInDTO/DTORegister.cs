@@ -27,6 +27,7 @@ namespace PTC2024.Model.DTO.LogInDTO
         private int maritalStatus;
         private int employeeStatus;
         private int bank;
+        private int businessInfo;
 
         //TABLA tbUserData
         private string username;
@@ -56,5 +57,6 @@ namespace PTC2024.Model.DTO.LogInDTO
         public string Password { get => password; set => password = value; }
         public int BusinessPosition { get => businessPosition; set => businessPosition = value; }
         public bool UserSatus { get => userSatus; set => userSatus = value; }
+        public int BusinessInfo { get => businessInfo; set => businessInfo = value; }
     }
 }

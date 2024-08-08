@@ -96,6 +96,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Alerts\ControllerChangePassword.cs" />
     <Compile Include="Controller\Alerts\ControllerDeleteAlert.cs" />
     <Compile Include="Controller\BillsController\ControllerAddBills.cs" />
     <Compile Include="Controller\BillsController\ControllerBills.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="Controller\FirstUseController\ControllerFirstUse.cs" />
     <Compile Include="Controller\Helper\CommonClasses.cs" />
     <Compile Include="Controller\Helper\ControllerInitialView.cs" />
+    <Compile Include="Controller\Helper\Email.cs" />
     <Compile Include="Controller\Helper\SessionVar.cs" />
     <Compile Include="Controller\LogInController\ControllerLogin.cs" />
     <Compile Include="Controller\LogInController\ControllerRecoverPassword.cs" />
@@ -124,6 +126,7 @@
     <Compile Include="Controller\ServicesController\ControllerUpdateService.cs" />
     <Compile Include="Controller\StartMenuController\ControllerStartMenu.cs" />
     <Compile Include="Controller\StartMenuController\ControllerWellcome.cs" />
+    <Compile Include="Model\DAO\AlertsDAO\DAOChangePassword.cs" />
     <Compile Include="Model\DAO\BillsDAO\DAOAddBills.cs" />
     <Compile Include="Model\DAO\BillsDAO\DAOBills.cs" />
     <Compile Include="Model\DAO\BillsDAO\DAOUpdateBill.cs" />
@@ -145,6 +148,7 @@
     <Compile Include="Model\DAO\ServicesDAO\DAOUpdateService.cs" />
     <Compile Include="Model\DAO\StartMenuDAO\DAOStartMenu.cs" />
     <Compile Include="Model\dbContext.cs" />
+    <Compile Include="Model\DTO\AlertsDTO\DTOChangePassword.cs" />
     <Compile Include="Model\DTO\BillsDTO\DTOAddBills.cs" />
     <Compile Include="Model\DTO\BillsDTO\DTOBills.cs" />
     <Compile Include="Model\DTO\BillsDTO\DTOUpdateBill.cs" />
@@ -165,6 +169,12 @@
     <Compile Include="Model\DTO\ServicesDTO\DTOServices.cs" />
     <Compile Include="Model\DTO\ServicesDTO\DTOUpdateService.cs" />
     <Compile Include="Model\DTO\StartMenuDTO\DTOStartMenu.cs" />
+    <Compile Include="View\Alerts\FrmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Alerts\FrmChangePassword.Designer.cs">
+      <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Alerts\FrmDeleteAlert.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +277,12 @@
     <Compile Include="View\FirstUse\FrmFirstUse.Designer.cs">
       <DependentUpon>FrmFirstUse.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\login\FrmRecoverPasswords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\login\FrmRecoverPasswords.Designer.cs">
+      <DependentUpon>FrmRecoverPasswords.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\login\FrmRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,14 +325,11 @@
     <Compile Include="View\login\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\login\RecoverPassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\login\RecoverPassword.Designer.cs">
-      <DependentUpon>RecoverPassword.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\Alerts\FrmChangePassword.resx">
+      <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Alerts\FrmDeleteAlert.resx">
       <DependentUpon>FrmDeleteAlert.cs</DependentUpon>
     </EmbeddedResource>
@@ -368,6 +381,9 @@
     <EmbeddedResource Include="View\FirstUse\FrmFirstUse.resx">
       <DependentUpon>FrmFirstUse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\login\FrmRecoverPasswords.resx">
+      <DependentUpon>FrmRecoverPasswords.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\login\FrmRegister.resx">
       <DependentUpon>FrmRegister.cs</DependentUpon>
     </EmbeddedResource>
@@ -388,9 +404,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\login\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\login\RecoverPassword.resx">
-      <DependentUpon>RecoverPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -18,6 +18,7 @@ namespace PTC2024.View.Facturacion
         {
             InitializeComponent();
             ControllerBills objFormBills = new ControllerBills(this);
+
         }
     }
 }
