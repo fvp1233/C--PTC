@@ -389,7 +389,7 @@ namespace PTC2024.Model.DAO.BillsDAO
                 cmd.Parameters.AddWithValue("@DateIssuance", Dateissued);
                 cmd.Parameters.AddWithValue("@IdServices", Services);
                 cmd.Parameters.AddWithValue("@IdStatusBill", StatusBills);
-                cmd.Parameters.AddWithValue("@CustomerName", Customer);
+                cmd.Parameters.AddWithValue("@CustomerName", Customer); // Asegúrate de que Customer tenga el nombre completo
                 cmd.Parameters.AddWithValue("@IdEmployee", Employee);
                 cmd.Parameters.AddWithValue("@IdMethodP", MethodP);
 
@@ -408,7 +408,7 @@ namespace PTC2024.Model.DAO.BillsDAO
         }
         public int GetCustomerIdByName(string customerName)
         {
-            int customerId = -1;
+            int customerId = -1; // Declarar fuera del bloque using
 
             try
             {
@@ -429,7 +429,7 @@ namespace PTC2024.Model.DAO.BillsDAO
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Se ingresaron correctamente los datos ");
+                        MessageBox.Show("Se ingresaron correctamente los datos " + ex.Message);
                     }
                     finally
                     {
@@ -439,89 +439,112 @@ namespace PTC2024.Model.DAO.BillsDAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("" + ex.Message);
+                MessageBox.Show("Ayuda: " + ex.Message);
             }
 
             return customerId; // Devolver el valor de customerId
         }
 
-        public int UpdateBill()
+/*
+        public int BillsRegister()
         {
-            try
-            {
-                //Se crea la conexión a la base
-                SqlConnection connection = getConnection();
-                Command.Connection = connection;
-
-                // Asegurarse de que la conexión esté abierta
-                if (connection.State != ConnectionState.Open)
+                try
                 {
-                    connection.Open();
+                    // Conexión con la base de datos
+                    Command.Connection = getConnection();
+
+                    // Obtener IdCustomer basado en el nombre del cliente
+                    int customerId = GetCustomerIdByName(Customer);
+                    if (customerId == -1)
+                    {
+                        MessageBox.Show("Cliente no encontrado en la base de datos.");
+                        return -1;
+                    }
+
+                    string queryAddBill = "INSERT INTO tbBills(companyName, NIT, NRC, discount, subtotalPay, totalPay, startDate, finalDate, dateissuance, IdServices, IdStatusBill, IdCustomer, IdEmployee, IdMethodP) " +
+                                          "VALUES (@param1, @param2, @param3, @param4, @param5, @param6, @param7, @param8, @param9, @param10, @param11, @param12, @param13, @param14)";
+
+                    // Se crea el comando SQL con la conexión y el query
+                    SqlCommand cmdAddBills = new SqlCommand(queryAddBill, Command.Connection);
+
+                    // Se asigna un valor a cada parámetro con los atributos del DTO
+                    cmdAddBills.Parameters.AddWithValue("@param1", CompanyName);
+                    cmdAddBills.Parameters.AddWithValue("@param2", NIT1);
+                    cmdAddBills.Parameters.AddWithValue("@param3", NRC1);
+                    cmdAddBills.Parameters.AddWithValue("@param4", Discount);
+                    cmdAddBills.Parameters.AddWithValue("@param5", SubtotalPay);
+                    cmdAddBills.Parameters.AddWithValue("@param6", TotalPay);
+                    cmdAddBills.Parameters.AddWithValue("@param7", StartDate);
+                    cmdAddBills.Parameters.AddWithValue("@param8", FinalDate1);
+                    cmdAddBills.Parameters.AddWithValue("@param9", Dateissued);
+                    cmdAddBills.Parameters.AddWithValue("@param10", Services);
+                    cmdAddBills.Parameters.AddWithValue("@param11", StatusBills);
+                    cmdAddBills.Parameters.AddWithValue("@param12", Customer); // Usar el customerId obtenido
+                    cmdAddBills.Parameters.AddWithValue("@param13", Employee);
+                    cmdAddBills.Parameters.AddWithValue("@param14", MethodP);
+
+                    int checks = cmdAddBills.ExecuteNonQuery();
+                    return checks == 1 ? checks : 0;
                 }
-
-                // Se crea el query para actualizar al empleado
-                string queryUpdateE = "UPDATE tbBills SET " +
-                               "companyName = @param1, " +
-                               "NIT = @param2, " +
-                               "NRC = @param3, " +
-                               "CustomerDui = @param4, " +
-                               "CustomerPhone = @param5, " +
-                               "CustomerEmail = @param6, " +
-                               "discount = @param7, " +
-                               "subtotalPay = @param8, " +
-                               "totalPay = @param9, " +
-                               "startDate = @param10, " +
-                               "finalDate = @param11, " +
-                               "dateissuance = @param12, " +
-                               "IdServices = @param13, " +
-                               "IdStatusBill = @param14, " +
-                               "IdEmployee = @param15, " +
-                               "IdMethodP = @param16 " +
-                               "WHERE IdBill = @param17;";
-
-                // Se crea el comando Sql que tendrá el query y la conexión
-                SqlCommand cmdUpdateB = new SqlCommand(queryUpdateE, Command.Connection);
-
-                // Se le agregan los valores a los parámetros
-                cmdUpdateB.Parameters.AddWithValue("@param1", CompanyName);
-                cmdUpdateB.Parameters.AddWithValue("@param2", NIT1);
-                cmdUpdateB.Parameters.AddWithValue("@param3", NRC1);
-                cmdUpdateB.Parameters.AddWithValue("@param4", CustomerDui1);
-                cmdUpdateB.Parameters.AddWithValue("@param5", CustomerPhone1);
-                cmdUpdateB.Parameters.AddWithValue("@param6", CustomerEmail1);
-                cmdUpdateB.Parameters.AddWithValue("@param7", Discount);
-                cmdUpdateB.Parameters.AddWithValue("@param8", SubtotalPay);
-                cmdUpdateB.Parameters.AddWithValue("@param9", TotalPay);
-                cmdUpdateB.Parameters.AddWithValue("@param10", StartDate);
-                cmdUpdateB.Parameters.AddWithValue("@param11", FinalDate1);
-                cmdUpdateB.Parameters.AddWithValue("@param12", Dateissued);
-                cmdUpdateB.Parameters.AddWithValue("@param13", Services);
-                cmdUpdateB.Parameters.AddWithValue("@param14", StatusBills);
-                cmdUpdateB.Parameters.AddWithValue("@param15", Employee);
-                cmdUpdateB.Parameters.AddWithValue("@param16", MethodP);
-                cmdUpdateB.Parameters.AddWithValue("@param17", IdBill1);
-
-                int respuesta = cmdUpdateB.ExecuteNonQuery();
-
-                // Se retornará la respuesta
-                return respuesta;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("EC-11: No se ingresaron los datos. Error: " + ex.Message);
-                return -1;
-            }
-            finally
-            {
-                // Asegurarse de cerrar la conexión
-                if (Command.Connection != null && Command.Connection.State == ConnectionState.Open)
+                catch (Exception ex)
+                {
+                    MessageBox.Show("EC-10: No se ingresaron los datos. Error: " + ex.Message);
+                    return -1;
+                }
+                finally
                 {
                     Command.Connection.Close();
                 }
             }
 
-        }
-      
-}
-}
+        */
 
+            /* public int RegisterBills()
+         {
+             try
+             {
+                 //Conexión con la base de datos
+                 Command.Connection = getConnection();
+                 string queryAddBill = "INSERT INTO tbBills(companyName, NIT, NRC, discount, subtotalPay, totalPay, startDate, FinalDate, IdServices, IdStatusBill, IdCustomer, IdEmployee, IdmethodP, FiscalPeriod, IdfiscalPeriod) VALUES (@param1, @param2, @param3,@param4,@param5, @param6, @param7, @param8, @param9,@param10, @param11, @param12,@param13,@param14)";
+                 //Se crea el comando SQL con la conexión y el query
+                 SqlCommand cmdAddBills = new SqlCommand(@queryAddBill, Command.Connection);
+                 //Se asigna un valor a cada parámetro con los atributos del DTO
+                 cmdAddBills.Parameters.AddWithValue("param1", CompanyName);
+                 cmdAddBills.Parameters.AddWithValue("param2", NIT1);
+                 cmdAddBills.Parameters.AddWithValue("param3", NRC1);
+                 cmdAddBills.Parameters.AddWithValue("param4", Discount);
+                 cmdAddBills.Parameters.AddWithValue("param5", SubtotalPay);
+                 cmdAddBills.Parameters.AddWithValue("param6", TotalPay);
+                 cmdAddBills.Parameters.AddWithValue("param7", StartDate);
+                 cmdAddBills.Parameters.AddWithValue("param8", FinalDate1);
+                 cmdAddBills.Parameters.AddWithValue("param9", Services);
+                 cmdAddBills.Parameters.AddWithValue("param10", StatusBills);
+                 cmdAddBills.Parameters.AddWithValue("param11", Customer);
+                 cmdAddBills.Parameters.AddWithValue("param12", Employee);
+                 cmdAddBills.Parameters.AddWithValue("param13", MethodP);
+                 cmdAddBills.Parameters.AddWithValue("param14", FiscalPeriod);
+                 int checks = cmdAddBills.ExecuteNonQuery();
+                 if (checks == 1)
+                 {
+                     return checks;
+                 }
+                 else
+                 {
+                     return 0;
+                 }
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show("EC-10: No se ingresaron los datos");
+
+                 return -1;
+                 //se retorna -1 en caso de que haya ocurrido un error en el try
+             }
+             finally
+             {
+                 Command.Connection.Close();
+             }
+
+         }  */
+        }
+    }

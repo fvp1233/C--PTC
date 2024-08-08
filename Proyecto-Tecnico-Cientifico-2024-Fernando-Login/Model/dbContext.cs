@@ -14,13 +14,8 @@ namespace PTC2024.Model
         {
 			try
 			{
-<<<<<<< Updated upstream
                 string server = "DESKTOP-4QTNM91\\SQLEXPRESS";
                 string database = "DBPTC_H2C24";
-=======
-                string server = "JENNIFER_ALFARO\\SQLEXPRESS";
-                string database = "DBPTC_H2C24_4";
->>>>>>> Stashed changes
 
                 SqlConnection conexion = new SqlConnection($"Server = {server}; DataBase = {database}; Integrated Security = true");
                 conexion.Open();
