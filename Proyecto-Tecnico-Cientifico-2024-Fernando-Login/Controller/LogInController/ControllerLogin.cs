@@ -133,7 +133,7 @@ namespace PTC2024.Controller.LogInController
                 //la variable lastFiveChars captura los últimos 5 carácteres que tenga el texto ingresado en el textbox de la contraseña
                 string lastFiveChars = password.Substring(password.Length - 5);
                 //Si los ultimos 5 carácteres son "PU123" entonces es una contraseña de primer uso y se retorna un true, si no, simplemente se retorna un false.
-                if (lastFiveChars == "PU123")
+                if (lastFiveChars == "PU123" || lastFiveChars == "CR321")
                 {
                     return true;
                 }
@@ -151,7 +151,9 @@ namespace PTC2024.Controller.LogInController
         public void OpenRecoverPassword(object sender, EventArgs e)
         {
             FrmRecoverPasswords objRecover = new FrmRecoverPasswords();
+            objLogIn.Hide();
             objRecover.ShowDialog();
+            objLogIn.Show();
             
         }
     }

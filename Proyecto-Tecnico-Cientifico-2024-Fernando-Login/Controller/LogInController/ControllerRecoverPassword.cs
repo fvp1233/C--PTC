@@ -27,26 +27,31 @@ namespace PTC2024.Controller.LogInController
             bool validateAnswer = AccessRecover();
             if (validateAnswer == true)
             {
-                string result = "Error";
-                if (string.IsNullOrEmpty(objPassword.txtEmail.Text) || objPassword.txtEmail.Text.Length == 0 || objPassword.txtEmail.Text == "")
+                string result = "Hubo un error al intentar realizar la recuperación de contraseña.";
+                //validación de campos vacíos
+                if (string.IsNullOrEmpty(objPassword.txtEmail.Text) ||
+                    string.IsNullOrEmpty(objPassword.txtUser.Text))
                 {
-                    MessageBox.Show("Debe ingresar su email", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Existen campos vacíos, llene todos los apartados.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     DAORecoverPassword daoRecoverPassword = new DAORecoverPassword();
                     daoRecoverPassword.User = objPassword.txtUser.Text.Trim();
                     daoRecoverPassword.Email = objPassword.txtEmail.Text.Trim();
-                    result = daoRecoverPassword.recoverPassword();
+                    result = daoRecoverPassword.RecoverPassword();
                 }
-                MessageBox.Show(result);
+                MessageBox.Show(result, "Recuperación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                objPassword.Close();
             }
             else
             {
-                MessageBox.Show("Datos incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No hay ningún usuario en el sistema registrado con el correo ingresado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
            
         }
+
+        //
         public bool AccessRecover()
         {
             DAORecoverPassword DAORecover = new DAORecoverPassword();

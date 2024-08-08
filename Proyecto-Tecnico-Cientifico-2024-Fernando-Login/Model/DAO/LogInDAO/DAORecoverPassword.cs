@@ -14,7 +14,7 @@ namespace PTC2024.Model.DAO.LogInDAO
     internal class DAORecoverPassword : DTORecoverPassword
     {
         readonly SqlCommand Command = new SqlCommand();
-        public string recoverPassword()
+        public string RecoverPassword()
         {
             Command.Connection = getConnection();
             string query = "SELECT * FROM viewPasswordRecover WHERE username = @username AND email = @email";
@@ -29,30 +29,20 @@ namespace PTC2024.Model.DAO.LogInDAO
                 string user = reader.GetString(2);
                 string password = reader.GetString(3);
 
-                Random random = new Random();
-
-                const string chars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz0123456789";
-                const int cLength = 61;
-
-                var buffer = new char[6];
-
-                for (var i = 0; i < 6; ++i)
-                {
-                    buffer[i] = chars[random.Next(cLength)];
-                }
-                string newPass = new string(buffer);
+                string newPass = user + "CR321";
                 Password = newPass;
                 if (UpdatePassword(user))
                 {
-                    var mailService = new Email();
-                    mailService.Send(email, "h2c.soporte.usuarios@gmail.com", "H2C: Recuperación de contraseña", "Hola " + user + ",\n\nHas solicitado recuperar tu contraseña. \n"+ "Tu contraseña nueva es: " + newPass);
+                    Email objEmail = new Email();
+                    objEmail.Send(email, "h2c.soporte.usuarios@gmail.com", "H2C: Recuperación de contraseña", "Hola " + user + ",\n\nHas solicitado recuperar tu contraseña, por lo que la hemos restablecido. \n"+ "Tu nueva contraseña es: " + newPass + "\n\n Tendrás que cambiar esta contraseña inmediatamente inicies sesión de nuevo en el sistema.");
                     Command.Connection.Close();
-                    return "Hola, " + user + "\nHas solicitado recuperar tu contraseña. \n" + "Por favor revisa tu coreo: " + email;
+                    return "Hola, " + user + "\nUsted solicitó una recuperación de contraseña. \n" + "Revise su correo para más información: " + email;
                 }
             }
             Command.Connection.Close();
             return "";
         }
+
         public bool UpdatePassword(string user)
         {
             Command.Connection = getConnection();
@@ -75,6 +65,7 @@ namespace PTC2024.Model.DAO.LogInDAO
                 return false;
             }
         }
+
         public bool ValidateCredentials()
         {
             try

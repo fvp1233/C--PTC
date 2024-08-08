@@ -5,18 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Mail;
+using System.Windows.Forms;
 
 namespace PTC2024.Controller.Helper
 {
     internal class Email
     {
+        //Se crea una instancia del SmtpClient
         public SmtpClient Client = new SmtpClient();
         public MailMessage msg = new MailMessage();
-        public System.Net.NetworkCredential creds = new System.Net.NetworkCredential("h2c.soporte.usuarios@gmail.com", "pgcrsydunvshbwih");
+        public NetworkCredential creds = new NetworkCredential("h2c.soporte.usuarios@gmail.com", "uqtl fozz ttgg gzee");
         public void Send(string para, string de, string subject, string message)
         {
             try
             {
+
                 Client.Host = "smtp.gmail.com";
                 Client.EnableSsl = true;
                 Client.Port = 587;
@@ -29,11 +32,15 @@ namespace PTC2024.Controller.Helper
                 msg.From = from;
                 msg.To.Add(to);
 
-            }
-            catch (Exception e)
-            {
+                //
+                Client.Send(msg);
 
-                throw(e);
+                MessageBox.Show("El correo fue enviado con éxito", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error enviando el email. \n Error: {ex.Message}", "Error");
             }
         }
     }
