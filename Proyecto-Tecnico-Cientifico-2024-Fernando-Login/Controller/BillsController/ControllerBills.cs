@@ -4,6 +4,7 @@ using System.Text;
 using PTC2024.Model.DAO.BillsDAO;
 using System.Data;
 using System.Windows.Forms;
+using PTC2024.View.BillsViews;
 using System.Security.Cryptography;
 using PTC2024.Controller.Helper;
 using System.Drawing;
@@ -28,15 +29,10 @@ namespace PTC2024.Controller.BillsController
             objFormBills.Load += new EventHandler(LoadDataBills);
             objFormBills.btnNewBills.Click += new EventHandler(AddBills);
             objFormBills.cmsPrintBill.Click += new EventHandler(printBills);
-<<<<<<< Updated upstream
-            objFormBills.cmsRectifyBill.Click += new EventHandler(RectifyBills);
-           // objFormBills.cmsOverrideBill.Click += new EventHandler(OverrideBills);
-            objFormBills.txtSearchB.Click += new EventHandler(SearchBills);
-=======
+            objFormBills.cmsOverrideBill.Click += new EventHandler(OverrideBills);
             objFormBills.cmsRectifyBill.Click += new EventHandler(Rectificar);
             objFormBills.cmsOverrideBill.Click += new EventHandler(OverrideBills);
             objFormBills.txtSearchB.KeyPress += new KeyPressEventHandler(SearchBills);
->>>>>>> Stashed changes
             objFormBills.dgvBills.CellMouseDown += new DataGridViewCellMouseEventHandler(objFormBills_CellMouseDown);
             objFormBills.dgvBills.SelectionChanged += new EventHandler(dgvBills_SelectionChanged);
             objFormBills.cbEfectivo.Click += new EventHandler(CheckboxFiltersMethod);
@@ -47,7 +43,7 @@ namespace PTC2024.Controller.BillsController
             objFormBills.cbPagada.Click += new EventHandler(CheckboxFiltersStatus);
             objFormBills.cbAnulada.Click += new EventHandler(CheckboxFiltersStatus);
             objFormBills.cbPendiente.Click += new EventHandler(CheckboxFiltersStatus);
-            objFormBills.cmsRectifyBill.Enabled = true;
+            objFormBills.cmsRectifyBill.Enabled = false;
             disabledBillId = -1;
         }
         public void LoadDataBills(object sender, EventArgs e)
@@ -297,80 +293,6 @@ namespace PTC2024.Controller.BillsController
             newBill.ShowDialog();
             ChargeData();
         }
-        /*
-        public void Rectificar()
-        {
-            int row = objFormBills.dgvBills.CurrentRow.Index;
-            int id;
-            string NIT, NRC;
-            string companyName, serviceName, statusBill, customer, employee, methodP, CustomerDui, CustomerPhone, CustomerEmail;
-            DateTime startDate, FinalDate, Dateissued;
-            double Discount, SubtotalPay, TotalPay;
-
-            // Verifica que el índice de fila es válido
-            if (row < 0 || row >= objFormBills.dgvBills.RowCount)
-            {
-                MessageBox.Show("Fila no válida seleccionada.");
-                return;
-            }
-
-            // Verifica que el DataGridView tenga al menos 18 columnas
-            if (objFormBills.dgvBills.ColumnCount < 18)
-            {
-                MessageBox.Show("El DataGridView no tiene suficientes columnas.");
-                return;
-            }
-
-            id = int.Parse(objFormBills.dgvBills[0, row].Value.ToString());
-            companyName = objFormBills.dgvBills[1, row].Value.ToString();
-            NIT = objFormBills.dgvBills[2, row].Value.ToString();
-            NRC = objFormBills.dgvBills[3, row].Value.ToString();
-            customer = objFormBills.dgvBills[4, row].Value.ToString();
-            CustomerDui = objFormBills.dgvBills[5, row].Value.ToString();
-            CustomerPhone = objFormBills.dgvBills[6, row].Value.ToString();
-            CustomerEmail = objFormBills.dgvBills[7, row].Value.ToString();
-            serviceName = objFormBills.dgvBills[8, row].Value.ToString();
-
-            if (!double.TryParse(objFormBills.dgvBills[9, row].Value.ToString(), out Discount))
-            {
-                Discount = 0;
-            }
-
-            if (!double.TryParse(objFormBills.dgvBills[10, row].Value.ToString(), out SubtotalPay))
-            {
-                SubtotalPay = 0;
-            }
-
-            if (!double.TryParse(objFormBills.dgvBills[11, row].Value.ToString(), out TotalPay))
-            {
-                TotalPay = 0;
-            }
-
-            methodP = objFormBills.dgvBills[12, row].Value.ToString();
-
-            if (!DateTime.TryParse(objFormBills.dgvBills[13, row].Value.ToString(), out startDate))
-            {
-                startDate = DateTime.MinValue;
-            }
-
-            if (!DateTime.TryParse(objFormBills.dgvBills[14, row].Value.ToString(), out FinalDate))
-            {
-                FinalDate = DateTime.MinValue;
-            }
-
-            employee = objFormBills.dgvBills[15, row].Value.ToString();
-            statusBill = objFormBills.dgvBills[16, row].Value.ToString();
-
-            if (!DateTime.TryParse(objFormBills.dgvBills[17, row].Value.ToString(), out Dateissued))
-            {
-                Dateissued = DateTime.MinValue;
-            }
-
-            FrmAddBills rectifyBill = new FrmAddBills(2, id, companyName, NIT, NRC, customer, serviceName, Discount, SubtotalPay, TotalPay, methodP, startDate, FinalDate, Dateissued, employee, statusBill, CustomerDui, CustomerPhone, CustomerEmail);
-
-            rectifyBill.ShowDialog();
-        }
-        */
         public void OverrideBills(object sender, EventArgs e)
         {
             int row = objFormBills.dgvBills.CurrentRow.Index;
@@ -398,19 +320,7 @@ namespace PTC2024.Controller.BillsController
             {
                 MessageBox.Show("Operación cancelada.", "Cancelar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-<<<<<<< Updated upstream
-        }
 
-
-        public void SearchBills(object sender, EventArgs e)
-        {
-            DAOBills dAOBills = new DAOBills();
-            dAOBills.Search = objFormBills.txtSearchB.Text;
-            DataSet ans = dAOBills.SearchDataB(dAOBills.Search);
-            objFormBills.dgvBills.DataSource = ans.Tables["ViewBills"];
-=======
-            ChargeData();
->>>>>>> Stashed changes
         }
 
         private void DisableRow(int idBill)
