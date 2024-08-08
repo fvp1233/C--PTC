@@ -23,7 +23,7 @@ namespace PTC2024.Controller.Helper
         {
             //Creamos los objetos de las clases DAOAddEmployee para llamar al método que usaremos
 
-            /*DAOLogin daoLogin = new DAOLogin();
+            DAOLogin daoLogin = new DAOLogin();
             DAOFirstUse daoFirstUse = new DAOFirstUse();
             DAOAddEmployee daoAddEmployee = new DAOAddEmployee();
             int firstBusiness = daoFirstUse.VerifyRegister();
@@ -40,8 +40,8 @@ namespace PTC2024.Controller.Helper
             {
                 Application.Run(new FrmLogin());
             }
-            */
-            Application.Run(new FrmCustomers());
+            
+            
         }
         
             

@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using PTC2024.Model.DTO.CustomersDTO;
 
 namespace PTC2024.Model.DAO.CustomersDAO
@@ -46,7 +47,7 @@ namespace PTC2024.Model.DAO.CustomersDAO
 
 				DataSet ds = new DataSet();	
 				//tbCustomers es un alias para llamar viewCustomers, se puede llamar de cualquier manera
-				adp.Fill(ds, "tbCustomers");
+				adp.Fill(ds, "viewCustomers");
 				return ds;
             }
 			catch (Exception)
@@ -58,40 +59,78 @@ namespace PTC2024.Model.DAO.CustomersDAO
 				command.Connection.Close();
 			}
         }
-		public int UpdateCustomers()
-		{
 
-			try
-			{
-				command.Connection = getConnection();
+        public int DeleteCustomers()
+        {
+            try
+            {
+                /*Se declara y abre la conexion*/
+                command.Connection = getConnection();
+                /*Se declara la consulta*/
+                string query = "DELETE tbCustomer WHERE IdCustomer = @param1";
 
-				string query = "UPDATE tbCustomer SET DUI = @param1, names = @param2, lastNames = @param3, phone= @param4, address= @param5, IdtypeC= @param6 WHERE IdCustomer = @param7 ";
+                /*Se declara el comando que contiene la consulta con la conexion*/
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
 
-				SqlCommand cmd = new SqlCommand(query, command.Connection);
+                /*Se le da valor al parametro @IdCustomer*/
+                cmd.Parameters.AddWithValue("@param1", IdCustomer1);
 
-				cmd.Parameters.AddWithValue("param1", DUI1);
-                cmd.Parameters.AddWithValue("param2", Names);
-                cmd.Parameters.AddWithValue("param3", LastNames);
-                cmd.Parameters.AddWithValue("param4", Phone);
-                cmd.Parameters.AddWithValue("param5", Address);
-                cmd.Parameters.AddWithValue("param6", IdtypeC1);
-                cmd.Parameters.AddWithValue("param7", IdCustomer1);
+                /*Se ejecuta la consulta que se guardara en la variable respuesta*/
+                int respuesta = cmd.ExecuteNonQuery();
 
-				int respuesta = cmd.ExecuteNonQuery();
-
-				return respuesta;
+                return respuesta;
 
             }
-			catch (Exception)
-			{
-				return -1;
+            catch (Exception)
+            {
+                /*En caso haya un error se retorna -1*/
+                return -1;
+            }
+            finally
+            {
+                /*Por ultimo se cierra la conexion*/
+                command.Connection.Close();
+            }
+        }
 
-				
-			}
-			finally
-			{
-				getConnection().Close();
-			}
-		}
+        public DataSet SearchData(string consulta)
+        {
+            try
+            {
+                /*Se declara y abre la conexion*/
+                command.Connection = getConnection();
+                /*Se declara la consulta*/
+                string query = "SELECT * FROM viewCustomers WHERE [Nombre] LIKE @consulta OR [Nombre] LIKE @consulta";
+
+                /*Se declara el comando que contiene la consulta y la conexion*/
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                /*Aca se le da valor al parametro de la consulta*/
+                cmd.Parameters.AddWithValue("@consulta", "%" + consulta + "%");
+                /*Se ejecuta la consulta*/
+                cmd.ExecuteNonQuery();
+
+                /*Se crea el adaptador que recibira lo que el cmd devolvio*/
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+
+                /*Se llena el DataSet*/
+                adp.Fill(ds, "viewCustomers");
+                /*Se retorna el DataSet*/
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                /*En caso haya ocurrido un error se mostrara este mensaje*/
+                MessageBox.Show("Error: " + ex.Message);
+                /*Y se retornara un valor nulo*/
+                return null;
+            }
+            finally
+            {
+                /*Por ultimo se cerrara la conexion*/
+                command.Connection.Close();
+            }
+        }
+
     }
 }

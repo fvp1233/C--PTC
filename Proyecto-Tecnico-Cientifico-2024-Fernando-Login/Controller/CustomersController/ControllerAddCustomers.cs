@@ -80,7 +80,6 @@ namespace PTC2024.Controller.CustomersController
             if (!(string.IsNullOrEmpty(objAddCustomers.txtNombres.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddCustomers.txtApellidos.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddCustomers.txtDui.Text.Trim()) ||
-                string.IsNullOrEmpty(objAddCustomers.dpFecha.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddCustomers.txtDireccion.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddCustomers.txtEmail.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddCustomers.txtTelefono.Text.Trim()) ||
@@ -95,7 +94,7 @@ namespace PTC2024.Controller.CustomersController
                 dAOAddCustomers.Names = objAddCustomers.txtNombres.Text;
                 dAOAddCustomers.Lastnames = objAddCustomers.txtApellidos.Text;
                 dAOAddCustomers.DUI1 = objAddCustomers.txtDui.Text;
-                dAOAddCustomers.BirthDate = objAddCustomers.dpFecha.Value.Date;
+
                 dAOAddCustomers.Address = objAddCustomers.txtDireccion.Text;
                 dAOAddCustomers.Email = objAddCustomers.txtEmail.Text;
                 dAOAddCustomers.Phone = objAddCustomers.txtTelefono.Text;
@@ -129,7 +128,6 @@ namespace PTC2024.Controller.CustomersController
             daoUpdateCustomers.Names = objAddCustomers.txtNombres.Text.Trim();
             daoUpdateCustomers.Lastnames = objAddCustomers.txtApellidos.Text.Trim();
             daoUpdateCustomers.DUI1 = objAddCustomers.txtDui.Text.Trim();
-            daoUpdateCustomers.BirthDate = objAddCustomers.dpFecha.Value.Date;
             daoUpdateCustomers.Address = objAddCustomers.txtDireccion.Text.Trim();
             daoUpdateCustomers.Email = objAddCustomers.txtEmail.Text.Trim();
             daoUpdateCustomers.Phone = objAddCustomers.txtTelefono.Text.Trim();

@@ -16,6 +16,7 @@ namespace PTC2024.Model.DTO.CustomersDTO
         private string email;
         private string address;
         private int IdtypeC;
+        private string search;
 
         public int IdCustomer1 { get => IdCustomer; set => IdCustomer = value; }
         public string DUI1 { get => DUI; set => DUI = value; }
@@ -25,5 +26,6 @@ namespace PTC2024.Model.DTO.CustomersDTO
         public string Email { get => email; set => email = value; }
         public string Address { get => address; set => address = value; }
         public int IdtypeC1 { get => IdtypeC; set => IdtypeC = value; }
+        public string Search { get => search; set => search = value; }
     }
 }
