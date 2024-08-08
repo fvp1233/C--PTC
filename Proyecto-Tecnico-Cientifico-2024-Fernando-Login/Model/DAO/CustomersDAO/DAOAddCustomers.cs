@@ -9,42 +9,43 @@ using System.Windows.Forms;
 using PTC2024.Model.DTO.CustomersDTO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using Microsoft.VisualBasic.ApplicationServices;
+using System.Net;
 
 namespace PTC2024.Model.DAO.CustomersDAO
 {
-    internal class DAOAddCustomers: DTOAddCustomers
+    class DAOAddCustomers : DTOAddCustomers
     {
         readonly SqlCommand command = new SqlCommand();
 
         //Obtencion de datos para dropdown de tipo de cliente
-            public DataSet ObtenerTiposEmpleado()
+        public DataSet ObtenerTiposEmpleado()
+        {
+            try
             {
-                try
-                {
-                    command.Connection = getConnection();
-                    string query = "SELECT*FROM tbTypeC";
-                    SqlCommand cmd = new SqlCommand(query, command.Connection);
-                    cmd.ExecuteNonQuery();
+                command.Connection = getConnection();
+                string query = "SELECT*FROM tbTypeC";
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                cmd.ExecuteNonQuery();
 
 
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
-                    DataSet ds = new DataSet();
-                    adp.Fill(ds, "tbTypeC");
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "tbTypeC");
 
-                    
-                    return ds;
 
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("EC-004: No se puedieron obtener los datos de los Tipos de Cliente");
-                    return null;
-                }
-                finally
-                {
-                    command.Connection.Close();
-                }
+                return ds;
+
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("EC-004: No se puedieron obtener los datos de los Tipos de Cliente");
+                return null;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
         public int RegisterCustomer()
         {
 
@@ -62,7 +63,7 @@ namespace PTC2024.Model.DAO.CustomersDAO
                 {
                     MessageBox.Show("Cliente ingresado ya Existente");
                     return 1;
-                    
+
                 }
 
 
@@ -75,14 +76,15 @@ namespace PTC2024.Model.DAO.CustomersDAO
                 cmdInsertCustomer.Parameters.AddWithValue("lastNames", Lastnames);
                 cmdInsertCustomer.Parameters.AddWithValue("phone", Phone);
                 cmdInsertCustomer.Parameters.AddWithValue("email", Email);
-                cmdInsertCustomer.Parameters.AddWithValue("address", Address); cmdInsertCustomer.Parameters.AddWithValue("IdTypeC", IdCustomer);
+                cmdInsertCustomer.Parameters.AddWithValue("address", Address);
+                cmdInsertCustomer.Parameters.AddWithValue("IdTypeC", EmployeeType);
 
                 int respuesta = cmdInsertCustomer.ExecuteNonQuery();
 
                 if (respuesta == 1)
                 {
 
-                 
+
                     return respuesta;
 
                 }
@@ -104,12 +106,53 @@ namespace PTC2024.Model.DAO.CustomersDAO
             }
         }
 
-        private void Rollback ()
+        private void Rollback()
         {
             string queryDeleteCustomer = "DELETE FROM tbCustomer WHERE IdTypeC = @IdTypeC";
             SqlCommand cmdDeleteCustomer = new SqlCommand(queryDeleteCustomer, command.Connection);
             cmdDeleteCustomer.Parameters.AddWithValue("IdTypeC", IdCustomer);
         }
+
+        public int UpdateCustomers()
+        {
+
+            try
+            {
+                command.Connection = getConnection();
+
+                string query = "UPDATE tbCustomer SET DUI = @param1, names = @param2, lastNames = @param3, phone= @param4, address= @param5, IdtypeC= @param6 WHERE IdCustomer = @param7 ";
+
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+
+                cmd.Parameters.AddWithValue("param1", DUI1);
+                cmd.Parameters.AddWithValue("param2", Names);
+                cmd.Parameters.AddWithValue("param3", Lastnames);
+                cmd.Parameters.AddWithValue("param4", Phone);
+                cmd.Parameters.AddWithValue("param5", Address);
+                cmd.Parameters.AddWithValue("param6", EmployeeType);
+                cmd.Parameters.AddWithValue("param7", IdCustomer);
+
+                int respuesta = cmd.ExecuteNonQuery();
+
+                return respuesta;
+
+            }
+            catch (Exception)
+            {
+                return -1;
+
+
+            }
+            finally
+            {
+                getConnection().Close();
+            }
         }
+
+
     }
+    
+     
+}
+
 

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PTC2024.Model.DAO.EmployeesDAO
 {
-    internal class DAOEmployees : DTOEmployees
+    class DAOEmployees : DTOEmployees
     {
         readonly SqlCommand Command = new SqlCommand();
         
