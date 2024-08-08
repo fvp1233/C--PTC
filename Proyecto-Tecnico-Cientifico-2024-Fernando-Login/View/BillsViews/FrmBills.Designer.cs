@@ -385,7 +385,11 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.17172F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.82828F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 275F));
+<<<<<<< Updated upstream
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 480F));
+=======
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 481F));
+>>>>>>> Stashed changes
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel11, 3, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel9, 2, 1);
             this.tableLayoutPanel4.Controls.Add(this.label3, 1, 0);
@@ -409,12 +413,20 @@
             this.tableLayoutPanel11.Controls.Add(this.flowLayoutPanel3, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel12, 1, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< Updated upstream
             this.tableLayoutPanel11.Location = new System.Drawing.Point(744, 34);
+=======
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(743, 34);
+>>>>>>> Stashed changes
             this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+<<<<<<< Updated upstream
             this.tableLayoutPanel11.Size = new System.Drawing.Size(473, 106);
+=======
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(474, 106);
+>>>>>>> Stashed changes
             this.tableLayoutPanel11.TabIndex = 8;
             // 
             // flowLayoutPanel3
@@ -586,7 +598,11 @@
             this.tableLayoutPanel9.Controls.Add(this.flowLayoutPanel2, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< Updated upstream
             this.tableLayoutPanel9.Location = new System.Drawing.Point(469, 34);
+=======
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(468, 34);
+>>>>>>> Stashed changes
             this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
@@ -1085,7 +1101,11 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< Updated upstream
             this.label8.Location = new System.Drawing.Point(469, 7);
+=======
+            this.label8.Location = new System.Drawing.Point(468, 7);
+>>>>>>> Stashed changes
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 23);
@@ -1095,13 +1115,18 @@
             // dgvBills
             // 
             this.dgvBills.AllowCustomTheming = true;
+<<<<<<< Updated upstream
             this.dgvBills.AllowUserToOrderColumns = true;
+=======
+            this.dgvBills.AllowUserToAddRows = false;
+>>>>>>> Stashed changes
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dgvBills.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvBills.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dgvBills.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBills.BackgroundColor = System.Drawing.Color.White;
             this.dgvBills.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -1143,7 +1168,6 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBills.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvBills.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBills.EnableHeadersVisualStyles = false;
             this.dgvBills.GridColor = System.Drawing.Color.Silver;
             this.dgvBills.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
@@ -1152,6 +1176,10 @@
             this.dgvBills.Location = new System.Drawing.Point(4, 176);
             this.dgvBills.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBills.Name = "dgvBills";
+<<<<<<< Updated upstream
+=======
+            this.dgvBills.ReadOnly = true;
+>>>>>>> Stashed changes
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1169,9 +1197,16 @@
             this.dgvBills.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvBills.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.dgvBills.RowTemplate.Height = 40;
+<<<<<<< Updated upstream
             this.dgvBills.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBills.Size = new System.Drawing.Size(1548, 569);
             this.dgvBills.TabIndex = 2;
+=======
+            this.dgvBills.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvBills.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBills.Size = new System.Drawing.Size(1548, 569);
+            this.dgvBills.TabIndex = 113;
+>>>>>>> Stashed changes
             this.dgvBills.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
             // 
             // cmsBills
@@ -1283,5 +1318,9 @@
         public System.Windows.Forms.ToolStripMenuItem cmsPrintBill;
         public System.Windows.Forms.ToolStripMenuItem cmsOverrideBill;
         public System.Windows.Forms.ToolStripMenuItem cmsRectifyBill;
+<<<<<<< Updated upstream
+=======
+        public Bunifu.UI.WinForms.BunifuDataGridView dgvBills;
+>>>>>>> Stashed changes
     }
 }

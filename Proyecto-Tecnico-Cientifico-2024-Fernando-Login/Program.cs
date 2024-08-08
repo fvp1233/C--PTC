@@ -27,8 +27,11 @@ namespace PTC2024
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
             ControllerInitialView.InitialView();
         }
 

@@ -14,7 +14,11 @@ namespace PTC2024.Model
         {
 			try
 			{
+<<<<<<< Updated upstream
                 string server = "DESKTOP-L1S3JL8";
+=======
+                string server = "DESKTOP-4QTNM91\\SQLEXPRESS";
+>>>>>>> Stashed changes
                 string database = "DBPTC_H2C24";
 
                 SqlConnection conexion = new SqlConnection($"Server = {server}; DataBase = {database}; Integrated Security = true");

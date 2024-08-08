@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddBills));
+<<<<<<< Updated upstream
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
@@ -39,6 +40,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+=======
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+>>>>>>> Stashed changes
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGroupBox3 = new Bunifu.UI.WinForms.BunifuGroupBox();
@@ -86,8 +99,11 @@
             this.btnRectify = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnDeletemore = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.dgvData = new Bunifu.UI.WinForms.BunifuDataGridView();
+<<<<<<< Updated upstream
             this.txtCustomerLastname = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel17 = new Bunifu.Framework.UI.BunifuCustomLabel();
+=======
+>>>>>>> Stashed changes
             this.bunifuGroupBox3.SuspendLayout();
             this.bunifuGroupBox2.SuspendLayout();
             this.bunifuGroupBox1.SuspendLayout();
@@ -994,11 +1010,19 @@
             this.btnBack.ColorContrastOnClick = 45;
             this.btnBack.ColorContrastOnHover = 45;
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+<<<<<<< Updated upstream
             borderEdges7.BottomLeft = true;
             borderEdges7.BottomRight = true;
             borderEdges7.TopLeft = true;
             borderEdges7.TopRight = true;
             this.btnBack.CustomizableEdges = borderEdges7;
+=======
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnBack.CustomizableEdges = borderEdges2;
+>>>>>>> Stashed changes
             this.btnBack.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnBack.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnBack.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1085,11 +1109,19 @@
             this.btnAddBill.ColorContrastOnClick = 45;
             this.btnAddBill.ColorContrastOnHover = 45;
             this.btnAddBill.Cursor = System.Windows.Forms.Cursors.Hand;
+<<<<<<< Updated upstream
             borderEdges8.BottomLeft = true;
             borderEdges8.BottomRight = true;
             borderEdges8.TopLeft = true;
             borderEdges8.TopRight = true;
             this.btnAddBill.CustomizableEdges = borderEdges8;
+=======
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnAddBill.CustomizableEdges = borderEdges3;
+>>>>>>> Stashed changes
             this.btnAddBill.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddBill.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAddBill.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1176,11 +1208,19 @@
             this.btnRectify.ColorContrastOnClick = 45;
             this.btnRectify.ColorContrastOnHover = 45;
             this.btnRectify.Cursor = System.Windows.Forms.Cursors.Hand;
+<<<<<<< Updated upstream
             borderEdges9.BottomLeft = true;
             borderEdges9.BottomRight = true;
             borderEdges9.TopLeft = true;
             borderEdges9.TopRight = true;
             this.btnRectify.CustomizableEdges = borderEdges9;
+=======
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnRectify.CustomizableEdges = borderEdges4;
+>>>>>>> Stashed changes
             this.btnRectify.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnRectify.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnRectify.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1267,11 +1307,19 @@
             this.btnDeletemore.ColorContrastOnClick = 45;
             this.btnDeletemore.ColorContrastOnHover = 45;
             this.btnDeletemore.Cursor = System.Windows.Forms.Cursors.Hand;
+<<<<<<< Updated upstream
             borderEdges10.BottomLeft = true;
             borderEdges10.BottomRight = true;
             borderEdges10.TopLeft = true;
             borderEdges10.TopRight = true;
             this.btnDeletemore.CustomizableEdges = borderEdges10;
+=======
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.btnDeletemore.CustomizableEdges = borderEdges5;
+>>>>>>> Stashed changes
             this.btnDeletemore.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnDeletemore.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDeletemore.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1421,6 +1469,7 @@
             this.dgvData.TabIndex = 112;
             this.dgvData.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
             // 
+<<<<<<< Updated upstream
             // txtCustomerLastname
             // 
             this.txtCustomerLastname.BackColor = System.Drawing.Color.Gainsboro;
@@ -1453,6 +1502,8 @@
             this.bunifuCustomLabel17.TabIndex = 97;
             this.bunifuCustomLabel17.Text = "Apellidos:";
             // 
+=======
+>>>>>>> Stashed changes
             // FrmAddBills
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1536,7 +1587,10 @@
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnRectify;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnDeletemore;
         public Bunifu.UI.WinForms.BunifuDataGridView dgvData;
+<<<<<<< Updated upstream
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtCustomerLastname;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel17;
+=======
+>>>>>>> Stashed changes
     }
 }

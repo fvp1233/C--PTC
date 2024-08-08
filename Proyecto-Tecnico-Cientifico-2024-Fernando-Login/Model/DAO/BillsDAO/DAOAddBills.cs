@@ -291,8 +291,29 @@ namespace PTC2024.Model.DAO.BillsDAO
                 string queryAddBill = "INSERT INTO tbBills(companyName, NIT, NRC, discount, subtotalPay, totalPay, startDate, finalDate,dateissuance, IdServices, IdStatusBill, IdCustomer, IdEmployee, IdMethodP) " +
                                       "VALUES (@param1, @param2, @param3, @param4, @param5, @param6, @param7, @param8, @param9, @param10, @param11, @param12, @param13, @param14)";
 
+<<<<<<< Updated upstream
                 // Se crea el comando SQL con la conexión y el query
                 SqlCommand cmdAddBills = new SqlCommand(queryAddBill, Command.Connection);
+=======
+                // Asignar parámetros
+                cmd.Parameters.AddWithValue("@CompanyName", CompanyName);
+                cmd.Parameters.AddWithValue("@NIT", NIT1);
+                cmd.Parameters.AddWithValue("@NRC", NRC1);
+                cmd.Parameters.AddWithValue("@CustomerDui", CustomerDui1);
+                cmd.Parameters.AddWithValue("@CustomerPhone", CustomerPhone1);
+                cmd.Parameters.AddWithValue("@CustomerEmail", CustomerEmail1);
+                cmd.Parameters.AddWithValue("@Discount", Discount);
+                cmd.Parameters.AddWithValue("@SubtotalPay", SubtotalPay);
+                cmd.Parameters.AddWithValue("@TotalPay", TotalPay);
+                cmd.Parameters.AddWithValue("@StartDate", StartDate);
+                cmd.Parameters.AddWithValue("@FinalDate", FinalDate1);
+                cmd.Parameters.AddWithValue("@DateIssuance", Dateissued);
+                cmd.Parameters.AddWithValue("@IdServices", Services);
+                cmd.Parameters.AddWithValue("@IdStatusBill", StatusBills);
+                cmd.Parameters.AddWithValue("@CustomerName", Customer); // Asegúrate de que Customer tenga el nombre completo
+                cmd.Parameters.AddWithValue("@IdEmployee", Employee);
+                cmd.Parameters.AddWithValue("@IdMethodP", MethodP);
+>>>>>>> Stashed changes
 
                 // Se asigna un valor a cada parámetro con los atributos del DTO
                 cmdAddBills.Parameters.AddWithValue("@param1", CompanyName);
@@ -323,8 +344,15 @@ namespace PTC2024.Model.DAO.BillsDAO
                 Command.Connection.Close();
             }
         }
+<<<<<<< Updated upstream
+=======
+        public int GetCustomerIdByName(string customerName)
+        {
+            int customerId = -1; // Declarar fuera del bloque using
+>>>>>>> Stashed changes
 
 
+<<<<<<< Updated upstream
         /* public int RegisterBills()
      {
          try
@@ -374,3 +402,135 @@ namespace PTC2024.Model.DAO.BillsDAO
      }  */
     }
 }
+=======
+                    try
+                    {
+                        Command.Connection.Open();
+                        object result = cmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            customerId = Convert.ToInt32(result);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Se ingresaron correctamente los datos " + ex.Message);
+                    }
+                    finally
+                    {
+                        Command.Connection.Close(); // Cerrar la conexión una vez
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ayuda: " + ex.Message);
+            }
+
+            return customerId; // Devolver el valor de customerId
+        }
+
+/*
+        public int BillsRegister()
+        {
+                try
+                {
+                    // Conexión con la base de datos
+                    Command.Connection = getConnection();
+
+                    // Obtener IdCustomer basado en el nombre del cliente
+                    int customerId = GetCustomerIdByName(Customer);
+                    if (customerId == -1)
+                    {
+                        MessageBox.Show("Cliente no encontrado en la base de datos.");
+                        return -1;
+                    }
+
+                    string queryAddBill = "INSERT INTO tbBills(companyName, NIT, NRC, discount, subtotalPay, totalPay, startDate, finalDate, dateissuance, IdServices, IdStatusBill, IdCustomer, IdEmployee, IdMethodP) " +
+                                          "VALUES (@param1, @param2, @param3, @param4, @param5, @param6, @param7, @param8, @param9, @param10, @param11, @param12, @param13, @param14)";
+
+                    // Se crea el comando SQL con la conexión y el query
+                    SqlCommand cmdAddBills = new SqlCommand(queryAddBill, Command.Connection);
+
+                    // Se asigna un valor a cada parámetro con los atributos del DTO
+                    cmdAddBills.Parameters.AddWithValue("@param1", CompanyName);
+                    cmdAddBills.Parameters.AddWithValue("@param2", NIT1);
+                    cmdAddBills.Parameters.AddWithValue("@param3", NRC1);
+                    cmdAddBills.Parameters.AddWithValue("@param4", Discount);
+                    cmdAddBills.Parameters.AddWithValue("@param5", SubtotalPay);
+                    cmdAddBills.Parameters.AddWithValue("@param6", TotalPay);
+                    cmdAddBills.Parameters.AddWithValue("@param7", StartDate);
+                    cmdAddBills.Parameters.AddWithValue("@param8", FinalDate1);
+                    cmdAddBills.Parameters.AddWithValue("@param9", Dateissued);
+                    cmdAddBills.Parameters.AddWithValue("@param10", Services);
+                    cmdAddBills.Parameters.AddWithValue("@param11", StatusBills);
+                    cmdAddBills.Parameters.AddWithValue("@param12", Customer); // Usar el customerId obtenido
+                    cmdAddBills.Parameters.AddWithValue("@param13", Employee);
+                    cmdAddBills.Parameters.AddWithValue("@param14", MethodP);
+
+                    int checks = cmdAddBills.ExecuteNonQuery();
+                    return checks == 1 ? checks : 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("EC-10: No se ingresaron los datos. Error: " + ex.Message);
+                    return -1;
+                }
+                finally
+                {
+                    Command.Connection.Close();
+                }
+            }
+
+        */
+
+            /* public int RegisterBills()
+         {
+             try
+             {
+                 //Conexión con la base de datos
+                 Command.Connection = getConnection();
+                 string queryAddBill = "INSERT INTO tbBills(companyName, NIT, NRC, discount, subtotalPay, totalPay, startDate, FinalDate, IdServices, IdStatusBill, IdCustomer, IdEmployee, IdmethodP, FiscalPeriod, IdfiscalPeriod) VALUES (@param1, @param2, @param3,@param4,@param5, @param6, @param7, @param8, @param9,@param10, @param11, @param12,@param13,@param14)";
+                 //Se crea el comando SQL con la conexión y el query
+                 SqlCommand cmdAddBills = new SqlCommand(@queryAddBill, Command.Connection);
+                 //Se asigna un valor a cada parámetro con los atributos del DTO
+                 cmdAddBills.Parameters.AddWithValue("param1", CompanyName);
+                 cmdAddBills.Parameters.AddWithValue("param2", NIT1);
+                 cmdAddBills.Parameters.AddWithValue("param3", NRC1);
+                 cmdAddBills.Parameters.AddWithValue("param4", Discount);
+                 cmdAddBills.Parameters.AddWithValue("param5", SubtotalPay);
+                 cmdAddBills.Parameters.AddWithValue("param6", TotalPay);
+                 cmdAddBills.Parameters.AddWithValue("param7", StartDate);
+                 cmdAddBills.Parameters.AddWithValue("param8", FinalDate1);
+                 cmdAddBills.Parameters.AddWithValue("param9", Services);
+                 cmdAddBills.Parameters.AddWithValue("param10", StatusBills);
+                 cmdAddBills.Parameters.AddWithValue("param11", Customer);
+                 cmdAddBills.Parameters.AddWithValue("param12", Employee);
+                 cmdAddBills.Parameters.AddWithValue("param13", MethodP);
+                 cmdAddBills.Parameters.AddWithValue("param14", FiscalPeriod);
+                 int checks = cmdAddBills.ExecuteNonQuery();
+                 if (checks == 1)
+                 {
+                     return checks;
+                 }
+                 else
+                 {
+                     return 0;
+                 }
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show("EC-10: No se ingresaron los datos");
+
+                 return -1;
+                 //se retorna -1 en caso de que haya ocurrido un error en el try
+             }
+             finally
+             {
+                 Command.Connection.Close();
+             }
+
+         }  */
+        }
+    }
+>>>>>>> Stashed changes

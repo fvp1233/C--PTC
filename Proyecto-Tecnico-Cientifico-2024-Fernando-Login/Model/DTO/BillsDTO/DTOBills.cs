@@ -40,6 +40,13 @@ namespace PTC2024.Model.DTO.BillsDTO
         private string email;
         //BUSQUEDA
         private string search;
+<<<<<<< Updated upstream
+=======
+        //DATOS DE USUARIO
+        private string username;
+        private string password;
+        private int userStatus;
+>>>>>>> Stashed changes
 
         public int IdBill1 { get => IdBill; set => IdBill = value; }
         public string CompanyName { get => companyName; set => companyName = value; }
@@ -67,5 +74,15 @@ namespace PTC2024.Model.DTO.BillsDTO
         public string Phone { get => phone; set => phone = value; }
         public string Email { get => email; set => email = value; }
         public string Search { get => search; set => search = value; }
+<<<<<<< Updated upstream
+=======
+        public string Username { get => username; set => username = value; }
+        public string Password { get => password; set => password = value; }
+        public int UserStatus { get => userStatus; set => userStatus = value; }
+        public string CustomerDui1 { get => CustomerDui; set => CustomerDui = value; }
+        public string CustomerPhone1 { get => CustomerPhone; set => CustomerPhone = value; }
+        public string CustomerEmail1 { get => CustomerEmail; set => CustomerEmail = value; }
+        public string CustomerName1 { get => CustomerName; set => CustomerName = value; }
+>>>>>>> Stashed changes
     }
 }
