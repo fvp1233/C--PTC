@@ -62,7 +62,7 @@ namespace PTC2024.Controller.CustomersController
 
         public void AddCustomer(object sender, EventArgs e)
         {
-            FrmAddCustomers abrirForm = new FrmAddCustomers(1);
+            FrmAddCustomers abrirForm = new FrmAddCustomers();
             abrirForm.ShowDialog();
             refreshData();
 

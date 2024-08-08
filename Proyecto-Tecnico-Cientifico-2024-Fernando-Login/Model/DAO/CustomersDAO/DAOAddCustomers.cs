@@ -71,13 +71,13 @@ namespace PTC2024.Model.DAO.CustomersDAO
                 string queryInsertCustomer = "INSERT INTO tbCustomer (DUI,names,lastNames,phone,email, address, IdtypeC) VALUES (@DUI,@names,@lastNames,@phone,@email,@address, @IdTypeC)";
 
                 SqlCommand cmdInsertCustomer = new SqlCommand(queryInsertCustomer, command.Connection);
-                cmdInsertCustomer.Parameters.AddWithValue("DUI", DUI1);
-                cmdInsertCustomer.Parameters.AddWithValue("names", Names);
-                cmdInsertCustomer.Parameters.AddWithValue("lastNames", Lastnames);
-                cmdInsertCustomer.Parameters.AddWithValue("phone", Phone);
-                cmdInsertCustomer.Parameters.AddWithValue("email", Email);
-                cmdInsertCustomer.Parameters.AddWithValue("address", Address);
-                cmdInsertCustomer.Parameters.AddWithValue("IdTypeC", EmployeeType);
+                cmdInsertCustomer.Parameters.AddWithValue("@DUI", DUI1);
+                cmdInsertCustomer.Parameters.AddWithValue("@names", Names);
+                cmdInsertCustomer.Parameters.AddWithValue("@lastNames", Lastnames);
+                cmdInsertCustomer.Parameters.AddWithValue("@phone", Phone);
+                cmdInsertCustomer.Parameters.AddWithValue("@email", Email);
+                cmdInsertCustomer.Parameters.AddWithValue("@address", Address);
+                cmdInsertCustomer.Parameters.AddWithValue("@IdTypeC", EmployeeType);
 
                 int respuesta = cmdInsertCustomer.ExecuteNonQuery();
 
@@ -113,41 +113,7 @@ namespace PTC2024.Model.DAO.CustomersDAO
             cmdDeleteCustomer.Parameters.AddWithValue("IdTypeC", IdCustomer);
         }
 
-        public int UpdateCustomers()
-        {
-
-            try
-            {
-                command.Connection = getConnection();
-
-                string query = "UPDATE tbCustomer SET DUI = @param1, names = @param2, lastNames = @param3, phone= @param4, address= @param5, IdtypeC= @param6 WHERE IdCustomer = @param7 ";
-
-                SqlCommand cmd = new SqlCommand(query, command.Connection);
-
-                cmd.Parameters.AddWithValue("param1", DUI1);
-                cmd.Parameters.AddWithValue("param2", Names);
-                cmd.Parameters.AddWithValue("param3", Lastnames);
-                cmd.Parameters.AddWithValue("param4", Phone);
-                cmd.Parameters.AddWithValue("param5", Address);
-                cmd.Parameters.AddWithValue("param6", EmployeeType);
-                cmd.Parameters.AddWithValue("param7", IdCustomer);
-
-                int respuesta = cmd.ExecuteNonQuery();
-
-                return respuesta;
-
-            }
-            catch (Exception)
-            {
-                return -1;
-
-
-            }
-            finally
-            {
-                getConnection().Close();
-            }
-        }
+        
 
 
     }

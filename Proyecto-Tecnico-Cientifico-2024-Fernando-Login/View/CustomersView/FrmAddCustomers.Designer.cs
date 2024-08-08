@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddCustomers));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.BtnAgregarCliente = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
@@ -51,7 +50,6 @@
             this.txtDireccion = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.btnActualizar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.SuspendLayout();
             // 
             // bunifuCustomLabel2
@@ -124,7 +122,7 @@
             this.BtnAgregarCliente.IdleIconLeftImage = null;
             this.BtnAgregarCliente.IdleIconRightImage = null;
             this.BtnAgregarCliente.IndicateFocus = false;
-            this.BtnAgregarCliente.Location = new System.Drawing.Point(708, 1026);
+            this.BtnAgregarCliente.Location = new System.Drawing.Point(708, 887);
             this.BtnAgregarCliente.Margin = new System.Windows.Forms.Padding(6);
             this.BtnAgregarCliente.Name = "BtnAgregarCliente";
             this.BtnAgregarCliente.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -215,7 +213,7 @@
             this.BtnCancelar.IdleIconLeftImage = null;
             this.BtnCancelar.IdleIconRightImage = null;
             this.BtnCancelar.IndicateFocus = false;
-            this.BtnCancelar.Location = new System.Drawing.Point(416, 1026);
+            this.BtnCancelar.Location = new System.Drawing.Point(416, 887);
             this.BtnCancelar.Margin = new System.Windows.Forms.Padding(6);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -516,103 +514,11 @@
             this.bunifuCustomLabel10.TabIndex = 198;
             this.bunifuCustomLabel10.Text = "Teléfono:";
             // 
-            // btnActualizar
-            // 
-            this.btnActualizar.AllowAnimations = true;
-            this.btnActualizar.AllowMouseEffects = true;
-            this.btnActualizar.AllowToggling = false;
-            this.btnActualizar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnActualizar.AnimationSpeed = 200;
-            this.btnActualizar.AutoGenerateColors = false;
-            this.btnActualizar.AutoRoundBorders = false;
-            this.btnActualizar.AutoSizeLeftIcon = true;
-            this.btnActualizar.AutoSizeRightIcon = true;
-            this.btnActualizar.BackColor = System.Drawing.Color.Transparent;
-            this.btnActualizar.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnActualizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnActualizar.BackgroundImage")));
-            this.btnActualizar.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnActualizar.ButtonText = "Actualizar";
-            this.btnActualizar.ButtonTextMarginLeft = 0;
-            this.btnActualizar.ColorContrastOnClick = 45;
-            this.btnActualizar.ColorContrastOnHover = 45;
-            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnActualizar.CustomizableEdges = borderEdges3;
-            this.btnActualizar.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnActualizar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnActualizar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnActualizar.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnActualizar.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnActualizar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnActualizar.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnActualizar.IconMarginLeft = 11;
-            this.btnActualizar.IconPadding = 10;
-            this.btnActualizar.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizar.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnActualizar.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnActualizar.IconSize = 25;
-            this.btnActualizar.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnActualizar.IdleBorderRadius = 20;
-            this.btnActualizar.IdleBorderThickness = 1;
-            this.btnActualizar.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnActualizar.IdleIconLeftImage = null;
-            this.btnActualizar.IdleIconRightImage = null;
-            this.btnActualizar.IndicateFocus = false;
-            this.btnActualizar.Location = new System.Drawing.Point(997, 1027);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(6);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnActualizar.OnDisabledState.BorderRadius = 20;
-            this.btnActualizar.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnActualizar.OnDisabledState.BorderThickness = 1;
-            this.btnActualizar.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnActualizar.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnActualizar.OnDisabledState.IconLeftImage = null;
-            this.btnActualizar.OnDisabledState.IconRightImage = null;
-            this.btnActualizar.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnActualizar.onHoverState.BorderRadius = 20;
-            this.btnActualizar.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnActualizar.onHoverState.BorderThickness = 1;
-            this.btnActualizar.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnActualizar.onHoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnActualizar.onHoverState.IconLeftImage = null;
-            this.btnActualizar.onHoverState.IconRightImage = null;
-            this.btnActualizar.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnActualizar.OnIdleState.BorderRadius = 20;
-            this.btnActualizar.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnActualizar.OnIdleState.BorderThickness = 1;
-            this.btnActualizar.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnActualizar.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.OnIdleState.IconLeftImage = null;
-            this.btnActualizar.OnIdleState.IconRightImage = null;
-            this.btnActualizar.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnActualizar.OnPressedState.BorderRadius = 20;
-            this.btnActualizar.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnActualizar.OnPressedState.BorderThickness = 1;
-            this.btnActualizar.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnActualizar.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.OnPressedState.IconLeftImage = null;
-            this.btnActualizar.OnPressedState.IconRightImage = null;
-            this.btnActualizar.Size = new System.Drawing.Size(277, 96);
-            this.btnActualizar.TabIndex = 208;
-            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnActualizar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnActualizar.TextMarginLeft = 0;
-            this.btnActualizar.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnActualizar.UseDefaultRadiusAndThickness = true;
-            // 
             // FrmAddCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1395, 915);
-            this.Controls.Add(this.btnActualizar);
+            this.ClientSize = new System.Drawing.Size(1395, 1083);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.txtNombres);
             this.Controls.Add(this.bunifuCustomLabel8);
@@ -662,6 +568,5 @@
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtEmail;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtTelefono;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtDireccion;
-        public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnActualizar;
     }
 }
