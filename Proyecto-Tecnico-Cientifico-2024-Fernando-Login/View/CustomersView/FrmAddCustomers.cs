@@ -19,6 +19,7 @@ namespace PTC2024.View.Clientes
         {
             InitializeComponent();
             ControllerAddCustomers objControl = new ControllerAddCustomers(this, accion);
+            Region = Region.FromHrgn(CommonClasses.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         public FrmAddCustomers(int accion, int CustomerId,int DUI,string names, string lastnames, string phone , string address, string email, int typeC )
@@ -26,6 +27,7 @@ namespace PTC2024.View.Clientes
             InitializeComponent() ;
 
             ControllerAddCustomers objControl = new ControllerAddCustomers(this, accion, CustomerId, DUI, names, lastnames, phone, address, email, typeC);
+            Region = Region.FromHrgn(CommonClasses.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
     }
 }
