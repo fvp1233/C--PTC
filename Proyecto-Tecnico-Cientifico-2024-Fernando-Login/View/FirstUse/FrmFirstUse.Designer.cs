@@ -414,7 +414,7 @@
             this.txtPBX.SelectionLength = 0;
             this.txtPBX.SelectionStart = 0;
             this.txtPBX.ShortcutsEnabled = true;
-            this.txtPBX.Size = new System.Drawing.Size(264, 32);
+            this.txtPBX.Size = new System.Drawing.Size(264, 37);
             this.txtPBX.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtPBX.TabIndex = 23;
             this.txtPBX.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -834,7 +834,7 @@
             this.txtPhone.SelectionLength = 0;
             this.txtPhone.SelectionStart = 0;
             this.txtPhone.ShortcutsEnabled = true;
-            this.txtPhone.Size = new System.Drawing.Size(264, 32);
+            this.txtPhone.Size = new System.Drawing.Size(264, 37);
             this.txtPhone.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtPhone.TabIndex = 6;
             this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -863,7 +863,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(917, 494);
             this.Controls.Add(this.bunifuPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmFirstUse";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FirstUse";
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel1.PerformLayout();

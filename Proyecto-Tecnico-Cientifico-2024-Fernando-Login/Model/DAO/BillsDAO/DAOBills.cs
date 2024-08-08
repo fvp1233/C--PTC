@@ -23,12 +23,12 @@ namespace PTC2024.Model.DAO.BillsDAO
             try
             {
                 Command.Connection = getConnection();
-                string query = "SELECT * FROM viewBills";
+                string query = "SELECT * FROM viewBill";
                 SqlCommand comd = new SqlCommand(query, Command.Connection);
                 comd.ExecuteNonQuery();
                 SqlDataAdapter adap = new SqlDataAdapter(comd);
                 DataSet ds = new DataSet();
-                adap.Fill(ds, "viewBills");
+                adap.Fill(ds, "viewBill");
                 return ds;
 
             }
@@ -49,7 +49,7 @@ namespace PTC2024.Model.DAO.BillsDAO
                 /*Se declara y abre la conexion*/
                 Command.Connection = getConnection();
                 /*Se declara la consulta*/
-                string query = "SELECT * FROM viewBills WHERE [IdBill] LIKE @consulta OR [serviceName] LIKE @consulta";
+                string query = "SELECT * FROM viewBill WHERE [serviceName] LIKE @consulta OR [Customer] LIKE @consulta";
 
                 /*Se declara el comando que contiene la consulta y la conexion*/
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
@@ -63,7 +63,7 @@ namespace PTC2024.Model.DAO.BillsDAO
                 DataSet ds = new DataSet();
 
                 /*Se llena el DataSet*/
-                adp.Fill(ds, "viewBills");
+                adp.Fill(ds, "viewBill");
                 /*Se retorna el DataSet*/
                 return ds;
             }
@@ -104,7 +104,114 @@ namespace PTC2024.Model.DAO.BillsDAO
             }
 
         }
-       
-       
+        public DataSet CheckboxFiltersMethod(string Method)
+        {
+            try
+            {
+                //Abrimos conexión con la base
+                Command.Connection = getConnection();
+                //Creamos el query para la filtración de los checkbox
+                string queryCheckboxMethod = "SELECT * FROM viewBill WHERE [Método de Pago] = @MethodP";
+                SqlCommand cmdCheckboxMethod = new SqlCommand(queryCheckboxMethod, Command.Connection);
+                //Le damos valor a los parámetros de la consulta
+                cmdCheckboxMethod.Parameters.AddWithValue("MethodP", Method);
+                //Ejecutamos el query
+                cmdCheckboxMethod.ExecuteNonQuery();
+
+                //capturamos la respuesta con un adp
+                SqlDataAdapter adpCheckBoxStatus = new SqlDataAdapter(cmdCheckboxMethod);
+                //Creamos un dataset
+                DataSet dsCheckBoxMethod = new DataSet();
+                //Llenamos el data set
+                adpCheckBoxStatus.Fill(dsCheckBoxMethod, "viewBill");
+                //retornamos el dataset
+                return dsCheckBoxMethod;
+            }
+            catch (Exception ex)
+            {
+                //Si ocurre un error en el try, devolvemos un null
+                MessageBox.Show(ex.Message);
+                return null;
+
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
+        public DataSet CheckboxFiltersStatus(string status)
+        {
+            try
+            {
+                //Abrimos conexión con la base
+                Command.Connection = getConnection();
+                //Creamos el query para la filtración de los checkbox
+                string queryCheckboxStatus = "SELECT * FROM viewBill WHERE [Estado] = @StatusBills";
+                SqlCommand cmdCheckboxStatus = new SqlCommand(queryCheckboxStatus, Command.Connection);
+                //Le damos valor a los parámetros de la consulta
+                cmdCheckboxStatus.Parameters.AddWithValue("StatusBills", status);
+                //Ejecutamos el query
+                cmdCheckboxStatus.ExecuteNonQuery();
+
+                //capturamos la respuesta con un adp
+                SqlDataAdapter adpCheckBoxStatus = new SqlDataAdapter(cmdCheckboxStatus);
+                //Creamos un dataset
+                DataSet dsCheckBoxStatus = new DataSet();
+                //Llenamos el data set
+                adpCheckBoxStatus.Fill(dsCheckBoxStatus, "viewBill");
+                //retornamos el dataset
+                return dsCheckBoxStatus;
+            }
+            catch (Exception ex)
+            {
+                //Si ocurre un error en el try, devolvemos un null
+                MessageBox.Show(ex.Message);
+                return null;
+
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
+        public DataSet SearchData(string consulta)
+        {
+            try
+            {
+                /*Se declara y abre la conexion*/
+                Command.Connection = getConnection();
+                /*Se declara la consulta*/
+                string query = "SELECT * FROM viewBill WHERE [Cliente] LIKE @consulta OR [Servicios] LIKE @consulta";
+
+                /*Se declara el comando que contiene la consulta y la conexion*/
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                /*Aca se le da valor al parametro de la consulta*/
+                cmd.Parameters.AddWithValue("@consulta", "%" + consulta + "%");
+                /*Se ejecuta la consulta*/
+                cmd.ExecuteNonQuery();
+
+                /*Se crea el adaptador que recibira lo que el cmd devolvio*/
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+
+                /*Se llena el DataSet*/
+                adp.Fill(ds, "viewBill");
+                /*Se retorna el DataSet*/
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                /*En caso haya ocurrido un error se mostrara este mensaje*/
+                MessageBox.Show("Error: " + ex.Message);
+                /*Y se retornara un valor nulo*/
+                return null;
+            }
+            finally
+            {
+                /*Por ultimo se cerrara la conexion*/
+                Command.Connection.Close();
+            }
+        }
     }
+
 }

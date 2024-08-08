@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PTC2024.View.Alerts;
+using PTC2024.View.login;
 
 namespace PTC2024.Controller.LogInController
 {
@@ -25,6 +26,7 @@ namespace PTC2024.Controller.LogInController
             //objLogIn.TxtUserBunifu.Leave += new EventHandler(LeaveUsername);
             //objLogIn.txtPasswordBunifu.Enter += new EventHandler(EnterPassword);
             //objLogIn.txtPasswordBunifu.Leave += new EventHandler(LeavePassword);
+            objLogIn.linkRecoverPssword.Click += new EventHandler(OpenRecoverPassword);
             objLogIn.HidePassword.Click += new EventHandler(HidePassword);
             objLogIn.ShowPassword.Click += new EventHandler(ShowPassword);
         }
@@ -131,7 +133,7 @@ namespace PTC2024.Controller.LogInController
                 //la variable lastFiveChars captura los últimos 5 carácteres que tenga el texto ingresado en el textbox de la contraseña
                 string lastFiveChars = password.Substring(password.Length - 5);
                 //Si los ultimos 5 carácteres son "PU123" entonces es una contraseña de primer uso y se retorna un true, si no, simplemente se retorna un false.
-                if (lastFiveChars == "PU123")
+                if (lastFiveChars == "PU123" || lastFiveChars == "CR321")
                 {
                     return true;
                 }
@@ -145,6 +147,14 @@ namespace PTC2024.Controller.LogInController
                 return false;
             }
                       
+        }
+        public void OpenRecoverPassword(object sender, EventArgs e)
+        {
+            FrmRecoverPasswords objRecover = new FrmRecoverPasswords();
+            objLogIn.Hide();
+            objRecover.ShowDialog();
+            objLogIn.Show();
+            
         }
     }
 }

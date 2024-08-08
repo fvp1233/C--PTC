@@ -9,22 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PTC2024.Controller;
 using PTC2024.Controller.CustomersController;
+using PTC2024.Controller.Helper;
 
 namespace PTC2024.View.Clientes
 {
     public partial class FrmAddCustomers : Form
     {
-        public FrmAddCustomers(int accion)
+        public FrmAddCustomers()
         {
             InitializeComponent();
-            ControllerAddCustomers objControl = new ControllerAddCustomers(this, accion);
+            ControllerAddCustomers objControl = new ControllerAddCustomers(this);
         }
 
-        public FrmAddCustomers(int accion, int CustomerId,int DUI,string names, string lastnames, string phone , string address, string email, int typeC )
-        {
-            InitializeComponent() ;
 
-            ControllerAddCustomers objControl = new ControllerAddCustomers(this, accion, CustomerId, DUI, names, lastnames, phone, address, email, typeC);
-        }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using PTC2024.Controller.EmployeesController;
+using PTC2024.Controller.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,9 @@ namespace PTC2024.View.Empleados
         {
             InitializeComponent();
             ControllerInfoPayroll objControllerAddPayroll = new ControllerInfoPayroll(this,dui,employee,possition, bonus, backAccount, affiliationNumber, salary, afp, isss, rent,netSalary, discountEmployee,issueDate, christmasBonus, issEmployer, afpEmployer, discountEmployer, payrollStatus);
+            Region = Region.FromHrgn(CommonClasses.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
+
 
     }
 }

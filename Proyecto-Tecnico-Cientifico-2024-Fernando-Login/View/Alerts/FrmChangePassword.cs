@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PTC2024.Controller.Alerts;
+using PTC2024.Controller.Helper;
 using PTC2024.Controller.LogInController;
 
 namespace PTC2024.View.Alerts
@@ -18,6 +19,7 @@ namespace PTC2024.View.Alerts
         {
             InitializeComponent();
             ControllerChangePassword control = new ControllerChangePassword(this, username);
+            Region = Region.FromHrgn(CommonClasses.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
     }
 }

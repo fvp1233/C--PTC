@@ -51,9 +51,11 @@
             this.txtPossition = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGroupBox2 = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.bunifuCustomLabel18 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtPayrollStatus = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel17 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtEmployerDiscount = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtChristmasBonus = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtEmployerAFP = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -69,8 +71,6 @@
             this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtISSS = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtBonus = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtChristmasBonus = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuCustomLabel18 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGroupBox1.SuspendLayout();
             this.bunifuGroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -207,7 +207,7 @@
             this.btnCancelar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnCancelar.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnCancelar.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -272,7 +272,7 @@
             this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(79, 51);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(79, 45);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Size = new System.Drawing.Size(670, 35);
             this.bunifuSeparator1.TabIndex = 173;
@@ -494,6 +494,16 @@
             this.bunifuGroupBox2.TabStop = false;
             this.bunifuGroupBox2.Text = "Información salarial";
             // 
+            // bunifuCustomLabel18
+            // 
+            this.bunifuCustomLabel18.AutoSize = true;
+            this.bunifuCustomLabel18.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel18.Location = new System.Drawing.Point(602, 97);
+            this.bunifuCustomLabel18.Name = "bunifuCustomLabel18";
+            this.bunifuCustomLabel18.Size = new System.Drawing.Size(77, 16);
+            this.bunifuCustomLabel18.TabIndex = 205;
+            this.bunifuCustomLabel18.Text = "Aguinaldo";
+            // 
             // txtPayrollStatus
             // 
             this.txtPayrollStatus.BackColor = System.Drawing.Color.Gainsboro;
@@ -544,6 +554,26 @@
             this.txtEmployerDiscount.Size = new System.Drawing.Size(163, 31);
             this.txtEmployerDiscount.TabIndex = 201;
             this.txtEmployerDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txtChristmasBonus
+            // 
+            this.txtChristmasBonus.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtChristmasBonus.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtChristmasBonus.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtChristmasBonus.ForeColor = System.Drawing.Color.Black;
+            this.txtChristmasBonus.HintForeColor = System.Drawing.Color.Empty;
+            this.txtChristmasBonus.HintText = "";
+            this.txtChristmasBonus.isPassword = false;
+            this.txtChristmasBonus.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtChristmasBonus.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtChristmasBonus.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtChristmasBonus.LineThickness = 3;
+            this.txtChristmasBonus.Location = new System.Drawing.Point(605, 117);
+            this.txtChristmasBonus.Margin = new System.Windows.Forms.Padding(4);
+            this.txtChristmasBonus.Name = "txtChristmasBonus";
+            this.txtChristmasBonus.Size = new System.Drawing.Size(163, 31);
+            this.txtChristmasBonus.TabIndex = 204;
+            this.txtChristmasBonus.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel11
             // 
@@ -780,36 +810,6 @@
             this.txtBonus.Size = new System.Drawing.Size(163, 31);
             this.txtBonus.TabIndex = 177;
             this.txtBonus.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // txtChristmasBonus
-            // 
-            this.txtChristmasBonus.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtChristmasBonus.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtChristmasBonus.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtChristmasBonus.ForeColor = System.Drawing.Color.Black;
-            this.txtChristmasBonus.HintForeColor = System.Drawing.Color.Empty;
-            this.txtChristmasBonus.HintText = "";
-            this.txtChristmasBonus.isPassword = false;
-            this.txtChristmasBonus.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtChristmasBonus.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtChristmasBonus.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtChristmasBonus.LineThickness = 3;
-            this.txtChristmasBonus.Location = new System.Drawing.Point(605, 117);
-            this.txtChristmasBonus.Margin = new System.Windows.Forms.Padding(4);
-            this.txtChristmasBonus.Name = "txtChristmasBonus";
-            this.txtChristmasBonus.Size = new System.Drawing.Size(163, 31);
-            this.txtChristmasBonus.TabIndex = 204;
-            this.txtChristmasBonus.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuCustomLabel18
-            // 
-            this.bunifuCustomLabel18.AutoSize = true;
-            this.bunifuCustomLabel18.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel18.Location = new System.Drawing.Point(602, 97);
-            this.bunifuCustomLabel18.Name = "bunifuCustomLabel18";
-            this.bunifuCustomLabel18.Size = new System.Drawing.Size(77, 16);
-            this.bunifuCustomLabel18.TabIndex = 205;
-            this.bunifuCustomLabel18.Text = "Aguinaldo";
             // 
             // FrmInfoPayroll
             // 
