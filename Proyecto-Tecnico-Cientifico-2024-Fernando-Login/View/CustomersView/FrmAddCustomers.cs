@@ -15,13 +15,17 @@ namespace PTC2024.View.Clientes
 {
     public partial class FrmAddCustomers : Form
     {
-        public FrmAddCustomers()
+        public FrmAddCustomers(int accion)
         {
             InitializeComponent();
-            ControllerAddCustomers objControl = new ControllerAddCustomers(this);
-            Region = Region.FromHrgn(CommonClasses.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            ControllerAddCustomers objControl = new ControllerAddCustomers(this, accion);
         }
 
-        
+        public FrmAddCustomers(int accion, int CustomerId,int DUI,string names, string lastnames, string phone , string address, string email, int typeC )
+        {
+            InitializeComponent() ;
+
+            ControllerAddCustomers objControl = new ControllerAddCustomers(this, accion, CustomerId, DUI, names, lastnames, phone, address, email, typeC);
+        }
     }
 }
