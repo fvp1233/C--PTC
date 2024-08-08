@@ -16,23 +16,23 @@ namespace PTC2024.View.Facturacion
 {
     public partial class FrmAddBills : Form
     {
+        internal object btnBack2;
+
         public FrmAddBills(int accions)
         {
             InitializeComponent();
             ControllerAddBills objAddBills = new ControllerAddBills(this, accions);
 
         }
-        public FrmAddBills(int accions, int id, string companyName, string NIT, string NRC, string customer, string serviceName, float discount, float subtoralPay, float totalPay, string methodP, DateTime startDate, DateTime FinalDate,DateTime Dateissued, string employee, string statusBill, string CustomerDui, string CustomerPhone, string CustomerEmail)
+        public FrmAddBills(int accions, int id, string companyName, string NIT, string NRC, string customer, string serviceName, double Discount, double SubtotalPay, double TotalPay, string methodP, DateTime startDate, DateTime FinalDate,DateTime Dateissued, string employee, string statusBill, string CustomerDui, string CustomerPhone, string CustomerEmail)
         {
             InitializeComponent();
-            ControllerAddBills objAddBills = new ControllerAddBills(this, accions, id, companyName, NIT, NRC, customer, serviceName, discount, subtoralPay, totalPay, methodP, startDate, FinalDate, Dateissued,employee, statusBill, CustomerDui, CustomerPhone, CustomerEmail);
+            ControllerAddBills objAddBills = new ControllerAddBills(this, accions, id, companyName, NIT, NRC, customer, serviceName, Discount, SubtotalPay, TotalPay, methodP, startDate, FinalDate, Dateissued,employee, statusBill, CustomerDui, CustomerPhone, CustomerEmail);
         }
         public FrmAddBills(int accions, int id, string IdServices1, float Price1)
         {
             InitializeComponent();
             ControllerAddBills objAddBills = new ControllerAddBills (this, accions, id, IdServices1, Price1);
         }
-
-
     }
 }

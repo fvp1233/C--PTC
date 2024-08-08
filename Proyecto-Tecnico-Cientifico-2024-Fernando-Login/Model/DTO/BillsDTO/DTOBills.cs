@@ -14,9 +14,9 @@ namespace PTC2024.Model.DTO.BillsDTO
         private string companyName;
         private string NIT;
         private string NRC;
-        private float discount;
-        private float subtotalPay;
-        private float totalPay;
+        private double discount;
+        private double subtotalPay;
+        private double totalPay;
         private DateTime startDate;
         private DateTime FinalDate;
         private DateTime dateissued;
@@ -48,6 +48,7 @@ namespace PTC2024.Model.DTO.BillsDTO
         private string username;
         private string password;
         private int userStatus;
+        string SearchB;
 
         public int IdBill1 { get => IdBill; set => IdBill = value; }
         public string CompanyName { get => companyName; set => companyName = value; }
@@ -64,9 +65,6 @@ namespace PTC2024.Model.DTO.BillsDTO
         public string MethodP { get => methodP; set => methodP = value; }
         public int IdServices1 { get => IdServices; set => IdServices = value; }
         public float Price1 { get => Price; set => Price = value; }
-        public float Discount { get => discount; set => discount = value; }
-        public float SubtotalPay { get => subtotalPay; set => subtotalPay = value; }
-        public float TotalPay { get => totalPay; set => totalPay = value; }
         public DateTime Dateissued { get => dateissued; set => dateissued = value; }
         public int IdCustomer1 { get => IdCustomer; set => IdCustomer = value; }
         public string DUI1 { get => DUI; set => DUI = value; }
@@ -82,5 +80,9 @@ namespace PTC2024.Model.DTO.BillsDTO
         public string CustomerPhone1 { get => CustomerPhone; set => CustomerPhone = value; }
         public string CustomerEmail1 { get => CustomerEmail; set => CustomerEmail = value; }
         public string CustomerName1 { get => CustomerName; set => CustomerName = value; }
+        public double Discount { get => discount; set => discount = value; }
+        public double SubtotalPay { get => subtotalPay; set => subtotalPay = value; }
+        public double TotalPay { get => totalPay; set => totalPay = value; }
+        public string SearchB1 { get => SearchB; set => SearchB = value; }
     }
 }
