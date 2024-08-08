@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+<<<<<<< Updated upstream
 using PTC2024.View.Clientes;
 using PTC2024.View.Empleados;
 
@@ -60,3 +61,12 @@ namespace PTC2024.Controller.CustomersController
     }
 }
         */
+=======
+
+namespace PTC2024.Controller.CustomersController
+{
+    internal class ControllerCustomers
+    {
+    }
+}
+>>>>>>> Stashed changes

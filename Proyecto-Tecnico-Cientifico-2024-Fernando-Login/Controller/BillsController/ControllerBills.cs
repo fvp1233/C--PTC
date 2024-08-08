@@ -163,7 +163,6 @@ namespace PTC2024.Controller.BillsController
             return ; 
         }
 
-
         public void SearchBills(object sender, EventArgs e)
         {
             DAOBills dAOBills = new DAOBills();

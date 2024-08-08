@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+<<<<<<< Updated upstream
 using PTC2024.View.Clientes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -11,11 +12,14 @@ using PTC2024.Model.DAO.EmployeesDAO;
 using System.Windows.Forms;
 using PTC2024.Model.DAO.CustomersDAO;
 using System.Data;
+=======
+>>>>>>> Stashed changes
 
 namespace PTC2024.Controller.CustomersController
 {
     internal class ControllerUpdateCustomers
     {
+<<<<<<< Updated upstream
 
         FrmUploadCustomers objUploadCustomers;
         private string IdTypeC;
@@ -115,5 +119,7 @@ namespace PTC2024.Controller.CustomersController
                 MessageBox.Show($"{ex.Message}");
             }
         }
+=======
+>>>>>>> Stashed changes
     }
 }

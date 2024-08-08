@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace PTC2024.Model.DTO.CustomersDTO
 {
+<<<<<<< Updated upstream
     internal class DTOCustomers: dbContext
+=======
+    internal class DTOCustomers
+>>>>>>> Stashed changes
     {
 
         private int IdCustomer;
@@ -26,6 +30,9 @@ namespace PTC2024.Model.DTO.CustomersDTO
         public string Email { get => email; set => email = value; }
         public string Address { get => address; set => address = value; }
         public string IdtypeC1 { get => IdtypeC; set => IdtypeC = value; }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
 }

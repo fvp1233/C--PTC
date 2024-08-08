@@ -39,6 +39,14 @@ namespace PTC2024.Controller.Helper
             {
                 Application.Run(new FrmLogin());
             }
+<<<<<<< Updated upstream
+=======
+
+        }
+        
+
+        
+>>>>>>> Stashed changes
 
 
          }

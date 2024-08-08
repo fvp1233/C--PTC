@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using PTC2024.Model.DTO.CustomersDTO;
 
 namespace PTC2024.Model.DAO.CustomersDAO
 {
+<<<<<<< Updated upstream
     internal class DAOCustomers : DTOCustomers
     {
         readonly SqlCommand Command = new SqlCommand();
@@ -121,6 +118,11 @@ namespace PTC2024.Model.DAO.CustomersDAO
             cmdEnableCustomers.Parameters.AddWithValue("@param4", Names);
             MessageBox.Show("El Cliente  no pudo ser deshabilitado", "Proceso incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+=======
+    internal class DAOCustomers
+    {
+    }
+>>>>>>> Stashed changes
 }
     }
 

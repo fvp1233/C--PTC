@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+<<<<<<< Updated upstream
 using System.Windows.Forms;
 using System.Xml.Linq;
 using PTC2024.Model.DTO.CustomersDTO;
@@ -122,5 +121,12 @@ namespace PTC2024.Model.DAO.CustomersDAO
             }
         }
 
+=======
+
+namespace PTC2024.Model.DAO.CustomersDAO
+{
+    internal class DAOUpdateCustomers
+    {
+>>>>>>> Stashed changes
     }
 }
