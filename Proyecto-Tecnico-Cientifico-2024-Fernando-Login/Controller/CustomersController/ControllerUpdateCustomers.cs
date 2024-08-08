@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,8 +19,23 @@ namespace PTC2024.Controller.CustomersController
 
             objUpdateCustomers = View;
             ChargeValues(idClient, dui, names, lastnames, phone, email, address);
+            objUpdateCustomers.Load += new EventHandler(CargarCombos);
             objUpdateCustomers.BtnActualizarCliente.Click += new EventHandler(UpdateCustomers);
-    }
+            objUpdateCustomers.BtnCancelar.Click += new EventHandler(CancelarProceso);
+        }
+
+        public void CargarCombos(object sender, EventArgs e)
+        {
+            DAOAddCustomers dAOAddCustomers = new DAOAddCustomers();
+
+
+            DataSet dsTipodeCliente = dAOAddCustomers.ObtenerTiposEmpleado();
+            objUpdateCustomers.dpTipoCliente.DataSource = dsTipodeCliente.Tables["tbTypeC"];
+            objUpdateCustomers.dpTipoCliente.DisplayMember = "customerType";
+            objUpdateCustomers.dpTipoCliente.ValueMember = "IdTypeC";
+
+
+        }
 
         public void UpdateCustomers(object sender, EventArgs e)
         {
@@ -37,6 +53,7 @@ namespace PTC2024.Controller.CustomersController
             if (respuesta == 1)
             {
                 MessageBox.Show("Datos Actualizados");
+                objUpdateCustomers.Close();
             }
 
           }
@@ -63,9 +80,16 @@ namespace PTC2024.Controller.CustomersController
 
         }
 
-        
+        public void CancelarProceso(object sender, EventArgs e)
+        {
+            objUpdateCustomers.Close();
 
-        
+        }
+
+
+
+
+
 
 }
 }
