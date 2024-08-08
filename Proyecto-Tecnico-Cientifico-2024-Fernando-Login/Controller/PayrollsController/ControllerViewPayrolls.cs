@@ -552,7 +552,7 @@ namespace PTC2024.Controller.EmployeesController
             return christmasBonus;
         }
         #endregion
-        //------------------METODOS DE LA VISTA----------------------//
+        //------------------Busqueda----------------------//
         public void SearchPayrollEvent(object sender, KeyPressEventArgs e)
         {
             SearchPayroll();

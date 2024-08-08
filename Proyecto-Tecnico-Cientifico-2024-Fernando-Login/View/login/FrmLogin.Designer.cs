@@ -174,7 +174,7 @@
             this.btnLoginBunifu.IdleIconLeftImage = null;
             this.btnLoginBunifu.IdleIconRightImage = null;
             this.btnLoginBunifu.IndicateFocus = false;
-            this.btnLoginBunifu.Location = new System.Drawing.Point(160, 321);
+            this.btnLoginBunifu.Location = new System.Drawing.Point(155, 288);
             this.btnLoginBunifu.Name = "btnLoginBunifu";
             this.btnLoginBunifu.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnLoginBunifu.OnDisabledState.BorderRadius = 20;
@@ -371,12 +371,12 @@
             // linkLabel
             // 
             this.linkLabel.AutoSize = true;
-            this.linkLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel.LinkColor = System.Drawing.Color.White;
-            this.linkLabel.Location = new System.Drawing.Point(186, 283);
+            this.linkLabel.Location = new System.Drawing.Point(174, 365);
             this.linkLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel.Name = "linkLabel";
-            this.linkLabel.Size = new System.Drawing.Size(126, 13);
+            this.linkLabel.Size = new System.Drawing.Size(137, 16);
             this.linkLabel.TabIndex = 11;
             this.linkLabel.TabStop = true;
             this.linkLabel.Text = "¿Olvidó su contraseña?";
@@ -430,11 +430,12 @@
             this.txtLogin.AutoSize = true;
             this.txtLogin.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogin.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtLogin.Location = new System.Drawing.Point(187, 37);
+            this.txtLogin.Location = new System.Drawing.Point(180, 33);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(127, 41);
             this.txtLogin.TabIndex = 0;
             this.txtLogin.Text = "LOGIN";
+            this.txtLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmLogin
             // 
