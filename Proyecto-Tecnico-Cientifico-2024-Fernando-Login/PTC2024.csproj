@@ -211,6 +211,18 @@
     <Compile Include="View\CustomersView\FrmUpdateCustomer.Designer.cs">
       <DependentUpon>FrmUpdateCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Dashboard\FrmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dashboard\FrmDashboard.Designer.cs">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dashboard\FrmMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dashboard\FrmMaintenance.Designer.cs">
+      <DependentUpon>FrmMaintenance.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\EmployeeViews\FrmEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -348,6 +360,12 @@
     <EmbeddedResource Include="View\CustomersView\FrmUpdateCustomer.resx">
       <DependentUpon>FrmUpdateCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Dashboard\FrmDashboard.resx">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dashboard\FrmMaintenance.resx">
+      <DependentUpon>FrmMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmEmployees.resx">
       <DependentUpon>FrmEmployees.cs</DependentUpon>
     </EmbeddedResource>
@@ -429,9 +447,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\Dashboard\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\ActualizarEmpleado.png" />
     <Content Include="Resources\AgregarEmpleado.png" />
