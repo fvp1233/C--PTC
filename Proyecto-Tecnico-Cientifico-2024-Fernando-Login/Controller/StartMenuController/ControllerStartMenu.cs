@@ -28,7 +28,7 @@ namespace PTC2024.Controller.StartMenuController
             View.Load += new EventHandler(LoadDefaultForm);
             View.Load += new EventHandler(InitialAccess);
             objStartMenu.btnIcon.Click += new EventHandler(LoadDefaultForm);
-            objStartMenu.btnMenuDashboard.Click += new EventHandler(LoadDefaultForm);
+            objStartMenu.btnMenuDashboard.Click += new EventHandler(LoadDashboard);
             objStartMenu.btnMenuEmployee.Click += new EventHandler(LoadEmployeeForm);
             objStartMenu.btnMenuPayroll.Click += new EventHandler(LoadPayrollForm);
             objStartMenu.btnMenuServices.Click += new EventHandler(LoadServiceForm);
@@ -59,6 +59,10 @@ namespace PTC2024.Controller.StartMenuController
         private void LoadDefaultForm(object sender, EventArgs e)
         {
             OpenForm<FrmWelcome>();
+        }
+        private void LoadDashboard(object sender, EventArgs e)
+        {
+            OpenForm<FrmDashboard>();
         }
         private void LoadEmployeeForm(object sender, EventArgs e)
         {
