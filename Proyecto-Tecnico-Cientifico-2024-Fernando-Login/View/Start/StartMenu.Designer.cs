@@ -39,9 +39,9 @@
             this.btnLogOut = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnMaintenance = new Bunifu.Framework.UI.BunifuFlatButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.ContainerPanel = new System.Windows.Forms.Panel();
-            this.btnMaintenance = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.btnIcon)).BeginInit();
             this.bunifuPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -338,25 +338,6 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(185, 610);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Black;
-            this.flowLayoutPanel1.Controls.Add(this.btnLogOut);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 610);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(185, 77);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // ContainerPanel
-            // 
-            this.ContainerPanel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ContainerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ContainerPanel.Location = new System.Drawing.Point(185, 0);
-            this.ContainerPanel.Name = "ContainerPanel";
-            this.ContainerPanel.Size = new System.Drawing.Size(1163, 687);
-            this.ContainerPanel.TabIndex = 4;
-            // 
             // btnMaintenance
             // 
             this.btnMaintenance.Activecolor = System.Drawing.Color.DimGray;
@@ -391,6 +372,25 @@
             this.btnMaintenance.Textcolor = System.Drawing.Color.White;
             this.btnMaintenance.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Black;
+            this.flowLayoutPanel1.Controls.Add(this.btnLogOut);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 610);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(185, 77);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // ContainerPanel
+            // 
+            this.ContainerPanel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ContainerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContainerPanel.Location = new System.Drawing.Point(185, 0);
+            this.ContainerPanel.Name = "ContainerPanel";
+            this.ContainerPanel.Size = new System.Drawing.Size(1163, 687);
+            this.ContainerPanel.TabIndex = 4;
+            // 
             // StartMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,6 +399,7 @@
             this.ClientSize = new System.Drawing.Size(1348, 687);
             this.Controls.Add(this.ContainerPanel);
             this.Controls.Add(this.bunifuPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(2560, 1449);
             this.MinimumSize = new System.Drawing.Size(1364, 718);
             this.Name = "StartMenu";
