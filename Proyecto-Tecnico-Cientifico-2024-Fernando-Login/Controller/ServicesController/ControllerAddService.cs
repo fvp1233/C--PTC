@@ -22,16 +22,17 @@ namespace PTC2024.Controller.ServicesController
         {
             /*Eventos*/
             objAddService = view;
-            objAddService.Load += new EventHandler(ChargeDropDown);
+            objAddService.Load += new EventHandler(ChargeDropDowns);
             objAddService.BtnCancelar.Click += new EventHandler(CloseAddService);
             objAddService.btnAddService.Click += new EventHandler(AddService);
         }
 
         /*Metodo para cargar el combobox*/
-        public void ChargeDropDown(object sender, EventArgs e)
+        public void ChargeDropDowns(object sender, EventArgs e)
         {
             DAOAddService daoAddService = new DAOAddService();
 
+            /*COMBO CATEGORIA DEL SERVICIO*/
             /*Aca se obtiene el valor que retorno el metodo*/
             DataSet dsAddService = daoAddService.GetCategories();
             /*Se establece el DataSource del ComboBox con la tabla "tbCategoryS"*/
@@ -40,6 +41,16 @@ namespace PTC2024.Controller.ServicesController
             objAddService.comboTipoEmpleado.DisplayMember = "categoryName";
             /*Se establece el miembro de valor en el ComboBox con el Id de la categoría*/
             objAddService.comboTipoEmpleado.ValueMember = "IdCategory";
+
+            /*COMBO DEL CLIENTE*/
+
+            DataSet respuesta = daoAddService.GetCustomer();
+
+            objAddService.combocliente.DataSource = respuesta.Tables["tbCustomer"];
+
+            objAddService.combocliente.DisplayMember = "names";
+
+            objAddService.combocliente.ValueMember = "IdCustomer";
         }
 
         /*Metodo para añadir servicio*/
@@ -77,6 +88,7 @@ namespace PTC2024.Controller.ServicesController
                 dAOAddService.Nombre = objAddService.txtNombres.Text;
                 dAOAddService.Descripcion = objAddService.txtDescripcion.Text;
                 dAOAddService.Categorias = (int)objAddService.comboTipoEmpleado.SelectedValue;
+                dAOAddService.Cliente = (int)objAddService.combocliente.SelectedValue;
                 dAOAddService.Monto = double.Parse(objAddService.txtMonto.Text);
 
                 /*Se obtiene el valor que retorno el metodo InsertService*/

@@ -55,6 +55,34 @@ namespace PTC2024.Model.DAO.ServicesDAO
 
         }
 
+        public DataSet GetCustomer()
+        {
+            try
+            {
+                command.Connection = getConnection();
+
+                string query = "SELECT * FROM tbCustomer";
+
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+
+                cmd.ExecuteNonQuery();
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataSet ds = new DataSet();
+
+                adp.Fill(ds, "tbCustomer");
+
+                return ds;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         /*Metodo para insertar datos*/
         public int InsertService()
         {
@@ -63,10 +91,11 @@ namespace PTC2024.Model.DAO.ServicesDAO
                 /*Se declara y abre la conexion*/
                 command.Connection = getConnection();
                 /*Se declara la consulta, para esta consulta se uso un proceso almacenado*/
-                string query2 = "Exec spInsertDataService @NombreS, @DescripcionS, @MontoS, @Categoria";
+                string query2 = "Exec spInsertDataService @IdCustomer, @NombreS, @DescripcionS, @MontoS, @Categoria";
                 /*Se declara un comando que contiene la consulta con la conexion*/
                 SqlCommand cmd2 = new SqlCommand(query2, command.Connection);
                 /*Ya que esta consulta lleva parametros, aca es donde se llenan dichos parametros*/
+                cmd2.Parameters.AddWithValue("@IdCustomer", Cliente);
                 cmd2.Parameters.AddWithValue("@NombreS", Nombre);
                 cmd2.Parameters.AddWithValue("@DescripcionS", Descripcion);
                 cmd2.Parameters.AddWithValue("@MontoS", Monto);

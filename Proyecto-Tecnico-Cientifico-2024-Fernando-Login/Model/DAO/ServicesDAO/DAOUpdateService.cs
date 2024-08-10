@@ -55,6 +55,35 @@ namespace PTC2024.Model.DAO.ServicesDAO
 
         }
 
+
+        public DataSet GetCustomer()
+        {
+            try
+            {
+                command.Connection = getConnection();
+
+                string query = "SELECT * FROM tbCustomer";
+
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+
+                cmd.ExecuteNonQuery();
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataSet ds = new DataSet();
+
+                adp.Fill(ds, "tbCustomer");
+
+                return ds;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         /*Este metodo actualizara los servicios*/
         public int UpdateService()
         {
@@ -63,12 +92,13 @@ namespace PTC2024.Model.DAO.ServicesDAO
                 /*Se declara y abre la conexion*/
                 command.Connection = getConnection();
                 /*Se declara la consulta*/
-                string query = "Exec spUpdateService @Nombre, @Descripcion, @Monto, @Categoria, @Id";
+                string query = "Exec spUpdateService @ClienteS, @Nombre, @Descripcion, @Monto, @Categoria, @Id";
 
                 /*Se declara el comando que contiene la consulta y la conexion*/
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
 
                 /*Se les asigna un valor a los parametros de la consulta*/
+                cmd.Parameters.AddWithValue("@ClienteS", Cliente);
                 cmd.Parameters.AddWithValue("@Nombre", Nombre);
                 cmd.Parameters.AddWithValue("@Descripcion", Descripcion);
                 cmd.Parameters.AddWithValue("@Monto", Monto);

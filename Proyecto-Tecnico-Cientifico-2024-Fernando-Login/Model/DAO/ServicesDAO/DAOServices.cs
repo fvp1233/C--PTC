@@ -96,7 +96,7 @@ namespace PTC2024.Model.DAO.ServicesDAO
                 /*Se declara y abre la conexion*/
                 command.Connection = getConnection();
                 /*Se declara la consulta*/
-                string query = "SELECT * FROM viewServices WHERE [Nombre servicio] LIKE @consulta OR [Descripción] LIKE @consulta";
+                string query = "SELECT * FROM viewServices WHERE [Nombre servicio] LIKE @consulta OR [Descripción] LIKE @consulta OR [Cliente] LIKE @consulta";
 
                 /*Se declara el comando que contiene la consulta y la conexion*/
                 SqlCommand cmd = new SqlCommand(query, command.Connection);

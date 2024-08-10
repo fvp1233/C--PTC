@@ -9,14 +9,16 @@ namespace PTC2024.Model.DTO.ServicesDTO
     internal class DTOAddService : dbContext
     {
         /*Se declaran los atributos*/
-        string nombre;
-        string descripcion;
-        int categorias;
-        double monto;
+        private string nombre;
+        private string descripcion;
+        private int categorias;
+        private int cliente;
+        private double monto;
 
         public string Nombre { get => nombre; set => nombre = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public int Categorias { get => categorias; set => categorias = value; }
+        public int Cliente { get => cliente; set => cliente = value; }
         public double Monto { get => monto; set => monto = value; }
     }
 }
