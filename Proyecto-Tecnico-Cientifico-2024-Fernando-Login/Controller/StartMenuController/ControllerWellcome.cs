@@ -1,4 +1,6 @@
 ﻿using PTC2024.Controller.Helper;
+using PTC2024.Model.DTO.EmployeesDTO;
+using PTC2024.Model.DTO.ServicesDTO;
 using PTC2024.View.Start;
 using System;
 using System.Collections.Generic;
