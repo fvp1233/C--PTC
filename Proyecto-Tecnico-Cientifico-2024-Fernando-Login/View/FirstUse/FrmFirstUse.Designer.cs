@@ -378,7 +378,7 @@
             this.txtPBX.IconRight = null;
             this.txtPBX.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPBX.Lines = new string[0];
-            this.txtPBX.Location = new System.Drawing.Point(16, 333);
+            this.txtPBX.Location = new System.Drawing.Point(16, 330);
             this.txtPBX.MaxLength = 32767;
             this.txtPBX.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPBX.Modified = false;
@@ -623,9 +623,9 @@
             this.bunifuLabel7.Location = new System.Drawing.Point(20, 242);
             this.bunifuLabel7.Name = "bunifuLabel7";
             this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel7.Size = new System.Drawing.Size(141, 16);
+            this.bunifuLabel7.Size = new System.Drawing.Size(126, 16);
             this.bunifuLabel7.TabIndex = 18;
-            this.bunifuLabel7.Text = "Fecha de nacimiento:";
+            this.bunifuLabel7.Text = "Fecha de creación:";
             this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -798,7 +798,7 @@
             this.txtPhone.IconRight = null;
             this.txtPhone.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPhone.Lines = new string[0];
-            this.txtPhone.Location = new System.Drawing.Point(285, 264);
+            this.txtPhone.Location = new System.Drawing.Point(285, 261);
             this.txtPhone.MaxLength = 32767;
             this.txtPhone.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPhone.Modified = false;

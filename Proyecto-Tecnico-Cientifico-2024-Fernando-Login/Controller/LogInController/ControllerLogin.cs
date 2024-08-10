@@ -22,10 +22,6 @@ namespace PTC2024.Controller.LogInController
             objLogIn = Vista;
             objLogIn.Load += new EventHandler(InitialCharge);
             objLogIn.btnLoginBunifu.Click += new EventHandler(DataAccess);
-            //objLogIn.TxtUserBunifu.Enter += new EventHandler(EnterUsername);
-            //objLogIn.TxtUserBunifu.Leave += new EventHandler(LeaveUsername);
-            //objLogIn.txtPasswordBunifu.Enter += new EventHandler(EnterPassword);
-            //objLogIn.txtPasswordBunifu.Leave += new EventHandler(LeavePassword);
             objLogIn.linkRecoverPssword.Click += new EventHandler(OpenRecoverPassword);
             objLogIn.HidePassword.Click += new EventHandler(HidePassword);
             objLogIn.ShowPassword.Click += new EventHandler(ShowPassword);

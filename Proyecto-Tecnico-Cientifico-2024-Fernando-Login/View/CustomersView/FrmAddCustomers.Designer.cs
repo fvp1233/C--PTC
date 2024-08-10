@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddCustomers));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.BtnAgregarCliente = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
@@ -56,8 +56,7 @@
             // 
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(512, 111);
-            this.bunifuCustomLabel2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(279, 60);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(201, 17);
             this.bunifuCustomLabel2.TabIndex = 86;
@@ -66,11 +65,10 @@
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(446, 52);
-            this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(253, 28);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(279, 32);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(254, 32);
             this.bunifuCustomLabel1.TabIndex = 85;
             this.bunifuCustomLabel1.Text = "AGREGAR CLIENTE";
             // 
@@ -94,11 +92,11 @@
             this.BtnAgregarCliente.ColorContrastOnClick = 45;
             this.BtnAgregarCliente.ColorContrastOnHover = 45;
             this.BtnAgregarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.BtnAgregarCliente.CustomizableEdges = borderEdges1;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.BtnAgregarCliente.CustomizableEdges = borderEdges3;
             this.BtnAgregarCliente.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnAgregarCliente.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnAgregarCliente.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -122,8 +120,7 @@
             this.BtnAgregarCliente.IdleIconLeftImage = null;
             this.BtnAgregarCliente.IdleIconRightImage = null;
             this.BtnAgregarCliente.IndicateFocus = false;
-            this.BtnAgregarCliente.Location = new System.Drawing.Point(708, 887);
-            this.BtnAgregarCliente.Margin = new System.Windows.Forms.Padding(6);
+            this.BtnAgregarCliente.Location = new System.Drawing.Point(386, 397);
             this.BtnAgregarCliente.Name = "BtnAgregarCliente";
             this.BtnAgregarCliente.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnAgregarCliente.OnDisabledState.BorderRadius = 20;
@@ -157,7 +154,7 @@
             this.BtnAgregarCliente.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnAgregarCliente.OnPressedState.IconLeftImage = null;
             this.BtnAgregarCliente.OnPressedState.IconRightImage = null;
-            this.BtnAgregarCliente.Size = new System.Drawing.Size(277, 96);
+            this.BtnAgregarCliente.Size = new System.Drawing.Size(151, 52);
             this.BtnAgregarCliente.TabIndex = 137;
             this.BtnAgregarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnAgregarCliente.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -185,11 +182,11 @@
             this.BtnCancelar.ColorContrastOnClick = 45;
             this.BtnCancelar.ColorContrastOnHover = 45;
             this.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.BtnCancelar.CustomizableEdges = borderEdges2;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.BtnCancelar.CustomizableEdges = borderEdges4;
             this.BtnCancelar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnCancelar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnCancelar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -213,8 +210,7 @@
             this.BtnCancelar.IdleIconLeftImage = null;
             this.BtnCancelar.IdleIconRightImage = null;
             this.BtnCancelar.IndicateFocus = false;
-            this.BtnCancelar.Location = new System.Drawing.Point(416, 887);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(6);
+            this.BtnCancelar.Location = new System.Drawing.Point(227, 397);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnCancelar.OnDisabledState.BorderRadius = 20;
@@ -248,7 +244,7 @@
             this.BtnCancelar.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnCancelar.OnPressedState.IconLeftImage = null;
             this.BtnCancelar.OnPressedState.IconRightImage = null;
-            this.BtnCancelar.Size = new System.Drawing.Size(277, 96);
+            this.BtnCancelar.Size = new System.Drawing.Size(151, 52);
             this.BtnCancelar.TabIndex = 136;
             this.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnCancelar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -261,10 +257,10 @@
             this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(152, 157);
-            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(11);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(83, 85);
+            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(1115, 65);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(608, 35);
             this.bunifuSeparator1.TabIndex = 207;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
@@ -282,10 +278,10 @@
             this.txtNombres.LineIdleColor = System.Drawing.Color.Gray;
             this.txtNombres.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtNombres.LineThickness = 3;
-            this.txtNombres.Location = new System.Drawing.Point(88, 266);
-            this.txtNombres.Margin = new System.Windows.Forms.Padding(7);
+            this.txtNombres.Location = new System.Drawing.Point(48, 144);
+            this.txtNombres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(605, 61);
+            this.txtNombres.Size = new System.Drawing.Size(330, 33);
             this.txtNombres.TabIndex = 192;
             this.txtNombres.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -293,8 +289,7 @@
             // 
             this.bunifuCustomLabel8.AutoSize = true;
             this.bunifuCustomLabel8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(702, 702);
-            this.bunifuCustomLabel8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(383, 314);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
             this.bunifuCustomLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuCustomLabel8.Size = new System.Drawing.Size(115, 16);
@@ -305,8 +300,7 @@
             // 
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(82, 229);
-            this.bunifuCustomLabel3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(45, 124);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(74, 16);
             this.bunifuCustomLabel3.TabIndex = 191;
@@ -348,10 +342,9 @@
             this.comboTipodeCliente.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.comboTipodeCliente.ItemHighLightForeColor = System.Drawing.Color.White;
             this.comboTipodeCliente.ItemTopMargin = 3;
-            this.comboTipodeCliente.Location = new System.Drawing.Point(708, 738);
-            this.comboTipodeCliente.Margin = new System.Windows.Forms.Padding(6);
+            this.comboTipodeCliente.Location = new System.Drawing.Point(386, 334);
             this.comboTipodeCliente.Name = "comboTipodeCliente";
-            this.comboTipodeCliente.Size = new System.Drawing.Size(602, 32);
+            this.comboTipodeCliente.Size = new System.Drawing.Size(330, 32);
             this.comboTipodeCliente.TabIndex = 204;
             this.comboTipodeCliente.Text = null;
             this.comboTipodeCliente.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
@@ -361,8 +354,7 @@
             // 
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(82, 345);
-            this.bunifuCustomLabel6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(45, 187);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(35, 16);
             this.bunifuCustomLabel6.TabIndex = 193;
@@ -372,8 +364,7 @@
             // 
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(702, 229);
-            this.bunifuCustomLabel4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(383, 124);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(76, 16);
             this.bunifuCustomLabel4.TabIndex = 203;
@@ -392,10 +383,10 @@
             this.txtApellidos.LineIdleColor = System.Drawing.Color.Gray;
             this.txtApellidos.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtApellidos.LineThickness = 3;
-            this.txtApellidos.Location = new System.Drawing.Point(708, 266);
-            this.txtApellidos.Margin = new System.Windows.Forms.Padding(7);
+            this.txtApellidos.Location = new System.Drawing.Point(386, 144);
+            this.txtApellidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(605, 61);
+            this.txtApellidos.Size = new System.Drawing.Size(330, 33);
             this.txtApellidos.TabIndex = 202;
             this.txtApellidos.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -412,10 +403,10 @@
             this.txtDui.LineIdleColor = System.Drawing.Color.Gray;
             this.txtDui.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtDui.LineThickness = 3;
-            this.txtDui.Location = new System.Drawing.Point(88, 382);
-            this.txtDui.Margin = new System.Windows.Forms.Padding(7);
+            this.txtDui.Location = new System.Drawing.Point(48, 207);
+            this.txtDui.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDui.Name = "txtDui";
-            this.txtDui.Size = new System.Drawing.Size(605, 61);
+            this.txtDui.Size = new System.Drawing.Size(330, 33);
             this.txtDui.TabIndex = 195;
             this.txtDui.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -432,10 +423,10 @@
             this.txtEmail.LineIdleColor = System.Drawing.Color.Gray;
             this.txtEmail.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtEmail.LineThickness = 3;
-            this.txtEmail.Location = new System.Drawing.Point(88, 620);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(7);
+            this.txtEmail.Location = new System.Drawing.Point(48, 270);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(1225, 61);
+            this.txtEmail.Size = new System.Drawing.Size(668, 33);
             this.txtEmail.TabIndex = 201;
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -443,8 +434,7 @@
             // 
             this.bunifuCustomLabel7.AutoSize = true;
             this.bunifuCustomLabel7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(82, 463);
-            this.bunifuCustomLabel7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(383, 187);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
             this.bunifuCustomLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(78, 16);
@@ -464,10 +454,10 @@
             this.txtTelefono.LineIdleColor = System.Drawing.Color.Gray;
             this.txtTelefono.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtTelefono.LineThickness = 3;
-            this.txtTelefono.Location = new System.Drawing.Point(88, 740);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(7);
+            this.txtTelefono.Location = new System.Drawing.Point(48, 335);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(605, 61);
+            this.txtTelefono.Size = new System.Drawing.Size(330, 33);
             this.txtTelefono.TabIndex = 200;
             this.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -484,10 +474,10 @@
             this.txtDireccion.LineIdleColor = System.Drawing.Color.Gray;
             this.txtDireccion.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtDireccion.LineThickness = 3;
-            this.txtDireccion.Location = new System.Drawing.Point(88, 500);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(7);
+            this.txtDireccion.Location = new System.Drawing.Point(386, 207);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(1225, 61);
+            this.txtDireccion.Size = new System.Drawing.Size(330, 33);
             this.txtDireccion.TabIndex = 197;
             this.txtDireccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -495,8 +485,7 @@
             // 
             this.bunifuCustomLabel9.AutoSize = true;
             this.bunifuCustomLabel9.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(82, 583);
-            this.bunifuCustomLabel9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(45, 250);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
             this.bunifuCustomLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuCustomLabel9.Size = new System.Drawing.Size(48, 16);
@@ -507,8 +496,7 @@
             // 
             this.bunifuCustomLabel10.AutoSize = true;
             this.bunifuCustomLabel10.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(82, 703);
-            this.bunifuCustomLabel10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(45, 315);
             this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
             this.bunifuCustomLabel10.Size = new System.Drawing.Size(71, 16);
             this.bunifuCustomLabel10.TabIndex = 198;
@@ -516,9 +504,9 @@
             // 
             // FrmAddCustomers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1395, 1083);
+            this.ClientSize = new System.Drawing.Size(756, 473);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.txtNombres);
             this.Controls.Add(this.bunifuCustomLabel8);
@@ -539,7 +527,6 @@
             this.Controls.Add(this.bunifuCustomLabel2);
             this.Controls.Add(this.bunifuCustomLabel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FrmAddCustomers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Cliente";

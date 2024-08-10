@@ -48,8 +48,6 @@ namespace PTC2024.Controller.EmployeesController
         {
             // Creamos un objeto del DaoViewPayrolls
             DAOViewPayrolls DAOInsertPayroll = new DAOViewPayrolls();
-            // Accedemos a los datos de los empleados gracias al GetEmployee
-            DAOInsertPayroll.GetEmployee();
             // Se crean los dataSets
             DataSet employeeDs = DAOInsertPayroll.GetEmployee();
             DataSet bonusDs = DAOInsertPayroll.GetBonus();

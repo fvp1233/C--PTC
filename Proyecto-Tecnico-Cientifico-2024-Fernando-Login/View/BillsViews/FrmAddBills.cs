@@ -1,5 +1,6 @@
 ﻿using PTC2024.Controller;
 using PTC2024.Controller.BillsController;
+using PTC2024.Controller.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,8 @@ namespace PTC2024.View.Facturacion
         {
             InitializeComponent();
             ControllerAddBills objAddBills = new ControllerAddBills(this, accions);
+            Region = Region.FromHrgn(CommonClasses.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+
 
         }
         public FrmAddBills(int accions, int id, string companyName, string NIT, string NRC, string customer, string serviceName, double Discount, double SubtotalPay, double TotalPay, string methodP, DateTime startDate, DateTime FinalDate,DateTime Dateissued, string employee, string statusBill, string CustomerDui, string CustomerPhone, string CustomerEmail)
