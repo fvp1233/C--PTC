@@ -115,6 +115,9 @@
     <Compile Include="Controller\LogInController\ControllerLogin.cs" />
     <Compile Include="Controller\LogInController\ControllerRecoverPassword.cs" />
     <Compile Include="Controller\LogInController\ControllerRegister.cs" />
+    <Compile Include="Controller\MaintenanceController\ControllerCharge.cs" />
+    <Compile Include="Controller\MaintenanceController\ControllerDepartments.cs" />
+    <Compile Include="Controller\MaintenanceController\ControllerMaintenance.cs" />
     <Compile Include="Controller\PayrollsController\ControllerInfoPayroll.cs" />
     <Compile Include="Controller\EmployeesController\ControllerEmployees.cs" />
     <Compile Include="Controller\EmployeesController\ControllerPayrolls.cs" />
@@ -140,6 +143,8 @@
     <Compile Include="Model\DAO\LogInDAO\DAOLogin.cs" />
     <Compile Include="Model\DAO\LogInDAO\DAORecoverPassword.cs" />
     <Compile Include="Model\DAO\LogInDAO\DAORegister.cs" />
+    <Compile Include="Model\DAO\MaintenanceDAO\DAOCharge.cs" />
+    <Compile Include="Model\DAO\MaintenanceDAO\DAODepartment.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOInfoPayroll.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOUpdatePayroll.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOViewPayrolls.cs" />
@@ -162,6 +167,8 @@
     <Compile Include="Model\DTO\LogInDTO\DTOLogin.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTORecoverPassword.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTORegister.cs" />
+    <Compile Include="Model\DTO\MaintenanceDTO\DTOCharge.cs" />
+    <Compile Include="Model\DTO\MaintenanceDTO\DTODepartment.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOInfoPayroll.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOUpdatePayroll.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOViewPayrolls.cs" />
@@ -211,11 +218,23 @@
     <Compile Include="View\CustomersView\FrmUpdateCustomer.Designer.cs">
       <DependentUpon>FrmUpdateCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Dashboard\FrmCharge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dashboard\FrmCharge.Designer.cs">
+      <DependentUpon>FrmCharge.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Dashboard\FrmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Dashboard\FrmDashboard.Designer.cs">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dashboard\FrmDepartments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dashboard\FrmDepartments.Designer.cs">
+      <DependentUpon>FrmDepartments.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Dashboard\FrmMaintenance.cs">
       <SubType>Form</SubType>
@@ -360,8 +379,14 @@
     <EmbeddedResource Include="View\CustomersView\FrmUpdateCustomer.resx">
       <DependentUpon>FrmUpdateCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Dashboard\FrmCharge.resx">
+      <DependentUpon>FrmCharge.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Dashboard\FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dashboard\FrmDepartments.resx">
+      <DependentUpon>FrmDepartments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Dashboard\FrmMaintenance.resx">
       <DependentUpon>FrmMaintenance.cs</DependentUpon>

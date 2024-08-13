@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace PTC2024.View.Dashboard
 {
-    public partial class FrmMaintenance : Form
+    public partial class FrmCharge : Form
     {
-        public FrmMaintenance()
+        public FrmCharge()
         {
             InitializeComponent();
-            ControllerMaintenance objMaintenance = new ControllerMaintenance(this);
+            ControllerCharge objCharge = new ControllerCharge(this);
         }
     }
 }
