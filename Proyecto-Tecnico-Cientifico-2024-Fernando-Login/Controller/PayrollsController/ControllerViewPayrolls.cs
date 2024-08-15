@@ -40,6 +40,7 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.btnCompensation.Click += new EventHandler(CreateCompensationPayroll);
             objViewPayrolls.btnActualizarPlanillas.Click += new EventHandler(RefreshData);
             objViewPayrolls.btnDeletePayrolls.Click += new EventHandler(DeletePayrolls);
+            objViewPayrolls.dgvPayrolls.Click += new EventHandler(Disable);
             objViewPayrolls.cmsUpdatePayroll.Click += new EventHandler(OpenUpdatePayroll);
             objViewPayrolls.cmsPayrollInformation.Click += new EventHandler(ViewInfoPayroll);
             objViewPayrolls.txtSearch.KeyPress += new KeyPressEventHandler(SearchPayrollEvent);
@@ -573,6 +574,19 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.dgvPayrolls.Columns[6].Visible = false;
             objViewPayrolls.dgvPayrolls.Columns[7].Visible = false;
 
+        }
+        public void Disable(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objDisable = new DAOViewPayrolls();
+            int pos = objViewPayrolls.dgvPayrolls.CurrentRow.Index;
+            if (objViewPayrolls.dgvPayrolls[13, pos].Value.ToString() == "Pagada" /*&& objDisable.StatusPayroll == 1*/)
+            {
+                objViewPayrolls.cmsUpdatePayroll.Visible = false;
+            }
+            else
+            {
+                objViewPayrolls.cmsUpdatePayroll.Visible = true;
+            }
         }
 
         //----------------------Metodos de interaccion con otros formularios---------------------------//
