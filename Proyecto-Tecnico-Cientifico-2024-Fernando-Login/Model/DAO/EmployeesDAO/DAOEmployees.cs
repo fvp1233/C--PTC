@@ -134,7 +134,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
                 //Abrimos conexión con la base
                 Command.Connection = getConnection();
                 //Creamos el query para la filtración de los checkbox
-                string queryCheckboxTypeE = "SELECT * FROM viewEmployees WHERE [Tipo] = @employeeType";
+                string queryCheckboxTypeE = "SELECT * FROM viewEmployees WHERE [Tipo] = @employeeType AND [Estado] = 'Activo'";
                 SqlCommand cmdCheckboxTypeE = new SqlCommand(queryCheckboxTypeE, Command.Connection);
                 //Le damos valor a los parámetros de la consulta
                 cmdCheckboxTypeE.Parameters.AddWithValue("employeeType", employeeType);
@@ -172,7 +172,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
                 //Abrimos conexión con la base
                 Command.Connection = getConnection();
                 //Creamos el query para la filtración de los checkbox
-                string queryCheckboxDepartment = "SELECT * FROM viewEmployees WHERE [Dpto.] = @department";
+                string queryCheckboxDepartment = "SELECT * FROM viewEmployees WHERE [Dpto.] = @department AND [Estado] = 'Activo'";
                 SqlCommand cmdCheckboxDepartment = new SqlCommand(queryCheckboxDepartment, Command.Connection);
                 //Le damos valor a los parámetros de la consulta
                 cmdCheckboxDepartment.Parameters.AddWithValue("department", department);

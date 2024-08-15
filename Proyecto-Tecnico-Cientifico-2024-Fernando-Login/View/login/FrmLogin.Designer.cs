@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.dataLogin = new System.Windows.Forms.Panel();
             this.HidePassword = new System.Windows.Forms.PictureBox();
             this.ShowPassword = new System.Windows.Forms.PictureBox();
@@ -52,6 +52,7 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.Label();
+            this.btnCerrar = new Bunifu.UI.WinForms.BunifuImageButton();
             this.dataLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HidePassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPassword)).BeginInit();
@@ -64,6 +65,7 @@
             // dataLogin
             // 
             this.dataLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.dataLogin.Controls.Add(this.btnCerrar);
             this.dataLogin.Controls.Add(this.HidePassword);
             this.dataLogin.Controls.Add(this.ShowPassword);
             this.dataLogin.Controls.Add(this.panel1);
@@ -146,11 +148,11 @@
             this.btnLoginBunifu.ColorContrastOnClick = 45;
             this.btnLoginBunifu.ColorContrastOnHover = 45;
             this.btnLoginBunifu.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnLoginBunifu.CustomizableEdges = borderEdges2;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnLoginBunifu.CustomizableEdges = borderEdges1;
             this.btnLoginBunifu.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnLoginBunifu.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnLoginBunifu.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -251,26 +253,26 @@
             this.txtPasswordBunifu.Modified = false;
             this.txtPasswordBunifu.Multiline = false;
             this.txtPasswordBunifu.Name = "txtPasswordBunifu";
-            stateProperties9.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties9.FillColor = System.Drawing.Color.Empty;
-            stateProperties9.ForeColor = System.Drawing.Color.Empty;
-            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPasswordBunifu.OnActiveState = stateProperties9;
-            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtPasswordBunifu.OnDisabledState = stateProperties10;
-            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties11.FillColor = System.Drawing.Color.Empty;
-            stateProperties11.ForeColor = System.Drawing.Color.Empty;
-            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPasswordBunifu.OnHoverState = stateProperties11;
-            stateProperties12.BorderColor = System.Drawing.Color.Silver;
-            stateProperties12.FillColor = System.Drawing.Color.White;
-            stateProperties12.ForeColor = System.Drawing.Color.Empty;
-            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPasswordBunifu.OnIdleState = stateProperties12;
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtPasswordBunifu.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtPasswordBunifu.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtPasswordBunifu.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtPasswordBunifu.OnIdleState = stateProperties4;
             this.txtPasswordBunifu.Padding = new System.Windows.Forms.Padding(3);
             this.txtPasswordBunifu.PasswordChar = '\0';
             this.txtPasswordBunifu.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -327,26 +329,26 @@
             this.TxtUserBunifu.Modified = false;
             this.TxtUserBunifu.Multiline = false;
             this.TxtUserBunifu.Name = "TxtUserBunifu";
-            stateProperties13.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties13.FillColor = System.Drawing.Color.Empty;
-            stateProperties13.ForeColor = System.Drawing.Color.Empty;
-            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.TxtUserBunifu.OnActiveState = stateProperties13;
-            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.TxtUserBunifu.OnDisabledState = stateProperties14;
-            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties15.FillColor = System.Drawing.Color.Empty;
-            stateProperties15.ForeColor = System.Drawing.Color.Empty;
-            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.TxtUserBunifu.OnHoverState = stateProperties15;
-            stateProperties16.BorderColor = System.Drawing.Color.Silver;
-            stateProperties16.FillColor = System.Drawing.Color.White;
-            stateProperties16.ForeColor = System.Drawing.Color.Empty;
-            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.TxtUserBunifu.OnIdleState = stateProperties16;
+            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TxtUserBunifu.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.TxtUserBunifu.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TxtUserBunifu.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Silver;
+            stateProperties8.FillColor = System.Drawing.Color.White;
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.TxtUserBunifu.OnIdleState = stateProperties8;
             this.TxtUserBunifu.Padding = new System.Windows.Forms.Padding(3);
             this.TxtUserBunifu.PasswordChar = '\0';
             this.TxtUserBunifu.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -437,6 +439,40 @@
             this.txtLogin.Text = "LOGIN";
             this.txtLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.ActiveImage = ((System.Drawing.Image)(resources.GetObject("btnCerrar.ActiveImage")));
+            this.btnCerrar.AllowAnimations = true;
+            this.btnCerrar.AllowBuffering = false;
+            this.btnCerrar.AllowToggling = false;
+            this.btnCerrar.AllowZooming = false;
+            this.btnCerrar.AllowZoomingOnFocus = false;
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCerrar.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnCerrar.ErrorImage")));
+            this.btnCerrar.FadeWhenInactive = false;
+            this.btnCerrar.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.ImageActive = ((System.Drawing.Image)(resources.GetObject("btnCerrar.ImageActive")));
+            this.btnCerrar.ImageLocation = null;
+            this.btnCerrar.ImageMargin = 20;
+            this.btnCerrar.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnCerrar.ImageZoomSize = new System.Drawing.Size(35, 35);
+            this.btnCerrar.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnCerrar.InitialImage")));
+            this.btnCerrar.Location = new System.Drawing.Point(3, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Rotation = 0;
+            this.btnCerrar.ShowActiveImage = true;
+            this.btnCerrar.ShowCursorChanges = true;
+            this.btnCerrar.ShowImageBorders = true;
+            this.btnCerrar.ShowSizeMarkers = false;
+            this.btnCerrar.Size = new System.Drawing.Size(35, 35);
+            this.btnCerrar.TabIndex = 18;
+            this.btnCerrar.ToolTipText = "";
+            this.btnCerrar.WaitOnLoad = false;
+            this.btnCerrar.Zoom = 20;
+            this.btnCerrar.ZoomSpeed = 10;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -476,5 +512,6 @@
         public System.Windows.Forms.PictureBox ShowPassword;
         public System.Windows.Forms.PictureBox HidePassword;
         public System.Windows.Forms.LinkLabel linkRecoverPssword;
+        public Bunifu.UI.WinForms.BunifuImageButton btnCerrar;
     }
 }

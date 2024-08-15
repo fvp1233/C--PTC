@@ -25,6 +25,7 @@ namespace PTC2024.Controller.LogInController
             objLogIn.linkRecoverPssword.Click += new EventHandler(OpenRecoverPassword);
             objLogIn.HidePassword.Click += new EventHandler(HidePassword);
             objLogIn.ShowPassword.Click += new EventHandler(ShowPassword);
+            objLogIn.btnCerrar.Click += new EventHandler(Close);
         }
         private void DataAccess(object sender, EventArgs e)
         {
@@ -151,6 +152,11 @@ namespace PTC2024.Controller.LogInController
             objRecover.ShowDialog();
             objLogIn.Show();
             
+        }
+
+        public void Close(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

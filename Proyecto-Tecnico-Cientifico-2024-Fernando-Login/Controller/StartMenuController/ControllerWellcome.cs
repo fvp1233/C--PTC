@@ -16,7 +16,7 @@ namespace PTC2024.Controller.StartMenuController
         public ControllerWellcome(FrmWelcome Vista)
         {
             objWellcome = Vista;
-            objWellcome.lblNombreUsuario.Text = SessionVar.Username;
+            objWellcome.lblWelcome.Text = $"Bienvenido, {SessionVar.Username}";
         }
     }
 }
