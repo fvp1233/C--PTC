@@ -118,6 +118,7 @@
     <Compile Include="Controller\MaintenanceController\ControllerCharge.cs" />
     <Compile Include="Controller\MaintenanceController\ControllerDepartments.cs" />
     <Compile Include="Controller\MaintenanceController\ControllerMaintenance.cs" />
+    <Compile Include="Controller\MaintenanceController\ControllerUpdateCharge.cs" />
     <Compile Include="Controller\PayrollsController\ControllerInfoPayroll.cs" />
     <Compile Include="Controller\EmployeesController\ControllerEmployees.cs" />
     <Compile Include="Controller\EmployeesController\ControllerPayrolls.cs" />
@@ -145,6 +146,7 @@
     <Compile Include="Model\DAO\LogInDAO\DAORegister.cs" />
     <Compile Include="Model\DAO\MaintenanceDAO\DAOCharge.cs" />
     <Compile Include="Model\DAO\MaintenanceDAO\DAODepartment.cs" />
+    <Compile Include="Model\DAO\MaintenanceDAO\DAOUpdateCharge.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOInfoPayroll.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOUpdatePayroll.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOViewPayrolls.cs" />
@@ -169,6 +171,7 @@
     <Compile Include="Model\DTO\LogInDTO\DTORegister.cs" />
     <Compile Include="Model\DTO\MaintenanceDTO\DTOCharge.cs" />
     <Compile Include="Model\DTO\MaintenanceDTO\DTODepartment.cs" />
+    <Compile Include="Model\DTO\MaintenanceDTO\DTOUpdateCharge.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOInfoPayroll.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOUpdatePayroll.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOViewPayrolls.cs" />
@@ -241,6 +244,12 @@
     </Compile>
     <Compile Include="View\Dashboard\FrmMaintenance.Designer.cs">
       <DependentUpon>FrmMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dashboard\FrmUpdateCharge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dashboard\FrmUpdateCharge.Designer.cs">
+      <DependentUpon>FrmUpdateCharge.cs</DependentUpon>
     </Compile>
     <Compile Include="View\EmployeeViews\FrmEmployees.cs">
       <SubType>Form</SubType>
@@ -390,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Dashboard\FrmMaintenance.resx">
       <DependentUpon>FrmMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dashboard\FrmUpdateCharge.resx">
+      <DependentUpon>FrmUpdateCharge.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmEmployees.resx">
       <DependentUpon>FrmEmployees.cs</DependentUpon>

@@ -20,12 +20,13 @@ namespace PTC2024.Controller.MaintenanceController
             objCharge.Load += new EventHandler(LoadData);
             objCharge.btnAddCharge.Click += new EventHandler(NewCharge);
             objCharge.cmsDeleteCharge.Click += new EventHandler(DeleteCharge);
+            objCharge.cmsUpdateCharge.Click += new EventHandler(OpenUdateCharge);
             objCharge.btnGoBack.Click += new EventHandler(GoBack);
         }
         public void NewCharge(object sender, EventArgs e)
         {
-            if (!(string.IsNullOrEmpty(objCharge.txtCharge.Text.Trim())|| string.IsNullOrEmpty(objCharge.txtBonus.Text.Trim())))
-            { 
+            if (!(string.IsNullOrEmpty(objCharge.txtCharge.Text.Trim()) || string.IsNullOrEmpty(objCharge.txtBonus.Text.Trim())))
+            {
                 DAOCharge DAOInsert = new DAOCharge();
                 DAOInsert.NameCharge = objCharge.txtCharge.Text.Trim();
                 DAOInsert.BonusCharge = double.Parse(objCharge.txtBonus.Text.Trim());
@@ -45,45 +46,19 @@ namespace PTC2024.Controller.MaintenanceController
                                     MessageBoxIcon.Error);
                 }
             }
+            else
+            {
+                MessageBox.Show("No se han llenado todos los campos solicitados, favor llenarlos",
+                                "Completar campos",
+                                MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+            }
             RefreshData();
             objCharge.txtCharge.Clear();
             objCharge.txtBonus.Clear();
         }
-        //public void UpdateCharge(object sender, EventArgs e)
-        //{
-        //    DAOCharge DAOUpdate = new DAOCharge();
-        //    DAOUpdate.IdCharge = int.Parse(objCharge.txtId.Text.Trim());
-        //    DAOUpdate.NameCharge = objCharge.txtCharge.Text.Trim();
-        //    DAOUpdate.BonusCharge = double.Parse(objCharge.txtBonus.Text.Trim());
-        //    int returnedValues = DAOUpdate.UpdateCharge();
-        //    if(returnedValues == 1)
-        //    {
-        //        MessageBox.Show("Los datos han sido actualizado exitosamente",
-        //        "Proceso completado",
-        //        MessageBoxButtons.OK,
-        //        MessageBoxIcon.Information);
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Los datos no pudieron ser actualizados debido a un error inesperado",
-        //        "Proceso interrumpido",
-        //        MessageBoxButtons.OK,
-        //        MessageBoxIcon.Error);
-        //    }
-        //}
-        //public void ChargeValues(int id, string name, double bonus)
-        //{
-        //    try
-        //    {
-        //        objCharge.txtId.Text = id.ToString();
-        //        objCharge.txtCharge.Text = name;
-        //        objCharge.txtBonus.Text = bonus.ToString();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"{ex.Message}");
-        //    }
-        //}
+
+
         public void DeleteCharge(object sender, EventArgs e)
         {
             if (MessageBox.Show("Estas seguro de borrar los datos, esta accion no se puede revertir", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -120,6 +95,19 @@ namespace PTC2024.Controller.MaintenanceController
         public void GoBack(object sender, EventArgs e)
         {
             objCharge.Close();
+        }
+        public void OpenUdateCharge(object sender, EventArgs e)
+        {
+            int pos = objCharge.dgvCharge.CurrentRow.Index;
+            int id;
+            string name;
+            double bonus;
+            id = int.Parse(objCharge.dgvCharge[0, pos].Value.ToString());
+            name = objCharge.dgvCharge[1, pos].Value.ToString();
+            bonus = double.Parse(objCharge.dgvCharge[2, pos].Value.ToString());
+            FrmUpdateCharge openFrom = new FrmUpdateCharge(id, name, bonus);
+            openFrom.ShowDialog();
+            RefreshData();
         }
     }
 }

@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCharge));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -44,7 +45,6 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCharge));
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -52,14 +52,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCharge = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.cmsCharge = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsUpdateCharge = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsDeleteCharge = new System.Windows.Forms.ToolStripMenuItem();
             this.btnGoBack = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnAddCharge = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.txtCharge = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBonus = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.cmsCharge = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmsUpdateCharge = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmsDeleteCharge = new System.Windows.Forms.ToolStripMenuItem();
             this.txtId = new Bunifu.UI.WinForms.BunifuTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCharge)).BeginInit();
             this.cmsCharge.SuspendLayout();
@@ -183,6 +183,30 @@
             this.dgvCharge.TabIndex = 98;
             this.dgvCharge.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
             // 
+            // cmsCharge
+            // 
+            this.cmsCharge.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmsCharge.ImageScalingSize = new System.Drawing.Size(19, 19);
+            this.cmsCharge.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsUpdateCharge,
+            this.cmsDeleteCharge});
+            this.cmsCharge.Name = "cmsEmployee";
+            this.cmsCharge.Size = new System.Drawing.Size(174, 56);
+            // 
+            // cmsUpdateCharge
+            // 
+            this.cmsUpdateCharge.Image = ((System.Drawing.Image)(resources.GetObject("cmsUpdateCharge.Image")));
+            this.cmsUpdateCharge.Name = "cmsUpdateCharge";
+            this.cmsUpdateCharge.Size = new System.Drawing.Size(173, 26);
+            this.cmsUpdateCharge.Text = "Actualizar cargo";
+            // 
+            // cmsDeleteCharge
+            // 
+            this.cmsDeleteCharge.Image = ((System.Drawing.Image)(resources.GetObject("cmsDeleteCharge.Image")));
+            this.cmsDeleteCharge.Name = "cmsDeleteCharge";
+            this.cmsDeleteCharge.Size = new System.Drawing.Size(173, 26);
+            this.cmsDeleteCharge.Text = "Eliminar cargo";
+            // 
             // btnGoBack
             // 
             this.btnGoBack.AllowAnimations = true;
@@ -288,7 +312,7 @@
             this.btnAddCharge.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnAddCharge.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddCharge.BackgroundImage")));
             this.btnAddCharge.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnAddCharge.ButtonText = "Confirmar";
+            this.btnAddCharge.ButtonText = "Agregar cargo ";
             this.btnAddCharge.ButtonTextMarginLeft = 0;
             this.btnAddCharge.ColorContrastOnClick = 45;
             this.btnAddCharge.ColorContrastOnHover = 45;
@@ -525,30 +549,6 @@
             this.txtBonus.TextPlaceholder = "Enter text";
             this.txtBonus.UseSystemPasswordChar = false;
             this.txtBonus.WordWrap = true;
-            // 
-            // cmsCharge
-            // 
-            this.cmsCharge.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmsCharge.ImageScalingSize = new System.Drawing.Size(19, 19);
-            this.cmsCharge.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmsUpdateCharge,
-            this.cmsDeleteCharge});
-            this.cmsCharge.Name = "cmsEmployee";
-            this.cmsCharge.Size = new System.Drawing.Size(174, 56);
-            // 
-            // cmsUpdateCharge
-            // 
-            this.cmsUpdateCharge.Image = ((System.Drawing.Image)(resources.GetObject("cmsUpdateCharge.Image")));
-            this.cmsUpdateCharge.Name = "cmsUpdateCharge";
-            this.cmsUpdateCharge.Size = new System.Drawing.Size(173, 26);
-            this.cmsUpdateCharge.Text = "Actualizar cargo";
-            // 
-            // cmsDeleteCharge
-            // 
-            this.cmsDeleteCharge.Image = ((System.Drawing.Image)(resources.GetObject("cmsDeleteCharge.Image")));
-            this.cmsDeleteCharge.Name = "cmsDeleteCharge";
-            this.cmsDeleteCharge.Size = new System.Drawing.Size(173, 26);
-            this.cmsDeleteCharge.Text = "Eliminar cargo";
             // 
             // txtId
             // 
