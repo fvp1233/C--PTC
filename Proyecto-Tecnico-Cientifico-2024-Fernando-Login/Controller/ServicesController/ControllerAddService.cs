@@ -41,16 +41,6 @@ namespace PTC2024.Controller.ServicesController
             objAddService.comboTipoEmpleado.DisplayMember = "categoryName";
             /*Se establece el miembro de valor en el ComboBox con el Id de la categoría*/
             objAddService.comboTipoEmpleado.ValueMember = "IdCategory";
-
-            /*COMBO DEL CLIENTE*/
-
-            DataSet respuesta = daoAddService.GetCustomer();
-
-            objAddService.combocliente.DataSource = respuesta.Tables["tbCustomer"];
-
-            objAddService.combocliente.DisplayMember = "names";
-
-            objAddService.combocliente.ValueMember = "IdCustomer";
         }
 
         /*Metodo para añadir servicio*/
@@ -88,7 +78,6 @@ namespace PTC2024.Controller.ServicesController
                 dAOAddService.Nombre = objAddService.txtNombres.Text;
                 dAOAddService.Descripcion = objAddService.txtDescripcion.Text;
                 dAOAddService.Categorias = (int)objAddService.comboTipoEmpleado.SelectedValue;
-                dAOAddService.Cliente = (int)objAddService.combocliente.SelectedValue;
                 dAOAddService.Monto = double.Parse(objAddService.txtMonto.Text);
 
                 /*Se obtiene el valor que retorno el metodo InsertService*/

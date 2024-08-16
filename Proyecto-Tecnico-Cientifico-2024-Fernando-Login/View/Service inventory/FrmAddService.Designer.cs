@@ -45,8 +45,6 @@
             this.comboTipoEmpleado = new Bunifu.UI.WinForms.BunifuDropdown();
             this.btnAddService = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.BtnCancelar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
-            this.combocliente = new Bunifu.UI.WinForms.BunifuDropdown();
-            this.Label = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.SuspendLayout();
             // 
             // bunifuCustomLabel1
@@ -85,7 +83,7 @@
             // 
             this.bunifuCustomLabel8.AutoSize = true;
             this.bunifuCustomLabel8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(61, 341);
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(61, 283);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
             this.bunifuCustomLabel8.Size = new System.Drawing.Size(79, 16);
             this.bunifuCustomLabel8.TabIndex = 62;
@@ -164,7 +162,7 @@
             this.txtMonto.LineIdleColor = System.Drawing.Color.Gray;
             this.txtMonto.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtMonto.LineThickness = 3;
-            this.txtMonto.Location = new System.Drawing.Point(64, 420);
+            this.txtMonto.Location = new System.Drawing.Point(64, 362);
             this.txtMonto.Margin = new System.Windows.Forms.Padding(4);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(330, 31);
@@ -175,7 +173,7 @@
             // 
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(61, 400);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(61, 342);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(56, 16);
             this.bunifuCustomLabel4.TabIndex = 64;
@@ -228,7 +226,7 @@
             this.comboTipoEmpleado.ItemHighLightColor = System.Drawing.Color.LightGray;
             this.comboTipoEmpleado.ItemHighLightForeColor = System.Drawing.Color.Black;
             this.comboTipoEmpleado.ItemTopMargin = 3;
-            this.comboTipoEmpleado.Location = new System.Drawing.Point(64, 360);
+            this.comboTipoEmpleado.Location = new System.Drawing.Point(64, 302);
             this.comboTipoEmpleado.Name = "comboTipoEmpleado";
             this.comboTipoEmpleado.Size = new System.Drawing.Size(331, 32);
             this.comboTipoEmpleado.TabIndex = 92;
@@ -284,7 +282,7 @@
             this.btnAddService.IdleIconLeftImage = null;
             this.btnAddService.IdleIconRightImage = null;
             this.btnAddService.IndicateFocus = false;
-            this.btnAddService.Location = new System.Drawing.Point(227, 475);
+            this.btnAddService.Location = new System.Drawing.Point(227, 431);
             this.btnAddService.Name = "btnAddService";
             this.btnAddService.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAddService.OnDisabledState.BorderRadius = 20;
@@ -374,7 +372,7 @@
             this.BtnCancelar.IdleIconLeftImage = null;
             this.BtnCancelar.IdleIconRightImage = null;
             this.BtnCancelar.IndicateFocus = false;
-            this.BtnCancelar.Location = new System.Drawing.Point(70, 475);
+            this.BtnCancelar.Location = new System.Drawing.Point(70, 431);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnCancelar.OnDisabledState.BorderRadius = 20;
@@ -416,68 +414,11 @@
             this.BtnCancelar.TextPadding = new System.Windows.Forms.Padding(0);
             this.BtnCancelar.UseDefaultRadiusAndThickness = true;
             // 
-            // combocliente
-            // 
-            this.combocliente.BackColor = System.Drawing.Color.Transparent;
-            this.combocliente.BackgroundColor = System.Drawing.Color.LightGray;
-            this.combocliente.BorderColor = System.Drawing.Color.Silver;
-            this.combocliente.BorderRadius = 1;
-            this.combocliente.Color = System.Drawing.Color.Silver;
-            this.combocliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.combocliente.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.combocliente.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.combocliente.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.combocliente.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.combocliente.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.combocliente.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.combocliente.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.combocliente.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.combocliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combocliente.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.combocliente.FillDropDown = true;
-            this.combocliente.FillIndicator = false;
-            this.combocliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.combocliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.combocliente.ForeColor = System.Drawing.Color.Black;
-            this.combocliente.FormattingEnabled = true;
-            this.combocliente.Icon = null;
-            this.combocliente.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.combocliente.IndicatorColor = System.Drawing.Color.DimGray;
-            this.combocliente.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.combocliente.IndicatorThickness = 2;
-            this.combocliente.IsDropdownOpened = false;
-            this.combocliente.ItemBackColor = System.Drawing.Color.White;
-            this.combocliente.ItemBorderColor = System.Drawing.Color.White;
-            this.combocliente.ItemForeColor = System.Drawing.Color.Black;
-            this.combocliente.ItemHeight = 26;
-            this.combocliente.ItemHighLightColor = System.Drawing.Color.LightGray;
-            this.combocliente.ItemHighLightForeColor = System.Drawing.Color.Black;
-            this.combocliente.ItemTopMargin = 3;
-            this.combocliente.Location = new System.Drawing.Point(64, 306);
-            this.combocliente.Name = "combocliente";
-            this.combocliente.Size = new System.Drawing.Size(331, 32);
-            this.combocliente.TabIndex = 96;
-            this.combocliente.Text = null;
-            this.combocliente.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.combocliente.TextLeftMargin = 5;
-            // 
-            // Label
-            // 
-            this.Label.AutoSize = true;
-            this.Label.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label.Location = new System.Drawing.Point(61, 287);
-            this.Label.Name = "Label";
-            this.Label.Size = new System.Drawing.Size(61, 16);
-            this.Label.TabIndex = 95;
-            this.Label.Text = "Cliente:";
-            // 
             // FrmAddService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 600);
-            this.Controls.Add(this.combocliente);
-            this.Controls.Add(this.Label);
+            this.ClientSize = new System.Drawing.Size(454, 513);
             this.Controls.Add(this.btnAddService);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.comboTipoEmpleado);
@@ -516,7 +457,5 @@
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtNombres;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtDescripcion;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtMonto;
-        public Bunifu.UI.WinForms.BunifuDropdown combocliente;
-        private Bunifu.Framework.UI.BunifuCustomLabel Label;
     }
 }

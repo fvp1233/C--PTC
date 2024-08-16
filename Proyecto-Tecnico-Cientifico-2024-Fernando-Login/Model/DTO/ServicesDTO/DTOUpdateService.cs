@@ -13,14 +13,12 @@ namespace PTC2024.Model.DTO.ServicesDTO
         private string nombre;
         private string descripcion;
         private int categoria;
-        private int cliente;
         private double monto;
 
         public int ServiceId { get => serviceId; set => serviceId = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public int Categoria { get => categoria; set => categoria = value; }
-        public int Cliente { get => cliente; set => cliente = value; }
         public double Monto { get => monto; set => monto = value; }
     }
 }
