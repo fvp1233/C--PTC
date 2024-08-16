@@ -21,6 +21,7 @@ namespace PTC2024.Controller.EmployeesController
         {
             objViewPayrolls = Vista;
             objViewPayrolls.Load += new EventHandler(LoadData);
+            objViewPayrolls.picNotification.Click += new EventHandler(ChangeStatus);
             objViewPayrolls.ch1.CheckedChanged += new EventHandler(SearchByMonth1);
             objViewPayrolls.ch2.CheckedChanged += new EventHandler(SearchByMonth2);
             objViewPayrolls.ch3.CheckedChanged += new EventHandler(SearchByMonth3);
@@ -45,6 +46,37 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.cmsPayrollInformation.Click += new EventHandler(ViewInfoPayroll);
             objViewPayrolls.txtSearch.KeyPress += new KeyPressEventHandler(SearchPayrollEvent);
         }
+        private void ChangeStatus(object sender, EventArgs e)
+        {
+            DAOViewPayrolls DAOUpdatePayroll = new DAOViewPayrolls();
+            DataSet employeeDs = DAOUpdatePayroll.GetEmployee();
+
+            if (employeeDs != null)
+            {
+                DataTable employeeDt = employeeDs.Tables["tbEmployee"];
+
+                foreach (DataRow row in employeeDt.Rows)
+                {
+                    int status = int.Parse(row["IdStatus"].ToString());
+                    if (status == 3) // Maternidad
+                    {
+                        // Obtener el nombre del empleado
+                        string employeeName = row["DUI"].ToString(); // Asegúrate de que "EmployeeName" es el nombre de la columna
+
+                        // Usar la fecha actual como la fecha de cambio de estado
+                        DateTime statusChangeDate = DateTime.Now;
+                        DateTime returnDate = statusChangeDate.AddDays(112);
+
+                        string message = $"El estado de la empleada {employeeName} cambió a maternidad hoy, {statusChangeDate.ToShortDateString()}.\n" +
+                                         $"Se espera su regreso el {returnDate.ToShortDateString()}.";
+
+                        MessageBox.Show(message, "Información de Maternidad", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+        }
+
+
         public void CreatePayroll(object sender, EventArgs e)
         {
             // Creamos un objeto del DaoViewPayrolls
