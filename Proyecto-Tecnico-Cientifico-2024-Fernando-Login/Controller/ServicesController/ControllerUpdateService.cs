@@ -18,14 +18,14 @@ namespace PTC2024.Controller.ServicesController
         FrmUpdateService objUpdateService;
         private string categoria;
         /*Se delara el constructor con sus respectivos parametros*/
-        public ControllerUpdateService(FrmUpdateService view,int pos, int id, string cliente, string nombre, string descripcion, double monto, string categoria)
+        public ControllerUpdateService(FrmUpdateService view, int id, string nombre, string descripcion, double monto, string categoria)
         {
 
             this.categoria = categoria;
             /*Los controles del formulario ahora pasan al objeto del formulario*/
             objUpdateService = view;
             /*Este metodo cargara los valores de los parametros del constructor*/
-            ChargeValues(pos, id, nombre, descripcion, monto);
+            ChargeValues(id, nombre, descripcion, monto);
             /*Eventos*/
             objUpdateService.Load += new EventHandler(ChargeDropDown);
             objUpdateService.btnCloseUpdateService.Click += new EventHandler(CloseUpdateService);
@@ -45,16 +45,6 @@ namespace PTC2024.Controller.ServicesController
             objUpdateService.comboTipoEmpleado.DataSource = answer.Tables["tbCategoryS"];
             objUpdateService.comboTipoEmpleado.DisplayMember = "categoryName";
             objUpdateService.comboTipoEmpleado.ValueMember = "IdCategory";
-
-            /*COMBO DEL CLIENTE*/
-
-            DataSet respuesta = dAOUpdateService.GetCustomer();
-
-            objUpdateService.combocliente.DataSource = respuesta.Tables["tbCustomer"];
-
-            objUpdateService.combocliente.DisplayMember = "names";
-
-            objUpdateService.combocliente.ValueMember = "IdCustomer";
         }
 
         /*Este metodo se ejecutara cuando se vayan actualizar los datos*/
@@ -93,7 +83,6 @@ namespace PTC2024.Controller.ServicesController
                 dAOUpdateService.Nombre = objUpdateService.txtNombres.Text;
                 dAOUpdateService.Descripcion = objUpdateService.txtDescripcion.Text;
                 dAOUpdateService.Categoria = int.Parse(objUpdateService.comboTipoEmpleado.SelectedValue.ToString());
-                dAOUpdateService.Cliente = int.Parse(objUpdateService.combocliente.SelectedValue.ToString());
                 dAOUpdateService.Monto = double.Parse(objUpdateService.txtMonto.Text);
 
                 /*Se obtiene el valor retornado por el metodo UpdateService y se guarda en la variable ValorRetornado*/
@@ -124,7 +113,7 @@ namespace PTC2024.Controller.ServicesController
         }
 
         /*Este metodo asigna los valores de los parametros que se le llevaran al constructor*/
-        public void ChargeValues(int pos, int id, string nombre, string descripcion, double monto)
+        public void ChargeValues(int id, string nombre, string descripcion, double monto)
         {
             try
             {

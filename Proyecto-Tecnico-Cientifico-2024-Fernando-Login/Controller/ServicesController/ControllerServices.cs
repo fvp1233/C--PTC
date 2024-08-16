@@ -56,13 +56,12 @@ namespace PTC2024.Controller.ServicesController
 
             /*Aca le estamos dando valor a los parametros que se mandaran al objeto del formulario UpdateService*/
             int id = int.Parse(objServices.DgvServicios[0, pos].Value.ToString());
-            string cliente = objServices.DgvServicios[1, pos].Value.ToString();
-            string nombre = objServices.DgvServicios[2, pos].Value.ToString();
-            string descripcion = objServices.DgvServicios[3, pos].Value.ToString();
-            double monto = double.Parse(objServices.DgvServicios[4, pos].Value.ToString());
-            string categoria = objServices.DgvServicios[5, pos].Value.ToString();
+            string nombre = objServices.DgvServicios[1, pos].Value.ToString();
+            string descripcion = objServices.DgvServicios[2, pos].Value.ToString();
+            double monto = double.Parse(objServices.DgvServicios[3, pos].Value.ToString());
+            string categoria = objServices.DgvServicios[4, pos].Value.ToString();
             /*Aca se crea un objeto del formulario UpdateService y se les agrega sus respectivos parametros*/
-            FrmUpdateService objUpdateService = new FrmUpdateService(pos, id, cliente, nombre, descripcion, monto, categoria);
+            FrmUpdateService objUpdateService = new FrmUpdateService( id, nombre, descripcion, monto, categoria);
             /*Se abre el formulario*/
             objUpdateService.ShowDialog();
             /*Se refresca el DataGridView*/
