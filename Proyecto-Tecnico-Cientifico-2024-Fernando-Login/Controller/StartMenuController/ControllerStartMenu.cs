@@ -156,6 +156,10 @@ namespace PTC2024.Controller.StartMenuController
             {
                 Environment.Exit(0);
             }
+            else
+            {
+                e.Cancel = true;
+            }
 
         }
        
