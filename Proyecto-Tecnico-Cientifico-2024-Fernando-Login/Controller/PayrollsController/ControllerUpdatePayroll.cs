@@ -14,11 +14,11 @@ namespace PTC2024.Controller.EmployeesController
     internal class ControllerUpdatePayroll
     {
         FrmUpdatePayroll objUpdatePayroll;
-        public ControllerUpdatePayroll(FrmUpdatePayroll Vista, int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, int affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, string payrollStatus, int daysWorkded, double daySalary)
+        public ControllerUpdatePayroll(FrmUpdatePayroll Vista, int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, int affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, string payrollStatus, int daysWorkded, double daySalary, double grossPay)
         {
             objUpdatePayroll = Vista;
             DisableComponents();
-            ChargeValues(nP, dui, employee, salary, possition, bonus, bankAccount, affiliationNumber, isss, afp, rent, netSalary, discountEmployee, issueDate, payrollStatus, daysWorkded, daySalary);
+            ChargeValues(nP, dui, employee, salary, possition, bonus, bankAccount, affiliationNumber, isss, afp, rent, netSalary, discountEmployee, issueDate, payrollStatus, daysWorkded, daySalary, grossPay);
             objUpdatePayroll.Load += new EventHandler(ChargeStatus);
             objUpdatePayroll.btnConfirm.Click += new EventHandler(UpdatePayrollStatus);
             objUpdatePayroll.btnCancelar.Click += new EventHandler(CloseForm);
@@ -56,7 +56,7 @@ namespace PTC2024.Controller.EmployeesController
             objUpdatePayroll.cmbPayrollStatus.ValueMember = "IdPayrollStatus";
             objUpdatePayroll.cmbPayrollStatus.DisplayMember = "payrollStatus";
         }
-        public void ChargeValues(int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, int affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, string payrollStatus, int daysWorked, double daySalary)
+        public void ChargeValues(int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, int affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, string payrollStatus, int daysWorked, double daySalary, double grossPay)
         {
             try
             {
@@ -77,6 +77,7 @@ namespace PTC2024.Controller.EmployeesController
                 objUpdatePayroll.cmbPayrollStatus.Text = payrollStatus.ToString();
                 objUpdatePayroll.txtDaysWorked.Text = daysWorked.ToString();
                 objUpdatePayroll.txtDaySalary.Text = daySalary.ToString();
+                objUpdatePayroll.txtGrossPay.Text = grossPay.ToString();
             }
             catch (Exception)
             {
@@ -101,6 +102,7 @@ namespace PTC2024.Controller.EmployeesController
             objUpdatePayroll.txtNetSalary.Enabled = false;
             objUpdatePayroll.txtEmployeeDiscount.Enabled = false;
             objUpdatePayroll.dtpDate.Enabled = false;
+            objUpdatePayroll.txtGrossPay.Enabled = false;
            
         }
         public void CloseForm(object sender, EventArgs e)
