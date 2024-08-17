@@ -84,13 +84,13 @@
             this.btnDeletePayrolls = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnActualizarPlanillas = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnCompensation = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
+            this.picNotification = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.dgvPayrolls = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.cmsPayroll = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsUpdatePayroll = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsPayrollInformation = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDownloadPDF = new System.Windows.Forms.ToolStripMenuItem();
             this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
-            this.picNotification = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -108,9 +108,9 @@
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel17.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picNotification)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayrolls)).BeginInit();
             this.cmsPayroll.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picNotification)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -134,11 +134,13 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.txtSearch, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.picNotification, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -163,7 +165,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(564, 92);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(526, 92);
             this.tableLayoutPanel2.TabIndex = 8;
             this.bunifuToolTip1.SetToolTip(this.tableLayoutPanel2, "");
             this.bunifuToolTip1.SetToolTipIcon(this.tableLayoutPanel2, null);
@@ -229,7 +231,7 @@
             this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
             this.txtSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(573, 30);
+            this.txtSearch.Location = new System.Drawing.Point(535, 30);
             this.txtSearch.MaxLength = 32767;
             this.txtSearch.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSearch.Modified = false;
@@ -265,7 +267,7 @@
             this.txtSearch.SelectionLength = 0;
             this.txtSearch.SelectionStart = 0;
             this.txtSearch.ShortcutsEnabled = true;
-            this.txtSearch.Size = new System.Drawing.Size(565, 37);
+            this.txtSearch.Size = new System.Drawing.Size(526, 37);
             this.txtSearch.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtSearch.TabIndex = 5;
             this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -351,7 +353,7 @@
             this.tableLayoutPanel7.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel7.ColumnCount = 2;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 533F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 534F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel16, 1, 0);
@@ -386,7 +388,7 @@
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.42857F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.57143F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(575, 176);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(574, 176);
             this.tableLayoutPanel8.TabIndex = 2;
             this.bunifuToolTip1.SetToolTip(this.tableLayoutPanel8, "");
             this.bunifuToolTip1.SetToolTipIcon(this.tableLayoutPanel8, null);
@@ -770,16 +772,14 @@
             // 
             // tableLayoutPanel16
             // 
-            this.tableLayoutPanel16.ColumnCount = 3;
+            this.tableLayoutPanel16.ColumnCount = 2;
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
             this.tableLayoutPanel16.Controls.Add(this.btnCreatePayroll, 0, 0);
             this.tableLayoutPanel16.Controls.Add(this.btnDeletePayrolls, 1, 1);
             this.tableLayoutPanel16.Controls.Add(this.btnActualizarPlanillas, 1, 0);
             this.tableLayoutPanel16.Controls.Add(this.btnCompensation, 0, 1);
-            this.tableLayoutPanel16.Controls.Add(this.picNotification, 2, 0);
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(586, 4);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(585, 4);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 2;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -838,7 +838,7 @@
             this.btnCreatePayroll.IdleIconLeftImage = null;
             this.btnCreatePayroll.IdleIconRightImage = null;
             this.btnCreatePayroll.IndicateFocus = false;
-            this.btnCreatePayroll.Location = new System.Drawing.Point(16, 17);
+            this.btnCreatePayroll.Location = new System.Drawing.Point(56, 17);
             this.btnCreatePayroll.Name = "btnCreatePayroll";
             this.btnCreatePayroll.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCreatePayroll.OnDisabledState.BorderRadius = 20;
@@ -931,7 +931,7 @@
             this.btnDeletePayrolls.IdleIconLeftImage = null;
             this.btnDeletePayrolls.IdleIconRightImage = null;
             this.btnDeletePayrolls.IndicateFocus = false;
-            this.btnDeletePayrolls.Location = new System.Drawing.Point(199, 105);
+            this.btnDeletePayrolls.Location = new System.Drawing.Point(319, 105);
             this.btnDeletePayrolls.Name = "btnDeletePayrolls";
             this.btnDeletePayrolls.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDeletePayrolls.OnDisabledState.BorderRadius = 20;
@@ -1024,7 +1024,7 @@
             this.btnActualizarPlanillas.IdleIconLeftImage = null;
             this.btnActualizarPlanillas.IdleIconRightImage = null;
             this.btnActualizarPlanillas.IndicateFocus = false;
-            this.btnActualizarPlanillas.Location = new System.Drawing.Point(199, 17);
+            this.btnActualizarPlanillas.Location = new System.Drawing.Point(319, 17);
             this.btnActualizarPlanillas.Name = "btnActualizarPlanillas";
             this.btnActualizarPlanillas.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnActualizarPlanillas.OnDisabledState.BorderRadius = 20;
@@ -1117,7 +1117,7 @@
             this.btnCompensation.IdleIconLeftImage = null;
             this.btnCompensation.IdleIconRightImage = null;
             this.btnCompensation.IndicateFocus = false;
-            this.btnCompensation.Location = new System.Drawing.Point(16, 105);
+            this.btnCompensation.Location = new System.Drawing.Point(56, 105);
             this.btnCompensation.Name = "btnCompensation";
             this.btnCompensation.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCompensation.OnDisabledState.BorderRadius = 20;
@@ -1161,6 +1161,26 @@
             this.bunifuToolTip1.SetToolTipIcon(this.btnCompensation, null);
             this.bunifuToolTip1.SetToolTipTitle(this.btnCompensation, "");
             this.btnCompensation.UseDefaultRadiusAndThickness = true;
+            // 
+            // picNotification
+            // 
+            this.picNotification.AllowFocused = false;
+            this.picNotification.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picNotification.AutoSizeHeight = false;
+            this.picNotification.BorderRadius = 35;
+            this.picNotification.Image = ((System.Drawing.Image)(resources.GetObject("picNotification.Image")));
+            this.picNotification.IsCircle = true;
+            this.picNotification.Location = new System.Drawing.Point(1072, 26);
+            this.picNotification.Name = "picNotification";
+            this.picNotification.Size = new System.Drawing.Size(61, 45);
+            this.picNotification.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picNotification.TabIndex = 97;
+            this.picNotification.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.picNotification, "Aca puedes ver las notificaciones sobre los empleados los cuales se encuentran en" +
+        " Maternidad/Incapacidad");
+            this.bunifuToolTip1.SetToolTipIcon(this.picNotification, ((System.Drawing.Image)(resources.GetObject("picNotification.ToolTipIcon"))));
+            this.bunifuToolTip1.SetToolTipTitle(this.picNotification, "Notificaciones");
+            this.picNotification.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // dgvPayrolls
             // 
@@ -1328,26 +1348,6 @@
             this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
             this.bunifuToolTip1.ToolTipTitle = null;
             // 
-            // picNotification
-            // 
-            this.picNotification.AllowFocused = false;
-            this.picNotification.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.picNotification.AutoSizeHeight = true;
-            this.picNotification.BorderRadius = 35;
-            this.picNotification.Image = ((System.Drawing.Image)(resources.GetObject("picNotification.Image")));
-            this.picNotification.IsCircle = true;
-            this.picNotification.Location = new System.Drawing.Point(411, 8);
-            this.picNotification.Name = "picNotification";
-            this.picNotification.Size = new System.Drawing.Size(70, 70);
-            this.picNotification.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picNotification.TabIndex = 97;
-            this.picNotification.TabStop = false;
-            this.bunifuToolTip1.SetToolTip(this.picNotification, "Aca puedes ver las notificaciones sobre los empleados los cuales se encuentran en" +
-        " Maternidad/Incapacidad");
-            this.bunifuToolTip1.SetToolTipIcon(this.picNotification, ((System.Drawing.Image)(resources.GetObject("picNotification.ToolTipIcon"))));
-            this.bunifuToolTip1.SetToolTipTitle(this.picNotification, "Notificaciones");
-            this.picNotification.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
-            // 
             // FrmViewPayrolls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1380,9 +1380,9 @@
             this.tableLayoutPanel17.ResumeLayout(false);
             this.tableLayoutPanel17.PerformLayout();
             this.tableLayoutPanel16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picNotification)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayrolls)).EndInit();
             this.cmsPayroll.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picNotification)).EndInit();
             this.ResumeLayout(false);
 
         }

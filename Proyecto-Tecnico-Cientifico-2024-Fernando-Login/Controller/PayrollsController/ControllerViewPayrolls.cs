@@ -479,7 +479,7 @@ namespace PTC2024.Controller.EmployeesController
                     int idEmployee = int.Parse(row["IdEmployee"].ToString());
                     double currentSalary = double.Parse(row["salary"].ToString());
 
-                    if (status == 1)
+                    if (status != 2)
                     {
                         DataRow[] unpaidPayrolls = payrollDt.Select($"IdEmployee = {idEmployee} AND IdPayrollStatus = 2");
                         foreach (DataRow payrollRow in unpaidPayrolls)
