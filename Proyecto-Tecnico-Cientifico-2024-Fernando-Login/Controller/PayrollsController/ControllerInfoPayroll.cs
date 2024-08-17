@@ -14,14 +14,14 @@ namespace PTC2024.Controller.EmployeesController
     {
         FrmInfoPayroll objInfoPayroll;
         //dui,employee,possition,bonus,banckAccount,affiliationNumber,afp,isss,rent, netSalary, discountEmployee, issueDate, issEmployer,afpEmployer, discountEmployer)
-        public ControllerInfoPayroll(FrmInfoPayroll Vista, string dui, string employee, string possition, double bonus, string bankAccount, int affiliationNumber,double salary, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, double christmasBonus, double issEmployer, double afpEmployer, double discountEmployer,string payrollStatus)
+        public ControllerInfoPayroll(FrmInfoPayroll Vista, string dui, string employee, string possition, double bonus, string bankAccount, int affiliationNumber,double salary, double grossPay, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, double christmasBonus, double issEmployer, double afpEmployer, double discountEmployer,string payrollStatus, int daysWorked, double daySalary)
         {
             objInfoPayroll = Vista;
             DisableComponents();
-            ChargeValues(dui, employee, possition, bonus, bankAccount, affiliationNumber, salary, afp, isss, rent, netSalary, discountEmployee, issueDate, christmasBonus, issEmployer, afpEmployer, discountEmployer, payrollStatus);
+            ChargeValues(dui, employee, possition, bonus, bankAccount, affiliationNumber, salary, grossPay, afp, isss, rent, netSalary, discountEmployee, issueDate, christmasBonus, issEmployer, afpEmployer, discountEmployer, payrollStatus, daysWorked, daySalary);
             objInfoPayroll.btnCancelar.Click += new EventHandler(CloseForm);
         }
-        public void ChargeValues(string dui, string employee, string possition, double bonus, string bankAccount, int affiliationNumber, double salary, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate,double christmasBonus, double issEmployer, double afpEmployer, double discountEmployer, string payrollStatus)
+        public void ChargeValues(string dui, string employee, string possition, double bonus, string bankAccount, int affiliationNumber, double salary,  double grossPay, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate,double christmasBonus, double issEmployer, double afpEmployer, double discountEmployer, string payrollStatus, int daysWorked, double daySalary)
         {
             try
             {
@@ -43,6 +43,9 @@ namespace PTC2024.Controller.EmployeesController
                 objInfoPayroll.txtEmployerAFP.Text = afpEmployer.ToString();
                 objInfoPayroll.txtEmployerDiscount.Text = discountEmployer.ToString();
                 objInfoPayroll.txtPayrollStatus.Text = payrollStatus.ToString();
+                objInfoPayroll.txtDaySalary.Text = daySalary.ToString();
+                objInfoPayroll.txtDaysWorked.Text = daysWorked.ToString();
+                objInfoPayroll.txtGrossPay.Text = grossPay.ToString();
             }
             catch (Exception)
             {
@@ -70,6 +73,9 @@ namespace PTC2024.Controller.EmployeesController
             objInfoPayroll.txtEmployerDiscount.Enabled=false;
             objInfoPayroll.txtPayrollStatus.Enabled = false;
             objInfoPayroll.txtChristmasBonus.Enabled = false;
+            objInfoPayroll.txtDaysWorked.Enabled = false;
+            objInfoPayroll.txtDaySalary.Enabled = false;
+            objInfoPayroll.txtGrossPay.Enabled = false;
         }
         public void CloseForm(object sender, EventArgs e)
         {

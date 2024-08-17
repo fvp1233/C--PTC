@@ -109,7 +109,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             {
                 GetEmployee();
                 comand.Connection = getConnection();
-                string queryPayroll = "INSERT INTO tbPayroll VALUES (@netPay,@rent,@issueDate,@AFP, @ISSS,@ISSEmployer,@AFPEmployer,@employeeDiscount,@employerDiscount, @christmasBonus, @IdEmployee,@IdPayrollStatus)";
+                string queryPayroll = "INSERT INTO tbPayroll VALUES (@netPay,@rent,@issueDate,@AFP, @ISSS,@ISSEmployer,@AFPEmployer,@employeeDiscount,@employerDiscount, @christmasBonus, @IdEmployee,@IdPayrollStatus, @daysWorked, @daySalary, @grossSalary)";
                 SqlCommand cmdAddPayroll = new SqlCommand(@queryPayroll, comand.Connection);
                 cmdAddPayroll.Parameters.AddWithValue("netPay", NetPay);
                 cmdAddPayroll.Parameters.AddWithValue("rent", Rent);
@@ -124,6 +124,9 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 cmdAddPayroll.Parameters.AddWithValue("IdEmployee", IdEmployee);
                 cmdAddPayroll.Parameters.AddWithValue("@IdPayroll", IdPayroll);
                 cmdAddPayroll.Parameters.AddWithValue("IdPayrollStatus", IdPayrollStatus);
+                cmdAddPayroll.Parameters.AddWithValue("daysWorked", DaysWorked);
+                cmdAddPayroll.Parameters.AddWithValue("daySalary", DaySalary);
+                cmdAddPayroll.Parameters.AddWithValue("grossSalary", GossSalary);
 
                 int answer = cmdAddPayroll.ExecuteNonQuery();
                 if (answer == 1)
@@ -196,7 +199,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             try
             {
                 comand.Connection = getConnection();
-                string query = "UPDATE tbPayroll SET netPay = @netPay, rent = @rent, AFP = @AFP, ISSS = @ISSS, ISSSEmployer = @ISSSEmployer, AFPEmployer = @AFPEmployer, employeeDiscount = @employeeDiscount, employerDiscount = @employerDiscount, christmasBonus = @christmasBonus WHERE IdPayroll = @IdPayroll AND IdPayrollStatus = 2";
+                string query = "UPDATE tbPayroll SET netPay = @netPay, rent = @rent, AFP = @AFP, ISSS = @ISSS, ISSSEmployer = @ISSSEmployer, AFPEmployer = @AFPEmployer, employeeDiscount = @employeeDiscount, employerDiscount = @employerDiscount, christmasBonus = @christmasBonus, grossSalary = @grossSalary WHERE IdPayroll = @IdPayroll AND IdPayrollStatus = 2";
                 SqlCommand cmdUpdatePayroll = new SqlCommand(query, comand.Connection);
 
                 cmdUpdatePayroll.Parameters.AddWithValue("netPay", NetPay);
@@ -210,6 +213,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 cmdUpdatePayroll.Parameters.AddWithValue("christmasBonus", ChristmasBonus);
                 cmdUpdatePayroll.Parameters.AddWithValue("IdPayroll", IdPayroll);
                 cmdUpdatePayroll.Parameters.AddWithValue("IdPayrollStatus", IdPayrollStatus);
+                cmdUpdatePayroll.Parameters.AddWithValue("grossSalary", GossSalary);
 
                 int answer = cmdUpdatePayroll.ExecuteNonQuery();
                 return answer;

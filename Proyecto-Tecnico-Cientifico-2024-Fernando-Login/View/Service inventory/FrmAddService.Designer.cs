@@ -83,7 +83,7 @@
             // 
             this.bunifuCustomLabel8.AutoSize = true;
             this.bunifuCustomLabel8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(61, 288);
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(61, 283);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
             this.bunifuCustomLabel8.Size = new System.Drawing.Size(79, 16);
             this.bunifuCustomLabel8.TabIndex = 62;
@@ -162,7 +162,7 @@
             this.txtMonto.LineIdleColor = System.Drawing.Color.Gray;
             this.txtMonto.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtMonto.LineThickness = 3;
-            this.txtMonto.Location = new System.Drawing.Point(64, 367);
+            this.txtMonto.Location = new System.Drawing.Point(64, 362);
             this.txtMonto.Margin = new System.Windows.Forms.Padding(4);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(330, 31);
@@ -173,7 +173,7 @@
             // 
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(61, 347);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(61, 342);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(56, 16);
             this.bunifuCustomLabel4.TabIndex = 64;
@@ -226,7 +226,7 @@
             this.comboTipoEmpleado.ItemHighLightColor = System.Drawing.Color.LightGray;
             this.comboTipoEmpleado.ItemHighLightForeColor = System.Drawing.Color.Black;
             this.comboTipoEmpleado.ItemTopMargin = 3;
-            this.comboTipoEmpleado.Location = new System.Drawing.Point(64, 307);
+            this.comboTipoEmpleado.Location = new System.Drawing.Point(64, 302);
             this.comboTipoEmpleado.Name = "comboTipoEmpleado";
             this.comboTipoEmpleado.Size = new System.Drawing.Size(331, 32);
             this.comboTipoEmpleado.TabIndex = 92;
@@ -282,7 +282,7 @@
             this.btnAddService.IdleIconLeftImage = null;
             this.btnAddService.IdleIconRightImage = null;
             this.btnAddService.IndicateFocus = false;
-            this.btnAddService.Location = new System.Drawing.Point(227, 440);
+            this.btnAddService.Location = new System.Drawing.Point(227, 431);
             this.btnAddService.Name = "btnAddService";
             this.btnAddService.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAddService.OnDisabledState.BorderRadius = 20;
@@ -372,7 +372,7 @@
             this.BtnCancelar.IdleIconLeftImage = null;
             this.BtnCancelar.IdleIconRightImage = null;
             this.BtnCancelar.IndicateFocus = false;
-            this.BtnCancelar.Location = new System.Drawing.Point(70, 440);
+            this.BtnCancelar.Location = new System.Drawing.Point(70, 431);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnCancelar.OnDisabledState.BorderRadius = 20;
@@ -418,7 +418,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 531);
+            this.ClientSize = new System.Drawing.Size(454, 513);
             this.Controls.Add(this.btnAddService);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.comboTipoEmpleado);

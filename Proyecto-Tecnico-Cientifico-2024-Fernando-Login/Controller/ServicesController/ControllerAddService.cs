@@ -22,16 +22,17 @@ namespace PTC2024.Controller.ServicesController
         {
             /*Eventos*/
             objAddService = view;
-            objAddService.Load += new EventHandler(ChargeDropDown);
+            objAddService.Load += new EventHandler(ChargeDropDowns);
             objAddService.BtnCancelar.Click += new EventHandler(CloseAddService);
             objAddService.btnAddService.Click += new EventHandler(AddService);
         }
 
         /*Metodo para cargar el combobox*/
-        public void ChargeDropDown(object sender, EventArgs e)
+        public void ChargeDropDowns(object sender, EventArgs e)
         {
             DAOAddService daoAddService = new DAOAddService();
 
+            /*COMBO CATEGORIA DEL SERVICIO*/
             /*Aca se obtiene el valor que retorno el metodo*/
             DataSet dsAddService = daoAddService.GetCategories();
             /*Se establece el DataSource del ComboBox con la tabla "tbCategoryS"*/
