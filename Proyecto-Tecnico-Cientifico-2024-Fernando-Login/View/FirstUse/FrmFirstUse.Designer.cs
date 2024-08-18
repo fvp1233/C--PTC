@@ -379,7 +379,7 @@
             this.txtPBX.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPBX.Lines = new string[0];
             this.txtPBX.Location = new System.Drawing.Point(16, 330);
-            this.txtPBX.MaxLength = 32767;
+            this.txtPBX.MaxLength = 12;
             this.txtPBX.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPBX.Modified = false;
             this.txtPBX.Multiline = false;
@@ -456,7 +456,7 @@
             this.txtEmail.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmail.Lines = new string[0];
             this.txtEmail.Location = new System.Drawing.Point(16, 186);
-            this.txtEmail.MaxLength = 32767;
+            this.txtEmail.MaxLength = 150;
             this.txtEmail.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtEmail.Modified = false;
             this.txtEmail.Multiline = false;
@@ -566,7 +566,7 @@
             this.txtNameBusiness.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNameBusiness.Lines = new string[0];
             this.txtNameBusiness.Location = new System.Drawing.Point(16, 49);
-            this.txtNameBusiness.MaxLength = 32767;
+            this.txtNameBusiness.MaxLength = 150;
             this.txtNameBusiness.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtNameBusiness.Modified = false;
             this.txtNameBusiness.Multiline = false;
@@ -705,7 +705,7 @@
             this.txtAddress.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAddress.Lines = new string[0];
             this.txtAddress.Location = new System.Drawing.Point(16, 118);
-            this.txtAddress.MaxLength = 32767;
+            this.txtAddress.MaxLength = 100;
             this.txtAddress.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtAddress.Modified = false;
             this.txtAddress.Multiline = false;
@@ -799,7 +799,7 @@
             this.txtPhone.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPhone.Lines = new string[0];
             this.txtPhone.Location = new System.Drawing.Point(285, 261);
-            this.txtPhone.MaxLength = 32767;
+            this.txtPhone.MaxLength = 12;
             this.txtPhone.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPhone.Modified = false;
             this.txtPhone.Multiline = false;

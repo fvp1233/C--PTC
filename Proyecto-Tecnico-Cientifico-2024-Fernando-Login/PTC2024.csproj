@@ -284,12 +284,6 @@
     <Compile Include="View\EmployeeViews\FrmInfoPayroll.Designer.cs">
       <DependentUpon>FrmInfoPayroll.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\EmployeeViews\FrmLoadPayroll.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\EmployeeViews\FrmLoadPayroll.Designer.cs">
-      <DependentUpon>FrmLoadPayroll.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\EmployeeViews\FrmPermissions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -444,9 +438,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmInfoPayroll.resx">
       <DependentUpon>FrmInfoPayroll.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\EmployeeViews\FrmLoadPayroll.resx">
-      <DependentUpon>FrmLoadPayroll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmUpdatePermission.resx">
       <DependentUpon>FrmUpdatePermission.cs</DependentUpon>
