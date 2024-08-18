@@ -44,6 +44,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.ContainerPanel = new System.Windows.Forms.Panel();
             this.bunifuFormResizer1 = new Bunifu.UI.WinForms.BunifuFormResizer(this.components);
+            this.btnpermissions = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.btnIcon)).BeginInit();
             this.bunifuPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -191,7 +192,7 @@
             this.btnMenuServices.IconVisible = true;
             this.btnMenuServices.IconZoom = 100D;
             this.btnMenuServices.IsTab = false;
-            this.btnMenuServices.Location = new System.Drawing.Point(3, 288);
+            this.btnMenuServices.Location = new System.Drawing.Point(3, 350);
             this.btnMenuServices.Name = "btnMenuServices";
             this.btnMenuServices.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuServices.OnHovercolor = System.Drawing.Color.DimGray;
@@ -225,7 +226,7 @@
             this.btnMenuCustomers.IconVisible = true;
             this.btnMenuCustomers.IconZoom = 110D;
             this.btnMenuCustomers.IsTab = false;
-            this.btnMenuCustomers.Location = new System.Drawing.Point(3, 350);
+            this.btnMenuCustomers.Location = new System.Drawing.Point(3, 412);
             this.btnMenuCustomers.Name = "btnMenuCustomers";
             this.btnMenuCustomers.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuCustomers.OnHovercolor = System.Drawing.Color.DimGray;
@@ -259,7 +260,7 @@
             this.btnMenuBills.IconVisible = true;
             this.btnMenuBills.IconZoom = 100D;
             this.btnMenuBills.IsTab = false;
-            this.btnMenuBills.Location = new System.Drawing.Point(3, 412);
+            this.btnMenuBills.Location = new System.Drawing.Point(3, 474);
             this.btnMenuBills.Name = "btnMenuBills";
             this.btnMenuBills.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuBills.OnHovercolor = System.Drawing.Color.DimGray;
@@ -330,6 +331,7 @@
             this.flowLayoutPanel2.Controls.Add(this.btnMenuDashboard);
             this.flowLayoutPanel2.Controls.Add(this.btnMenuEmployee);
             this.flowLayoutPanel2.Controls.Add(this.btnMenuPayroll);
+            this.flowLayoutPanel2.Controls.Add(this.btnpermissions);
             this.flowLayoutPanel2.Controls.Add(this.btnMenuServices);
             this.flowLayoutPanel2.Controls.Add(this.btnMenuCustomers);
             this.flowLayoutPanel2.Controls.Add(this.btnMenuBills);
@@ -361,7 +363,7 @@
             this.btnMaintenance.IconVisible = true;
             this.btnMaintenance.IconZoom = 65D;
             this.btnMaintenance.IsTab = false;
-            this.btnMaintenance.Location = new System.Drawing.Point(3, 474);
+            this.btnMaintenance.Location = new System.Drawing.Point(3, 536);
             this.btnMaintenance.Name = "btnMaintenance";
             this.btnMaintenance.Normalcolor = System.Drawing.Color.Black;
             this.btnMaintenance.OnHovercolor = System.Drawing.Color.DimGray;
@@ -400,6 +402,40 @@
             this.bunifuFormResizer1.ParentForm = this;
             this.bunifuFormResizer1.ResizeHandlesWidth = 6;
             // 
+            // btnpermissions
+            // 
+            this.btnpermissions.Activecolor = System.Drawing.Color.DimGray;
+            this.btnpermissions.BackColor = System.Drawing.Color.Black;
+            this.btnpermissions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnpermissions.BorderRadius = 0;
+            this.btnpermissions.ButtonText = "Permisos";
+            this.btnpermissions.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnpermissions.DisabledColor = System.Drawing.Color.Gray;
+            this.btnpermissions.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnpermissions.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnpermissions.Iconimage")));
+            this.btnpermissions.Iconimage_right = null;
+            this.btnpermissions.Iconimage_right_Selected = null;
+            this.btnpermissions.Iconimage_Selected = null;
+            this.btnpermissions.IconMarginLeft = 0;
+            this.btnpermissions.IconMarginRight = 0;
+            this.btnpermissions.IconRightVisible = true;
+            this.btnpermissions.IconRightZoom = 0D;
+            this.btnpermissions.IconVisible = true;
+            this.btnpermissions.IconZoom = 55D;
+            this.btnpermissions.IsTab = false;
+            this.btnpermissions.Location = new System.Drawing.Point(3, 288);
+            this.btnpermissions.Name = "btnpermissions";
+            this.btnpermissions.Normalcolor = System.Drawing.Color.Black;
+            this.btnpermissions.OnHovercolor = System.Drawing.Color.DimGray;
+            this.btnpermissions.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnpermissions.selected = false;
+            this.btnpermissions.Size = new System.Drawing.Size(181, 56);
+            this.btnpermissions.TabIndex = 9;
+            this.btnpermissions.Text = "Permisos";
+            this.btnpermissions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnpermissions.Textcolor = System.Drawing.Color.White;
+            this.btnpermissions.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
             // StartMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,5 +473,6 @@
         public Bunifu.UI.WinForms.BunifuPictureBox btnIcon;
         public Bunifu.Framework.UI.BunifuFlatButton btnMaintenance;
         private Bunifu.UI.WinForms.BunifuFormResizer bunifuFormResizer1;
+        public Bunifu.Framework.UI.BunifuFlatButton btnpermissions;
     }
 }

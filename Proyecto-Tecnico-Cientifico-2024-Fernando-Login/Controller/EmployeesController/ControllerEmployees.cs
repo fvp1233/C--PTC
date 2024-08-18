@@ -564,12 +564,12 @@ namespace PTC2024.Controller.Employees
             DAOEmployees daoEmployees = new DAOEmployees();
             //Creamos una variable string que dependerá de que checkbox esta activado
             string status;
-            if (objEmployees.cbIncapacidad.Checked == true)
+            if (objEmployees.cbMaternidad.Checked == true)
             {
-                status = objEmployees.cbIncapacidad.Tag.ToString();
+                status = "Maternidad";
                 objEmployees.cbActivo.Checked = false;
                 objEmployees.cbInactivo.Checked = false;
-                objEmployees.cbMaternidad.Checked = false;
+                objEmployees.cbIncapacidad.Checked = false;
                 objEmployees.cbTiempoCompleto.Checked = false;
                 objEmployees.cbVoluntario.Checked = false;
                 objEmployees.cbBecario.Checked = false;
