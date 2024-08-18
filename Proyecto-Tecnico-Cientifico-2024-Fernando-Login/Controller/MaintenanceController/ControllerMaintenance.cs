@@ -16,6 +16,12 @@ namespace PTC2024.Controller.MaintenanceController
             objMaintenance = View;
             objMaintenance.panelDepartments.Click += new EventHandler(OpenDepartments);
             objMaintenance.panelCharge.Click += new EventHandler(OpenCharge);
+            objMaintenance.pictureDepartments.Click += new EventHandler(OpenDepartments);
+            objMaintenance.lblDepartments.Click += new EventHandler(OpenDepartments);
+            objMaintenance.lblDepartments2.Click += new EventHandler(OpenDepartments);
+            objMaintenance.picturePositions.Click += new EventHandler(OpenCharge);
+            objMaintenance.lblPositions.Click += new EventHandler(OpenCharge);
+            objMaintenance.lblPositions2.Click += new EventHandler(OpenCharge);
         }
 
         public void OpenDepartments(object sender, EventArgs e)

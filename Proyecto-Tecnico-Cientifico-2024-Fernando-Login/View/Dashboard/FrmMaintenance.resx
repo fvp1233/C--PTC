@@ -117,20 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="bunifuLabel2.BaseStylesheet" xml:space="preserve">
+  <data name="lblDepartments2.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Century Gothic'; font-size: 9.75pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(255, 255, 255); text-align: center; }</value>
   </data>
-  <data name="bunifuLabel2.Text" xml:space="preserve">
+  <data name="lblDepartments2.Text" xml:space="preserve">
     <value>En este apartado, puedes organizar los departamentos de H2C. Gestiona cada área de la empresa, agregando o modificando departamentos según las necesidades. Mantén la estructura de la empresa alineada y funcionando de manera eficiente desde aquí.</value>
   </data>
-  <data name="bunifuLabel1.BaseStylesheet" xml:space="preserve">
+  <data name="lblDepartments.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Century Gothic'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureDepartments.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAASu5JREFUeF7t3We4LFWZt/H5SM5BEBVmcFAUFUXFMQMq0YAIihIVxAhiADFhRjGN
+        vQAADr0BR/uQrQAASu5JREFUeF7t3We4LFWZt/H5SM5BEBVmcFAUFUXFMQMq0YAIihIVxAhiADFhRjGN
         OSGCERPmiFnRMSFmwcAgiGJAEfHjvPfTvZp3780+53RVV9VaVXX/rut/wTlnV9VaVdX97K6uWuvfJEmS
         JEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmS
         JEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJElSMf7v//5vC3I8+RJZ6jvkiPRjkiSpNBTqjchR5DNk
@@ -453,19 +453,19 @@
         eSj33QAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bunifuLabel4.BaseStylesheet" xml:space="preserve">
+  <data name="lblPositions2.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Century Gothic'; font-size: 9.75pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(255, 255, 255); text-align: center; }</value>
   </data>
-  <data name="bunifuLabel4.Text" xml:space="preserve">
+  <data name="lblPositions2.Text" xml:space="preserve">
     <value>En este apartado, puedes gestionar los cargos de los empleados en H2C. Asigna, modifica o crea nuevos roles para asegurar que cada miembro del equipo esté en la posición adecuada. Mantén la estructura organizativa clara y bien definida desde aquí</value>
   </data>
-  <data name="bunifuLabel3.BaseStylesheet" xml:space="preserve">
+  <data name="lblPositions.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Century Gothic'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
   </data>
-  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="picturePositions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAYdlJREFUeF7tnQnYLVdRrk0gEAghDDJeQhiCgIIGQQlTwqgYhoThAjIlgDKJJkAQ
+        vQAADr0BR/uQrQAAYdlJREFUeF7tnQnYLVdRrk0gEAghDDJeQhiCgIIGQQlTwqgYhoThAjIlgDKJJkAQ
         QSABZBIxUS6IBG6CzKAkDIKC8UQBuaBCRJmHMBPGQAKEUe/39ap9+M//7727avXq7tW9v/d56jn/2XtX
         dfXqXl29plo/I4QQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQggh
         hBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQggh
@@ -886,19 +886,19 @@
         QmCC
 </value>
   </data>
-  <data name="bunifuLabel6.BaseStylesheet" xml:space="preserve">
+  <data name="lblCategories2.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Century Gothic'; font-size: 9.75pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(255, 255, 255); text-align: center; }</value>
   </data>
-  <data name="bunifuLabel6.Text" xml:space="preserve">
+  <data name="lblCategories2.Text" xml:space="preserve">
     <value>En este apartado, puedes organizar las categorías de los servicios que ofrece H2C. Gestiona, actualiza o crea nuevas categorías para mantener la oferta de servicios clara y bien estructurada. Asegúrate de que los clientes encuentren fácilmente lo que necesitan desde aquí.</value>
   </data>
-  <data name="bunifuLabel5.BaseStylesheet" xml:space="preserve">
+  <data name="lblCategories.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Century Gothic'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
   </data>
-  <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureCategories.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAPRlJREFUeF7t3XvcbvWc//H5s/a2ldp2MrvZptqmJBmZR5lM+WkyTI1IiBRqKINJ
+        vQAADr0BR/uQrQAAPRlJREFUeF7t3XvcbvWc//H5s/a2ldp2MrvZptqmJBmZR5lM+WkyTI1IiBRqKINJ
         0UgOEzEyDIYGUdKQ8znJ0DQNZjCoEDGRqJRK58Of83t91vrcdNj33ve+rrXWdx1ez8fj/aC973utz/qu
         77o++7qudfg9SZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIk
         SZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZJ66//+7/+2IE8lbybn
@@ -1162,19 +1162,19 @@
         7e8iAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuLabel8.BaseStylesheet" xml:space="preserve">
+  <data name="lblBanks2.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Century Gothic'; font-size: 9.75pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(255, 255, 255); text-align: center; }</value>
   </data>
-  <data name="bunifuLabel8.Text" xml:space="preserve">
+  <data name="lblBanks2.Text" xml:space="preserve">
     <value>En este apartado, puedes gestionar los bancos asociados con H2C. Administra, actualiza o agrega nuevas entidades bancarias para mantener las operaciones financieras de la empresa organizadas y seguras. Mantén toda la información bancaria centralizada y accesible desde aquí.</value>
   </data>
-  <data name="bunifuLabel7.BaseStylesheet" xml:space="preserve">
+  <data name="lblBanks.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Century Gothic'; font-size: 18pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: left; }</value>
   </data>
-  <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBanks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAK31JREFUeF7t3XvQZVV553GrpqZGsAswSMIgEWLIUMGihBn/mIoXWi3vGoigIqJ2
+        vQAADr0BR/uQrQAAK31JREFUeF7t3XvQZVV553GrpqZGsAswSMIgEWLIUMGihBn/mIoXWi3vGoigIqJ2
         ohIUDe0lXqLRjuN4i2IbNY5jHDAaR01GCTFqVAKOGuMtYEQxioJ4v0RREf50vk+f1ZMWX9bq95z1nrOf
         db6fql9VKgnPu/Ze5+xfv5ez9y0kSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIk
         SZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSVqdn/70p/+e/CK5LTmw/K8lSdLUUdxHkReTy8lNfYP8Gbln
