@@ -119,11 +119,14 @@
     <Compile Include="Controller\MaintenanceController\ControllerDepartments.cs" />
     <Compile Include="Controller\MaintenanceController\ControllerMaintenance.cs" />
     <Compile Include="Controller\MaintenanceController\ControllerUpdateCharge.cs" />
+    <Compile Include="Controller\PayrollsController\ControllerAddPermission.cs" />
     <Compile Include="Controller\PayrollsController\ControllerInfoPayroll.cs" />
     <Compile Include="Controller\EmployeesController\ControllerEmployees.cs" />
     <Compile Include="Controller\EmployeesController\ControllerPayrolls.cs" />
     <Compile Include="Controller\EmployeesController\ControllerUpdateEmployee.cs" />
+    <Compile Include="Controller\PayrollsController\ControllerPermission.cs" />
     <Compile Include="Controller\PayrollsController\ControllerUpdatePayroll.cs" />
+    <Compile Include="Controller\PayrollsController\ControllerUpdatePermission.cs" />
     <Compile Include="Controller\PayrollsController\ControllerViewPayrolls.cs" />
     <Compile Include="Controller\ServicesController\ControllerAddService.cs" />
     <Compile Include="Controller\ServicesController\ControllerServices.cs" />
@@ -147,8 +150,11 @@
     <Compile Include="Model\DAO\MaintenanceDAO\DAOCharge.cs" />
     <Compile Include="Model\DAO\MaintenanceDAO\DAODepartment.cs" />
     <Compile Include="Model\DAO\MaintenanceDAO\DAOUpdateCharge.cs" />
+    <Compile Include="Model\DAO\PayrollsDAO\DAOAddPermission.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOInfoPayroll.cs" />
+    <Compile Include="Model\DAO\PayrollsDAO\DAOPermission.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOUpdatePayroll.cs" />
+    <Compile Include="Model\DAO\PayrollsDAO\DAOUpdatePermission.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOViewPayrolls.cs" />
     <Compile Include="Model\DAO\ServicesDAO\DAOAddService.cs" />
     <Compile Include="Model\DAO\ServicesDAO\DAOServices.cs" />
@@ -172,8 +178,11 @@
     <Compile Include="Model\DTO\MaintenanceDTO\DTOCharge.cs" />
     <Compile Include="Model\DTO\MaintenanceDTO\DTODepartment.cs" />
     <Compile Include="Model\DTO\MaintenanceDTO\DTOUpdateCharge.cs" />
+    <Compile Include="Model\DTO\PayrollDTO\DTOAddPermission.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOInfoPayroll.cs" />
+    <Compile Include="Model\DTO\PayrollDTO\DTOPermission.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOUpdatePayroll.cs" />
+    <Compile Include="Model\DTO\PayrollDTO\DTOUpdatePermission.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOViewPayrolls.cs" />
     <Compile Include="Model\DTO\ServicesDTO\DTOAddService.cs" />
     <Compile Include="Model\DTO\ServicesDTO\DTOServices.cs" />
@@ -251,6 +260,12 @@
     <Compile Include="View\Dashboard\FrmUpdateCharge.Designer.cs">
       <DependentUpon>FrmUpdateCharge.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\EmployeeViews\FrmAddPermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EmployeeViews\FrmAddPermission.Designer.cs">
+      <DependentUpon>FrmAddPermission.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\EmployeeViews\FrmEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +289,18 @@
     </Compile>
     <Compile Include="View\EmployeeViews\FrmLoadPayroll.Designer.cs">
       <DependentUpon>FrmLoadPayroll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\EmployeeViews\FrmPermissions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EmployeeViews\FrmPermissions.Designer.cs">
+      <DependentUpon>FrmPermissions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\EmployeeViews\FrmUpdatePermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EmployeeViews\FrmUpdatePermission.Designer.cs">
+      <DependentUpon>FrmUpdatePermission.cs</DependentUpon>
     </Compile>
     <Compile Include="View\EmployeeViews\FrmViewPayrolls.cs">
       <SubType>Form</SubType>
@@ -403,6 +430,12 @@
     <EmbeddedResource Include="View\Dashboard\FrmUpdateCharge.resx">
       <DependentUpon>FrmUpdateCharge.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\EmployeeViews\FrmAddPermission.resx">
+      <DependentUpon>FrmAddPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\EmployeeViews\FrmPermissions.resx">
+      <DependentUpon>FrmPermissions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmEmployees.resx">
       <DependentUpon>FrmEmployees.cs</DependentUpon>
     </EmbeddedResource>
@@ -414,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmLoadPayroll.resx">
       <DependentUpon>FrmLoadPayroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\EmployeeViews\FrmUpdatePermission.resx">
+      <DependentUpon>FrmUpdatePermission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmViewPayrolls.resx">
       <DependentUpon>FrmViewPayrolls.cs</DependentUpon>

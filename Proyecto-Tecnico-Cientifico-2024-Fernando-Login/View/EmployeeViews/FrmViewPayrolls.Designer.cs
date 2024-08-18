@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmViewPayrolls));
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -38,17 +43,11 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtSearch = new Bunifu.UI.WinForms.BunifuTextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -80,17 +79,18 @@
             this.chPaid = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvPayrolls = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.cmsPayroll = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
+            this.txtSearch = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.picNotification = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.btnCreatePayroll = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnDeletePayrolls = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnActualizarPlanillas = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnCompensation = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
-            this.picNotification = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.dgvPayrolls = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.cmsPayroll = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsUpdatePayroll = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsPayrollInformation = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDownloadPDF = new System.Windows.Forms.ToolStripMenuItem();
-            this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -108,9 +108,9 @@
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel17.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picNotification)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayrolls)).BeginInit();
             this.cmsPayroll.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picNotification)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -137,7 +137,7 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.txtSearch, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.picNotification, 2, 0);
@@ -165,7 +165,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(526, 92);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(517, 92);
             this.tableLayoutPanel2.TabIndex = 8;
             this.bunifuToolTip1.SetToolTip(this.tableLayoutPanel2, "");
             this.bunifuToolTip1.SetToolTipIcon(this.tableLayoutPanel2, null);
@@ -199,87 +199,6 @@
             this.bunifuToolTip1.SetToolTip(this.label3, "");
             this.bunifuToolTip1.SetToolTipIcon(this.label3, null);
             this.bunifuToolTip1.SetToolTipTitle(this.label3, "");
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.AcceptsReturn = false;
-            this.txtSearch.AcceptsTab = false;
-            this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtSearch.AnimationSpeed = 200;
-            this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtSearch.AutoSizeHeight = true;
-            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
-            this.txtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtSearch.BackgroundImage")));
-            this.txtSearch.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txtSearch.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txtSearch.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txtSearch.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtSearch.BorderRadius = 20;
-            this.txtSearch.BorderThickness = 1;
-            this.txtSearch.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
-            this.txtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtSearch.ForeColor = System.Drawing.Color.White;
-            this.txtSearch.HideSelection = true;
-            this.txtSearch.IconLeft = null;
-            this.txtSearch.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.IconPadding = 10;
-            this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
-            this.txtSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(535, 30);
-            this.txtSearch.MaxLength = 32767;
-            this.txtSearch.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtSearch.Modified = false;
-            this.txtSearch.Multiline = false;
-            this.txtSearch.Name = "txtSearch";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtSearch.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtSearch.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtSearch.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            stateProperties4.ForeColor = System.Drawing.Color.White;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtSearch.OnIdleState = stateProperties4;
-            this.txtSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.White;
-            this.txtSearch.PlaceholderText = "Buscador";
-            this.txtSearch.ReadOnly = false;
-            this.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.SelectionLength = 0;
-            this.txtSearch.SelectionStart = 0;
-            this.txtSearch.ShortcutsEnabled = true;
-            this.txtSearch.Size = new System.Drawing.Size(526, 37);
-            this.txtSearch.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtSearch.TabIndex = 5;
-            this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtSearch.TextMarginBottom = 0;
-            this.txtSearch.TextMarginLeft = 3;
-            this.txtSearch.TextMarginTop = 1;
-            this.txtSearch.TextPlaceholder = "Buscador";
-            this.bunifuToolTip1.SetToolTip(this.txtSearch, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.txtSearch, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.txtSearch, "");
-            this.txtSearch.UseSystemPasswordChar = false;
-            this.txtSearch.WordWrap = true;
             // 
             // tableLayoutPanel4
             // 
@@ -353,7 +272,7 @@
             this.tableLayoutPanel7.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel7.ColumnCount = 2;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 534F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 536F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel16, 1, 0);
@@ -388,7 +307,7 @@
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.42857F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.57143F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(574, 176);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(572, 176);
             this.tableLayoutPanel8.TabIndex = 2;
             this.bunifuToolTip1.SetToolTip(this.tableLayoutPanel8, "");
             this.bunifuToolTip1.SetToolTipIcon(this.tableLayoutPanel8, null);
@@ -779,7 +698,7 @@
             this.tableLayoutPanel16.Controls.Add(this.btnDeletePayrolls, 1, 1);
             this.tableLayoutPanel16.Controls.Add(this.btnActualizarPlanillas, 1, 0);
             this.tableLayoutPanel16.Controls.Add(this.btnCompensation, 0, 1);
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(585, 4);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(583, 4);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 2;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -789,6 +708,252 @@
             this.bunifuToolTip1.SetToolTip(this.tableLayoutPanel16, "");
             this.bunifuToolTip1.SetToolTipIcon(this.tableLayoutPanel16, null);
             this.bunifuToolTip1.SetToolTipTitle(this.tableLayoutPanel16, "");
+            // 
+            // dgvPayrolls
+            // 
+            this.dgvPayrolls.AllowCustomTheming = true;
+            this.dgvPayrolls.AllowDrop = true;
+            this.dgvPayrolls.AllowUserToAddRows = false;
+            this.dgvPayrolls.AllowUserToResizeColumns = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvPayrolls.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPayrolls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPayrolls.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPayrolls.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.dgvPayrolls.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPayrolls.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPayrolls.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvPayrolls.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvPayrolls.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPayrolls.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPayrolls.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPayrolls.ContextMenuStrip = this.cmsPayroll;
+            this.dgvPayrolls.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.dgvPayrolls.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPayrolls.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvPayrolls.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.dgvPayrolls.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dgvPayrolls.CurrentTheme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.dgvPayrolls.CurrentTheme.GridColor = System.Drawing.Color.Silver;
+            this.dgvPayrolls.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
+            this.dgvPayrolls.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.dgvPayrolls.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvPayrolls.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
+            this.dgvPayrolls.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvPayrolls.CurrentTheme.Name = null;
+            this.dgvPayrolls.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.dgvPayrolls.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPayrolls.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvPayrolls.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.dgvPayrolls.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPayrolls.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPayrolls.EnableHeadersVisualStyles = false;
+            this.dgvPayrolls.GridColor = System.Drawing.Color.Silver;
+            this.dgvPayrolls.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
+            this.dgvPayrolls.HeaderBgColor = System.Drawing.Color.Empty;
+            this.dgvPayrolls.HeaderForeColor = System.Drawing.Color.White;
+            this.dgvPayrolls.Location = new System.Drawing.Point(3, 205);
+            this.dgvPayrolls.Name = "dgvPayrolls";
+            this.dgvPayrolls.ReadOnly = true;
+            this.dgvPayrolls.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPayrolls.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvPayrolls.RowHeadersVisible = false;
+            this.dgvPayrolls.RowHeadersWidth = 40;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvPayrolls.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvPayrolls.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.dgvPayrolls.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPayrolls.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvPayrolls.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.dgvPayrolls.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dgvPayrolls.RowTemplate.Height = 50;
+            this.dgvPayrolls.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvPayrolls.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPayrolls.Size = new System.Drawing.Size(1129, 324);
+            this.dgvPayrolls.TabIndex = 1;
+            this.dgvPayrolls.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
+            this.bunifuToolTip1.SetToolTip(this.dgvPayrolls, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.dgvPayrolls, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.dgvPayrolls, "");
+            // 
+            // cmsPayroll
+            // 
+            this.cmsPayroll.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmsPayroll.ImageScalingSize = new System.Drawing.Size(19, 19);
+            this.cmsPayroll.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsUpdatePayroll,
+            this.cmsPayrollInformation,
+            this.cmsDownloadPDF});
+            this.cmsPayroll.Name = "cmsPlanillas";
+            this.cmsPayroll.Size = new System.Drawing.Size(210, 82);
+            this.bunifuToolTip1.SetToolTip(this.cmsPayroll, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.cmsPayroll, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.cmsPayroll, "");
+            // 
+            // bunifuToolTip1
+            // 
+            this.bunifuToolTip1.Active = true;
+            this.bunifuToolTip1.AlignTextWithTitle = false;
+            this.bunifuToolTip1.AllowAutoClose = false;
+            this.bunifuToolTip1.AllowFading = true;
+            this.bunifuToolTip1.AutoCloseDuration = 5000;
+            this.bunifuToolTip1.BackColor = System.Drawing.SystemColors.Control;
+            this.bunifuToolTip1.BorderColor = System.Drawing.Color.Gainsboro;
+            this.bunifuToolTip1.ClickToShowDisplayControl = false;
+            this.bunifuToolTip1.ConvertNewlinesToBreakTags = true;
+            this.bunifuToolTip1.DisplayControl = null;
+            this.bunifuToolTip1.EntryAnimationSpeed = 350;
+            this.bunifuToolTip1.ExitAnimationSpeed = 200;
+            this.bunifuToolTip1.GenerateAutoCloseDuration = false;
+            this.bunifuToolTip1.IconMargin = 6;
+            this.bunifuToolTip1.InitialDelay = 0;
+            this.bunifuToolTip1.Name = "bunifuToolTip1";
+            this.bunifuToolTip1.Opacity = 1D;
+            this.bunifuToolTip1.OverrideToolTipTitles = false;
+            this.bunifuToolTip1.Padding = new System.Windows.Forms.Padding(10);
+            this.bunifuToolTip1.ReshowDelay = 100;
+            this.bunifuToolTip1.ShowAlways = true;
+            this.bunifuToolTip1.ShowBorders = false;
+            this.bunifuToolTip1.ShowIcons = true;
+            this.bunifuToolTip1.ShowShadows = true;
+            this.bunifuToolTip1.Tag = null;
+            this.bunifuToolTip1.TextFont = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuToolTip1.TextForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuToolTip1.TextMargin = 2;
+            this.bunifuToolTip1.TitleFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.bunifuToolTip1.TitleForeColor = System.Drawing.Color.Black;
+            this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
+            this.bunifuToolTip1.ToolTipTitle = null;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.AcceptsReturn = false;
+            this.txtSearch.AcceptsTab = false;
+            this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtSearch.AnimationSpeed = 200;
+            this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtSearch.AutoSizeHeight = true;
+            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
+            this.txtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtSearch.BackgroundImage")));
+            this.txtSearch.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txtSearch.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtSearch.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txtSearch.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txtSearch.BorderRadius = 20;
+            this.txtSearch.BorderThickness = 1;
+            this.txtSearch.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
+            this.txtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtSearch.ForeColor = System.Drawing.Color.White;
+            this.txtSearch.HideSelection = true;
+            this.txtSearch.IconLeft = null;
+            this.txtSearch.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.IconPadding = 10;
+            this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
+            this.txtSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.Lines = new string[0];
+            this.txtSearch.Location = new System.Drawing.Point(535, 30);
+            this.txtSearch.MaxLength = 32767;
+            this.txtSearch.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtSearch.Modified = false;
+            this.txtSearch.Multiline = false;
+            this.txtSearch.Name = "txtSearch";
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtSearch.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtSearch.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtSearch.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            stateProperties4.ForeColor = System.Drawing.Color.White;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtSearch.OnIdleState = stateProperties4;
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(3);
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txtSearch.PlaceholderText = "Buscador";
+            this.txtSearch.ReadOnly = false;
+            this.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.SelectionLength = 0;
+            this.txtSearch.SelectionStart = 0;
+            this.txtSearch.ShortcutsEnabled = true;
+            this.txtSearch.Size = new System.Drawing.Size(498, 37);
+            this.txtSearch.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txtSearch.TabIndex = 5;
+            this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSearch.TextMarginBottom = 0;
+            this.txtSearch.TextMarginLeft = 3;
+            this.txtSearch.TextMarginTop = 1;
+            this.txtSearch.TextPlaceholder = "Buscador";
+            this.bunifuToolTip1.SetToolTip(this.txtSearch, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.txtSearch, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.txtSearch, "");
+            this.txtSearch.UseSystemPasswordChar = false;
+            this.txtSearch.WordWrap = true;
+            // 
+            // picNotification
+            // 
+            this.picNotification.AllowFocused = false;
+            this.picNotification.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picNotification.AutoSizeHeight = false;
+            this.picNotification.BorderRadius = 30;
+            this.picNotification.Image = ((System.Drawing.Image)(resources.GetObject("picNotification.Image")));
+            this.picNotification.IsCircle = true;
+            this.picNotification.Location = new System.Drawing.Point(1063, 18);
+            this.picNotification.Name = "picNotification";
+            this.picNotification.Size = new System.Drawing.Size(61, 61);
+            this.picNotification.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picNotification.TabIndex = 97;
+            this.picNotification.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.picNotification, "Aca puedes ver las notificaciones sobre los empleados los cuales se encuentran en" +
+        " Maternidad/Incapacidad");
+            this.bunifuToolTip1.SetToolTipIcon(this.picNotification, ((System.Drawing.Image)(resources.GetObject("picNotification.ToolTipIcon"))));
+            this.bunifuToolTip1.SetToolTipTitle(this.picNotification, "Notificaciones");
+            this.picNotification.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // btnCreatePayroll
             // 
@@ -1162,136 +1327,6 @@
             this.bunifuToolTip1.SetToolTipTitle(this.btnCompensation, "");
             this.btnCompensation.UseDefaultRadiusAndThickness = true;
             // 
-            // picNotification
-            // 
-            this.picNotification.AllowFocused = false;
-            this.picNotification.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.picNotification.AutoSizeHeight = false;
-            this.picNotification.BorderRadius = 35;
-            this.picNotification.Image = ((System.Drawing.Image)(resources.GetObject("picNotification.Image")));
-            this.picNotification.IsCircle = true;
-            this.picNotification.Location = new System.Drawing.Point(1072, 26);
-            this.picNotification.Name = "picNotification";
-            this.picNotification.Size = new System.Drawing.Size(61, 45);
-            this.picNotification.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picNotification.TabIndex = 97;
-            this.picNotification.TabStop = false;
-            this.bunifuToolTip1.SetToolTip(this.picNotification, "Aca puedes ver las notificaciones sobre los empleados los cuales se encuentran en" +
-        " Maternidad/Incapacidad");
-            this.bunifuToolTip1.SetToolTipIcon(this.picNotification, ((System.Drawing.Image)(resources.GetObject("picNotification.ToolTipIcon"))));
-            this.bunifuToolTip1.SetToolTipTitle(this.picNotification, "Notificaciones");
-            this.picNotification.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
-            // 
-            // dgvPayrolls
-            // 
-            this.dgvPayrolls.AllowCustomTheming = true;
-            this.dgvPayrolls.AllowDrop = true;
-            this.dgvPayrolls.AllowUserToAddRows = false;
-            this.dgvPayrolls.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvPayrolls.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPayrolls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvPayrolls.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPayrolls.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dgvPayrolls.BackgroundColor = System.Drawing.Color.White;
-            this.dgvPayrolls.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvPayrolls.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvPayrolls.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvPayrolls.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPayrolls.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPayrolls.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPayrolls.ContextMenuStrip = this.cmsPayroll;
-            this.dgvPayrolls.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.dgvPayrolls.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPayrolls.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgvPayrolls.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.dgvPayrolls.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dgvPayrolls.CurrentTheme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.dgvPayrolls.CurrentTheme.GridColor = System.Drawing.Color.Silver;
-            this.dgvPayrolls.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
-            this.dgvPayrolls.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            this.dgvPayrolls.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvPayrolls.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
-            this.dgvPayrolls.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvPayrolls.CurrentTheme.Name = null;
-            this.dgvPayrolls.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.dgvPayrolls.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPayrolls.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgvPayrolls.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.dgvPayrolls.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPayrolls.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPayrolls.EnableHeadersVisualStyles = false;
-            this.dgvPayrolls.GridColor = System.Drawing.Color.Silver;
-            this.dgvPayrolls.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
-            this.dgvPayrolls.HeaderBgColor = System.Drawing.Color.Empty;
-            this.dgvPayrolls.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvPayrolls.Location = new System.Drawing.Point(3, 205);
-            this.dgvPayrolls.Name = "dgvPayrolls";
-            this.dgvPayrolls.ReadOnly = true;
-            this.dgvPayrolls.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPayrolls.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvPayrolls.RowHeadersVisible = false;
-            this.dgvPayrolls.RowHeadersWidth = 40;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvPayrolls.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvPayrolls.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.dgvPayrolls.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPayrolls.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgvPayrolls.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.dgvPayrolls.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dgvPayrolls.RowTemplate.Height = 50;
-            this.dgvPayrolls.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvPayrolls.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPayrolls.Size = new System.Drawing.Size(1129, 324);
-            this.dgvPayrolls.TabIndex = 1;
-            this.dgvPayrolls.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
-            this.bunifuToolTip1.SetToolTip(this.dgvPayrolls, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.dgvPayrolls, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.dgvPayrolls, "");
-            // 
-            // cmsPayroll
-            // 
-            this.cmsPayroll.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmsPayroll.ImageScalingSize = new System.Drawing.Size(19, 19);
-            this.cmsPayroll.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmsUpdatePayroll,
-            this.cmsPayrollInformation,
-            this.cmsDownloadPDF});
-            this.cmsPayroll.Name = "cmsPlanillas";
-            this.cmsPayroll.Size = new System.Drawing.Size(210, 82);
-            this.bunifuToolTip1.SetToolTip(this.cmsPayroll, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.cmsPayroll, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.cmsPayroll, "");
-            // 
             // cmsUpdatePayroll
             // 
             this.cmsUpdatePayroll.Image = ((System.Drawing.Image)(resources.GetObject("cmsUpdatePayroll.Image")));
@@ -1312,41 +1347,6 @@
             this.cmsDownloadPDF.Name = "cmsDownloadPDF";
             this.cmsDownloadPDF.Size = new System.Drawing.Size(209, 26);
             this.cmsDownloadPDF.Text = "Descargar Planilla PDF";
-            // 
-            // bunifuToolTip1
-            // 
-            this.bunifuToolTip1.Active = true;
-            this.bunifuToolTip1.AlignTextWithTitle = false;
-            this.bunifuToolTip1.AllowAutoClose = false;
-            this.bunifuToolTip1.AllowFading = true;
-            this.bunifuToolTip1.AutoCloseDuration = 5000;
-            this.bunifuToolTip1.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuToolTip1.BorderColor = System.Drawing.Color.Gainsboro;
-            this.bunifuToolTip1.ClickToShowDisplayControl = false;
-            this.bunifuToolTip1.ConvertNewlinesToBreakTags = true;
-            this.bunifuToolTip1.DisplayControl = null;
-            this.bunifuToolTip1.EntryAnimationSpeed = 350;
-            this.bunifuToolTip1.ExitAnimationSpeed = 200;
-            this.bunifuToolTip1.GenerateAutoCloseDuration = false;
-            this.bunifuToolTip1.IconMargin = 6;
-            this.bunifuToolTip1.InitialDelay = 0;
-            this.bunifuToolTip1.Name = "bunifuToolTip1";
-            this.bunifuToolTip1.Opacity = 1D;
-            this.bunifuToolTip1.OverrideToolTipTitles = false;
-            this.bunifuToolTip1.Padding = new System.Windows.Forms.Padding(10);
-            this.bunifuToolTip1.ReshowDelay = 100;
-            this.bunifuToolTip1.ShowAlways = true;
-            this.bunifuToolTip1.ShowBorders = false;
-            this.bunifuToolTip1.ShowIcons = true;
-            this.bunifuToolTip1.ShowShadows = true;
-            this.bunifuToolTip1.Tag = null;
-            this.bunifuToolTip1.TextFont = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuToolTip1.TextForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuToolTip1.TextMargin = 2;
-            this.bunifuToolTip1.TitleFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.bunifuToolTip1.TitleForeColor = System.Drawing.Color.Black;
-            this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
-            this.bunifuToolTip1.ToolTipTitle = null;
             // 
             // FrmViewPayrolls
             // 
@@ -1380,9 +1380,9 @@
             this.tableLayoutPanel17.ResumeLayout(false);
             this.tableLayoutPanel17.PerformLayout();
             this.tableLayoutPanel16.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picNotification)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayrolls)).EndInit();
             this.cmsPayroll.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picNotification)).EndInit();
             this.ResumeLayout(false);
 
         }
