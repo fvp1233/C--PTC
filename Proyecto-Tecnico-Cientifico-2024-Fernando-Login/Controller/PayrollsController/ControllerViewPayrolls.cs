@@ -492,6 +492,7 @@ namespace PTC2024.Controller.EmployeesController
                             // Obtener el rol del negocio del empleado
                             DataRow[] userRows = userDt.Select($"username = '{row["username"]}'");
                             double roleBonus = 0;
+                            double calculatedSalary = 0;
                             if (userRows.Length > 0)
                             {
                                 DataRow userRow = userRows[0];
@@ -499,19 +500,23 @@ namespace PTC2024.Controller.EmployeesController
                                 DataRow[] bonusRows = bonusDt.Select($"IdBusinessP = '{businessRole}'");
                                 if (bonusRows.Length > 0)
                                 {
-                                    DataRow bonusRow = bonusRows[0];
-                                    roleBonus = double.Parse(bonusRow["positionBonus"].ToString());
+                                    if (daysWorked == 0)
+                                    {
+                                        calculatedSalary = Math.Round(daysWorked * daySalary);
+
+                                    }
+                                    else
+                                    {
+                                        DataRow bonusRow = bonusRows[0];
+                                        roleBonus = double.Parse(bonusRow["positionBonus"].ToString());
+                                        calculatedSalary = Math.Round((daysWorked * daySalary) + roleBonus);
+                                    }
                                 }
                             }
-
-                            // Calcular el salario base, incluyendo el bono del cargo
-                            double calculatedSalary = Math.Round((daysWorked * daySalary) + roleBonus);
-
                             // Aplicar descuentos
+                            double rent = GetRent(calculatedSalary);
                             double isss = GetISSS(calculatedSalary);
                             double afp = GetAFP(calculatedSalary);
-                            double rent = GetRent(calculatedSalary);
-
                             double christmasBonus = 0;
                             if (issueDate.Month == 12)
                             {
@@ -652,7 +657,7 @@ namespace PTC2024.Controller.EmployeesController
             double rent;
             double AFP_ISSS = GetAFP(Salary) + GetISSS(Salary);
             double prerent = Salary - AFP_ISSS;
-            if (prerent > 0 && prerent < 472.01)
+            if (prerent >= 0 && prerent < 472.01)
             {
                 rent = 0;
             }
