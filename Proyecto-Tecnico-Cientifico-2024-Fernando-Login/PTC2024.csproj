@@ -356,6 +356,12 @@
     <Compile Include="View\Service inventory\FrmUpdateService.Designer.cs">
       <DependentUpon>FrmUpdateService.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Service inventory\prueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Service inventory\prueba.Designer.cs">
+      <DependentUpon>prueba.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Start\FrmWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -472,6 +478,9 @@
     <EmbeddedResource Include="View\Service inventory\FrmUpdateService.resx">
       <DependentUpon>FrmUpdateService.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Service inventory\prueba.resx">
+      <DependentUpon>prueba.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Start\FrmWelcome.resx">
       <DependentUpon>FrmWelcome.cs</DependentUpon>
     </EmbeddedResource>
@@ -515,10 +524,14 @@
   <ItemGroup>
     <Content Include="Resources\ActualizarEmpleado.png" />
     <Content Include="Resources\AgregarEmpleado.png" />
+    <Content Include="Resources\generarPlanillas.png" />
+    <Content Include="Resources\indemnizacion.png" />
     <Content Include="Resources\ojoAbierto.png" />
     <Content Include="Resources\ojoCerrado.png" />
     <Content Include="Resources\salir.png" />
     <Content Include="Resources\usuarioRegister.png" />
+    <Content Include="Resources\viewEmployees.png" />
+    <Content Include="Resources\viewPayrolls.png" />
     <None Include="Resources\User.png" />
     <None Include="Resources\AgregarEmpleado1.png" />
     <Content Include="Resources\Cancelar.png" />
