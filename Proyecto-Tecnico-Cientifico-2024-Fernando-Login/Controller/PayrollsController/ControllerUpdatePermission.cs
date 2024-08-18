@@ -18,9 +18,10 @@ namespace PTC2024.Controller.PayrollsController
         {
             objUpdatePermission = View;
             DisableComponents();
-            ChargeValues(idEmployee,idPermission, start, end, context, status, typeP);
+            ChargeValues(idEmployee, idPermission, start, end, context, status, typeP);
             objUpdatePermission.Load += new EventHandler(FillDropdown);
             objUpdatePermission.btnAddPermission.Click += new EventHandler(UpdatePermission);
+            objUpdatePermission.btnCancel.Click += new EventHandler(CloseForm);
         }
         public void UpdatePermission(object sender, EventArgs e)
         {
@@ -57,7 +58,8 @@ namespace PTC2024.Controller.PayrollsController
                 "Proceso completado",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
-            }          
+            }
+            CloseF();
         }
         public void FillDropdown(object sender, EventArgs e)
         {
@@ -93,7 +95,15 @@ namespace PTC2024.Controller.PayrollsController
         }
         public void DisableComponents()
         {
-            objUpdatePermission.txtIdPermission.Visible = true;
+            objUpdatePermission.txtIdPermission.Visible = false;
+        }
+        public void CloseF()
+        {
+            objUpdatePermission.Close();
+        }
+        public void CloseForm(object sender, EventArgs e)
+        {
+            CloseF();
         }
     }
 }

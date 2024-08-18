@@ -58,10 +58,16 @@ namespace PTC2024.Controller.PayrollsController
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
             }
+            Close();
+        }
+        public void Close()
+        {
+            objAddPermission.Close();
+
         }
         public void CloseForm(object sender, EventArgs e)
         {
-            objAddPermission.Close();
-        }
+            Close()
+;       }
     }
 }
