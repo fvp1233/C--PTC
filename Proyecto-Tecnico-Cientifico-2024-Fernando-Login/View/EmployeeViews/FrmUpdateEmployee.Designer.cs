@@ -517,7 +517,7 @@
             this.txtEmail.Lines = new string[0];
             this.txtEmail.Location = new System.Drawing.Point(15, 176);
             this.txtEmail.MaximumSize = new System.Drawing.Size(330, 32);
-            this.txtEmail.MaxLength = 32767;
+            this.txtEmail.MaxLength = 256;
             this.txtEmail.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtEmail.Modified = false;
             this.txtEmail.Multiline = false;
@@ -594,7 +594,7 @@
             this.txtPhone.Lines = new string[0];
             this.txtPhone.Location = new System.Drawing.Point(691, 110);
             this.txtPhone.MaximumSize = new System.Drawing.Size(330, 32);
-            this.txtPhone.MaxLength = 32767;
+            this.txtPhone.MaxLength = 20;
             this.txtPhone.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPhone.Modified = false;
             this.txtPhone.Multiline = false;
@@ -671,7 +671,7 @@
             this.txtAddress.Lines = new string[0];
             this.txtAddress.Location = new System.Drawing.Point(354, 110);
             this.txtAddress.MaximumSize = new System.Drawing.Size(330, 32);
-            this.txtAddress.MaxLength = 32767;
+            this.txtAddress.MaxLength = 500;
             this.txtAddress.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtAddress.Modified = false;
             this.txtAddress.Multiline = false;
@@ -748,7 +748,7 @@
             this.txtDUI.Lines = new string[0];
             this.txtDUI.Location = new System.Drawing.Point(691, 49);
             this.txtDUI.MaximumSize = new System.Drawing.Size(330, 32);
-            this.txtDUI.MaxLength = 32767;
+            this.txtDUI.MaxLength = 20;
             this.txtDUI.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtDUI.Modified = false;
             this.txtDUI.Multiline = false;
@@ -825,7 +825,7 @@
             this.txtLastNames.Lines = new string[0];
             this.txtLastNames.Location = new System.Drawing.Point(353, 49);
             this.txtLastNames.MaximumSize = new System.Drawing.Size(330, 32);
-            this.txtLastNames.MaxLength = 32767;
+            this.txtLastNames.MaxLength = 150;
             this.txtLastNames.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtLastNames.Modified = false;
             this.txtLastNames.Multiline = false;
@@ -902,7 +902,7 @@
             this.txtNames.Lines = new string[0];
             this.txtNames.Location = new System.Drawing.Point(16, 49);
             this.txtNames.MaximumSize = new System.Drawing.Size(330, 32);
-            this.txtNames.MaxLength = 32767;
+            this.txtNames.MaxLength = 150;
             this.txtNames.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtNames.Modified = false;
             this.txtNames.Multiline = false;
@@ -1363,7 +1363,7 @@
             this.txtBankAccount.Lines = new string[0];
             this.txtBankAccount.Location = new System.Drawing.Point(522, 42);
             this.txtBankAccount.MaximumSize = new System.Drawing.Size(330, 32);
-            this.txtBankAccount.MaxLength = 32767;
+            this.txtBankAccount.MaxLength = 200;
             this.txtBankAccount.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtBankAccount.Modified = false;
             this.txtBankAccount.Multiline = false;
@@ -1440,7 +1440,7 @@
             this.txtAffiliationNumber.Lines = new string[0];
             this.txtAffiliationNumber.Location = new System.Drawing.Point(269, 42);
             this.txtAffiliationNumber.MaximumSize = new System.Drawing.Size(330, 32);
-            this.txtAffiliationNumber.MaxLength = 32767;
+            this.txtAffiliationNumber.MaxLength = 80;
             this.txtAffiliationNumber.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtAffiliationNumber.Modified = false;
             this.txtAffiliationNumber.Multiline = false;
@@ -1517,7 +1517,7 @@
             this.txtSalary.Lines = new string[0];
             this.txtSalary.Location = new System.Drawing.Point(15, 42);
             this.txtSalary.MaximumSize = new System.Drawing.Size(330, 32);
-            this.txtSalary.MaxLength = 32767;
+            this.txtSalary.MaxLength = 12;
             this.txtSalary.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSalary.Modified = false;
             this.txtSalary.Multiline = false;
@@ -1718,7 +1718,7 @@
             this.txtUsername.Lines = new string[0];
             this.txtUsername.Location = new System.Drawing.Point(16, 46);
             this.txtUsername.MaximumSize = new System.Drawing.Size(667, 32);
-            this.txtUsername.MaxLength = 32767;
+            this.txtUsername.MaxLength = 50;
             this.txtUsername.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtUsername.Modified = false;
             this.txtUsername.Multiline = false;
