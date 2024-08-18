@@ -230,10 +230,16 @@
     <Compile Include="View\CustomersView\FrmUpdateCustomer.Designer.cs">
       <DependentUpon>FrmUpdateCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Dashboard\FrmCharge.cs">
+    <Compile Include="View\Maintenance\FrmCategories.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Dashboard\FrmCharge.Designer.cs">
+    <Compile Include="View\Maintenance\FrmCategories.Designer.cs">
+      <DependentUpon>FrmCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Maintenance\FrmCharge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Maintenance\FrmCharge.Designer.cs">
       <DependentUpon>FrmCharge.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Dashboard\FrmDashboard.cs">
@@ -242,22 +248,22 @@
     <Compile Include="View\Dashboard\FrmDashboard.Designer.cs">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Dashboard\FrmDepartments.cs">
+    <Compile Include="View\Maintenance\FrmDepartments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Dashboard\FrmDepartments.Designer.cs">
+    <Compile Include="View\Maintenance\FrmDepartments.Designer.cs">
       <DependentUpon>FrmDepartments.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Dashboard\FrmMaintenance.cs">
+    <Compile Include="View\Maintenance\FrmMaintenance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Dashboard\FrmMaintenance.Designer.cs">
+    <Compile Include="View\Maintenance\FrmMaintenance.Designer.cs">
       <DependentUpon>FrmMaintenance.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Dashboard\FrmUpdateCharge.cs">
+    <Compile Include="View\Maintenance\FrmUpdateCharge.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Dashboard\FrmUpdateCharge.Designer.cs">
+    <Compile Include="View\Maintenance\FrmUpdateCharge.Designer.cs">
       <DependentUpon>FrmUpdateCharge.cs</DependentUpon>
     </Compile>
     <Compile Include="View\EmployeeViews\FrmAddPermission.cs">
@@ -415,19 +421,22 @@
     <EmbeddedResource Include="View\CustomersView\FrmUpdateCustomer.resx">
       <DependentUpon>FrmUpdateCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Dashboard\FrmCharge.resx">
+    <EmbeddedResource Include="View\Maintenance\FrmCategories.resx">
+      <DependentUpon>FrmCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Maintenance\FrmCharge.resx">
       <DependentUpon>FrmCharge.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Dashboard\FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Dashboard\FrmDepartments.resx">
+    <EmbeddedResource Include="View\Maintenance\FrmDepartments.resx">
       <DependentUpon>FrmDepartments.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Dashboard\FrmMaintenance.resx">
+    <EmbeddedResource Include="View\Maintenance\FrmMaintenance.resx">
       <DependentUpon>FrmMaintenance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Dashboard\FrmUpdateCharge.resx">
+    <EmbeddedResource Include="View\Maintenance\FrmUpdateCharge.resx">
       <DependentUpon>FrmUpdateCharge.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmAddPermission.resx">
