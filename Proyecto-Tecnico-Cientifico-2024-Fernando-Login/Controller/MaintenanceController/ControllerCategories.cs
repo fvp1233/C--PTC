@@ -69,7 +69,7 @@ namespace PTC2024.Controller.MaintenanceController
 
         public void DeleteCategorie(object sender, EventArgs e)
         {
-            if(MessageBox.Show("¿Seguro que desea eliminar esta categoría?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if(MessageBox.Show("¿Seguro que desea eliminar esta categoría?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 DAOCategories daoCategories = new DAOCategories();
                 int row = objCategories.dgvCategories.CurrentRow.Index;

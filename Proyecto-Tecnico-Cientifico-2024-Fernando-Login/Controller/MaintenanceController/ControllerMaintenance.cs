@@ -18,6 +18,7 @@ namespace PTC2024.Controller.MaintenanceController
             objMaintenance.panelDepartments.Click += new EventHandler(OpenDepartments);
             objMaintenance.panelCharge.Click += new EventHandler(OpenCharge);
             objMaintenance.panelCategories.Click += new EventHandler(OpenCategories);
+            objMaintenance.panelBanks.Click += new EventHandler(OpenBanks);
             objMaintenance.pictureDepartments.Click += new EventHandler(OpenDepartments);
             objMaintenance.lblDepartments.Click += new EventHandler(OpenDepartments);
             objMaintenance.lblDepartments2.Click += new EventHandler(OpenDepartments);
@@ -27,6 +28,9 @@ namespace PTC2024.Controller.MaintenanceController
             objMaintenance.pictureCategories.Click += new EventHandler(OpenCategories);
             objMaintenance.lblCategories.Click += new EventHandler(OpenCategories);
             objMaintenance.lblCategories2.Click += new EventHandler(OpenCategories);
+            objMaintenance.pictureBanks.Click += new EventHandler(OpenBanks);
+            objMaintenance.lblBanks.Click += new EventHandler(OpenBanks);
+            objMaintenance.lblBanks2.Click += new EventHandler(OpenBanks);
         }
 
         public void OpenDepartments(object sender, EventArgs e)
@@ -45,6 +49,12 @@ namespace PTC2024.Controller.MaintenanceController
         {
             FrmCategories objCategories = new FrmCategories();
             objCategories.ShowDialog();
+        }
+
+        public void OpenBanks(object sender, EventArgs e)
+        {
+            FrmBanks objBanks = new FrmBanks();
+            objBanks.ShowDialog();
         }
     }
 }

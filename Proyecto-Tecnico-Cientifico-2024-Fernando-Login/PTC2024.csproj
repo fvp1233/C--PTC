@@ -115,6 +115,7 @@
     <Compile Include="Controller\LogInController\ControllerLogin.cs" />
     <Compile Include="Controller\LogInController\ControllerRecoverPassword.cs" />
     <Compile Include="Controller\LogInController\ControllerRegister.cs" />
+    <Compile Include="Controller\MaintenanceController\ControllerBanks.cs" />
     <Compile Include="Controller\MaintenanceController\ControllerCategories.cs" />
     <Compile Include="Controller\MaintenanceController\ControllerCharge.cs" />
     <Compile Include="Controller\MaintenanceController\ControllerDepartments.cs" />
@@ -148,6 +149,7 @@
     <Compile Include="Model\DAO\LogInDAO\DAOLogin.cs" />
     <Compile Include="Model\DAO\LogInDAO\DAORecoverPassword.cs" />
     <Compile Include="Model\DAO\LogInDAO\DAORegister.cs" />
+    <Compile Include="Model\DAO\MaintenanceDAO\DAOBanks.cs" />
     <Compile Include="Model\DAO\MaintenanceDAO\DAOCategories.cs" />
     <Compile Include="Model\DAO\MaintenanceDAO\DAOCharge.cs" />
     <Compile Include="Model\DAO\MaintenanceDAO\DAODepartment.cs" />
@@ -177,6 +179,7 @@
     <Compile Include="Model\DTO\LogInDTO\DTOLogin.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTORecoverPassword.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTORegister.cs" />
+    <Compile Include="Model\DTO\MaintenanceDTO\DTOBanks.cs" />
     <Compile Include="Model\DTO\MaintenanceDTO\DTOCategories.cs" />
     <Compile Include="Model\DTO\MaintenanceDTO\DTOCharge.cs" />
     <Compile Include="Model\DTO\MaintenanceDTO\DTODepartment.cs" />
@@ -232,6 +235,12 @@
     </Compile>
     <Compile Include="View\CustomersView\FrmUpdateCustomer.Designer.cs">
       <DependentUpon>FrmUpdateCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Maintenance\FrmBanks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Maintenance\FrmBanks.Designer.cs">
+      <DependentUpon>FrmBanks.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Maintenance\FrmCategories.cs">
       <SubType>Form</SubType>
@@ -423,6 +432,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomersView\FrmUpdateCustomer.resx">
       <DependentUpon>FrmUpdateCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Maintenance\FrmBanks.resx">
+      <DependentUpon>FrmBanks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Maintenance\FrmCategories.resx">
       <DependentUpon>FrmCategories.cs</DependentUpon>
