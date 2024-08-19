@@ -41,11 +41,11 @@
             this.lblPositions2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblPositions = new Bunifu.UI.WinForms.BunifuLabel();
             this.picturePositions = new System.Windows.Forms.PictureBox();
-            this.bunifuShadowPanel3 = new Bunifu.UI.WinForms.BunifuShadowPanel();
+            this.panelCategories = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.lblCategories2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblCategories = new Bunifu.UI.WinForms.BunifuLabel();
             this.pictureCategories = new System.Windows.Forms.PictureBox();
-            this.bunifuShadowPanel4 = new Bunifu.UI.WinForms.BunifuShadowPanel();
+            this.panelBanks = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.lblBanks2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblBanks = new Bunifu.UI.WinForms.BunifuLabel();
             this.pictureBanks = new System.Windows.Forms.PictureBox();
@@ -56,9 +56,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureDepartments)).BeginInit();
             this.panelCharge.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturePositions)).BeginInit();
-            this.bunifuShadowPanel3.SuspendLayout();
+            this.panelCategories.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCategories)).BeginInit();
-            this.bunifuShadowPanel4.SuspendLayout();
+            this.panelBanks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBanks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,8 +113,8 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel2.Controls.Add(this.panelDepartments, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.panelCharge, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.bunifuShadowPanel3, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.bunifuShadowPanel4, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panelCategories, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panelBanks, 4, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 71);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -267,31 +267,31 @@
             this.picturePositions.TabIndex = 3;
             this.picturePositions.TabStop = false;
             // 
-            // bunifuShadowPanel3
+            // panelCategories
             // 
-            this.bunifuShadowPanel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuShadowPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuShadowPanel3.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            this.bunifuShadowPanel3.BorderRadius = 20;
-            this.bunifuShadowPanel3.BorderThickness = 1;
-            this.bunifuShadowPanel3.Controls.Add(this.lblCategories2);
-            this.bunifuShadowPanel3.Controls.Add(this.lblCategories);
-            this.bunifuShadowPanel3.Controls.Add(this.pictureCategories);
-            this.bunifuShadowPanel3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuShadowPanel3.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
-            this.bunifuShadowPanel3.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
-            this.bunifuShadowPanel3.Location = new System.Drawing.Point(589, 56);
-            this.bunifuShadowPanel3.Name = "bunifuShadowPanel3";
-            this.bunifuShadowPanel3.PanelColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.bunifuShadowPanel3.PanelColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.bunifuShadowPanel3.ShadowColor = System.Drawing.Color.DarkGray;
-            this.bunifuShadowPanel3.ShadowDept = 2;
-            this.bunifuShadowPanel3.ShadowDepth = 6;
-            this.bunifuShadowPanel3.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
-            this.bunifuShadowPanel3.ShadowTopLeftVisible = false;
-            this.bunifuShadowPanel3.Size = new System.Drawing.Size(258, 501);
-            this.bunifuShadowPanel3.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
-            this.bunifuShadowPanel3.TabIndex = 6;
+            this.panelCategories.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelCategories.BackColor = System.Drawing.Color.Transparent;
+            this.panelCategories.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panelCategories.BorderRadius = 20;
+            this.panelCategories.BorderThickness = 1;
+            this.panelCategories.Controls.Add(this.lblCategories2);
+            this.panelCategories.Controls.Add(this.lblCategories);
+            this.panelCategories.Controls.Add(this.pictureCategories);
+            this.panelCategories.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelCategories.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
+            this.panelCategories.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
+            this.panelCategories.Location = new System.Drawing.Point(589, 56);
+            this.panelCategories.Name = "panelCategories";
+            this.panelCategories.PanelColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.panelCategories.PanelColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.panelCategories.ShadowColor = System.Drawing.Color.DarkGray;
+            this.panelCategories.ShadowDept = 2;
+            this.panelCategories.ShadowDepth = 6;
+            this.panelCategories.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
+            this.panelCategories.ShadowTopLeftVisible = false;
+            this.panelCategories.Size = new System.Drawing.Size(258, 501);
+            this.panelCategories.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
+            this.panelCategories.TabIndex = 6;
             // 
             // lblCategories2
             // 
@@ -339,31 +339,31 @@
             this.pictureCategories.TabIndex = 4;
             this.pictureCategories.TabStop = false;
             // 
-            // bunifuShadowPanel4
+            // panelBanks
             // 
-            this.bunifuShadowPanel4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuShadowPanel4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuShadowPanel4.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            this.bunifuShadowPanel4.BorderRadius = 20;
-            this.bunifuShadowPanel4.BorderThickness = 1;
-            this.bunifuShadowPanel4.Controls.Add(this.lblBanks2);
-            this.bunifuShadowPanel4.Controls.Add(this.lblBanks);
-            this.bunifuShadowPanel4.Controls.Add(this.pictureBanks);
-            this.bunifuShadowPanel4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuShadowPanel4.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
-            this.bunifuShadowPanel4.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
-            this.bunifuShadowPanel4.Location = new System.Drawing.Point(853, 56);
-            this.bunifuShadowPanel4.Name = "bunifuShadowPanel4";
-            this.bunifuShadowPanel4.PanelColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.bunifuShadowPanel4.PanelColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.bunifuShadowPanel4.ShadowColor = System.Drawing.Color.DarkGray;
-            this.bunifuShadowPanel4.ShadowDept = 2;
-            this.bunifuShadowPanel4.ShadowDepth = 6;
-            this.bunifuShadowPanel4.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
-            this.bunifuShadowPanel4.ShadowTopLeftVisible = false;
-            this.bunifuShadowPanel4.Size = new System.Drawing.Size(258, 501);
-            this.bunifuShadowPanel4.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
-            this.bunifuShadowPanel4.TabIndex = 7;
+            this.panelBanks.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelBanks.BackColor = System.Drawing.Color.Transparent;
+            this.panelBanks.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panelBanks.BorderRadius = 20;
+            this.panelBanks.BorderThickness = 1;
+            this.panelBanks.Controls.Add(this.lblBanks2);
+            this.panelBanks.Controls.Add(this.lblBanks);
+            this.panelBanks.Controls.Add(this.pictureBanks);
+            this.panelBanks.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelBanks.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
+            this.panelBanks.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
+            this.panelBanks.Location = new System.Drawing.Point(853, 56);
+            this.panelBanks.Name = "panelBanks";
+            this.panelBanks.PanelColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.panelBanks.PanelColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.panelBanks.ShadowColor = System.Drawing.Color.DarkGray;
+            this.panelBanks.ShadowDept = 2;
+            this.panelBanks.ShadowDepth = 6;
+            this.panelBanks.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
+            this.panelBanks.ShadowTopLeftVisible = false;
+            this.panelBanks.Size = new System.Drawing.Size(258, 501);
+            this.panelBanks.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
+            this.panelBanks.TabIndex = 7;
             // 
             // lblBanks2
             // 
@@ -430,11 +430,11 @@
             this.panelCharge.ResumeLayout(false);
             this.panelCharge.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturePositions)).EndInit();
-            this.bunifuShadowPanel3.ResumeLayout(false);
-            this.bunifuShadowPanel3.PerformLayout();
+            this.panelCategories.ResumeLayout(false);
+            this.panelCategories.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCategories)).EndInit();
-            this.bunifuShadowPanel4.ResumeLayout(false);
-            this.bunifuShadowPanel4.PerformLayout();
+            this.panelBanks.ResumeLayout(false);
+            this.panelBanks.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBanks)).EndInit();
             this.ResumeLayout(false);
 
@@ -446,8 +446,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel3;
-        private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel4;
         public Bunifu.UI.WinForms.BunifuShadowPanel panelDepartments;
         public Bunifu.UI.WinForms.BunifuShadowPanel panelCharge;
         public Bunifu.UI.WinForms.BunifuLabel lblDepartments;
@@ -462,5 +460,7 @@
         public Bunifu.UI.WinForms.BunifuLabel lblBanks2;
         public Bunifu.UI.WinForms.BunifuLabel lblBanks;
         public System.Windows.Forms.PictureBox pictureBanks;
+        public Bunifu.UI.WinForms.BunifuShadowPanel panelCategories;
+        public Bunifu.UI.WinForms.BunifuShadowPanel panelBanks;
     }
 }

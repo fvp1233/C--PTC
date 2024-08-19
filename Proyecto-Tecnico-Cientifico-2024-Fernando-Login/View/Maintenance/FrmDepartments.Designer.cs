@@ -34,22 +34,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDepartments));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDepartments));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.dgvDepartments = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.cmsDepartment = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmsDeleteDepartment = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtDepartment = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnAddDepartment = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
-            this.btnGoBack = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnGoBack = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
+            this.txtDepartment = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.cmsDeleteDepartment = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAddDepartment = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).BeginInit();
             this.cmsDepartment.SuspendLayout();
             this.SuspendLayout();
@@ -154,12 +154,133 @@
             this.cmsDepartment.Name = "cmsEmployee";
             this.cmsDepartment.Size = new System.Drawing.Size(213, 30);
             // 
-            // cmsDeleteDepartment
+            // label2
             // 
-            this.cmsDeleteDepartment.Image = ((System.Drawing.Image)(resources.GetObject("cmsDeleteDepartment.Image")));
-            this.cmsDeleteDepartment.Name = "cmsDeleteDepartment";
-            this.cmsDeleteDepartment.Size = new System.Drawing.Size(212, 26);
-            this.cmsDeleteDepartment.Text = "Eliminar departamento";
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(42, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(210, 18);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Nombre del departamento:";
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(38, 53);
+            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(503, 35);
+            this.bunifuSeparator1.TabIndex = 193;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(146, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(30, 0, 3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(297, 40);
+            this.label1.TabIndex = 192;
+            this.label1.Text = "DEPARTAMENTOS";
+            // 
+            // btnGoBack
+            // 
+            this.btnGoBack.AllowAnimations = true;
+            this.btnGoBack.AllowMouseEffects = true;
+            this.btnGoBack.AllowToggling = false;
+            this.btnGoBack.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGoBack.AnimationSpeed = 200;
+            this.btnGoBack.AutoGenerateColors = false;
+            this.btnGoBack.AutoRoundBorders = false;
+            this.btnGoBack.AutoSizeLeftIcon = true;
+            this.btnGoBack.AutoSizeRightIcon = true;
+            this.btnGoBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnGoBack.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnGoBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGoBack.BackgroundImage")));
+            this.btnGoBack.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnGoBack.ButtonText = "Volver";
+            this.btnGoBack.ButtonTextMarginLeft = 0;
+            this.btnGoBack.ColorContrastOnClick = 45;
+            this.btnGoBack.ColorContrastOnHover = 45;
+            this.btnGoBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnGoBack.CustomizableEdges = borderEdges1;
+            this.btnGoBack.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnGoBack.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnGoBack.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnGoBack.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnGoBack.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
+            this.btnGoBack.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGoBack.ForeColor = System.Drawing.Color.White;
+            this.btnGoBack.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGoBack.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnGoBack.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnGoBack.IconMarginLeft = 11;
+            this.btnGoBack.IconPadding = 10;
+            this.btnGoBack.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGoBack.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnGoBack.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnGoBack.IconSize = 25;
+            this.btnGoBack.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnGoBack.IdleBorderRadius = 20;
+            this.btnGoBack.IdleBorderThickness = 1;
+            this.btnGoBack.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnGoBack.IdleIconLeftImage = null;
+            this.btnGoBack.IdleIconRightImage = null;
+            this.btnGoBack.IndicateFocus = false;
+            this.btnGoBack.Location = new System.Drawing.Point(213, 367);
+            this.btnGoBack.Name = "btnGoBack";
+            this.btnGoBack.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnGoBack.OnDisabledState.BorderRadius = 20;
+            this.btnGoBack.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnGoBack.OnDisabledState.BorderThickness = 1;
+            this.btnGoBack.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnGoBack.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnGoBack.OnDisabledState.IconLeftImage = null;
+            this.btnGoBack.OnDisabledState.IconRightImage = null;
+            this.btnGoBack.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnGoBack.onHoverState.BorderRadius = 20;
+            this.btnGoBack.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnGoBack.onHoverState.BorderThickness = 1;
+            this.btnGoBack.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnGoBack.onHoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnGoBack.onHoverState.IconLeftImage = null;
+            this.btnGoBack.onHoverState.IconRightImage = null;
+            this.btnGoBack.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnGoBack.OnIdleState.BorderRadius = 20;
+            this.btnGoBack.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnGoBack.OnIdleState.BorderThickness = 1;
+            this.btnGoBack.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnGoBack.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnGoBack.OnIdleState.IconLeftImage = null;
+            this.btnGoBack.OnIdleState.IconRightImage = null;
+            this.btnGoBack.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnGoBack.OnPressedState.BorderRadius = 20;
+            this.btnGoBack.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnGoBack.OnPressedState.BorderThickness = 1;
+            this.btnGoBack.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnGoBack.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnGoBack.OnPressedState.IconLeftImage = null;
+            this.btnGoBack.OnPressedState.IconRightImage = null;
+            this.btnGoBack.Size = new System.Drawing.Size(151, 52);
+            this.btnGoBack.TabIndex = 97;
+            this.btnGoBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnGoBack.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnGoBack.TextMarginLeft = 0;
+            this.btnGoBack.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnGoBack.UseDefaultRadiusAndThickness = true;
             // 
             // txtDepartment
             // 
@@ -238,16 +359,12 @@
             this.txtDepartment.UseSystemPasswordChar = false;
             this.txtDepartment.WordWrap = true;
             // 
-            // label2
+            // cmsDeleteDepartment
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 88);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(210, 18);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Nombre del departamento:";
+            this.cmsDeleteDepartment.Image = ((System.Drawing.Image)(resources.GetObject("cmsDeleteDepartment.Image")));
+            this.cmsDeleteDepartment.Name = "cmsDeleteDepartment";
+            this.cmsDeleteDepartment.Size = new System.Drawing.Size(212, 26);
+            this.cmsDeleteDepartment.Text = "Eliminar departamento";
             // 
             // btnAddDepartment
             // 
@@ -269,38 +386,38 @@
             this.btnAddDepartment.ColorContrastOnClick = 45;
             this.btnAddDepartment.ColorContrastOnHover = 45;
             this.btnAddDepartment.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnAddDepartment.CustomizableEdges = borderEdges1;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnAddDepartment.CustomizableEdges = borderEdges2;
             this.btnAddDepartment.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddDepartment.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAddDepartment.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnAddDepartment.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnAddDepartment.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnAddDepartment.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddDepartment.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.btnAddDepartment.ForeColor = System.Drawing.Color.White;
             this.btnAddDepartment.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddDepartment.IconLeftCursor = System.Windows.Forms.Cursors.Default;
             this.btnAddDepartment.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
             this.btnAddDepartment.IconMarginLeft = 11;
             this.btnAddDepartment.IconPadding = 10;
-            this.btnAddDepartment.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddDepartment.IconRightAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddDepartment.IconRightCursor = System.Windows.Forms.Cursors.Default;
             this.btnAddDepartment.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
             this.btnAddDepartment.IconSize = 25;
             this.btnAddDepartment.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnAddDepartment.IdleBorderRadius = 20;
+            this.btnAddDepartment.IdleBorderRadius = 15;
             this.btnAddDepartment.IdleBorderThickness = 1;
             this.btnAddDepartment.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnAddDepartment.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnAddDepartment.IdleIconLeftImage")));
             this.btnAddDepartment.IdleIconRightImage = null;
             this.btnAddDepartment.IndicateFocus = false;
-            this.btnAddDepartment.Location = new System.Drawing.Point(380, 100);
+            this.btnAddDepartment.Location = new System.Drawing.Point(382, 106);
             this.btnAddDepartment.Name = "btnAddDepartment";
             this.btnAddDepartment.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnAddDepartment.OnDisabledState.BorderRadius = 20;
+            this.btnAddDepartment.OnDisabledState.BorderRadius = 15;
             this.btnAddDepartment.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.btnAddDepartment.OnDisabledState.BorderThickness = 1;
             this.btnAddDepartment.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -308,7 +425,7 @@
             this.btnAddDepartment.OnDisabledState.IconLeftImage = null;
             this.btnAddDepartment.OnDisabledState.IconRightImage = null;
             this.btnAddDepartment.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnAddDepartment.onHoverState.BorderRadius = 20;
+            this.btnAddDepartment.onHoverState.BorderRadius = 15;
             this.btnAddDepartment.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.btnAddDepartment.onHoverState.BorderThickness = 1;
             this.btnAddDepartment.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
@@ -316,155 +433,38 @@
             this.btnAddDepartment.onHoverState.IconLeftImage = null;
             this.btnAddDepartment.onHoverState.IconRightImage = null;
             this.btnAddDepartment.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnAddDepartment.OnIdleState.BorderRadius = 20;
+            this.btnAddDepartment.OnIdleState.BorderRadius = 15;
             this.btnAddDepartment.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.btnAddDepartment.OnIdleState.BorderThickness = 1;
             this.btnAddDepartment.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnAddDepartment.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnAddDepartment.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnAddDepartment.OnIdleState.IconLeftImage")));
+            this.btnAddDepartment.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("BtnAddEmployee.OnIdleState.IconLeftImage")));
             this.btnAddDepartment.OnIdleState.IconRightImage = null;
-            this.btnAddDepartment.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnAddDepartment.OnPressedState.BorderRadius = 20;
+            this.btnAddDepartment.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnAddDepartment.OnPressedState.BorderRadius = 15;
             this.btnAddDepartment.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.btnAddDepartment.OnPressedState.BorderThickness = 1;
-            this.btnAddDepartment.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnAddDepartment.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnAddDepartment.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnAddDepartment.OnPressedState.IconLeftImage = null;
             this.btnAddDepartment.OnPressedState.IconRightImage = null;
-            this.btnAddDepartment.Size = new System.Drawing.Size(161, 48);
-            this.btnAddDepartment.TabIndex = 94;
+            this.btnAddDepartment.Size = new System.Drawing.Size(159, 42);
+            this.btnAddDepartment.TabIndex = 202;
             this.btnAddDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddDepartment.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAddDepartment.TextMarginLeft = 0;
-            this.btnAddDepartment.TextPadding = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.btnAddDepartment.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
             this.btnAddDepartment.UseDefaultRadiusAndThickness = true;
-            // 
-            // btnGoBack
-            // 
-            this.btnGoBack.AllowAnimations = true;
-            this.btnGoBack.AllowMouseEffects = true;
-            this.btnGoBack.AllowToggling = false;
-            this.btnGoBack.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGoBack.AnimationSpeed = 200;
-            this.btnGoBack.AutoGenerateColors = false;
-            this.btnGoBack.AutoRoundBorders = false;
-            this.btnGoBack.AutoSizeLeftIcon = true;
-            this.btnGoBack.AutoSizeRightIcon = true;
-            this.btnGoBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnGoBack.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnGoBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGoBack.BackgroundImage")));
-            this.btnGoBack.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnGoBack.ButtonText = "Volver";
-            this.btnGoBack.ButtonTextMarginLeft = 0;
-            this.btnGoBack.ColorContrastOnClick = 45;
-            this.btnGoBack.ColorContrastOnHover = 45;
-            this.btnGoBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnGoBack.CustomizableEdges = borderEdges2;
-            this.btnGoBack.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnGoBack.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnGoBack.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnGoBack.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnGoBack.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnGoBack.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGoBack.ForeColor = System.Drawing.Color.White;
-            this.btnGoBack.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGoBack.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnGoBack.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnGoBack.IconMarginLeft = 11;
-            this.btnGoBack.IconPadding = 10;
-            this.btnGoBack.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGoBack.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnGoBack.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnGoBack.IconSize = 25;
-            this.btnGoBack.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnGoBack.IdleBorderRadius = 20;
-            this.btnGoBack.IdleBorderThickness = 1;
-            this.btnGoBack.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnGoBack.IdleIconLeftImage = null;
-            this.btnGoBack.IdleIconRightImage = null;
-            this.btnGoBack.IndicateFocus = false;
-            this.btnGoBack.Location = new System.Drawing.Point(213, 367);
-            this.btnGoBack.Name = "btnGoBack";
-            this.btnGoBack.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnGoBack.OnDisabledState.BorderRadius = 20;
-            this.btnGoBack.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnGoBack.OnDisabledState.BorderThickness = 1;
-            this.btnGoBack.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnGoBack.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnGoBack.OnDisabledState.IconLeftImage = null;
-            this.btnGoBack.OnDisabledState.IconRightImage = null;
-            this.btnGoBack.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnGoBack.onHoverState.BorderRadius = 20;
-            this.btnGoBack.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnGoBack.onHoverState.BorderThickness = 1;
-            this.btnGoBack.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnGoBack.onHoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnGoBack.onHoverState.IconLeftImage = null;
-            this.btnGoBack.onHoverState.IconRightImage = null;
-            this.btnGoBack.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnGoBack.OnIdleState.BorderRadius = 20;
-            this.btnGoBack.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnGoBack.OnIdleState.BorderThickness = 1;
-            this.btnGoBack.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnGoBack.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnGoBack.OnIdleState.IconLeftImage = null;
-            this.btnGoBack.OnIdleState.IconRightImage = null;
-            this.btnGoBack.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnGoBack.OnPressedState.BorderRadius = 20;
-            this.btnGoBack.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnGoBack.OnPressedState.BorderThickness = 1;
-            this.btnGoBack.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnGoBack.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnGoBack.OnPressedState.IconLeftImage = null;
-            this.btnGoBack.OnPressedState.IconRightImage = null;
-            this.btnGoBack.Size = new System.Drawing.Size(151, 52);
-            this.btnGoBack.TabIndex = 97;
-            this.btnGoBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGoBack.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnGoBack.TextMarginLeft = 0;
-            this.btnGoBack.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnGoBack.UseDefaultRadiusAndThickness = true;
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(38, 53);
-            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(503, 35);
-            this.bunifuSeparator1.TabIndex = 193;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(146, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(30, 0, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 40);
-            this.label1.TabIndex = 192;
-            this.label1.Text = "DEPARTAMENTOS";
             // 
             // FrmDepartments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 443);
+            this.Controls.Add(this.btnAddDepartment);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGoBack);
-            this.Controls.Add(this.btnAddDepartment);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDepartment);
             this.Controls.Add(this.dgvDepartments);
@@ -483,12 +483,12 @@
 
         public Bunifu.UI.WinForms.BunifuDataGridView dgvDepartments;
         private System.Windows.Forms.Label label2;
-        public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnAddDepartment;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnGoBack;
         public Bunifu.UI.WinForms.BunifuTextBox txtDepartment;
         public System.Windows.Forms.ContextMenuStrip cmsDepartment;
         public System.Windows.Forms.ToolStripMenuItem cmsDeleteDepartment;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Label label1;
+        public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnAddDepartment;
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PTC2024.Controller.Helper;
+using PTC2024.Controller.MaintenanceController;
 
 namespace PTC2024.View.Maintenance
 {
@@ -15,6 +17,8 @@ namespace PTC2024.View.Maintenance
         public FrmCategories()
         {
             InitializeComponent();
+            ControllerCategories control = new ControllerCategories(this);
+            Region = Region.FromHrgn(CommonClasses.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
     }
 }

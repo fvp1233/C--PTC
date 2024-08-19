@@ -115,6 +115,7 @@
     <Compile Include="Controller\LogInController\ControllerLogin.cs" />
     <Compile Include="Controller\LogInController\ControllerRecoverPassword.cs" />
     <Compile Include="Controller\LogInController\ControllerRegister.cs" />
+    <Compile Include="Controller\MaintenanceController\ControllerCategories.cs" />
     <Compile Include="Controller\MaintenanceController\ControllerCharge.cs" />
     <Compile Include="Controller\MaintenanceController\ControllerDepartments.cs" />
     <Compile Include="Controller\MaintenanceController\ControllerMaintenance.cs" />
@@ -147,6 +148,7 @@
     <Compile Include="Model\DAO\LogInDAO\DAOLogin.cs" />
     <Compile Include="Model\DAO\LogInDAO\DAORecoverPassword.cs" />
     <Compile Include="Model\DAO\LogInDAO\DAORegister.cs" />
+    <Compile Include="Model\DAO\MaintenanceDAO\DAOCategories.cs" />
     <Compile Include="Model\DAO\MaintenanceDAO\DAOCharge.cs" />
     <Compile Include="Model\DAO\MaintenanceDAO\DAODepartment.cs" />
     <Compile Include="Model\DAO\MaintenanceDAO\DAOUpdateCharge.cs" />
@@ -175,6 +177,7 @@
     <Compile Include="Model\DTO\LogInDTO\DTOLogin.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTORecoverPassword.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTORegister.cs" />
+    <Compile Include="Model\DTO\MaintenanceDTO\DTOCategories.cs" />
     <Compile Include="Model\DTO\MaintenanceDTO\DTOCharge.cs" />
     <Compile Include="Model\DTO\MaintenanceDTO\DTODepartment.cs" />
     <Compile Include="Model\DTO\MaintenanceDTO\DTOUpdateCharge.cs" />
@@ -435,6 +438,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Maintenance\FrmMaintenance.resx">
       <DependentUpon>FrmMaintenance.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Maintenance\FrmUpdateCharge.resx">
       <DependentUpon>FrmUpdateCharge.cs</DependentUpon>
