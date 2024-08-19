@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PTC2024.Controller.PayrollsController
 {
@@ -18,6 +19,7 @@ namespace PTC2024.Controller.PayrollsController
             objPermission.Load += new EventHandler(LoadData);
             objPermission.btnGeneratePermission.Click += new EventHandler(OpenAddPermission);
             objPermission.cmsUpdatePermission.Click += new EventHandler(OpenUpdatePermission);
+            objPermission.btnDeletePermission.Click += new EventHandler(DeshiblePermission);
         }
         public void LoadData(object sender, EventArgs e)
         {
@@ -51,6 +53,46 @@ namespace PTC2024.Controller.PayrollsController
             openUpdatePermission.ShowDialog();
             RefreshData();
 
+        }
+        public void DeshiblePermission(object sender, EventArgs e)
+        {
+            DAOPermission DaoDeshiblePermission = new DAOPermission();
+            DataSet dsPermissions = DaoDeshiblePermission.GetPermissionsDisable();
+            DataSet dsEmployee = DaoDeshiblePermission.GetEmployee();
+            DataTable dtPermissions = dsPermissions.Tables["tbPermissions"];
+            DataTable dtEmployee = dsEmployee.Tables["tbEmployee"];
+            int returnValue = 0;
+            foreach (DataRow dr in dtEmployee.Rows) 
+            {
+                int employeeStatus = int.Parse(dr["IdStatus"].ToString());
+                if (employeeStatus == 2)
+                {
+                    int IdEmployee = int.Parse(dr["IdEmployee"].ToString());
+                    DataRow[] permissions = dtPermissions.Select($"IdEmployee = {IdEmployee}");
+                    foreach(DataRow permissionRow in permissions)
+                    {
+                        int idPermission = int.Parse(permissionRow["IdPermission"].ToString());
+                        DaoDeshiblePermission.IdStatusPermission = 3;
+                        DaoDeshiblePermission.IdEmployee = IdEmployee;
+                        returnValue = DaoDeshiblePermission.UpdateDsEPermission();
+                    }
+                }
+            }
+            RefreshData();
+            if (returnValue == 1)
+            {
+                MessageBox.Show("Los datos han sido eliminados exitosamente",
+                                "Proceso completado",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Los datos no pudieron ser eliminados",
+                                "Proceso interrumpido",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
         }
 
     }

@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPermissions));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -44,12 +45,13 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvPermissions = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.cmsPermission = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.cmsUpdatePermission = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDeletePermission = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnGeneratePermission = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuPictureBox2 = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.btnDeletePermission = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -247,24 +249,6 @@
             this.cmsPermission.Name = "cmsPlanillas";
             this.cmsPermission.Size = new System.Drawing.Size(181, 56);
             // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 4;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.3498F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.6502F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 212F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 217F));
-            this.tableLayoutPanel5.Controls.Add(this.btnGeneratePermission, 3, 0);
-            this.tableLayoutPanel5.Controls.Add(this.bunifuPictureBox1, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.bunifuPictureBox2, 2, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1119, 110);
-            this.tableLayoutPanel5.TabIndex = 3;
-            // 
             // cmsUpdatePermission
             // 
             this.cmsUpdatePermission.Image = ((System.Drawing.Image)(resources.GetObject("cmsUpdatePermission.Image")));
@@ -279,6 +263,26 @@
             this.cmsDeletePermission.Name = "cmsDeletePermission";
             this.cmsDeletePermission.Size = new System.Drawing.Size(180, 26);
             this.cmsDeletePermission.Text = "Eliminar permiso";
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 5;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.39622F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.60378F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 215F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 218F));
+            this.tableLayoutPanel5.Controls.Add(this.bunifuPictureBox1, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.bunifuPictureBox2, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnDeletePermission, 3, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnGeneratePermission, 4, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1119, 110);
+            this.tableLayoutPanel5.TabIndex = 3;
             // 
             // btnGeneratePermission
             // 
@@ -300,11 +304,11 @@
             this.btnGeneratePermission.ColorContrastOnClick = 45;
             this.btnGeneratePermission.ColorContrastOnHover = 45;
             this.btnGeneratePermission.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnGeneratePermission.CustomizableEdges = borderEdges1;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnGeneratePermission.CustomizableEdges = borderEdges2;
             this.btnGeneratePermission.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnGeneratePermission.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnGeneratePermission.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -378,7 +382,7 @@
             this.bunifuPictureBox1.BorderRadius = 0;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
             this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(515, 10);
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(295, 10);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
             this.bunifuPictureBox1.Size = new System.Drawing.Size(89, 89);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -394,13 +398,103 @@
             this.bunifuPictureBox2.BorderRadius = 0;
             this.bunifuPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox2.Image")));
             this.bunifuPictureBox2.IsCircle = true;
-            this.bunifuPictureBox2.Location = new System.Drawing.Point(754, 14);
+            this.bunifuPictureBox2.Location = new System.Drawing.Point(538, 14);
             this.bunifuPictureBox2.Name = "bunifuPictureBox2";
             this.bunifuPictureBox2.Size = new System.Drawing.Size(82, 82);
             this.bunifuPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuPictureBox2.TabIndex = 96;
             this.bunifuPictureBox2.TabStop = false;
             this.bunifuPictureBox2.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
+            // 
+            // btnDeletePermission
+            // 
+            this.btnDeletePermission.AllowAnimations = true;
+            this.btnDeletePermission.AllowMouseEffects = true;
+            this.btnDeletePermission.AllowToggling = false;
+            this.btnDeletePermission.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDeletePermission.AnimationSpeed = 200;
+            this.btnDeletePermission.AutoGenerateColors = false;
+            this.btnDeletePermission.AutoRoundBorders = false;
+            this.btnDeletePermission.AutoSizeLeftIcon = true;
+            this.btnDeletePermission.AutoSizeRightIcon = true;
+            this.btnDeletePermission.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeletePermission.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnDeletePermission.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeletePermission.BackgroundImage")));
+            this.btnDeletePermission.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnDeletePermission.ButtonText = "Eliminar permisos";
+            this.btnDeletePermission.ButtonTextMarginLeft = 0;
+            this.btnDeletePermission.ColorContrastOnClick = 45;
+            this.btnDeletePermission.ColorContrastOnHover = 45;
+            this.btnDeletePermission.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnDeletePermission.CustomizableEdges = borderEdges1;
+            this.btnDeletePermission.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDeletePermission.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnDeletePermission.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnDeletePermission.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnDeletePermission.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
+            this.btnDeletePermission.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletePermission.ForeColor = System.Drawing.Color.White;
+            this.btnDeletePermission.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeletePermission.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnDeletePermission.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnDeletePermission.IconMarginLeft = 11;
+            this.btnDeletePermission.IconPadding = 10;
+            this.btnDeletePermission.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeletePermission.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnDeletePermission.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnDeletePermission.IconSize = 25;
+            this.btnDeletePermission.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnDeletePermission.IdleBorderRadius = 20;
+            this.btnDeletePermission.IdleBorderThickness = 1;
+            this.btnDeletePermission.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnDeletePermission.IdleIconLeftImage = null;
+            this.btnDeletePermission.IdleIconRightImage = null;
+            this.btnDeletePermission.IndicateFocus = false;
+            this.btnDeletePermission.Location = new System.Drawing.Point(706, 26);
+            this.btnDeletePermission.Name = "btnDeletePermission";
+            this.btnDeletePermission.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnDeletePermission.OnDisabledState.BorderRadius = 20;
+            this.btnDeletePermission.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnDeletePermission.OnDisabledState.BorderThickness = 1;
+            this.btnDeletePermission.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnDeletePermission.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnDeletePermission.OnDisabledState.IconLeftImage = null;
+            this.btnDeletePermission.OnDisabledState.IconRightImage = null;
+            this.btnDeletePermission.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnDeletePermission.onHoverState.BorderRadius = 20;
+            this.btnDeletePermission.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnDeletePermission.onHoverState.BorderThickness = 1;
+            this.btnDeletePermission.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnDeletePermission.onHoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnDeletePermission.onHoverState.IconLeftImage = null;
+            this.btnDeletePermission.onHoverState.IconRightImage = null;
+            this.btnDeletePermission.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnDeletePermission.OnIdleState.BorderRadius = 20;
+            this.btnDeletePermission.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnDeletePermission.OnIdleState.BorderThickness = 1;
+            this.btnDeletePermission.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnDeletePermission.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnDeletePermission.OnIdleState.IconLeftImage = null;
+            this.btnDeletePermission.OnIdleState.IconRightImage = null;
+            this.btnDeletePermission.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnDeletePermission.OnPressedState.BorderRadius = 20;
+            this.btnDeletePermission.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnDeletePermission.OnPressedState.BorderThickness = 1;
+            this.btnDeletePermission.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnDeletePermission.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnDeletePermission.OnPressedState.IconLeftImage = null;
+            this.btnDeletePermission.OnPressedState.IconRightImage = null;
+            this.btnDeletePermission.Size = new System.Drawing.Size(173, 58);
+            this.btnDeletePermission.TabIndex = 97;
+            this.btnDeletePermission.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDeletePermission.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDeletePermission.TextMarginLeft = 0;
+            this.btnDeletePermission.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnDeletePermission.UseDefaultRadiusAndThickness = true;
             // 
             // FrmPermissions
             // 
@@ -440,6 +534,7 @@
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox2;
         public System.Windows.Forms.ContextMenuStrip cmsPermission;
         public System.Windows.Forms.ToolStripMenuItem cmsUpdatePermission;
-        private System.Windows.Forms.ToolStripMenuItem cmsDeletePermission;
+        public System.Windows.Forms.ToolStripMenuItem cmsDeletePermission;
+        public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnDeletePermission;
     }
 }

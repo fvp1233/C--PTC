@@ -46,6 +46,7 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.cmsPayrollInformation.Click += new EventHandler(ViewInfoPayroll);
             objViewPayrolls.txtSearch.KeyPress += new KeyPressEventHandler(SearchPayrollEvent);
         }
+
         private void ChangeStatus(object sender, EventArgs e)
         {
             DAOViewPayrolls DAOUpdatePayroll = new DAOViewPayrolls();
