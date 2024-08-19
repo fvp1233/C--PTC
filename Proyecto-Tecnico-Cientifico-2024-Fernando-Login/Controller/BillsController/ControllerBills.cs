@@ -10,11 +10,8 @@ using PTC2024.Controller.Helper;
 using System.Drawing;
 using PTC2024.Model.DAO.EmployeesDAO;
 using PTC2024.Model.DTO.EmployeesDTO;
-using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
-using System.Windows.Forms;
-
 namespace PTC2024.Controller.BillsController
 {
     internal class ControllerBills
@@ -31,7 +28,6 @@ namespace PTC2024.Controller.BillsController
             objFormBills.cmsPrintBill.Click += new EventHandler(printBills);
             objFormBills.cmsOverrideBill.Click += new EventHandler(OverrideBills);
             objFormBills.cmsRectifyBill.Click += new EventHandler(Rectificar);
-            objFormBills.cmsOverrideBill.Click += new EventHandler(OverrideBills);
             objFormBills.txtSearchB.KeyPress += new KeyPressEventHandler(SearchBills);
             objFormBills.dgvBills.CellMouseDown += new DataGridViewCellMouseEventHandler(objFormBills_CellMouseDown);
             objFormBills.dgvBills.SelectionChanged += new EventHandler(dgvBills_SelectionChanged);
@@ -289,9 +285,39 @@ namespace PTC2024.Controller.BillsController
         }
         public void Rectificar(object sender, EventArgs e)
         {
-            FrmAddBills newBill = new FrmAddBills(1);
-            newBill.ShowDialog();
+            int row = objFormBills.dgvBills.CurrentRow.Index;
+            int id;
+            string NIT, NRC;
+            string companyName, serviceName, statusBill, customer, employee, methodP, CustomerDui, CustomerPhone, CustomerEmail;
+            DateTime startDate, FinalDate, Dateissued;
+            double Discount, SubtotalPay, TotalPay;
+            id = int.Parse(objFormBills.dgvBills[0, row].Value.ToString());
+            companyName = objFormBills.dgvBills[1, row].Value.ToString();
+            NIT = objFormBills.dgvBills[2, row].Value.ToString();
+            NRC = objFormBills.dgvBills[3, row].Value.ToString();
+            customer = objFormBills.dgvBills[4, row].Value.ToString();
+            CustomerDui = objFormBills.dgvBills[5, row].Value.ToString();
+            CustomerPhone = objFormBills.dgvBills[6, row].Value.ToString();
+            CustomerEmail = objFormBills.dgvBills[7, row].Value.ToString();
+            serviceName = objFormBills.dgvBills[8, row].Value.ToString();
+            Discount = double.Parse(objFormBills.dgvBills[9, row].Value.ToString());
+            SubtotalPay = double.Parse(objFormBills.dgvBills[10, row].Value.ToString());
+            TotalPay = double.Parse(objFormBills.dgvBills[11, row].Value.ToString());
+            methodP = objFormBills.dgvBills[12, row].Value.ToString();
+            startDate = DateTime.Parse(objFormBills.dgvBills[13, row].Value.ToString());
+            FinalDate = DateTime.Parse(objFormBills.dgvBills[14, row].Value.ToString());
+            employee = objFormBills.dgvBills[15, row].Value.ToString();
+            statusBill = objFormBills.dgvBills[16, row].Value.ToString();
+            Dateissued = DateTime.Parse(objFormBills.dgvBills[17, row].Value.ToString());
+
+            FrmAddBills rectifyBill = new FrmAddBills(1, id, companyName, NIT, NRC, customer, serviceName, Discount, SubtotalPay, TotalPay, methodP, startDate, FinalDate, Dateissued, employee, statusBill, CustomerDui, CustomerPhone, CustomerEmail);
+
+            rectifyBill.ShowDialog();
             ChargeData();
+
+            /*FrmAddBills newBill = new FrmAddBills(1);
+            newBill.ShowDialog();
+            ChargeData();*/
         }
         public void OverrideBills(object sender, EventArgs e)
         {
@@ -314,7 +340,6 @@ namespace PTC2024.Controller.BillsController
                 disabledBillId = idBill;
                 DisableRow(idBill);
                 SetRowReadOnly(idBill);
-                objFormBills.cmsRectifyBill.Enabled = true;
             }
             else
             {
@@ -323,53 +348,67 @@ namespace PTC2024.Controller.BillsController
 
         }
 
-        private void DisableRow(int idBill)
+       public void DisableRow(int idBill)
+    {
+        foreach (DataGridViewRow row in objFormBills.dgvBills.Rows)
         {
-            foreach (DataGridViewRow row in objFormBills.dgvBills.Rows)
+            var cellValue = row.Cells["N°"].Value;
+
+            if (cellValue != null && int.TryParse(cellValue.ToString(), out int cellValueAsInt) && cellValueAsInt == idBill)
             {
-                if (row.Cells["N°"].Value != null && (int)row.Cells["N°"].Value == idBill)
-                {
-                    row.DefaultCellStyle.BackColor = Color.LightGray;
-                    row.DefaultCellStyle.ForeColor = Color.DarkGray;
-                    row.DefaultCellStyle.SelectionBackColor = Color.LightGray;
-                    row.DefaultCellStyle.SelectionForeColor = Color.DarkGray;
+                row.DefaultCellStyle.BackColor = Color.LightGray;
+                row.DefaultCellStyle.ForeColor = Color.DarkGray;
+                row.DefaultCellStyle.SelectionBackColor = Color.LightGray;
+                row.DefaultCellStyle.SelectionForeColor = Color.DarkGray;
+                    objFormBills.cmsRectifyBill.Enabled = true;
+
                     break;
-                }
+            }
             }
         }
 
-        private void SetRowReadOnly(int idBill)
+    public void SetRowReadOnly(int idBill)
+    {
+        foreach (DataGridViewRow row in objFormBills.dgvBills.Rows)
         {
-            foreach (DataGridViewRow row in objFormBills.dgvBills.Rows)
+            var cellValue = row.Cells["N°"].Value;
+
+            if (cellValue != null && int.TryParse(cellValue.ToString(), out int cellValueAsInt) && cellValueAsInt == idBill)
             {
-                if (row.Cells["N°"].Value != null && (int)row.Cells["N°"].Value == idBill)
-                {
-                    row.ReadOnly = true;
-                    break;
-                }
+                row.ReadOnly = true;
+                break;
             }
         }
+    }
 
-        private void objFormBills_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+    public void objFormBills_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+    {
+        if (e.RowIndex >= 0)
         {
-            if (e.RowIndex >= 0)
+            DataGridViewRow row = objFormBills.dgvBills.Rows[e.RowIndex];
+            var cellValue = row.Cells["N°"].Value;
+
+            if (cellValue != null && int.TryParse(cellValue.ToString(), out int cellValueAsInt) && cellValueAsInt == disabledBillId)
             {
-                DataGridViewRow row = objFormBills.dgvBills.Rows[e.RowIndex];
-                if (row.Cells["N°"].Value != null && (int)row.Cells["N°"].Value == disabledBillId)
-                {
-                }
             }
         }
+    }
 
-        private void dgvBills_SelectionChanged(object sender, EventArgs e)
+    public void dgvBills_SelectionChanged(object sender, EventArgs e)
+    {
+        foreach (DataGridViewRow row in objFormBills.dgvBills.SelectedRows)
         {
-            foreach (DataGridViewRow row in objFormBills.dgvBills.SelectedRows)
+            var cellValue = row.Cells["N°"].Value;
+
+            if (cellValue != null && int.TryParse(cellValue.ToString(), out int cellValueAsInt))
             {
-                if (row.Cells["N°"].Value != null && (int)row.Cells["N°"].Value == disabledBillId)
+                if (cellValueAsInt == disabledBillId)
                 {
                     row.Selected = false;
                 }
             }
         }
+    }
+
     }
 }

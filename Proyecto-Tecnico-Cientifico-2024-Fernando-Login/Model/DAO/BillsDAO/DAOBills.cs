@@ -4,6 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -80,6 +82,64 @@ namespace PTC2024.Model.DAO.BillsDAO
                 Command.Connection.Close();
             }
         }
+
+        public bool VerifyAdminPassword(SecureString inputPassword)
+        {
+            try
+            {
+                bool isPasswordValid = false;
+                string storedHash = GetStoredPasswordHash(); // Obtener el hash almacenado desde la base de datos
+
+                // Convertir SecureString a texto simple para su encriptación
+                string plainTextPassword = ConvertToUnsecureString(inputPassword);
+
+                // Crear una instancia de CommonClasses
+                CommonClasses commonClasses = new CommonClasses();
+
+                // Encriptar la contraseña ingresada usando ComputeSha256Hash
+                string hashedInputPassword = commonClasses.ComputeSha256Hash(plainTextPassword);
+
+                // Comparar el hash de la contraseña ingresada con el hash almacenado
+                isPasswordValid = (hashedInputPassword == storedHash);
+
+                return isPasswordValid;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al validar contraseña: " + ex.Message);
+                return false;
+            }
+        }
+
+
+
+        public string ConvertToUnsecureString(SecureString securePassword)
+        {
+            if (securePassword == null)
+                throw new ArgumentNullException("securePassword");
+
+            IntPtr unmanagedString = IntPtr.Zero;
+            try
+            {
+                unmanagedString = Marshal.SecureStringToGlobalAllocUnicode(securePassword);
+                return Marshal.PtrToStringUni(unmanagedString);
+            }
+            finally
+            {
+                Marshal.ZeroFreeGlobalAllocUnicode(unmanagedString);
+            }
+        }
+        public string GetStoredPasswordHash()
+        {
+            string storedHash = ""; 
+            Command.Connection = getConnection();
+                string query = "SELECT password FROM tbUserData WHERE IdBusinessP = 1";
+                SqlCommand command = new SqlCommand(query, Command.Connection);
+                storedHash = command.ExecuteScalar()?.ToString();
+            
+            return storedHash;
+        }
+
         public bool OverBill(int idBill)
         {
             try

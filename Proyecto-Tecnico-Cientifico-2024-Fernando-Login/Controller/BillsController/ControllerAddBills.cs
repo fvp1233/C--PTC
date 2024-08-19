@@ -116,10 +116,10 @@ namespace PTC2024.Controller.BillsController
                 objAddBills.btnRectify.Enabled = true;
             }
             else if (accions == 2)
-            { 
-                objAddBills.btnAddBill.Enabled = true;
-                objAddBills.btnBack.Enabled = true;
+            {
                 objAddBills.btnRectify.Enabled = true;
+                objAddBills.btnAddBill.Enabled = false;
+                objAddBills.btnBack.Enabled = false;
             }
             else if (accions == 3)
             {
