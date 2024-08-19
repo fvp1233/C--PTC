@@ -199,7 +199,7 @@
             this.ShowPassword.BackColor = System.Drawing.Color.White;
             this.ShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ShowPassword.Image = ((System.Drawing.Image)(resources.GetObject("ShowPassword.Image")));
-            this.ShowPassword.Location = new System.Drawing.Point(516, 58);
+            this.ShowPassword.Location = new System.Drawing.Point(515, 58);
             this.ShowPassword.Name = "ShowPassword";
             this.ShowPassword.Size = new System.Drawing.Size(25, 25);
             this.ShowPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -211,7 +211,7 @@
             this.HidePassword.BackColor = System.Drawing.Color.White;
             this.HidePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HidePassword.Image = ((System.Drawing.Image)(resources.GetObject("HidePassword.Image")));
-            this.HidePassword.Location = new System.Drawing.Point(516, 58);
+            this.HidePassword.Location = new System.Drawing.Point(515, 58);
             this.HidePassword.Name = "HidePassword";
             this.HidePassword.Size = new System.Drawing.Size(25, 25);
             this.HidePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

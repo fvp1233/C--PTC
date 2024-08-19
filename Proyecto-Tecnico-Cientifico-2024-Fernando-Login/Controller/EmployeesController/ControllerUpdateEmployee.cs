@@ -73,45 +73,59 @@ namespace PTC2024.Controller.EmployeesController
                 emailValidation = ValidateEmail();
                 if (emailValidation == true)
                 {
-                    //CREAMOS OBJETO DEL DAOUpdateEmployees
-                    DAOUpdateEmployee daoUpdateEmployee = new DAOUpdateEmployee();
-                    daoUpdateEmployee.Names = objUpdateEmployee.txtNames.Text.Trim();
-                    daoUpdateEmployee.LastNames = objUpdateEmployee.txtLastNames.Text.Trim();
-                    daoUpdateEmployee.Document = objUpdateEmployee.txtDUI.Text.Trim();
-                    daoUpdateEmployee.BirthDate = objUpdateEmployee.dtBirthDate.Value;
-                    daoUpdateEmployee.Address = objUpdateEmployee.txtAddress.Text.Trim();
-                    daoUpdateEmployee.Phone = objUpdateEmployee.txtPhone.Text.Trim();
-                    daoUpdateEmployee.Email = objUpdateEmployee.txtEmail.Text.Trim();
-                    daoUpdateEmployee.HireDate = objUpdateEmployee.dpHireDate.Value;
-                    daoUpdateEmployee.MaritalStatus = (int)objUpdateEmployee.comboMaritalStatus.SelectedValue;
-                    daoUpdateEmployee.Department = (int)objUpdateEmployee.comboDepartment.SelectedValue;
-                    daoUpdateEmployee.EmployeeType = (int)objUpdateEmployee.comboEmployeeType.SelectedValue;
-                    daoUpdateEmployee.EmployeeStatus = (int)objUpdateEmployee.comboEmployeeStatus.SelectedValue;
-                    daoUpdateEmployee.Salary = double.Parse(objUpdateEmployee.txtSalary.Text.Trim());
-                    daoUpdateEmployee.AffiliationNumber = objUpdateEmployee.txtAffiliationNumber.Text.Trim();
-                    daoUpdateEmployee.BankAccount = objUpdateEmployee.txtBankAccount.Text.Trim();
-                    daoUpdateEmployee.Bank = (int)objUpdateEmployee.comboBanks.SelectedValue;
-                    daoUpdateEmployee.IdEmployee = int.Parse(objUpdateEmployee.txtEmployeeId.Text.Trim());
-                    //Datos para los getters de la tabla userData
-                    daoUpdateEmployee.Username = objUpdateEmployee.txtUsername.Text.Trim();
-                    daoUpdateEmployee.BusinessPosition = (int)objUpdateEmployee.comboBusinessP.SelectedValue;
-
-                    //variable para saber la respuesta del proceso de update en el DAOUpdateEmployees
-                    int updateAnswer = daoUpdateEmployee.UpdateEmployee();
-                    //la evaluamos
-                    if (updateAnswer == 1)
+                    //Validamos que el valor ingresado en el textbox del salario sea numérico
+                    if (double.TryParse(objUpdateEmployee.txtSalary.Text, out _))
                     {
-                        MessageBox.Show("Los datos del empleado han sido actualizados con éxito.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        objUpdateEmployee.Close();
+                        //Ahora verificamos la edad con el método de más abajo
+                        int employeeAge = ValidateAge();
+                        if (employeeAge >= 18)
+                        {
+                            //CREAMOS OBJETO DEL DAOUpdateEmployees
+                            DAOUpdateEmployee daoUpdateEmployee = new DAOUpdateEmployee();
+                            daoUpdateEmployee.Names = objUpdateEmployee.txtNames.Text.Trim();
+                            daoUpdateEmployee.LastNames = objUpdateEmployee.txtLastNames.Text.Trim();
+                            daoUpdateEmployee.Document = objUpdateEmployee.txtDUI.Text.Trim();
+                            daoUpdateEmployee.BirthDate = objUpdateEmployee.dtBirthDate.Value;
+                            daoUpdateEmployee.Address = objUpdateEmployee.txtAddress.Text.Trim();
+                            daoUpdateEmployee.Phone = objUpdateEmployee.txtPhone.Text.Trim();
+                            daoUpdateEmployee.Email = objUpdateEmployee.txtEmail.Text.Trim();
+                            daoUpdateEmployee.HireDate = objUpdateEmployee.dpHireDate.Value;
+                            daoUpdateEmployee.MaritalStatus = (int)objUpdateEmployee.comboMaritalStatus.SelectedValue;
+                            daoUpdateEmployee.Department = (int)objUpdateEmployee.comboDepartment.SelectedValue;
+                            daoUpdateEmployee.EmployeeType = (int)objUpdateEmployee.comboEmployeeType.SelectedValue;
+                            daoUpdateEmployee.EmployeeStatus = (int)objUpdateEmployee.comboEmployeeStatus.SelectedValue;
+                            daoUpdateEmployee.Salary = double.Parse(objUpdateEmployee.txtSalary.Text.Trim());
+                            daoUpdateEmployee.AffiliationNumber = objUpdateEmployee.txtAffiliationNumber.Text.Trim();
+                            daoUpdateEmployee.BankAccount = objUpdateEmployee.txtBankAccount.Text.Trim();
+                            daoUpdateEmployee.Bank = (int)objUpdateEmployee.comboBanks.SelectedValue;
+                            daoUpdateEmployee.IdEmployee = int.Parse(objUpdateEmployee.txtEmployeeId.Text.Trim());
+                            //Datos para los getters de la tabla userData
+                            daoUpdateEmployee.Username = objUpdateEmployee.txtUsername.Text.Trim();
+                            daoUpdateEmployee.BusinessPosition = (int)objUpdateEmployee.comboBusinessP.SelectedValue;
+
+                            //variable para saber la respuesta del proceso de update en el DAOUpdateEmployees
+                            int updateAnswer = daoUpdateEmployee.UpdateEmployee();
+                            //la evaluamos
+                            if (updateAnswer == 1)
+                            {
+                                MessageBox.Show("Los datos del empleado han sido actualizados con éxito.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                objUpdateEmployee.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Los datos del empleado no pudieron ser actualizados.", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            //FIN DEL MANTENIMIENTO DE UPDATE EMPLOYEE
+                        }
+                        else
+                        {
+                            MessageBox.Show("El empleado debe tener al menos 18 años de edad.", "Edad no permitida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Los datos del empleado no pudieron ser actualizados.", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-
+                        MessageBox.Show("Ingrese un valor numérico en el campo del salario", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }                        
                 }
                 
             }
@@ -264,6 +278,29 @@ namespace PTC2024.Controller.EmployeesController
             }
             //Si no se detecta ningún fallo en el email, se devuelve directamente un true.
             return true;
+        }
+
+        private int ValidateAge()
+        {
+            //Declaramos la variable que captura el valor del dateTimePicker del formulario
+            DateTime birthday = objUpdateEmployee.dtBirthDate.Value;
+            //Ahora declaramos la variable que captura la fecha actual
+            DateTime now = DateTime.Today;
+            //Declaramos la variable que nos dirá que edad tiene la persona
+            int employeeAge = now.Year - birthday.Year;
+
+            //Ahora bien, verificaremos si la persona ya cumplió años el año actual
+            //En el "now.AddYears(-employeeAge)" estamos restandole los años de la edad calculada antes a la fecha actual
+            //Si la fecha que obtengamos es menor a la fecha puesta en el datetimepicker entonces se le resta 1 a la edad, porque aun no cumple años en el año actual
+
+            if (birthday.Date > now.AddYears(-employeeAge))
+            {
+                employeeAge--;
+            }
+
+            //Ahora si retornamos la edad.
+            return employeeAge;
+
         }
 
         private void RestorePassword(object sender, EventArgs e)

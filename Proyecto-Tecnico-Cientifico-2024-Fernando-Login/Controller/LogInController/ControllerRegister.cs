@@ -65,8 +65,10 @@ namespace PTC2024.Controller.LogInController
             {
                 //Validación del dominio del correo
                 emailValidation = ValidateEmail();
+                //Validación de la edad del empleado
+                int employeeAge = ValidateAge();
                 //Validación para el campo de confirmar contraseña.
-                if ( (objRegister.txtConfirmedPassword.Text.Trim() == objRegister.txtPassword.Text.Trim()) && (emailValidation = true) )
+                if ((objRegister.txtConfirmedPassword.Text.Trim() == objRegister.txtPassword.Text.Trim()) && (emailValidation = true) && (employeeAge >= 18))
                 {
                     //Si todas las validaciones son correctas, pasamos a asignarles el valor a los métodos getter del DAORegister
                     //creamos objeto del DAORegister
@@ -151,6 +153,30 @@ namespace PTC2024.Controller.LogInController
             }
             //Si no se detecta ningún fallo en el email, se devuelve directamente un true.
             return true;
+        }
+
+        //Método encargado de verificar la edad
+        private int ValidateAge()
+        {
+            //Declaramos la variable que captura el valor del dateTimePicker del formulario
+            DateTime birthday = objRegister.dtBirth.Value;
+            //Ahora declaramos la variable que captura la fecha actual
+            DateTime now = DateTime.Today;
+            //Declaramos la variable que nos dirá que edad tiene la persona
+            int employeeAge = now.Year - birthday.Year;
+
+            //Ahora bien, verificaremos si la persona ya cumplió años el año actual
+            //En el "now.AddYears(-employeeAge)" estamos restandole los años de la edad calculada antes a la fecha actual
+            //Si la fecha que obtengamos es menor a la fecha puesta en el datetimepicker entonces se le resta 1 a la edad, porque aun no cumple años en el año actual
+
+            if (birthday.Date > now.AddYears(-employeeAge))
+            {
+                employeeAge--;
+            }
+
+            //Ahora si retornamos la edad.
+            return employeeAge;
+
         }
 
         //Eventos de esconder y mostrar contraseña
