@@ -550,6 +550,7 @@
     <Content Include="Resources\ActualizarEmpleado.png" />
     <Content Include="Resources\AgregarEmpleado.png" />
     <Content Include="Resources\generarPlanillas.png" />
+    <Content Include="Resources\habilitar.png" />
     <Content Include="Resources\indemnizacion.png" />
     <Content Include="Resources\ojoAbierto.png" />
     <Content Include="Resources\ojoCerrado.png" />

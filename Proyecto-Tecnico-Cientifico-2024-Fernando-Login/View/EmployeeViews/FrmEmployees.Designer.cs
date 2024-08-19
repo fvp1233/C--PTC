@@ -97,6 +97,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.bunifuFormResizer1 = new Bunifu.UI.WinForms.BunifuFormResizer(this.components);
+            this.cmsReactivateE = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -377,34 +378,35 @@
             // 
             // cmsEmployee
             // 
-            this.cmsEmployee.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmsEmployee.Font = new System.Drawing.Font("Century Gothic", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmsEmployee.ImageScalingSize = new System.Drawing.Size(19, 19);
             this.cmsEmployee.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cmsUpdateEmployee,
             this.cmsDeleteEmployee,
-            this.cmsEmployeeInformation});
+            this.cmsEmployeeInformation,
+            this.cmsReactivateE});
             this.cmsEmployee.Name = "cmsEmployee";
-            this.cmsEmployee.Size = new System.Drawing.Size(212, 82);
+            this.cmsEmployee.Size = new System.Drawing.Size(230, 130);
             // 
             // cmsUpdateEmployee
             // 
             this.cmsUpdateEmployee.Image = ((System.Drawing.Image)(resources.GetObject("cmsUpdateEmployee.Image")));
             this.cmsUpdateEmployee.Name = "cmsUpdateEmployee";
-            this.cmsUpdateEmployee.Size = new System.Drawing.Size(211, 26);
+            this.cmsUpdateEmployee.Size = new System.Drawing.Size(229, 26);
             this.cmsUpdateEmployee.Text = "Actualizar empleado";
             // 
             // cmsDeleteEmployee
             // 
             this.cmsDeleteEmployee.Image = ((System.Drawing.Image)(resources.GetObject("cmsDeleteEmployee.Image")));
             this.cmsDeleteEmployee.Name = "cmsDeleteEmployee";
-            this.cmsDeleteEmployee.Size = new System.Drawing.Size(211, 26);
+            this.cmsDeleteEmployee.Size = new System.Drawing.Size(229, 26);
             this.cmsDeleteEmployee.Text = "Deshabilitar empleado";
             // 
             // cmsEmployeeInformation
             // 
             this.cmsEmployeeInformation.Image = ((System.Drawing.Image)(resources.GetObject("cmsEmployeeInformation.Image")));
             this.cmsEmployeeInformation.Name = "cmsEmployeeInformation";
-            this.cmsEmployeeInformation.Size = new System.Drawing.Size(211, 26);
+            this.cmsEmployeeInformation.Size = new System.Drawing.Size(229, 26);
             this.cmsEmployeeInformation.Text = "Ver ficha de empleado";
             // 
             // tableLayoutPanel3
@@ -520,7 +522,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.49619F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 198F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 289F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 290F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel13, 4, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel11, 3, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel9, 2, 1);
@@ -545,11 +547,11 @@
             this.tableLayoutPanel13.Controls.Add(this.flowLayoutPanel4, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 1, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(628, 29);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(627, 29);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(284, 92);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(285, 92);
             this.tableLayoutPanel13.TabIndex = 9;
             // 
             // flowLayoutPanel4
@@ -796,7 +798,7 @@
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(245, 86);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(246, 86);
             this.tableLayoutPanel14.TabIndex = 1;
             // 
             // label17
@@ -806,7 +808,7 @@
             this.label17.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(3, 66);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(239, 16);
+            this.label17.Size = new System.Drawing.Size(240, 16);
             this.label17.TabIndex = 3;
             this.label17.Text = "Incapacidad";
             // 
@@ -817,7 +819,7 @@
             this.label18.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(3, 44);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(239, 16);
+            this.label18.Size = new System.Drawing.Size(240, 16);
             this.label18.TabIndex = 2;
             this.label18.Text = "Maternidad";
             // 
@@ -828,7 +830,7 @@
             this.label19.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(3, 23);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(239, 16);
+            this.label19.Size = new System.Drawing.Size(240, 16);
             this.label19.TabIndex = 1;
             this.label19.Text = "Inactivo";
             // 
@@ -839,7 +841,7 @@
             this.label20.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(3, 2);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(239, 16);
+            this.label20.Size = new System.Drawing.Size(240, 16);
             this.label20.TabIndex = 0;
             this.label20.Text = "Activo";
             // 
@@ -851,7 +853,7 @@
             this.tableLayoutPanel11.Controls.Add(this.flowLayoutPanel3, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel12, 1, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(430, 29);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(429, 29);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -956,7 +958,7 @@
             this.tableLayoutPanel9.Controls.Add(this.flowLayoutPanel2, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(271, 29);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(270, 29);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1259,7 +1261,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(42, 8);
+            this.label3.Location = new System.Drawing.Point(41, 8);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(148, 18);
             this.label3.TabIndex = 0;
@@ -1273,7 +1275,7 @@
             this.tableLayoutPanel6.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(42, 29);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(41, 29);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1576,7 +1578,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(271, 8);
+            this.label8.Location = new System.Drawing.Point(270, 8);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(119, 18);
             this.label8.TabIndex = 2;
@@ -1587,7 +1589,7 @@
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(628, 8);
+            this.label13.Location = new System.Drawing.Point(627, 8);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(60, 18);
             this.label13.TabIndex = 10;
@@ -1599,6 +1601,13 @@
             this.bunifuFormResizer1.Enabled = true;
             this.bunifuFormResizer1.ParentForm = this;
             this.bunifuFormResizer1.ResizeHandlesWidth = 6;
+            // 
+            // cmsReactivateE
+            // 
+            this.cmsReactivateE.Image = ((System.Drawing.Image)(resources.GetObject("cmsReactivateE.Image")));
+            this.cmsReactivateE.Name = "cmsReactivateE";
+            this.cmsReactivateE.Size = new System.Drawing.Size(229, 26);
+            this.cmsReactivateE.Text = "Habilitar empleado";
             // 
             // FrmEmployees
             // 
@@ -1698,5 +1707,6 @@
         public Bunifu.UI.WinForms.BunifuCheckBox cbSoporte;
         public Bunifu.UI.WinForms.BunifuCheckBox cbRecursosH;
         private Bunifu.UI.WinForms.BunifuFormResizer bunifuFormResizer1;
+        public System.Windows.Forms.ToolStripMenuItem cmsReactivateE;
     }
 }
