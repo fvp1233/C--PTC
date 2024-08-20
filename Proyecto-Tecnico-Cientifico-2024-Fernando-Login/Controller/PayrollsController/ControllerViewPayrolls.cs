@@ -22,21 +22,21 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls = Vista;
             objViewPayrolls.Load += new EventHandler(LoadData);
             objViewPayrolls.picNotification.Click += new EventHandler(ChangeStatus);
-            objViewPayrolls.ch1.CheckedChanged += new EventHandler(SearchByMonth1);
-            objViewPayrolls.ch2.CheckedChanged += new EventHandler(SearchByMonth2);
-            objViewPayrolls.ch3.CheckedChanged += new EventHandler(SearchByMonth3);
-            objViewPayrolls.ch4.CheckedChanged += new EventHandler(SearchByMonth4);
-            objViewPayrolls.ch5.CheckedChanged += new EventHandler(SearchByMonth5);
-            objViewPayrolls.ch6.CheckedChanged += new EventHandler(SearchByMonth6);
-            objViewPayrolls.ch7.CheckedChanged += new EventHandler(SearchByMonth7);
-            objViewPayrolls.ch8.CheckedChanged += new EventHandler(SearchByMonth8);
-            objViewPayrolls.ch9.CheckedChanged += new EventHandler(SearchByMonth9);
-            objViewPayrolls.ch10.CheckedChanged += new EventHandler(SearchByMonth10);
-            objViewPayrolls.ch11.CheckedChanged += new EventHandler(SearchByMonth11);
-            objViewPayrolls.ch12.CheckedChanged += new EventHandler(SearchByMonth12);
-            objViewPayrolls.chPaid.CheckedChanged += new EventHandler(SearchByPaid);
-            objViewPayrolls.chuUnpaid.CheckedChanged += new EventHandler(SearchByUnpaid);
-            objViewPayrolls.chCompensation.CheckedChanged += new EventHandler(SearchByCompensation);
+            objViewPayrolls.ch1.Click += new EventHandler(SearchByMonth1);
+            objViewPayrolls.ch2.Click += new EventHandler(SearchByMonth2);
+            objViewPayrolls.ch3.Click += new EventHandler(SearchByMonth3);
+            objViewPayrolls.ch4.Click += new EventHandler(SearchByMonth4);
+            objViewPayrolls.ch5.Click += new EventHandler(SearchByMonth5);
+            objViewPayrolls.ch6.Click += new EventHandler(SearchByMonth6);
+            objViewPayrolls.ch7.Click += new EventHandler(SearchByMonth7);
+            objViewPayrolls.ch8.Click += new EventHandler(SearchByMonth8);
+            objViewPayrolls.ch9.Click += new EventHandler(SearchByMonth9);
+            objViewPayrolls.ch10.Click += new EventHandler(SearchByMonth10);
+            objViewPayrolls.ch11.Click += new EventHandler(SearchByMonth11);
+            objViewPayrolls.ch12.Click += new EventHandler(SearchByMonth12);
+            objViewPayrolls.chPaid.Click += new EventHandler(SearchByPaid);
+            objViewPayrolls.chuUnpaid.Click += new EventHandler(SearchByUnpaid);
+            objViewPayrolls.chCompensation.Click += new EventHandler(SearchByCompensation);
             objViewPayrolls.btnCreatePayroll.Click += new EventHandler(CreatePayroll);
             objViewPayrolls.btnCompensation.Click += new EventHandler(CreateCompensationPayroll);
             objViewPayrolls.btnActualizarPlanillas.Click += new EventHandler(RefreshData);
@@ -46,6 +46,7 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.cmsPayrollInformation.Click += new EventHandler(ViewInfoPayroll);
             objViewPayrolls.txtSearch.KeyPress += new KeyPressEventHandler(SearchPayrollEvent);
         }
+
         private void ChangeStatus(object sender, EventArgs e)
         {
             DAOViewPayrolls DAOUpdatePayroll = new DAOViewPayrolls();

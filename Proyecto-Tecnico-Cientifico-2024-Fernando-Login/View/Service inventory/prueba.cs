@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PTC2024.View.EmployeeViews
+namespace PTC2024.View.Service_inventory
 {
-    public partial class FrmLoadPayroll : Form
+    public partial class prueba : Form
     {
-        public FrmLoadPayroll()
+        public prueba()
         {
             InitializeComponent();
         }

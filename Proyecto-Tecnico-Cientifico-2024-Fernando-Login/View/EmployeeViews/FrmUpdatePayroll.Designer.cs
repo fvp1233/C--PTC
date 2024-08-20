@@ -40,6 +40,8 @@
             this.btnConfirm = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnCancelar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.bunifuGroupBox2 = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.txtGrossPay = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtDaysWorked = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtDaySalary = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -74,8 +76,6 @@
             this.bunifuCustomLabel18 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtDUI = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtIdPayroll = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.txtGrossPay = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGroupBox2.SuspendLayout();
             this.bunifuGroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -148,7 +148,7 @@
             this.btnConfirm.IdleIconLeftImage = null;
             this.btnConfirm.IdleIconRightImage = null;
             this.btnConfirm.IndicateFocus = false;
-            this.btnConfirm.Location = new System.Drawing.Point(429, 500);
+            this.btnConfirm.Location = new System.Drawing.Point(429, 489);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnConfirm.OnDisabledState.BorderRadius = 20;
@@ -238,7 +238,7 @@
             this.btnCancelar.IdleIconLeftImage = null;
             this.btnCancelar.IdleIconRightImage = null;
             this.btnCancelar.IndicateFocus = false;
-            this.btnCancelar.Location = new System.Drawing.Point(272, 500);
+            this.btnCancelar.Location = new System.Drawing.Point(272, 489);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCancelar.OnDisabledState.BorderRadius = 20;
@@ -317,6 +317,37 @@
             this.bunifuGroupBox2.TabIndex = 190;
             this.bunifuGroupBox2.TabStop = false;
             this.bunifuGroupBox2.Text = "Información salarial";
+            // 
+            // txtGrossPay
+            // 
+            this.txtGrossPay.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtGrossPay.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGrossPay.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtGrossPay.ForeColor = System.Drawing.Color.Black;
+            this.txtGrossPay.HintForeColor = System.Drawing.Color.Empty;
+            this.txtGrossPay.HintText = "";
+            this.txtGrossPay.isPassword = false;
+            this.txtGrossPay.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtGrossPay.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtGrossPay.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtGrossPay.LineThickness = 3;
+            this.txtGrossPay.Location = new System.Drawing.Point(30, 115);
+            this.txtGrossPay.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGrossPay.Name = "txtGrossPay";
+            this.txtGrossPay.Size = new System.Drawing.Size(163, 31);
+            this.txtGrossPay.TabIndex = 209;
+            this.txtGrossPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuCustomLabel11
+            // 
+            this.bunifuCustomLabel11.AutoSize = true;
+            this.bunifuCustomLabel11.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(27, 95);
+            this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
+            this.bunifuCustomLabel11.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuCustomLabel11.Size = new System.Drawing.Size(98, 16);
+            this.bunifuCustomLabel11.TabIndex = 208;
+            this.bunifuCustomLabel11.Text = "Salario Bruto";
             // 
             // txtDaysWorked
             // 
@@ -418,7 +449,7 @@
             this.cmbPayrollStatus.ItemTopMargin = 3;
             this.cmbPayrollStatus.Location = new System.Drawing.Point(413, 194);
             this.cmbPayrollStatus.Name = "cmbPayrollStatus";
-            this.cmbPayrollStatus.Size = new System.Drawing.Size(163, 32);
+            this.cmbPayrollStatus.Size = new System.Drawing.Size(348, 32);
             this.cmbPayrollStatus.TabIndex = 203;
             this.cmbPayrollStatus.Text = null;
             this.cmbPayrollStatus.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
@@ -941,37 +972,6 @@
             this.txtIdPayroll.TextPlaceholder = "Enter text";
             this.txtIdPayroll.UseSystemPasswordChar = false;
             this.txtIdPayroll.WordWrap = true;
-            // 
-            // txtGrossPay
-            // 
-            this.txtGrossPay.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtGrossPay.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGrossPay.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtGrossPay.ForeColor = System.Drawing.Color.Black;
-            this.txtGrossPay.HintForeColor = System.Drawing.Color.Empty;
-            this.txtGrossPay.HintText = "";
-            this.txtGrossPay.isPassword = false;
-            this.txtGrossPay.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtGrossPay.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtGrossPay.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtGrossPay.LineThickness = 3;
-            this.txtGrossPay.Location = new System.Drawing.Point(30, 115);
-            this.txtGrossPay.Margin = new System.Windows.Forms.Padding(4);
-            this.txtGrossPay.Name = "txtGrossPay";
-            this.txtGrossPay.Size = new System.Drawing.Size(163, 31);
-            this.txtGrossPay.TabIndex = 209;
-            this.txtGrossPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuCustomLabel11
-            // 
-            this.bunifuCustomLabel11.AutoSize = true;
-            this.bunifuCustomLabel11.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel11.Location = new System.Drawing.Point(27, 95);
-            this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
-            this.bunifuCustomLabel11.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuCustomLabel11.Size = new System.Drawing.Size(98, 16);
-            this.bunifuCustomLabel11.TabIndex = 208;
-            this.bunifuCustomLabel11.Text = "Salario Bruto";
             // 
             // FrmUpdatePayroll
             // 

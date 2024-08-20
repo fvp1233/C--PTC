@@ -33,6 +33,7 @@ namespace PTC2024.Controller.Employees
             objEmployees.cmsDeleteEmployee.Click += new EventHandler(DisableEmployee);
             objEmployees.cmsEmployeeInformation.Click += new EventHandler(ViewEmployeeInfo);
             objEmployees.txtEmployeeSearch.KeyPress += new KeyPressEventHandler(SearchEmployeeEvent);
+            objEmployees.dgvEmployees.Click += new EventHandler(ContextMenuClick);
             objEmployees.cbTiempoCompleto.Click += new EventHandler(CheckedTiempoCompleto);
             objEmployees.cbVoluntario.Click += new EventHandler(CheckedVoluntario);
             objEmployees.cbBecario.Click += new EventHandler(CheckedBecario);
@@ -618,6 +619,28 @@ namespace PTC2024.Controller.Employees
             {
                 RefreshDataGridEmployees();
             }
+        }
+
+        public void ContextMenuClick(object sender, EventArgs e)
+        {
+            //Declaramos la variable para saber que registro esta seleccionado
+            int row = objEmployees.dgvEmployees.CurrentRow.Index;
+            //Evaluamos cual es el estado del empleado seleccionado
+            if (objEmployees.dgvEmployees[16, row].Value.ToString() == "Inactivo")
+            {
+                objEmployees.cmsDeleteEmployee.Visible = false;
+                objEmployees.cmsUpdateEmployee.Visible = false;
+                objEmployees.cmsEmployeeInformation.Visible = true;
+                objEmployees.cmsReactivateE.Visible = true;
+            }
+            else
+            {
+                objEmployees.cmsUpdateEmployee.Visible = true;
+                objEmployees.cmsDeleteEmployee.Visible = true;
+                objEmployees.cmsEmployeeInformation.Visible = true;
+                objEmployees.cmsReactivateE.Visible = false;
+            }
+
         }
 
         #region Método filtración antiguo (Tipo Empleado)

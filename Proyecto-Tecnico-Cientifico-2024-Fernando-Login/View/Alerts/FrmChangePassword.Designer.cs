@@ -107,7 +107,7 @@
             this.txtPassword.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.Lines = new string[0];
             this.txtPassword.Location = new System.Drawing.Point(83, 118);
-            this.txtPassword.MaxLength = 32767;
+            this.txtPassword.MaxLength = 256;
             this.txtPassword.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPassword.Modified = false;
             this.txtPassword.Multiline = false;
@@ -183,7 +183,7 @@
             this.txtConfirmPass.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtConfirmPass.Lines = new string[0];
             this.txtConfirmPass.Location = new System.Drawing.Point(83, 180);
-            this.txtConfirmPass.MaxLength = 32767;
+            this.txtConfirmPass.MaxLength = 256;
             this.txtConfirmPass.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtConfirmPass.Modified = false;
             this.txtConfirmPass.Multiline = false;

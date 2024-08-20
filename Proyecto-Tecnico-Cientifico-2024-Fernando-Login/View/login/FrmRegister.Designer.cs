@@ -199,7 +199,7 @@
             this.ShowPassword.BackColor = System.Drawing.Color.White;
             this.ShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ShowPassword.Image = ((System.Drawing.Image)(resources.GetObject("ShowPassword.Image")));
-            this.ShowPassword.Location = new System.Drawing.Point(516, 58);
+            this.ShowPassword.Location = new System.Drawing.Point(515, 58);
             this.ShowPassword.Name = "ShowPassword";
             this.ShowPassword.Size = new System.Drawing.Size(25, 25);
             this.ShowPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -211,7 +211,7 @@
             this.HidePassword.BackColor = System.Drawing.Color.White;
             this.HidePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HidePassword.Image = ((System.Drawing.Image)(resources.GetObject("HidePassword.Image")));
-            this.HidePassword.Location = new System.Drawing.Point(516, 58);
+            this.HidePassword.Location = new System.Drawing.Point(515, 58);
             this.HidePassword.Name = "HidePassword";
             this.HidePassword.Size = new System.Drawing.Size(25, 25);
             this.HidePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -300,7 +300,7 @@
             this.txtUser.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUser.Lines = new string[0];
             this.txtUser.Location = new System.Drawing.Point(16, 51);
-            this.txtUser.MaxLength = 32767;
+            this.txtUser.MaxLength = 50;
             this.txtUser.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtUser.Modified = false;
             this.txtUser.Multiline = false;
@@ -377,7 +377,7 @@
             this.txtPassword.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.Lines = new string[0];
             this.txtPassword.Location = new System.Drawing.Point(284, 51);
-            this.txtPassword.MaxLength = 32767;
+            this.txtPassword.MaxLength = 256;
             this.txtPassword.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPassword.Modified = false;
             this.txtPassword.Multiline = false;
@@ -454,7 +454,7 @@
             this.txtConfirmedPassword.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtConfirmedPassword.Lines = new string[0];
             this.txtConfirmedPassword.Location = new System.Drawing.Point(550, 51);
-            this.txtConfirmedPassword.MaxLength = 32767;
+            this.txtConfirmedPassword.MaxLength = 256;
             this.txtConfirmedPassword.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtConfirmedPassword.Modified = false;
             this.txtConfirmedPassword.Multiline = false;
@@ -606,7 +606,7 @@
             this.txtAffiliationNumber.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAffiliationNumber.Lines = new string[0];
             this.txtAffiliationNumber.Location = new System.Drawing.Point(16, 51);
-            this.txtAffiliationNumber.MaxLength = 32767;
+            this.txtAffiliationNumber.MaxLength = 70;
             this.txtAffiliationNumber.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtAffiliationNumber.Modified = false;
             this.txtAffiliationNumber.Multiline = false;
@@ -683,7 +683,7 @@
             this.txtBankAccount.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBankAccount.Lines = new string[0];
             this.txtBankAccount.Location = new System.Drawing.Point(282, 51);
-            this.txtBankAccount.MaxLength = 32767;
+            this.txtBankAccount.MaxLength = 100;
             this.txtBankAccount.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtBankAccount.Modified = false;
             this.txtBankAccount.Multiline = false;
@@ -885,7 +885,7 @@
             this.txtLastNames.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtLastNames.Lines = new string[0];
             this.txtLastNames.Location = new System.Drawing.Point(282, 49);
-            this.txtLastNames.MaxLength = 32767;
+            this.txtLastNames.MaxLength = 150;
             this.txtLastNames.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtLastNames.Modified = false;
             this.txtLastNames.Multiline = false;
@@ -1005,7 +1005,7 @@
             this.txtEmail.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmail.Lines = new string[0];
             this.txtEmail.Location = new System.Drawing.Point(282, 113);
-            this.txtEmail.MaxLength = 32767;
+            this.txtEmail.MaxLength = 256;
             this.txtEmail.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtEmail.Modified = false;
             this.txtEmail.Multiline = false;
@@ -1099,7 +1099,7 @@
             this.txtNames.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNames.Lines = new string[0];
             this.txtNames.Location = new System.Drawing.Point(16, 49);
-            this.txtNames.MaxLength = 32767;
+            this.txtNames.MaxLength = 150;
             this.txtNames.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtNames.Modified = false;
             this.txtNames.Multiline = false;
@@ -1238,7 +1238,7 @@
             this.txtDUI.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDUI.Lines = new string[0];
             this.txtDUI.Location = new System.Drawing.Point(16, 113);
-            this.txtDUI.MaxLength = 32767;
+            this.txtDUI.MaxLength = 20;
             this.txtDUI.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtDUI.Modified = false;
             this.txtDUI.Multiline = false;
@@ -1332,7 +1332,7 @@
             this.txtAddress.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAddress.Lines = new string[0];
             this.txtAddress.Location = new System.Drawing.Point(16, 176);
-            this.txtAddress.MaxLength = 32767;
+            this.txtAddress.MaxLength = 500;
             this.txtAddress.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtAddress.Modified = false;
             this.txtAddress.Multiline = false;
@@ -1426,7 +1426,7 @@
             this.txtPhone.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPhone.Lines = new string[0];
             this.txtPhone.Location = new System.Drawing.Point(548, 113);
-            this.txtPhone.MaxLength = 32767;
+            this.txtPhone.MaxLength = 12;
             this.txtPhone.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPhone.Modified = false;
             this.txtPhone.Multiline = false;
