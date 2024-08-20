@@ -122,7 +122,6 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 cmdAddPayroll.Parameters.AddWithValue("employerDiscount", DiscountEmployer);
                 cmdAddPayroll.Parameters.AddWithValue("christmasBonus", ChristmasBonus);
                 cmdAddPayroll.Parameters.AddWithValue("IdEmployee", IdEmployee);
-                cmdAddPayroll.Parameters.AddWithValue("@IdPayroll", IdPayroll);
                 cmdAddPayroll.Parameters.AddWithValue("IdPayrollStatus", IdPayrollStatus);
                 cmdAddPayroll.Parameters.AddWithValue("daysWorked", DaysWorked);
                 cmdAddPayroll.Parameters.AddWithValue("daySalary", DaySalary);
