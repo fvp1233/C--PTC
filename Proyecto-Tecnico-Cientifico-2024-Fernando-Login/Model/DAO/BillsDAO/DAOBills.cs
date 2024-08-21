@@ -4,6 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -80,30 +82,78 @@ namespace PTC2024.Model.DAO.BillsDAO
                 Command.Connection.Close();
             }
         }
-        public bool OverBill(int idBill)
+        /// <summary>
+        /// Método que verifica si la contraseña ingresada es contraseña de administrador comparándola con el hash ya utilizado
+        /// </summary>
+        /// <param name="inputPassword"></param>
+        /// <returns></returns>
+        public bool VerifyAdminPassword(SecureString inputPassword)
         {
             try
             {
-                Command.Connection = getConnection();
-                Command.CommandText = "UPDATE tbBills SET IdStatusBill = (SELECT IdStatusBill FROM tbStatusBill WHERE StatusName = 'Anulado') WHERE IdBill = @IdBill";
-                Command.Parameters.Clear();
-                Command.Parameters.AddWithValue("@IdBill", idBill);
+                bool isPasswordValid = false;
+                string storedHash = GetStoredPasswordHash(); // Obtener el hash almacenado desde la base de datos
 
-                Command.Connection.Open();
-                int rowsAffected = Command.ExecuteNonQuery();
-                return rowsAffected > 0;
+                // Convertir SecureString a texto simple para su encriptación
+                string plainTextPassword = ConvertToUnsecureString(inputPassword);
+
+                // Crear una instancia de CommonClasses
+                CommonClasses commonClasses = new CommonClasses();
+
+                // Encriptar la contraseña ingresada usando ComputeSha256Hash
+                string hashedInputPassword = commonClasses.ComputeSha256Hash(plainTextPassword);
+
+                // Comparar el hash de la contraseña ingresada con el hash almacenado
+                isPasswordValid = (hashedInputPassword == storedHash);
+
+                return isPasswordValid;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error al validar contraseña: " + ex.Message);
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// Método que convierte un SecureString en una cadena de texto simple osea en ('string')
+        /// </summary>
+        /// <param name="securePassword"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+
+        public string ConvertToUnsecureString(SecureString securePassword)
+        {
+            if (securePassword == null)
+                throw new ArgumentNullException("securePassword");
+
+            IntPtr unmanagedString = IntPtr.Zero;
+            try
+            {
+                unmanagedString = Marshal.SecureStringToGlobalAllocUnicode(securePassword);
+                return Marshal.PtrToStringUni(unmanagedString);
             }
             finally
             {
-                Command.Connection.Close();
+                Marshal.ZeroFreeGlobalAllocUnicode(unmanagedString);
             }
-
         }
+        /// <summary>
+        /// Métdo para obtener el hash de la contraseña almacenada en la base de datos
+        /// </summary>
+        /// <returns></returns>
+        public string GetStoredPasswordHash()
+        {
+            string storedHash = ""; 
+            Command.Connection = getConnection();
+                string query = "SELECT password FROM tbUserData WHERE IdBusinessP = 1";
+                SqlCommand command = new SqlCommand(query, Command.Connection);
+                storedHash = command.ExecuteScalar()?.ToString();
+            
+            return storedHash;
+        }
+
+       
         public DataSet CheckboxFiltersMethod(string Method)
         {
             try

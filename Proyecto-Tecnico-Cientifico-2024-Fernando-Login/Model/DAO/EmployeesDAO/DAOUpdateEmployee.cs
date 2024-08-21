@@ -114,12 +114,13 @@ namespace PTC2024.Model.DAO.EmployeesDAO
                 //Abrimos conexión con la base
                 Command.Connection = getConnection();
                 //Creamos el query
-                string queryRestorePassword = "UPDATE tbUserData SET password = @param1 WHERE username = @param2";
+                string queryRestorePassword = "UPDATE tbUserData SET password = @param1, temporalpassword = @param2 WHERE username = @param3";
                 //creamos comando con el query y la conexión
                 SqlCommand cmdRestorePassword = new SqlCommand (queryRestorePassword, Command.Connection);
                 //le damos valor a los parámetros
                 cmdRestorePassword.Parameters.AddWithValue("param1", Password);
-                cmdRestorePassword.Parameters.AddWithValue("param2", Username);
+                cmdRestorePassword.Parameters.AddWithValue("param2", true);
+                cmdRestorePassword.Parameters.AddWithValue("param3", Username);
                 //Creamos variable int para saber el resultado del proceso
                 int restoreAnswer = cmdRestorePassword.ExecuteNonQuery();
                 if (restoreAnswer == 1)

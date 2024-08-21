@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartMenu));
             this.btnIcon = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.btnMenuDashboard = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -39,8 +40,11 @@
             this.btnLogOut = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnpermissions = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnMaintenance = new Bunifu.Framework.UI.BunifuFlatButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.ContainerPanel = new System.Windows.Forms.Panel();
+            this.bunifuFormResizer1 = new Bunifu.UI.WinForms.BunifuFormResizer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.btnIcon)).BeginInit();
             this.bunifuPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -53,6 +57,7 @@
             this.btnIcon.AutoSizeHeight = false;
             this.btnIcon.BackColor = System.Drawing.Color.Transparent;
             this.btnIcon.BorderRadius = 0;
+            this.btnIcon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIcon.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnIcon.Image = ((System.Drawing.Image)(resources.GetObject("btnIcon.Image")));
             this.btnIcon.IsCircle = false;
@@ -83,7 +88,7 @@
             this.btnMenuDashboard.IconRightVisible = true;
             this.btnMenuDashboard.IconRightZoom = 0D;
             this.btnMenuDashboard.IconVisible = true;
-            this.btnMenuDashboard.IconZoom = 90D;
+            this.btnMenuDashboard.IconZoom = 100D;
             this.btnMenuDashboard.IsTab = false;
             this.btnMenuDashboard.Location = new System.Drawing.Point(4, 101);
             this.btnMenuDashboard.Margin = new System.Windows.Forms.Padding(4);
@@ -118,7 +123,7 @@
             this.btnMenuEmployee.IconRightVisible = true;
             this.btnMenuEmployee.IconRightZoom = 0D;
             this.btnMenuEmployee.IconVisible = true;
-            this.btnMenuEmployee.IconZoom = 90D;
+            this.btnMenuEmployee.IconZoom = 100D;
             this.btnMenuEmployee.IsTab = false;
             this.btnMenuEmployee.Location = new System.Drawing.Point(3, 164);
             this.btnMenuEmployee.Name = "btnMenuEmployee";
@@ -152,7 +157,7 @@
             this.btnMenuPayroll.IconRightVisible = true;
             this.btnMenuPayroll.IconRightZoom = 0D;
             this.btnMenuPayroll.IconVisible = true;
-            this.btnMenuPayroll.IconZoom = 90D;
+            this.btnMenuPayroll.IconZoom = 70D;
             this.btnMenuPayroll.IsTab = false;
             this.btnMenuPayroll.Location = new System.Drawing.Point(3, 226);
             this.btnMenuPayroll.Name = "btnMenuPayroll";
@@ -186,9 +191,9 @@
             this.btnMenuServices.IconRightVisible = true;
             this.btnMenuServices.IconRightZoom = 0D;
             this.btnMenuServices.IconVisible = true;
-            this.btnMenuServices.IconZoom = 90D;
+            this.btnMenuServices.IconZoom = 100D;
             this.btnMenuServices.IsTab = false;
-            this.btnMenuServices.Location = new System.Drawing.Point(3, 288);
+            this.btnMenuServices.Location = new System.Drawing.Point(3, 350);
             this.btnMenuServices.Name = "btnMenuServices";
             this.btnMenuServices.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuServices.OnHovercolor = System.Drawing.Color.DimGray;
@@ -220,9 +225,9 @@
             this.btnMenuCustomers.IconRightVisible = true;
             this.btnMenuCustomers.IconRightZoom = 0D;
             this.btnMenuCustomers.IconVisible = true;
-            this.btnMenuCustomers.IconZoom = 90D;
+            this.btnMenuCustomers.IconZoom = 110D;
             this.btnMenuCustomers.IsTab = false;
-            this.btnMenuCustomers.Location = new System.Drawing.Point(3, 350);
+            this.btnMenuCustomers.Location = new System.Drawing.Point(3, 412);
             this.btnMenuCustomers.Name = "btnMenuCustomers";
             this.btnMenuCustomers.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuCustomers.OnHovercolor = System.Drawing.Color.DimGray;
@@ -254,9 +259,9 @@
             this.btnMenuBills.IconRightVisible = true;
             this.btnMenuBills.IconRightZoom = 0D;
             this.btnMenuBills.IconVisible = true;
-            this.btnMenuBills.IconZoom = 90D;
+            this.btnMenuBills.IconZoom = 100D;
             this.btnMenuBills.IsTab = false;
-            this.btnMenuBills.Location = new System.Drawing.Point(3, 412);
+            this.btnMenuBills.Location = new System.Drawing.Point(3, 474);
             this.btnMenuBills.Name = "btnMenuBills";
             this.btnMenuBills.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuBills.OnHovercolor = System.Drawing.Color.DimGray;
@@ -327,23 +332,93 @@
             this.flowLayoutPanel2.Controls.Add(this.btnMenuDashboard);
             this.flowLayoutPanel2.Controls.Add(this.btnMenuEmployee);
             this.flowLayoutPanel2.Controls.Add(this.btnMenuPayroll);
+            this.flowLayoutPanel2.Controls.Add(this.btnpermissions);
             this.flowLayoutPanel2.Controls.Add(this.btnMenuServices);
             this.flowLayoutPanel2.Controls.Add(this.btnMenuCustomers);
             this.flowLayoutPanel2.Controls.Add(this.btnMenuBills);
+            this.flowLayoutPanel2.Controls.Add(this.btnMaintenance);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(185, 610);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(185, 607);
             this.flowLayoutPanel2.TabIndex = 1;
+            // 
+            // btnpermissions
+            // 
+            this.btnpermissions.Activecolor = System.Drawing.Color.DimGray;
+            this.btnpermissions.BackColor = System.Drawing.Color.Black;
+            this.btnpermissions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnpermissions.BorderRadius = 0;
+            this.btnpermissions.ButtonText = "Permisos";
+            this.btnpermissions.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnpermissions.DisabledColor = System.Drawing.Color.Gray;
+            this.btnpermissions.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnpermissions.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnpermissions.Iconimage")));
+            this.btnpermissions.Iconimage_right = null;
+            this.btnpermissions.Iconimage_right_Selected = null;
+            this.btnpermissions.Iconimage_Selected = null;
+            this.btnpermissions.IconMarginLeft = 0;
+            this.btnpermissions.IconMarginRight = 0;
+            this.btnpermissions.IconRightVisible = true;
+            this.btnpermissions.IconRightZoom = 0D;
+            this.btnpermissions.IconVisible = true;
+            this.btnpermissions.IconZoom = 55D;
+            this.btnpermissions.IsTab = false;
+            this.btnpermissions.Location = new System.Drawing.Point(3, 288);
+            this.btnpermissions.Name = "btnpermissions";
+            this.btnpermissions.Normalcolor = System.Drawing.Color.Black;
+            this.btnpermissions.OnHovercolor = System.Drawing.Color.DimGray;
+            this.btnpermissions.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnpermissions.selected = false;
+            this.btnpermissions.Size = new System.Drawing.Size(181, 56);
+            this.btnpermissions.TabIndex = 9;
+            this.btnpermissions.Text = "Permisos";
+            this.btnpermissions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnpermissions.Textcolor = System.Drawing.Color.White;
+            this.btnpermissions.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // btnMaintenance
+            // 
+            this.btnMaintenance.Activecolor = System.Drawing.Color.DimGray;
+            this.btnMaintenance.BackColor = System.Drawing.Color.Black;
+            this.btnMaintenance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMaintenance.BorderRadius = 0;
+            this.btnMaintenance.ButtonText = "Mantenimiento";
+            this.btnMaintenance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaintenance.DisabledColor = System.Drawing.Color.Gray;
+            this.btnMaintenance.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnMaintenance.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnMaintenance.Iconimage")));
+            this.btnMaintenance.Iconimage_right = null;
+            this.btnMaintenance.Iconimage_right_Selected = null;
+            this.btnMaintenance.Iconimage_Selected = null;
+            this.btnMaintenance.IconMarginLeft = 0;
+            this.btnMaintenance.IconMarginRight = 0;
+            this.btnMaintenance.IconRightVisible = true;
+            this.btnMaintenance.IconRightZoom = 0D;
+            this.btnMaintenance.IconVisible = true;
+            this.btnMaintenance.IconZoom = 65D;
+            this.btnMaintenance.IsTab = false;
+            this.btnMaintenance.Location = new System.Drawing.Point(3, 536);
+            this.btnMaintenance.Name = "btnMaintenance";
+            this.btnMaintenance.Normalcolor = System.Drawing.Color.Black;
+            this.btnMaintenance.OnHovercolor = System.Drawing.Color.DimGray;
+            this.btnMaintenance.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnMaintenance.selected = false;
+            this.btnMaintenance.Size = new System.Drawing.Size(181, 56);
+            this.btnMaintenance.TabIndex = 8;
+            this.btnMaintenance.Text = "Mantenimiento";
+            this.btnMaintenance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMaintenance.Textcolor = System.Drawing.Color.White;
+            this.btnMaintenance.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Black;
             this.flowLayoutPanel1.Controls.Add(this.btnLogOut);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 610);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 607);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(185, 77);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(185, 80);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // ContainerPanel
@@ -355,6 +430,13 @@
             this.ContainerPanel.Size = new System.Drawing.Size(1163, 687);
             this.ContainerPanel.TabIndex = 4;
             // 
+            // bunifuFormResizer1
+            // 
+            this.bunifuFormResizer1.ContainerControl = this;
+            this.bunifuFormResizer1.Enabled = true;
+            this.bunifuFormResizer1.ParentForm = this;
+            this.bunifuFormResizer1.ResizeHandlesWidth = 6;
+            // 
             // StartMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,6 +445,7 @@
             this.ClientSize = new System.Drawing.Size(1348, 687);
             this.Controls.Add(this.ContainerPanel);
             this.Controls.Add(this.bunifuPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(2560, 1449);
             this.MinimumSize = new System.Drawing.Size(1364, 718);
             this.Name = "StartMenu";
@@ -389,5 +472,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         public System.Windows.Forms.Panel ContainerPanel;
         public Bunifu.UI.WinForms.BunifuPictureBox btnIcon;
+        public Bunifu.Framework.UI.BunifuFlatButton btnMaintenance;
+        private Bunifu.UI.WinForms.BunifuFormResizer bunifuFormResizer1;
+        public Bunifu.Framework.UI.BunifuFlatButton btnpermissions;
     }
 }

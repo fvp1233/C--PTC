@@ -24,6 +24,9 @@ namespace PTC2024.Model.DTO.BillsDTO
         private string statusBills;
         private string customer;
         private string employee;
+        //NOMBRE DEL EMPLEADO
+        private int IdEmployee;
+        private string EmployeeName;
         private string methodP;
         private string CustomerDui;
         private string CustomerPhone;
@@ -48,7 +51,8 @@ namespace PTC2024.Model.DTO.BillsDTO
         private string username;
         private string password;
         private int userStatus;
-        string SearchB;
+        private int IdBussinessP;
+        private string SearchB;
 
         public int IdBill1 { get => IdBill; set => IdBill = value; }
         public string CompanyName { get => companyName; set => companyName = value; }
@@ -84,5 +88,8 @@ namespace PTC2024.Model.DTO.BillsDTO
         public double SubtotalPay { get => subtotalPay; set => subtotalPay = value; }
         public double TotalPay { get => totalPay; set => totalPay = value; }
         public string SearchB1 { get => SearchB; set => SearchB = value; }
+        public int IdBussinessP1 { get => IdBussinessP; set => IdBussinessP = value; }
+        public string EmployeeName1 { get => EmployeeName; set => EmployeeName = value; }
+        public int IdEmployee1 { get => IdEmployee; set => IdEmployee = value; }
     }
 }

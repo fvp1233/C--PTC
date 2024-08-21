@@ -14,7 +14,7 @@ namespace PTC2024.View.Service_inventory
 {
     public partial class FrmUpdateService : Form
     {
-        public FrmUpdateService(int id, string nombre, string descripcion, double monto, string categoria)
+        public FrmUpdateService(int id ,string nombre, string descripcion, double monto, string categoria)
         {
             InitializeComponent();
             ControllerUpdateService update = new ControllerUpdateService(this, id, nombre, descripcion, monto, categoria);

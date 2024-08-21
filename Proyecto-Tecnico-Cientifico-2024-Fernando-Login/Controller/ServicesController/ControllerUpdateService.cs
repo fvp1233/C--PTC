@@ -1,4 +1,6 @@
 ﻿using PTC2024.Model.DAO.ServicesDAO;
+using PTC2024.Model.DTO.ServicesDTO;
+using PTC2024.View.InventarioServicios;
 using PTC2024.View.Service_inventory;
 using System;
 using System.Collections.Generic;
@@ -58,7 +60,16 @@ namespace PTC2024.Controller.ServicesController
             }
             else
             {
-                Update= true;
+                Update= false;
+                if (double.TryParse(objUpdateService.txtMonto.Text, out double result))
+                {
+                    Update = true;
+                }
+                else
+                {
+                    Update = false;
+                    MessageBox.Show("Favor ingresar un valor numerico valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
 
 
@@ -106,6 +117,12 @@ namespace PTC2024.Controller.ServicesController
         {
             try
             {
+                /*FrmServices objServices = new FrmServices();
+                objUpdateService.combocliente.DataSource = objServices.DgvServicios;
+
+                objUpdateService.combocliente.DisplayMember = objServices.DgvServicios[1, pos].ToString();*/
+
+
                 /*Aca se les asignara un valor a los parametros para asi llevarlos al constructor*/
                 objUpdateService.txtId.Text = id.ToString();
                 objUpdateService.txtNombres.Text = nombre;

@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PTC2024.View.login;
 using PTC2024.formularios.login;
+using PTC2024.View.Dashboard;
+using PTC2024.View.EmployeeViews;
+using PTC2024.View.ProfileSettings;
 
 namespace PTC2024.Controller.StartMenuController
 {
@@ -26,15 +29,17 @@ namespace PTC2024.Controller.StartMenuController
             objStartMenu = View;
             View.Load += new EventHandler(LoadDefaultForm);
             View.Load += new EventHandler(InitialAccess);
-            objStartMenu.btnIcon.Click += new EventHandler(LoadDefaultForm);
-            objStartMenu.btnMenuDashboard.Click += new EventHandler(LoadDefaultForm);
+            objStartMenu.btnIcon.Click += new EventHandler(LoadProfileSettings);
+            objStartMenu.btnMenuDashboard.Click += new EventHandler(LoadDashboard);
             objStartMenu.btnMenuEmployee.Click += new EventHandler(LoadEmployeeForm);
             objStartMenu.btnMenuPayroll.Click += new EventHandler(LoadPayrollForm);
+            objStartMenu.btnpermissions.Click += new EventHandler(LoadPermissionsForm);
             objStartMenu.btnMenuServices.Click += new EventHandler(LoadServiceForm);
             objStartMenu.btnMenuCustomers.Click += new EventHandler(LoadCustomersForm);
             objStartMenu.btnMenuBills.Click += new EventHandler(LoadBillsForm);
-            objStartMenu.btnLogOut.Click += new EventHandler(LogingOut);
-            objStartMenu.FormClosed += new FormClosedEventHandler(CloseProgram);
+            objStartMenu.btnMaintenance.Click += new EventHandler(LoadMaintenance);
+            objStartMenu.btnLogOut.Click += new EventHandler(LogOut);
+            objStartMenu.FormClosing += new FormClosingEventHandler(CloseProgram);
             
         }
         void InitialAccess(object sender, EventArgs e)
@@ -55,9 +60,17 @@ namespace PTC2024.Controller.StartMenuController
             }
         }
 
+        private void LoadProfileSettings(object sender, EventArgs e)
+        {
+            OpenForm<FrmProfile>();
+        }
         private void LoadDefaultForm(object sender, EventArgs e)
         {
             OpenForm<FrmWelcome>();
+        }
+        private void LoadDashboard(object sender, EventArgs e)
+        {
+            OpenForm<FrmDashboard>();
         }
         private void LoadEmployeeForm(object sender, EventArgs e)
         {
@@ -66,6 +79,10 @@ namespace PTC2024.Controller.StartMenuController
         private void LoadPayrollForm(object sender, EventArgs e)
         {
             OpenForm<FrmViewPayrolls>();
+        }
+        private void LoadPermissionsForm(object sender, EventArgs e)
+        {
+            OpenForm<FrmPermissions>();
         }
         private void LoadServiceForm(object sender, EventArgs e)
         {
@@ -78,6 +95,10 @@ namespace PTC2024.Controller.StartMenuController
         private void LoadBillsForm(object sender, EventArgs e)
         {
             OpenForm<FrmBills>();
+        }
+        private void LoadMaintenance(object sender, EventArgs e)
+        {
+            OpenForm<FrmMaintenance>();
         }
         /// <summary>
         /// Metodo para abrir formularios dentro del panel contenedor del formulario principal
@@ -119,27 +140,18 @@ namespace PTC2024.Controller.StartMenuController
 
         }
 
-        public void LogingOut(object sender, EventArgs e)
+        public void LogOut(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Quiere cerrar la sesión?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 ClearVarSession();
+                objStartMenu.Hide();
                 FrmLogin backToLogin = new FrmLogin();
                 backToLogin.Show();
-                objStartMenu.Dispose();
+                
             }
         }
-
-        public void LogOut()
-        {
-            if (MessageBox.Show("¿Quiere cerrar la sesión?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                ClearVarSession();
-                FrmLogin backToLogin = new FrmLogin();
-                backToLogin.Show();
-                objStartMenu.Dispose();
-            }
-        }
+      
 
         public void ClearVarSession()
         {
@@ -150,18 +162,18 @@ namespace PTC2024.Controller.StartMenuController
             SessionVar.IdBussinesP = 0;
         }
         
-        public void CloseProgram(object sender, EventArgs e)
+        public void CloseProgram(Object sender, FormClosingEventArgs e)
         {
-            EndProgram();
-        }
-
-        public void EndProgram()
-        {
-            if(MessageBox.Show("¿Desea cerrar el programa? \n La sesión se cerrará automáticamente", "Cerar programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("¿Desea cerrar el programa? \n La sesión se cerrará automáticamente", "Cerar programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Environment.Exit(0);
             }
-            
+            else
+            {
+                e.Cancel = true;
+            }
+
         }
+       
     }
 }

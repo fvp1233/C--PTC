@@ -85,6 +85,7 @@
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -105,6 +106,7 @@
     <Compile Include="Controller\CustomersController\ControllerAddCustomers.cs" />
     <Compile Include="Controller\CustomersController\ControllerCustomers.cs" />
     <Compile Include="Controller\CustomersController\ControllerUpdateCustomers.cs" />
+    <Compile Include="Controller\DashboardController\ControllerDashboard.cs" />
     <Compile Include="Controller\EmployeesController\ControllerAddEmployee.cs" />
     <Compile Include="Controller\EmployeesController\ControllerInfoEmployee.cs" />
     <Compile Include="Controller\FirstUseController\ControllerFirstUse.cs" />
@@ -115,11 +117,20 @@
     <Compile Include="Controller\LogInController\ControllerLogin.cs" />
     <Compile Include="Controller\LogInController\ControllerRecoverPassword.cs" />
     <Compile Include="Controller\LogInController\ControllerRegister.cs" />
+    <Compile Include="Controller\MaintenanceController\ControllerBanks.cs" />
+    <Compile Include="Controller\MaintenanceController\ControllerCategories.cs" />
+    <Compile Include="Controller\MaintenanceController\ControllerCharge.cs" />
+    <Compile Include="Controller\MaintenanceController\ControllerDepartments.cs" />
+    <Compile Include="Controller\MaintenanceController\ControllerMaintenance.cs" />
+    <Compile Include="Controller\MaintenanceController\ControllerUpdateCharge.cs" />
+    <Compile Include="Controller\PayrollsController\ControllerAddPermission.cs" />
     <Compile Include="Controller\PayrollsController\ControllerInfoPayroll.cs" />
     <Compile Include="Controller\EmployeesController\ControllerEmployees.cs" />
     <Compile Include="Controller\EmployeesController\ControllerPayrolls.cs" />
     <Compile Include="Controller\EmployeesController\ControllerUpdateEmployee.cs" />
+    <Compile Include="Controller\PayrollsController\ControllerPermission.cs" />
     <Compile Include="Controller\PayrollsController\ControllerUpdatePayroll.cs" />
+    <Compile Include="Controller\PayrollsController\ControllerUpdatePermission.cs" />
     <Compile Include="Controller\PayrollsController\ControllerViewPayrolls.cs" />
     <Compile Include="Controller\ServicesController\ControllerAddService.cs" />
     <Compile Include="Controller\ServicesController\ControllerServices.cs" />
@@ -133,6 +144,7 @@
     <Compile Include="Model\DAO\CustomersDAO\DAOAddCustomers.cs" />
     <Compile Include="Model\DAO\CustomersDAO\DAOCustomers.cs" />
     <Compile Include="Model\DAO\CustomersDAO\DAOUpdateCustomers.cs" />
+    <Compile Include="Model\DAO\DashboardDAO\DAODashboard.cs" />
     <Compile Include="Model\DAO\EmployeesDAO\DAOAddEmployee.cs" />
     <Compile Include="Model\DAO\EmployeesDAO\DAOEmployees.cs" />
     <Compile Include="Model\DAO\EmployeesDAO\DAOUpdateEmployee.cs" />
@@ -140,8 +152,16 @@
     <Compile Include="Model\DAO\LogInDAO\DAOLogin.cs" />
     <Compile Include="Model\DAO\LogInDAO\DAORecoverPassword.cs" />
     <Compile Include="Model\DAO\LogInDAO\DAORegister.cs" />
+    <Compile Include="Model\DAO\MaintenanceDAO\DAOBanks.cs" />
+    <Compile Include="Model\DAO\MaintenanceDAO\DAOCategories.cs" />
+    <Compile Include="Model\DAO\MaintenanceDAO\DAOCharge.cs" />
+    <Compile Include="Model\DAO\MaintenanceDAO\DAODepartment.cs" />
+    <Compile Include="Model\DAO\MaintenanceDAO\DAOUpdateCharge.cs" />
+    <Compile Include="Model\DAO\PayrollsDAO\DAOAddPermission.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOInfoPayroll.cs" />
+    <Compile Include="Model\DAO\PayrollsDAO\DAOPermission.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOUpdatePayroll.cs" />
+    <Compile Include="Model\DAO\PayrollsDAO\DAOUpdatePermission.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOViewPayrolls.cs" />
     <Compile Include="Model\DAO\ServicesDAO\DAOAddService.cs" />
     <Compile Include="Model\DAO\ServicesDAO\DAOServices.cs" />
@@ -155,6 +175,7 @@
     <Compile Include="Model\DTO\CustomersDTO\DTOAddCustomers.cs" />
     <Compile Include="Model\DTO\CustomersDTO\DTOCustomers.cs" />
     <Compile Include="Model\DTO\CustomersDTO\DTOUpdateCustomers.cs" />
+    <Compile Include="Model\DTO\DashboardDTO\DTODashboard.cs" />
     <Compile Include="Model\DTO\EmployeesDTO\DTOAddEmployee.cs" />
     <Compile Include="Model\DTO\EmployeesDTO\DTOEmployees.cs" />
     <Compile Include="Model\DTO\EmployeesDTO\DTOUpdateEmployee.cs" />
@@ -162,8 +183,16 @@
     <Compile Include="Model\DTO\LogInDTO\DTOLogin.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTORecoverPassword.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTORegister.cs" />
+    <Compile Include="Model\DTO\MaintenanceDTO\DTOBanks.cs" />
+    <Compile Include="Model\DTO\MaintenanceDTO\DTOCategories.cs" />
+    <Compile Include="Model\DTO\MaintenanceDTO\DTOCharge.cs" />
+    <Compile Include="Model\DTO\MaintenanceDTO\DTODepartment.cs" />
+    <Compile Include="Model\DTO\MaintenanceDTO\DTOUpdateCharge.cs" />
+    <Compile Include="Model\DTO\PayrollDTO\DTOAddPermission.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOInfoPayroll.cs" />
+    <Compile Include="Model\DTO\PayrollDTO\DTOPermission.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOUpdatePayroll.cs" />
+    <Compile Include="Model\DTO\PayrollDTO\DTOUpdatePermission.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOViewPayrolls.cs" />
     <Compile Include="Model\DTO\ServicesDTO\DTOAddService.cs" />
     <Compile Include="Model\DTO\ServicesDTO\DTOServices.cs" />
@@ -211,6 +240,54 @@
     <Compile Include="View\CustomersView\FrmUpdateCustomer.Designer.cs">
       <DependentUpon>FrmUpdateCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Maintenance\FrmBanks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Maintenance\FrmBanks.Designer.cs">
+      <DependentUpon>FrmBanks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Maintenance\FrmCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Maintenance\FrmCategories.Designer.cs">
+      <DependentUpon>FrmCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Maintenance\FrmCharge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Maintenance\FrmCharge.Designer.cs">
+      <DependentUpon>FrmCharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dashboard\FrmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dashboard\FrmDashboard.Designer.cs">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Maintenance\FrmDepartments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Maintenance\FrmDepartments.Designer.cs">
+      <DependentUpon>FrmDepartments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Maintenance\FrmMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Maintenance\FrmMaintenance.Designer.cs">
+      <DependentUpon>FrmMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Maintenance\FrmUpdateCharge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Maintenance\FrmUpdateCharge.Designer.cs">
+      <DependentUpon>FrmUpdateCharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\EmployeeViews\FrmAddPermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EmployeeViews\FrmAddPermission.Designer.cs">
+      <DependentUpon>FrmAddPermission.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\EmployeeViews\FrmEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,11 +306,17 @@
     <Compile Include="View\EmployeeViews\FrmInfoPayroll.Designer.cs">
       <DependentUpon>FrmInfoPayroll.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\EmployeeViews\FrmLoadPayroll.cs">
+    <Compile Include="View\EmployeeViews\FrmPermissions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\EmployeeViews\FrmLoadPayroll.Designer.cs">
-      <DependentUpon>FrmLoadPayroll.cs</DependentUpon>
+    <Compile Include="View\EmployeeViews\FrmPermissions.Designer.cs">
+      <DependentUpon>FrmPermissions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\EmployeeViews\FrmUpdatePermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EmployeeViews\FrmUpdatePermission.Designer.cs">
+      <DependentUpon>FrmUpdatePermission.cs</DependentUpon>
     </Compile>
     <Compile Include="View\EmployeeViews\FrmViewPayrolls.cs">
       <SubType>Form</SubType>
@@ -289,11 +372,29 @@
     <Compile Include="View\login\FrmRegister.Designer.cs">
       <DependentUpon>FrmRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ProfileSettings\FrmProfileConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProfileSettings\FrmProfileConfiguration.Designer.cs">
+      <DependentUpon>FrmProfileConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProfileSettings\FrmProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProfileSettings\FrmProfile.Designer.cs">
+      <DependentUpon>FrmProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Service inventory\FrmUpdateService.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Service inventory\FrmUpdateService.Designer.cs">
       <DependentUpon>FrmUpdateService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Service inventory\prueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Service inventory\prueba.Designer.cs">
+      <DependentUpon>prueba.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Start\FrmWelcome.cs">
       <SubType>Form</SubType>
@@ -348,8 +449,37 @@
     <EmbeddedResource Include="View\CustomersView\FrmUpdateCustomer.resx">
       <DependentUpon>FrmUpdateCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Maintenance\FrmBanks.resx">
+      <DependentUpon>FrmBanks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Maintenance\FrmCategories.resx">
+      <DependentUpon>FrmCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Maintenance\FrmCharge.resx">
+      <DependentUpon>FrmCharge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dashboard\FrmDashboard.resx">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Maintenance\FrmDepartments.resx">
+      <DependentUpon>FrmDepartments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Maintenance\FrmMaintenance.resx">
+      <DependentUpon>FrmMaintenance.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Maintenance\FrmUpdateCharge.resx">
+      <DependentUpon>FrmUpdateCharge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\EmployeeViews\FrmAddPermission.resx">
+      <DependentUpon>FrmAddPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\EmployeeViews\FrmPermissions.resx">
+      <DependentUpon>FrmPermissions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmEmployees.resx">
       <DependentUpon>FrmEmployees.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmInfoEmployee.resx">
       <DependentUpon>FrmInfoEmployee.cs</DependentUpon>
@@ -357,8 +487,8 @@
     <EmbeddedResource Include="View\EmployeeViews\FrmInfoPayroll.resx">
       <DependentUpon>FrmInfoPayroll.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\EmployeeViews\FrmLoadPayroll.resx">
-      <DependentUpon>FrmLoadPayroll.cs</DependentUpon>
+    <EmbeddedResource Include="View\EmployeeViews\FrmUpdatePermission.resx">
+      <DependentUpon>FrmUpdatePermission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmViewPayrolls.resx">
       <DependentUpon>FrmViewPayrolls.cs</DependentUpon>
@@ -387,8 +517,14 @@
     <EmbeddedResource Include="View\login\FrmRegister.resx">
       <DependentUpon>FrmRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ProfileSettings\FrmProfile.resx">
+      <DependentUpon>FrmProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Service inventory\FrmUpdateService.resx">
       <DependentUpon>FrmUpdateService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Service inventory\prueba.resx">
+      <DependentUpon>prueba.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Start\FrmWelcome.resx">
       <DependentUpon>FrmWelcome.cs</DependentUpon>
@@ -429,15 +565,22 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\Dashboard\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\ActualizarEmpleado.png" />
     <Content Include="Resources\AgregarEmpleado.png" />
+    <Content Include="Resources\generarPlanillas.png" />
+    <Content Include="Resources\habilitar.png" />
+    <Content Include="Resources\indemnizacion.png" />
     <Content Include="Resources\ojoAbierto.png" />
     <Content Include="Resources\ojoCerrado.png" />
+    <Content Include="Resources\preguntasSeguridad.png" />
+    <Content Include="Resources\salir.png" />
+    <Content Include="Resources\seguridadPreguntas.png" />
+    <Content Include="Resources\subirFoto.png" />
     <Content Include="Resources\usuarioRegister.png" />
+    <Content Include="Resources\viewEmployees.png" />
+    <Content Include="Resources\viewPayrolls.png" />
     <None Include="Resources\User.png" />
     <None Include="Resources\AgregarEmpleado1.png" />
     <Content Include="Resources\Cancelar.png" />

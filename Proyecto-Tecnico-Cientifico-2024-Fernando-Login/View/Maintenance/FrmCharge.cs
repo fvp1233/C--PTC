@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PTC2024.Controller.MaintenanceController;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,13 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PTC2024.View.EmployeeViews
+namespace PTC2024.View.Dashboard
 {
-    public partial class FrmLoadPayroll : Form
+    public partial class FrmCharge : Form
     {
-        public FrmLoadPayroll()
+        public FrmCharge()
         {
             InitializeComponent();
+            ControllerCharge objCharge = new ControllerCharge(this);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace PTC2024.Model.DAO.LogInDAO
             try
             {
                 command.Connection = getConnection();
-                string query = "SELECT * FROM viewLogIn WHERE username = @username AND password = @password  AND userStatus = @status";
+                string query = "SELECT * FROM viewLogIn WHERE username = @username COLLATE SQL_Latin1_General_CP1_CS_AS AND password = @password COLLATE SQL_Latin1_General_CP1_CS_AS AND userStatus = @status AND username = @username AND password = @password";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.Parameters.AddWithValue("username", Username);
                 cmd.Parameters.AddWithValue("password", Password);
