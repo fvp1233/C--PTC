@@ -15,6 +15,7 @@ using PTC2024.View.login;
 using PTC2024.formularios.login;
 using PTC2024.View.Dashboard;
 using PTC2024.View.EmployeeViews;
+using PTC2024.View.ProfileSettings;
 
 namespace PTC2024.Controller.StartMenuController
 {
@@ -28,7 +29,7 @@ namespace PTC2024.Controller.StartMenuController
             objStartMenu = View;
             View.Load += new EventHandler(LoadDefaultForm);
             View.Load += new EventHandler(InitialAccess);
-            objStartMenu.btnIcon.Click += new EventHandler(LoadDefaultForm);
+            objStartMenu.btnIcon.Click += new EventHandler(LoadProfileSettings);
             objStartMenu.btnMenuDashboard.Click += new EventHandler(LoadDashboard);
             objStartMenu.btnMenuEmployee.Click += new EventHandler(LoadEmployeeForm);
             objStartMenu.btnMenuPayroll.Click += new EventHandler(LoadPayrollForm);
@@ -57,6 +58,11 @@ namespace PTC2024.Controller.StartMenuController
                     objStartMenu.btnMenuServices.Visible = false;
                     break;
             }
+        }
+
+        private void LoadProfileSettings(object sender, EventArgs e)
+        {
+            OpenForm<FrmProfile>();
         }
         private void LoadDefaultForm(object sender, EventArgs e)
         {
