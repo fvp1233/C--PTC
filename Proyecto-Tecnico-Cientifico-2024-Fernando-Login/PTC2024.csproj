@@ -106,6 +106,7 @@
     <Compile Include="Controller\CustomersController\ControllerAddCustomers.cs" />
     <Compile Include="Controller\CustomersController\ControllerCustomers.cs" />
     <Compile Include="Controller\CustomersController\ControllerUpdateCustomers.cs" />
+    <Compile Include="Controller\DashboardController\ControllerDashboard.cs" />
     <Compile Include="Controller\EmployeesController\ControllerAddEmployee.cs" />
     <Compile Include="Controller\EmployeesController\ControllerInfoEmployee.cs" />
     <Compile Include="Controller\FirstUseController\ControllerFirstUse.cs" />
@@ -143,6 +144,7 @@
     <Compile Include="Model\DAO\CustomersDAO\DAOAddCustomers.cs" />
     <Compile Include="Model\DAO\CustomersDAO\DAOCustomers.cs" />
     <Compile Include="Model\DAO\CustomersDAO\DAOUpdateCustomers.cs" />
+    <Compile Include="Model\DAO\DashboardDAO\DAODashboard.cs" />
     <Compile Include="Model\DAO\EmployeesDAO\DAOAddEmployee.cs" />
     <Compile Include="Model\DAO\EmployeesDAO\DAOEmployees.cs" />
     <Compile Include="Model\DAO\EmployeesDAO\DAOUpdateEmployee.cs" />
@@ -173,6 +175,7 @@
     <Compile Include="Model\DTO\CustomersDTO\DTOAddCustomers.cs" />
     <Compile Include="Model\DTO\CustomersDTO\DTOCustomers.cs" />
     <Compile Include="Model\DTO\CustomersDTO\DTOUpdateCustomers.cs" />
+    <Compile Include="Model\DTO\DashboardDTO\DTODashboard.cs" />
     <Compile Include="Model\DTO\EmployeesDTO\DTOAddEmployee.cs" />
     <Compile Include="Model\DTO\EmployeesDTO\DTOEmployees.cs" />
     <Compile Include="Model\DTO\EmployeesDTO\DTOUpdateEmployee.cs" />
