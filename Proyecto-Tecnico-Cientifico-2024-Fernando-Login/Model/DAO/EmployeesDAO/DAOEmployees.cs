@@ -40,6 +40,31 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
         }
 
+        public DataSet GetDisabledEmployees()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = "SELECT*FROM viewEmployees WHERE [Estado] = 'Inactivo'";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet dsEmployees = new DataSet();
+                adp.Fill(dsEmployees, "viewEmployees");
+                return dsEmployees;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudieron obtener los empleados inactivos");
+                return null;
+
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
+
         public DataSet EmployeeSearch(string valor)
         {
             try
@@ -124,6 +149,79 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             SqlCommand cmdEnableEmployee = new SqlCommand(queryEnableEmployee, Command.Connection);
             cmdEnableEmployee.Parameters.AddWithValue("param4", Username);
             MessageBox.Show("El usuario del empleado no pudo ser deshabilitado", "Proceso incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        //Método para rehabilitar un empleado
+        public int EnableEmployee()
+        {
+            try
+            {
+                //Conexión con la base
+                Command.Connection = getConnection();
+                //Consulta del proceso
+                string queryEnableE = "UPDATE tbEmployee SET IdStatus = @param1, hireDate = @param2 WHERE username = @param3";
+                //Creamos el comando con el query y la conexión 
+                SqlCommand cmdEnableE = new SqlCommand(queryEnableE, Command.Connection);
+                //Le damos valor a los parámetros
+                cmdEnableE.Parameters.AddWithValue("param1", 1);
+                cmdEnableE.Parameters.AddWithValue("param2", DateTime.Now);
+                cmdEnableE.Parameters.AddWithValue("param3", Username);
+                //Ejecutamos el query
+                int answerE = cmdEnableE.ExecuteNonQuery();
+                //Evaluamos si el empleado se actualizó
+                if (answerE == 1)
+                {
+                    //Si es 1 se actualizó el empleado, pasamos a actualizar el usuario
+                    //creamos el query
+                    string queryEnableU = "UPDATE tbUserData SET userStatus = 'true' WHERE username = @param4";
+                    //Creamos el comando con el query y la conexion
+                    SqlCommand cmdEnableU = new SqlCommand(queryEnableU, Command.Connection);
+                    //damos valor a los parámetros
+                    cmdEnableU.Parameters.AddWithValue("param4", Username);
+                    //Ejecutamos la consulta
+                    int answerU = cmdEnableU.ExecuteNonQuery();
+                    //Evaluamos la respuesta
+                    if (answerU == 1)
+                    {
+                        //Si es igual a 1, la reactivación se hizo correctamente
+                        return 1;
+                    }
+                    else
+                    {
+                        //Si no, no se completó y retornamos un 0
+                        RollBackEnable();
+                        return 0;
+                    }
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return -1;
+                
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
+
+        //Método para desahacer la reactivación en un employee
+        public void RollBackEnable()
+        {
+            Command.Connection = getConnection();
+            string query = "UPDATE tbEmployee SET IdStatus = @param1 WHERE username = @param2";
+            //Creamos el comando con la conexión y query
+            SqlCommand cmd = new SqlCommand(query, Command.Connection);
+            //Damos valor a los parametros
+            cmd.Parameters.AddWithValue("param1", 2);
+            cmd.Parameters.AddWithValue("param2", Username);
+            //Ejecutamos la consulta
+            cmd.ExecuteNonQuery();
         }
 
         //Método para la filtración por checkbox de tipo de empleado

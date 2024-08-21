@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDeleteAlert));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnConfirmDelete = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
@@ -44,12 +44,12 @@
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(42, 18);
+            this.bunifuLabel1.Location = new System.Drawing.Point(57, 18);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(265, 19);
+            this.bunifuLabel1.Size = new System.Drawing.Size(238, 19);
             this.bunifuLabel1.TabIndex = 0;
-            this.bunifuLabel1.Text = "Esta acción no tiene vuelta atrás";
+            this.bunifuLabel1.Text = "Deshabilitará a un empleado";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -88,11 +88,11 @@
             this.btnConfirmDelete.ColorContrastOnClick = 45;
             this.btnConfirmDelete.ColorContrastOnHover = 45;
             this.btnConfirmDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnConfirmDelete.CustomizableEdges = borderEdges3;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnConfirmDelete.CustomizableEdges = borderEdges1;
             this.btnConfirmDelete.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnConfirmDelete.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnConfirmDelete.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -140,7 +140,7 @@
             this.btnConfirmDelete.OnIdleState.BorderThickness = 1;
             this.btnConfirmDelete.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnConfirmDelete.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmDelete.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("BtnAgregarEmpleado.OnIdleState.IconLeftImage")));
+            this.btnConfirmDelete.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnConfirmDelete.OnIdleState.IconLeftImage")));
             this.btnConfirmDelete.OnIdleState.IconRightImage = null;
             this.btnConfirmDelete.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.btnConfirmDelete.OnPressedState.BorderRadius = 15;
@@ -178,11 +178,11 @@
             this.btnCancelar.ColorContrastOnClick = 45;
             this.btnCancelar.ColorContrastOnHover = 45;
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnCancelar.CustomizableEdges = borderEdges4;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnCancelar.CustomizableEdges = borderEdges2;
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCancelar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCancelar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -230,7 +230,7 @@
             this.btnCancelar.OnIdleState.BorderThickness = 1;
             this.btnCancelar.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnCancelar.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("BtnCancelar.OnIdleState.IconLeftImage")));
+            this.btnCancelar.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.OnIdleState.IconLeftImage")));
             this.btnCancelar.OnIdleState.IconRightImage = null;
             this.btnCancelar.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.btnCancelar.OnPressedState.BorderRadius = 15;
