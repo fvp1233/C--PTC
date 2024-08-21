@@ -34,40 +34,23 @@ namespace PTC2024.Controller.BillsController
             objoverrideBill.txtPasswordBunifu.Click += new EventHandler(HidePassword);
 
         }
-        /// <summary>
-        /// Métodos de los eventos del formulario para anular las facturas
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         public void CancelProcess(object sender, EventArgs e)
         {
             CancelProcessValue();
             objoverrideBill.Close();
         }
-        /// <summary>
-        /// Método que convierte una cadena de texto string en un secureString el cual logra de manera más segura almacenar las contraseñas en la memoria
-        /// </summary>
-        /// <param name="password"></param>
-        /// <returns></returns>
+
         public SecureString ConvertToSecureString(string password)
         {
             SecureString securePassword = new SecureString();
-            //Se recorre cada carácter de la contraseña ya ingresada o guardada en la base de datos
             foreach (char c in password.ToCharArray())
             {
-                //Se agrega cada caracter a secureString
                 securePassword.AppendChar(c);
             }
-            //SecureString se establece como solo lectura para que no se pueda modificar después de ser creado
             securePassword.MakeReadOnly();
-            // Se devuelve la contraseña en formato SecureString
             return securePassword;
         }
-        /// <summary>
-        /// Método de confirmación de un proceso, validando la contraseña del administrador
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         public void ConfirmProcess(object sender, EventArgs e)
         {
             DAOBills dAOBills = new DAOBills();
@@ -81,10 +64,12 @@ namespace PTC2024.Controller.BillsController
             if (validatepassword)
             {
                 ConfirmProcessValue(); // Establecer confirmación exitosa
+                MessageBox.Show("Contraseña correcta.", "Proceso Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 objoverrideBill.Close(); // Ocultar formulario
             }
             else
             {
+                MessageBox.Show("Contraseña de administrador incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 objoverrideBill.Close(); // Cerrar formulario en caso de error
             }
         }

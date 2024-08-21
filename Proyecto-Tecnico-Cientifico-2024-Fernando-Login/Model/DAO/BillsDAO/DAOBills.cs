@@ -82,11 +82,7 @@ namespace PTC2024.Model.DAO.BillsDAO
                 Command.Connection.Close();
             }
         }
-        /// <summary>
-        /// Método que verifica si la contraseña ingresada es contraseña de administrador comparándola con el hash ya utilizado
-        /// </summary>
-        /// <param name="inputPassword"></param>
-        /// <returns></returns>
+
         public bool VerifyAdminPassword(SecureString inputPassword)
         {
             try
@@ -115,12 +111,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             }
         }
 
-        /// <summary>
-        /// Método que convierte un SecureString en una cadena de texto simple osea en ('string')
-        /// </summary>
-        /// <param name="securePassword"></param>
-        /// <returns></returns>
-        /// <exception cref="ArgumentNullException"></exception>
+
 
         public string ConvertToUnsecureString(SecureString securePassword)
         {
@@ -138,10 +129,6 @@ namespace PTC2024.Model.DAO.BillsDAO
                 Marshal.ZeroFreeGlobalAllocUnicode(unmanagedString);
             }
         }
-        /// <summary>
-        /// Métdo para obtener el hash de la contraseña almacenada en la base de datos
-        /// </summary>
-        /// <returns></returns>
         public string GetStoredPasswordHash()
         {
             string storedHash = ""; 
@@ -153,7 +140,30 @@ namespace PTC2024.Model.DAO.BillsDAO
             return storedHash;
         }
 
-       
+        public bool OverBill(int idBill)
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                Command.CommandText = "UPDATE tbBills SET IdStatusBill = (SELECT IdStatusBill FROM tbStatusBill WHERE StatusName = 'Anulado') WHERE IdBill = @IdBill";
+                Command.Parameters.Clear();
+                Command.Parameters.AddWithValue("@IdBill", idBill);
+
+                Command.Connection.Open();
+                int rowsAffected = Command.ExecuteNonQuery();
+                return rowsAffected > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+
+        }
         public DataSet CheckboxFiltersMethod(string Method)
         {
             try
