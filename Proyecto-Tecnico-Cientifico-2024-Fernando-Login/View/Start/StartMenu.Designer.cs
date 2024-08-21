@@ -40,11 +40,11 @@
             this.btnLogOut = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnpermissions = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMaintenance = new Bunifu.Framework.UI.BunifuFlatButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.ContainerPanel = new System.Windows.Forms.Panel();
             this.bunifuFormResizer1 = new Bunifu.UI.WinForms.BunifuFormResizer(this.components);
-            this.btnpermissions = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.btnIcon)).BeginInit();
             this.bunifuPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -57,6 +57,7 @@
             this.btnIcon.AutoSizeHeight = false;
             this.btnIcon.BackColor = System.Drawing.Color.Transparent;
             this.btnIcon.BorderRadius = 0;
+            this.btnIcon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIcon.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnIcon.Image = ((System.Drawing.Image)(resources.GetObject("btnIcon.Image")));
             this.btnIcon.IsCircle = false;
@@ -342,6 +343,40 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(185, 607);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
+            // btnpermissions
+            // 
+            this.btnpermissions.Activecolor = System.Drawing.Color.DimGray;
+            this.btnpermissions.BackColor = System.Drawing.Color.Black;
+            this.btnpermissions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnpermissions.BorderRadius = 0;
+            this.btnpermissions.ButtonText = "Permisos";
+            this.btnpermissions.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnpermissions.DisabledColor = System.Drawing.Color.Gray;
+            this.btnpermissions.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnpermissions.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnpermissions.Iconimage")));
+            this.btnpermissions.Iconimage_right = null;
+            this.btnpermissions.Iconimage_right_Selected = null;
+            this.btnpermissions.Iconimage_Selected = null;
+            this.btnpermissions.IconMarginLeft = 0;
+            this.btnpermissions.IconMarginRight = 0;
+            this.btnpermissions.IconRightVisible = true;
+            this.btnpermissions.IconRightZoom = 0D;
+            this.btnpermissions.IconVisible = true;
+            this.btnpermissions.IconZoom = 55D;
+            this.btnpermissions.IsTab = false;
+            this.btnpermissions.Location = new System.Drawing.Point(3, 288);
+            this.btnpermissions.Name = "btnpermissions";
+            this.btnpermissions.Normalcolor = System.Drawing.Color.Black;
+            this.btnpermissions.OnHovercolor = System.Drawing.Color.DimGray;
+            this.btnpermissions.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnpermissions.selected = false;
+            this.btnpermissions.Size = new System.Drawing.Size(181, 56);
+            this.btnpermissions.TabIndex = 9;
+            this.btnpermissions.Text = "Permisos";
+            this.btnpermissions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnpermissions.Textcolor = System.Drawing.Color.White;
+            this.btnpermissions.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
             // btnMaintenance
             // 
             this.btnMaintenance.Activecolor = System.Drawing.Color.DimGray;
@@ -401,40 +436,6 @@
             this.bunifuFormResizer1.Enabled = true;
             this.bunifuFormResizer1.ParentForm = this;
             this.bunifuFormResizer1.ResizeHandlesWidth = 6;
-            // 
-            // btnpermissions
-            // 
-            this.btnpermissions.Activecolor = System.Drawing.Color.DimGray;
-            this.btnpermissions.BackColor = System.Drawing.Color.Black;
-            this.btnpermissions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnpermissions.BorderRadius = 0;
-            this.btnpermissions.ButtonText = "Permisos";
-            this.btnpermissions.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnpermissions.DisabledColor = System.Drawing.Color.Gray;
-            this.btnpermissions.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnpermissions.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnpermissions.Iconimage")));
-            this.btnpermissions.Iconimage_right = null;
-            this.btnpermissions.Iconimage_right_Selected = null;
-            this.btnpermissions.Iconimage_Selected = null;
-            this.btnpermissions.IconMarginLeft = 0;
-            this.btnpermissions.IconMarginRight = 0;
-            this.btnpermissions.IconRightVisible = true;
-            this.btnpermissions.IconRightZoom = 0D;
-            this.btnpermissions.IconVisible = true;
-            this.btnpermissions.IconZoom = 55D;
-            this.btnpermissions.IsTab = false;
-            this.btnpermissions.Location = new System.Drawing.Point(3, 288);
-            this.btnpermissions.Name = "btnpermissions";
-            this.btnpermissions.Normalcolor = System.Drawing.Color.Black;
-            this.btnpermissions.OnHovercolor = System.Drawing.Color.DimGray;
-            this.btnpermissions.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnpermissions.selected = false;
-            this.btnpermissions.Size = new System.Drawing.Size(181, 56);
-            this.btnpermissions.TabIndex = 9;
-            this.btnpermissions.Text = "Permisos";
-            this.btnpermissions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnpermissions.Textcolor = System.Drawing.Color.White;
-            this.btnpermissions.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // StartMenu
             // 

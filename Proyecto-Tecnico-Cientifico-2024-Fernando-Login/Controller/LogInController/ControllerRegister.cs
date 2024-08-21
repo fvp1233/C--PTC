@@ -65,66 +65,80 @@ namespace PTC2024.Controller.LogInController
             {
                 //Validación del dominio del correo
                 emailValidation = ValidateEmail();
-                //Validación de la edad del empleado
-                int employeeAge = ValidateAge();
-                //Validación para el campo de confirmar contraseña.
-                if ((objRegister.txtConfirmedPassword.Text.Trim() == objRegister.txtPassword.Text.Trim()) && (emailValidation = true) && (employeeAge >= 18))
+                if (emailValidation == true)
                 {
-                    //Si todas las validaciones son correctas, pasamos a asignarles el valor a los métodos getter del DAORegister
-                    //creamos objeto del DAORegister
-                    DAORegister daoRegister = new DAORegister();
-                    //creamos objeto de CommonClasses para la encriptación de la contraseña
-                    CommonClasses commonClasses = new CommonClasses();
-                    //Asignación de valores a los métodos getter
-
-                    //Atributos para la tabla tbUserData
-                    daoRegister.Username = objRegister.txtUser.Text.Trim();
-                    daoRegister.Password = commonClasses.ComputeSha256Hash(objRegister.txtPassword.Text.Trim());
-                    daoRegister.BusinessPosition = 1;
-                    daoRegister.UserSatus = true;
-                    daoRegister.BusinessInfo = 1;
-
-                    //Atributos para la tabla tbEmployee
-                    daoRegister.Names = objRegister.txtNames.Text.Trim();
-                    daoRegister.LastNames = objRegister.txtLastNames.Text.Trim();
-                    daoRegister.Document = objRegister.txtDUI.Text.Trim();
-                    daoRegister.BirthDate = objRegister.dtBirth.Value.Date;
-                    daoRegister.Email = objRegister.txtEmail.Text.Trim();
-                    daoRegister.Phone = objRegister.txtPhone.Text.Trim();
-                    daoRegister.Address = objRegister.txtAddress.Text.Trim();
-                    daoRegister.Salary = 1000.00;
-                    daoRegister.BankAccount = objRegister.txtBankAccount.Text.Trim();
-                    daoRegister.AffiliationNumber = objRegister.txtAffiliationNumber.Text.Trim();
-                    daoRegister.HireDate = objRegister.dtHireDate.Value.Date;
-                    daoRegister.Bank = int.Parse(objRegister.comboBank.SelectedValue.ToString());
-                    daoRegister.Department = 1;
-                    daoRegister.EmployeeType = 1;
-                    daoRegister.MaritalStatus = 1;
-                    daoRegister.EmployeeStatus = 1;
-
-                    //Ahora invocamos el método del DAO para hacer la inserción del empleado por medio del objeto daoRegister.
-                    int value = daoRegister.EmployeeRegister();
-                    //Evaluamos la variable value para saber si el empleado se registró correctamente.
-                    if (value == 1 )
+                    //Validación de la edad del empleado
+                    int employeeAge = ValidateAge();
+                    if (employeeAge >= 18)
                     {
-                        //si la respuesta es 1, la inserción  se realizó.
-                        MessageBox.Show("El primer usuario ha sido registrado exitosamente.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        MessageBox.Show($"Usuario: {objRegister.txtUser.Text.Trim()} \n Contraseña: {objRegister.txtPassword.Text.Trim()}", "Credenciales de acceso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //Procedemos a abrir el login después de la inserción
-                        FrmLogin objLogin = new FrmLogin();
-                        objLogin.Show();
-                        objRegister.Hide();
+                        //Validación para el campo de confirmar contraseña.
+                        if (objRegister.txtConfirmedPassword.Text.Trim() == objRegister.txtPassword.Text.Trim())
+                        {
+                            //Si todas las validaciones son correctas, pasamos a asignarles el valor a los métodos getter del DAORegister
+                            //creamos objeto del DAORegister
+                            DAORegister daoRegister = new DAORegister();
+                            //creamos objeto de CommonClasses para la encriptación de la contraseña
+                            CommonClasses commonClasses = new CommonClasses();
+                            //Asignación de valores a los métodos getter
+
+                            //Atributos para la tabla tbUserData
+                            daoRegister.Username = objRegister.txtUser.Text.Trim();
+                            daoRegister.Password = commonClasses.ComputeSha256Hash(objRegister.txtPassword.Text.Trim());
+                            daoRegister.BusinessPosition = 1;
+                            daoRegister.UserSatus = true;
+                            daoRegister.BusinessInfo = 1;
+
+                            //Atributos para la tabla tbEmployee
+                            daoRegister.Names = objRegister.txtNames.Text.Trim();
+                            daoRegister.LastNames = objRegister.txtLastNames.Text.Trim();
+                            daoRegister.Document = objRegister.txtDUI.Text.Trim();
+                            daoRegister.BirthDate = objRegister.dtBirth.Value.Date;
+                            daoRegister.Email = objRegister.txtEmail.Text.Trim();
+                            daoRegister.Phone = objRegister.txtPhone.Text.Trim();
+                            daoRegister.Address = objRegister.txtAddress.Text.Trim();
+                            daoRegister.Salary = 1000.00;
+                            daoRegister.BankAccount = objRegister.txtBankAccount.Text.Trim();
+                            daoRegister.AffiliationNumber = objRegister.txtAffiliationNumber.Text.Trim();
+                            daoRegister.HireDate = objRegister.dtHireDate.Value.Date;
+                            daoRegister.Bank = int.Parse(objRegister.comboBank.SelectedValue.ToString());
+                            daoRegister.Department = 1;
+                            daoRegister.EmployeeType = 1;
+                            daoRegister.MaritalStatus = 1;
+                            daoRegister.EmployeeStatus = 1;
+
+                            //Ahora invocamos el método del DAO para hacer la inserción del empleado por medio del objeto daoRegister.
+                            int value = daoRegister.EmployeeRegister();
+                            //Evaluamos la variable value para saber si el empleado se registró correctamente.
+                            if (value == 1)
+                            {
+                                //si la respuesta es 1, la inserción  se realizó.
+                                MessageBox.Show("El primer usuario ha sido registrado exitosamente.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show($"Usuario: {objRegister.txtUser.Text.Trim()} \n Contraseña: {objRegister.txtPassword.Text.Trim()}", "Credenciales de acceso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //Procedemos a abrir el login después de la inserción
+                                FrmLogin objLogin = new FrmLogin();
+                                objLogin.Show();
+                                objRegister.Hide();
+                            }
+                            else
+                            {
+                                //Si la respuesta no es 1, la inserción no se realizó.
+                                MessageBox.Show("El pirmer usuario no pudo ser ingresado.", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("La confirmación de contraseña es incorrecta, intentelo de nuevo", "Confirmar contraseña", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                     else
                     {
-                        //Si la respuesta no es 1, la inserción no se realizó.
-                        MessageBox.Show("El pirmer usuario no pudo ser ingresado.", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("El empleado debe tener al menos 18 años.", "Edad inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("La confirmación de contraseña es incorrecta, intentelo de nuevo", "Confirmar contraseña", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                    MessageBox.Show("Porfavor ingrese el correo electónico correctamente.", "Correo inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }                              
             }
             else
             {

@@ -106,6 +106,7 @@
     <Compile Include="Controller\CustomersController\ControllerAddCustomers.cs" />
     <Compile Include="Controller\CustomersController\ControllerCustomers.cs" />
     <Compile Include="Controller\CustomersController\ControllerUpdateCustomers.cs" />
+    <Compile Include="Controller\DashboardController\ControllerDashboard.cs" />
     <Compile Include="Controller\EmployeesController\ControllerAddEmployee.cs" />
     <Compile Include="Controller\EmployeesController\ControllerInfoEmployee.cs" />
     <Compile Include="Controller\FirstUseController\ControllerFirstUse.cs" />
@@ -143,6 +144,7 @@
     <Compile Include="Model\DAO\CustomersDAO\DAOAddCustomers.cs" />
     <Compile Include="Model\DAO\CustomersDAO\DAOCustomers.cs" />
     <Compile Include="Model\DAO\CustomersDAO\DAOUpdateCustomers.cs" />
+    <Compile Include="Model\DAO\DashboardDAO\DAODashboard.cs" />
     <Compile Include="Model\DAO\EmployeesDAO\DAOAddEmployee.cs" />
     <Compile Include="Model\DAO\EmployeesDAO\DAOEmployees.cs" />
     <Compile Include="Model\DAO\EmployeesDAO\DAOUpdateEmployee.cs" />
@@ -173,6 +175,7 @@
     <Compile Include="Model\DTO\CustomersDTO\DTOAddCustomers.cs" />
     <Compile Include="Model\DTO\CustomersDTO\DTOCustomers.cs" />
     <Compile Include="Model\DTO\CustomersDTO\DTOUpdateCustomers.cs" />
+    <Compile Include="Model\DTO\DashboardDTO\DTODashboard.cs" />
     <Compile Include="Model\DTO\EmployeesDTO\DTOAddEmployee.cs" />
     <Compile Include="Model\DTO\EmployeesDTO\DTOEmployees.cs" />
     <Compile Include="Model\DTO\EmployeesDTO\DTOUpdateEmployee.cs" />
@@ -369,6 +372,18 @@
     <Compile Include="View\login\FrmRegister.Designer.cs">
       <DependentUpon>FrmRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ProfileSettings\FrmProfileConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProfileSettings\FrmProfileConfiguration.Designer.cs">
+      <DependentUpon>FrmProfileConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProfileSettings\FrmProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProfileSettings\FrmProfile.Designer.cs">
+      <DependentUpon>FrmProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Service inventory\FrmUpdateService.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -464,6 +479,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmEmployees.resx">
       <DependentUpon>FrmEmployees.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmInfoEmployee.resx">
       <DependentUpon>FrmInfoEmployee.cs</DependentUpon>
@@ -500,6 +516,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\login\FrmRegister.resx">
       <DependentUpon>FrmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProfileSettings\FrmProfile.resx">
+      <DependentUpon>FrmProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Service inventory\FrmUpdateService.resx">
       <DependentUpon>FrmUpdateService.cs</DependentUpon>
@@ -555,7 +574,10 @@
     <Content Include="Resources\indemnizacion.png" />
     <Content Include="Resources\ojoAbierto.png" />
     <Content Include="Resources\ojoCerrado.png" />
+    <Content Include="Resources\preguntasSeguridad.png" />
     <Content Include="Resources\salir.png" />
+    <Content Include="Resources\seguridadPreguntas.png" />
+    <Content Include="Resources\subirFoto.png" />
     <Content Include="Resources\usuarioRegister.png" />
     <Content Include="Resources\viewEmployees.png" />
     <Content Include="Resources\viewPayrolls.png" />
