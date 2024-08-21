@@ -52,7 +52,7 @@ namespace PTC2024.Model.DTO.BillsDTO
         private string password;
         private int userStatus;
         private int IdBussinessP;
-        string SearchB;
+        private string SearchB;
 
         public int IdBill1 { get => IdBill; set => IdBill = value; }
         public string CompanyName { get => companyName; set => companyName = value; }
