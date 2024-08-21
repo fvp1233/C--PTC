@@ -32,6 +32,7 @@ namespace PTC2024.Controller.Employees
             objEmployees.cmsUpdateEmployee.Click += new EventHandler(UpdateEmployee);
             objEmployees.cmsDeleteEmployee.Click += new EventHandler(DisableEmployee);
             objEmployees.cmsEmployeeInformation.Click += new EventHandler(ViewEmployeeInfo);
+            objEmployees.cmsReactivateE.Click += new EventHandler(EnableEmployee);
             objEmployees.txtEmployeeSearch.KeyPress += new KeyPressEventHandler(SearchEmployeeEvent);
             objEmployees.dgvEmployees.Click += new EventHandler(ContextMenuClick);
             objEmployees.cbTiempoCompleto.Click += new EventHandler(CheckedTiempoCompleto);
@@ -88,6 +89,25 @@ namespace PTC2024.Controller.Employees
             objEmployees.dgvEmployees.Columns[15].Visible = false;
             objEmployees.dgvEmployees.Columns[18].Visible = false;
         }
+
+        public void RefreshDataGridDisabledEmployees()
+        {
+            DAOEmployees daoEmployees = new DAOEmployees();
+            DataSet ds = daoEmployees.GetDisabledEmployees();
+            //Llenando el datagridview
+            objEmployees.dgvEmployees.DataSource = ds.Tables["viewEmployees"];
+            objEmployees.dgvEmployees.Columns[0].DividerWidth = 1;
+            objEmployees.dgvEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            objEmployees.dgvEmployees.Columns[4].Visible = false;
+            objEmployees.dgvEmployees.Columns[9].Visible = false;
+            objEmployees.dgvEmployees.Columns[10].Visible = false;
+            objEmployees.dgvEmployees.Columns[11].Visible = false;
+            objEmployees.dgvEmployees.Columns[12].Visible = false;
+            objEmployees.dgvEmployees.Columns[14].Visible = false;
+            objEmployees.dgvEmployees.Columns[15].Visible = false;
+            objEmployees.dgvEmployees.Columns[18].Visible = false;
+        }
+
         public void ViewEmployeeInfo(object sender, EventArgs e)
         {
             int row = objEmployees.dgvEmployees.CurrentRow.Index;
@@ -164,7 +184,7 @@ namespace PTC2024.Controller.Employees
         {
             //Se declara la variable row, que va a guardar el número de la fila del registro escogido para eliminar
             int row = objEmployees.dgvEmployees.CurrentRow.Index;
-            //Le damos valor al getter IdEmployee para la verificación de primer usuario.
+            //Creamos objeto del DAO
             DAOEmployees daoEmployees = new DAOEmployees();
             //Damos valor al getter idEmployee para hacer una validación mas abajo.
             daoEmployees.IdEmployee = int.Parse(objEmployees.dgvEmployees[0,row].Value.ToString());
@@ -218,6 +238,28 @@ namespace PTC2024.Controller.Employees
             //}
             #endregion
             RefreshDataGridEmployees();
+        }
+
+        public void EnableEmployee(object sender, EventArgs e)
+        {
+            //Creamos la variable para saber el registro seleccionado
+            int row = objEmployees.dgvEmployees.CurrentRow.Index;
+            //Creamos objeto del DAO
+            DAOEmployees daoEmployees = new DAOEmployees();
+            //Le damos valor al getter del Username
+            daoEmployees.Username = objEmployees.dgvEmployees[17, row].Value.ToString();
+            //Ejecutamos el método
+            int answer = daoEmployees.EnableEmployee();
+            if (answer == 1)
+            {
+                //si es 1, se hizo el proceso.
+                MessageBox.Show("El empleado fue rehabilitado junto a su usuario de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Ocurrió un error, el empleado no pudo ser rehabilitado", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            RefreshDataGridDisabledEmployees();
         }
 
         public void CheckedTiempoCompleto(object sender, EventArgs e)

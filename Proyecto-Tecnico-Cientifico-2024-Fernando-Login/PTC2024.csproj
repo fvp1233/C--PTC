@@ -132,6 +132,8 @@
     <Compile Include="Controller\PayrollsController\ControllerUpdatePayroll.cs" />
     <Compile Include="Controller\PayrollsController\ControllerUpdatePermission.cs" />
     <Compile Include="Controller\PayrollsController\ControllerViewPayrolls.cs" />
+    <Compile Include="Controller\ProfileController\ControllerProfile.cs" />
+    <Compile Include="Controller\ProfileController\ControllerProfileConfiguration.cs" />
     <Compile Include="Controller\ServicesController\ControllerAddService.cs" />
     <Compile Include="Controller\ServicesController\ControllerServices.cs" />
     <Compile Include="Controller\ServicesController\ControllerUpdateService.cs" />
@@ -163,6 +165,8 @@
     <Compile Include="Model\DAO\PayrollsDAO\DAOUpdatePayroll.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOUpdatePermission.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOViewPayrolls.cs" />
+    <Compile Include="Model\DAO\ProfileDAO\DAOProfile.cs" />
+    <Compile Include="Model\DAO\ProfileDAO\DAOProfileConfiguration.cs" />
     <Compile Include="Model\DAO\ServicesDAO\DAOAddService.cs" />
     <Compile Include="Model\DAO\ServicesDAO\DAOServices.cs" />
     <Compile Include="Model\DAO\ServicesDAO\DAOUpdateService.cs" />
@@ -194,6 +198,8 @@
     <Compile Include="Model\DTO\PayrollDTO\DTOUpdatePayroll.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOUpdatePermission.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOViewPayrolls.cs" />
+    <Compile Include="Model\DTO\ProfileDTO\DTOProfile.cs" />
+    <Compile Include="Model\DTO\ProfileDTO\DTOProfileConfiguration.cs" />
     <Compile Include="Model\DTO\ServicesDTO\DTOAddService.cs" />
     <Compile Include="Model\DTO\ServicesDTO\DTOServices.cs" />
     <Compile Include="Model\DTO\ServicesDTO\DTOUpdateService.cs" />
