@@ -17,7 +17,6 @@
 using System.Numerics;
 using PTC2024.Model.DTO.CustomersDTO;
 using PTC2024.Model.DAO.PayrollsDAO;
-using PTC2024.Model.DTO.BillsDTO;
 
 namespace PTC2024.Controller.BillsController
 {
@@ -32,7 +31,6 @@ namespace PTC2024.Controller.BillsController
             objAddBills = View;
             this.accions = accions;
 
-
             chooseAccions();
             objAddBills.Load += new EventHandler(LoadDataServices);
 
@@ -43,14 +41,11 @@ namespace PTC2024.Controller.BillsController
             objAddBills.btnDeletemore.Click += new EventHandler(DataProcessS);
             objAddBills.txtSubTotal.TextChanged += new EventHandler(CalculateTotal);
             objAddBills.txtDiscount.TextChanged += new EventHandler(TxtDiscount_TextChanged);
-            //objAddBills.txtDiscount.KeyDown += new KeyEventHandler(txtDiscount_KeyDown);
+            objAddBills.txtDiscount.KeyUp += new KeyEventHandler(txtDiscount_KeyPress);
             objAddBills.txtTotalPay.TextChanged += new EventHandler(CalculateTotal);
             objAddBills.dgvData.CellValueChanged += new DataGridViewCellEventHandler(CalculateTotal);
             objAddBills.dgvData.RowsAdded += new DataGridViewRowsAddedEventHandler(CalculateTotal);
             objAddBills.dgvData.RowsRemoved += new DataGridViewRowsRemovedEventHandler(CalculateTotal);
-            objAddBills.txtCustomerName.Leave += new EventHandler(TxtCustomerName_Leave);
-
-
         }
         public ControllerAddBills(FrmAddBills view, int accions, int id, string companyName, string NIT, string NRC, string Customer, string serviceName, double Discount, double SubtotalPay, double TotalPay, string methodP, DateTime startDate, DateTime FinalDate, DateTime Dateissued, string employee, string statusBill, string CustomerDui, string CustomerPhone, string CustomerEmail)
         {
@@ -163,49 +158,61 @@ namespace PTC2024.Controller.BillsController
             }
         }
 
+
         public void TxtDiscount_TextChanged(object sender, EventArgs e)
         {
-            CalculateTotal(sender, e);
+            CalculateTotal(null, null);
         }
-
         public void CalculateTotal(object sender, EventArgs e)
         {
             try
             {
-                float subtotal = 0;
-                // Filas del DataGridView para calcular el subtotal
+                float total = 0;
+                // Iterar sobre las filas del DataGridView
                 foreach (DataGridViewRow row in objAddBills.dgvData.Rows)
                 {
-                    if (row.Cells["Precio"].Value != null)
+                    if (row.Cells["Precio"].Value != null) // Verificar que no sea nulo
                     {
+                        // Parsear el valor a decimal y sumarlo al total
                         float price = 0;
                         if (float.TryParse(row.Cells["Precio"].Value.ToString(), out price))
                         {
-                            subtotal += price;
+                            total += price;
                         }
                     }
                 }
-
-                objAddBills.txtSubTotal.Text = subtotal.ToString("F2");
-
-                // Aplicar el descuento si se ha ingresado uno válido
-                if (float.TryParse(objAddBills.txtDiscount.Text, out float discount))
-                {
-                    float totalPay = subtotal - (subtotal * discount / 100);
-                    objAddBills.txtTotalPay.Text = totalPay.ToString("F2");
-                }
-                else
-                {
-                    // Si no hay un descuento válido, solo mostrar el subtotal
-                    objAddBills.txtTotalPay.Text = subtotal.ToString("F2");
-                }
+                objAddBills.txtSubTotal.Text = total.ToString("F2");
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Error al calcular el total: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+       
+        public void txtDiscount_KeyPress(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Obtener los valores de los TextBox
+                if (double.TryParse(objAddBills.txtSubTotal.Text, out double SubtotalPay) &&
+                    double.TryParse(objAddBills.txtDiscount.Text, out double Discount))
+                {
+                    // Calcular el total
+                    double TotalPay = SubtotalPay - (SubtotalPay * Discount / 100);
+
+                    // Mostrar el resultado en el TextBox del total
+                    objAddBills.txtTotalPay.Text = TotalPay.ToString("F2");
+                }
+                else
+                {
+                    // Mostrar un mensaje de error si los valores no son numéricos
+                    MessageBox.Show("Por favor, ingresa valores numéricos válidos.");
+                }
+            }
+        }
+
+
         public void DataProcessS(object sender, EventArgs e)
         {
             if (objAddBills.dgvData.SelectedRows.Count > 0)
@@ -236,64 +243,7 @@ namespace PTC2024.Controller.BillsController
 
         }
 
-        public void TxtCustomerName_Leave(object sender, EventArgs e)
-        {
-            DAOAddBills dAOAddBills = new DAOAddBills();
-            string customerName = objAddBills.txtCustomerName.Text.Trim();
-            Dictionary<string, string> customerData = dAOAddBills.DataCustomer(customerName);
-
-            if (customerData.Count > 0)
-            {
-                objAddBills.txtDUICustomer.Text = customerData["DUI"];
-                objAddBills.txtCustomerPhone.Text = customerData["phone"];
-                objAddBills.txtCustomerEmail.Text = customerData["email"];
-            }
-            else
-            {
-                MessageBox.Show("Cliente no encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        /* public void ConfigurarAutocompletar()
-         {
-             AutoCompleteStringCollection autoCompleteCollection = GetAutocompleteData();
-
-             // Configuración del TextBox de DUI
-             objAddBills.txtDUICustomer.AutoCompleteCustomSource = autoCompleteCollection;
-             objAddBills.txtDUICustomer.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-             objAddBills.txtDUICustomer.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-             // Configuración del TextBox de Teléfono
-             objAddBills.txtCustomerPhone.AutoCompleteCustomSource = autoCompleteCollection;
-             objAddBills.txtCustomerPhone.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-             objAddBills.txtCustomerPhone.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-             // Configuración del TextBox de Email
-             objAddBills.txtCustomerEmail.AutoCompleteCustomSource = autoCompleteCollection;
-             objAddBills.txtCustomerEmail.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-             objAddBills.txtCustomerEmail.AutoCompleteSource = AutoCompleteSource.CustomSource;
-         }
-
-         public AutoCompleteStringCollection GetAutocompleteData()
-         {
-             DAOAddBills dAOAddBills = new DAOAddBills();
-             // Obtener datos desde DAO
-             DataSet dataSet = dAOAddBills.DataCustomer();
-
-             AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
-             DataTable dataTable = dataSet.Tables[0];
-
-             foreach (DataRow row in dataTable.Rows)
-             {
-                 autoCompleteCollection.Add(row["DUI"].ToString());
-                 autoCompleteCollection.Add(row["phone"].ToString());
-                 autoCompleteCollection.Add(row["email"].ToString());
-             }
-
-             return autoCompleteCollection;
-         }
-        */
-        public void NewBill(object sender, EventArgs e)
+       public void NewBill(object sender, EventArgs e)
 {
     if (!(
         string.IsNullOrEmpty(objAddBills.txtNITCompany.Text.Trim()) ||
@@ -324,16 +274,7 @@ namespace PTC2024.Controller.BillsController
         daoNew.CustomerPhone1 = objAddBills.txtCustomerPhone.Text.Trim();
         daoNew.CustomerEmail1 = objAddBills.txtCustomerEmail.Text.Trim();
         daoNew.Employee = objAddBills.txtEmployee.Text.Trim();
-                int EmployeeId = daoNew.GetEmployeeIdByName(daoNew.Employee);
-                if (EmployeeId == 1)
-                {
-                    MessageBox.Show("Empleado no encontrado en la base de datos.");
-                    return;
-                }
-
-                daoNew.IdEmployee1 = EmployeeId;
-
-                daoNew.MethodP = objAddBills.comboMethodP.SelectedValue.ToString();
+        daoNew.MethodP = objAddBills.comboMethodP.SelectedValue.ToString();
 
         // Obtener IdCustomer basado en el nombre del cliente
         daoNew.Customer = objAddBills.txtCustomerName.Text.Trim();
@@ -391,15 +332,6 @@ namespace PTC2024.Controller.BillsController
                 daoNew.CustomerPhone1 = objAddBills.txtCustomerPhone.Text.Trim();
                 daoNew.CustomerEmail1 = objAddBills.txtCustomerEmail.Text.Trim();
                 daoNew.Employee = objAddBills.txtEmployee.Text.Trim();
-                int EmployeeId = daoNew.GetEmployeeIdByName(daoNew.Employee);
-                if (EmployeeId == 1)
-                {
-                    MessageBox.Show("Empleado no encontrado en la base de datos.");
-                    return;
-                }
-
-                daoNew.IdEmployee1 = EmployeeId;
-
                 daoNew.MethodP = objAddBills.comboMethodP.SelectedValue.ToString();
 
                 // Obtener IdCustomer basado en el nombre del cliente

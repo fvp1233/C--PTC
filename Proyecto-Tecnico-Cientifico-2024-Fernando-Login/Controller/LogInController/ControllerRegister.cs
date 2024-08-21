@@ -118,7 +118,7 @@ namespace PTC2024.Controller.LogInController
                     else
                     {
                         //Si la respuesta no es 1, la inserción no se realizó.
-                        MessageBox.Show("El primer usuario no pudo ser ingresado.", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("El pirmer usuario no pudo ser ingresado.", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else

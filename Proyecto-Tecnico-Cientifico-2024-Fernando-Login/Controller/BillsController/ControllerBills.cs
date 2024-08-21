@@ -39,13 +39,9 @@ namespace PTC2024.Controller.BillsController
             objFormBills.cbPagada.Click += new EventHandler(CheckboxFiltersStatus);
             objFormBills.cbAnulada.Click += new EventHandler(CheckboxFiltersStatus);
             objFormBills.cbPendiente.Click += new EventHandler(CheckboxFiltersStatus);
+            objFormBills.cmsRectifyBill.Enabled = false;
             disabledBillId = -1;
         }
-        /// <summary>
-        /// Metodo para refrescar tanto valores de la datagrid como formulario en general
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         public void LoadDataBills(object sender, EventArgs e)
         {
             ChargeData();
@@ -205,11 +201,6 @@ namespace PTC2024.Controller.BillsController
             }
         }
 
-        /// <summary>
-        /// Método para imprimir la factura convirtiendo la a PDF
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         public void printBills(object sender, EventArgs e)
         {
             int row = objFormBills.dgvBills.CurrentRow.Index;
@@ -286,24 +277,12 @@ namespace PTC2024.Controller.BillsController
             }
 
         }
-        
-        /// <summary>
-        /// Método para abrir formulario "Agregar factura"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         public void AddBills(object sender, EventArgs e)
         {
             FrmAddBills newBill = new FrmAddBills(1);
             newBill.ShowDialog();
             ChargeData();
         }
-        
-        /// <summary>
-        /// Método para rectificar factura, cargando los datos y luego estos se puedan modificar nuevamente
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         public void Rectificar(object sender, EventArgs e)
         {
             int row = objFormBills.dgvBills.CurrentRow.Index;
@@ -340,12 +319,6 @@ namespace PTC2024.Controller.BillsController
             newBill.ShowDialog();
             ChargeData();*/
         }
-
-        /// <summary>
-        /// Método para anular facturas
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         public void OverrideBills(object sender, EventArgs e)
         {
             int row = objFormBills.dgvBills.CurrentRow.Index;
@@ -364,84 +337,63 @@ namespace PTC2024.Controller.BillsController
             if (controller.ConfirmValue == 1)
             {
                 // Deshabilitar visualmente la fila y marcarla como solo lectura
-                MessageBox.Show("Factura anulada.", "Proceso Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 disabledBillId = idBill;
                 DisableRow(idBill);
                 SetRowReadOnly(idBill);
             }
             else
             {
-                MessageBox.Show("Contraseña de administrador incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 MessageBox.Show("Operación cancelada.", "Cancelar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
         }
 
-        /// <summary>
-        /// Deshabilita visualmente la fila de la datagrid 
-        /// </summary>
-        /// <param name="idBill"></param>
-        public void DisableRow(int idBill)
-        {
-            foreach (DataGridViewRow row in objFormBills.dgvBills.Rows)
-            {
-                var cellValue = row.Cells["N°"].Value;
-
-                if (cellValue != null && int.TryParse(cellValue.ToString(), out int cellValueAsInt) && cellValueAsInt == idBill)
-                {
-                    row.DefaultCellStyle.BackColor = Color.LightGray;
-                    row.DefaultCellStyle.ForeColor = Color.DarkGray;
-                    row.DefaultCellStyle.SelectionBackColor = Color.LightGray;
-                    row.DefaultCellStyle.SelectionForeColor = Color.DarkGray;
-                    objFormBills.cmsRectifyBill.Enabled = true;
-                    ChargeData();
-                    break;
-                }
-            }
-        }
-        /// <summary>
-        /// Método que se utliza pa una fila especifica de dgvBills y la marca como solo lectura sin posibilidad de editarla
-        /// </summary>
-        /// <param name="idBill"></param>
-    public void SetRowReadOnly(int idBill)
+       public void DisableRow(int idBill)
     {
-            foreach (DataGridViewRow row in objFormBills.dgvBills.Rows)
+        foreach (DataGridViewRow row in objFormBills.dgvBills.Rows)
         {
             var cellValue = row.Cells["N°"].Value;
-                //Valor no nulo se compara el idBill
+
             if (cellValue != null && int.TryParse(cellValue.ToString(), out int cellValueAsInt) && cellValueAsInt == idBill)
             {
-                    //se establece como solo lectura
-                row.ReadOnly = true;
-                    //detiene la búsqueda para deshabilitar la fila segun id
+                row.DefaultCellStyle.BackColor = Color.LightGray;
+                row.DefaultCellStyle.ForeColor = Color.DarkGray;
+                row.DefaultCellStyle.SelectionBackColor = Color.LightGray;
+                row.DefaultCellStyle.SelectionForeColor = Color.DarkGray;
+                    objFormBills.cmsRectifyBill.Enabled = true;
+
                     break;
+            }
+            }
+        }
+
+    public void SetRowReadOnly(int idBill)
+    {
+        foreach (DataGridViewRow row in objFormBills.dgvBills.Rows)
+        {
+            var cellValue = row.Cells["N°"].Value;
+
+            if (cellValue != null && int.TryParse(cellValue.ToString(), out int cellValueAsInt) && cellValueAsInt == idBill)
+            {
+                row.ReadOnly = true;
+                break;
             }
         }
     }
-        /// <summary>
-        /// Método para indicar cuando el usuario haga clic en la celda de dgvBills
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
     public void objFormBills_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
     {
-            //Verifica si la fila es valida
         if (e.RowIndex >= 0)
         {
             DataGridViewRow row = objFormBills.dgvBills.Rows[e.RowIndex];
-                //Obtiene el valor de la celda en la columna N° 
             var cellValue = row.Cells["N°"].Value;
-                //Si valor no nulo lo compara con el metodo disableBillId
+
             if (cellValue != null && int.TryParse(cellValue.ToString(), out int cellValueAsInt) && cellValueAsInt == disabledBillId)
             {
             }
         }
     }
 
-        /// <summary>
-        /// Maneja el evento cuando la selección de las filas de dgvBills cambia
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
     public void dgvBills_SelectionChanged(object sender, EventArgs e)
     {
         foreach (DataGridViewRow row in objFormBills.dgvBills.SelectedRows)
