@@ -132,7 +132,12 @@ namespace PTC2024.Controller.LogInController
                     }
                     else
                     {
+<<<<<<< HEAD
                         MessageBox.Show("El empleado debe tener al menos 18 años.", "Edad inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+=======
+                        //Si la respuesta no es 1, la inserción no se realizó.
+                        MessageBox.Show("El primer usuario no pudo ser ingresado.", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+>>>>>>> parent of 070b045 (Revert "Capturar datos de cliente, anulación correcta, descuento arreglado")
                     }
                 }
                 else
