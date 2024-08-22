@@ -390,6 +390,12 @@
     <Compile Include="View\ProfileSettings\FrmProfile.Designer.cs">
       <DependentUpon>FrmProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ProfileSettings\FrmSecurityQuestions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProfileSettings\FrmSecurityQuestions.Designer.cs">
+      <DependentUpon>FrmSecurityQuestions.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Service inventory\FrmUpdateService.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -525,6 +531,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ProfileSettings\FrmProfile.resx">
       <DependentUpon>FrmProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProfileSettings\FrmProfileConfiguration.resx">
+      <DependentUpon>FrmProfileConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProfileSettings\FrmSecurityQuestions.resx">
+      <DependentUpon>FrmSecurityQuestions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Service inventory\FrmUpdateService.resx">
       <DependentUpon>FrmUpdateService.cs</DependentUpon>
