@@ -171,6 +171,23 @@ namespace PTC2024.Controller.CustomersController
             //Se le dice al DataGridView lo que tiene que mostrar (Vista de los clientes)
             objCustomers.dgvCustomers.DataSource = respuesta.Tables["viewCustomers"];
         }
+
+        public void ViewClientInfo (object sender, EventArgs e)
+        {
+            int row = objCustomers.dgvCustomers.CurrentRow.Index;
+
+            int  employeeType;
+
+            string names, lastnames, DUI, address, email, phone;
+                
+          names = objCustomers.dgvCustomers[1, row].Value.ToString();
+            lastnames = objCustomers.dgvCustomers[2, row].Value.ToString();
+            DUI = objCustomers.dgvCustomers[3, row].Value.ToString();
+            email = objCustomers.dgvCustomers[4, row].Value.ToString();
+            address = objCustomers.dgvCustomers[5,row].Value.ToString();
+            phone = objCustomers.dgvCustomers[6, row].Value.ToString();
+            employeeType = int.Parse(objCustomers.dgvCustomers[7, row].Value.ToString());
+    }
     }
 }
 

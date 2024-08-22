@@ -52,7 +52,7 @@ namespace PTC2024.Model.DAO.CustomersDAO
         public int RegisterCustomer()
         {
             try
-            {//Consulta si el usuario existe
+            {//Consulta si el cliente existe
                 command.Connection = getConnection();
                 //Define la consulta para seleccionar a traves del DUI
                 string queryUserExist = "select DUI from dbo.tbCustomer where DUI=@DUI";
