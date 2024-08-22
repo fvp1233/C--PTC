@@ -107,7 +107,7 @@ namespace PTC2024.Model.DAO.CustomersDAO
                 //Se declara y abre la conexion
                 command.Connection = getConnection();
                 //Se declara la consulta
-                string query = "SELECT * FROM viewCustomers WHERE [Nombres] LIKE @consulta OR [Apellidos] LIKE @consulta";
+                string query = "SELECT * FROM viewCustomers WHERE [Nombres] LIKE @consulta OR [Apellidos] LIKE @consulta OR [Código] LIKE @consulta OR DUI LIKE @consulta";
 
                 //Se declara el comando que contiene la consulta y la conexion
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
