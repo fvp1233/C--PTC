@@ -15,7 +15,7 @@ namespace PTC2024.Controller.CustomersController
     class ControllerAddCustomers
     {
         FrmAddCustomers objAddCustomers;
-        bool emailValidation;
+        bool emailValidation; //Sirve para validar mas adelante el correo
 
         public ControllerAddCustomers(FrmAddCustomers Vista)
         {
@@ -33,9 +33,8 @@ namespace PTC2024.Controller.CustomersController
         public void CargarCombos(object sender, EventArgs e)
         {
             DAOAddCustomers dAOAddCustomers = new DAOAddCustomers();
-
-
             DataSet dsTipodeCliente = dAOAddCustomers.ObtenerTiposEmpleado();
+
             //Obtiene un conjunto de datos del dataset del tipo de empleado
             //Asigna la tabla tbTypeC para llenar el comboBox
             objAddCustomers.comboTipodeCliente.DataSource = dsTipodeCliente.Tables["tbTypeC"];
@@ -43,8 +42,6 @@ namespace PTC2024.Controller.CustomersController
             objAddCustomers.comboTipodeCliente.DisplayMember = "customerType";
             //Identifica que valor tiene (1,2)
             objAddCustomers.comboTipodeCliente.ValueMember = "IdTypeC";
-
-
         }
 
         //Metodo para añadir un cliente
@@ -63,8 +60,6 @@ namespace PTC2024.Controller.CustomersController
                 emailValidation = ValidateEmail();
                 if (emailValidation == true)
                 {
-
-
                     DAOAddCustomers dAOAddCustomers = new DAOAddCustomers();
                     CommonClasses commonClasses = new CommonClasses();
 
@@ -91,13 +86,10 @@ namespace PTC2024.Controller.CustomersController
                     }
                 }
                 else
-                {//Se evalua si todos los cambos estan llenos 
-                    MessageBox.Show("Todos los campos son obligatorios y existen algunos vacíos, llene todos los apartados.",
-                                        "Proceso interrumpido",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Warning);
+                {
+                    //Se evalua si todos los cambos estan llenos 
+                    MessageBox.Show("Todos los campos son obligatorios y existen algunos vacíos, llene todos los apartados.", "Proceso interrumpido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
             }
         }
 
