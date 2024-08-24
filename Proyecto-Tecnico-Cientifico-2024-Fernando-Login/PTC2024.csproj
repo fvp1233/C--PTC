@@ -216,6 +216,12 @@
     <Compile Include="View\Alerts\FrmDeleteAlert.Designer.cs">
       <DependentUpon>FrmDeleteAlert.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Alerts\FrmRecoverPMethods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Alerts\FrmRecoverPMethods.Designer.cs">
+      <DependentUpon>FrmRecoverPMethods.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\BillsViews\FrmOverrideBill.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -446,6 +452,9 @@
     <EmbeddedResource Include="View\Alerts\FrmDeleteAlert.resx">
       <DependentUpon>FrmDeleteAlert.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Alerts\FrmRecoverPMethods.resx">
+      <DependentUpon>FrmRecoverPMethods.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\BillsViews\FrmOverrideBill.resx">
       <DependentUpon>FrmOverrideBill.cs</DependentUpon>
     </EmbeddedResource>
@@ -586,13 +595,16 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\ActualizarEmpleado.png" />
+    <Content Include="Resources\adminMethod.png" />
     <Content Include="Resources\AgregarEmpleado.png" />
+    <Content Include="Resources\emailMethod.png" />
     <Content Include="Resources\generarPlanillas.png" />
     <Content Include="Resources\habilitar.png" />
     <Content Include="Resources\indemnizacion.png" />
     <Content Include="Resources\ojoAbierto.png" />
     <Content Include="Resources\ojoCerrado.png" />
     <Content Include="Resources\preguntasSeguridad.png" />
+    <Content Include="Resources\questionsMethod.png" />
     <Content Include="Resources\salir.png" />
     <Content Include="Resources\seguridadPreguntas.png" />
     <Content Include="Resources\subirFoto.png" />
