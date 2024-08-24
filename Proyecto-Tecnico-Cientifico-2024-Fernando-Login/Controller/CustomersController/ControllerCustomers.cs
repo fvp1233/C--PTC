@@ -77,6 +77,7 @@ namespace PTC2024.Controller.CustomersController
         //Metodo que filtra los cheques de los clientes naturales
         public void ChekedNatural(object sender, EventArgs e)
         {
+            objCustomers.chkNatural.Checked = true;
             objCustomers.chkJuridico.Checked = false;
             objCustomers.chkTodos.Checked = false;
             refreshData();
@@ -85,6 +86,7 @@ namespace PTC2024.Controller.CustomersController
         //Metodo que filtra los cheques de los clientes judiciales
         public void ChekedJuridico(object sender, EventArgs e)
         {
+            objCustomers.chkJuridico.Checked = true;
             objCustomers.chkNatural.Checked = false;
             objCustomers.chkTodos.Checked = false;
             refreshData();
@@ -93,6 +95,7 @@ namespace PTC2024.Controller.CustomersController
         //Metodo que filtra todos los clientes existentes
         public void ChekedTodos(object sender, EventArgs e)
         {
+            objCustomers.chkTodos.Checked = true; 
             objCustomers.chkNatural.Checked = false;
             objCustomers.chkJuridico.Checked = false;
             refreshData();

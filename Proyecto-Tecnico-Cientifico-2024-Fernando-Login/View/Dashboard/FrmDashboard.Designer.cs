@@ -830,6 +830,8 @@
             // 
             // chartPayrolls
             // 
+            this.chartPayrolls.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.chartPayrolls.BackColor = System.Drawing.SystemColors.Control;
             chartArea1.AxisX.IsMarginVisible = false;
             chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;

@@ -15,7 +15,7 @@ namespace PTC2024.Controller.CustomersController
     class ControllerAddCustomers
     {
         FrmAddCustomers objAddCustomers;
-
+        bool emailValidation;
 
         public ControllerAddCustomers(FrmAddCustomers Vista)
         {
@@ -60,40 +60,45 @@ namespace PTC2024.Controller.CustomersController
                 string.IsNullOrEmpty(objAddCustomers.comboTipodeCliente.Text.Trim())
                 ))
             {
+                emailValidation = ValidateEmail();
+                if (emailValidation == true)
+                {
 
-                DAOAddCustomers dAOAddCustomers = new DAOAddCustomers();
-                CommonClasses commonClasses = new CommonClasses();
 
-                //Se le asgina el valor de los parametros 
-                dAOAddCustomers.Names = objAddCustomers.txtNombres.Text;
-                dAOAddCustomers.Lastnames = objAddCustomers.txtApellidos.Text;
-                dAOAddCustomers.DUI1 = objAddCustomers.txtDui.Text;
-                dAOAddCustomers.Address = objAddCustomers.txtDireccion.Text;
-                dAOAddCustomers.Email = objAddCustomers.txtEmail.Text;
-                dAOAddCustomers.Phone = objAddCustomers.txtTelefono.Text;
-                dAOAddCustomers.EmployeeType = int.Parse(objAddCustomers.comboTipodeCliente.SelectedValue.ToString());
+                    DAOAddCustomers dAOAddCustomers = new DAOAddCustomers();
+                    CommonClasses commonClasses = new CommonClasses();
 
-                //Se evalua el valorRespuesta del metodo register customer
-                int valorRespuesta = dAOAddCustomers.RegisterCustomer();
+                    //Se le asgina el valor de los parametros 
+                    dAOAddCustomers.Names = objAddCustomers.txtNombres.Text;
+                    dAOAddCustomers.Lastnames = objAddCustomers.txtApellidos.Text;
+                    dAOAddCustomers.DUI1 = objAddCustomers.txtDui.Text;
+                    dAOAddCustomers.Address = objAddCustomers.txtDireccion.Text;
+                    dAOAddCustomers.Email = objAddCustomers.txtEmail.Text;
+                    dAOAddCustomers.Phone = objAddCustomers.txtTelefono.Text;
+                    dAOAddCustomers.EmployeeType = int.Parse(objAddCustomers.comboTipodeCliente.SelectedValue.ToString());
 
-                if (valorRespuesta == 1)
-                {//Si el valor es 1 se mostrara el mensaje
-                    MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    objAddCustomers.Close();
+                    //Se evalua el valorRespuesta del metodo register customer
+                    int valorRespuesta = dAOAddCustomers.RegisterCustomer();
+
+                    if (valorRespuesta == 1)
+                    {//Si el valor es 1 se mostrara el mensaje
+                        MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        objAddCustomers.Close();
+                    }
+                    else
+                    {//Si el valor es diferente a 1 se mostrara el mensaje de error
+                        MessageBox.Show("Los datos no pudieron ser registrados", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
-                {//Si el valor es diferente a 1 se mostrara el mensaje de error
-                    MessageBox.Show("Los datos no pudieron ser registrados", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                {//Se evalua si todos los cambos estan llenos 
+                    MessageBox.Show("Todos los campos son obligatorios y existen algunos vacíos, llene todos los apartados.",
+                                        "Proceso interrumpido",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Warning);
                 }
-            }
-            else
-            {//Se evalua si todos los cambos estan llenos 
-                MessageBox.Show("Todos los campos son obligatorios y existen algunos vacíos, llene todos los apartados.",
-                                    "Proceso interrumpido",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
-            }
 
+            }
         }
 
         //Metodo para cancelar el proceso
@@ -104,8 +109,32 @@ namespace PTC2024.Controller.CustomersController
         }
 
 
-    }
+        private bool ValidateEmail()
+        {
+            string email = objAddCustomers.txtEmail.Text.Trim();
 
+            if ((!email.Contains("@")))
+            {
+                MessageBox.Show("El formato del correo es incorrecto, verifique que contenga '@'.", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+
+            }
+            //validación de dominio del correo
+            string[] allowedDomains = { "gmail.com", "ricaldone.edu.sv" };
+            //La variable domain guarda la cadena de carácteres que se presente después de la arroba en el campo de correo
+            string domain = email.Substring(email.LastIndexOf('@') + 1);
+            //Si la cadena de carácteres después de la arroba NO es uno de los dominios permitidos, nos envía un mensaje de error.
+            if (!allowedDomains.Contains(domain))
+            {
+                MessageBox.Show("Dominio de correo inválido. \n El sistema solo admite los dominios '@gmail.com' y '@ricaldone.edu.sv'", "Dominio no permitido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            //Si no se detecta ningún fallo en el email, se devuelve directamente un true.
+            return true;
+        }
+    }
 }
+
+
 
 
