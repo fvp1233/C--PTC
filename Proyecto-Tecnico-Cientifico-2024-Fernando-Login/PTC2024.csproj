@@ -99,6 +99,10 @@
   <ItemGroup>
     <Compile Include="Controller\Alerts\ControllerChangePassword.cs" />
     <Compile Include="Controller\Alerts\ControllerDeleteAlert.cs" />
+    <Compile Include="Controller\PasswordRecover\ControllerAdminMethod.cs" />
+    <Compile Include="Controller\PasswordRecover\ControllerNextQuestionsMetod.cs" />
+    <Compile Include="Controller\PasswordRecover\ControllerQuestionsMethod.cs" />
+    <Compile Include="Controller\PasswordRecover\ControllerRecoverPMethods.cs" />
     <Compile Include="Controller\BillsController\ControllerAddBills.cs" />
     <Compile Include="Controller\BillsController\ControllerBills.cs" />
     <Compile Include="Controller\BillsController\ControllerOverride.cs" />
@@ -115,7 +119,7 @@
     <Compile Include="Controller\Helper\Email.cs" />
     <Compile Include="Controller\Helper\SessionVar.cs" />
     <Compile Include="Controller\LogInController\ControllerLogin.cs" />
-    <Compile Include="Controller\LogInController\ControllerRecoverPassword.cs" />
+    <Compile Include="Controller\PasswordRecover\ControllerRecoverPassword.cs" />
     <Compile Include="Controller\LogInController\ControllerRegister.cs" />
     <Compile Include="Controller\MaintenanceController\ControllerBanks.cs" />
     <Compile Include="Controller\MaintenanceController\ControllerCategories.cs" />
@@ -152,7 +156,10 @@
     <Compile Include="Model\DAO\EmployeesDAO\DAOUpdateEmployee.cs" />
     <Compile Include="Model\DAO\FirstUseDAO\DAOFirstUse.cs" />
     <Compile Include="Model\DAO\LogInDAO\DAOLogin.cs" />
-    <Compile Include="Model\DAO\LogInDAO\DAORecoverPassword.cs" />
+    <Compile Include="Model\DAO\PasswordRecoverDAO\DAOAdminMethod.cs" />
+    <Compile Include="Model\DAO\PasswordRecoverDAO\DAONextQuestionsMetod.cs" />
+    <Compile Include="Model\DAO\PasswordRecoverDAO\DAOQuestionsMethod.cs" />
+    <Compile Include="Model\DAO\PasswordRecoverDAO\DAORecoverPassword.cs" />
     <Compile Include="Model\DAO\LogInDAO\DAORegister.cs" />
     <Compile Include="Model\DAO\MaintenanceDAO\DAOBanks.cs" />
     <Compile Include="Model\DAO\MaintenanceDAO\DAOCategories.cs" />
@@ -192,6 +199,9 @@
     <Compile Include="Model\DTO\MaintenanceDTO\DTOCharge.cs" />
     <Compile Include="Model\DTO\MaintenanceDTO\DTODepartment.cs" />
     <Compile Include="Model\DTO\MaintenanceDTO\DTOUpdateCharge.cs" />
+    <Compile Include="Model\DTO\PasswordRecoverDTO\DTOAdminMethod.cs" />
+    <Compile Include="Model\DTO\PasswordRecoverDTO\DTONextQuestionsMetod.cs" />
+    <Compile Include="Model\DTO\PasswordRecoverDTO\DTOQuestionsMethod.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOAddPermission.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOInfoPayroll.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOPermission.cs" />
@@ -216,10 +226,28 @@
     <Compile Include="View\Alerts\FrmDeleteAlert.Designer.cs">
       <DependentUpon>FrmDeleteAlert.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Alerts\FrmRecoverPMethods.cs">
+    <Compile Include="View\PasswordRecover\FrmAdminMethod.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Alerts\FrmRecoverPMethods.Designer.cs">
+    <Compile Include="View\PasswordRecover\FrmAdminMethod.Designer.cs">
+      <DependentUpon>FrmAdminMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PasswordRecover\FrmNextQuestionsMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PasswordRecover\FrmNextQuestionsMethod.Designer.cs">
+      <DependentUpon>FrmNextQuestionsMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PasswordRecover\FrmQuestionsMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PasswordRecover\FrmQuestionsMethod.Designer.cs">
+      <DependentUpon>FrmQuestionsMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PasswordRecover\FrmRecoverPMethods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PasswordRecover\FrmRecoverPMethods.Designer.cs">
       <DependentUpon>FrmRecoverPMethods.cs</DependentUpon>
     </Compile>
     <Compile Include="View\BillsViews\FrmOverrideBill.cs">
@@ -372,10 +400,10 @@
     <Compile Include="View\FirstUse\FrmFirstUse.Designer.cs">
       <DependentUpon>FrmFirstUse.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\login\FrmRecoverPasswords.cs">
+    <Compile Include="View\PasswordRecover\FrmRecoverPasswords.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\login\FrmRecoverPasswords.Designer.cs">
+    <Compile Include="View\PasswordRecover\FrmRecoverPasswords.Designer.cs">
       <DependentUpon>FrmRecoverPasswords.cs</DependentUpon>
     </Compile>
     <Compile Include="View\login\FrmRegister.cs">
@@ -452,7 +480,16 @@
     <EmbeddedResource Include="View\Alerts\FrmDeleteAlert.resx">
       <DependentUpon>FrmDeleteAlert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Alerts\FrmRecoverPMethods.resx">
+    <EmbeddedResource Include="View\PasswordRecover\FrmAdminMethod.resx">
+      <DependentUpon>FrmAdminMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PasswordRecover\FrmNextQuestionsMethod.resx">
+      <DependentUpon>FrmNextQuestionsMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PasswordRecover\FrmQuestionsMethod.resx">
+      <DependentUpon>FrmQuestionsMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PasswordRecover\FrmRecoverPMethods.resx">
       <DependentUpon>FrmRecoverPMethods.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\BillsViews\FrmOverrideBill.resx">
@@ -532,7 +569,7 @@
     <EmbeddedResource Include="View\FirstUse\FrmFirstUse.resx">
       <DependentUpon>FrmFirstUse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\login\FrmRecoverPasswords.resx">
+    <EmbeddedResource Include="View\PasswordRecover\FrmRecoverPasswords.resx">
       <DependentUpon>FrmRecoverPasswords.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\login\FrmRegister.resx">
@@ -611,6 +648,8 @@
     <Content Include="Resources\usuarioRegister.png" />
     <Content Include="Resources\viewEmployees.png" />
     <Content Include="Resources\viewPayrolls.png" />
+    <Content Include="Resources\volverBlanco.png" />
+    <Content Include="Resources\volverNegro.png" />
     <None Include="Resources\User.png" />
     <None Include="Resources\AgregarEmpleado1.png" />
     <Content Include="Resources\Cancelar.png" />

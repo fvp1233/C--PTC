@@ -64,7 +64,7 @@
             // 
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(169, 17);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(168, 13);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(365, 32);
             this.bunifuCustomLabel1.TabIndex = 108;
@@ -73,7 +73,7 @@
             // bunifuCustomLabel2
             // 
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(57, 61);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(57, 50);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(580, 20);
             this.bunifuCustomLabel2.TabIndex = 109;
@@ -84,7 +84,7 @@
             // bunifuCustomLabel3
             // 
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(57, 81);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(57, 70);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(580, 20);
             this.bunifuCustomLabel3.TabIndex = 111;
@@ -95,7 +95,7 @@
             // 
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(32, 129);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(34, 129);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(334, 16);
             this.bunifuCustomLabel4.TabIndex = 113;
@@ -105,7 +105,7 @@
             // 
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(32, 202);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(34, 202);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(322, 16);
             this.bunifuCustomLabel5.TabIndex = 115;
@@ -115,7 +115,7 @@
             // 
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(31, 281);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(33, 281);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(228, 16);
             this.bunifuCustomLabel6.TabIndex = 117;
@@ -187,7 +187,7 @@
             this.txtUsername.SelectionLength = 0;
             this.txtUsername.SelectionStart = 0;
             this.txtUsername.ShortcutsEnabled = true;
-            this.txtUsername.Size = new System.Drawing.Size(151, 20);
+            this.txtUsername.Size = new System.Drawing.Size(1, 20);
             this.txtUsername.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txtUsername.TabIndex = 119;
             this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -246,7 +246,7 @@
             this.btnChange.IdleIconLeftImage = null;
             this.btnChange.IdleIconRightImage = null;
             this.btnChange.IndicateFocus = false;
-            this.btnChange.Location = new System.Drawing.Point(278, 358);
+            this.btnChange.Location = new System.Drawing.Point(278, 361);
             this.btnChange.Name = "btnChange";
             this.btnChange.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnChange.OnDisabledState.BorderRadius = 20;
@@ -317,7 +317,7 @@
             this.bunifuTextBox2.IconRight = null;
             this.bunifuTextBox2.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuTextBox2.Lines = new string[0];
-            this.bunifuTextBox2.Location = new System.Drawing.Point(35, 300);
+            this.bunifuTextBox2.Location = new System.Drawing.Point(37, 300);
             this.bunifuTextBox2.MaximumSize = new System.Drawing.Size(0, 32);
             this.bunifuTextBox2.MaxLength = 150;
             this.bunifuTextBox2.MinimumSize = new System.Drawing.Size(1, 1);
@@ -354,7 +354,7 @@
             this.bunifuTextBox2.SelectionLength = 0;
             this.bunifuTextBox2.SelectionStart = 0;
             this.bunifuTextBox2.ShortcutsEnabled = true;
-            this.bunifuTextBox2.Size = new System.Drawing.Size(619, 32);
+            this.bunifuTextBox2.Size = new System.Drawing.Size(618, 32);
             this.bunifuTextBox2.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.bunifuTextBox2.TabIndex = 116;
             this.bunifuTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -394,7 +394,7 @@
             this.bunifuTextBox1.IconRight = null;
             this.bunifuTextBox1.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuTextBox1.Lines = new string[0];
-            this.bunifuTextBox1.Location = new System.Drawing.Point(35, 221);
+            this.bunifuTextBox1.Location = new System.Drawing.Point(37, 221);
             this.bunifuTextBox1.MaximumSize = new System.Drawing.Size(0, 32);
             this.bunifuTextBox1.MaxLength = 150;
             this.bunifuTextBox1.MinimumSize = new System.Drawing.Size(1, 1);
@@ -431,7 +431,7 @@
             this.bunifuTextBox1.SelectionLength = 0;
             this.bunifuTextBox1.SelectionStart = 0;
             this.bunifuTextBox1.ShortcutsEnabled = true;
-            this.bunifuTextBox1.Size = new System.Drawing.Size(619, 32);
+            this.bunifuTextBox1.Size = new System.Drawing.Size(618, 32);
             this.bunifuTextBox1.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.bunifuTextBox1.TabIndex = 114;
             this.bunifuTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -471,8 +471,7 @@
             this.txtFirstQ.IconRight = null;
             this.txtFirstQ.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFirstQ.Lines = new string[0];
-            this.txtFirstQ.Location = new System.Drawing.Point(35, 148);
-            this.txtFirstQ.MaximumSize = new System.Drawing.Size(0, 32);
+            this.txtFirstQ.Location = new System.Drawing.Point(37, 148);
             this.txtFirstQ.MaxLength = 150;
             this.txtFirstQ.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtFirstQ.Modified = false;
@@ -508,7 +507,7 @@
             this.txtFirstQ.SelectionLength = 0;
             this.txtFirstQ.SelectionStart = 0;
             this.txtFirstQ.ShortcutsEnabled = true;
-            this.txtFirstQ.Size = new System.Drawing.Size(619, 32);
+            this.txtFirstQ.Size = new System.Drawing.Size(618, 32);
             this.txtFirstQ.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.txtFirstQ.TabIndex = 112;
             this.txtFirstQ.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -528,7 +527,7 @@
             this.bunifuSeparator1.LineColor = System.Drawing.Color.Silver;
             this.bunifuSeparator1.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.bunifuSeparator1.LineThickness = 3;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(15, 43);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(15, 83);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.bunifuSeparator1.Size = new System.Drawing.Size(661, 25);
@@ -538,7 +537,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 410);
+            this.ClientSize = new System.Drawing.Size(694, 417);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.bunifuCustomLabel6);

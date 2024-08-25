@@ -147,10 +147,9 @@ namespace PTC2024.Controller.LogInController
         }
         public void OpenRecoverPassword(object sender, EventArgs e)
         {
-            FrmRecoverPasswords objRecover = new FrmRecoverPasswords();
+            FrmRecoverPMethods objRecover = new FrmRecoverPMethods();
             objLogIn.Hide();
             objRecover.ShowDialog();
-            objLogIn.Show();
             
         }
 
