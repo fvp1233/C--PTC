@@ -45,6 +45,7 @@ namespace PTC2024.Controller.StartMenuController
         void InitialAccess(object sender, EventArgs e)
         {
             Access();
+            objStartMenu.lblUser.Text = SessionVar.Username;
         }
         public void Access()
         {
