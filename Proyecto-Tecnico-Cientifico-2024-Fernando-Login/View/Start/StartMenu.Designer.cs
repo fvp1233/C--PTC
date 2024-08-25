@@ -542,6 +542,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         public Bunifu.UI.WinForms.BunifuImageButton btnIcon;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator2;
-        private System.Windows.Forms.Label lblUser;
+        public System.Windows.Forms.Label lblUser;
     }
 }
