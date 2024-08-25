@@ -75,7 +75,7 @@
             this.btnMenuDashboard.IconVisible = true;
             this.btnMenuDashboard.IconZoom = 100D;
             this.btnMenuDashboard.IsTab = false;
-            this.btnMenuDashboard.Location = new System.Drawing.Point(4, 127);
+            this.btnMenuDashboard.Location = new System.Drawing.Point(4, 141);
             this.btnMenuDashboard.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuDashboard.Name = "btnMenuDashboard";
             this.btnMenuDashboard.Normalcolor = System.Drawing.Color.Black;
@@ -110,7 +110,7 @@
             this.btnMenuEmployee.IconVisible = true;
             this.btnMenuEmployee.IconZoom = 100D;
             this.btnMenuEmployee.IsTab = false;
-            this.btnMenuEmployee.Location = new System.Drawing.Point(3, 184);
+            this.btnMenuEmployee.Location = new System.Drawing.Point(3, 198);
             this.btnMenuEmployee.Name = "btnMenuEmployee";
             this.btnMenuEmployee.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuEmployee.OnHovercolor = System.Drawing.Color.DimGray;
@@ -144,7 +144,7 @@
             this.btnMenuPayroll.IconVisible = true;
             this.btnMenuPayroll.IconZoom = 70D;
             this.btnMenuPayroll.IsTab = false;
-            this.btnMenuPayroll.Location = new System.Drawing.Point(3, 240);
+            this.btnMenuPayroll.Location = new System.Drawing.Point(3, 254);
             this.btnMenuPayroll.Name = "btnMenuPayroll";
             this.btnMenuPayroll.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuPayroll.OnHovercolor = System.Drawing.Color.DimGray;
@@ -178,7 +178,7 @@
             this.btnMenuServices.IconVisible = true;
             this.btnMenuServices.IconZoom = 100D;
             this.btnMenuServices.IsTab = false;
-            this.btnMenuServices.Location = new System.Drawing.Point(3, 352);
+            this.btnMenuServices.Location = new System.Drawing.Point(3, 366);
             this.btnMenuServices.Name = "btnMenuServices";
             this.btnMenuServices.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuServices.OnHovercolor = System.Drawing.Color.DimGray;
@@ -212,7 +212,7 @@
             this.btnMenuCustomers.IconVisible = true;
             this.btnMenuCustomers.IconZoom = 110D;
             this.btnMenuCustomers.IsTab = false;
-            this.btnMenuCustomers.Location = new System.Drawing.Point(3, 408);
+            this.btnMenuCustomers.Location = new System.Drawing.Point(3, 422);
             this.btnMenuCustomers.Name = "btnMenuCustomers";
             this.btnMenuCustomers.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuCustomers.OnHovercolor = System.Drawing.Color.DimGray;
@@ -246,7 +246,7 @@
             this.btnMenuBills.IconVisible = true;
             this.btnMenuBills.IconZoom = 100D;
             this.btnMenuBills.IsTab = false;
-            this.btnMenuBills.Location = new System.Drawing.Point(3, 464);
+            this.btnMenuBills.Location = new System.Drawing.Point(3, 478);
             this.btnMenuBills.Name = "btnMenuBills";
             this.btnMenuBills.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuBills.OnHovercolor = System.Drawing.Color.DimGray;
@@ -342,9 +342,9 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(180, 117);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 19F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(180, 131);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
             // bunifuSeparator2
@@ -356,10 +356,10 @@
             this.bunifuSeparator2.LineColor = System.Drawing.Color.Silver;
             this.bunifuSeparator2.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.bunifuSeparator2.LineThickness = 1;
-            this.bunifuSeparator2.Location = new System.Drawing.Point(3, 108);
+            this.bunifuSeparator2.Location = new System.Drawing.Point(3, 126);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
             this.bunifuSeparator2.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator2.Size = new System.Drawing.Size(174, 6);
+            this.bunifuSeparator2.Size = new System.Drawing.Size(174, 2);
             this.bunifuSeparator2.TabIndex = 2;
             // 
             // btnIcon
@@ -380,17 +380,17 @@
             this.btnIcon.ImageActive = null;
             this.btnIcon.ImageLocation = null;
             this.btnIcon.ImageMargin = 10;
-            this.btnIcon.ImageSize = new System.Drawing.Size(75, 74);
-            this.btnIcon.ImageZoomSize = new System.Drawing.Size(85, 84);
+            this.btnIcon.ImageSize = new System.Drawing.Size(80, 80);
+            this.btnIcon.ImageZoomSize = new System.Drawing.Size(90, 90);
             this.btnIcon.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnIcon.InitialImage")));
-            this.btnIcon.Location = new System.Drawing.Point(47, 3);
+            this.btnIcon.Location = new System.Drawing.Point(45, 7);
             this.btnIcon.Name = "btnIcon";
             this.btnIcon.Rotation = 0;
             this.btnIcon.ShowActiveImage = true;
             this.btnIcon.ShowCursorChanges = true;
             this.btnIcon.ShowImageBorders = true;
             this.btnIcon.ShowSizeMarkers = false;
-            this.btnIcon.Size = new System.Drawing.Size(85, 84);
+            this.btnIcon.Size = new System.Drawing.Size(90, 90);
             this.btnIcon.TabIndex = 0;
             this.btnIcon.ToolTipText = "";
             this.btnIcon.WaitOnLoad = false;
@@ -400,9 +400,9 @@
             // lblUser
             // 
             this.lblUser.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblUser.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.White;
-            this.lblUser.Location = new System.Drawing.Point(51, 90);
+            this.lblUser.Location = new System.Drawing.Point(51, 106);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(77, 15);
             this.lblUser.TabIndex = 3;
@@ -430,7 +430,7 @@
             this.btnpermissions.IconVisible = true;
             this.btnpermissions.IconZoom = 55D;
             this.btnpermissions.IsTab = false;
-            this.btnpermissions.Location = new System.Drawing.Point(3, 296);
+            this.btnpermissions.Location = new System.Drawing.Point(3, 310);
             this.btnpermissions.Name = "btnpermissions";
             this.btnpermissions.Normalcolor = System.Drawing.Color.Black;
             this.btnpermissions.OnHovercolor = System.Drawing.Color.DimGray;
@@ -464,7 +464,7 @@
             this.btnMaintenance.IconVisible = true;
             this.btnMaintenance.IconZoom = 65D;
             this.btnMaintenance.IsTab = false;
-            this.btnMaintenance.Location = new System.Drawing.Point(3, 520);
+            this.btnMaintenance.Location = new System.Drawing.Point(3, 534);
             this.btnMaintenance.Name = "btnMaintenance";
             this.btnMaintenance.Normalcolor = System.Drawing.Color.Black;
             this.btnMaintenance.OnHovercolor = System.Drawing.Color.DimGray;
