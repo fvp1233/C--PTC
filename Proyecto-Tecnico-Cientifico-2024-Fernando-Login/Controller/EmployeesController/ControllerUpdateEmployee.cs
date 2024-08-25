@@ -41,6 +41,10 @@ namespace PTC2024.Controller.EmployeesController
             objUpdateEmployee.txtSalary.Enter += new EventHandler(EnterSalary);
             objUpdateEmployee.txtSalary.Leave += new EventHandler(LeaveSalary);
             objUpdateEmployee.btnRestorePass.Click += new EventHandler(RestorePassword);
+            objUpdateEmployee.txtDUI.TextChanged += new EventHandler(DUIMask);
+            objUpdateEmployee.txtPhone.TextChanged += new EventHandler(PhoneMask);
+            objUpdateEmployee.txtAffiliationNumber.TextChanged += new EventHandler(AffiliatioNumberMask);
+            objUpdateEmployee.txtBankAccount.TextChanged += new EventHandler(BankAccountMask);
 
         }
 
@@ -303,6 +307,7 @@ namespace PTC2024.Controller.EmployeesController
 
         }
 
+
         private void RestorePassword(object sender, EventArgs e)
         {
             if (MessageBox.Show($"Seguro que quiere restaurar la contraseña del usuario {objUpdateEmployee.txtUsername.Text.Trim()}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -327,5 +332,69 @@ namespace PTC2024.Controller.EmployeesController
             }
         }
 
+        //Método para establecer una máscara al textbox del DUI
+        public void DUIMask(object sender, EventArgs e)
+        {
+            // Aqui se guarda la posición inicial del cursor
+            int cursorPosition = objUpdateEmployee.txtDUI.SelectionStart;
+
+            //Con esto se remueve cualquier dato no numérico excepto el guión
+            string text = new string(objUpdateEmployee.txtDUI.Text.Where(c => char.IsDigit(c) || c == '-').ToArray());
+
+            //Si ya existe algun guión, se elimina.
+            text = text.Replace("-", "");
+
+            //Acá especificamos la máscara del DUI, cuando llegue al caracter numero 9, va a ingresar el guion por si solo
+            //
+            if (text.Length >= 9)
+            {
+                text = text.Insert(8, "-");
+            }
+            else if (text.Length >= 1)
+            {
+                text = text.Insert(0, "");
+            }
+
+            //Le asignamos la máscara al texto que se presente en el textbox
+            objUpdateEmployee.txtDUI.Text = text;
+
+            //Restablecemos la posicion del cursor
+            objUpdateEmployee.txtDUI.SelectionStart = cursorPosition;
+        }
+
+        //Máscara para el textbox del telefono
+        public void PhoneMask(object sender, EventArgs e)
+        {
+            //Aqui se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar y no sea molesto para el usuario
+            int cursorPosition = objUpdateEmployee.txtPhone.SelectionStart;
+
+            //Con esto se remueve cualquier dato no numérico
+            string text = new string(objUpdateEmployee.txtPhone.Text.Where(c => char.IsDigit(c)).ToArray());
+
+            //Le asignamos la máscara al texto que se ponga en el textbox
+            objUpdateEmployee.txtPhone.Text = text;
+
+            //Restablecemos la posición del cursor con la variable que se guardó antes
+            objUpdateEmployee.txtPhone.SelectionStart = cursorPosition;
+        }
+
+        //Aplicamos una máscara que solo deje meter el guion y caracteres numéricos para los textbox de numero de afiliacion y cuenta bancaria.
+        public void AffiliatioNumberMask(object sender, EventArgs e)
+        {
+            int cursorPosition = objUpdateEmployee.txtAffiliationNumber.SelectionStart;
+            //Con esto se remueve cualquier dato no numérico excepto el guion
+            string text = new string(objUpdateEmployee.txtAffiliationNumber.Text.Where(c => char.IsDigit(c) || c == '-').ToArray());
+            objUpdateEmployee.txtAffiliationNumber.Text = text;
+            objUpdateEmployee.txtAffiliationNumber.SelectionStart = cursorPosition;
+        }
+
+        public void BankAccountMask(object sender, EventArgs e)
+        {
+            int cursorPosition = objUpdateEmployee.txtBankAccount.SelectionStart;
+            //Con esto se remueve cualquier dato no numérico excepto el guion
+            string text = new string(objUpdateEmployee.txtBankAccount.Text.Where(c => char.IsDigit(c) || c == '-').ToArray());
+            objUpdateEmployee.txtBankAccount.Text = text;
+            objUpdateEmployee.txtBankAccount.SelectionStart = cursorPosition;
+        }
     }
 }
