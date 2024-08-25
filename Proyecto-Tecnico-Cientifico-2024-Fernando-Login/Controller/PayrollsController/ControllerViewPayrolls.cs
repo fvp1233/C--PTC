@@ -147,13 +147,13 @@ namespace PTC2024.Controller.EmployeesController
                                                 // Calcular días trabajados y salario diario
                                                 if (year == startWorkYear && month == startWorkMonth)
                                                 {
-                                                    int daysInMonth = DateTime.DaysInMonth(year, month);
+                                                    int daysInMonth = 30;
                                                     daysWorked = daysInMonth - hireDate.Day + 1;
                                                     daySalary = salary / daysInMonth;
                                                 }
                                                 else
                                                 {
-                                                    daysWorked = DateTime.DaysInMonth(year, month);
+                                                    daysWorked = 30;
                                                     daySalary = salary / daysWorked;
                                                 }
 
@@ -479,6 +479,7 @@ namespace PTC2024.Controller.EmployeesController
                     int status = int.Parse(row["IdStatus"].ToString());
                     int idEmployee = int.Parse(row["IdEmployee"].ToString());
                     double currentSalary = double.Parse(row["salary"].ToString());
+                    double grossPay = 0;
 
                     if (status != 2)
                     {
@@ -503,14 +504,14 @@ namespace PTC2024.Controller.EmployeesController
                                 {
                                     if (daysWorked == 0)
                                     {
-                                        calculatedSalary = Math.Round(daysWorked * daySalary);
+                                        calculatedSalary = daysWorked * daySalary;
 
                                     }
                                     else
                                     {
                                         DataRow bonusRow = bonusRows[0];
                                         roleBonus = double.Parse(bonusRow["positionBonus"].ToString());
-                                        calculatedSalary = Math.Round((daysWorked * daySalary) + roleBonus);
+                                        calculatedSalary = (daysWorked * daySalary) + roleBonus;
                                     }
                                 }
                             }
@@ -528,7 +529,7 @@ namespace PTC2024.Controller.EmployeesController
                                 }
                             }
 
-                            double netPay = Math.Round(calculatedSalary - isss - afp - rent, 2);
+                            double netPay = calculatedSalary - isss - afp - rent;
 
                             // Asignar valores al objeto DAOUpdatePayroll
                             DAOUpdatePayroll.IdPayroll = idPayroll;
