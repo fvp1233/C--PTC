@@ -18,6 +18,5 @@ namespace PTC2024.View.formularios.inicio
             InitializeComponent();
             ControllerStartMenu objStart = new ControllerStartMenu(this, username);
         }
-
     }
 }
