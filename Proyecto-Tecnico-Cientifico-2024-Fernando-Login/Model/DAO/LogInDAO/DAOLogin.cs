@@ -3,6 +3,7 @@ using PTC2024.Model.DTO.LogInDTO;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,19 @@ namespace PTC2024.Model.DAO.LogInDAO
                     SessionVar.IdBussinesP = rd.GetInt32(3);
                     SessionVar.Access = rd.GetString(4);
                     SessionVar.FullName = rd.GetString(5);
+                    if (!rd.IsDBNull(6))
+                    {
+                        long size = rd.GetBytes(6, 0, null, 0, 0);
+                        byte[] profilePic = new byte[size];
+                        rd.GetBytes(6, 0, profilePic, 0, (int)size);
+                        SessionVar.ProfilePic = profilePic;
+                    }
+                    else
+                    {
+                        SessionVar.ProfilePic = null; // Asignar null si el valor en la base de datos es null
+                    }
+                    SessionVar.Phone = rd.GetString(7);
+                    SessionVar.Email = rd.GetString(8);
                 }
                 return rd.HasRows;
             }

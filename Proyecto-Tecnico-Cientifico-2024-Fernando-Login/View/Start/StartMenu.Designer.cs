@@ -39,19 +39,19 @@
             this.btnLogOut = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.bunifuSeparator2 = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.btnIcon = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.lblUser = new System.Windows.Forms.Label();
             this.btnpermissions = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMaintenance = new Bunifu.Framework.UI.BunifuFlatButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.ContainerPanel = new System.Windows.Forms.Panel();
             this.bunifuFormResizer1 = new Bunifu.UI.WinForms.BunifuFormResizer(this.components);
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnIcon = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.bunifuSeparator2 = new Bunifu.UI.WinForms.BunifuSeparator();
-            this.lblUser = new System.Windows.Forms.Label();
             this.bunifuPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMenuDashboard
@@ -82,7 +82,7 @@
             this.btnMenuDashboard.OnHovercolor = System.Drawing.Color.DimGray;
             this.btnMenuDashboard.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMenuDashboard.selected = false;
-            this.btnMenuDashboard.Size = new System.Drawing.Size(181, 56);
+            this.btnMenuDashboard.Size = new System.Drawing.Size(181, 50);
             this.btnMenuDashboard.TabIndex = 2;
             this.btnMenuDashboard.Text = "Dashboard";
             this.btnMenuDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -110,13 +110,13 @@
             this.btnMenuEmployee.IconVisible = true;
             this.btnMenuEmployee.IconZoom = 100D;
             this.btnMenuEmployee.IsTab = false;
-            this.btnMenuEmployee.Location = new System.Drawing.Point(3, 190);
+            this.btnMenuEmployee.Location = new System.Drawing.Point(3, 184);
             this.btnMenuEmployee.Name = "btnMenuEmployee";
             this.btnMenuEmployee.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuEmployee.OnHovercolor = System.Drawing.Color.DimGray;
             this.btnMenuEmployee.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMenuEmployee.selected = false;
-            this.btnMenuEmployee.Size = new System.Drawing.Size(181, 56);
+            this.btnMenuEmployee.Size = new System.Drawing.Size(181, 50);
             this.btnMenuEmployee.TabIndex = 3;
             this.btnMenuEmployee.Text = "Empleados";
             this.btnMenuEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -144,13 +144,13 @@
             this.btnMenuPayroll.IconVisible = true;
             this.btnMenuPayroll.IconZoom = 70D;
             this.btnMenuPayroll.IsTab = false;
-            this.btnMenuPayroll.Location = new System.Drawing.Point(3, 252);
+            this.btnMenuPayroll.Location = new System.Drawing.Point(3, 240);
             this.btnMenuPayroll.Name = "btnMenuPayroll";
             this.btnMenuPayroll.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuPayroll.OnHovercolor = System.Drawing.Color.DimGray;
             this.btnMenuPayroll.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMenuPayroll.selected = false;
-            this.btnMenuPayroll.Size = new System.Drawing.Size(181, 56);
+            this.btnMenuPayroll.Size = new System.Drawing.Size(181, 50);
             this.btnMenuPayroll.TabIndex = 7;
             this.btnMenuPayroll.Text = "Planillas";
             this.btnMenuPayroll.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -178,13 +178,13 @@
             this.btnMenuServices.IconVisible = true;
             this.btnMenuServices.IconZoom = 100D;
             this.btnMenuServices.IsTab = false;
-            this.btnMenuServices.Location = new System.Drawing.Point(3, 376);
+            this.btnMenuServices.Location = new System.Drawing.Point(3, 352);
             this.btnMenuServices.Name = "btnMenuServices";
             this.btnMenuServices.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuServices.OnHovercolor = System.Drawing.Color.DimGray;
             this.btnMenuServices.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMenuServices.selected = false;
-            this.btnMenuServices.Size = new System.Drawing.Size(181, 56);
+            this.btnMenuServices.Size = new System.Drawing.Size(181, 50);
             this.btnMenuServices.TabIndex = 4;
             this.btnMenuServices.Text = "Servicios";
             this.btnMenuServices.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -212,13 +212,13 @@
             this.btnMenuCustomers.IconVisible = true;
             this.btnMenuCustomers.IconZoom = 110D;
             this.btnMenuCustomers.IsTab = false;
-            this.btnMenuCustomers.Location = new System.Drawing.Point(3, 438);
+            this.btnMenuCustomers.Location = new System.Drawing.Point(3, 408);
             this.btnMenuCustomers.Name = "btnMenuCustomers";
             this.btnMenuCustomers.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuCustomers.OnHovercolor = System.Drawing.Color.DimGray;
             this.btnMenuCustomers.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMenuCustomers.selected = false;
-            this.btnMenuCustomers.Size = new System.Drawing.Size(181, 56);
+            this.btnMenuCustomers.Size = new System.Drawing.Size(181, 50);
             this.btnMenuCustomers.TabIndex = 5;
             this.btnMenuCustomers.Text = "Clientes";
             this.btnMenuCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -246,13 +246,13 @@
             this.btnMenuBills.IconVisible = true;
             this.btnMenuBills.IconZoom = 100D;
             this.btnMenuBills.IsTab = false;
-            this.btnMenuBills.Location = new System.Drawing.Point(3, 500);
+            this.btnMenuBills.Location = new System.Drawing.Point(3, 464);
             this.btnMenuBills.Name = "btnMenuBills";
             this.btnMenuBills.Normalcolor = System.Drawing.Color.Black;
             this.btnMenuBills.OnHovercolor = System.Drawing.Color.DimGray;
             this.btnMenuBills.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMenuBills.selected = false;
-            this.btnMenuBills.Size = new System.Drawing.Size(181, 56);
+            this.btnMenuBills.Size = new System.Drawing.Size(181, 50);
             this.btnMenuBills.TabIndex = 6;
             this.btnMenuBills.Text = "Facturación";
             this.btnMenuBills.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -268,6 +268,7 @@
             this.btnLogOut.ButtonText = "Cerrar Sesión";
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.DisabledColor = System.Drawing.Color.Gray;
+            this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogOut.Iconcolor = System.Drawing.Color.Transparent;
             this.btnLogOut.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Iconimage")));
             this.btnLogOut.Iconimage_right = null;
@@ -286,7 +287,7 @@
             this.btnLogOut.OnHovercolor = System.Drawing.Color.DimGray;
             this.btnLogOut.OnHoverTextColor = System.Drawing.Color.White;
             this.btnLogOut.selected = false;
-            this.btnLogOut.Size = new System.Drawing.Size(181, 56);
+            this.btnLogOut.Size = new System.Drawing.Size(181, 50);
             this.btnLogOut.TabIndex = 8;
             this.btnLogOut.Text = "Cerrar Sesión";
             this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -328,100 +329,6 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(185, 623);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
-            // btnpermissions
-            // 
-            this.btnpermissions.Activecolor = System.Drawing.Color.DimGray;
-            this.btnpermissions.BackColor = System.Drawing.Color.Black;
-            this.btnpermissions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnpermissions.BorderRadius = 0;
-            this.btnpermissions.ButtonText = "Permisos";
-            this.btnpermissions.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnpermissions.DisabledColor = System.Drawing.Color.Gray;
-            this.btnpermissions.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnpermissions.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnpermissions.Iconimage")));
-            this.btnpermissions.Iconimage_right = null;
-            this.btnpermissions.Iconimage_right_Selected = null;
-            this.btnpermissions.Iconimage_Selected = null;
-            this.btnpermissions.IconMarginLeft = 0;
-            this.btnpermissions.IconMarginRight = 0;
-            this.btnpermissions.IconRightVisible = true;
-            this.btnpermissions.IconRightZoom = 0D;
-            this.btnpermissions.IconVisible = true;
-            this.btnpermissions.IconZoom = 55D;
-            this.btnpermissions.IsTab = false;
-            this.btnpermissions.Location = new System.Drawing.Point(3, 314);
-            this.btnpermissions.Name = "btnpermissions";
-            this.btnpermissions.Normalcolor = System.Drawing.Color.Black;
-            this.btnpermissions.OnHovercolor = System.Drawing.Color.DimGray;
-            this.btnpermissions.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnpermissions.selected = false;
-            this.btnpermissions.Size = new System.Drawing.Size(181, 56);
-            this.btnpermissions.TabIndex = 9;
-            this.btnpermissions.Text = "Permisos";
-            this.btnpermissions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnpermissions.Textcolor = System.Drawing.Color.White;
-            this.btnpermissions.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // btnMaintenance
-            // 
-            this.btnMaintenance.Activecolor = System.Drawing.Color.DimGray;
-            this.btnMaintenance.BackColor = System.Drawing.Color.Black;
-            this.btnMaintenance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMaintenance.BorderRadius = 0;
-            this.btnMaintenance.ButtonText = "Mantenimiento";
-            this.btnMaintenance.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaintenance.DisabledColor = System.Drawing.Color.Gray;
-            this.btnMaintenance.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnMaintenance.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnMaintenance.Iconimage")));
-            this.btnMaintenance.Iconimage_right = null;
-            this.btnMaintenance.Iconimage_right_Selected = null;
-            this.btnMaintenance.Iconimage_Selected = null;
-            this.btnMaintenance.IconMarginLeft = 0;
-            this.btnMaintenance.IconMarginRight = 0;
-            this.btnMaintenance.IconRightVisible = true;
-            this.btnMaintenance.IconRightZoom = 0D;
-            this.btnMaintenance.IconVisible = true;
-            this.btnMaintenance.IconZoom = 65D;
-            this.btnMaintenance.IsTab = false;
-            this.btnMaintenance.Location = new System.Drawing.Point(3, 562);
-            this.btnMaintenance.Name = "btnMaintenance";
-            this.btnMaintenance.Normalcolor = System.Drawing.Color.Black;
-            this.btnMaintenance.OnHovercolor = System.Drawing.Color.DimGray;
-            this.btnMaintenance.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnMaintenance.selected = false;
-            this.btnMaintenance.Size = new System.Drawing.Size(181, 56);
-            this.btnMaintenance.TabIndex = 8;
-            this.btnMaintenance.Text = "Mantenimiento";
-            this.btnMaintenance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMaintenance.Textcolor = System.Drawing.Color.White;
-            this.btnMaintenance.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Black;
-            this.flowLayoutPanel1.Controls.Add(this.btnLogOut);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 623);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(185, 64);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // ContainerPanel
-            // 
-            this.ContainerPanel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ContainerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ContainerPanel.Location = new System.Drawing.Point(185, 0);
-            this.ContainerPanel.Name = "ContainerPanel";
-            this.ContainerPanel.Size = new System.Drawing.Size(1163, 687);
-            this.ContainerPanel.TabIndex = 4;
-            // 
-            // bunifuFormResizer1
-            // 
-            this.bunifuFormResizer1.ContainerControl = this;
-            this.bunifuFormResizer1.Enabled = true;
-            this.bunifuFormResizer1.ParentForm = this;
-            this.bunifuFormResizer1.ResizeHandlesWidth = 6;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -439,6 +346,21 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(180, 117);
             this.tableLayoutPanel1.TabIndex = 10;
+            // 
+            // bunifuSeparator2
+            // 
+            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator2.BackgroundImage")));
+            this.bunifuSeparator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator2.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator2.LineColor = System.Drawing.Color.Silver;
+            this.bunifuSeparator2.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator2.LineThickness = 1;
+            this.bunifuSeparator2.Location = new System.Drawing.Point(3, 108);
+            this.bunifuSeparator2.Name = "bunifuSeparator2";
+            this.bunifuSeparator2.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.bunifuSeparator2.Size = new System.Drawing.Size(174, 6);
+            this.bunifuSeparator2.TabIndex = 2;
             // 
             // btnIcon
             // 
@@ -475,21 +397,6 @@
             this.btnIcon.Zoom = 10;
             this.btnIcon.ZoomSpeed = 10;
             // 
-            // bunifuSeparator2
-            // 
-            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator2.BackgroundImage")));
-            this.bunifuSeparator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuSeparator2.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
-            this.bunifuSeparator2.LineColor = System.Drawing.Color.Silver;
-            this.bunifuSeparator2.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
-            this.bunifuSeparator2.LineThickness = 1;
-            this.bunifuSeparator2.Location = new System.Drawing.Point(3, 108);
-            this.bunifuSeparator2.Name = "bunifuSeparator2";
-            this.bunifuSeparator2.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator2.Size = new System.Drawing.Size(174, 6);
-            this.bunifuSeparator2.TabIndex = 2;
-            // 
             // lblUser
             // 
             this.lblUser.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -501,6 +408,100 @@
             this.lblUser.TabIndex = 3;
             this.lblUser.Text = "user";
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnpermissions
+            // 
+            this.btnpermissions.Activecolor = System.Drawing.Color.DimGray;
+            this.btnpermissions.BackColor = System.Drawing.Color.Black;
+            this.btnpermissions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnpermissions.BorderRadius = 0;
+            this.btnpermissions.ButtonText = "Permisos";
+            this.btnpermissions.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnpermissions.DisabledColor = System.Drawing.Color.Gray;
+            this.btnpermissions.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnpermissions.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnpermissions.Iconimage")));
+            this.btnpermissions.Iconimage_right = null;
+            this.btnpermissions.Iconimage_right_Selected = null;
+            this.btnpermissions.Iconimage_Selected = null;
+            this.btnpermissions.IconMarginLeft = 0;
+            this.btnpermissions.IconMarginRight = 0;
+            this.btnpermissions.IconRightVisible = true;
+            this.btnpermissions.IconRightZoom = 0D;
+            this.btnpermissions.IconVisible = true;
+            this.btnpermissions.IconZoom = 55D;
+            this.btnpermissions.IsTab = false;
+            this.btnpermissions.Location = new System.Drawing.Point(3, 296);
+            this.btnpermissions.Name = "btnpermissions";
+            this.btnpermissions.Normalcolor = System.Drawing.Color.Black;
+            this.btnpermissions.OnHovercolor = System.Drawing.Color.DimGray;
+            this.btnpermissions.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnpermissions.selected = false;
+            this.btnpermissions.Size = new System.Drawing.Size(181, 50);
+            this.btnpermissions.TabIndex = 9;
+            this.btnpermissions.Text = "Permisos";
+            this.btnpermissions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnpermissions.Textcolor = System.Drawing.Color.White;
+            this.btnpermissions.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // btnMaintenance
+            // 
+            this.btnMaintenance.Activecolor = System.Drawing.Color.DimGray;
+            this.btnMaintenance.BackColor = System.Drawing.Color.Black;
+            this.btnMaintenance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMaintenance.BorderRadius = 0;
+            this.btnMaintenance.ButtonText = "Mantenimiento";
+            this.btnMaintenance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaintenance.DisabledColor = System.Drawing.Color.Gray;
+            this.btnMaintenance.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnMaintenance.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnMaintenance.Iconimage")));
+            this.btnMaintenance.Iconimage_right = null;
+            this.btnMaintenance.Iconimage_right_Selected = null;
+            this.btnMaintenance.Iconimage_Selected = null;
+            this.btnMaintenance.IconMarginLeft = 0;
+            this.btnMaintenance.IconMarginRight = 0;
+            this.btnMaintenance.IconRightVisible = true;
+            this.btnMaintenance.IconRightZoom = 0D;
+            this.btnMaintenance.IconVisible = true;
+            this.btnMaintenance.IconZoom = 65D;
+            this.btnMaintenance.IsTab = false;
+            this.btnMaintenance.Location = new System.Drawing.Point(3, 520);
+            this.btnMaintenance.Name = "btnMaintenance";
+            this.btnMaintenance.Normalcolor = System.Drawing.Color.Black;
+            this.btnMaintenance.OnHovercolor = System.Drawing.Color.DimGray;
+            this.btnMaintenance.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnMaintenance.selected = false;
+            this.btnMaintenance.Size = new System.Drawing.Size(181, 50);
+            this.btnMaintenance.TabIndex = 8;
+            this.btnMaintenance.Text = "Mantenimiento";
+            this.btnMaintenance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMaintenance.Textcolor = System.Drawing.Color.White;
+            this.btnMaintenance.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Black;
+            this.flowLayoutPanel1.Controls.Add(this.btnLogOut);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 623);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(185, 64);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // ContainerPanel
+            // 
+            this.ContainerPanel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ContainerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContainerPanel.Location = new System.Drawing.Point(185, 0);
+            this.ContainerPanel.Name = "ContainerPanel";
+            this.ContainerPanel.Size = new System.Drawing.Size(1163, 687);
+            this.ContainerPanel.TabIndex = 4;
+            // 
+            // bunifuFormResizer1
+            // 
+            this.bunifuFormResizer1.ContainerControl = this;
+            this.bunifuFormResizer1.Enabled = true;
+            this.bunifuFormResizer1.ParentForm = this;
+            this.bunifuFormResizer1.ResizeHandlesWidth = 6;
             // 
             // StartMenu
             // 
@@ -518,8 +519,8 @@
             this.Text = "H2C";
             this.bunifuPanel1.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

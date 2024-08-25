@@ -16,6 +16,8 @@ using PTC2024.formularios.login;
 using PTC2024.View.Dashboard;
 using PTC2024.View.EmployeeViews;
 using PTC2024.View.ProfileSettings;
+using System.IO;
+using System.Drawing;
 
 namespace PTC2024.Controller.StartMenuController
 {
@@ -46,7 +48,20 @@ namespace PTC2024.Controller.StartMenuController
         {
             Access();
             objStartMenu.lblUser.Text = SessionVar.Username;
+            objStartMenu.btnIcon.Image = ByteArrayToImage(SessionVar.ProfilePic);
         }
+        public Image ByteArrayToImage(byte[] byteArray)
+        {
+            Image imageDefaul = objStartMenu.btnIcon.Image;
+            if (byteArray == null || byteArray.Length == 0)
+            {             
+                //En caso de que el valor de la imagen sea null(como viene por defecto, se retorna el btnIcon)
+                return imageDefaul; 
+            }
+            MemoryStream ms = new MemoryStream(byteArray);
+            return Image.FromStream(ms);
+        }
+
         public void Access()
         {
             switch (SessionVar.Access)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PTC2024.Controller.ProfileController;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace PTC2024.View.ProfileSettings
         public FrmProfile()
         {
             InitializeComponent();
+            ControllerProfile objProfile = new ControllerProfile(this);
         }
     }
 }
