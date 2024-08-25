@@ -119,32 +119,59 @@ namespace PTC2024.Controller.LogInController
 
         }
 
-        //método para validar si el usuario esta ingresando con una contraseña de primer uso
+        //método para validar si el usuario esta ingresando con una contraseña de primer uso o una temporal
         public bool ValidatePassword()
         {
-            //La variable password es el texto colocado en el textbox de contraseña
-            string password = objLogIn.txtPasswordBunifu.Text.Trim();
-            //Si la variable es menor que 6, definitivamente es una contraseña ya actualizada y se regresa un false directamente, pero si es igual o mayor a 6 pasamos a evaluarla.
-            if (password.Length >= 6)
+            //Creamos objeto del DAO
+            DAOLogin daoLogin = new DAOLogin();
+            //Creamos objeto de las commonClasses
+            CommonClasses common = new CommonClasses();
+            //Damos valor a los getters
+            daoLogin.Username = objLogIn.TxtUserBunifu.Text;
+            string encriptedpass = common.ComputeSha256Hash(objLogIn.txtPasswordBunifu.Text);
+            daoLogin.Password = encriptedpass;
+            daoLogin.UserStatus = 1;
+            //Creamos variable bool para capturar lo que nos devuelva el método 
+            bool temporalPassword = daoLogin.ValidateTemporalPassword();
+            //El método captura el dato bool de la vista de la base que nos dice si es una contraseña temporal
+            if (temporalPassword == true)
             {
-                //la variable lastFiveChars captura los últimos 5 carácteres que tenga el texto ingresado en el textbox de la contraseña
-                string lastFiveChars = password.Substring(password.Length - 5);
-                //Si los ultimos 5 carácteres son "PU123" entonces es una contraseña de primer uso y se retorna un true, si no, simplemente se retorna un false.
-                if (lastFiveChars == "PU123" || lastFiveChars == "CR321")
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                //si la variable es true entonces se trata de una contraseña temporal, por lo que también retornaremon un true con nuestro método.
+                return true;
             }
             else
             {
+                //de otra forma, significa que no se trata de una contraseña temporal, por eso devolvemos un false
                 return false;
             }
-                      
         }
+
+        //public bool ValidatePassword()
+        //{
+        //    //La variable password es el texto colocado en el textbox de contraseña
+        //    string password = objLogIn.txtPasswordBunifu.Text.Trim();
+        //    //Si la variable es menor que 6, definitivamente es una contraseña ya actualizada y se regresa un false directamente, pero si es igual o mayor a 6 pasamos a evaluarla.
+        //    if (password.Length >= 6)
+        //    {
+        //        //la variable lastFiveChars captura los últimos 5 carácteres que tenga el texto ingresado en el textbox de la contraseña
+        //        string lastFiveChars = password.Substring(password.Length - 5);
+        //        //Si los ultimos 5 carácteres son "PU123" entonces es una contraseña de primer uso y se retorna un true, si no, simplemente se retorna un false.
+        //        if (lastFiveChars == "PU123" || lastFiveChars == "CR321")
+        //        {
+        //            return true;
+        //        }
+        //        else
+        //        {
+        //            return false;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+
+        //}
+
         public void OpenRecoverPassword(object sender, EventArgs e)
         {
             FrmRecoverPMethods objRecover = new FrmRecoverPMethods();

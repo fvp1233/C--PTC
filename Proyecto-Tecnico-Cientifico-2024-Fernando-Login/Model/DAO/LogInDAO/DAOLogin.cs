@@ -49,5 +49,43 @@ namespace PTC2024.Model.DAO.LogInDAO
                 getConnection().Close();
             }
         }
+
+        public bool ValidateTemporalPassword()
+        {
+            try
+            {
+                //Conexion con la base
+                command.Connection = getConnection();
+                //Creamos el query
+                string query = "SELECT * FROM viewLogIn WHERE username = @username COLLATE SQL_Latin1_General_CP1_CS_AS AND password = @password COLLATE SQL_Latin1_General_CP1_CS_AS AND userStatus = @status AND username = @username AND password = @password";
+                //Comando con la conexión y el query
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                //damos valor a los parámetros
+                cmd.Parameters.AddWithValue("username", Username);
+                cmd.Parameters.AddWithValue("password", Password);
+                cmd.Parameters.AddWithValue("status", UserStatus);
+                //Creamos un DataReader y lo ejecutamos
+                SqlDataReader rd = cmd.ExecuteReader();
+                //Creamos la variable que va a capturar el dato
+                bool temporalP = false;
+                while (rd.Read())
+                {
+                    temporalP = rd.GetBoolean(9);
+                }
+                //Retornamos la variable que contiene lo que esta en la columna de la vista
+                return temporalP;
+            }
+            catch (SqlException ex)
+            {
+                //Si algo sale mal retornamos un false
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
+
     }
 }

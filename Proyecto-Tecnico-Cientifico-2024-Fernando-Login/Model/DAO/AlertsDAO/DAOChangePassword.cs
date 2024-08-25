@@ -22,11 +22,12 @@ namespace PTC2024.Model.DAO.AlertsDAO
                 //Abrimos conexión con la base
                 command.Connection = getConnection();
                 //Creamos el query con las instrucciones para la base
-                string query = "UPDATE tbUserData SET password = @param1 WHERE username = @param2";
+                string query = "UPDATE tbUserData SET password = @param1, temporalpassword = @temporalP WHERE username = @param2";
                 //Creamos el comando que tendrá el query con la conexión 
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 //Asignamos los valores a los parámetros
                 cmd.Parameters.AddWithValue("param1", Password);
+                cmd.Parameters.AddWithValue("temporalP", false);
                 cmd.Parameters.AddWithValue("param2", Username);
                 //Creamos la variable que nos dirá si el proceso se completó o no
                 int answer = cmd.ExecuteNonQuery();
