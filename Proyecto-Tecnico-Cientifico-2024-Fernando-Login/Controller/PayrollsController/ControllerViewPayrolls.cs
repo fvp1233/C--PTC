@@ -479,8 +479,6 @@ namespace PTC2024.Controller.EmployeesController
                     int status = int.Parse(row["IdStatus"].ToString());
                     int idEmployee = int.Parse(row["IdEmployee"].ToString());
                     double currentSalary = double.Parse(row["salary"].ToString());
-                    double grossPay = 0;
-
                     if (status != 2)
                     {
                         DataRow[] unpaidPayrolls = payrollDt.Select($"IdEmployee = {idEmployee} AND IdPayrollStatus = 2");
@@ -489,7 +487,7 @@ namespace PTC2024.Controller.EmployeesController
                             int idPayroll = int.Parse(payrollRow["IdPayroll"].ToString());
                             DateTime issueDate = DateTime.Parse(payrollRow["issueDate"].ToString());
                             int daysWorked = int.Parse(payrollRow["daysWorked"].ToString());
-                            double daySalary = double.Parse(payrollRow["daySalary"].ToString());
+                            double daySalary = currentSalary / 30;
 
                             // Obtener el rol del negocio del empleado
                             DataRow[] userRows = userDt.Select($"username = '{row["username"]}'");
