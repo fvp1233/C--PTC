@@ -41,10 +41,11 @@ namespace PTC2024.Controller.LogInController
                 bool passwordFilter = ValidatePassword();
                 if (passwordFilter == true)
                 {
-                    ChangePassword();
                     objLogIn.Hide();
-                    StartMenu startMenu = new StartMenu(objLogIn.TxtUserBunifu.Text);
-                    startMenu.Show();
+                    ChangePassword();
+                    objLogIn.TxtUserBunifu.Clear();
+                    objLogIn.txtPasswordBunifu.Clear();
+                    objLogIn.Show();
                 }
                 else
                 {

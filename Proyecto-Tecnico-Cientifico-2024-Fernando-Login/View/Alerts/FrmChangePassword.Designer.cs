@@ -52,6 +52,7 @@
             this.ShowPassword = new System.Windows.Forms.PictureBox();
             this.HidePassword = new System.Windows.Forms.PictureBox();
             this.btnChange = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
+            this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HidePassword)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +61,7 @@
             // 
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(114, 9);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(114, 8);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(290, 28);
             this.bunifuCustomLabel1.TabIndex = 107;
@@ -68,13 +69,13 @@
             // 
             // bunifuCustomLabel2
             // 
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(18, 39);
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(24, 36);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(487, 38);
             this.bunifuCustomLabel2.TabIndex = 108;
-            this.bunifuCustomLabel2.Text = "Usted inició sesión con una contraseña predeterminada, porfavor cambiela a una de" +
-    " su preferencia.";
+            this.bunifuCustomLabel2.Text = "Usted inició sesión con una contraseña temporal o realizó un método de recuperaci" +
+    "ón. Se requiere un cambio de contraseña obligatorio.";
             this.bunifuCustomLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtPassword
@@ -442,11 +443,27 @@
             this.btnChange.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnChange.UseDefaultRadiusAndThickness = true;
             // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator1.BackgroundImage")));
+            this.bunifuSeparator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator1.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.Silver;
+            this.bunifuSeparator1.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(12, 69);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.bunifuSeparator1.Size = new System.Drawing.Size(499, 14);
+            this.bunifuSeparator1.TabIndex = 118;
+            // 
             // FrmChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 291);
+            this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.HidePassword);
             this.Controls.Add(this.ShowPassword);
@@ -480,5 +497,6 @@
         public System.Windows.Forms.PictureBox ShowPassword;
         public System.Windows.Forms.PictureBox HidePassword;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnChange;
+        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
     }
 }

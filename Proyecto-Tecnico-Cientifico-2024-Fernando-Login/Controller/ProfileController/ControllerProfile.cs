@@ -26,7 +26,9 @@ namespace PTC2024.Controller.ProfileController
             objProfile.Load += new EventHandler(ChargeValues);
             objProfile.btnSavePhoto.Click += new EventHandler(PutImage);
             objProfile.btnSave.Click += new EventHandler(SaveInfo);
+            objProfile.btnSecurityQ.Click += new EventHandler(SecurityQuestions);
         }
+
         public void ChargeValues(object sender, EventArgs e)
         {
             objProfile.lblFullName.Text = SessionVar.FullName;
@@ -36,6 +38,7 @@ namespace PTC2024.Controller.ProfileController
             objProfile.lblCharge.Text = SessionVar.Access;
             objProfile.picUser.Image = ByteArrayToImage(SessionVar.ProfilePic);
         }
+
         public Image ByteArrayToImage(byte[] byteArray)
         {
             Image imageDefaul = objProfile.picUser.Image;
@@ -94,6 +97,52 @@ namespace PTC2024.Controller.ProfileController
                 string imageRute = ofd.FileName;
                 objProfile.picUser.Image = Image.FromFile(imageRute);
             }
+        }
+
+        public void SecurityQuestions(object sender, EventArgs e)
+        {
+            //Creamos objeto del DAO
+            DAOProfile daoProfile = new DAOProfile();
+            //damos valor al getter de Username que usamos en las consultas para verificar si ya hay respuestas existentes a las preguntas.
+            daoProfile.Username = SessionVar.Username.Trim();
+            //ejecutamos el método del dao
+            bool answer = daoProfile.CheckSecurityQ();
+            //evaluamos la respuesta
+            if (answer == true)
+            {
+                //si la respuesta es true, entonces ya respondió antes a las preguntas, por lo que consultamos si quiere eliminar las respuestas ya existentes y volver a responder.
+                if (MessageBox.Show("Usted ya ha contestado a las preguntas de seguridad anteriormente. \n\n¿Desea eliminar las respuestas ya existentes y contestarlas nuevamente?", "Respuestas ya existentes", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    //Si responde que si, procedemos a eliminar el registro de sus respuestas con el método del DAO
+                    int answer2 = daoProfile.DeleteSecurityQ();
+                    //evaluamos la respuesta del método
+                    if (answer2 == 1)
+                    {
+                        //si la respuesta es 1, el registro se eliminó con éxito, asi que mostramos el formulario.
+                        MessageBox.Show("Las respuestas que ya existían con anterioridad fueron eliminadas correctamente.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //le mostramos el formulario 
+                        FrmSecurityQuestions openForm = new FrmSecurityQuestions(SessionVar.Username);
+                        openForm.ShowDialog();
+
+                    }
+                    else
+                    {
+                        //si la respuesta no es 1, entonces no pudo ser eliminado el registro de respuestas y no se puede seguir con el proceso.
+                        MessageBox.Show("Las respuestas que ya existían con anterioridad no pudieron ser eliminadas", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                //Si la respuesta no es 1, significa que el usuario no tiene ningún registro de respuestas existente, por lo que solo pasamos a enseñar el form
+                FrmSecurityQuestions openForm = new FrmSecurityQuestions(SessionVar.Username);
+                openForm.ShowDialog();
+            }
+
         }
     }
 }
