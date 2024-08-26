@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PTC2024.Controller.Helper;
+using PTC2024.Controller.ProfileController;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +14,11 @@ namespace PTC2024.View.ProfileSettings
 {
     public partial class FrmSecurityQuestions : Form
     {
-        public FrmSecurityQuestions()
+        public FrmSecurityQuestions(string username)
         {
             InitializeComponent();
-        }
-
-        private void FrmSecurityQuestions_Load(object sender, EventArgs e)
-        {
-
+            ControllerSecurityQuestions control = new ControllerSecurityQuestions(this, username);
+            Region = Region.FromHrgn(CommonClasses.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
     }
 }

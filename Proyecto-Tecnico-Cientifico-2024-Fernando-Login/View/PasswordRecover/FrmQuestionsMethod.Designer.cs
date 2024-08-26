@@ -116,9 +116,10 @@
             this.txtUser.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtUser.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUser.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtUser.DefaultFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUser.DefaultText = "";
             this.txtUser.FillColor = System.Drawing.Color.White;
+            this.txtUser.ForeColor = System.Drawing.Color.Black;
             this.txtUser.HideSelection = true;
             this.txtUser.IconLeft = null;
             this.txtUser.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -149,7 +150,7 @@
             this.txtUser.OnHoverState = stateProperties3;
             stateProperties4.BorderColor = System.Drawing.Color.Silver;
             stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.ForeColor = System.Drawing.Color.Black;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtUser.OnIdleState = stateProperties4;
             this.txtUser.Padding = new System.Windows.Forms.Padding(3);
@@ -162,7 +163,7 @@
             this.txtUser.SelectionLength = 0;
             this.txtUser.SelectionStart = 0;
             this.txtUser.ShortcutsEnabled = true;
-            this.txtUser.Size = new System.Drawing.Size(326, 34);
+            this.txtUser.Size = new System.Drawing.Size(326, 32);
             this.txtUser.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtUser.TabIndex = 118;
             this.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;

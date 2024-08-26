@@ -62,7 +62,7 @@ namespace PTC2024.Controller.Alerts
                         //evaluamos la variable
                         if (answer == 1)
                         {
-                            MessageBox.Show("Se cambió la contraseña correctamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Se cambió la contraseña correctamente \n\n Porfavor inicie sesión nuevamente.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             objChangePassword.Close();
                         }
                         else
