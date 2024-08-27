@@ -45,6 +45,24 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -217,6 +235,7 @@
     <Compile Include="Model\DTO\ServicesDTO\DTOServices.cs" />
     <Compile Include="Model\DTO\ServicesDTO\DTOUpdateService.cs" />
     <Compile Include="Model\DTO\StartMenuDTO\DTOStartMenu.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="View\Alerts\FrmChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -433,6 +452,61 @@
     <Compile Include="View\ProfileSettings\FrmSecurityQuestions.Designer.cs">
       <DependentUpon>FrmSecurityQuestions.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Reports\ReportsBills\DataSet_ReportBill.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ReportBill.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsBills\FrmReportBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reports\ReportsBills\FrmReportBill.Designer.cs">
+      <DependentUpon>FrmReportBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsCustomers\DataSet_ReportsCustomers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ReportsCustomers.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsCustomers\FrmReportsCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reports\ReportsCustomers\FrmReportsCustomers.Designer.cs">
+      <DependentUpon>FrmReportsCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsEmployees\DataSet1_ReportsEmployeesxsd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1_ReportsEmployeesxsd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsEmployees\FrmReportsEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reports\ReportsEmployees\FrmReportsEmployees.Designer.cs">
+      <DependentUpon>FrmReportsEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsPayrolls\DataSet_ReportsPayrolls.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ReportsPayrolls.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsPayrolls\FrmReportsPayrolls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reports\ReportsPayrolls\FrmReportsPayrolls.Designer.cs">
+      <DependentUpon>FrmReportsPayrolls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsServices\DataSet_ReportsServices.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ReportsServices.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsServices\FrmReportsServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reports\ReportsServices\FrmReportsServices.Designer.cs">
+      <DependentUpon>FrmReportsServices.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Service inventory\FrmUpdateService.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -587,6 +661,9 @@
     <EmbeddedResource Include="View\ProfileSettings\FrmSecurityQuestions.resx">
       <DependentUpon>FrmSecurityQuestions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Reports\ReportsBills\FrmReportBill.resx">
+      <DependentUpon>FrmReportBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Service inventory\FrmUpdateService.resx">
       <DependentUpon>FrmUpdateService.cs</DependentUpon>
     </EmbeddedResource>
@@ -628,6 +705,61 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="View\Reports\ReportsBills\DataSet_ReportBill.xsc">
+      <DependentUpon>DataSet_ReportBill.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reports\ReportsBills\DataSet_ReportBill.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ReportBill.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Reports\ReportsBills\DataSet_ReportBill.xss">
+      <DependentUpon>DataSet_ReportBill.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reports\ReportsCustomers\DataSet_ReportsCustomers.xsc">
+      <DependentUpon>DataSet_ReportsCustomers.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reports\ReportsCustomers\DataSet_ReportsCustomers.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ReportsCustomers.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Reports\ReportsCustomers\DataSet_ReportsCustomers.xss">
+      <DependentUpon>DataSet_ReportsCustomers.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reports\ReportsEmployees\DataSet1_ReportsEmployeesxsd.xsc">
+      <DependentUpon>DataSet1_ReportsEmployeesxsd.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reports\ReportsEmployees\DataSet1_ReportsEmployeesxsd.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1_ReportsEmployeesxsd.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Reports\ReportsEmployees\DataSet1_ReportsEmployeesxsd.xss">
+      <DependentUpon>DataSet1_ReportsEmployeesxsd.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reports\ReportsPayrolls\DataSet_ReportsPayrolls.xsc">
+      <DependentUpon>DataSet_ReportsPayrolls.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reports\ReportsPayrolls\DataSet_ReportsPayrolls.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ReportsPayrolls.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Reports\ReportsPayrolls\DataSet_ReportsPayrolls.xss">
+      <DependentUpon>DataSet_ReportsPayrolls.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reports\ReportsServices\DataSet_ReportsServices.xsc">
+      <DependentUpon>DataSet_ReportsServices.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reports\ReportsServices\DataSet_ReportsServices.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ReportsServices.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Reports\ReportsServices\DataSet_ReportsServices.xss">
+      <DependentUpon>DataSet_ReportsServices.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -653,6 +785,19 @@
     <Content Include="Resources\viewPayrolls.png" />
     <Content Include="Resources\volverBlanco.png" />
     <Content Include="Resources\volverNegro.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\User.png" />
     <None Include="Resources\AgregarEmpleado1.png" />
     <Content Include="Resources\Cancelar.png" />

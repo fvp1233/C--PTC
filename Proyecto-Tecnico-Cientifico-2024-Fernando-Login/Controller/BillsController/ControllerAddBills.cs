@@ -18,6 +18,7 @@ using System.Numerics;
 using PTC2024.Model.DTO.CustomersDTO;
 using PTC2024.Model.DAO.PayrollsDAO;
 using PTC2024.Model.DTO.BillsDTO;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace PTC2024.Controller.BillsController
 {
@@ -254,45 +255,23 @@ namespace PTC2024.Controller.BillsController
             }
         }
 
-        /* public void ConfigurarAutocompletar()
-         {
-             AutoCompleteStringCollection autoCompleteCollection = GetAutocompleteData();
+        public bool ValidateDates(DateTime startDate, DateTime finalDate)
+        {
+            if (startDate >= finalDate)
+            {
+                MessageBox.Show("La fecha de inicio debe ser anterior a la fecha de finalización.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
-             // Configuración del TextBox de DUI
-             objAddBills.txtDUICustomer.AutoCompleteCustomSource = autoCompleteCollection;
-             objAddBills.txtDUICustomer.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-             objAddBills.txtDUICustomer.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            if (startDate < DateTime.Now)
+            {
+                MessageBox.Show("La fecha de inicio no puede estar en el pasado.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
-             // Configuración del TextBox de Teléfono
-             objAddBills.txtCustomerPhone.AutoCompleteCustomSource = autoCompleteCollection;
-             objAddBills.txtCustomerPhone.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-             objAddBills.txtCustomerPhone.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            return true;
+        }
 
-             // Configuración del TextBox de Email
-             objAddBills.txtCustomerEmail.AutoCompleteCustomSource = autoCompleteCollection;
-             objAddBills.txtCustomerEmail.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-             objAddBills.txtCustomerEmail.AutoCompleteSource = AutoCompleteSource.CustomSource;
-         }
-
-         public AutoCompleteStringCollection GetAutocompleteData()
-         {
-             DAOAddBills dAOAddBills = new DAOAddBills();
-             // Obtener datos desde DAO
-             DataSet dataSet = dAOAddBills.DataCustomer();
-
-             AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
-             DataTable dataTable = dataSet.Tables[0];
-
-             foreach (DataRow row in dataTable.Rows)
-             {
-                 autoCompleteCollection.Add(row["DUI"].ToString());
-                 autoCompleteCollection.Add(row["phone"].ToString());
-                 autoCompleteCollection.Add(row["email"].ToString());
-             }
-
-             return autoCompleteCollection;
-         }
-        */
         public void NewBill(object sender, EventArgs e)
 {
     if (!(
@@ -317,8 +296,26 @@ namespace PTC2024.Controller.BillsController
         daoNew.TotalPay = double.Parse(objAddBills.txtTotalPay.Text.Trim());
         daoNew.StartDate = objAddBills.dtStartDate.Value.Date;
         daoNew.FinalDate1 = objAddBills.dtFinalDate.Value.Date;
+             
+                    if (daoNew.StartDate >= daoNew.FinalDate1)
+                    {
+                        MessageBox.Show("La fecha de inicio debe ser anterior a la fecha de finalización.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                    }
+
+                    if (daoNew.StartDate >= DateTime.Now)
+                    {
+                        MessageBox.Show("La fecha de inicio no valido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                    }
+                
         daoNew.Dateissued = objAddBills.dtfiscalPeriod.Value.Date;
-        daoNew.Services = objAddBills.comboServiceBill.SelectedValue.ToString();
+                if (daoNew.Dateissued < DateTime.Now)
+                {
+                    MessageBox.Show("La fecha de emisión no valida.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                daoNew.Services = objAddBills.comboServiceBill.SelectedValue.ToString();
         daoNew.StatusBills = objAddBills.comboStatusBill.SelectedValue.ToString();
         daoNew.CustomerDui1 = objAddBills.txtDUICustomer.Text.Trim();
         daoNew.CustomerPhone1 = objAddBills.txtCustomerPhone.Text.Trim();
@@ -363,16 +360,16 @@ namespace PTC2024.Controller.BillsController
         public void RectifyBills(object sender, EventArgs e)
         {
             if (!(
-         string.IsNullOrEmpty(objAddBills.txtNITCompany.Text.Trim()) ||
-         string.IsNullOrEmpty(objAddBills.txtNRCompany.Text.Trim()) ||
-         string.IsNullOrEmpty(objAddBills.txtDiscount.Text.Trim()) ||
-         string.IsNullOrEmpty(objAddBills.txtSubTotal.Text.Trim()) ||
-         string.IsNullOrEmpty(objAddBills.txtTotalPay.Text.Trim()) ||
-         string.IsNullOrEmpty(objAddBills.txtCustomerName.Text.Trim()) ||
-         string.IsNullOrEmpty(objAddBills.txtCustomerEmail.Text.Trim()) ||
-         string.IsNullOrEmpty(objAddBills.txtCustomerPhone.Text.Trim()) ||
-         string.IsNullOrEmpty(objAddBills.txtDUICustomer.Text.Trim()) ||
-         string.IsNullOrEmpty(objAddBills.txtEmployee.Text.Trim())))
+        string.IsNullOrEmpty(objAddBills.txtNITCompany.Text.Trim()) ||
+        string.IsNullOrEmpty(objAddBills.txtNRCompany.Text.Trim()) ||
+        string.IsNullOrEmpty(objAddBills.txtDiscount.Text.Trim()) ||
+        string.IsNullOrEmpty(objAddBills.txtSubTotal.Text.Trim()) ||
+        string.IsNullOrEmpty(objAddBills.txtTotalPay.Text.Trim()) ||
+        string.IsNullOrEmpty(objAddBills.txtCustomerName.Text.Trim()) ||
+        string.IsNullOrEmpty(objAddBills.txtCustomerEmail.Text.Trim()) ||
+        string.IsNullOrEmpty(objAddBills.txtCustomerPhone.Text.Trim()) ||
+        string.IsNullOrEmpty(objAddBills.txtDUICustomer.Text.Trim()) ||
+        string.IsNullOrEmpty(objAddBills.txtEmployee.Text.Trim())))
             {
                 DAOAddBills daoNew = new DAOAddBills();
 
@@ -384,7 +381,25 @@ namespace PTC2024.Controller.BillsController
                 daoNew.TotalPay = double.Parse(objAddBills.txtTotalPay.Text.Trim());
                 daoNew.StartDate = objAddBills.dtStartDate.Value.Date;
                 daoNew.FinalDate1 = objAddBills.dtFinalDate.Value.Date;
+
+                if (daoNew.StartDate >= daoNew.FinalDate1)
+                {
+                    MessageBox.Show("La fecha de inicio debe ser anterior a la fecha de finalización.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (daoNew.StartDate >= DateTime.Now)
+                {
+                    MessageBox.Show("La fecha de inicio no valido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 daoNew.Dateissued = objAddBills.dtfiscalPeriod.Value.Date;
+                if (daoNew.Dateissued < DateTime.Now)
+                {
+                    MessageBox.Show("La fecha de emisión no valida.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 daoNew.Services = objAddBills.comboServiceBill.SelectedValue.ToString();
                 daoNew.StatusBills = objAddBills.comboStatusBill.SelectedValue.ToString();
                 daoNew.CustomerDui1 = objAddBills.txtDUICustomer.Text.Trim();
