@@ -594,7 +594,7 @@
             this.txtPhone.Lines = new string[0];
             this.txtPhone.Location = new System.Drawing.Point(691, 110);
             this.txtPhone.MaximumSize = new System.Drawing.Size(330, 32);
-            this.txtPhone.MaxLength = 20;
+            this.txtPhone.MaxLength = 8;
             this.txtPhone.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPhone.Modified = false;
             this.txtPhone.Multiline = false;
@@ -748,7 +748,7 @@
             this.txtDUI.Lines = new string[0];
             this.txtDUI.Location = new System.Drawing.Point(691, 49);
             this.txtDUI.MaximumSize = new System.Drawing.Size(330, 32);
-            this.txtDUI.MaxLength = 20;
+            this.txtDUI.MaxLength = 10;
             this.txtDUI.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtDUI.Modified = false;
             this.txtDUI.Multiline = false;

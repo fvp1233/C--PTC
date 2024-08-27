@@ -47,35 +47,57 @@ namespace PTC2024.Controller.Alerts
                 string.IsNullOrEmpty(objChangePassword.txtConfirmPass.Text.Trim()) 
                 ))
             {
-                //validación de que la confirmación de la contraseña sea correcta
-                if (objChangePassword.txtPassword.Text.Trim() == objChangePassword.txtConfirmPass.Text.Trim())
+                //validación de la longitud de la contraseña
+                bool passLength = ValidatePasswordLength();
+                if (passLength == true)
                 {
-                    //Ahora pasamos a darles valor a los métodos getter
-                    daoChangePassword.Username = objChangePassword.txtUsername.Text.Trim();
-                    daoChangePassword.Password = commonClasses.ComputeSha256Hash(objChangePassword.txtPassword.Text.Trim());
-                    //creamos una variable int que guardará la respuesta que nos devuelve el método en el DAO
-                    int answer = daoChangePassword.ChangePassword();
-                    //evaluamos la variable
-                    if (answer == 1)
+                    //validación de que la confirmación de la contraseña sea correcta
+                    if (objChangePassword.txtPassword.Text.Trim() == objChangePassword.txtConfirmPass.Text.Trim())
                     {
-                        MessageBox.Show("Se cambió la contraseña correctamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        objChangePassword.Close();
+                        //Ahora pasamos a darles valor a los métodos getter
+                        daoChangePassword.Username = objChangePassword.txtUsername.Text.Trim();
+                        daoChangePassword.Password = commonClasses.ComputeSha256Hash(objChangePassword.txtPassword.Text.Trim());
+                        //creamos una variable int que guardará la respuesta que nos devuelve el método en el DAO
+                        int answer = daoChangePassword.ChangePassword();
+                        //evaluamos la variable
+                        if (answer == 1)
+                        {
+                            MessageBox.Show("Se cambió la contraseña correctamente \n\n Porfavor inicie sesión nuevamente.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            objChangePassword.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("La contraseña no pudo ser actualizada", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            objChangePassword.Close();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("La contraseña no pudo ser actualizada", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        objChangePassword.Close();
+                        MessageBox.Show("La confirmación de la contraseña no es la misma, intente de nuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("La confirmación de la contraseña no es la misma, intente de nuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);             
-                }
+                    MessageBox.Show("La contraseña debe de tener un mínimo de 6 carácteres", "Contraseña muy corta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }                
 
             }
             else
             {
                 MessageBox.Show("Algunos campos se encuentran vacíos, por favor llene todos los apartados.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        //método para verificar la longitud de la contraseña
+        public bool ValidatePasswordLength()
+        {
+            if (objChangePassword.txtPassword.Text.Length >= 6)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 

@@ -10,6 +10,7 @@ using System.Web.UI.Design.WebControls;
 using PTC2024.View.login;
 using Microsoft.VisualBasic.ApplicationServices;
 using PTC2024.Model.DAO.LogInDAO;
+using PTC2024.View.Alerts;
 
 namespace PTC2024.Controller.LogInController
 {
@@ -20,6 +21,7 @@ namespace PTC2024.Controller.LogInController
         {
             objPassword = View;
             objPassword.btnConfirm.Click += new EventHandler(RecoverPassword);
+            objPassword.btnVolver.Click += new EventHandler(GoBack);
         }
 
         public void RecoverPassword(object sender, EventArgs e)
@@ -43,6 +45,8 @@ namespace PTC2024.Controller.LogInController
                 }
                 MessageBox.Show(result, "Recuperación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 objPassword.Close();
+                FrmLogin login = new FrmLogin();
+                login.Show();
             }
             else
             {
@@ -51,7 +55,13 @@ namespace PTC2024.Controller.LogInController
            
         }
 
-        //
+        public void GoBack(object sender, EventArgs e)
+        {
+            FrmRecoverPMethods openForm = new FrmRecoverPMethods();
+            objPassword.Hide();
+            openForm.ShowDialog();
+        }
+
         public bool AccessRecover()
         {
             DAORecoverPassword DAORecover = new DAORecoverPassword();

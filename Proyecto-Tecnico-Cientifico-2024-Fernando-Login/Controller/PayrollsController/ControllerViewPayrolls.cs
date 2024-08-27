@@ -147,13 +147,13 @@ namespace PTC2024.Controller.EmployeesController
                                                 // Calcular días trabajados y salario diario
                                                 if (year == startWorkYear && month == startWorkMonth)
                                                 {
-                                                    int daysInMonth = DateTime.DaysInMonth(year, month);
+                                                    int daysInMonth = 30;
                                                     daysWorked = daysInMonth - hireDate.Day + 1;
                                                     daySalary = salary / daysInMonth;
                                                 }
                                                 else
                                                 {
-                                                    daysWorked = DateTime.DaysInMonth(year, month);
+                                                    daysWorked = 30;
                                                     daySalary = salary / daysWorked;
                                                 }
 
@@ -479,7 +479,6 @@ namespace PTC2024.Controller.EmployeesController
                     int status = int.Parse(row["IdStatus"].ToString());
                     int idEmployee = int.Parse(row["IdEmployee"].ToString());
                     double currentSalary = double.Parse(row["salary"].ToString());
-
                     if (status != 2)
                     {
                         DataRow[] unpaidPayrolls = payrollDt.Select($"IdEmployee = {idEmployee} AND IdPayrollStatus = 2");
@@ -488,7 +487,7 @@ namespace PTC2024.Controller.EmployeesController
                             int idPayroll = int.Parse(payrollRow["IdPayroll"].ToString());
                             DateTime issueDate = DateTime.Parse(payrollRow["issueDate"].ToString());
                             int daysWorked = int.Parse(payrollRow["daysWorked"].ToString());
-                            double daySalary = double.Parse(payrollRow["daySalary"].ToString());
+                            double daySalary = currentSalary / 30;
 
                             // Obtener el rol del negocio del empleado
                             DataRow[] userRows = userDt.Select($"username = '{row["username"]}'");
@@ -503,14 +502,14 @@ namespace PTC2024.Controller.EmployeesController
                                 {
                                     if (daysWorked == 0)
                                     {
-                                        calculatedSalary = Math.Round(daysWorked * daySalary);
+                                        calculatedSalary = daysWorked * daySalary;
 
                                     }
                                     else
                                     {
                                         DataRow bonusRow = bonusRows[0];
                                         roleBonus = double.Parse(bonusRow["positionBonus"].ToString());
-                                        calculatedSalary = Math.Round((daysWorked * daySalary) + roleBonus);
+                                        calculatedSalary = (daysWorked * daySalary) + roleBonus;
                                     }
                                 }
                             }
@@ -528,7 +527,7 @@ namespace PTC2024.Controller.EmployeesController
                                 }
                             }
 
-                            double netPay = Math.Round(calculatedSalary - isss - afp - rent, 2);
+                            double netPay = calculatedSalary - isss - afp - rent;
 
                             // Asignar valores al objeto DAOUpdatePayroll
                             DAOUpdatePayroll.IdPayroll = idPayroll;

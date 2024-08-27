@@ -96,9 +96,13 @@ namespace PTC2024.Model.DAO.DashboardDAO
         }
         public void GetAnalisys()
         {
-            FromDate = new DateTime(2020, 7, 7);
-            ToDate = new DateTime(2025, 7, 7);
             Command.Connection = getConnection();
+            //string queryFisrt = "SELECT MIN(issueDate) FROM tbPayroll";
+            //SqlCommand cmdFirst =  new SqlCommand(queryFisrt, Command.Connection);
+            //DateTime firstIssueD = (DateTime)cmdFirst.ExecuteScalar();
+            //FromDate = firstIssueD < FromDate ? firstIssueD : FromDate;
+            FromDate = new DateTime(2020, 8, 1);
+            ToDate = new DateTime(2025, 7, 7);
             PayrollsList = new List<PayrollsByDate>();
             string query = "SELECT issueDate,SUM(netPay) FROM tbPayroll WHERE issueDate BETWEEN @fromDate AND @toDate group by issueDate";
             SqlCommand cmd = new SqlCommand(query, Command.Connection);

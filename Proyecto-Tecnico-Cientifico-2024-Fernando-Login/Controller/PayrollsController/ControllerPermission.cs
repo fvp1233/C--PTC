@@ -20,6 +20,7 @@ namespace PTC2024.Controller.PayrollsController
             objPermission.btnGeneratePermission.Click += new EventHandler(OpenAddPermission);
             objPermission.cmsUpdatePermission.Click += new EventHandler(OpenUpdatePermission);
             objPermission.btnDeletePermission.Click += new EventHandler(DeshiblePermission);
+            objPermission.txtEmployeeSearch.KeyPress += new KeyPressEventHandler(SearchPermissionEvent);
         }
         public void LoadData(object sender, EventArgs e)
         {
@@ -31,10 +32,21 @@ namespace PTC2024.Controller.PayrollsController
             DataSet dataSet = daoRefresh.GetPermissions();
             objPermission.dgvPermissions.DataSource = dataSet.Tables["viewPermissions"];
         }
+        public void SearchPermissionEvent(object sender, KeyPressEventArgs e)
+        {
+            SearchPermission();
+        }
+        void SearchPermission()
+        {
+            DAOPermission objDao = new DAOPermission();
+            DataSet ds = objDao.SearchPayroll(objPermission.txtEmployeeSearch.Text.Trim());
+            objPermission.dgvPermissions.DataSource = ds.Tables["viewPermissions"];
+        }
         public void OpenAddPermission(object sender, EventArgs e)
         {
             FrmAddPermission openForm = new FrmAddPermission();
             openForm.ShowDialog();
+            RefreshData();
         }
         public void OpenUpdatePermission(object sender, EventArgs e)
         {
