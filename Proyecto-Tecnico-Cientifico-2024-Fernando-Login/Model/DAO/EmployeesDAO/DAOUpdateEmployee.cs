@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace PTC2024.Model.DAO.EmployeesDAO
 {
@@ -255,7 +256,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             try
             {
                 Command.Connection = getConnection();
-                string query = "SELECT*FROM tbBusinessP";
+                string query = "SELECT* FROM tbBusinessP WHERE IdBusinessP = 1 OR IdBusinessP = 2";
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
                 cmd.ExecuteNonQuery();
 
@@ -288,7 +289,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             try
             {
                 Command.Connection = getConnection();
-                string query = "SELECT*FROM tbEmployeeStatus";
+                string query = "SELECT*FROM tbEmployeeStatus WHERE IdStatus = 1 OR IdStatus = 3 OR IdStatus = 4";
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
                 cmd.ExecuteNonQuery();
 

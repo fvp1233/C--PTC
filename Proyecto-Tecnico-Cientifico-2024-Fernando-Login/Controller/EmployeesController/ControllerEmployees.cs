@@ -14,6 +14,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using PTC2024.Model.DTO.EmployeesDTO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using PTC2024.Controller.Helper;
+using PTC2024.Model.DAO;
 
 namespace PTC2024.Controller.Employees
 {
@@ -110,36 +112,45 @@ namespace PTC2024.Controller.Employees
 
         public void ViewEmployeeInfo(object sender, EventArgs e)
         {
-            int row = objEmployees.dgvEmployees.CurrentRow.Index;
+            //Validación para saber si un administrador intenta realizar esta acción con el CEO
+            if (ValidateCEO() == false)
+            {
+                int row = objEmployees.dgvEmployees.CurrentRow.Index;
 
-            int affiliationNumber;
-            string names, lastNames, dui, adress, phone, email, maritalStatus, typeEmployee, statusEmployee, bankAccount, username, businessP, department, bank;
-            DateTime birthDate, hireDate;
-            double salary;
+                int affiliationNumber;
+                string names, lastNames, dui, adress, phone, email, maritalStatus, typeEmployee, statusEmployee, bankAccount, username, businessP, department, bank;
+                DateTime birthDate, hireDate;
+                double salary;
 
-            //Asignación de valores a la variables que se colocaran en los textbox del formulario.
-            names = objEmployees.dgvEmployees[1, row].Value.ToString();
-            lastNames = objEmployees.dgvEmployees[2, row].Value.ToString();
-            dui = objEmployees.dgvEmployees[3, row].Value.ToString();
-            birthDate = DateTime.Parse(objEmployees.dgvEmployees[4, row].Value.ToString());
-            adress = objEmployees.dgvEmployees[7, row].Value.ToString();
-            phone = objEmployees.dgvEmployees[6, row].Value.ToString();
-            email = objEmployees.dgvEmployees[5, row].Value.ToString();
-            hireDate = DateTime.Parse(objEmployees.dgvEmployees[12, row].Value.ToString());
-            maritalStatus = objEmployees.dgvEmployees[15, row].Value.ToString();
-            typeEmployee = objEmployees.dgvEmployees[14, row].Value.ToString();
-            statusEmployee = objEmployees.dgvEmployees[16, row].Value.ToString();
-            salary = double.Parse(objEmployees.dgvEmployees[8, row].Value.ToString());
-            affiliationNumber = int.Parse(objEmployees.dgvEmployees[11, row].Value.ToString());
-            bankAccount = objEmployees.dgvEmployees[9, row].Value.ToString();
-            username = objEmployees.dgvEmployees[17, row].Value.ToString();
-            businessP = objEmployees.dgvEmployees[19, row].Value.ToString();
-            department = objEmployees.dgvEmployees[13, row].Value.ToString();
-            bank = objEmployees.dgvEmployees[10, row].Value.ToString();
+                //Asignación de valores a la variables que se colocaran en los textbox del formulario.
+                names = objEmployees.dgvEmployees[1, row].Value.ToString();
+                lastNames = objEmployees.dgvEmployees[2, row].Value.ToString();
+                dui = objEmployees.dgvEmployees[3, row].Value.ToString();
+                birthDate = DateTime.Parse(objEmployees.dgvEmployees[4, row].Value.ToString());
+                adress = objEmployees.dgvEmployees[7, row].Value.ToString();
+                phone = objEmployees.dgvEmployees[6, row].Value.ToString();
+                email = objEmployees.dgvEmployees[5, row].Value.ToString();
+                hireDate = DateTime.Parse(objEmployees.dgvEmployees[12, row].Value.ToString());
+                maritalStatus = objEmployees.dgvEmployees[15, row].Value.ToString();
+                typeEmployee = objEmployees.dgvEmployees[14, row].Value.ToString();
+                statusEmployee = objEmployees.dgvEmployees[16, row].Value.ToString();
+                salary = double.Parse(objEmployees.dgvEmployees[8, row].Value.ToString());
+                affiliationNumber = int.Parse(objEmployees.dgvEmployees[11, row].Value.ToString());
+                bankAccount = objEmployees.dgvEmployees[9, row].Value.ToString();
+                username = objEmployees.dgvEmployees[17, row].Value.ToString();
+                businessP = objEmployees.dgvEmployees[19, row].Value.ToString();
+                department = objEmployees.dgvEmployees[13, row].Value.ToString();
+                bank = objEmployees.dgvEmployees[10, row].Value.ToString();
 
-            //Se crea instancia del formulario para abrirlo
-            FrmInfoEmployee openForm = new FrmInfoEmployee(names, lastNames, dui, birthDate, adress, phone, email, hireDate, maritalStatus, typeEmployee, statusEmployee, salary, affiliationNumber, bankAccount, username, businessP, department, bank);
-            openForm.ShowDialog();
+                //Se crea instancia del formulario para abrirlo
+                FrmInfoEmployee openForm = new FrmInfoEmployee(names, lastNames, dui, birthDate, adress, phone, email, hireDate, maritalStatus, typeEmployee, statusEmployee, salary, affiliationNumber, bankAccount, username, businessP, department, bank);
+                openForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No tiene permiso para ver esta información", "Acceso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         public void NewEmployee(object sender, EventArgs e)
@@ -152,32 +163,49 @@ namespace PTC2024.Controller.Employees
 
         public void UpdateEmployee(object sender, EventArgs e) 
         {
-            //Se crea una variable para saber la fila del empleado al que se le dio click
-            int row = objEmployees.dgvEmployees.CurrentRow.Index;
-            //se manda a llamar al formulario para la actualización de empleados por medio de un objeto con los parámetros necesarios.
-            FrmUpdateEmployee abrirfForm = new FrmUpdateEmployee(
-                int.Parse(objEmployees.dgvEmployees[0, row].Value.ToString()),
-                objEmployees.dgvEmployees[1, row].Value.ToString(),
-                objEmployees.dgvEmployees[2, row].Value.ToString(),
-                objEmployees.dgvEmployees[3, row].Value.ToString(),
-                DateTime.Parse(objEmployees.dgvEmployees[4, row].Value.ToString()),
-                objEmployees.dgvEmployees[5, row].Value.ToString(),
-                objEmployees.dgvEmployees[6, row].Value.ToString(),
-                objEmployees.dgvEmployees[7, row].Value.ToString(),
-                double.Parse(objEmployees.dgvEmployees[8, row].Value.ToString()),
-                objEmployees.dgvEmployees[9, row].Value.ToString(),
-                objEmployees.dgvEmployees[10, row].Value.ToString(),
-                objEmployees.dgvEmployees[11, row].Value.ToString(),
-                DateTime.Parse(objEmployees.dgvEmployees[12, row].Value.ToString()),
-                objEmployees.dgvEmployees[13, row].Value.ToString(),
-                objEmployees.dgvEmployees[14, row].Value.ToString(),
-                objEmployees.dgvEmployees[15, row].Value.ToString(),
-                objEmployees.dgvEmployees[16, row].Value.ToString(),
-                objEmployees.dgvEmployees[17, row].Value.ToString(),
-                objEmployees.dgvEmployees[19, row].Value.ToString()
-                );
-            abrirfForm.ShowDialog();
-            RefreshDataGridEmployees();
+            //Validación para saber si un administrador esta interactuando con el CEO
+            if (ValidateCEO() == false)
+            {
+                //Validación para saber si un administrador trata de actualizar a otro administrador
+                if (ValidateAdminsRole() == false)
+                {
+                    //Se crea una variable para saber la fila del empleado al que se le dio click
+                    int row = objEmployees.dgvEmployees.CurrentRow.Index;
+                    //se manda a llamar al formulario para la actualización de empleados por medio de un objeto con los parámetros necesarios.
+                    FrmUpdateEmployee abrirfForm = new FrmUpdateEmployee(
+                        int.Parse(objEmployees.dgvEmployees[0, row].Value.ToString()),
+                        objEmployees.dgvEmployees[1, row].Value.ToString(),
+                        objEmployees.dgvEmployees[2, row].Value.ToString(),
+                        objEmployees.dgvEmployees[3, row].Value.ToString(),
+                        DateTime.Parse(objEmployees.dgvEmployees[4, row].Value.ToString()),
+                        objEmployees.dgvEmployees[5, row].Value.ToString(),
+                        objEmployees.dgvEmployees[6, row].Value.ToString(),
+                        objEmployees.dgvEmployees[7, row].Value.ToString(),
+                        double.Parse(objEmployees.dgvEmployees[8, row].Value.ToString()),
+                        objEmployees.dgvEmployees[9, row].Value.ToString(),
+                        objEmployees.dgvEmployees[10, row].Value.ToString(),
+                        objEmployees.dgvEmployees[11, row].Value.ToString(),
+                        DateTime.Parse(objEmployees.dgvEmployees[12, row].Value.ToString()),
+                        objEmployees.dgvEmployees[13, row].Value.ToString(),
+                        objEmployees.dgvEmployees[14, row].Value.ToString(),
+                        objEmployees.dgvEmployees[15, row].Value.ToString(),
+                        objEmployees.dgvEmployees[16, row].Value.ToString(),
+                        objEmployees.dgvEmployees[17, row].Value.ToString(),
+                        objEmployees.dgvEmployees[19, row].Value.ToString()
+                        );
+                    abrirfForm.ShowDialog();
+                    RefreshDataGridEmployees();
+                }
+                else
+                {
+                    MessageBox.Show("Los administradores no pueden actualizarse entre sí.", "Acción imposible", MessageBoxButtons.OK, MessageBoxIcon.Error );
+                }
+            }
+            else
+            {
+                MessageBox.Show("Usted no tiene el permiso para actualizar a ese registro", "Falta de permisos", MessageBoxButtons.OK, MessageBoxIcon.Error );
+            }
+            
         }
 
         public void DisableEmployee(object sender, EventArgs e)
@@ -200,20 +228,29 @@ namespace PTC2024.Controller.Employees
                 //Validación para saber si es el primer empleado registrado en el sistema, si lo es, este no podrá ser deshabilitado.
                 if (!(daoEmployees.IdEmployee == 20240001))
                 {
-                    //Le damos valor al getter IdEmployee 
-                    daoEmployees.Username = objEmployees.dgvEmployees[17, row].Value.ToString();
-                    //Mandamos a llamar el proceso de la eliminación de empleado del DAOEmployees para evaluar el valor que el metodo nos retorna 
-                    int value = daoEmployees.DisableEmployee();
-                    if (value == 1)
+                    //Validación para saber los roles del usuario y del registro seleccionado
+                    if (ValidateAdminsRole() == false)
                     {
-                        openDeleteAlert.Close();
-                        MessageBox.Show("El empleado fue deshabilitado junto a su usuario de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //Le damos valor al getter IdEmployee 
+                        daoEmployees.Username = objEmployees.dgvEmployees[17, row].Value.ToString();
+                        //Mandamos a llamar el proceso de la eliminación de empleado del DAOEmployees para evaluar el valor que el metodo nos retorna 
+                        int value = daoEmployees.DisableEmployee();
+                        if (value == 1)
+                        {
+                            openDeleteAlert.Close();
+                            MessageBox.Show("El empleado fue deshabilitado junto a su usuario de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            openDeleteAlert.Close();
+                            MessageBox.Show("Ocurrió un error, el empleado no pudo ser deshabilitado", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        openDeleteAlert.Close();
-                        MessageBox.Show("Ocurrió un error, el empleado no pudo ser deshabilitado", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Los administradores no pueden deshabilitarse entre sí.", "Acción imposible", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    
                 }
                 else
                 {
@@ -684,6 +721,41 @@ namespace PTC2024.Controller.Employees
             }
 
         }
+
+        public bool ValidateAdminsRole()
+        {
+            //Declaramos la variable para saber el registro que está seleccionado
+            int row = objEmployees.dgvEmployees.CurrentRow.Index;
+            //Vamos a comparar el rol del usuario y del registro seleccionado
+            string employeeRole = objEmployees.dgvEmployees[19, row].Value.ToString();
+            if (employeeRole == "Administrador" && SessionVar.Access == "Administrador")
+            {
+                //Significa que el usuario y el empleado seleccionado ambos son administradores
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ValidateCEO()
+        {
+            //Declaramos la variable para saber el registro que está seleccionado
+            int row = objEmployees.dgvEmployees.CurrentRow.Index;
+            //Vamos a comparar el rol del usuario y del registro seleccionado para saber si este es el CEO
+            string employeeRole = objEmployees.dgvEmployees[19, row].Value.ToString();
+            if (employeeRole == "CEO" && SessionVar.Access == "Administrador")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        
 
         #region Método filtración antiguo (Tipo Empleado)
         public void CheckBoxFilterTypeEmployee(object sender, EventArgs e)
