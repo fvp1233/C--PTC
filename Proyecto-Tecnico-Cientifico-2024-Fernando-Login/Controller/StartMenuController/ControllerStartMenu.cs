@@ -18,6 +18,7 @@ using PTC2024.View.EmployeeViews;
 using PTC2024.View.ProfileSettings;
 using System.IO;
 using System.Drawing;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PTC2024.Controller.StartMenuController
 {
@@ -66,12 +67,18 @@ namespace PTC2024.Controller.StartMenuController
         {
             switch (SessionVar.Access)
             {
+                case "CEO":
+                break;
                 case "Administrador":
+                    objStartMenu.btnMaintenance.Visible = false;
                     break;
                 case "Empleado":
                     objStartMenu.btnMenuEmployee.Visible = false;
                     objStartMenu.btnMenuPayroll.Visible = false;
                     objStartMenu.btnMenuServices.Visible = false;
+                    objStartMenu.btnMaintenance.Visible = false;
+                    objStartMenu.btnpermissions.Visible = false;
+                    objStartMenu.btnMenuDashboard.Visible = false;
                     break;
             }
         }
