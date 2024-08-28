@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PTC2024.Controller.DashboardController;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace PTC2024.View.Dashboard
         public FrmDashboard()
         {
             InitializeComponent();
+            ControllerDashboard objDashboardController = new ControllerDashboard(this);
         }
     }
 }

@@ -24,6 +24,10 @@ namespace PTC2024.Controller
             objAddEmployee.BtnCancelar.Click += new EventHandler(CancelarProceso);
             objAddEmployee.txtSalary.Enter += new EventHandler(EnterSalary);
             objAddEmployee.txtSalary.Leave += new EventHandler(LeaveSalary);
+            objAddEmployee.txtDUI.TextChanged += new EventHandler(DUIMask);
+            objAddEmployee.txtPhone.TextChanged += new EventHandler(PhoneMask);
+            objAddEmployee.txtAffiliationNumber.TextChanged += new EventHandler(AffiliatioNumberMask);
+            objAddEmployee.txtBankAccount.TextChanged += new EventHandler(BankAccountMask);
         }
 
 
@@ -219,7 +223,7 @@ namespace PTC2024.Controller
         }
 
         //Método encargado de verificar que el empleado sea mayor a 18 años
-        private int ValidateAge()
+        public int ValidateAge()
         {
             //Declaramos la variable que captura el valor del dateTimePicker del formulario
             DateTime birthday = objAddEmployee.dtBirthDate.Value;
@@ -241,5 +245,72 @@ namespace PTC2024.Controller
             return employeeAge;
 
         }
+
+        //Método para establecer una máscara al textbox del DUI
+        public void DUIMask(object sender, EventArgs e)
+        {
+            // Aqui se guarda la posición inicial del cursor
+            int cursorPosition = objAddEmployee.txtDUI.SelectionStart;
+
+            //Con esto se remueve cualquier dato no numérico excepto el guión
+            string text = new string(objAddEmployee.txtDUI.Text.Where(c => char.IsDigit(c) || c == '-').ToArray());
+
+            //Si ya existe algun guión, se elimina.
+            text = text.Replace("-", "");
+
+            //Acá especificamos la máscara del DUI, cuando llegue al caracter numero 9, va a ingresar el guion por si solo
+            //
+            if (text.Length >= 9)
+            {
+                text = text.Insert(8, "-");
+            }
+            else if (text.Length >= 1)
+            {
+                text = text.Insert(0, "");
+            }
+
+            //Le asignamos la máscara al texto que se presente en el textbox
+            objAddEmployee.txtDUI.Text = text;
+
+            //Restablecemos la posicion del cursor
+            objAddEmployee.txtDUI.SelectionStart = cursorPosition;
+        }
+
+        //Máscara para el textbox del telefono
+        public void PhoneMask(object sender, EventArgs e)
+        {
+            //Aqui se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar y no sea molesto para el usuario
+            int cursorPosition = objAddEmployee.txtPhone.SelectionStart;
+
+            //Con esto se remueve cualquier dato no numérico
+            string text = new string(objAddEmployee.txtPhone.Text.Where(c => char.IsDigit(c)).ToArray());
+
+            //Le asignamos la máscara al texto que se ponga en el textbox
+            objAddEmployee.txtPhone.Text = text;
+
+            //Restablecemos la posición del cursor con la variable que se guardó antes
+            objAddEmployee.txtPhone.SelectionStart = cursorPosition;
+        }
+
+        //Aplicamos una máscara que solo deje meter el guion y caracteres numéricos para los textbox de numero de afiliacion y cuenta bancaria.
+        public void AffiliatioNumberMask(object sender, EventArgs e)
+        {
+            int cursorPosition = objAddEmployee.txtAffiliationNumber.SelectionStart;
+            //Con esto se remueve cualquier dato no numérico excepto el guion
+            string text = new string(objAddEmployee.txtAffiliationNumber.Text.Where(c => char.IsDigit(c) || c == '-').ToArray());
+            objAddEmployee.txtAffiliationNumber.Text = text;
+            objAddEmployee.txtAffiliationNumber.SelectionStart = cursorPosition;
+        }
+
+        public void BankAccountMask(object sender, EventArgs e)
+        {
+            int cursorPosition = objAddEmployee.txtBankAccount.SelectionStart;
+            //Con esto se remueve cualquier dato no numérico excepto el guion
+            string text = new string(objAddEmployee.txtBankAccount.Text.Where(c => char.IsDigit(c) || c == '-').ToArray());
+            objAddEmployee.txtBankAccount.Text = text;
+            objAddEmployee.txtBankAccount.SelectionStart = cursorPosition;
+        }
+
+
     }
 }

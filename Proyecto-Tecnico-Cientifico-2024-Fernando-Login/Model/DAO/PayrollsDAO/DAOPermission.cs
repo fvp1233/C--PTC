@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 namespace PTC2024.Model.DAO.PayrollsDAO
 {
@@ -102,6 +103,29 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             finally
             {
                 Command.Connection.Close();
+            }
+        }
+        public DataSet SearchPayroll(string valor)
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = $"SELECT * FROM viewPermissions WHERE [Id Empleado] LIKE '%{valor}%' OR [Tipo de permiso] LIKE '%{valor}%' OR [Estado de permiso] LIKE '%{valor}%'";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPermissions");
+                return ds;
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
             }
         }
     }

@@ -79,99 +79,6 @@ namespace PTC2024.Model.DAO.BillsDAO
             }
         }
 
-
-        /*
-        public bool VerificarClienteExistente(string customer)
-        {
-            try
-            {
-                Command.Connection = getConnection();
-                string query = "SELECT COUNT(*) FROM tbCustomer WHERE Names = @customer";
-                SqlCommand cmd = new SqlCommand(query, Command.Connection);
-                cmd.Parameters.AddWithValue("@customer", customer);
-                int count = (int)cmd.ExecuteScalar();
-
-                return count > 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("EC-012: Error al verificar la existencia del cliente. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            finally
-            {
-                getConnection().Close();
-            }
-        }
-
-        public bool CustomerIdentificator(string customer)
-        {
-            try
-            {
-                Command.Connection = getConnection();
-                string query = "SELECT COUNT(*) FROM tbCustomer WHERE LastNames = @customer";
-                SqlCommand cmd = new SqlCommand(query, Command.Connection);
-                cmd.Parameters.AddWithValue("@customer", customer);
-                int count = (int)cmd.ExecuteScalar();
-
-                return count > 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("EC-012: Error al verificar la existencia del cliente. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            finally
-            {
-                getConnection().Close();
-            }
-        }
-        public bool CustomerD(string customer)
-        {
-            try
-            {
-                Command.Connection = getConnection();
-                string query = "SELECT COUNT(*) FROM tbCustomer WHERE DUI = @DUI1";
-                SqlCommand cmd = new SqlCommand(query, Command.Connection);
-                cmd.Parameters.AddWithValue("@DUI1", customer);
-                int count = (int)cmd.ExecuteScalar();
-
-                return count > 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("EC-012: Error al verificar la existencia del cliente. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            finally
-            {
-                getConnection().Close();
-            }
-        }
-        /*
-        public DataSet GetCustomer()
-        {
-            try
-            {
-                Command.Connection = getConnection();
-                string queryCustomer = "SELECT * FROM tbCustomer";
-                SqlCommand cmd = new SqlCommand(queryCustomer, Command.Connection);
-                cmd.ExecuteNonQuery();
-                SqlDataAdapter adp = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adp.Fill(ds, "tbCustomer");
-                return ds;
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-            finally
-            {
-                getConnection().Close();
-            }
-        }
-        */
         public DataSet DataServices()
         {
             try
@@ -197,32 +104,33 @@ namespace PTC2024.Model.DAO.BillsDAO
                 getConnection().Close();
             }
         }
-        /*
-        public DataSet DataCustomer()
-        {
-            try
-            {
-                Command.Connection = getConnection();
-                string query = "SELECT c.names AS Customer FROM tbBills B JOIN tbCustomer c ON c.IdCustomer = B.IdCustomer";
-                SqlCommand comd = new SqlCommand(query, Command.Connection);
-                comd.ExecuteNonQuery();
-                SqlDataAdapter adap = new SqlDataAdapter(comd);
-                DataSet ds = new DataSet();
-                adap.Fill(ds, "tbCustomer");
-                return ds;
 
-            }
-            catch (Exception
-            )
-            {
-                MessageBox.Show("EC-009:No se obtuvieron los datos de los datos del cliente");
-                throw;
-            }
-            finally
-            {
-                getConnection().Close();
-            }
-        }*/
+        public Dictionary<string, string> DataCustomer(string CustomerName)
+        {
+            Command.Connection = getConnection();
+            Dictionary<string, string> clienteData = new Dictionary<string, string>();
+
+            string query = "SELECT IdCustomer, DUI, phone, email " +
+                           "FROM tbCustomer " +
+                           "WHERE RTRIM(LTRIM(names + ' ' + lastNames)) = RTRIM(LTRIM(@CustomerName))";
+
+            
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("@CustomerName", CustomerName);
+            SqlDataReader reader = cmd.ExecuteReader();
+                {
+                    if (reader.Read())
+                    {
+                        clienteData["IdCustomer"] = reader["IdCustomer"].ToString();
+                        clienteData["DUI"] = reader["DUI"].ToString();
+                        clienteData["phone"] = reader["phone"].ToString();
+                        clienteData["email"] = reader["email"].ToString();
+                    }
+                }
+            
+
+            return clienteData;
+        }
 
         public DataSet BillsD()
         {
@@ -310,68 +218,14 @@ namespace PTC2024.Model.DAO.BillsDAO
             }
         }
 
-        /*
-                public int RegisterBills()
-                {
-                    try
-                    {
-                        // Conexión con la base de datos
-                        Command.Connection = getConnection();
-                        string queryAddBill = "INSERT INTO tbBills(companyName, NIT, NRC, discount, subtotalPay, totalPay, startDate, finalDate,dateissuance, IdServices, IdStatusBill, IdCustomer, IdEmployee, IdMethodP, CustomerDui, CustomerPhone, CustomerEmail) " +
-                                              "VALUES (@param1, @param2, @param3, @param4, @param5, @param6, @param7, @param8, @param9, @param10, @param11, @param12, @param13, @param14, @param15, @param16, @param17)";
-
-                        // Se crea el comando SQL con la conexión y el query
-                        SqlCommand cmdAddBills = new SqlCommand(queryAddBill, Command.Connection);
-
-                        // Se asigna un valor a cada parámetro con los atributos del DTO
-                        cmdAddBills.Parameters.AddWithValue("@param1", CompanyName);
-                        cmdAddBills.Parameters.AddWithValue("@param2", NIT1);
-                        cmdAddBills.Parameters.AddWithValue("@param3", NRC1);
-                        cmdAddBills.Parameters.AddWithValue("@param4", Discount);
-                        cmdAddBills.Parameters.AddWithValue("@param5", SubtotalPay);
-                        cmdAddBills.Parameters.AddWithValue("@param6", TotalPay);
-                        cmdAddBills.Parameters.AddWithValue("@param7", StartDate);
-                        cmdAddBills.Parameters.AddWithValue("@param8", FinalDate1);
-                        cmdAddBills.Parameters.AddWithValue("@param9", Dateissued);
-                        cmdAddBills.Parameters.AddWithValue("@param10", Services);
-                        cmdAddBills.Parameters.AddWithValue("@param11", StatusBills);
-
-                        int customerId = GetCustomerIdByName(Names);
-                        if (customerId == -1)
-                        {
-                            MessageBox.Show("Cliente no encontrado en la base de datos.");
-                            return -1;
-                        }
-
-                        cmdAddBills.Parameters.AddWithValue("@param12", Customer);
-                        cmdAddBills.Parameters.AddWithValue("@param13", Employee);
-                        cmdAddBills.Parameters.AddWithValue("@param14", MethodP);
-                        cmdAddBills.Parameters.AddWithValue("@param15", CustomerDui1);
-                        cmdAddBills.Parameters.AddWithValue("@param16", CustomerPhone1);
-                        cmdAddBills.Parameters.AddWithValue("@param17", CustomerEmail1);
-                        int checks = cmdAddBills.ExecuteNonQuery();
-                        return checks == 1 ? checks : 0;
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("EC-10: No se ingresaron los datos. Error: " + ex.Message);
-                        return -1;
-                    }
-                    finally
-                    {
-                        Command.Connection.Close();
-                    }
-                }
-        */
-
+       
         public int RegisterBills()
         {
             try
             {
                 // Conexión con la base de datos
                 Command.Connection = getConnection();
-                SqlCommand cmd = new SqlCommand("spBillNew", Command.Connection);
+                SqlCommand cmd = new SqlCommand("spNewBill", Command.Connection);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Asignar parámetros
@@ -390,7 +244,7 @@ namespace PTC2024.Model.DAO.BillsDAO
                 cmd.Parameters.AddWithValue("@IdServices", Services);
                 cmd.Parameters.AddWithValue("@IdStatusBill", StatusBills);
                 cmd.Parameters.AddWithValue("@CustomerName", Customer);
-                cmd.Parameters.AddWithValue("@IdEmployee", Employee);
+                cmd.Parameters.AddWithValue("@EmployeeName", Employee);
                 cmd.Parameters.AddWithValue("@IdMethodP", MethodP);
 
                 int checks = cmd.ExecuteNonQuery();
@@ -427,9 +281,9 @@ namespace PTC2024.Model.DAO.BillsDAO
                             customerId = Convert.ToInt32(result);
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        MessageBox.Show("Se ingresaron correctamente los datos ");
+                        MessageBox.Show("Cliente registrado");
                     }
                     finally
                     {
@@ -445,83 +299,46 @@ namespace PTC2024.Model.DAO.BillsDAO
             return customerId; // Devolver el valor de customerId
         }
 
-        public int UpdateBill()
+        public int GetEmployeeIdByName(string EmployeeName)
         {
+            int EmployeeId = -1;
+
             try
             {
-                //Se crea la conexión a la base
-                SqlConnection connection = getConnection();
-                Command.Connection = connection;
-
-                // Asegurarse de que la conexión esté abierta
-                if (connection.State != ConnectionState.Open)
+                Command.Connection = getConnection();
+                string query = "SELECT IdEmployee FROM tbEmployee WHERE names + ' ' + lastName = @EmployeeName";
+                using (SqlCommand cmd = new SqlCommand(query, Command.Connection))
                 {
-                    connection.Open();
+                    cmd.Parameters.AddWithValue("@EmployeeName", EmployeeName);
+
+                    try
+                    {
+                        Command.Connection.Open();
+                        object result = cmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            EmployeeId = Convert.ToInt32(result);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Empleado registrado");
+                    }
+                    finally
+                    {
+                        Command.Connection.Close(); // Cerrar la conexión una vez
+                    }
                 }
-
-                // Se crea el query para actualizar al empleado
-                string queryUpdateE = "UPDATE tbBills SET " +
-                               "companyName = @param1, " +
-                               "NIT = @param2, " +
-                               "NRC = @param3, " +
-                               "CustomerDui = @param4, " +
-                               "CustomerPhone = @param5, " +
-                               "CustomerEmail = @param6, " +
-                               "discount = @param7, " +
-                               "subtotalPay = @param8, " +
-                               "totalPay = @param9, " +
-                               "startDate = @param10, " +
-                               "finalDate = @param11, " +
-                               "dateissuance = @param12, " +
-                               "IdServices = @param13, " +
-                               "IdStatusBill = @param14, " +
-                               "IdEmployee = @param15, " +
-                               "IdMethodP = @param16 " +
-                               "WHERE IdBill = @param17;";
-
-                // Se crea el comando Sql que tendrá el query y la conexión
-                SqlCommand cmdUpdateB = new SqlCommand(queryUpdateE, Command.Connection);
-
-                // Se le agregan los valores a los parámetros
-                cmdUpdateB.Parameters.AddWithValue("@param1", CompanyName);
-                cmdUpdateB.Parameters.AddWithValue("@param2", NIT1);
-                cmdUpdateB.Parameters.AddWithValue("@param3", NRC1);
-                cmdUpdateB.Parameters.AddWithValue("@param4", CustomerDui1);
-                cmdUpdateB.Parameters.AddWithValue("@param5", CustomerPhone1);
-                cmdUpdateB.Parameters.AddWithValue("@param6", CustomerEmail1);
-                cmdUpdateB.Parameters.AddWithValue("@param7", Discount);
-                cmdUpdateB.Parameters.AddWithValue("@param8", SubtotalPay);
-                cmdUpdateB.Parameters.AddWithValue("@param9", TotalPay);
-                cmdUpdateB.Parameters.AddWithValue("@param10", StartDate);
-                cmdUpdateB.Parameters.AddWithValue("@param11", FinalDate1);
-                cmdUpdateB.Parameters.AddWithValue("@param12", Dateissued);
-                cmdUpdateB.Parameters.AddWithValue("@param13", Services);
-                cmdUpdateB.Parameters.AddWithValue("@param14", StatusBills);
-                cmdUpdateB.Parameters.AddWithValue("@param15", Employee);
-                cmdUpdateB.Parameters.AddWithValue("@param16", MethodP);
-                cmdUpdateB.Parameters.AddWithValue("@param17", IdBill1);
-
-                int respuesta = cmdUpdateB.ExecuteNonQuery();
-
-                // Se retornará la respuesta
-                return respuesta;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("EC-11: No se ingresaron los datos. Error: " + ex.Message);
-                return -1;
-            }
-            finally
-            {
-                // Asegurarse de cerrar la conexión
-                if (Command.Connection != null && Command.Connection.State == ConnectionState.Open)
-                {
-                    Command.Connection.Close();
-                }
+                MessageBox.Show("" + ex.Message);
             }
 
+            return EmployeeId; // Devolver el valor de EmployeeId
         }
-      
-}
+
+
+    }
 }
 

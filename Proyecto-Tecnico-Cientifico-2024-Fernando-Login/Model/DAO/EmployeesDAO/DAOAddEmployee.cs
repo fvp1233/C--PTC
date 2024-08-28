@@ -244,7 +244,7 @@ namespace PTC2024.Model.DAO
                 //Conexión con la base de datos
                 command.Connection = getConnection();
                 //Se crea el query con la sentencia SQL para insertar los datos en la base para la tabla "tbUserData"
-                string queryInsertUser = "INSERT INTO tbUserData(username, password, IdBusinessP, userStatus, idBusiness) VALUES (@username, @password, @IdBusinessP, @userStatus, @idBusiness)";
+                string queryInsertUser = "INSERT INTO tbUserData(username, password, IdBusinessP, userStatus, idBusiness, temporalpassword) VALUES (@username, @password, @IdBusinessP, @userStatus, @idBusiness, @temporalP)";
                 //Se crea el comando SQL que contendrá la conexión a la base y el query
                 SqlCommand cmdInsertUser = new SqlCommand(queryInsertUser, command.Connection);
                 //Se le asignan los valores a los parámetros del query con los atributos provenientes del DTO
@@ -253,6 +253,7 @@ namespace PTC2024.Model.DAO
                 cmdInsertUser.Parameters.AddWithValue("IdBusinessP", BusinessPosition);
                 cmdInsertUser.Parameters.AddWithValue("userStatus", UserSatus);
                 cmdInsertUser.Parameters.AddWithValue("idBusiness", BusinessInfo);
+                cmdInsertUser.Parameters.AddWithValue("temporalP", true);
                 //Se ejecuta el query con los valores asignados a cada parámetro
                 //Para devolver una respuesta usamos el ExecuteNonQuery
                 int respuesta = cmdInsertUser.ExecuteNonQuery();

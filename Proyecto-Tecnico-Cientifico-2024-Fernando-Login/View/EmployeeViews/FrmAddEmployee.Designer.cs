@@ -1292,7 +1292,7 @@
             this.txtPhone.Lines = new string[0];
             this.txtPhone.Location = new System.Drawing.Point(691, 110);
             this.txtPhone.MaximumSize = new System.Drawing.Size(330, 32);
-            this.txtPhone.MaxLength = 20;
+            this.txtPhone.MaxLength = 8;
             this.txtPhone.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPhone.Modified = false;
             this.txtPhone.Multiline = false;
@@ -1446,7 +1446,7 @@
             this.txtDUI.Lines = new string[0];
             this.txtDUI.Location = new System.Drawing.Point(691, 49);
             this.txtDUI.MaximumSize = new System.Drawing.Size(330, 32);
-            this.txtDUI.MaxLength = 20;
+            this.txtDUI.MaxLength = 10;
             this.txtDUI.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtDUI.Modified = false;
             this.txtDUI.Multiline = false;
@@ -1696,12 +1696,13 @@
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(382, 16);
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(388, 16);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(312, 32);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(295, 32);
             this.bunifuCustomLabel1.TabIndex = 106;
             this.bunifuCustomLabel1.Text = "AGREGAR EMPLEADO";
+            this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmAddEmployee
             // 

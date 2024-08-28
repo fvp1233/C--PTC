@@ -45,6 +45,24 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -99,6 +117,10 @@
   <ItemGroup>
     <Compile Include="Controller\Alerts\ControllerChangePassword.cs" />
     <Compile Include="Controller\Alerts\ControllerDeleteAlert.cs" />
+    <Compile Include="Controller\PasswordRecover\ControllerAdminMethod.cs" />
+    <Compile Include="Controller\PasswordRecover\ControllerNextQuestionsMetod.cs" />
+    <Compile Include="Controller\PasswordRecover\ControllerQuestionsMethod.cs" />
+    <Compile Include="Controller\PasswordRecover\ControllerRecoverPMethods.cs" />
     <Compile Include="Controller\BillsController\ControllerAddBills.cs" />
     <Compile Include="Controller\BillsController\ControllerBills.cs" />
     <Compile Include="Controller\BillsController\ControllerOverride.cs" />
@@ -106,6 +128,7 @@
     <Compile Include="Controller\CustomersController\ControllerAddCustomers.cs" />
     <Compile Include="Controller\CustomersController\ControllerCustomers.cs" />
     <Compile Include="Controller\CustomersController\ControllerUpdateCustomers.cs" />
+    <Compile Include="Controller\DashboardController\ControllerDashboard.cs" />
     <Compile Include="Controller\EmployeesController\ControllerAddEmployee.cs" />
     <Compile Include="Controller\EmployeesController\ControllerInfoEmployee.cs" />
     <Compile Include="Controller\FirstUseController\ControllerFirstUse.cs" />
@@ -114,7 +137,7 @@
     <Compile Include="Controller\Helper\Email.cs" />
     <Compile Include="Controller\Helper\SessionVar.cs" />
     <Compile Include="Controller\LogInController\ControllerLogin.cs" />
-    <Compile Include="Controller\LogInController\ControllerRecoverPassword.cs" />
+    <Compile Include="Controller\PasswordRecover\ControllerRecoverPassword.cs" />
     <Compile Include="Controller\LogInController\ControllerRegister.cs" />
     <Compile Include="Controller\MaintenanceController\ControllerBanks.cs" />
     <Compile Include="Controller\MaintenanceController\ControllerCategories.cs" />
@@ -131,6 +154,9 @@
     <Compile Include="Controller\PayrollsController\ControllerUpdatePayroll.cs" />
     <Compile Include="Controller\PayrollsController\ControllerUpdatePermission.cs" />
     <Compile Include="Controller\PayrollsController\ControllerViewPayrolls.cs" />
+    <Compile Include="Controller\ProfileController\ControllerProfile.cs" />
+    <Compile Include="Controller\ProfileController\ControllerProfileConfiguration.cs" />
+    <Compile Include="Controller\ProfileController\ControllerSecurityQuestions.cs" />
     <Compile Include="Controller\ServicesController\ControllerAddService.cs" />
     <Compile Include="Controller\ServicesController\ControllerServices.cs" />
     <Compile Include="Controller\ServicesController\ControllerUpdateService.cs" />
@@ -143,12 +169,16 @@
     <Compile Include="Model\DAO\CustomersDAO\DAOAddCustomers.cs" />
     <Compile Include="Model\DAO\CustomersDAO\DAOCustomers.cs" />
     <Compile Include="Model\DAO\CustomersDAO\DAOUpdateCustomers.cs" />
+    <Compile Include="Model\DAO\DashboardDAO\DAODashboard.cs" />
     <Compile Include="Model\DAO\EmployeesDAO\DAOAddEmployee.cs" />
     <Compile Include="Model\DAO\EmployeesDAO\DAOEmployees.cs" />
     <Compile Include="Model\DAO\EmployeesDAO\DAOUpdateEmployee.cs" />
     <Compile Include="Model\DAO\FirstUseDAO\DAOFirstUse.cs" />
     <Compile Include="Model\DAO\LogInDAO\DAOLogin.cs" />
-    <Compile Include="Model\DAO\LogInDAO\DAORecoverPassword.cs" />
+    <Compile Include="Model\DAO\PasswordRecoverDAO\DAOAdminMethod.cs" />
+    <Compile Include="Model\DAO\PasswordRecoverDAO\DAONextQuestionsMetod.cs" />
+    <Compile Include="Model\DAO\PasswordRecoverDAO\DAOQuestionsMethod.cs" />
+    <Compile Include="Model\DAO\PasswordRecoverDAO\DAORecoverPassword.cs" />
     <Compile Include="Model\DAO\LogInDAO\DAORegister.cs" />
     <Compile Include="Model\DAO\MaintenanceDAO\DAOBanks.cs" />
     <Compile Include="Model\DAO\MaintenanceDAO\DAOCategories.cs" />
@@ -161,6 +191,9 @@
     <Compile Include="Model\DAO\PayrollsDAO\DAOUpdatePayroll.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOUpdatePermission.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOViewPayrolls.cs" />
+    <Compile Include="Model\DAO\ProfileDAO\DAOProfile.cs" />
+    <Compile Include="Model\DAO\ProfileDAO\DAOProfileConfiguration.cs" />
+    <Compile Include="Model\DAO\ProfileDAO\DAOSecurityQuestions.cs" />
     <Compile Include="Model\DAO\ServicesDAO\DAOAddService.cs" />
     <Compile Include="Model\DAO\ServicesDAO\DAOServices.cs" />
     <Compile Include="Model\DAO\ServicesDAO\DAOUpdateService.cs" />
@@ -173,6 +206,7 @@
     <Compile Include="Model\DTO\CustomersDTO\DTOAddCustomers.cs" />
     <Compile Include="Model\DTO\CustomersDTO\DTOCustomers.cs" />
     <Compile Include="Model\DTO\CustomersDTO\DTOUpdateCustomers.cs" />
+    <Compile Include="Model\DTO\DashboardDTO\DTODashboard.cs" />
     <Compile Include="Model\DTO\EmployeesDTO\DTOAddEmployee.cs" />
     <Compile Include="Model\DTO\EmployeesDTO\DTOEmployees.cs" />
     <Compile Include="Model\DTO\EmployeesDTO\DTOUpdateEmployee.cs" />
@@ -185,16 +219,23 @@
     <Compile Include="Model\DTO\MaintenanceDTO\DTOCharge.cs" />
     <Compile Include="Model\DTO\MaintenanceDTO\DTODepartment.cs" />
     <Compile Include="Model\DTO\MaintenanceDTO\DTOUpdateCharge.cs" />
+    <Compile Include="Model\DTO\PasswordRecoverDTO\DTOAdminMethod.cs" />
+    <Compile Include="Model\DTO\PasswordRecoverDTO\DTONextQuestionsMetod.cs" />
+    <Compile Include="Model\DTO\PasswordRecoverDTO\DTOQuestionsMethod.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOAddPermission.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOInfoPayroll.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOPermission.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOUpdatePayroll.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOUpdatePermission.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOViewPayrolls.cs" />
+    <Compile Include="Model\DTO\ProfileDTO\DTOProfile.cs" />
+    <Compile Include="Model\DTO\ProfileDTO\DTOProfileConfiguration.cs" />
+    <Compile Include="Model\DTO\ProfileDTO\DTOSecurityQuestions.cs" />
     <Compile Include="Model\DTO\ServicesDTO\DTOAddService.cs" />
     <Compile Include="Model\DTO\ServicesDTO\DTOServices.cs" />
     <Compile Include="Model\DTO\ServicesDTO\DTOUpdateService.cs" />
     <Compile Include="Model\DTO\StartMenuDTO\DTOStartMenu.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="View\Alerts\FrmChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +247,30 @@
     </Compile>
     <Compile Include="View\Alerts\FrmDeleteAlert.Designer.cs">
       <DependentUpon>FrmDeleteAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PasswordRecover\FrmAdminMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PasswordRecover\FrmAdminMethod.Designer.cs">
+      <DependentUpon>FrmAdminMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PasswordRecover\FrmNextQuestionsMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PasswordRecover\FrmNextQuestionsMethod.Designer.cs">
+      <DependentUpon>FrmNextQuestionsMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PasswordRecover\FrmQuestionsMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PasswordRecover\FrmQuestionsMethod.Designer.cs">
+      <DependentUpon>FrmQuestionsMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PasswordRecover\FrmRecoverPMethods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PasswordRecover\FrmRecoverPMethods.Designer.cs">
+      <DependentUpon>FrmRecoverPMethods.cs</DependentUpon>
     </Compile>
     <Compile Include="View\BillsViews\FrmOverrideBill.cs">
       <SubType>Form</SubType>
@@ -357,10 +422,10 @@
     <Compile Include="View\FirstUse\FrmFirstUse.Designer.cs">
       <DependentUpon>FrmFirstUse.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\login\FrmRecoverPasswords.cs">
+    <Compile Include="View\PasswordRecover\FrmRecoverPasswords.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\login\FrmRecoverPasswords.Designer.cs">
+    <Compile Include="View\PasswordRecover\FrmRecoverPasswords.Designer.cs">
       <DependentUpon>FrmRecoverPasswords.cs</DependentUpon>
     </Compile>
     <Compile Include="View\login\FrmRegister.cs">
@@ -368,6 +433,79 @@
     </Compile>
     <Compile Include="View\login\FrmRegister.Designer.cs">
       <DependentUpon>FrmRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProfileSettings\FrmProfileConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProfileSettings\FrmProfileConfiguration.Designer.cs">
+      <DependentUpon>FrmProfileConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProfileSettings\FrmProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProfileSettings\FrmProfile.Designer.cs">
+      <DependentUpon>FrmProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProfileSettings\FrmSecurityQuestions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProfileSettings\FrmSecurityQuestions.Designer.cs">
+      <DependentUpon>FrmSecurityQuestions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsBills\DataSet_ReportBill.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ReportBill.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsBills\FrmReportBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reports\ReportsBills\FrmReportBill.Designer.cs">
+      <DependentUpon>FrmReportBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsCustomers\DataSet_ReportsCustomers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ReportsCustomers.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsCustomers\FrmReportsCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reports\ReportsCustomers\FrmReportsCustomers.Designer.cs">
+      <DependentUpon>FrmReportsCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsEmployees\DataSet1_ReportsEmployeesxsd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1_ReportsEmployeesxsd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsEmployees\FrmReportsEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reports\ReportsEmployees\FrmReportsEmployees.Designer.cs">
+      <DependentUpon>FrmReportsEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsPayrolls\DataSet_ReportsPayrolls.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ReportsPayrolls.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsPayrolls\FrmReportsPayrolls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reports\ReportsPayrolls\FrmReportsPayrolls.Designer.cs">
+      <DependentUpon>FrmReportsPayrolls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsServices\DataSet_ReportsServices.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ReportsServices.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reports\ReportsServices\FrmReportsServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reports\ReportsServices\FrmReportsServices.Designer.cs">
+      <DependentUpon>FrmReportsServices.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Service inventory\FrmUpdateService.cs">
       <SubType>Form</SubType>
@@ -419,6 +557,18 @@
     <EmbeddedResource Include="View\Alerts\FrmDeleteAlert.resx">
       <DependentUpon>FrmDeleteAlert.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\PasswordRecover\FrmAdminMethod.resx">
+      <DependentUpon>FrmAdminMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PasswordRecover\FrmNextQuestionsMethod.resx">
+      <DependentUpon>FrmNextQuestionsMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PasswordRecover\FrmQuestionsMethod.resx">
+      <DependentUpon>FrmQuestionsMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PasswordRecover\FrmRecoverPMethods.resx">
+      <DependentUpon>FrmRecoverPMethods.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\BillsViews\FrmOverrideBill.resx">
       <DependentUpon>FrmOverrideBill.cs</DependentUpon>
     </EmbeddedResource>
@@ -464,6 +614,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmEmployees.resx">
       <DependentUpon>FrmEmployees.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeViews\FrmInfoEmployee.resx">
       <DependentUpon>FrmInfoEmployee.cs</DependentUpon>
@@ -495,11 +646,23 @@
     <EmbeddedResource Include="View\FirstUse\FrmFirstUse.resx">
       <DependentUpon>FrmFirstUse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\login\FrmRecoverPasswords.resx">
+    <EmbeddedResource Include="View\PasswordRecover\FrmRecoverPasswords.resx">
       <DependentUpon>FrmRecoverPasswords.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\login\FrmRegister.resx">
       <DependentUpon>FrmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProfileSettings\FrmProfile.resx">
+      <DependentUpon>FrmProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProfileSettings\FrmProfileConfiguration.resx">
+      <DependentUpon>FrmProfileConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProfileSettings\FrmSecurityQuestions.resx">
+      <DependentUpon>FrmSecurityQuestions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reports\ReportsBills\FrmReportBill.resx">
+      <DependentUpon>FrmReportBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Service inventory\FrmUpdateService.resx">
       <DependentUpon>FrmUpdateService.cs</DependentUpon>
@@ -542,6 +705,61 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="View\Reports\ReportsBills\DataSet_ReportBill.xsc">
+      <DependentUpon>DataSet_ReportBill.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reports\ReportsBills\DataSet_ReportBill.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ReportBill.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Reports\ReportsBills\DataSet_ReportBill.xss">
+      <DependentUpon>DataSet_ReportBill.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reports\ReportsCustomers\DataSet_ReportsCustomers.xsc">
+      <DependentUpon>DataSet_ReportsCustomers.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reports\ReportsCustomers\DataSet_ReportsCustomers.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ReportsCustomers.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Reports\ReportsCustomers\DataSet_ReportsCustomers.xss">
+      <DependentUpon>DataSet_ReportsCustomers.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reports\ReportsEmployees\DataSet1_ReportsEmployeesxsd.xsc">
+      <DependentUpon>DataSet1_ReportsEmployeesxsd.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reports\ReportsEmployees\DataSet1_ReportsEmployeesxsd.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1_ReportsEmployeesxsd.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Reports\ReportsEmployees\DataSet1_ReportsEmployeesxsd.xss">
+      <DependentUpon>DataSet1_ReportsEmployeesxsd.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reports\ReportsPayrolls\DataSet_ReportsPayrolls.xsc">
+      <DependentUpon>DataSet_ReportsPayrolls.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reports\ReportsPayrolls\DataSet_ReportsPayrolls.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ReportsPayrolls.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Reports\ReportsPayrolls\DataSet_ReportsPayrolls.xss">
+      <DependentUpon>DataSet_ReportsPayrolls.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reports\ReportsServices\DataSet_ReportsServices.xsc">
+      <DependentUpon>DataSet_ReportsServices.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reports\ReportsServices\DataSet_ReportsServices.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ReportsServices.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Reports\ReportsServices\DataSet_ReportsServices.xss">
+      <DependentUpon>DataSet_ReportsServices.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -549,16 +767,37 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\ActualizarEmpleado.png" />
+    <Content Include="Resources\adminMethod.png" />
     <Content Include="Resources\AgregarEmpleado.png" />
+    <Content Include="Resources\emailMethod.png" />
     <Content Include="Resources\generarPlanillas.png" />
     <Content Include="Resources\habilitar.png" />
     <Content Include="Resources\indemnizacion.png" />
     <Content Include="Resources\ojoAbierto.png" />
     <Content Include="Resources\ojoCerrado.png" />
+    <Content Include="Resources\preguntasSeguridad.png" />
+    <Content Include="Resources\questionsMethod.png" />
     <Content Include="Resources\salir.png" />
+    <Content Include="Resources\seguridadPreguntas.png" />
+    <Content Include="Resources\subirFoto.png" />
     <Content Include="Resources\usuarioRegister.png" />
     <Content Include="Resources\viewEmployees.png" />
     <Content Include="Resources\viewPayrolls.png" />
+    <Content Include="Resources\volverBlanco.png" />
+    <Content Include="Resources\volverNegro.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\User.png" />
     <None Include="Resources\AgregarEmpleado1.png" />
     <Content Include="Resources\Cancelar.png" />

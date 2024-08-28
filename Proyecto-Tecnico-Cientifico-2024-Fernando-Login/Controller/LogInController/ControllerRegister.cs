@@ -30,6 +30,10 @@ namespace PTC2024.Controller.LogInController
             objRegister.btnRegister.Click += new EventHandler(RegisterData);
             objRegister.ShowPassword.Click += new EventHandler(ShowPassword);
             objRegister.HidePassword.Click += new EventHandler(HidePassword);
+            objRegister.txtDUI.TextChanged += new EventHandler(DUIMask);
+            objRegister.txtPhone.TextChanged += new EventHandler(PhoneMask);
+            objRegister.txtAffiliationNumber.TextChanged += new EventHandler(AffiliatioNumberMask);
+            objRegister.txtBankAccount.TextChanged += new EventHandler(BankAccountMask);
 
         }
 
@@ -65,66 +69,90 @@ namespace PTC2024.Controller.LogInController
             {
                 //Validación del dominio del correo
                 emailValidation = ValidateEmail();
-                //Validación de la edad del empleado
-                int employeeAge = ValidateAge();
-                //Validación para el campo de confirmar contraseña.
-                if ((objRegister.txtConfirmedPassword.Text.Trim() == objRegister.txtPassword.Text.Trim()) && (emailValidation = true) && (employeeAge >= 18))
+                if (emailValidation == true)
                 {
-                    //Si todas las validaciones son correctas, pasamos a asignarles el valor a los métodos getter del DAORegister
-                    //creamos objeto del DAORegister
-                    DAORegister daoRegister = new DAORegister();
-                    //creamos objeto de CommonClasses para la encriptación de la contraseña
-                    CommonClasses commonClasses = new CommonClasses();
-                    //Asignación de valores a los métodos getter
-
-                    //Atributos para la tabla tbUserData
-                    daoRegister.Username = objRegister.txtUser.Text.Trim();
-                    daoRegister.Password = commonClasses.ComputeSha256Hash(objRegister.txtPassword.Text.Trim());
-                    daoRegister.BusinessPosition = 1;
-                    daoRegister.UserSatus = true;
-                    daoRegister.BusinessInfo = 1;
-
-                    //Atributos para la tabla tbEmployee
-                    daoRegister.Names = objRegister.txtNames.Text.Trim();
-                    daoRegister.LastNames = objRegister.txtLastNames.Text.Trim();
-                    daoRegister.Document = objRegister.txtDUI.Text.Trim();
-                    daoRegister.BirthDate = objRegister.dtBirth.Value.Date;
-                    daoRegister.Email = objRegister.txtEmail.Text.Trim();
-                    daoRegister.Phone = objRegister.txtPhone.Text.Trim();
-                    daoRegister.Address = objRegister.txtAddress.Text.Trim();
-                    daoRegister.Salary = 1000.00;
-                    daoRegister.BankAccount = objRegister.txtBankAccount.Text.Trim();
-                    daoRegister.AffiliationNumber = objRegister.txtAffiliationNumber.Text.Trim();
-                    daoRegister.HireDate = objRegister.dtHireDate.Value.Date;
-                    daoRegister.Bank = int.Parse(objRegister.comboBank.SelectedValue.ToString());
-                    daoRegister.Department = 1;
-                    daoRegister.EmployeeType = 1;
-                    daoRegister.MaritalStatus = 1;
-                    daoRegister.EmployeeStatus = 1;
-
-                    //Ahora invocamos el método del DAO para hacer la inserción del empleado por medio del objeto daoRegister.
-                    int value = daoRegister.EmployeeRegister();
-                    //Evaluamos la variable value para saber si el empleado se registró correctamente.
-                    if (value == 1 )
+                    //Validación de la edad del empleado
+                    int employeeAge = ValidateAge();
+                    if (employeeAge >= 18)
                     {
-                        //si la respuesta es 1, la inserción  se realizó.
-                        MessageBox.Show("El primer usuario ha sido registrado exitosamente.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        MessageBox.Show($"Usuario: {objRegister.txtUser.Text.Trim()} \n Contraseña: {objRegister.txtPassword.Text.Trim()}", "Credenciales de acceso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //Procedemos a abrir el login después de la inserción
-                        FrmLogin objLogin = new FrmLogin();
-                        objLogin.Show();
-                        objRegister.Hide();
+                        //Validación para el campo de confirmar contraseña.
+                        if (objRegister.txtConfirmedPassword.Text.Trim() == objRegister.txtPassword.Text.Trim())
+                        {
+                            bool passLength = ValidatePasswordLength();
+                            if (passLength == true)
+                            {
+                                //Si todas las validaciones son correctas, pasamos a asignarles el valor a los métodos getter del DAORegister
+                                //creamos objeto del DAORegister
+                                DAORegister daoRegister = new DAORegister();
+                                //creamos objeto de CommonClasses para la encriptación de la contraseña
+                                CommonClasses commonClasses = new CommonClasses();
+                                //Asignación de valores a los métodos getter
+
+                                //Atributos para la tabla tbUserData
+                                daoRegister.Username = objRegister.txtUser.Text.Trim();
+                                daoRegister.Password = commonClasses.ComputeSha256Hash(objRegister.txtPassword.Text.Trim());
+                                daoRegister.BusinessPosition = 1;
+                                daoRegister.UserSatus = true;
+                                daoRegister.BusinessInfo = 1;
+
+                                //Atributos para la tabla tbEmployee
+                                daoRegister.Names = objRegister.txtNames.Text.Trim();
+                                daoRegister.LastNames = objRegister.txtLastNames.Text.Trim();
+                                daoRegister.Document = objRegister.txtDUI.Text.Trim();
+                                daoRegister.BirthDate = objRegister.dtBirth.Value.Date;
+                                daoRegister.Email = objRegister.txtEmail.Text.Trim();
+                                daoRegister.Phone = objRegister.txtPhone.Text.Trim();
+                                daoRegister.Address = objRegister.txtAddress.Text.Trim();
+                                daoRegister.Salary = 1000.00;
+                                daoRegister.BankAccount = objRegister.txtBankAccount.Text.Trim();
+                                daoRegister.AffiliationNumber = objRegister.txtAffiliationNumber.Text.Trim();
+                                daoRegister.HireDate = objRegister.dtHireDate.Value.Date;
+                                daoRegister.Bank = int.Parse(objRegister.comboBank.SelectedValue.ToString());
+                                daoRegister.Department = 1;
+                                daoRegister.EmployeeType = 1;
+                                daoRegister.MaritalStatus = 1;
+                                daoRegister.EmployeeStatus = 1;
+
+                                //Ahora invocamos el método del DAO para hacer la inserción del empleado por medio del objeto daoRegister.
+                                int value = daoRegister.EmployeeRegister();
+                                //Evaluamos la variable value para saber si el empleado se registró correctamente.
+                                if (value == 1)
+                                {
+                                    //si la respuesta es 1, la inserción  se realizó.
+                                    MessageBox.Show("El primer usuario ha sido registrado exitosamente.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show($"Usuario: {objRegister.txtUser.Text.Trim()} \n Contraseña: {objRegister.txtPassword.Text.Trim()}", "Credenciales de acceso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    //Procedemos a abrir el login después de la inserción
+                                    FrmLogin objLogin = new FrmLogin();
+                                    objLogin.Show();
+                                    objRegister.Hide();
+                                }
+                                else
+                                {
+                                    //Si la respuesta no es 1, la inserción no se realizó.
+                                    MessageBox.Show("El pirmer usuario no pudo ser ingresado.", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("La contraseña debe de tener un mínimo de 6 carácteres", "Contraseña muy corta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            
+                        }
+                        else
+                        {
+                            MessageBox.Show("La confirmación de contraseña es incorrecta, intentelo de nuevo", "Confirmar contraseña", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                     else
                     {
-                        //Si la respuesta no es 1, la inserción no se realizó.
-                        MessageBox.Show("El pirmer usuario no pudo ser ingresado.", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        MessageBox.Show("El empleado debe tener al menos 18 años.", "Edad inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);                        
                     }
                 }
                 else
                 {
-                    MessageBox.Show("La confirmación de contraseña es incorrecta, intentelo de nuevo", "Confirmar contraseña", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                    MessageBox.Show("Porfavor ingrese el correo electónico correctamente.", "Correo inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }                              
             }
             else
             {
@@ -193,6 +221,84 @@ namespace PTC2024.Controller.LogInController
             objRegister.HidePassword.Visible = false;
             objRegister.ShowPassword.Visible = true;
         }
+
+        //Método para establecer una máscara al textbox del DUI
+        public void DUIMask(object sender, EventArgs e)
+        {
+            // Aqui se guarda la posición inicial del cursor
+            int cursorPosition = objRegister.txtDUI.SelectionStart;
+
+            //Con esto se remueve cualquier dato no numérico excepto el guión
+            string text = new string(objRegister.txtDUI.Text.Where(c => char.IsDigit(c) || c == '-').ToArray());
+
+            //Si ya existe algun guión, se elimina.
+            text = text.Replace("-", "");
+
+            //Acá especificamos la máscara del DUI, cuando llegue al caracter numero 9, va a ingresar el guion por si solo
+            //
+            if (text.Length >= 9)
+            {
+                text = text.Insert(8, "-");
+            }
+            else if (text.Length >= 1)
+            {
+                text = text.Insert(0, "");
+            }
+
+            //Le asignamos la máscara al texto que se presente en el textbox
+            objRegister.txtDUI.Text = text;
+
+            //Restablecemos la posicion del cursor
+            objRegister.txtDUI.SelectionStart = cursorPosition;
+        }
+
+        //Máscara para el textbox del telefono
+        public void PhoneMask(object sender, EventArgs e)
+        {
+            //Aqui se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar y no sea molesto para el usuario
+            int cursorPosition = objRegister.txtPhone.SelectionStart;
+
+            //Con esto se remueve cualquier dato no numérico
+            string text = new string(objRegister.txtPhone.Text.Where(c => char.IsDigit(c)).ToArray());
+
+            //Le asignamos la máscara al texto que se ponga en el textbox
+            objRegister.txtPhone.Text = text;
+
+            //Restablecemos la posición del cursor con la variable que se guardó antes
+            objRegister.txtPhone.SelectionStart = cursorPosition;
+        }
+
+        //Aplicamos una máscara que solo deje meter el guion y caracteres numéricos para los textbox de numero de afiliacion y cuenta bancaria.
+        public void AffiliatioNumberMask(object sender, EventArgs e)
+        {
+            int cursorPosition = objRegister.txtAffiliationNumber.SelectionStart;
+            //Con esto se remueve cualquier dato no numérico excepto el guion
+            string text = new string(objRegister.txtAffiliationNumber.Text.Where(c => char.IsDigit(c) || c == '-').ToArray());
+            objRegister.txtAffiliationNumber.Text = text;
+            objRegister.txtAffiliationNumber.SelectionStart = cursorPosition;
+        }
+
+        public void BankAccountMask(object sender, EventArgs e)
+        {
+            int cursorPosition = objRegister.txtBankAccount.SelectionStart;
+            //Con esto se remueve cualquier dato no numérico excepto el guion
+            string text = new string(objRegister.txtBankAccount.Text.Where(c => char.IsDigit(c) || c == '-').ToArray());
+            objRegister.txtBankAccount.Text = text;
+            objRegister.txtBankAccount.SelectionStart = cursorPosition;
+        }
+
+        public bool ValidatePasswordLength()
+        {
+            if (objRegister.txtPassword.Text.Length >= 6)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         #region CÓDIGO ANTERIOR
         //public void RegisterData(object sender, EventArgs e)
         //{

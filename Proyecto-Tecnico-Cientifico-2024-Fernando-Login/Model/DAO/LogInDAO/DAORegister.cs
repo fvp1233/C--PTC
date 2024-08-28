@@ -57,7 +57,7 @@ namespace PTC2024.Model.DAO.LogInDAO
                 //Abrimos conexión con la base
                 command.Connection= getConnection();
                 //Creamos el query para introducir primeramente a la tabla tbUserData
-                string queryInsertUser = "INSERT INTO tbUserData(username, password, IdBusinessP, userStatus, idBusiness) VALUES (@username, @password, @IdBusinessP, @userStatus, @idBusiness)";
+                string queryInsertUser = "INSERT INTO tbUserData(username, password, IdBusinessP, userStatus, idBusiness, temporalpassword) VALUES (@username, @password, @IdBusinessP, @userStatus, @idBusiness, @temporalP)";
                 //Creamos el comando SQL que tendrá la el query y la conexión a la base
                 SqlCommand cmdInsertUser = new SqlCommand(@queryInsertUser, command.Connection);
                 //Le asignamos un valor a los parámetros del query con los métodos getter
@@ -66,6 +66,7 @@ namespace PTC2024.Model.DAO.LogInDAO
                 cmdInsertUser.Parameters.AddWithValue("IdBusinessP", BusinessPosition);
                 cmdInsertUser.Parameters.AddWithValue("userStatus", UserSatus);
                 cmdInsertUser.Parameters.AddWithValue("idBusiness", BusinessInfo);
+                cmdInsertUser.Parameters.AddWithValue("temporalP", false);
                 //Creamos una variable int que nos servirá para saber si el registro se ingresó o no.
                 int registerUserAnswer = cmdInsertUser.ExecuteNonQuery();
 

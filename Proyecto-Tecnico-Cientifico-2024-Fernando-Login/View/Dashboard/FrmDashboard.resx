@@ -163,7 +163,7 @@
   <data name="bunifuButton21.IdleIconLeftImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAIwpJREFUeF7t3Qe4blddJnDTQxpJqCH0KgERQRTRYWCIwIDSpYWmDqBUKSKICAoy
+        vwAADr8BOAVTJAAAIwpJREFUeF7t3Qe4blddJnDTQxpJqCH0KgERQRTRYWCIwIDSpYWmDqBUKSKICAoy
         gAgIDEWKoEJAFCkiDOKAQxEQQpABA1F6DxAIJBBS9F17/+94ud5yyld2+f2e5/8o997z7bXW3mu9Oefs
         vdcPAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAu/Fv//Zvl03dJ3WP+iMAYCwS4Eelnp7a4ez6KwBgDBLev5I6o4vx//Dy+msAYMgS2tdP
@@ -319,7 +319,7 @@
   <data name="bunifuButton21.OnIdleState.IconLeftImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAIwpJREFUeF7t3Qe4blddJnDTQxpJqCH0KgERQRTRYWCIwIDSpYWmDqBUKSKICAoy
+        vwAADr8BOAVTJAAAIwpJREFUeF7t3Qe4blddJnDTQxpJqCH0KgERQRTRYWCIwIDSpYWmDqBUKSKICAoy
         gAgIDEWKoEJAFCkiDOKAQxEQQpABA1F6DxAIJBBS9F17/+94ud5yyld2+f2e5/8o997z7bXW3mu9Oefs
         vdcPAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAu/Fv//Zvl03dJ3WP+iMAYCwS4Eelnp7a4ez6KwBgDBLev5I6o4vx//Dy+msAYMgS2tdP
@@ -549,7 +549,7 @@
         Q4C5suP23gKvUsJ/H3/9Yjfe+gt1YI6sz13TNMuUbGZC+AAr+iJt1b7knQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bunifuLabel4.BaseStylesheet" xml:space="preserve">
+  <data name="lblServices.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
   <data name="bunifuLabel5.BaseStylesheet" xml:space="preserve">
@@ -569,7 +569,7 @@
         Q4C5suP23gKvUsJ/H3/9Yjfe+gt1YI6sz13TNMuUbGZC+AAr+iJt1b7knQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bunifuLabel6.BaseStylesheet" xml:space="preserve">
+  <data name="lblBills.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
   <data name="bunifuLabel7.BaseStylesheet" xml:space="preserve">
@@ -589,7 +589,7 @@
         Q4C5suP23gKvUsJ/H3/9Yjfe+gt1YI6sz13TNMuUbGZC+AAr+iJt1b7knQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bunifuLabel8.BaseStylesheet" xml:space="preserve">
+  <data name="lblCustomers.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
   <data name="bunifuLabel9.BaseStylesheet" xml:space="preserve">
@@ -672,7 +672,7 @@
         Q4C5suP23gKvUsJ/H3/9Yjfe+gt1YI6sz13TNMuUbGZC+AAr+iJt1b7knQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bunifuLabel2.BaseStylesheet" xml:space="preserve">
+  <data name="lblCantEmployee.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
   <data name="bunifuLabel3.BaseStylesheet" xml:space="preserve">
