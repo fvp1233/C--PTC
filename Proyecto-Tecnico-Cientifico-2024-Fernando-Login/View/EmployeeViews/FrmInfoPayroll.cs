@@ -15,7 +15,7 @@ namespace PTC2024.View.Empleados
 {
     public partial class FrmInfoPayroll : Form
     {
-        public FrmInfoPayroll(string dui, string employee, string possition, double bonus, string backAccount, int affiliationNumber,double salary,double grossPay, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate,double christmasBonus, double issEmployer, double afpEmployer, double discountEmployer, string payrollStatus, int daysWorked, double daySalary)
+        public FrmInfoPayroll(string dui, string employee, string possition, double bonus, string backAccount, string affiliationNumber,double salary,double grossPay, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate,double christmasBonus, double issEmployer, double afpEmployer, double discountEmployer, string payrollStatus, int daysWorked, double daySalary)
         {
             InitializeComponent();
             ControllerInfoPayroll objControllerAddPayroll = new ControllerInfoPayroll(this,dui,employee,possition, bonus, backAccount, affiliationNumber, salary, grossPay, afp, isss, rent,netSalary, discountEmployee,issueDate, christmasBonus, issEmployer, afpEmployer, discountEmployer, payrollStatus, daysWorked, daySalary);
