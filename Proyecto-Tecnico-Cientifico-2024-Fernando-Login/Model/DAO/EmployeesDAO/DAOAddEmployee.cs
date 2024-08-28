@@ -119,7 +119,7 @@ namespace PTC2024.Model.DAO
             try
             {
                 command.Connection = getConnection();
-                string query = "SELECT*FROM tbBusinessP";
+                string query = "SELECT*FROM tbBusinessP WHERE IdBusinessP = 1 OR IdBusinessP = 2";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.ExecuteNonQuery();
 
@@ -152,7 +152,7 @@ namespace PTC2024.Model.DAO
             try
             {
                 command.Connection = getConnection();
-                string query = "SELECT*FROM tbEmployeeStatus";
+                string query = "SELECT*FROM tbEmployeeStatus WHERE IdStatus = 1 OR IdStatus = 3 OR IdStatus = 4";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
                 cmd.ExecuteNonQuery();
 
@@ -303,8 +303,9 @@ namespace PTC2024.Model.DAO
                     return 0;
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
+                MessageBox.Show(ex.Message);
                 RollBack();
                 return -1;
                 //se retorna -1 en caso de que haya ocurrido un error en el try
@@ -321,6 +322,7 @@ namespace PTC2024.Model.DAO
             string queryDeleteUser = "DELETE FROM tbUserData WHERE username = @username";
             SqlCommand cmdDeleteUser = new SqlCommand(queryDeleteUser, command.Connection);
             cmdDeleteUser.Parameters.AddWithValue("username", Username);
+            cmdDeleteUser.ExecuteNonQuery();
         }
 
         public int ValidateFirstUse()
@@ -351,6 +353,40 @@ namespace PTC2024.Model.DAO
             { 
                 command.Connection.Close(); 
             } 
+        }
+
+        //Método para verificar que el usuario existe en el sistema
+        public bool CheckUser()
+        {
+            try
+            {
+                //Conexion con la base
+                command.Connection = getConnection();
+                //query de la consulta
+                string query = "SELECT * FROM tbUserData WHERE username = @username COLLATE SQL_Latin1_General_CP1_CS_AS AND username = @username";
+                //Creamos el comando SQL con la conexión y la base.
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                //Damos valor a los parámetros
+                cmd.Parameters.AddWithValue("username", Username);
+                //Ejecutamos el comando
+                cmd.ExecuteNonQuery();
+                //Creamos un dataReader
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    string username = rd.GetString(0);
+                }
+                return rd.HasRows;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
         }
     }
 }

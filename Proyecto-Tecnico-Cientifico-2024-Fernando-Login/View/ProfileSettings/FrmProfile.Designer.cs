@@ -221,7 +221,7 @@
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.30769F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.69231F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 246F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 247F));
             this.tableLayoutPanel7.Controls.Add(this.btnUpdate, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.btnSavePhoto, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.btnSecurityQ, 1, 0);
@@ -281,7 +281,7 @@
             this.btnUpdate.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnUpdate.IdleIconLeftImage")));
             this.btnUpdate.IdleIconRightImage = null;
             this.btnUpdate.IndicateFocus = false;
-            this.btnUpdate.Location = new System.Drawing.Point(211, 9);
+            this.btnUpdate.Location = new System.Drawing.Point(210, 9);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnUpdate.OnDisabledState.BorderRadius = 15;
@@ -305,7 +305,7 @@
             this.btnUpdate.OnIdleState.BorderThickness = 1;
             this.btnUpdate.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnUpdate.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton21.OnIdleState.IconLeftImage")));
+            this.btnUpdate.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnUpdate.OnIdleState.IconLeftImage")));
             this.btnUpdate.OnIdleState.IconRightImage = null;
             this.btnUpdate.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnUpdate.OnPressedState.BorderRadius = 15;
@@ -371,7 +371,7 @@
             this.btnSavePhoto.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnSavePhoto.IdleIconLeftImage")));
             this.btnSavePhoto.IdleIconRightImage = null;
             this.btnSavePhoto.IndicateFocus = false;
-            this.btnSavePhoto.Location = new System.Drawing.Point(9, 9);
+            this.btnSavePhoto.Location = new System.Drawing.Point(8, 9);
             this.btnSavePhoto.Name = "btnSavePhoto";
             this.btnSavePhoto.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSavePhoto.OnDisabledState.BorderRadius = 15;
@@ -485,7 +485,7 @@
             this.btnSecurityQ.OnIdleState.BorderThickness = 1;
             this.btnSecurityQ.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnSecurityQ.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnSecurityQ.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton26.OnIdleState.IconLeftImage")));
+            this.btnSecurityQ.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnSecurityQ.OnIdleState.IconLeftImage")));
             this.btnSecurityQ.OnIdleState.IconRightImage = null;
             this.btnSecurityQ.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnSecurityQ.OnPressedState.BorderRadius = 15;
@@ -598,9 +598,9 @@
             this.label9.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(3, 315);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 23);
+            this.label9.Size = new System.Drawing.Size(174, 23);
             this.label9.TabIndex = 8;
-            this.label9.Text = "PUESTO:";
+            this.label9.Text = "ROL DE ACCESO:";
             // 
             // lblCharge
             // 
