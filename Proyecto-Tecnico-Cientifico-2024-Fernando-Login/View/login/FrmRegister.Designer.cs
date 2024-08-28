@@ -1238,7 +1238,7 @@
             this.txtDUI.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDUI.Lines = new string[0];
             this.txtDUI.Location = new System.Drawing.Point(16, 113);
-            this.txtDUI.MaxLength = 20;
+            this.txtDUI.MaxLength = 10;
             this.txtDUI.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtDUI.Modified = false;
             this.txtDUI.Multiline = false;
@@ -1426,7 +1426,7 @@
             this.txtPhone.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPhone.Lines = new string[0];
             this.txtPhone.Location = new System.Drawing.Point(548, 113);
-            this.txtPhone.MaxLength = 12;
+            this.txtPhone.MaxLength = 8;
             this.txtPhone.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPhone.Modified = false;
             this.txtPhone.Multiline = false;

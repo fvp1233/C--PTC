@@ -786,8 +786,8 @@ namespace PTC2024.Controller.EmployeesController
         public void OpenUpdatePayroll(object sender, EventArgs e)
         {
             int pos = objViewPayrolls.dgvPayrolls.CurrentRow.Index;
-            int affiliationNumber, nP, daysWorked;
-            string employee, dui, possition, bankAccount, payrollStatus;
+            int  nP, daysWorked;
+            string employee, dui, possition, bankAccount, payrollStatus, affiliationNumber;
             double salary, bonus, afp, isss, rent, discountEmployee, netSalary, daySalary, grossPay;
             DateTime issueDate;
             nP = int.Parse(objViewPayrolls.dgvPayrolls[0, pos].Value.ToString());
@@ -798,7 +798,7 @@ namespace PTC2024.Controller.EmployeesController
             grossPay = double.Parse(objViewPayrolls.dgvPayrolls[5, pos].Value.ToString());
             possition = objViewPayrolls.dgvPayrolls[6, pos].Value.ToString();
             bankAccount = objViewPayrolls.dgvPayrolls[7, pos].Value.ToString();
-            affiliationNumber = int.Parse(objViewPayrolls.dgvPayrolls[8, pos].Value.ToString());
+            affiliationNumber = objViewPayrolls.dgvPayrolls[8, pos].Value.ToString();
             afp = double.Parse(objViewPayrolls.dgvPayrolls[9, pos].Value.ToString());
             isss = double.Parse(objViewPayrolls.dgvPayrolls[10, pos].Value.ToString());
             rent = double.Parse(objViewPayrolls.dgvPayrolls[11, pos].Value.ToString());
@@ -816,8 +816,8 @@ namespace PTC2024.Controller.EmployeesController
         private void ViewInfoPayroll(object sender, EventArgs e)
         {
             int pos = objViewPayrolls.dgvPayrolls.CurrentRow.Index;
-            int affiliationNumber, daysWorked;
-            string employee, dui, possition, bankAccount, payrollStatus;
+            int daysWorked;
+            string employee, dui, possition, bankAccount, payrollStatus, affiliationNumber;
             double salary, bonus, afp, isss, rent, discountEmployee, netSalary, issEmployer, afpEmployer, discountEmployer, christmasBonus, grossPay, daySalary;
             DateTime issueDate;
             dui = objViewPayrolls.dgvPayrolls[1, pos].Value.ToString();
@@ -827,7 +827,7 @@ namespace PTC2024.Controller.EmployeesController
             grossPay = double.Parse(objViewPayrolls.dgvPayrolls[5, pos].Value.ToString());
             possition = objViewPayrolls.dgvPayrolls[6, pos].Value.ToString();
             bankAccount = objViewPayrolls.dgvPayrolls[7, pos].Value.ToString();
-            affiliationNumber = int.Parse(objViewPayrolls.dgvPayrolls[8, pos].Value.ToString());
+            affiliationNumber = objViewPayrolls.dgvPayrolls[8, pos].Value.ToString();
             afp = double.Parse(objViewPayrolls.dgvPayrolls[9, pos].Value.ToString());
             isss = double.Parse(objViewPayrolls.dgvPayrolls[10, pos].Value.ToString());
             rent = double.Parse(objViewPayrolls.dgvPayrolls[11, pos].Value.ToString());

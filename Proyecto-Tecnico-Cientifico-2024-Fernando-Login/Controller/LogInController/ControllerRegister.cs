@@ -91,7 +91,7 @@ namespace PTC2024.Controller.LogInController
                                 //Atributos para la tabla tbUserData
                                 daoRegister.Username = objRegister.txtUser.Text.Trim();
                                 daoRegister.Password = commonClasses.ComputeSha256Hash(objRegister.txtPassword.Text.Trim());
-                                daoRegister.BusinessPosition = 1;
+                                daoRegister.BusinessPosition = 3;
                                 daoRegister.UserSatus = true;
                                 daoRegister.BusinessInfo = 1;
 

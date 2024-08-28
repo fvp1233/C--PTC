@@ -14,7 +14,7 @@ namespace PTC2024.Controller.EmployeesController
     internal class ControllerUpdatePayroll
     {
         FrmUpdatePayroll objUpdatePayroll;
-        public ControllerUpdatePayroll(FrmUpdatePayroll Vista, int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, int affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, string payrollStatus, int daysWorkded, double daySalary, double grossPay)
+        public ControllerUpdatePayroll(FrmUpdatePayroll Vista, int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, string affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, string payrollStatus, int daysWorkded, double daySalary, double grossPay)
         {
             objUpdatePayroll = Vista;
             DisableComponents();
@@ -56,7 +56,7 @@ namespace PTC2024.Controller.EmployeesController
             objUpdatePayroll.cmbPayrollStatus.ValueMember = "IdPayrollStatus";
             objUpdatePayroll.cmbPayrollStatus.DisplayMember = "payrollStatus";
         }
-        public void ChargeValues(int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, int affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, string payrollStatus, int daysWorked, double daySalary, double grossPay)
+        public void ChargeValues(int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, string affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, string payrollStatus, int daysWorked, double daySalary, double grossPay)
         {
             try
             {
