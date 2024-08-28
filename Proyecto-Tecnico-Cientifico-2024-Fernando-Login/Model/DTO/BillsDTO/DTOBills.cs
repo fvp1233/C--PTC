@@ -52,7 +52,6 @@ namespace PTC2024.Model.DTO.BillsDTO
         private string password;
         private int userStatus;
         private int IdBussinessP;
-        private bool temporalpassword;
         private string SearchB;
 
         public int IdBill1 { get => IdBill; set => IdBill = value; }
@@ -92,6 +91,5 @@ namespace PTC2024.Model.DTO.BillsDTO
         public int IdBussinessP1 { get => IdBussinessP; set => IdBussinessP = value; }
         public string EmployeeName1 { get => EmployeeName; set => EmployeeName = value; }
         public int IdEmployee1 { get => IdEmployee; set => IdEmployee = value; }
-        public bool Temporalpassword { get => temporalpassword; set => temporalpassword = value; }
     }
 }
