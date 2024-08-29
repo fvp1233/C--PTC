@@ -31,8 +31,8 @@ namespace PTC2024.Controller.LogInController
         {
             DAOLogin DAOData = new DAOLogin();
             CommonClasses common = new CommonClasses();
-            DAOData.Username = objLogIn.TxtUserBunifu.Text;
-            string encriptedpass = common.ComputeSha256Hash(objLogIn.txtPasswordBunifu.Text);
+            DAOData.Username = objLogIn.TxtUserBunifu.Text.Trim();
+            string encriptedpass = common.ComputeSha256Hash(objLogIn.txtPasswordBunifu.Text.Trim());
             DAOData.Password = encriptedpass;
             DAOData.UserStatus = 1;
             bool answer = DAOData.ValidarLogin();

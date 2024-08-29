@@ -91,7 +91,7 @@ namespace PTC2024.Controller.Alerts
         //método para verificar la longitud de la contraseña
         public bool ValidatePasswordLength()
         {
-            if (objChangePassword.txtPassword.Text.Length >= 6)
+            if (objChangePassword.txtPassword.Text.Trim().Length >= 6)
             {
                 return true;
             }

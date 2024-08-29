@@ -75,7 +75,7 @@
             // bunifuCustomLabel2
             // 
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(57, 50);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(57, 46);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(580, 20);
             this.bunifuCustomLabel2.TabIndex = 109;
@@ -86,7 +86,7 @@
             // bunifuCustomLabel3
             // 
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(57, 70);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(57, 66);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(580, 20);
             this.bunifuCustomLabel3.TabIndex = 111;
