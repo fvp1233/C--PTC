@@ -120,6 +120,9 @@
   <data name="bunifuLabel1.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 4px;font-family: 'Century Gothic'; font-size: 9pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(255, 255, 255); text-align: center; }</value>
   </data>
+  <metadata name="ToolTipBoton.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txtAdminPass.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -906,6 +909,21 @@
         3S2O0Q9Z2pyMMaZNFHhDAM5KQfmq0MQVDeKzpvBdU1PKGpNkczLGmC6jQJ0J2qkSM5MI8tejzr8LLOxj
         1ozyhiTZlMxsc9ddd1nWXItAfxh6c4nOQR9vQNpObPvSYbF9t6z50V0/8/8Bgo32YaxpGUMAAAAASUVO
         RK5CYII=
+</value>
+  </data>
+  <data name="btnReset.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAJ8AAAAoCAYAAADg1CgtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH8SURBVHhe7d0/LwRBGMfxLZVKpVKnuBl0lEqlUuNdKLwA
+        icTbkLB/XKIiqiuv0Euu0BA5QkhcbtYzuytyzMnhxtN8n+STi9uxml9m9in2kYyr8nx1xqVm0+W27XLT
+        dZm9LXNbAt/xOanzYs7KzG6Vx4uzTaQmK7nButzgTj4fQn8AmIRk6FH0XWG3m2iNL59SWXwku10/dDPg
+        VzJ7L7nqlCd2ronaaFXBK2xvmJnX4A2AP5KjuFceL883kfsov+MRPMQmOes2kaurfsbjqEV8ssE9yTG8
+        WwWv6mqluQgtBGKo89ZaSHw7LD88hhYBMQzT1sDlrX05cs1ZaAEQTSa7X2GupNGw18EFQESy6Q18l/sc
+        ugjEloS+BP4D4YMawgc1hA9qCB/UED6oIXxQQ/ighvBBDeGDGsIHNYQPaggf1BA+qCF8UEP4oIbwQQ3h
+        gxr/AtEgdAGIzb8wzvQpqPAvEHVCF4CY/FuTiUvtjivsS2gBEIucuIeJnxrEnBb8q8zcl/nSRjWvxaVm
+        TxoPRmYgumFqXiVrp1XwfNXDguxlaDEwTXLc3nwZleunBsmzH50voqmmUxWttSZyo+WypZVqOmlqaEAw
+        NfVRKzveuOC9V3UEF+aAJgTTIKF7kGe8ix9Npfcp9e2w/CIT6fFjfgCVbGBt/+80mkh9qiR5A6j9/n9T
+        52GVAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>
