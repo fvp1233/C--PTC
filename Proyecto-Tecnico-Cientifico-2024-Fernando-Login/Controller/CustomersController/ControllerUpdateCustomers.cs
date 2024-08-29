@@ -13,30 +13,32 @@ namespace PTC2024.Controller.CustomersController
     internal class ControllerUpdateCustomers
     {
         FrmUploadCustomers objUpdateCustomers;
+        
 
         //Se declara el constructor con sus respectivos parametros
-        public ControllerUpdateCustomers(FrmUploadCustomers View, int idClient, string dui,string names, string lastnames,  string phone, string email, string address)
+        public ControllerUpdateCustomers(FrmUploadCustomers View, int idClient, string dui,string names, string lastnames,  string phone, string email, string address )
         {
 
             objUpdateCustomers = View;
-            ChargeValues(idClient, dui, names, lastnames, phone, email, address);
+            
+            ChargeValues(idClient, dui, names, lastnames, phone, email, address );
             //Evento para cargar los combos
-            objUpdateCustomers.Load += new EventHandler(CargarCombos);
+            objUpdateCustomers.Load += new EventHandler(loadCombos);
             //Evento para actulizar los clientes
             objUpdateCustomers.BtnActualizarCliente.Click += new EventHandler(UpdateCustomers);
             //Evento para cancelar el proceso
-            objUpdateCustomers.BtnCancelar.Click += new EventHandler(CancelarProceso);
+            objUpdateCustomers.BtnCancelar.Click += new EventHandler(CancelProcess);
         }
 
-        public void CargarCombos(object sender, EventArgs e)
+        public void loadCombos(object sender, EventArgs e)
         {
             DAOAddCustomers dAOAddCustomers = new DAOAddCustomers();
 
 
-            DataSet dsTipodeCliente = dAOAddCustomers.ObtenerTiposEmpleado();
-            objUpdateCustomers.dpTipoCliente.DataSource = dsTipodeCliente.Tables["tbTypeC"];
-            objUpdateCustomers.dpTipoCliente.DisplayMember = "customerType";
-            objUpdateCustomers.dpTipoCliente.ValueMember = "IdTypeC";
+            DataSet dsclientType = dAOAddCustomers.getTypeCustomers();
+            objUpdateCustomers.dpClientType.DataSource = dsclientType.Tables["tbTypeC"];
+            objUpdateCustomers.dpClientType.DisplayMember = "customerType";
+            objUpdateCustomers.dpClientType.ValueMember = "IdTypeC";
 
 
         }
@@ -47,14 +49,14 @@ namespace PTC2024.Controller.CustomersController
 
             daoUpdateCustomers.IdClient = int.Parse(objUpdateCustomers.txtId.Text); 
             daoUpdateCustomers.Dui = objUpdateCustomers.txtDui.Text;
-            daoUpdateCustomers.Name = objUpdateCustomers.txtNombres.Text;
-            daoUpdateCustomers.LastNames = objUpdateCustomers.txtApellidos.Text;
+            daoUpdateCustomers.Name = objUpdateCustomers.txtNames.Text;
+            daoUpdateCustomers.LastNames = objUpdateCustomers.txtLastNames.Text;
             daoUpdateCustomers.Email = objUpdateCustomers.txtEmail.Text;
-            daoUpdateCustomers.Address = objUpdateCustomers.txtDireccion.Text;
-            daoUpdateCustomers.Phone = objUpdateCustomers.txtTelefono.Text;
+            daoUpdateCustomers.Address = objUpdateCustomers.txtAddress.Text;
+            daoUpdateCustomers.Phone = objUpdateCustomers.txtPhone.Text;
 
-            int respuesta = daoUpdateCustomers.updateCustomers();
-            if (respuesta == 1)
+            int answer = daoUpdateCustomers.updateCustomers();
+            if (answer == 1)
             {
                 MessageBox.Show("Datos Actualizados");
                 objUpdateCustomers.Close();
@@ -69,11 +71,11 @@ namespace PTC2024.Controller.CustomersController
             {
                 objUpdateCustomers.txtId.Text = idClient.ToString();
                 objUpdateCustomers.txtDui.Text = dui;
-                objUpdateCustomers.txtNombres.Text = names;
-                objUpdateCustomers.txtApellidos.Text = lastnames;
+                objUpdateCustomers.txtNames.Text = names;
+                objUpdateCustomers.txtLastNames.Text = lastnames;
                 objUpdateCustomers.txtEmail.Text= email;
-                objUpdateCustomers.txtDireccion.Text = address;
-                objUpdateCustomers.txtTelefono.Text = phone;
+                objUpdateCustomers.txtAddress.Text = address;
+                objUpdateCustomers.txtPhone.Text = phone;
 
             }
             catch (Exception)
@@ -84,7 +86,7 @@ namespace PTC2024.Controller.CustomersController
 
         }
 
-        public void CancelarProceso(object sender, EventArgs e)
+        public void CancelProcess(object sender, EventArgs e)
         {
             objUpdateCustomers.Close();
 

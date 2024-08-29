@@ -22,7 +22,7 @@ namespace PTC2024.Model.DAO.CustomersDAO
                 command.Connection = getConnection();
 
                 //Se declara la consulta
-                string query = "UPDATE tbCustomer SET DUI = @DUI, names = @Names, lastNames = @LastNames, phone = @Phone, email= @Email, address = @Address WHERE IdCustomer = @Id";
+                string query = "UPDATE tbCustomer SET DUI = @DUI, names = @Names, lastNames = @LastNames, phone = @Phone, email= @Email, address = @Address, idTypeC = @idTypeC WHERE IdCustomer = @Id";
 
                 //Se le asignan los valores a los parametros
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
@@ -32,13 +32,14 @@ namespace PTC2024.Model.DAO.CustomersDAO
                 cmd.Parameters.AddWithValue("@Phone", Phone);
                 cmd.Parameters.AddWithValue("@Email", Email);
                 cmd.Parameters.AddWithValue("@Address", Address);
+                //cmd.Parameters.AddWithValue("@idTypeC", ClientType);
                 cmd.Parameters.AddWithValue("@Id", IdClient);
                 //La consulta la guardara en la variable respuesta
-                int respuesta = cmd.ExecuteNonQuery();
+                int answer = cmd.ExecuteNonQuery();
 
-                if (respuesta == 1) 
+                if (answer == 1) 
                 {
-                    return respuesta;
+                    return answer;
                 }
 
                 else

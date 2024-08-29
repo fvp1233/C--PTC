@@ -21,40 +21,51 @@ namespace PTC2024.Controller.CustomersController
         {
             objAddCustomers = Vista;
             // Evento para cargar los combos
-            objAddCustomers.Load += new EventHandler(CargarCombos);
+            objAddCustomers.Load += new EventHandler(LoadCombos);
             //Evento para agregar un cliente
-            objAddCustomers.BtnAgregarCliente.Click += new EventHandler(AgregarCliente);
+            objAddCustomers.BtnAgregarCliente.Click += new EventHandler(AddClient);
             //Evento para cancelar el proceso
-            objAddCustomers.BtnCancelar.Click += new EventHandler(CancelarProceso);
+            objAddCustomers.BtnCancelar.Click += new EventHandler(CancelProcess);
+            //Evento para validacion de dui
+            objAddCustomers.txtDui.TextChange += new EventHandler(DUIMask);
+            //Evento para validacion de telefono
+            objAddCustomers.txtPhone.TextChange += new EventHandler(PhoneMask);
+            //Eventos para evitar el copiar y pegar dentro de textbox
+            objAddCustomers.txtNames.KeyDown += new KeyEventHandler(pasteDisabledNames);
+            objAddCustomers.txtLastnames.KeyDown += new KeyEventHandler(pasteDisabledLastNames);
+            objAddCustomers.txtDui.KeyDown += new KeyEventHandler(pasteDisabledDocument);
+            objAddCustomers.txtAddress.KeyDown += new KeyEventHandler(pasteDisabledAddress);
+            objAddCustomers.txtPhone.KeyDown += new KeyEventHandler(pasteDisabledPhone);
+            objAddCustomers.txtEmail.KeyDown += new KeyEventHandler(pasteDisabledEmail);
         }
 
 
         //Metodo para cargar el combo de tipo de empleado
-        public void CargarCombos(object sender, EventArgs e)
+        public void LoadCombos(object sender, EventArgs e)
         {
             DAOAddCustomers dAOAddCustomers = new DAOAddCustomers();
-            DataSet dsTipodeCliente = dAOAddCustomers.ObtenerTiposEmpleado();
+            DataSet dsClientType = dAOAddCustomers.getTypeCustomers();
 
             //Obtiene un conjunto de datos del dataset del tipo de empleado
             //Asigna la tabla tbTypeC para llenar el comboBox
-            objAddCustomers.comboTipodeCliente.DataSource = dsTipodeCliente.Tables["tbTypeC"];
+            objAddCustomers.comboTypeC.DataSource = dsClientType.Tables["tbTypeC"];
             //Se mostrara el valor de los tipos de clientes al desplegar el comboBox
-            objAddCustomers.comboTipodeCliente.DisplayMember = "customerType";
+            objAddCustomers.comboTypeC.DisplayMember = "customerType";
             //Identifica que valor tiene (1,2)
-            objAddCustomers.comboTipodeCliente.ValueMember = "IdTypeC";
+            objAddCustomers.comboTypeC.ValueMember = "IdTypeC";
         }
 
         //Metodo para añadir un cliente
-        public void AgregarCliente(object sender, EventArgs e)
+        public void AddClient(object sender, EventArgs e)
         {
             //validaciones para que no queden en blanco
-            if (!(string.IsNullOrEmpty(objAddCustomers.txtNombres.Text.Trim()) ||
-                string.IsNullOrEmpty(objAddCustomers.txtApellidos.Text.Trim()) ||
+            if (!(string.IsNullOrEmpty(objAddCustomers.txtNames.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddCustomers.txtLastnames.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddCustomers.txtDui.Text.Trim()) ||
-                string.IsNullOrEmpty(objAddCustomers.txtDireccion.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddCustomers.txtAddress.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddCustomers.txtEmail.Text.Trim()) ||
-                string.IsNullOrEmpty(objAddCustomers.txtTelefono.Text.Trim()) ||
-                string.IsNullOrEmpty(objAddCustomers.comboTipodeCliente.Text.Trim())
+                string.IsNullOrEmpty(objAddCustomers.txtPhone.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddCustomers.comboTypeC.Text.Trim())
                 ))
             {
                 emailValidation = ValidateEmail();
@@ -64,18 +75,18 @@ namespace PTC2024.Controller.CustomersController
                     CommonClasses commonClasses = new CommonClasses();
 
                     //Se le asgina el valor de los parametros 
-                    dAOAddCustomers.Names = objAddCustomers.txtNombres.Text;
-                    dAOAddCustomers.Lastnames = objAddCustomers.txtApellidos.Text;
+                    dAOAddCustomers.Names = objAddCustomers.txtNames.Text;
+                    dAOAddCustomers.Lastnames = objAddCustomers.txtLastnames.Text;
                     dAOAddCustomers.DUI1 = objAddCustomers.txtDui.Text;
-                    dAOAddCustomers.Address = objAddCustomers.txtDireccion.Text;
+                    dAOAddCustomers.Address = objAddCustomers.txtAddress.Text;
                     dAOAddCustomers.Email = objAddCustomers.txtEmail.Text;
-                    dAOAddCustomers.Phone = objAddCustomers.txtTelefono.Text;
-                    dAOAddCustomers.EmployeeType = int.Parse(objAddCustomers.comboTipodeCliente.SelectedValue.ToString());
+                    dAOAddCustomers.Phone = objAddCustomers.txtPhone.Text;
+                    dAOAddCustomers.ClientType = int.Parse(objAddCustomers.comboTypeC.SelectedValue.ToString());
 
                     //Se evalua el valorRespuesta del metodo register customer
-                    int valorRespuesta = dAOAddCustomers.RegisterCustomer();
+                    int AnswerValue = dAOAddCustomers.RegisterCustomer();
 
-                    if (valorRespuesta == 1)
+                    if (AnswerValue == 1)
                     {//Si el valor es 1 se mostrara el mensaje
                         MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         objAddCustomers.Close();
@@ -95,7 +106,7 @@ namespace PTC2024.Controller.CustomersController
 
         //Metodo para cancelar el proceso
         //Unicamente cierra el formulario de añadir cliente y regresar al de clientes
-        public void CancelarProceso(object sender, EventArgs e)
+        public void CancelProcess(object sender, EventArgs e)
         {
             objAddCustomers.Close();
         }
@@ -124,6 +135,122 @@ namespace PTC2024.Controller.CustomersController
             //Si no se detecta ningún fallo en el email, se devuelve directamente un true.
             return true;
         }
+
+        public void DUIMask(object sender, EventArgs e)
+        {
+            // Aqui se guarda la posición inicial del cursor
+            int cursorPosition = objAddCustomers.txtDui.SelectionStart;
+
+            //Con esto se remueve cualquier dato no numérico excepto el guión
+            string text = new string(objAddCustomers.txtDui.Text.Where(c => char.IsDigit(c) || c == '-').ToArray());
+
+            //Si ya existe algun guión, se elimina.
+            text = text.Replace("-", "");
+
+            //Acá especificamos la máscara del DUI, cuando llegue al caracter numero 9, va a ingresar el guion por si solo
+            //
+            if (text.Length >= 9)
+            {
+                text = text.Insert(8, "-");
+            }
+            else if (text.Length >= 1)
+            {
+                text = text.Insert(0, "");
+            }
+            if (cursorPosition == 9)
+            {
+                cursorPosition++;
+            }
+
+            //Le asignamos la máscara al texto que se presente en el textbox
+            objAddCustomers.txtDui.Text = text;
+
+            //Restablecemos la posicion del cursor
+            objAddCustomers.txtDui.SelectionStart = cursorPosition;
+        }
+
+        public void PhoneMask(object sender, EventArgs e)
+        {
+            //Aqui se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar y no sea molesto para el usuario
+            int cursorPosition = objAddCustomers.txtPhone.SelectionStart;
+
+            //Con esto se remueve cualquier dato no numérico
+            string text = new string(objAddCustomers.txtPhone.Text.Where(c => char.IsDigit(c)).ToArray());
+
+            if (text.Length >= 5)
+            {
+                text = text.Insert(4, "-");
+
+            }
+
+            //Con esto se reposiciona el cursor, ya no se coloca antes del numero que va siguiente al guion, si no que se reajusta para que  se ponga en el orden que iba anteriormente
+            if (cursorPosition == 5)
+            {
+                cursorPosition++;
+            }
+
+            //Le asignamos la máscara al texto que se ponga en el textbox
+            objAddCustomers.txtPhone.Text = text;
+
+            //Restablecemos la posición del cursor con la variable que se guardó antes
+            objAddCustomers.txtPhone.SelectionStart = cursorPosition;
+        }
+
+        private void pasteDisabledNames (object sender, KeyEventArgs e)
+        {
+            // Verifica si se está presionando Ctrl+C o Ctrl+V
+            if (e.Control && (e.KeyCode == Keys.C || e.KeyCode == Keys.V))
+            {
+                // Cancela la operación
+                e.SuppressKeyPress = true;
+            }
+        }
+        private void pasteDisabledLastNames(object sender, KeyEventArgs e)
+        {
+            // Verifica si se está presionando Ctrl+C o Ctrl+V
+            if (e.Control && (e.KeyCode == Keys.C || e.KeyCode == Keys.V))
+            {
+                // Cancela la operación
+                e.SuppressKeyPress = true;
+            }
+        }
+        private void pasteDisabledDocument(object sender, KeyEventArgs e)
+        {
+            // Verifica si se está presionando Ctrl+C o Ctrl+V
+            if (e.Control && (e.KeyCode == Keys.C || e.KeyCode == Keys.V))
+            {
+                // Cancela la operación
+                e.SuppressKeyPress = true;
+            }
+        }
+        private void pasteDisabledAddress(object sender, KeyEventArgs e)
+        {
+            // Verifica si se está presionando Ctrl+C o Ctrl+V
+            if (e.Control && (e.KeyCode == Keys.C || e.KeyCode == Keys.V))
+            {
+                // Cancela la operación
+                e.SuppressKeyPress = true;
+            }
+        }
+        private void pasteDisabledPhone(object sender, KeyEventArgs e)
+        {
+            // Verifica si se está presionando Ctrl+C o Ctrl+V
+            if (e.Control && (e.KeyCode == Keys.C || e.KeyCode == Keys.V))
+            {
+                // Cancela la operación
+                e.SuppressKeyPress = true;
+            }
+        }
+        private void pasteDisabledEmail(object sender, KeyEventArgs e)
+        {
+            // Verifica si se está presionando Ctrl+C o Ctrl+V
+            if (e.Control && (e.KeyCode == Keys.C || e.KeyCode == Keys.V))
+            {
+                // Cancela la operación
+                e.SuppressKeyPress = true;
+            }
+        }
+
     }
 }
 
