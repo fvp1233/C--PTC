@@ -37,7 +37,6 @@ namespace PTC2024.Model.DAO.CustomersDAO
 
                 //Retorna el dataset
                 return ds;
-
             }
             catch (SqlException ex)
             {
@@ -52,9 +51,8 @@ namespace PTC2024.Model.DAO.CustomersDAO
         }
         public int RegisterCustomer()
         {
-
             try
-            {//Consulta si el usuario existe
+            {//Consulta si el cliente existe
                 command.Connection = getConnection();
                 //Define la consulta para seleccionar a traves del DUI
                 string queryUserExist = "select DUI from dbo.tbCustomer where DUI=@DUI";
@@ -68,7 +66,6 @@ namespace PTC2024.Model.DAO.CustomersDAO
                 {
                     MessageBox.Show("Cliente ingresado ya Existente");
                     return 1;
-
                 }
 
 
@@ -91,10 +88,8 @@ namespace PTC2024.Model.DAO.CustomersDAO
 
                 if (respuesta == 1)
                 {
-
                     //Retorna el valor de la variable respuesta
                     return respuesta;
-
                 }
                 else
                 {//Rollback para eliminar el cliente que se esta llenando
@@ -106,7 +101,6 @@ namespace PTC2024.Model.DAO.CustomersDAO
             {
                 Rollback();
                 return -1;
-
             }
             finally
             {
@@ -121,10 +115,6 @@ namespace PTC2024.Model.DAO.CustomersDAO
             SqlCommand cmdDeleteCustomer = new SqlCommand(queryDeleteCustomer, command.Connection);
             cmdDeleteCustomer.Parameters.AddWithValue("IdTypeC", IdCustomer);
         }
-
-
-
-
     }
 
 

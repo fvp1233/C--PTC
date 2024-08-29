@@ -37,49 +37,19 @@ namespace PTC2024.Controller.CustomersController
 
         }
 
-        //Metodo para actualizar un cliente
-        public void UpdateCustomers(object sender, EventArgs e)
+        //Metodo que carga los datos(refresca todo los datos del datagridview)
+        public void LoadData(object sender, EventArgs e)
         {
 
-            //Se llenan los parametros del datagridview, en su correspondiente columna
-            int pos = objCustomers.dgvCustomers.CurrentRow.Index;
-            int id = int.Parse(objCustomers.dgvCustomers[0, pos].Value.ToString());
-            string dui = objCustomers.dgvCustomers[1, pos].Value.ToString();
-            string names = objCustomers.dgvCustomers[2, pos].Value.ToString();
-            string lastNames = objCustomers.dgvCustomers[3, pos].Value.ToString();
-            string phone = objCustomers.dgvCustomers[4, pos].Value.ToString();
-            string email = objCustomers.dgvCustomers[5, pos].Value.ToString();
-            string address = objCustomers.dgvCustomers[6, pos].Value.ToString();
-
-
-
-
-            FrmUploadCustomers objUpdateCustomers = new FrmUploadCustomers(id, dui, names, lastNames, phone, email, address);
-
-
-
-            objUpdateCustomers.ShowDialog();
             refreshData();
-
-
         }
 
-
-        //Metodo para refrescar al añadir un cliente
-        public void AddCustomer(object sender, EventArgs e)
+        //Metodo que filtra todos los clientes existentes
+        public void ChekedTodos(object sender, EventArgs e)
         {
-            FrmAddCustomers abrirForm = new FrmAddCustomers();
-            abrirForm.ShowDialog();
-            refreshData();
-
-        }
-
-        //Metodo que filtra los cheques de los clientes naturales
-        public void ChekedNatural(object sender, EventArgs e)
-        {
-            objCustomers.chkNatural.Checked = true;
+            objCustomers.chkTodos.Checked = true;
+            objCustomers.chkNatural.Checked = false;
             objCustomers.chkJuridico.Checked = false;
-            objCustomers.chkTodos.Checked = false;
             refreshData();
         }
 
@@ -92,21 +62,42 @@ namespace PTC2024.Controller.CustomersController
             refreshData();
         }
 
-        //Metodo que filtra todos los clientes existentes
-        public void ChekedTodos(object sender, EventArgs e)
+        //Metodo que filtra los cheques de los clientes naturales
+        public void ChekedNatural(object sender, EventArgs e)
         {
-            objCustomers.chkTodos.Checked = true; 
-            objCustomers.chkNatural.Checked = false;
+            objCustomers.chkNatural.Checked = true;
             objCustomers.chkJuridico.Checked = false;
+            objCustomers.chkTodos.Checked = false;
             refreshData();
         }
 
-        //Metodo que carga los datos(refresca todo los datos del datagridview)
-        public void LoadData(object sender, EventArgs e)
+        //Metodo para refrescar al añadir un cliente
+        public void AddCustomer(object sender, EventArgs e)
         {
-
+            FrmAddCustomers abrirForm = new FrmAddCustomers();
+            abrirForm.ShowDialog();
             refreshData();
         }
+
+        //Metodo para actualizar un cliente
+        public void UpdateCustomers(object sender, EventArgs e)
+        {
+            //Se llenan los parametros del datagridview, en su correspondiente columna
+            int pos = objCustomers.dgvCustomers.CurrentRow.Index;
+            int id = int.Parse(objCustomers.dgvCustomers[0, pos].Value.ToString());
+            string dui = objCustomers.dgvCustomers[1, pos].Value.ToString();
+            string names = objCustomers.dgvCustomers[2, pos].Value.ToString();
+            string lastNames = objCustomers.dgvCustomers[3, pos].Value.ToString();
+            string phone = objCustomers.dgvCustomers[4, pos].Value.ToString();
+            string email = objCustomers.dgvCustomers[5, pos].Value.ToString();
+            string address = objCustomers.dgvCustomers[6, pos].Value.ToString();
+
+            FrmUploadCustomers objUpdateCustomers = new FrmUploadCustomers(id, dui, names, lastNames, phone, email, address);
+
+            objUpdateCustomers.ShowDialog();
+            refreshData();
+        }
+
 
         //Metodo que muestra y recarga todos los clientes
         public void refreshData()
@@ -164,10 +155,7 @@ namespace PTC2024.Controller.CustomersController
 
                 //Se refresca el DataGridView
                 refreshData();
-
             }
-
-
         }
 
         //Metodo para buscar un cliente 
@@ -183,6 +171,23 @@ namespace PTC2024.Controller.CustomersController
             //Se le dice al DataGridView lo que tiene que mostrar (Vista de los clientes)
             objCustomers.dgvCustomers.DataSource = respuesta.Tables["viewCustomers"];
         }
+
+        public void ViewClientInfo (object sender, EventArgs e)
+        {
+            int row = objCustomers.dgvCustomers.CurrentRow.Index;
+
+            int  employeeType;
+
+            string names, lastnames, DUI, address, email, phone;
+                
+          names = objCustomers.dgvCustomers[1, row].Value.ToString();
+            lastnames = objCustomers.dgvCustomers[2, row].Value.ToString();
+            DUI = objCustomers.dgvCustomers[3, row].Value.ToString();
+            email = objCustomers.dgvCustomers[4, row].Value.ToString();
+            address = objCustomers.dgvCustomers[5,row].Value.ToString();
+            phone = objCustomers.dgvCustomers[6, row].Value.ToString();
+            employeeType = int.Parse(objCustomers.dgvCustomers[7, row].Value.ToString());
+    }
     }
 }
 

@@ -12,7 +12,6 @@ namespace PTC2024.Model.DAO.CustomersDAO
 {
  class DAOUpdateCustomers:DTOUpdateCustomers
     {
-        
         readonly SqlCommand command = new SqlCommand();
 
         //Metodo para actualizar Clientes
@@ -37,7 +36,8 @@ namespace PTC2024.Model.DAO.CustomersDAO
                 //La consulta la guardara en la variable respuesta
                 int respuesta = cmd.ExecuteNonQuery();
 
-                if (respuesta == 1) {
+                if (respuesta == 1) 
+                {
                     return respuesta;
                 }
 

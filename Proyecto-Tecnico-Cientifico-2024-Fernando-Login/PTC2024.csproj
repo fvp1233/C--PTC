@@ -277,6 +277,12 @@
     <Compile Include="View\CustomersView\FrmCustomers.Designer.cs">
       <DependentUpon>FrmCustomers.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\CustomersView\FrmCustomersInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CustomersView\FrmCustomersInfo.Designer.cs">
+      <DependentUpon>FrmCustomersInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CustomersView\FrmUpdateCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -506,6 +512,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomersView\FrmCustomers.resx">
       <DependentUpon>FrmCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CustomersView\FrmCustomersInfo.resx">
+      <DependentUpon>FrmCustomersInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomersView\FrmUpdateCustomer.resx">
       <DependentUpon>FrmUpdateCustomer.cs</DependentUpon>
