@@ -36,38 +36,45 @@ namespace PTC2024.Controller.PayrollsController
         }
         public void AddPermission(object sender, EventArgs e)
         {
-            DAOAddPermission DaoInsert = new DAOAddPermission();
-            if (objAddPermission.dtpStart.Value >= DateTime.Now && objAddPermission.dtpEnd.Value >= objAddPermission.dtpStart.Value)
+            if (!(string.IsNullOrEmpty(objAddPermission.rtxtContext.Text.Trim()) || string.IsNullOrEmpty(objAddPermission.txtIdEmployee.Text.Trim())))
             {
-                DaoInsert.Start = objAddPermission.dtpStart.Value.Date;
-                DaoInsert.End = objAddPermission.dtpEnd.Value.Date;
-                DaoInsert.Context = objAddPermission.rtxtContext.Text.Trim();
-                DaoInsert.IdEmployee = int.Parse(objAddPermission.txtIdEmployee.Text.Trim());
-                DaoInsert.IdStatusPermission = int.Parse(objAddPermission.cmbStatusPermission.SelectedValue.ToString());
-                DaoInsert.IdTypePermission = int.Parse(objAddPermission.cmbTypePermission.SelectedValue.ToString());
-                int returnedValue = DaoInsert.InsertPermission();
-                if (returnedValue == 1)
+                DAOAddPermission DaoInsert = new DAOAddPermission();
+                if (objAddPermission.dtpStart.Value >= DateTime.Now && objAddPermission.dtpEnd.Value >= objAddPermission.dtpStart.Value)
                 {
-                    MessageBox.Show("Los datos han sido registrados exitosamente",
-                "Proceso completado",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+                    DaoInsert.Start = objAddPermission.dtpStart.Value.Date;
+                    DaoInsert.End = objAddPermission.dtpEnd.Value.Date;
+                    DaoInsert.Context = objAddPermission.rtxtContext.Text.Trim();
+                    DaoInsert.IdEmployee = int.Parse(objAddPermission.txtIdEmployee.Text.Trim());
+                    DaoInsert.IdStatusPermission = int.Parse(objAddPermission.cmbStatusPermission.SelectedValue.ToString());
+                    DaoInsert.IdTypePermission = int.Parse(objAddPermission.cmbTypePermission.SelectedValue.ToString());
+                    int returnedValue = DaoInsert.InsertPermission();
+                    if (returnedValue == 1)
+                    {
+                        MessageBox.Show("Los datos han sido registrados exitosamente",
+                    "Proceso completado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Los datos no pudieron ser registrados",
+                                        "Proceso interrumpido",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+                    }
+                    Close();
                 }
                 else
                 {
-                    MessageBox.Show("Los datos no pudieron ser registrados",
-                                    "Proceso interrumpido",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
+                    MessageBox.Show("La fecha ingresada no puede ser de un dia anterior",
+                  "Fecha invalida",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Information);
                 }
-                Close();
             }
             else
             {
-                MessageBox.Show("La fecha ingresada no puede ser de un dia anterior",
-              "Fecha invalida",
-              MessageBoxButtons.OK,
-              MessageBoxIcon.Information);
+                MessageBox.Show("Todos los campos son obligatorios, llene todos los apartados.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         public void Close()
