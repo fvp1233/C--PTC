@@ -18,7 +18,7 @@ namespace PTC2024.Model.DTO.CustomersDTO
         private string address;
         private string email;
         private string phone;
-        private int employeeType;
+        private int clientType;
 
         //Getters y Setters
         public int IdCustomer { get => idCustomer; set => idCustomer = value; }
@@ -28,6 +28,6 @@ namespace PTC2024.Model.DTO.CustomersDTO
         public string Address { get => address; set => address = value; }
         public string Email { get => email; set => email = value; }
         public string Phone { get => phone; set => phone = value; }
-        public int EmployeeType { get => employeeType; set => employeeType = value; }
+        public int ClientType { get => clientType; set => clientType = value; }
     }
 }
