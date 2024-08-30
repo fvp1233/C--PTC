@@ -19,6 +19,9 @@ namespace PTC2024.Controller.PayrollsController
             objAddPermission.Load += new EventHandler(FillDropdown);
             objAddPermission.btnAddPermission.Click += new EventHandler(AddPermission);
             objAddPermission.btnCancel.Click += new EventHandler(CloseForm);
+            objAddPermission.rtxtContext.KeyDown += new KeyEventHandler(pasteContext);
+            objAddPermission.txtIdEmployee.KeyDown += new KeyEventHandler(pasteDisabledNames);
+
         }
         public void FillDropdown(object sender, EventArgs e)
         {
@@ -27,7 +30,7 @@ namespace PTC2024.Controller.PayrollsController
             DataSet dsTypePermission = daoddPermission.GetTypePermission();
             objAddPermission.cmbTypePermission.DataSource = dsTypePermission.Tables["tbTypePermission"];
             objAddPermission.cmbTypePermission.DisplayMember = "typePermisiion";
-            objAddPermission.cmbTypePermission.ValueMember = "IdTypePermission"; 
+            objAddPermission.cmbTypePermission.ValueMember = "IdTypePermission";
 
             DataSet dsStatusPermission = daoddPermission.GetStatusPermission();
             objAddPermission.cmbStatusPermission.DataSource = dsStatusPermission.Tables["tbStatusPermission"];
@@ -84,7 +87,25 @@ namespace PTC2024.Controller.PayrollsController
         }
         public void CloseForm(object sender, EventArgs e)
         {
-            Close()
-;       }
+            Close();
+        }
+        private void pasteDisabledNames(object sender, KeyEventArgs e)
+        {
+            // Verifica si se está presionando Ctrl+C o Ctrl+V
+            if (e.Control && (e.KeyCode == Keys.C || e.KeyCode == Keys.V))
+            {
+                // Cancela la operación
+                e.SuppressKeyPress = true;
+            }
+        }
+        public void pasteContext(object sender, KeyEventArgs e)
+        {
+            // Verifica si se está presionando Ctrl+C o Ctrl+V
+            if (e.Control && (e.KeyCode == Keys.C || e.KeyCode == Keys.V))
+            {
+                // Cancela la operación
+                e.SuppressKeyPress = true;
+            }
+        }
     }
 }

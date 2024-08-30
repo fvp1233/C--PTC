@@ -251,6 +251,90 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 getConnection().Close();
             }
         }
+        public DataSet SerachPayrollFirstTrimester()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) BETWEEN 1 AND 3";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SerachPayrollSecondTrimester()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) BETWEEN 4 AND 6";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SerachPayrollThirthTrimester()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) BETWEEN 7 AND 9";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SerachPayrollFourthTrimester()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) BETWEEN 10 AND 12";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
         public DataSet SearchPayrollJanuary()
         {
             try
