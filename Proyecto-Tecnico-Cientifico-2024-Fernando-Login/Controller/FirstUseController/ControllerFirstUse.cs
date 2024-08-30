@@ -23,6 +23,8 @@ namespace PTC2024.Controller.FirstUseController
             objFistUse = View;
             View.btnSave.Click += new EventHandler(SaveInfo);
             View.btnAddImage.Click += new EventHandler(PutImage);
+            objFistUse.txtPhone.TextChanged += new EventHandler(PhoneMask);
+            objFistUse.txtPBX.TextChanged += new EventHandler(PhoneMask);
 
         }
         void SaveInfo(object sender, EventArgs e)
@@ -113,6 +115,33 @@ namespace PTC2024.Controller.FirstUseController
                 return false;
             }
             return true;
+        }
+
+        public void PhoneMask(object sender, EventArgs e)
+        {
+            //Aqui se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar y no sea molesto para el usuario
+            int cursorPosition = objFistUse.txtPhone.SelectionStart;
+
+            //Con esto se remueve cualquier dato no numérico
+            string text = new string(objFistUse.txtPhone.Text.Where(c => char.IsDigit(c)).ToArray());
+
+            if (text.Length >= 5)
+            {
+                text = text.Insert(4, "-");
+
+            }
+
+            //Con esto se reposiciona el cursor, ya no se coloca antes del numero que va siguiente al guion, si no que se reajusta para que  se ponga en el orden que iba anteriormente
+            if (cursorPosition == 5)
+            {
+                cursorPosition++;
+            }
+
+            //Le asignamos la máscara al texto que se ponga en el textbox
+            objFistUse.txtPhone.Text = text;
+
+            //Restablecemos la posición del cursor con la variable que se guardó antes
+            objFistUse.txtPhone.SelectionStart = cursorPosition;
         }
     }
 }

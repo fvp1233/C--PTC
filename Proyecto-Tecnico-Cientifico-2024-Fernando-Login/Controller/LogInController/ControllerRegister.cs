@@ -261,6 +261,18 @@ namespace PTC2024.Controller.LogInController
             //Con esto se remueve cualquier dato no numérico
             string text = new string(objRegister.txtPhone.Text.Where(c => char.IsDigit(c)).ToArray());
 
+            if (text.Length >= 5)
+            {
+                text = text.Insert(4, "-");
+
+            }
+
+            //Con esto se reposiciona el cursor, ya no se coloca antes del numero que va siguiente al guion, si no que se reajusta para que  se ponga en el orden que iba anteriormente
+            if (cursorPosition == 5)
+            {
+                cursorPosition++;
+            }
+
             //Le asignamos la máscara al texto que se ponga en el textbox
             objRegister.txtPhone.Text = text;
 

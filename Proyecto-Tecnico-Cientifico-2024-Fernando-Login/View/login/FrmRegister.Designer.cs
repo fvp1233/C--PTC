@@ -606,7 +606,7 @@
             this.txtAffiliationNumber.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAffiliationNumber.Lines = new string[0];
             this.txtAffiliationNumber.Location = new System.Drawing.Point(16, 51);
-            this.txtAffiliationNumber.MaxLength = 70;
+            this.txtAffiliationNumber.MaxLength = 9;
             this.txtAffiliationNumber.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtAffiliationNumber.Modified = false;
             this.txtAffiliationNumber.Multiline = false;
@@ -683,7 +683,7 @@
             this.txtBankAccount.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBankAccount.Lines = new string[0];
             this.txtBankAccount.Location = new System.Drawing.Point(282, 51);
-            this.txtBankAccount.MaxLength = 100;
+            this.txtBankAccount.MaxLength = 28;
             this.txtBankAccount.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtBankAccount.Modified = false;
             this.txtBankAccount.Multiline = false;
@@ -1426,7 +1426,7 @@
             this.txtPhone.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPhone.Lines = new string[0];
             this.txtPhone.Location = new System.Drawing.Point(548, 113);
-            this.txtPhone.MaxLength = 8;
+            this.txtPhone.MaxLength = 9;
             this.txtPhone.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPhone.Modified = false;
             this.txtPhone.Multiline = false;

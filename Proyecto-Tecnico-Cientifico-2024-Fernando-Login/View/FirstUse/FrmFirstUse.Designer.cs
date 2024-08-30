@@ -380,7 +380,7 @@
             this.txtPBX.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPBX.Lines = new string[0];
             this.txtPBX.Location = new System.Drawing.Point(16, 330);
-            this.txtPBX.MaxLength = 12;
+            this.txtPBX.MaxLength = 9;
             this.txtPBX.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPBX.Modified = false;
             this.txtPBX.Multiline = false;
@@ -800,7 +800,7 @@
             this.txtPhone.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPhone.Lines = new string[0];
             this.txtPhone.Location = new System.Drawing.Point(285, 261);
-            this.txtPhone.MaxLength = 12;
+            this.txtPhone.MaxLength = 9;
             this.txtPhone.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPhone.Modified = false;
             this.txtPhone.Multiline = false;

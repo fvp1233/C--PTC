@@ -862,7 +862,7 @@
             this.txtBankAccount.Lines = new string[0];
             this.txtBankAccount.Location = new System.Drawing.Point(522, 42);
             this.txtBankAccount.MaximumSize = new System.Drawing.Size(330, 32);
-            this.txtBankAccount.MaxLength = 200;
+            this.txtBankAccount.MaxLength = 28;
             this.txtBankAccount.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtBankAccount.Modified = false;
             this.txtBankAccount.Multiline = false;
@@ -939,7 +939,7 @@
             this.txtAffiliationNumber.Lines = new string[0];
             this.txtAffiliationNumber.Location = new System.Drawing.Point(269, 42);
             this.txtAffiliationNumber.MaximumSize = new System.Drawing.Size(330, 32);
-            this.txtAffiliationNumber.MaxLength = 80;
+            this.txtAffiliationNumber.MaxLength = 9;
             this.txtAffiliationNumber.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtAffiliationNumber.Modified = false;
             this.txtAffiliationNumber.Multiline = false;
