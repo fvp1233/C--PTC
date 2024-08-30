@@ -22,6 +22,11 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls = Vista;
             objViewPayrolls.Load += new EventHandler(LoadData);
             objViewPayrolls.picNotification.Click += new EventHandler(ChangeStatus);
+            objViewPayrolls.btnAll.Click += new EventHandler(SearchAll);
+            objViewPayrolls.btnFirstT.Click += new EventHandler(SearchByFirstTrimester);
+            objViewPayrolls.btnSecondT.Click += new EventHandler(SearchBySecondTrimester);
+            objViewPayrolls.btnThirtht.Click += new EventHandler(SearchByThirthTrimester);
+            objViewPayrolls.btnFourth.Click += new EventHandler(SearchByFourthTrimester);
             objViewPayrolls.ch1.Click += new EventHandler(SearchByMonth1);
             objViewPayrolls.ch2.Click += new EventHandler(SearchByMonth2);
             objViewPayrolls.ch3.Click += new EventHandler(SearchByMonth3);
@@ -847,6 +852,36 @@ namespace PTC2024.Controller.EmployeesController
             RefreshData();
         }
         #region Aca estan los metodos para los checkbox
+        public void SearchAll(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.GetEmployeesDgv();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
+        public void SearchByFirstTrimester(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SerachPayrollFirstTrimester();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
+        public void SearchBySecondTrimester(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SerachPayrollSecondTrimester();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
+        public void SearchByThirthTrimester(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SerachPayrollThirthTrimester();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
+        public void SearchByFourthTrimester(object sender, EventArgs e)
+        {
+            DAOViewPayrolls objSearch = new DAOViewPayrolls();
+            DataSet ds = objSearch.SerachPayrollFourthTrimester();
+            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+        }
         public void SearchByMonth1(object sender, EventArgs e)
         {
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
