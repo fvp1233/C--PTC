@@ -21,9 +21,16 @@ namespace PTC2024.Controller.EmployeesController
         private string maritalStatus;
         private string status;
         private string businessP;
+        private int idBank;
+        private int idDepartment;
+        private int idTypeE;
+        private int idMaritalS;
+        private int idStatus;
+        private int idBusinessP;
+
         bool emailValidation;
         //CONSTRUCTOR
-        public ControllerUpdateEmployee(FrmUpdateEmployee View, int employeeId, string names, string lastNames, string dui, DateTime birthDate, string email, string phone, string address, double salary, string bankAccount, string bank, string affiliationNumber, DateTime hireDate, string department, string employeeType, string maritalStatus, string status, string username, string businessP)
+        public ControllerUpdateEmployee(FrmUpdateEmployee View, int employeeId, string names, string lastNames, string dui, DateTime birthDate, string email, string phone, string address, double salary, string bankAccount, string bank, string affiliationNumber, DateTime hireDate, string department, string employeeType, string maritalStatus, string status, string username, string businessP, int Idbank, int idDepartment, int idTypeE, int idMaritalS, int idStatus, int idBusinessP)
         {
             objUpdateEmployee = View;
             //variables para que los combobox aparezcan seleccionados según los datos del registro
@@ -33,8 +40,14 @@ namespace PTC2024.Controller.EmployeesController
             this.maritalStatus = maritalStatus;
             this.status = status;
             this.businessP = businessP;
+            this.idBank = Idbank;
+            this.idDepartment = idDepartment;
+            this.idTypeE = idTypeE;
+            this.idMaritalS = idMaritalS;
+            this.idStatus = idStatus;
+            this.idBusinessP = idBusinessP;
             //Métodos del formulario
-            ChargeValues(employeeId ,names, lastNames, dui, birthDate, email, phone, address, salary, bankAccount, bank, affiliationNumber, hireDate, department, employeeType, maritalStatus, status, username, businessP);
+            ChargeValues(employeeId ,names, lastNames, dui, birthDate, email, phone, address, salary, bankAccount, affiliationNumber, hireDate, username);
             EvaluateCEO(businessP);
             objUpdateEmployee.Load += new EventHandler(ChargeInfo);
             objUpdateEmployee.BtnCancelar.Click += new EventHandler(CancelProcess);
@@ -164,7 +177,7 @@ namespace PTC2024.Controller.EmployeesController
             objUpdateEmployee.comboMaritalStatus.DisplayMember = "maritalStatus";
             objUpdateEmployee.comboMaritalStatus.ValueMember = "IdMaritalS";
             //Para que el dropdown tenga seleccionado el dato del registro:
-            objUpdateEmployee.comboMaritalStatus.Text = maritalStatus;
+            objUpdateEmployee.comboMaritalStatus.SelectedValue = idMaritalS;
 
             //Dropdown de Departamentos
             DataSet dsDepartamentos = daoUpdateEmployee.ObtenerDepartamentos();
@@ -172,7 +185,7 @@ namespace PTC2024.Controller.EmployeesController
             objUpdateEmployee.comboDepartment.DisplayMember = "departmentName";
             objUpdateEmployee.comboDepartment.ValueMember = "IdDepartment";
             //Para que el dropdown tenga seleccionado el dato del registro:
-            objUpdateEmployee.comboDepartment.Text = department;
+            objUpdateEmployee.comboDepartment.SelectedValue = idDepartment;
 
             //Dropdown de tipos de empleado
             DataSet dsTiposEmpleado = daoUpdateEmployee.ObtenerTiposEmpleado();
@@ -180,23 +193,36 @@ namespace PTC2024.Controller.EmployeesController
             objUpdateEmployee.comboEmployeeType.DisplayMember = "typeEmployee";
             objUpdateEmployee.comboEmployeeType.ValueMember = "IdTypeE";
             //Para que el dropdown tenga seleccionado el dato del registro:
-            objUpdateEmployee.comboEmployeeType.Text = employeeType;
+            objUpdateEmployee.comboEmployeeType.SelectedValue = idTypeE;
 
             //Dropdown de puestos de empleado
-            DataSet dsPuestosEmpleado = daoUpdateEmployee.ObtenerPuestosEmpleado();
-            objUpdateEmployee.comboBusinessP.DataSource = dsPuestosEmpleado.Tables["tbBusinessP"];
-            objUpdateEmployee.comboBusinessP.DisplayMember = "businessPosition";
-            objUpdateEmployee.comboBusinessP.ValueMember = "IdBusinessP";
-            //Para que el dropdown tenga seleccionado el dato del registro:
-            objUpdateEmployee.comboBusinessP.Text = businessP;
-
+            if (businessP == "CEO")
+            {
+                //en caso de que se esté actualizando al CEO
+                DataSet dsPuestosEmpleadoCEO = daoUpdateEmployee.ObtainBusinessPositionsCEOCase();
+                objUpdateEmployee.comboBusinessP.DataSource = dsPuestosEmpleadoCEO.Tables["tbBusinessP"];
+                objUpdateEmployee.comboBusinessP.DisplayMember = "businessPosition";
+                objUpdateEmployee.comboBusinessP.ValueMember = "IdBusinessP";
+                //Para que el dropdown tenga seleccionado el dato del registro:
+                objUpdateEmployee.comboBusinessP.SelectedValue = idBusinessP;
+            }
+            else
+            {
+                DataSet dsPuestosEmpleado = daoUpdateEmployee.ObtenerPuestosEmpleado();
+                objUpdateEmployee.comboBusinessP.DataSource = dsPuestosEmpleado.Tables["tbBusinessP"];
+                objUpdateEmployee.comboBusinessP.DisplayMember = "businessPosition";
+                objUpdateEmployee.comboBusinessP.ValueMember = "IdBusinessP";
+                //Para que el dropdown tenga seleccionado el dato del registro:
+                objUpdateEmployee.comboBusinessP.SelectedValue = idBusinessP;
+            }
+            
             //Dropdown de estado de empleado
             DataSet dsEstadosEmpleado = daoUpdateEmployee.ObtenerEstadosEmpleado();
             objUpdateEmployee.comboEmployeeStatus.DataSource = dsEstadosEmpleado.Tables["tbEmployeeStatus"];
             objUpdateEmployee.comboEmployeeStatus.DisplayMember = "employeeStatus";
             objUpdateEmployee.comboEmployeeStatus.ValueMember = "IdStatus";
             //Para que el dropdown tenga seleccionado el dato del registro:
-            objUpdateEmployee.comboEmployeeStatus.Text = status;
+            objUpdateEmployee.comboEmployeeStatus.SelectedValue = idStatus;
 
             //Dropdown de Bancos
             DataSet dsBanks = daoUpdateEmployee.ObtainBanks();
@@ -204,7 +230,7 @@ namespace PTC2024.Controller.EmployeesController
             objUpdateEmployee.comboBanks.DisplayMember = "BankName";
             objUpdateEmployee.comboBanks.ValueMember = "IdBank";
             //Para que el dropdown tenga seleccionado el dato del registro:
-            objUpdateEmployee.comboBanks.Text = bank;
+            objUpdateEmployee.comboBanks.SelectedValue = idBank;
 
             //PARA HACER INVISIBLE EL TEXTBOX DEL ID DE EMPLEADO Y lblSalaryRequest:
             objUpdateEmployee.txtEmployeeId.Visible = false;
@@ -215,7 +241,7 @@ namespace PTC2024.Controller.EmployeesController
             objUpdateEmployee.txtUsername.Enabled = false;
         }
 
-        public void ChargeValues( int employeeId, string names, string lastNames, string dui, DateTime birthDate, string email, string phone, string address, double salary, string bankAccount, string bank, string affiliationNumber, DateTime hireDate, string department, string employeeType, string maritalStatus, string status, string username, string businessP)
+        public void ChargeValues( int employeeId, string names, string lastNames, string dui, DateTime birthDate, string email, string phone, string address, double salary, string bankAccount, string affiliationNumber, DateTime hireDate, string username)
         {
             try
             {
@@ -227,19 +253,11 @@ namespace PTC2024.Controller.EmployeesController
                 objUpdateEmployee.txtPhone.Text = phone;
                 objUpdateEmployee.txtEmail.Text = email;
                 objUpdateEmployee.dpHireDate.Value = hireDate;
-                objUpdateEmployee.comboMaritalStatus.Text = maritalStatus.ToString();
-                objUpdateEmployee.comboDepartment.Text = department.ToString();
-                objUpdateEmployee.comboEmployeeType.Text = employeeType.ToString();
-                objUpdateEmployee.comboEmployeeStatus.Text = status.ToString();
                 objUpdateEmployee.txtSalary.Text = salary.ToString();
                 objUpdateEmployee.txtAffiliationNumber.Text = affiliationNumber.ToString();
                 objUpdateEmployee.txtBankAccount.Text = bankAccount;
-                objUpdateEmployee.comboBanks.Text = bank.ToString();
                 objUpdateEmployee.txtUsername.Text = username;
-                objUpdateEmployee.comboBusinessP.Text = businessP.ToString();
                 objUpdateEmployee.txtEmployeeId.Text = employeeId.ToString();
-
-
             }
             catch (Exception ex)
             {

@@ -90,6 +90,12 @@ namespace PTC2024.Controller.Employees
             objEmployees.dgvEmployees.Columns[14].Visible = false;
             objEmployees.dgvEmployees.Columns[15].Visible = false;
             objEmployees.dgvEmployees.Columns[18].Visible = false;
+            objEmployees.dgvEmployees.Columns[20].Visible = false;
+            objEmployees.dgvEmployees.Columns[21].Visible = false;
+            objEmployees.dgvEmployees.Columns[22].Visible = false;
+            objEmployees.dgvEmployees.Columns[23].Visible = false;
+            objEmployees.dgvEmployees.Columns[24].Visible = false;
+            objEmployees.dgvEmployees.Columns[25].Visible = false;
         }
 
         public void RefreshDataGridDisabledEmployees()
@@ -108,6 +114,12 @@ namespace PTC2024.Controller.Employees
             objEmployees.dgvEmployees.Columns[14].Visible = false;
             objEmployees.dgvEmployees.Columns[15].Visible = false;
             objEmployees.dgvEmployees.Columns[18].Visible = false;
+            objEmployees.dgvEmployees.Columns[20].Visible = false;
+            objEmployees.dgvEmployees.Columns[21].Visible = false;
+            objEmployees.dgvEmployees.Columns[22].Visible = false;
+            objEmployees.dgvEmployees.Columns[23].Visible = false;
+            objEmployees.dgvEmployees.Columns[24].Visible = false;
+            objEmployees.dgvEmployees.Columns[25].Visible = false;
         }
 
         public void ViewEmployeeInfo(object sender, EventArgs e)
@@ -191,7 +203,13 @@ namespace PTC2024.Controller.Employees
                         objEmployees.dgvEmployees[15, row].Value.ToString(),
                         objEmployees.dgvEmployees[16, row].Value.ToString(),
                         objEmployees.dgvEmployees[17, row].Value.ToString(),
-                        objEmployees.dgvEmployees[19, row].Value.ToString()
+                        objEmployees.dgvEmployees[19, row].Value.ToString(),
+                        int.Parse(objEmployees.dgvEmployees[20, row].Value.ToString()),
+                        int.Parse(objEmployees.dgvEmployees[21, row].Value.ToString()),
+                        int.Parse(objEmployees.dgvEmployees[22, row].Value.ToString()),
+                        int.Parse(objEmployees.dgvEmployees[23, row].Value.ToString()),
+                        int.Parse(objEmployees.dgvEmployees[24, row].Value.ToString()),
+                        int.Parse(objEmployees.dgvEmployees[25, row].Value.ToString())
                         );
                     abrirfForm.ShowDialog();
                     RefreshDataGridEmployees();

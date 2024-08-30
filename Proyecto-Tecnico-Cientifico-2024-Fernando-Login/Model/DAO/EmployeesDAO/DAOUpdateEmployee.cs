@@ -275,7 +275,44 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-005: No se puedieron obtener los datos de los Puestos de empleado");
+                MessageBox.Show($"EC-005: No se puedieron obtener los datos de los Puestos de empleado\n\n{ex.Message}");
+                return null;
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
+
+        public DataSet ObtainBusinessPositionsCEOCase()
+        {
+            try
+            {
+                //conexion con la base
+                Command.Connection = getConnection();
+                //query de la consulta
+                string query = "SELECT * FROM tbBusinessP";
+                //Comando SQL con query y conexión
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                //ejecutamos el comando
+                cmd.ExecuteNonQuery();
+
+                //El adaptador recibe la info que encontró el "cmd"
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                //el siguiente dataset va a ser el que el método va a devolver
+                DataSet ds = new DataSet();
+
+                //se llena el dataset "ds" con la información que recibió el adaptador "adp"
+                adp.Fill(ds, "tbBusinessP");
+
+                //se devuelve el dataset
+                return ds;
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"EC-005: No se puedieron obtener los datos de los Puestos de empleado\n\n{ex.Message}");
                 return null;
             }
             finally
