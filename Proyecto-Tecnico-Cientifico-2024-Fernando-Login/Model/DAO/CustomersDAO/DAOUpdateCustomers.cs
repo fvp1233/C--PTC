@@ -32,7 +32,7 @@ namespace PTC2024.Model.DAO.CustomersDAO
                 cmd.Parameters.AddWithValue("@Phone", Phone);
                 cmd.Parameters.AddWithValue("@Email", Email);
                 cmd.Parameters.AddWithValue("@Address", Address);
-                //cmd.Parameters.AddWithValue("@idTypeC", ClientType);
+                cmd.Parameters.AddWithValue("@idTypeC", ClientType);
                 cmd.Parameters.AddWithValue("@Id", IdClient);
                 //La consulta la guardara en la variable respuesta
                 int answer = cmd.ExecuteNonQuery();

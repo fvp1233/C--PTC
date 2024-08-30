@@ -16,12 +16,12 @@ namespace PTC2024.Controller.CustomersController
         
 
         //Se declara el constructor con sus respectivos parametros
-        public ControllerUpdateCustomers(FrmUploadCustomers View, int idClient, string dui,string names, string lastnames,  string phone, string email, string address )
+        public ControllerUpdateCustomers(FrmUploadCustomers View, int idClient, string dui,string names, string lastnames,  string phone, string email, string address)
         {
 
             objUpdateCustomers = View;
             
-            ChargeValues(idClient, dui, names, lastnames, phone, email, address );
+            ChargeValues(idClient, dui, names, lastnames, phone, email, address);
             //Evento para cargar los combos
             objUpdateCustomers.Load += new EventHandler(loadCombos);
             //Evento para actulizar los clientes
@@ -54,6 +54,7 @@ namespace PTC2024.Controller.CustomersController
             daoUpdateCustomers.Email = objUpdateCustomers.txtEmail.Text;
             daoUpdateCustomers.Address = objUpdateCustomers.txtAddress.Text;
             daoUpdateCustomers.Phone = objUpdateCustomers.txtPhone.Text;
+            daoUpdateCustomers.ClientType = int.Parse(objUpdateCustomers.dpClientType.SelectedValue.ToString());
 
             int answer = daoUpdateCustomers.updateCustomers();
             if (answer == 1)
@@ -76,7 +77,6 @@ namespace PTC2024.Controller.CustomersController
                 objUpdateCustomers.txtEmail.Text= email;
                 objUpdateCustomers.txtAddress.Text = address;
                 objUpdateCustomers.txtPhone.Text = phone;
-
             }
             catch (Exception)
             {
