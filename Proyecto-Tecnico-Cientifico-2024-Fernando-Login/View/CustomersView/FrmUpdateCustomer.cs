@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -16,10 +17,11 @@ namespace PTC2024.View.Clientes
 {
     public partial class FrmUploadCustomers : Form
     {
-        public FrmUploadCustomers(int idClient,string dui, string names, string lastnames, string phone,string email, string address )
+        private int clientType;
+        public FrmUploadCustomers(int idClient,string dui, string names, string lastnames, string phone,string email, string address)
         {
             InitializeComponent();
-            ControllerUpdateCustomers obj = new ControllerUpdateCustomers(this,  idClient, dui, names, lastnames,   phone,  email,  address );
+            ControllerUpdateCustomers obj = new ControllerUpdateCustomers(this,  idClient, dui, names, lastnames,   phone,  email,  address);
             
         }
     }
