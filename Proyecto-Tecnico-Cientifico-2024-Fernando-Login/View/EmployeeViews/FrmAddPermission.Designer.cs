@@ -29,11 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddPermission));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.txtIdEmployee = new Bunifu.UI.WinForms.BunifuTextBox();
             this.cmbTypePermission = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbStatusPermission = new Bunifu.UI.WinForms.BunifuDropdown();
@@ -45,7 +50,6 @@
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.dtpStart = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtIdEmployee = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnAddPermission = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnCancel = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.bunifuGroupBox1.SuspendLayout();
@@ -76,6 +80,7 @@
             this.bunifuGroupBox1.BorderColor = System.Drawing.Color.LightGray;
             this.bunifuGroupBox1.BorderRadius = 10;
             this.bunifuGroupBox1.BorderThickness = 2;
+            this.bunifuGroupBox1.Controls.Add(this.txtIdEmployee);
             this.bunifuGroupBox1.Controls.Add(this.cmbTypePermission);
             this.bunifuGroupBox1.Controls.Add(this.bunifuCustomLabel7);
             this.bunifuGroupBox1.Controls.Add(this.cmbStatusPermission);
@@ -87,7 +92,6 @@
             this.bunifuGroupBox1.Controls.Add(this.bunifuCustomLabel5);
             this.bunifuGroupBox1.Controls.Add(this.dtpStart);
             this.bunifuGroupBox1.Controls.Add(this.bunifuCustomLabel3);
-            this.bunifuGroupBox1.Controls.Add(this.txtIdEmployee);
             this.bunifuGroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bunifuGroupBox1.LabelAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.bunifuGroupBox1.LabelIndent = 10;
@@ -98,6 +102,83 @@
             this.bunifuGroupBox1.TabIndex = 110;
             this.bunifuGroupBox1.TabStop = false;
             this.bunifuGroupBox1.Text = "Permiso";
+            // 
+            // txtIdEmployee
+            // 
+            this.txtIdEmployee.AcceptsReturn = false;
+            this.txtIdEmployee.AcceptsTab = false;
+            this.txtIdEmployee.AnimationSpeed = 200;
+            this.txtIdEmployee.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtIdEmployee.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtIdEmployee.AutoSizeHeight = true;
+            this.txtIdEmployee.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtIdEmployee.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtIdEmployee.BackgroundImage")));
+            this.txtIdEmployee.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtIdEmployee.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtIdEmployee.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.txtIdEmployee.BorderColorIdle = System.Drawing.Color.Gray;
+            this.txtIdEmployee.BorderRadius = 1;
+            this.txtIdEmployee.BorderThickness = 3;
+            this.txtIdEmployee.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
+            this.txtIdEmployee.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtIdEmployee.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtIdEmployee.DefaultFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdEmployee.DefaultText = "";
+            this.txtIdEmployee.FillColor = System.Drawing.Color.Gainsboro;
+            this.txtIdEmployee.HideSelection = true;
+            this.txtIdEmployee.IconLeft = null;
+            this.txtIdEmployee.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtIdEmployee.IconPadding = 10;
+            this.txtIdEmployee.IconRight = null;
+            this.txtIdEmployee.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtIdEmployee.Lines = new string[0];
+            this.txtIdEmployee.Location = new System.Drawing.Point(48, 48);
+            this.txtIdEmployee.MaximumSize = new System.Drawing.Size(330, 32);
+            this.txtIdEmployee.MaxLength = 150;
+            this.txtIdEmployee.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtIdEmployee.Modified = false;
+            this.txtIdEmployee.Multiline = false;
+            this.txtIdEmployee.Name = "txtIdEmployee";
+            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtIdEmployee.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtIdEmployee.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtIdEmployee.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Gray;
+            stateProperties8.FillColor = System.Drawing.Color.Gainsboro;
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtIdEmployee.OnIdleState = stateProperties8;
+            this.txtIdEmployee.Padding = new System.Windows.Forms.Padding(3);
+            this.txtIdEmployee.PasswordChar = '\0';
+            this.txtIdEmployee.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtIdEmployee.PlaceholderText = "";
+            this.txtIdEmployee.ReadOnly = false;
+            this.txtIdEmployee.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtIdEmployee.SelectedText = "";
+            this.txtIdEmployee.SelectionLength = 0;
+            this.txtIdEmployee.SelectionStart = 0;
+            this.txtIdEmployee.ShortcutsEnabled = true;
+            this.txtIdEmployee.Size = new System.Drawing.Size(225, 32);
+            this.txtIdEmployee.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
+            this.txtIdEmployee.TabIndex = 113;
+            this.txtIdEmployee.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtIdEmployee.TextMarginBottom = 0;
+            this.txtIdEmployee.TextMarginLeft = 0;
+            this.txtIdEmployee.TextMarginTop = 0;
+            this.txtIdEmployee.TextPlaceholder = "";
+            this.txtIdEmployee.UseSystemPasswordChar = false;
+            this.txtIdEmployee.WordWrap = true;
             // 
             // cmbTypePermission
             // 
@@ -317,26 +398,6 @@
             this.bunifuCustomLabel3.TabIndex = 35;
             this.bunifuCustomLabel3.Text = "Id empleado:";
             // 
-            // txtIdEmployee
-            // 
-            this.txtIdEmployee.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtIdEmployee.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtIdEmployee.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtIdEmployee.ForeColor = System.Drawing.Color.DimGray;
-            this.txtIdEmployee.HintForeColor = System.Drawing.Color.Empty;
-            this.txtIdEmployee.HintText = "";
-            this.txtIdEmployee.isPassword = false;
-            this.txtIdEmployee.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtIdEmployee.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtIdEmployee.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.txtIdEmployee.LineThickness = 3;
-            this.txtIdEmployee.Location = new System.Drawing.Point(46, 48);
-            this.txtIdEmployee.Margin = new System.Windows.Forms.Padding(4);
-            this.txtIdEmployee.Name = "txtIdEmployee";
-            this.txtIdEmployee.Size = new System.Drawing.Size(225, 31);
-            this.txtIdEmployee.TabIndex = 34;
-            this.txtIdEmployee.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // btnAddPermission
             // 
             this.btnAddPermission.AllowAnimations = true;
@@ -357,11 +418,11 @@
             this.btnAddPermission.ColorContrastOnClick = 45;
             this.btnAddPermission.ColorContrastOnHover = 45;
             this.btnAddPermission.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnAddPermission.CustomizableEdges = borderEdges1;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnAddPermission.CustomizableEdges = borderEdges3;
             this.btnAddPermission.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddPermission.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAddPermission.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -447,11 +508,11 @@
             this.btnCancel.ColorContrastOnClick = 45;
             this.btnCancel.ColorContrastOnHover = 45;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnCancel.CustomizableEdges = borderEdges2;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnCancel.CustomizableEdges = borderEdges4;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCancel.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCancel.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -544,7 +605,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.UI.WinForms.BunifuGroupBox bunifuGroupBox1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox txtIdEmployee;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         public Bunifu.UI.WinForms.BunifuDatePicker dtpStart;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
@@ -557,5 +617,6 @@
         public Bunifu.UI.WinForms.BunifuDropdown cmbStatusPermission;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
         public System.Windows.Forms.RichTextBox rtxtContext;
+        public Bunifu.UI.WinForms.BunifuTextBox txtIdEmployee;
     }
 }

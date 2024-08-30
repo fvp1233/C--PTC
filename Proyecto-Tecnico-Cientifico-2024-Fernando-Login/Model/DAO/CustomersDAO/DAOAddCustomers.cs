@@ -18,7 +18,7 @@ namespace PTC2024.Model.DAO.CustomersDAO
         readonly SqlCommand command = new SqlCommand();
 
         //Metodo para la Obtencion de datos para dropdown de tipo de cliente
-        public DataSet ObtenerTiposEmpleado()
+        public DataSet getTypeCustomers()
         {
             try
             {
@@ -81,15 +81,15 @@ namespace PTC2024.Model.DAO.CustomersDAO
                 cmdInsertCustomer.Parameters.AddWithValue("@phone", Phone);
                 cmdInsertCustomer.Parameters.AddWithValue("@email", Email);
                 cmdInsertCustomer.Parameters.AddWithValue("@address", Address);
-                cmdInsertCustomer.Parameters.AddWithValue("@IdTypeC", EmployeeType);
+                cmdInsertCustomer.Parameters.AddWithValue("@IdTypeC", ClientType);
 
                 //Se ejecuta la consulta y se guarda en la variable respuesta
-                int respuesta = cmdInsertCustomer.ExecuteNonQuery();
+                int answer = cmdInsertCustomer.ExecuteNonQuery();
 
-                if (respuesta == 1)
+                if (answer == 1)
                 {
                     //Retorna el valor de la variable respuesta
-                    return respuesta;
+                    return answer;
                 }
                 else
                 {//Rollback para eliminar el cliente que se esta llenando
