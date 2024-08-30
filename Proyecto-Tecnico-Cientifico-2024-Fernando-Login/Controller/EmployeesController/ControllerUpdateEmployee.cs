@@ -35,6 +35,7 @@ namespace PTC2024.Controller.EmployeesController
             this.businessP = businessP;
             //Métodos del formulario
             ChargeValues(employeeId ,names, lastNames, dui, birthDate, email, phone, address, salary, bankAccount, bank, affiliationNumber, hireDate, department, employeeType, maritalStatus, status, username, businessP);
+            EvaluateCEO(businessP);
             objUpdateEmployee.Load += new EventHandler(ChargeInfo);
             objUpdateEmployee.BtnCancelar.Click += new EventHandler(CancelProcess);
             objUpdateEmployee.btnEmployeUpdate.Click += new EventHandler(UpdateEmployee);
@@ -51,6 +52,18 @@ namespace PTC2024.Controller.EmployeesController
         public void ChargeInfo(object sender, EventArgs e)
         {
             ChargeDropDowns();
+        }
+
+        public void EvaluateCEO(string businessP)
+        {
+            if (businessP == "CEO")
+            {
+                objUpdateEmployee.comboBusinessP.Enabled = false;
+            }
+            else
+            {
+                objUpdateEmployee.comboBusinessP.Enabled = true;
+            }
         }
         public void CancelProcess(object sender, EventArgs e)
         {
