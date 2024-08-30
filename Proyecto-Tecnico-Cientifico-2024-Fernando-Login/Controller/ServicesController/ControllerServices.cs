@@ -26,11 +26,11 @@ namespace PTC2024.Controller.ServicesController
             objServices.cmsDeleteService.Click += new EventHandler(DeleteService);
             objServices.cmsUpdateService.Click += new EventHandler(OpenUpdateService);
             objServices.txtSearch.KeyPress += new KeyPressEventHandler(Search);
-            objServices.CbSeguridad.Click += new EventHandler(SearchCheckBox);
-            objServices.CbInfraestructura.Click += new EventHandler(SearchCheckBox);
-            objServices.CbProgramacion.Click += new EventHandler(SearchCheckBox);
-            objServices.CbMantenimiento.Click += new EventHandler(SearchCheckBox);
-            objServices.CbSoporte.Click += new EventHandler(SearchCheckBox);
+            objServices.CbSeguridad.Click += new EventHandler(SearchCheckBox1);
+            objServices.CbInfraestructura.Click += new EventHandler(SearchCheckBox2);
+            objServices.CbProgramacion.Click += new EventHandler(SearchCheckBox3);
+            objServices.CbMantenimiento.Click += new EventHandler(SearchCheckBox4);
+            objServices.CbSoporte.Click += new EventHandler(SearchCheckBox5);
 
         }
 
@@ -125,7 +125,7 @@ namespace PTC2024.Controller.ServicesController
         }
 
         /*Este se ejecutara cuando se haga click en cualquier checkbox*/
-        public void SearchCheckBox(object sender, EventArgs e)
+        public void SearchCheckBox1(object sender, EventArgs e)
         {
             DAOServices dAOServices = new DAOServices();
 
@@ -134,71 +134,128 @@ namespace PTC2024.Controller.ServicesController
 
             /*Se verificara cual checkbox esta checkeado*/
             /*Los demas checkbox estaran desabilitados si uno esta checkeado*/
-            if (objServices.CbSeguridad.Checked)
+            if (objServices.CbSeguridad.Checked == true)
             {
                 categoria = objServices.CbSeguridad.Tag.ToString();
-                objServices.CbInfraestructura.Enabled = false;
-                objServices.CbMantenimiento.Enabled = false;
-                objServices.CbSoporte.Enabled = false;
-                objServices.CbProgramacion.Enabled = false;
-                DataSet respuesta = dAOServices.SearchDataCb(categoria);
-                objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
-            }
-            else if (objServices.CbInfraestructura.Checked) 
-            {
-                categoria = objServices.CbInfraestructura.Tag.ToString();
-                objServices.CbSeguridad.Enabled = false;
-                objServices.CbMantenimiento.Enabled = false;
-                objServices.CbSoporte.Enabled = false;
-                objServices.CbProgramacion.Enabled = false;
-                DataSet respuesta = dAOServices.SearchDataCb(categoria);
-                objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
-            }
-            else if (objServices.CbSoporte.Checked)
-            {
-                categoria = objServices.CbSoporte.Tag.ToString();
-                objServices.CbSeguridad.Enabled = false;
-                objServices.CbInfraestructura.Enabled = false;
-                objServices.CbMantenimiento.Enabled = false;
-                objServices.CbProgramacion.Enabled = false;
-                DataSet respuesta = dAOServices.SearchDataCb(categoria);
-                objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
-            }
-            else if(objServices.CbMantenimiento.Checked)
-            {
-                categoria = objServices.CbMantenimiento.Tag.ToString();
-                objServices.CbSeguridad.Enabled = false;
-                objServices.CbInfraestructura.Enabled = false;
-                objServices.CbSoporte.Enabled = false;
-                objServices.CbProgramacion.Enabled = false;
-                DataSet respuesta = dAOServices.SearchDataCb(categoria);
-                objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
-            }
-            else if (objServices.CbProgramacion.Checked)
-            {
-                categoria = objServices.CbProgramacion.Tag.ToString();
-                objServices.CbSeguridad.Enabled = false;
-                objServices.CbInfraestructura.Enabled = false;
-                objServices.CbSoporte.Enabled = false;
-                objServices.CbMantenimiento.Enabled = false;
+                objServices.CbInfraestructura.Checked = false;
+                objServices.CbMantenimiento.Checked = false;
+                objServices.CbSoporte.Checked = false;
+                objServices.CbProgramacion.Checked = false;
                 DataSet respuesta = dAOServices.SearchDataCb(categoria);
                 objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
             }
             else
             {
-                /*En caso que ninguno este checkeado todos estaran habilitados*/
-                objServices.CbProgramacion.Enabled = true;
-                objServices.CbSeguridad.Enabled = true;
-                objServices.CbInfraestructura.Enabled = true;
-                objServices.CbSoporte.Enabled = true;
-                objServices.CbMantenimiento.Enabled = true;
-                DataSet respuesta = dAOServices.SearchDataCb(categoria);
-                objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
-
-                /*Se regrescara el DataGridview*/
                 ChargeDgv();
             }
 
+
+        }
+
+        /*Este se ejecutara cuando se haga click en cualquier checkbox*/
+        public void SearchCheckBox2(object sender, EventArgs e)
+        {
+            DAOServices dAOServices = new DAOServices();
+
+            /*Se crea una variable cuyo valor dependera de cual checkbox este checkeado*/
+            string categoria = "";
+
+            /*Se verificara cual checkbox esta checkeado*/
+            /*Los demas checkbox estaran desabilitados si uno esta checkeado*/
+            if (objServices.CbInfraestructura.Checked == true)
+            {
+                categoria = objServices.CbInfraestructura.Tag.ToString();
+                objServices.CbSeguridad.Checked = false;
+                objServices.CbMantenimiento.Checked = false;
+                objServices.CbSoporte.Checked = false;
+                objServices.CbProgramacion.Checked = false;
+                DataSet respuesta = dAOServices.SearchDataCb(categoria);
+                objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
+            }
+            else
+            {
+                ChargeDgv();
+            }
+        }
+
+        /*Este se ejecutara cuando se haga click en cualquier checkbox*/
+        public void SearchCheckBox3(object sender, EventArgs e)
+        {
+            DAOServices dAOServices = new DAOServices();
+
+            /*Se crea una variable cuyo valor dependera de cual checkbox este checkeado*/
+            string categoria = "";
+
+            /*Se verificara cual checkbox esta checkeado*/
+            /*Los demas checkbox estaran desabilitados si uno esta checkeado*/
+            if (objServices.CbProgramacion.Checked == true)
+            {
+                categoria = objServices.CbSoporte.Tag.ToString();
+                objServices.CbSeguridad.Checked = false;
+                objServices.CbInfraestructura.Checked = false;
+                objServices.CbMantenimiento.Checked = false;
+                objServices.CbSoporte.Checked = false;
+                DataSet respuesta = dAOServices.SearchDataCb(categoria);
+                objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
+            }
+            else
+            {
+                ChargeDgv();
+            }
+
+        }
+
+        /*Este se ejecutara cuando se haga click en cualquier checkbox*/
+        public void SearchCheckBox4(object sender, EventArgs e)
+        {
+            DAOServices dAOServices = new DAOServices();
+
+            /*Se crea una variable cuyo valor dependera de cual checkbox este checkeado*/
+            string categoria = "";
+
+            /*Se verificara cual checkbox esta checkeado*/
+            /*Los demas checkbox estaran desabilitados si uno esta checkeado*/
+            if (objServices.CbMantenimiento.Checked == true)
+            {
+                categoria = objServices.CbMantenimiento.Tag.ToString();
+                objServices.CbSeguridad.Checked = false;
+                objServices.CbInfraestructura.Checked = false;
+                objServices.CbSoporte.Checked = false;
+                objServices.CbProgramacion.Checked = false;
+                DataSet respuesta = dAOServices.SearchDataCb(categoria);
+                objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
+            }
+            else
+            {
+                ChargeDgv();
+            }
+
+        }
+
+        /*Este se ejecutara cuando se haga click en cualquier checkbox*/
+        public void SearchCheckBox5(object sender, EventArgs e)
+        {
+            DAOServices dAOServices = new DAOServices();
+
+            /*Se crea una variable cuyo valor dependera de cual checkbox este checkeado*/
+            string categoria = "";
+
+            /*Se verificara cual checkbox esta checkeado*/
+            /*Los demas checkbox estaran desabilitados si uno esta checkeado*/
+            if (objServices.CbSoporte.Checked == true)
+            {
+                categoria = objServices.CbProgramacion.Tag.ToString();
+                objServices.CbSeguridad.Checked = false;
+                objServices.CbInfraestructura.Checked = false;
+                objServices.CbProgramacion.Checked = false;
+                objServices.CbMantenimiento.Checked = false;
+                DataSet respuesta = dAOServices.SearchDataCb(categoria);
+                objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
+            }
+            else
+            {
+                ChargeDgv();
+            }
 
         }
     }
