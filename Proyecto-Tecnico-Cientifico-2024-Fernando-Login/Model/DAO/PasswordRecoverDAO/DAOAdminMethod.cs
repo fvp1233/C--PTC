@@ -1,4 +1,6 @@
-﻿using PTC2024.Model.DTO.PasswordRecoverDTO;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using PTC2024.Controller.Helper;
+using PTC2024.Model.DTO.PasswordRecoverDTO;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -150,6 +152,78 @@ namespace PTC2024.Model.DAO.PasswordRecoverDAO
             finally
             {
                 command.Connection.Close();
+            }
+        }
+
+        public string RecoverPassword()
+        {
+            command.Connection = getConnection();
+            string query = "SELECT * FROM viewPasswordRecover WHERE username = @username";
+            SqlCommand cmd = new SqlCommand(query, command.Connection);
+            cmd.Parameters.AddWithValue("@username", EmployeeUsername);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                int id = reader.GetInt32(0);
+                string email = reader.GetString(1);
+                string user = reader.GetString(2);
+                string password = reader.GetString(3);
+
+                //Creamos un random que nos va a generar la contraseña aleatoria
+                Random random = new Random();
+
+                //Ahora especificamos los carácteres que podrá tomar el random para generar la contraseña aleatoria
+                const string chars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz0123456789";
+                //Esta variable define la longitud del string anterior, para que el arreglo que se creará pueda agarrar de los 61 carácteres que se encuentran ahí.
+                const int cLength = 61;
+
+                //Creamos un arreglo de chars de una longitud de 6 dígitos
+                var array = new char[6];
+
+                //ahora creamos un for que se encargará de escoger aleatoriamente 6 carácteres y los guardará en nuestro arreglo
+                for (int i = 0; i < 6; i++)
+                {
+                    array[i] = chars[random.Next(chars.Length)];
+                }
+
+                //Ahora le damos valor a nuestra variable string con lo que hay en el arreglo.
+                string newPass = new string(array);
+                EmployeePassword = newPass;
+                if (UpdatePassword(user))
+                {
+                    Email objEmail = new Email();
+                    objEmail.Send(email, "h2c.soporte.usuarios@gmail.com", "H2C: Recuperación de contraseña", "Hola " + user + ",\n\nSe realizó una recuperación de contraseña de tu usuario por medio de la intervención de administrador y esta fue restablecida, por lo que se te ha creado una contraseña temporal. \n\n" + "Tu contraseña temporal es: " + newPass + "\n\nTendrás que cambiar esta contraseña inmediatamente inicies sesión de nuevo en el sistema." + "\n\nSi tú no has solicitado esta recuperación de contraseña, ponte en contacto con el administrador.");
+                    command.Connection.Close();
+                    return "Se envió un correo electrónico de aviso al empleado.";
+                }
+            }
+            command.Connection.Close();
+            return "";
+        }
+
+        //actualizar contraseña
+        public bool UpdatePassword(string user)
+        {
+            command.Connection = getConnection();
+            string query = ("UPDATE tbUserData SET password = @password, temporalpassword = @temporalP WHERE username = @username");
+
+            SqlCommand cmd = new SqlCommand(@query, command.Connection);
+
+            CommonClasses encrypt = new CommonClasses();
+
+            cmd.Parameters.AddWithValue("@username", EmployeeUsername);
+            cmd.Parameters.AddWithValue("@password", encrypt.ComputeSha256Hash(EmployeePassword));
+            cmd.Parameters.AddWithValue("@temporalP", TemporalPass);
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                command.Connection.Close();
+                return true;
+            }
+            else
+            {
+                command.Connection.Close();
+                return false;
             }
         }
     }
