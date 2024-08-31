@@ -46,6 +46,7 @@ namespace PTC2024.Controller.ServicesController
             DAOServices dAOServices = new DAOServices();
             DataSet Result = dAOServices.GetDataTable();
             objServices.DgvServicios.DataSource = Result.Tables["viewServices"];
+            objServices.DgvServicios.Columns[5].Visible = false;
         }
 
         /*Este metodo se ejecutara cuando se haga click en actualizar servicio*/
@@ -60,8 +61,9 @@ namespace PTC2024.Controller.ServicesController
             string descripcion = objServices.DgvServicios[2, pos].Value.ToString();
             double monto = double.Parse(objServices.DgvServicios[3, pos].Value.ToString());
             string categoria = objServices.DgvServicios[4, pos].Value.ToString();
+            int idCategoria = (int)objServices.DgvServicios[5, pos].Value;
             /*Aca se crea un objeto del formulario UpdateService y se les agrega sus respectivos parametros*/
-            FrmUpdateService objUpdateService = new FrmUpdateService( id, nombre, descripcion, monto, categoria);
+            FrmUpdateService objUpdateService = new FrmUpdateService( id, nombre, descripcion, monto, categoria, idCategoria);
             /*Se abre el formulario*/
             objUpdateService.ShowDialog();
             /*Se refresca el DataGridView*/

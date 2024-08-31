@@ -14,10 +14,10 @@ namespace PTC2024.View.Service_inventory
 {
     public partial class FrmUpdateService : Form
     {
-        public FrmUpdateService(int id ,string nombre, string descripcion, double monto, string categoria)
+        public FrmUpdateService(int id ,string nombre, string descripcion, double monto, string categoria, int idCategoria)
         {
             InitializeComponent();
-            ControllerUpdateService update = new ControllerUpdateService(this, id, nombre, descripcion, monto, categoria);
+            ControllerUpdateService update = new ControllerUpdateService(this, id, nombre, descripcion, monto, categoria, idCategoria);
             Region = Region.FromHrgn(CommonClasses.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 

@@ -17,11 +17,13 @@ namespace PTC2024.Controller.ServicesController
         /*Se crea el objeto del formulario*/
         FrmUpdateService objUpdateService;
         private string categoria;
+        private int idCategoria;
         /*Se delara el constructor con sus respectivos parametros*/
-        public ControllerUpdateService(FrmUpdateService view, int id, string nombre, string descripcion, double monto, string categoria)
+        public ControllerUpdateService(FrmUpdateService view, int id, string nombre, string descripcion, double monto, string categoria, int idCategoria)
         {
 
             this.categoria = categoria;
+            this.idCategoria = idCategoria;
             /*Los controles del formulario ahora pasan al objeto del formulario*/
             objUpdateService = view;
             /*Este metodo cargara los valores de los parametros del constructor*/
@@ -45,6 +47,7 @@ namespace PTC2024.Controller.ServicesController
             objUpdateService.comboTipoEmpleado.DataSource = answer.Tables["tbCategoryS"];
             objUpdateService.comboTipoEmpleado.DisplayMember = "categoryName";
             objUpdateService.comboTipoEmpleado.ValueMember = "IdCategory";
+            objUpdateService.comboTipoEmpleado.SelectedValue = idCategoria;
         }
 
         /*Este metodo se ejecutara cuando se vayan actualizar los datos*/
