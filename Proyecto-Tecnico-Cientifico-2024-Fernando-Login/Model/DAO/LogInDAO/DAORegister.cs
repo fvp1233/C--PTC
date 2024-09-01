@@ -50,6 +50,35 @@ namespace PTC2024.Model.DAO.LogInDAO
             }
         }
 
+        public DataSet ObtainGenders()
+        {
+            try
+            {
+                command.Connection = getConnection();
+                string query = "SELECT * FROM tbGenders";
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                cmd.ExecuteNonQuery();
+                //creamos adp que recibe la info del cmd
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                //creamos el data set
+                DataSet ds = new DataSet();
+                //llenamos el dataset
+                adp.Fill(ds, "tbGenders");
+                //devolvemos el dataset
+                return ds;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("EC-002: No se puedieron obtener los datos de los Diferentes Bancos");
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
+
         public int EmployeeRegister()
         {
             try
@@ -74,7 +103,7 @@ namespace PTC2024.Model.DAO.LogInDAO
                 {
                     //Si la respuesta es 1, entonces el usuario se ingresó correctamente, por lo que ahora ingresaremos al empleado
                     //creamos el query
-                    string queryInsertEmployee = "INSERT INTO tbEmployee(names, lastName, DUI, birthDate, email, phone, address, salary, bankAccount, affiliationNumber, hireDate, IdBank, IdDepartment, IdTypeE, IdMaritalS, IdStatus, username) VALUES (@param1, @param2, @param3, @param4, @param5, @param6, @param7, @param8, @param9, @param10, @param11, @param12, @param13, @param14, @param15, @param16, @param17)";
+                    string queryInsertEmployee = "INSERT INTO tbEmployee(names, lastName, DUI, birthDate, email, phone, address, salary, bankAccount, affiliationNumber, hireDate, IdBank, IdDepartment, IdTypeE, IdMaritalS, IdStatus, username, IdGender) VALUES (@param1, @param2, @param3, @param4, @param5, @param6, @param7, @param8, @param9, @param10, @param11, @param12, @param13, @param14, @param15, @param16, @param17, @param18)";
                     //Creamos el comando SQL con la conexión y el query
                     SqlCommand cmdInsertEmployee = new SqlCommand(queryInsertEmployee, command.Connection);
                     //Le damos el valor a todos los parámetros con los métodos getter y setter
@@ -95,6 +124,7 @@ namespace PTC2024.Model.DAO.LogInDAO
                     cmdInsertEmployee.Parameters.AddWithValue("param15", MaritalStatus);
                     cmdInsertEmployee.Parameters.AddWithValue("param16", EmployeeStatus);
                     cmdInsertEmployee.Parameters.AddWithValue("param17", Username);
+                    cmdInsertEmployee.Parameters.AddWithValue("param18", Gender);
 
                     //Creamos una variable int para saber si el empleado fue ingresado o no
                     int registerEmployeeAnswer = cmdInsertEmployee.ExecuteNonQuery();

@@ -26,6 +26,7 @@ namespace PTC2024.Model.DTO.EmployeesDTO
         private int maritalStatus;
         private int employeeStatus;
         private int bank;
+        private int gender;
 
         //TABLA tbUserData
         private string username;
@@ -55,6 +56,7 @@ namespace PTC2024.Model.DTO.EmployeesDTO
         public int Bank { get => bank; set => bank = value; }
         public int IdEmployee { get => idEmployee; set => idEmployee = value; }
         public string Password { get => password; set => password = value; }
+        public int Gender { get => gender; set => gender = value; }
     }
 }
 

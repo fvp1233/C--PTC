@@ -235,6 +235,35 @@ namespace PTC2024.Model.DAO
                 command.Connection.Close();
             }
         }
+
+        public DataSet ObtainGenders()
+        {
+            try
+            {
+                command.Connection = getConnection();
+                string query = "SELECT * FROM tbGenders";
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                cmd.ExecuteNonQuery();
+                //creamos adp que recibe la info del cmd
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                //creamos el data set
+                DataSet ds = new DataSet();
+                //llenamos el dataset
+                adp.Fill(ds, "tbGenders");
+                //devolvemos el dataset
+                return ds;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("EC-002: No se puedieron obtener los datos de los Diferentes Bancos");
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
         #endregion
 
         public int RegisterEmployee()
@@ -262,7 +291,7 @@ namespace PTC2024.Model.DAO
                 if (respuesta == 1)
                 {
                     //Si el valor de la respuesta es 1, entonces el usuario se ingresó correctamente, por lo que procedemos a hacer la inserción del empleado de dicho usuario.
-                    string queryInsertEmployee = "INSERT INTO tbEmployee(names, lastName, DUI, birthDate, email, phone, address, salary, bankAccount, affiliationNumber, hireDate, IdBank, IdDepartment, IdTypeE, IdMaritalS, IdStatus, username) VALUES (@param1, @param2, @param3, @param4, @param5, @param6, @param7, @param8, @param9, @param10, @param11, @param12, @param13, @param14, @param15, @param16, @param17)";
+                    string queryInsertEmployee = "INSERT INTO tbEmployee(names, lastName, DUI, birthDate, email, phone, address, salary, bankAccount, affiliationNumber, hireDate, IdBank, IdDepartment, IdTypeE, IdMaritalS, IdStatus, username, IdGender) VALUES (@param1, @param2, @param3, @param4, @param5, @param6, @param7, @param8, @param9, @param10, @param11, @param12, @param13, @param14, @param15, @param16, @param17, @param18)";
                     //Se crea el comando SQL con la conexión y el query
                     SqlCommand cmdInsertEmployee = new SqlCommand(@queryInsertEmployee, command.Connection);
                     //Se asigna un valor a cada parámetro con los atributos del DTO
@@ -283,6 +312,7 @@ namespace PTC2024.Model.DAO
                     cmdInsertEmployee.Parameters.AddWithValue("param15", MaritalStatus);
                     cmdInsertEmployee.Parameters.AddWithValue("param16", EmployeeStatus);
                     cmdInsertEmployee.Parameters.AddWithValue("param17", Username);
+                    cmdInsertEmployee.Parameters.AddWithValue("param18", Gender);
                     //se ejecuta el comando ya con todos los valores de los parámetros
                     respuesta = cmdInsertEmployee.ExecuteNonQuery();
                     //Si el valor del executeNonQuery es 1, los valores fueron ingresados
@@ -375,6 +405,72 @@ namespace PTC2024.Model.DAO
                 while (rd.Read())
                 {
                     string username = rd.GetString(0);
+                }
+                return rd.HasRows;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
+
+        public bool CheckDUI()
+        {
+            try
+            {
+                //Conexion con la base
+                command.Connection = getConnection();
+                //query de la consulta
+                string query = "SELECT * FROM tbEmployee WHERE DUI = @param1";
+                //Creamos el comando SQL con la conexión y la base.
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                //Damos valor a los parámetros
+                cmd.Parameters.AddWithValue("param1", Document);
+                //Ejecutamos el comando
+                cmd.ExecuteNonQuery();
+                //Creamos un dataReader
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    string DUI = rd.GetString(3);
+                }
+                return rd.HasRows;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
+
+        public bool CheckEmail()
+        {
+            try
+            {
+                //Conexion con la base
+                command.Connection = getConnection();
+                //query de la consulta
+                string query = "SELECT * FROM tbEmployee WHERE email = @param1";
+                //Creamos el comando SQL con la conexión y la base.
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                //Damos valor a los parámetros
+                cmd.Parameters.AddWithValue("param1", Email);
+                //Ejecutamos el comando
+                cmd.ExecuteNonQuery();
+                //Creamos un dataReader
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    string e = rd.GetString(5);
                 }
                 return rd.HasRows;
             }

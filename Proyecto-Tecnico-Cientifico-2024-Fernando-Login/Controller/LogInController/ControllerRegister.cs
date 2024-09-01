@@ -34,6 +34,17 @@ namespace PTC2024.Controller.LogInController
             objRegister.txtPhone.TextChanged += new EventHandler(PhoneMask);
             objRegister.txtAffiliationNumber.TextChanged += new EventHandler(AffiliatioNumberMask);
             objRegister.txtBankAccount.TextChanged += new EventHandler(BankAccountMask);
+            objRegister.txtNames.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objRegister.txtLastNames.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objRegister.txtDUI.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objRegister.txtEmail.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objRegister.txtPhone.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objRegister.txtAddress.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objRegister.txtAffiliationNumber.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objRegister.txtBankAccount.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objRegister.txtUser.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objRegister.txtPassword.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objRegister.txtConfirmedPassword.MouseDown += new MouseEventHandler(DisableContextMenu);
 
         }
 
@@ -45,6 +56,12 @@ namespace PTC2024.Controller.LogInController
             objRegister.comboBank.DataSource = dsBank.Tables["tbBanks"];
             objRegister.comboBank.DisplayMember = "BankName";
             objRegister.comboBank.ValueMember = "IdBank";
+
+            //Dropdown generos
+            DataSet dsGenders = DAOCombobox.ObtainGenders();
+            objRegister.comboGender.DataSource = dsGenders.Tables["tbGenders"];
+            objRegister.comboGender.DisplayMember = "gender";
+            objRegister.comboGender.ValueMember = "IdGender";
 
             //Esconder el botón de hidepassword inicialmente
             objRegister.HidePassword.Visible = false;
@@ -112,6 +129,7 @@ namespace PTC2024.Controller.LogInController
                                 daoRegister.EmployeeType = 1;
                                 daoRegister.MaritalStatus = 1;
                                 daoRegister.EmployeeStatus = 1;
+                                daoRegister.Gender = int.Parse(objRegister.comboGender.SelectedValue.ToString());
 
                                 //Ahora invocamos el método del DAO para hacer la inserción del empleado por medio del objeto daoRegister.
                                 int value = daoRegister.EmployeeRegister();
@@ -311,72 +329,14 @@ namespace PTC2024.Controller.LogInController
             }
         }
 
-        #region CÓDIGO ANTERIOR
-        //public void RegisterData(object sender, EventArgs e)
-        //{
-        //    DAORegister DAOInsertar = new DAORegister();
-        //    CommonClasses commonClasses = new CommonClasses();
-
-
-        //    //Insercion de datos de tabla tbEmployees
-        //    DAOInsertar.Names = objNewUser.txtNames.Text;
-        //    DAOInsertar.Lastnames = objNewUser.txtLastnames.Text;
-        //    DAOInsertar.DUI1 = objNewUser.txtDUI.Text;
-        //    DAOInsertar.Birth = objNewUser.dtBirth.Value.Date;
-        //    DAOInsertar.Email = objNewUser.txtEmail.Text;
-        //    DAOInsertar.Salary = 950;
-        //    DAOInsertar.BankAccount = objNewUser.txtBankAccount.Text;
-        //    DAOInsertar.AffiliationNumber = int.Parse(objNewUser.txtISSS.Text);
-        //    DAOInsertar.HireDate = objNewUser.dtHireDate.Value.Date;
-        //    DAOInsertar.BankType = int.Parse(objNewUser.DdBankType.SelectedValue.ToString());
-        //    DAOInsertar.Phone = objNewUser.txtPhone.Text;
-        //    DAOInsertar.Address = objNewUser.txtAddress.Text;
-        //    DAOInsertar.BusinessP = 1;
-        //    DAOInsertar.Department = 1;
-        //    DAOInsertar.TypeE = 1;
-        //    DAOInsertar.MaritalStatus = 1;
-        //    DAOInsertar.Status = 1;
-
-
-        //    //Insercion de datos de tabla tbUserData
-        //    DAOInsertar.User = objNewUser.txtUser.Text;
-        //    DAOInsertar.Password = commonClasses.ComputeSha256Hash(objNewUser.txtPassword.Text);
-        //    DAOInsertar.ConfirmPassword = commonClasses.ComputeSha256Hash(objNewUser.txtConfirmedPassword.Text);
-        //    DAOInsertar.Status = 1;
-
-
-        //    //Insercion de datos de tabla tbBankAccount
-        //    int returnn = DAOInsertar.GetNames();
-
-        //    if (returnn == 1)
-        //    {
-
-        //        MessageBox.Show("Datos ingresados correctamente" + MessageBoxButtons.OK + MessageBoxIcon.Information);
-        //        objNewUser.Hide();
-        //        FrmLogin log = new FrmLogin();
-        //        log.Show();
-
-
-
-
-        //    }
-
-        //    else
-        //    {
-        //        MessageBox.Show("No se pudieron ingresar los datos", "Proceso interrumpido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-
-        //    //Eventos visuales
-
-
-        //}
-
-        //private void OpenLogin(object sender, EventArgs e)
-        //{
-
-
-        //}
-        #endregion
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
+        }
     }
 }
 

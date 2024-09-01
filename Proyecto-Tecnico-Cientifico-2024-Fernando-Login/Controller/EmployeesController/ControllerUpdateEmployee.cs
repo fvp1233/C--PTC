@@ -8,6 +8,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace PTC2024.Controller.EmployeesController
@@ -27,10 +28,11 @@ namespace PTC2024.Controller.EmployeesController
         private int idMaritalS;
         private int idStatus;
         private int idBusinessP;
+        private int gender;
 
         bool emailValidation;
         //CONSTRUCTOR
-        public ControllerUpdateEmployee(FrmUpdateEmployee View, int employeeId, string names, string lastNames, string dui, DateTime birthDate, string email, string phone, string address, double salary, string bankAccount, string bank, string affiliationNumber, DateTime hireDate, string department, string employeeType, string maritalStatus, string status, string username, string businessP, int Idbank, int idDepartment, int idTypeE, int idMaritalS, int idStatus, int idBusinessP)
+        public ControllerUpdateEmployee(FrmUpdateEmployee View, int employeeId, string names, string lastNames, string dui, DateTime birthDate, string email, string phone, string address, double salary, string bankAccount, string bank, string affiliationNumber, DateTime hireDate, string department, string employeeType, string maritalStatus, string status, string username, string businessP, int Idbank, int idDepartment, int idTypeE, int idMaritalS, int idStatus, int idBusinessP, int gender)
         {
             objUpdateEmployee = View;
             //variables para que los combobox aparezcan seleccionados según los datos del registro
@@ -46,6 +48,7 @@ namespace PTC2024.Controller.EmployeesController
             this.idMaritalS = idMaritalS;
             this.idStatus = idStatus;
             this.idBusinessP = idBusinessP;
+            this.gender = gender;
             //Métodos del formulario
             ChargeValues(employeeId ,names, lastNames, dui, birthDate, email, phone, address, salary, bankAccount, affiliationNumber, hireDate, username);
             EvaluateCEO(businessP);
@@ -55,11 +58,19 @@ namespace PTC2024.Controller.EmployeesController
             objUpdateEmployee.txtSalary.Enter += new EventHandler(EnterSalary);
             objUpdateEmployee.txtSalary.Leave += new EventHandler(LeaveSalary);
             objUpdateEmployee.btnRestorePass.Click += new EventHandler(RestorePassword);
-            objUpdateEmployee.txtDUI.TextChanged += new EventHandler(DUIMask);
-            objUpdateEmployee.txtPhone.TextChanged += new EventHandler(PhoneMask);
-            objUpdateEmployee.txtAffiliationNumber.TextChanged += new EventHandler(AffiliatioNumberMask);
-            objUpdateEmployee.txtBankAccount.TextChanged += new EventHandler(BankAccountMask);
-
+            objUpdateEmployee.txtDUI.TextChange += new EventHandler(DUIMask);
+            objUpdateEmployee.txtPhone.TextChange += new EventHandler(PhoneMask);
+            objUpdateEmployee.txtAffiliationNumber.TextChange += new EventHandler(AffiliatioNumberMask);
+            objUpdateEmployee.txtBankAccount.TextChange += new EventHandler(BankAccountMask);
+            objUpdateEmployee.txtNames.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateEmployee.txtLastNames.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateEmployee.txtDUI.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateEmployee.txtAddress.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateEmployee.txtPhone.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateEmployee.txtEmail.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateEmployee.txtSalary.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateEmployee.txtAffiliationNumber.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateEmployee.txtBankAccount.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
 
         public void ChargeInfo(object sender, EventArgs e)
@@ -110,42 +121,60 @@ namespace PTC2024.Controller.EmployeesController
                         int employeeAge = ValidateAge();
                         if (employeeAge >= 18)
                         {
-                            //CREAMOS OBJETO DEL DAOUpdateEmployees
-                            DAOUpdateEmployee daoUpdateEmployee = new DAOUpdateEmployee();
-                            daoUpdateEmployee.Names = objUpdateEmployee.txtNames.Text.Trim();
-                            daoUpdateEmployee.LastNames = objUpdateEmployee.txtLastNames.Text.Trim();
-                            daoUpdateEmployee.Document = objUpdateEmployee.txtDUI.Text.Trim();
-                            daoUpdateEmployee.BirthDate = objUpdateEmployee.dtBirthDate.Value;
-                            daoUpdateEmployee.Address = objUpdateEmployee.txtAddress.Text.Trim();
-                            daoUpdateEmployee.Phone = objUpdateEmployee.txtPhone.Text.Trim();
-                            daoUpdateEmployee.Email = objUpdateEmployee.txtEmail.Text.Trim();
-                            daoUpdateEmployee.HireDate = objUpdateEmployee.dpHireDate.Value;
-                            daoUpdateEmployee.MaritalStatus = (int)objUpdateEmployee.comboMaritalStatus.SelectedValue;
-                            daoUpdateEmployee.Department = (int)objUpdateEmployee.comboDepartment.SelectedValue;
-                            daoUpdateEmployee.EmployeeType = (int)objUpdateEmployee.comboEmployeeType.SelectedValue;
-                            daoUpdateEmployee.EmployeeStatus = (int)objUpdateEmployee.comboEmployeeStatus.SelectedValue;
-                            daoUpdateEmployee.Salary = double.Parse(objUpdateEmployee.txtSalary.Text.Trim());
-                            daoUpdateEmployee.AffiliationNumber = objUpdateEmployee.txtAffiliationNumber.Text.Trim();
-                            daoUpdateEmployee.BankAccount = objUpdateEmployee.txtBankAccount.Text.Trim();
-                            daoUpdateEmployee.Bank = (int)objUpdateEmployee.comboBanks.SelectedValue;
-                            daoUpdateEmployee.IdEmployee = int.Parse(objUpdateEmployee.txtEmployeeId.Text.Trim());
-                            //Datos para los getters de la tabla userData
-                            daoUpdateEmployee.Username = objUpdateEmployee.txtUsername.Text.Trim();
-                            daoUpdateEmployee.BusinessPosition = (int)objUpdateEmployee.comboBusinessP.SelectedValue;
-
-                            //variable para saber la respuesta del proceso de update en el DAOUpdateEmployees
-                            int updateAnswer = daoUpdateEmployee.UpdateEmployee();
-                            //la evaluamos
-                            if (updateAnswer == 1)
+                            bool email = CheckEmail();
+                            if (email == false)
                             {
-                                MessageBox.Show("Los datos del empleado han sido actualizados con éxito.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                objUpdateEmployee.Close();
+                                bool dui = CheckDUI();
+                                if (dui == false)
+                                {
+                                    //CREAMOS OBJETO DEL DAOUpdateEmployees
+                                    DAOUpdateEmployee daoUpdateEmployee = new DAOUpdateEmployee();
+                                    daoUpdateEmployee.Names = objUpdateEmployee.txtNames.Text.Trim();
+                                    daoUpdateEmployee.LastNames = objUpdateEmployee.txtLastNames.Text.Trim();
+                                    daoUpdateEmployee.Document = objUpdateEmployee.txtDUI.Text.Trim();
+                                    daoUpdateEmployee.BirthDate = objUpdateEmployee.dtBirthDate.Value;
+                                    daoUpdateEmployee.Address = objUpdateEmployee.txtAddress.Text.Trim();
+                                    daoUpdateEmployee.Phone = objUpdateEmployee.txtPhone.Text.Trim();
+                                    daoUpdateEmployee.Email = objUpdateEmployee.txtEmail.Text.Trim();
+                                    daoUpdateEmployee.HireDate = objUpdateEmployee.dpHireDate.Value;
+                                    daoUpdateEmployee.MaritalStatus = (int)objUpdateEmployee.comboMaritalStatus.SelectedValue;
+                                    daoUpdateEmployee.Department = (int)objUpdateEmployee.comboDepartment.SelectedValue;
+                                    daoUpdateEmployee.EmployeeType = (int)objUpdateEmployee.comboEmployeeType.SelectedValue;
+                                    daoUpdateEmployee.EmployeeStatus = (int)objUpdateEmployee.comboEmployeeStatus.SelectedValue;
+                                    daoUpdateEmployee.Salary = double.Parse(objUpdateEmployee.txtSalary.Text.Trim());
+                                    daoUpdateEmployee.AffiliationNumber = objUpdateEmployee.txtAffiliationNumber.Text.Trim();
+                                    daoUpdateEmployee.BankAccount = objUpdateEmployee.txtBankAccount.Text.Trim();
+                                    daoUpdateEmployee.Bank = (int)objUpdateEmployee.comboBanks.SelectedValue;
+                                    daoUpdateEmployee.IdEmployee = int.Parse(objUpdateEmployee.txtEmployeeId.Text.Trim());
+                                    daoUpdateEmployee.Gender = (int)objUpdateEmployee.comboGender.SelectedValue;
+                                    //Datos para los getters de la tabla userData
+                                    daoUpdateEmployee.Username = objUpdateEmployee.txtUsername.Text.Trim();
+                                    daoUpdateEmployee.BusinessPosition = (int)objUpdateEmployee.comboBusinessP.SelectedValue;
+
+                                    //variable para saber la respuesta del proceso de update en el DAOUpdateEmployees
+                                    int updateAnswer = daoUpdateEmployee.UpdateEmployee();
+                                    //la evaluamos
+                                    if (updateAnswer == 1)
+                                    {
+                                        MessageBox.Show("Los datos del empleado han sido actualizados con éxito.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        objUpdateEmployee.Close();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Los datos del empleado no pudieron ser actualizados.", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    //FIN DEL MANTENIMIENTO DE UPDATE EMPLOYEE
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Este DUI ya está registrado con otro usuario.", "Documento de identidad", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Los datos del empleado no pudieron ser actualizados.", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Este correo electrónico ya está registrado con otro usuario.", "Correo electrónico", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
-                            //FIN DEL MANTENIMIENTO DE UPDATE EMPLOYEE
+                            
                         }
                         else
                         {
@@ -156,8 +185,7 @@ namespace PTC2024.Controller.EmployeesController
                     {
                         MessageBox.Show("Ingrese un valor numérico en el campo del salario", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }                        
-                }
-                
+                }                
             }
             else
             {
@@ -231,6 +259,14 @@ namespace PTC2024.Controller.EmployeesController
             objUpdateEmployee.comboBanks.ValueMember = "IdBank";
             //Para que el dropdown tenga seleccionado el dato del registro:
             objUpdateEmployee.comboBanks.SelectedValue = idBank;
+
+            //Dropdown de Generos
+            DataSet dsGender = daoUpdateEmployee.ObtainGenders();
+            objUpdateEmployee.comboGender.DataSource = dsGender.Tables["tbGenders"];
+            objUpdateEmployee.comboGender.DisplayMember = "gender";
+            objUpdateEmployee.comboGender.ValueMember = "IdGender";
+            //Para que el dropdown tenga seleccionado el dato del registro
+            objUpdateEmployee.comboGender.SelectedValue = gender;
 
             //PARA HACER INVISIBLE EL TEXTBOX DEL ID DE EMPLEADO Y lblSalaryRequest:
             objUpdateEmployee.txtEmployeeId.Visible = false;
@@ -380,6 +416,7 @@ namespace PTC2024.Controller.EmployeesController
             if (text.Length >= 9)
             {
                 text = text.Insert(8, "-");
+                cursorPosition++;
             }
             else if (text.Length >= 1)
             {
@@ -439,5 +476,37 @@ namespace PTC2024.Controller.EmployeesController
             objUpdateEmployee.txtBankAccount.Text = text;
             objUpdateEmployee.txtBankAccount.SelectionStart = cursorPosition;
         }
+
+        public bool CheckEmail()
+        {
+            //objeto del dao
+            DAOUpdateEmployee daoUpdate = new DAOUpdateEmployee();
+            daoUpdate.Email = objUpdateEmployee.txtEmail.Text.Trim();
+            daoUpdate.Username = objUpdateEmployee.txtUsername.Text.Trim();
+            //ejecutamos el método
+            bool answer = daoUpdate.CheckEmail();
+            return answer;
+        }
+
+        public bool CheckDUI()
+        {
+            //objeto del dao
+            DAOUpdateEmployee daoUpdate = new DAOUpdateEmployee();
+            daoUpdate.Document = objUpdateEmployee.txtDUI.Text.Trim();
+            daoUpdate.Username = objUpdateEmployee.txtUsername.Text.Trim();
+            //ejecutamos el método
+            bool answer = daoUpdate.CheckDUI();
+            return answer;
+        }
+
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
+        }
+
     }
 }

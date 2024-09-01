@@ -28,6 +28,17 @@ namespace PTC2024.Controller
             objAddEmployee.txtPhone.TextChanged += new EventHandler(PhoneMask);
             objAddEmployee.txtAffiliationNumber.TextChanged += new EventHandler(AffiliatioNumberMask);
             objAddEmployee.txtBankAccount.TextChanged += new EventHandler(BankAccountMask);
+            objAddEmployee.txtUsername.TextChanged += new EventHandler(UsernameMask);
+            objAddEmployee.txtNames.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddEmployee.txtLastNames.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddEmployee.txtDUI.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddEmployee.txtAddress.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddEmployee.txtPhone.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddEmployee.txtEmail.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddEmployee.txtSalary.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddEmployee.txtAffiliationNumber.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddEmployee.txtBankAccount.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddEmployee.txtUsername.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
 
 
@@ -60,11 +71,17 @@ namespace PTC2024.Controller
             objAddEmployee.comboBusinessP.DisplayMember = "businessPosition";
             objAddEmployee.comboBusinessP.ValueMember = "IdBusinessP";
 
+            //Dropdown de generos
+            DataSet dsGender = daoAddEmployee.ObtainGenders();
+            objAddEmployee.comboGender.DataSource = dsGender.Tables["tbGenders"];
+            objAddEmployee.comboGender.DisplayMember = "gender";
+            objAddEmployee.comboGender.ValueMember = "IdGender";
+
             //Dropdown de estado de empleado
-            DataSet dsEstadosEmpleado = daoAddEmployee.ObtenerEstadosEmpleado();
-            objAddEmployee.comboEmployeeStatus.DataSource = dsEstadosEmpleado.Tables["tbEmployeeStatus"];
-            objAddEmployee.comboEmployeeStatus.DisplayMember = "employeeStatus";
-            objAddEmployee.comboEmployeeStatus.ValueMember = "IdStatus";
+            //DataSet dsEstadosEmpleado = daoAddEmployee.ObtenerEstadosEmpleado();
+            //objAddEmployee.comboEmployeeStatus.DataSource = dsEstadosEmpleado.Tables["tbEmployeeStatus"];
+            //objAddEmployee.comboEmployeeStatus.DisplayMember = "employeeStatus";
+            //objAddEmployee.comboEmployeeStatus.ValueMember = "IdStatus";
 
             //Dropdown de Bancos
             DataSet dsBanks = daoAddEmployee.ObtainBanks();
@@ -134,45 +151,64 @@ namespace PTC2024.Controller
                             bool user = CheckUser();
                             if (user == false)
                             {
-                                //Se crea un objeto de la clase DAOAddEmployee y de la clase CommonClasses
-                                DAOAddEmployee daoInsertEmployee = new DAOAddEmployee();
-                                CommonClasses commonClasses = new CommonClasses();
-                                //Datos para la creación de un empleado
-                                daoInsertEmployee.Names = objAddEmployee.txtNames.Text.Trim();
-                                daoInsertEmployee.LastNames = objAddEmployee.txtLastNames.Text.Trim();
-                                daoInsertEmployee.Document = objAddEmployee.txtDUI.Text.Trim();
-                                daoInsertEmployee.BirthDate = objAddEmployee.dtBirthDate.Value.Date;
-                                daoInsertEmployee.Email = objAddEmployee.txtEmail.Text.Trim();
-                                daoInsertEmployee.Phone = objAddEmployee.txtPhone.Text.Trim();
-                                daoInsertEmployee.Address = objAddEmployee.txtAddress.Text.Trim();
-                                daoInsertEmployee.Salary = double.Parse(objAddEmployee.txtSalary.Text.Trim());
-                                daoInsertEmployee.BankAccount = objAddEmployee.txtBankAccount.Text.Trim();
-                                daoInsertEmployee.AffiliationNumber = objAddEmployee.txtAffiliationNumber.Text.Trim();
-                                daoInsertEmployee.HireDate = objAddEmployee.dpHireDate.Value.Date;
-                                daoInsertEmployee.Bank = int.Parse(objAddEmployee.comboBanks.SelectedValue.ToString());
-                                daoInsertEmployee.Department = int.Parse(objAddEmployee.comboDepartment.SelectedValue.ToString());
-                                daoInsertEmployee.EmployeeType = int.Parse(objAddEmployee.comboEmployeeType.SelectedValue.ToString());
-                                daoInsertEmployee.MaritalStatus = int.Parse(objAddEmployee.comboMaritalStatus.SelectedValue.ToString());
-                                daoInsertEmployee.EmployeeStatus = int.Parse(objAddEmployee.comboEmployeeStatus.SelectedValue.ToString());
-                                //Datos para la creación del usuario
-                                daoInsertEmployee.Username = objAddEmployee.txtUsername.Text.Trim();
-                                daoInsertEmployee.Password = commonClasses.ComputeSha256Hash(objAddEmployee.txtUsername.Text.Trim() + "PU123");
-                                daoInsertEmployee.BusinessPosition = int.Parse(objAddEmployee.comboBusinessP.SelectedValue.ToString());
-                                daoInsertEmployee.UserSatus = true;
-                                daoInsertEmployee.BusinessInfo = 1;
-                                //AHORA INVOCAMOS EL MÉTODO RegisterEmployee A TRAVÉS DEL OBJETO daoInsertEmployee
-                                int valorRespuesta = daoInsertEmployee.RegisterEmployee();
-                                //Verificamos el valor que nos retorna dicho método
-                                if (valorRespuesta == 1)
+                                bool dui = CheckDUI();
+                                if (dui == false)
                                 {
-                                    MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    MessageBox.Show($"Usuario: {objAddEmployee.txtUsername.Text.Trim()} \n Contraseña: {objAddEmployee.txtUsername.Text.Trim() + "PU123"}", "Credenciales de acceso del empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    objAddEmployee.Close();
+                                    bool email = CheckEmail();
+                                    if (email == false)
+                                    {
+                                        //Se crea un objeto de la clase DAOAddEmployee y de la clase CommonClasses
+                                        DAOAddEmployee daoInsertEmployee = new DAOAddEmployee();
+                                        CommonClasses commonClasses = new CommonClasses();
+                                        //Datos para la creación de un empleado
+                                        daoInsertEmployee.Names = objAddEmployee.txtNames.Text.Trim();
+                                        daoInsertEmployee.LastNames = objAddEmployee.txtLastNames.Text.Trim();
+                                        daoInsertEmployee.Document = objAddEmployee.txtDUI.Text.Trim();
+                                        daoInsertEmployee.BirthDate = objAddEmployee.dtBirthDate.Value.Date;
+                                        daoInsertEmployee.Email = objAddEmployee.txtEmail.Text.Trim();
+                                        daoInsertEmployee.Phone = objAddEmployee.txtPhone.Text.Trim();
+                                        daoInsertEmployee.Address = objAddEmployee.txtAddress.Text.Trim();
+                                        daoInsertEmployee.Salary = double.Parse(objAddEmployee.txtSalary.Text.Trim());
+                                        daoInsertEmployee.BankAccount = objAddEmployee.txtBankAccount.Text.Trim();
+                                        daoInsertEmployee.AffiliationNumber = objAddEmployee.txtAffiliationNumber.Text.Trim();
+                                        daoInsertEmployee.HireDate = objAddEmployee.dpHireDate.Value.Date;
+                                        daoInsertEmployee.Bank = int.Parse(objAddEmployee.comboBanks.SelectedValue.ToString());
+                                        daoInsertEmployee.Department = int.Parse(objAddEmployee.comboDepartment.SelectedValue.ToString());
+                                        daoInsertEmployee.EmployeeType = int.Parse(objAddEmployee.comboEmployeeType.SelectedValue.ToString());
+                                        daoInsertEmployee.MaritalStatus = int.Parse(objAddEmployee.comboMaritalStatus.SelectedValue.ToString());
+                                        daoInsertEmployee.EmployeeStatus = 1;
+                                        daoInsertEmployee.Gender = int.Parse(objAddEmployee.comboGender.SelectedValue.ToString());
+
+                                        //Datos para la creación del usuario
+                                        daoInsertEmployee.Username = objAddEmployee.txtUsername.Text.Trim();
+                                        daoInsertEmployee.Password = commonClasses.ComputeSha256Hash(objAddEmployee.txtUsername.Text.Trim() + "PU123");
+                                        daoInsertEmployee.BusinessPosition = int.Parse(objAddEmployee.comboBusinessP.SelectedValue.ToString());
+                                        daoInsertEmployee.UserSatus = true;
+                                        daoInsertEmployee.BusinessInfo = 1;
+                                        //AHORA INVOCAMOS EL MÉTODO RegisterEmployee A TRAVÉS DEL OBJETO daoInsertEmployee
+                                        int valorRespuesta = daoInsertEmployee.RegisterEmployee();
+                                        //Verificamos el valor que nos retorna dicho método
+                                        if (valorRespuesta == 1)
+                                        {
+                                            MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            MessageBox.Show($"Usuario: {objAddEmployee.txtUsername.Text.Trim()} \n Contraseña: {objAddEmployee.txtUsername.Text.Trim() + "PU123"}", "Credenciales de acceso del empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            objAddEmployee.Close();
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Los datos no pudieron ser registrados", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("El correo ingresado ya está registrado en el sistema.", "Correo electrónico", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Los datos no pudieron ser registrados", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show("El DUI ingresado ya está registrado en el sistema.", "Documento de identidad", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
+                                
                             }
                             else
                             {
@@ -274,6 +310,7 @@ namespace PTC2024.Controller
             if (text.Length >= 9)
             {
                 text = text.Insert(8, "-");
+                cursorPosition++;
             }
             else if (text.Length >= 1)
             {
@@ -315,6 +352,18 @@ namespace PTC2024.Controller
             objAddEmployee.txtPhone.SelectionStart = cursorPosition;
         }
 
+        public void UsernameMask(object sender, EventArgs e)
+        {
+            //Almacena la posición original del cursor
+            int cursorPosition = objAddEmployee.txtUsername.SelectionStart;
+
+            //Filtra el texto del TextBox para eliminar caracteres especiales
+            objAddEmployee.txtUsername.Text = new string(objAddEmployee.txtUsername.Text.Where(c => char.IsLetterOrDigit(c)).ToArray());
+
+            //Restaura la posición del cursor
+            objAddEmployee.txtUsername.SelectionStart = cursorPosition;
+        }
+
         //Aplicamos una máscara que solo deje meter el guion y caracteres numéricos para los textbox de numero de afiliacion y cuenta bancaria.
         public void AffiliatioNumberMask(object sender, EventArgs e)
         {
@@ -347,6 +396,38 @@ namespace PTC2024.Controller
             return answer;
         }
 
+        public bool CheckDUI()
+        {
+            //Creamos objeto del DAO
+            DAOAddEmployee daoAddEmployee = new DAOAddEmployee();
+            //Damos valor al getter username
+            daoAddEmployee.Document = objAddEmployee.txtDUI.Text.Trim();
+            // Creamos variable bool
+            bool answer = daoAddEmployee.CheckDUI();
+            //Retornamos esta variable
+            return answer;
+        }
+
+        public bool CheckEmail()
+        {
+            //Creamos objeto del DAO
+            DAOAddEmployee daoAddEmployee = new DAOAddEmployee();
+            //Damos valor al getter username
+            daoAddEmployee.Email = objAddEmployee.txtEmail.Text.Trim();
+            // Creamos variable bool
+            bool answer = daoAddEmployee.CheckEmail();
+            //Retornamos esta variable
+            return answer;
+        }
+
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
+        }
 
     }
 }

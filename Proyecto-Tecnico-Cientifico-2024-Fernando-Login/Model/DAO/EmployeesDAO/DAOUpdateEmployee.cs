@@ -39,7 +39,8 @@ namespace PTC2024.Model.DAO.EmployeesDAO
                                        "IdDepartment = @param13, " +
                                        "IdTypeE = @param14, " +
                                        "IdMaritalS = @param15, " +
-                                       "IdStatus = @param16 " +
+                                       "IdStatus = @param16, " +
+                                       "IdGender = @param17 " +
                                        "WHERE IdEmployee = @idEmployee";
                 //Se crea el comando Sql que tendrá el query y la conexión
                 SqlCommand cmdUpdateE = new SqlCommand(queryUpdateE, Command.Connection);
@@ -60,6 +61,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
                 cmdUpdateE.Parameters.AddWithValue("param14", EmployeeType);
                 cmdUpdateE.Parameters.AddWithValue("param15", MaritalStatus);
                 cmdUpdateE.Parameters.AddWithValue("param16", EmployeeStatus);
+                cmdUpdateE.Parameters.AddWithValue("param17", Gender);
                 cmdUpdateE.Parameters.AddWithValue("idEmployee", IdEmployee);
 
                 //se declara una variable int como respuesta del proceso para saber si se realizó o no
@@ -70,12 +72,12 @@ namespace PTC2024.Model.DAO.EmployeesDAO
                     //si se actualizó el empleado, procedemos a actualizar el usuario
                     //creamos el query
                     string queryUpdateU = "UPDATE tbUserData " +
-                                            "SET IdBusinessP = @param17 " +
+                                            "SET IdBusinessP = @param18 " +
                                             "WHERE username = @username";
                     //creamos el comando SQL
                     SqlCommand cmdUpdateU = new SqlCommand(queryUpdateU, Command.Connection);
                     //Le agregamos el valor a los parámetros
-                   cmdUpdateU.Parameters.AddWithValue("param17", BusinessPosition);
+                   cmdUpdateU.Parameters.AddWithValue("param18", BusinessPosition);
                     cmdUpdateU.Parameters.AddWithValue("username", Username);
                     //Se declara una variable int como respuesta del proceso
                     int valueUserUpdate = cmdUpdateU.ExecuteNonQuery();
@@ -144,6 +146,74 @@ namespace PTC2024.Model.DAO.EmployeesDAO
                 MessageBox.Show(ex.Message);
                 return -1;
                 
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
+
+        public bool CheckDUI()
+        {
+            try
+            {
+                //Conexion con la base
+                Command.Connection = getConnection();
+                //query de la consulta
+                string query = "SELECT * FROM tbEmployee WHERE DUI = @param1 AND username != @username";
+                //Creamos el comando SQL con la conexión y la base.
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                //Damos valor a los parámetros
+                cmd.Parameters.AddWithValue("param1", Document);
+                cmd.Parameters.AddWithValue("username", Username);
+                //Ejecutamos el comando
+                cmd.ExecuteNonQuery();
+                //Creamos un dataReader
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    string DUI = rd.GetString(3);
+                }
+                return rd.HasRows;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
+
+        public bool CheckEmail()
+        {
+            try
+            {
+                //Conexion con la base
+                Command.Connection = getConnection();
+                //query de la consulta
+                string query = "SELECT * FROM tbEmployee WHERE email = @param1 AND username != @username";
+                //Creamos el comando SQL con la conexión y la base.
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                //Damos valor a los parámetros
+                cmd.Parameters.AddWithValue("param1", Email);
+                cmd.Parameters.AddWithValue("username", Username);
+                //Ejecutamos el comando
+                cmd.ExecuteNonQuery();
+                //Creamos un dataReader
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    string e = rd.GetString(5);
+                }
+                return rd.HasRows;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
             }
             finally
             {
@@ -375,6 +445,35 @@ namespace PTC2024.Model.DAO.EmployeesDAO
                 MessageBox.Show("No se pudieron obtener los datos de los Bancos");
                 return null;
 
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
+
+        public DataSet ObtainGenders()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = "SELECT * FROM tbGenders";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.ExecuteNonQuery();
+                //creamos adp que recibe la info del cmd
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                //creamos el data set
+                DataSet ds = new DataSet();
+                //llenamos el dataset
+                adp.Fill(ds, "tbGenders");
+                //devolvemos el dataset
+                return ds;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("EC-002: No se puedieron obtener los datos de los Diferentes Bancos");
+                MessageBox.Show(ex.Message);
+                return null;
             }
             finally
             {

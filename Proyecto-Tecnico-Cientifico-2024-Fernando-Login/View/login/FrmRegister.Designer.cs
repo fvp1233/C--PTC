@@ -77,6 +77,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lblRegister = new Bunifu.UI.WinForms.BunifuLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuGroupBox3 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.ShowPassword = new System.Windows.Forms.PictureBox();
             this.HidePassword = new System.Windows.Forms.PictureBox();
@@ -87,14 +88,16 @@
             this.txtPassword = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtConfirmedPassword = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuGroupBox2 = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.comboBank = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuLabel8 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel10 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtAffiliationNumber = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtBankAccount = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.comboBank = new Bunifu.UI.WinForms.BunifuDropdown();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.comboGender = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblFecha = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtLastNames = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -111,17 +114,16 @@
             this.txtAddress = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtPhone = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.btnRegister = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.txtLogin = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.bunifuGroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HidePassword)).BeginInit();
             this.bunifuGroupBox2.SuspendLayout();
             this.bunifuGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox5
@@ -130,7 +132,7 @@
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(870, 0);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(259, 636);
+            this.pictureBox5.Size = new System.Drawing.Size(259, 693);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 1;
             this.pictureBox5.TabStop = false;
@@ -155,18 +157,35 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.panel1.Controls.Add(this.bunifuPictureBox1);
             this.panel1.Controls.Add(this.bunifuGroupBox3);
             this.panel1.Controls.Add(this.bunifuGroupBox2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.bunifuGroupBox1);
-            this.panel1.Controls.Add(this.bunifuPictureBox1);
             this.panel1.Controls.Add(this.btnRegister);
             this.panel1.Controls.Add(this.txtLogin);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(870, 636);
+            this.panel1.Size = new System.Drawing.Size(870, 693);
             this.panel1.TabIndex = 2;
+            // 
+            // bunifuPictureBox1
+            // 
+            this.bunifuPictureBox1.AllowFocused = false;
+            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bunifuPictureBox1.AutoSizeHeight = true;
+            this.bunifuPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuPictureBox1.BorderRadius = 17;
+            this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
+            this.bunifuPictureBox1.IsCircle = true;
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(306, 23);
+            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuPictureBox1.TabIndex = 47;
+            this.bunifuPictureBox1.TabStop = false;
+            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // bunifuGroupBox3
             // 
@@ -187,7 +206,7 @@
             this.bunifuGroupBox3.LabelAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.bunifuGroupBox3.LabelIndent = 10;
             this.bunifuGroupBox3.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
-            this.bunifuGroupBox3.Location = new System.Drawing.Point(24, 446);
+            this.bunifuGroupBox3.Location = new System.Drawing.Point(24, 501);
             this.bunifuGroupBox3.Name = "bunifuGroupBox3";
             this.bunifuGroupBox3.Size = new System.Drawing.Size(823, 104);
             this.bunifuGroupBox3.TabIndex = 45;
@@ -199,7 +218,7 @@
             this.ShowPassword.BackColor = System.Drawing.Color.White;
             this.ShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ShowPassword.Image = ((System.Drawing.Image)(resources.GetObject("ShowPassword.Image")));
-            this.ShowPassword.Location = new System.Drawing.Point(515, 58);
+            this.ShowPassword.Location = new System.Drawing.Point(515, 56);
             this.ShowPassword.Name = "ShowPassword";
             this.ShowPassword.Size = new System.Drawing.Size(25, 25);
             this.ShowPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -211,7 +230,7 @@
             this.HidePassword.BackColor = System.Drawing.Color.White;
             this.HidePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HidePassword.Image = ((System.Drawing.Image)(resources.GetObject("HidePassword.Image")));
-            this.HidePassword.Location = new System.Drawing.Point(515, 58);
+            this.HidePassword.Location = new System.Drawing.Point(515, 56);
             this.HidePassword.Name = "HidePassword";
             this.HidePassword.Size = new System.Drawing.Size(25, 25);
             this.HidePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -300,6 +319,7 @@
             this.txtUser.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUser.Lines = new string[0];
             this.txtUser.Location = new System.Drawing.Point(16, 51);
+            this.txtUser.MaximumSize = new System.Drawing.Size(260, 35);
             this.txtUser.MaxLength = 50;
             this.txtUser.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtUser.Modified = false;
@@ -335,9 +355,9 @@
             this.txtUser.SelectionLength = 0;
             this.txtUser.SelectionStart = 0;
             this.txtUser.ShortcutsEnabled = true;
-            this.txtUser.Size = new System.Drawing.Size(260, 37);
+            this.txtUser.Size = new System.Drawing.Size(260, 35);
             this.txtUser.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtUser.TabIndex = 12;
+            this.txtUser.TabIndex = 13;
             this.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtUser.TextMarginBottom = 0;
             this.txtUser.TextMarginLeft = 3;
@@ -377,6 +397,7 @@
             this.txtPassword.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.Lines = new string[0];
             this.txtPassword.Location = new System.Drawing.Point(284, 51);
+            this.txtPassword.MaximumSize = new System.Drawing.Size(260, 35);
             this.txtPassword.MaxLength = 256;
             this.txtPassword.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPassword.Modified = false;
@@ -412,9 +433,9 @@
             this.txtPassword.SelectionLength = 0;
             this.txtPassword.SelectionStart = 0;
             this.txtPassword.ShortcutsEnabled = true;
-            this.txtPassword.Size = new System.Drawing.Size(260, 37);
+            this.txtPassword.Size = new System.Drawing.Size(260, 35);
             this.txtPassword.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtPassword.TabIndex = 13;
+            this.txtPassword.TabIndex = 14;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtPassword.TextMarginBottom = 0;
             this.txtPassword.TextMarginLeft = 3;
@@ -454,6 +475,7 @@
             this.txtConfirmedPassword.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtConfirmedPassword.Lines = new string[0];
             this.txtConfirmedPassword.Location = new System.Drawing.Point(550, 51);
+            this.txtConfirmedPassword.MaximumSize = new System.Drawing.Size(260, 35);
             this.txtConfirmedPassword.MaxLength = 256;
             this.txtConfirmedPassword.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtConfirmedPassword.Modified = false;
@@ -489,9 +511,9 @@
             this.txtConfirmedPassword.SelectionLength = 0;
             this.txtConfirmedPassword.SelectionStart = 0;
             this.txtConfirmedPassword.ShortcutsEnabled = true;
-            this.txtConfirmedPassword.Size = new System.Drawing.Size(260, 37);
+            this.txtConfirmedPassword.Size = new System.Drawing.Size(260, 35);
             this.txtConfirmedPassword.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtConfirmedPassword.TabIndex = 14;
+            this.txtConfirmedPassword.TabIndex = 15;
             this.txtConfirmedPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtConfirmedPassword.TextMarginBottom = 0;
             this.txtConfirmedPassword.TextMarginLeft = 3;
@@ -506,23 +528,69 @@
             this.bunifuGroupBox2.BorderColor = System.Drawing.Color.LightGray;
             this.bunifuGroupBox2.BorderRadius = 8;
             this.bunifuGroupBox2.BorderThickness = 2;
+            this.bunifuGroupBox2.Controls.Add(this.comboBank);
             this.bunifuGroupBox2.Controls.Add(this.bunifuLabel8);
             this.bunifuGroupBox2.Controls.Add(this.bunifuLabel10);
             this.bunifuGroupBox2.Controls.Add(this.bunifuLabel9);
             this.bunifuGroupBox2.Controls.Add(this.txtAffiliationNumber);
             this.bunifuGroupBox2.Controls.Add(this.txtBankAccount);
-            this.bunifuGroupBox2.Controls.Add(this.comboBank);
             this.bunifuGroupBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.bunifuGroupBox2.ForeColor = System.Drawing.Color.White;
             this.bunifuGroupBox2.LabelAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.bunifuGroupBox2.LabelIndent = 10;
             this.bunifuGroupBox2.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
-            this.bunifuGroupBox2.Location = new System.Drawing.Point(24, 336);
+            this.bunifuGroupBox2.Location = new System.Drawing.Point(24, 391);
             this.bunifuGroupBox2.Name = "bunifuGroupBox2";
             this.bunifuGroupBox2.Size = new System.Drawing.Size(823, 104);
             this.bunifuGroupBox2.TabIndex = 43;
             this.bunifuGroupBox2.TabStop = false;
             this.bunifuGroupBox2.Text = "Datos financieros";
+            // 
+            // comboBank
+            // 
+            this.comboBank.BackColor = System.Drawing.Color.Transparent;
+            this.comboBank.BackgroundColor = System.Drawing.Color.White;
+            this.comboBank.BorderColor = System.Drawing.Color.Silver;
+            this.comboBank.BorderRadius = 5;
+            this.comboBank.Color = System.Drawing.Color.Silver;
+            this.comboBank.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.comboBank.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.comboBank.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.comboBank.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.comboBank.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.comboBank.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.comboBank.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBank.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.comboBank.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBank.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboBank.FillDropDown = true;
+            this.comboBank.FillIndicator = false;
+            this.comboBank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBank.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBank.ForeColor = System.Drawing.Color.Black;
+            this.comboBank.FormattingEnabled = true;
+            this.comboBank.Icon = null;
+            this.comboBank.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.comboBank.IndicatorColor = System.Drawing.Color.DimGray;
+            this.comboBank.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.comboBank.IndicatorThickness = 2;
+            this.comboBank.IsDropdownOpened = false;
+            this.comboBank.ItemBackColor = System.Drawing.Color.White;
+            this.comboBank.ItemBorderColor = System.Drawing.Color.White;
+            this.comboBank.ItemForeColor = System.Drawing.Color.Black;
+            this.comboBank.ItemHeight = 28;
+            this.comboBank.ItemHighLightColor = System.Drawing.Color.LightGray;
+            this.comboBank.ItemHighLightForeColor = System.Drawing.Color.Black;
+            this.comboBank.ItemTopMargin = 3;
+            this.comboBank.Location = new System.Drawing.Point(548, 51);
+            this.comboBank.MaximumSize = new System.Drawing.Size(260, 0);
+            this.comboBank.MinimumSize = new System.Drawing.Size(260, 0);
+            this.comboBank.Name = "comboBank";
+            this.comboBank.Size = new System.Drawing.Size(260, 34);
+            this.comboBank.TabIndex = 12;
+            this.comboBank.Text = null;
+            this.comboBank.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboBank.TextLeftMargin = 5;
             // 
             // bunifuLabel8
             // 
@@ -606,6 +674,7 @@
             this.txtAffiliationNumber.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAffiliationNumber.Lines = new string[0];
             this.txtAffiliationNumber.Location = new System.Drawing.Point(16, 51);
+            this.txtAffiliationNumber.MaximumSize = new System.Drawing.Size(260, 35);
             this.txtAffiliationNumber.MaxLength = 9;
             this.txtAffiliationNumber.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtAffiliationNumber.Modified = false;
@@ -641,9 +710,9 @@
             this.txtAffiliationNumber.SelectionLength = 0;
             this.txtAffiliationNumber.SelectionStart = 0;
             this.txtAffiliationNumber.ShortcutsEnabled = true;
-            this.txtAffiliationNumber.Size = new System.Drawing.Size(260, 37);
+            this.txtAffiliationNumber.Size = new System.Drawing.Size(260, 35);
             this.txtAffiliationNumber.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtAffiliationNumber.TabIndex = 9;
+            this.txtAffiliationNumber.TabIndex = 10;
             this.txtAffiliationNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtAffiliationNumber.TextMarginBottom = 0;
             this.txtAffiliationNumber.TextMarginLeft = 3;
@@ -683,6 +752,7 @@
             this.txtBankAccount.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBankAccount.Lines = new string[0];
             this.txtBankAccount.Location = new System.Drawing.Point(282, 51);
+            this.txtBankAccount.MaximumSize = new System.Drawing.Size(260, 35);
             this.txtBankAccount.MaxLength = 28;
             this.txtBankAccount.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtBankAccount.Modified = false;
@@ -718,9 +788,9 @@
             this.txtBankAccount.SelectionLength = 0;
             this.txtBankAccount.SelectionStart = 0;
             this.txtBankAccount.ShortcutsEnabled = true;
-            this.txtBankAccount.Size = new System.Drawing.Size(260, 37);
+            this.txtBankAccount.Size = new System.Drawing.Size(260, 35);
             this.txtBankAccount.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtBankAccount.TabIndex = 10;
+            this.txtBankAccount.TabIndex = 11;
             this.txtBankAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtBankAccount.TextMarginBottom = 0;
             this.txtBankAccount.TextMarginLeft = 3;
@@ -729,62 +799,17 @@
             this.txtBankAccount.UseSystemPasswordChar = false;
             this.txtBankAccount.WordWrap = true;
             // 
-            // comboBank
-            // 
-            this.comboBank.BackColor = System.Drawing.Color.Transparent;
-            this.comboBank.BackgroundColor = System.Drawing.Color.White;
-            this.comboBank.BorderColor = System.Drawing.Color.Silver;
-            this.comboBank.BorderRadius = 7;
-            this.comboBank.Color = System.Drawing.Color.Silver;
-            this.comboBank.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBank.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.comboBank.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.comboBank.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.comboBank.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.comboBank.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.comboBank.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.comboBank.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBank.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.comboBank.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBank.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.comboBank.FillDropDown = true;
-            this.comboBank.FillIndicator = false;
-            this.comboBank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBank.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBank.ForeColor = System.Drawing.Color.Black;
-            this.comboBank.FormattingEnabled = true;
-            this.comboBank.Icon = null;
-            this.comboBank.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.comboBank.IndicatorColor = System.Drawing.Color.DarkGray;
-            this.comboBank.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.comboBank.IndicatorThickness = 2;
-            this.comboBank.IsDropdownOpened = false;
-            this.comboBank.ItemBackColor = System.Drawing.Color.White;
-            this.comboBank.ItemBorderColor = System.Drawing.Color.White;
-            this.comboBank.ItemForeColor = System.Drawing.Color.Black;
-            this.comboBank.ItemHeight = 30;
-            this.comboBank.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.comboBank.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.comboBank.ItemTopMargin = 3;
-            this.comboBank.Location = new System.Drawing.Point(548, 51);
-            this.comboBank.Name = "comboBank";
-            this.comboBank.Size = new System.Drawing.Size(260, 36);
-            this.comboBank.TabIndex = 11;
-            this.comboBank.Text = null;
-            this.comboBank.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.comboBank.TextLeftMargin = 5;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(228, 65);
+            this.label1.Location = new System.Drawing.Point(197, 65);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(417, 17);
+            this.label1.Size = new System.Drawing.Size(455, 17);
             this.label1.TabIndex = 44;
-            this.label1.Text = "Ingrese la información para crear una cuenta de administrador";
+            this.label1.Text = "Ingrese la información para crear una cuenta de super administrador";
             // 
             // bunifuGroupBox1
             // 
@@ -792,6 +817,8 @@
             this.bunifuGroupBox1.BorderColor = System.Drawing.Color.LightGray;
             this.bunifuGroupBox1.BorderRadius = 8;
             this.bunifuGroupBox1.BorderThickness = 2;
+            this.bunifuGroupBox1.Controls.Add(this.bunifuLabel7);
+            this.bunifuGroupBox1.Controls.Add(this.comboGender);
             this.bunifuGroupBox1.Controls.Add(this.bunifuLabel4);
             this.bunifuGroupBox1.Controls.Add(this.lblFecha);
             this.bunifuGroupBox1.Controls.Add(this.txtLastNames);
@@ -815,10 +842,73 @@
             this.bunifuGroupBox1.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
             this.bunifuGroupBox1.Location = new System.Drawing.Point(24, 96);
             this.bunifuGroupBox1.Name = "bunifuGroupBox1";
-            this.bunifuGroupBox1.Size = new System.Drawing.Size(823, 234);
+            this.bunifuGroupBox1.Size = new System.Drawing.Size(823, 289);
             this.bunifuGroupBox1.TabIndex = 42;
             this.bunifuGroupBox1.TabStop = false;
             this.bunifuGroupBox1.Text = "Datos personales";
+            // 
+            // bunifuLabel7
+            // 
+            this.bunifuLabel7.AllowParentOverrides = false;
+            this.bunifuLabel7.AutoEllipsis = false;
+            this.bunifuLabel7.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel7.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.bunifuLabel7.Location = new System.Drawing.Point(285, 159);
+            this.bunifuLabel7.Name = "bunifuLabel7";
+            this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel7.Size = new System.Drawing.Size(48, 16);
+            this.bunifuLabel7.TabIndex = 50;
+            this.bunifuLabel7.Text = "Género";
+            this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // comboGender
+            // 
+            this.comboGender.BackColor = System.Drawing.Color.Transparent;
+            this.comboGender.BackgroundColor = System.Drawing.Color.White;
+            this.comboGender.BorderColor = System.Drawing.Color.Silver;
+            this.comboGender.BorderRadius = 5;
+            this.comboGender.Color = System.Drawing.Color.Silver;
+            this.comboGender.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.comboGender.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.comboGender.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.comboGender.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.comboGender.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.comboGender.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.comboGender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboGender.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.comboGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboGender.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboGender.FillDropDown = true;
+            this.comboGender.FillIndicator = false;
+            this.comboGender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboGender.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboGender.ForeColor = System.Drawing.Color.Black;
+            this.comboGender.FormattingEnabled = true;
+            this.comboGender.Icon = null;
+            this.comboGender.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.comboGender.IndicatorColor = System.Drawing.Color.DimGray;
+            this.comboGender.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.comboGender.IndicatorThickness = 2;
+            this.comboGender.IsDropdownOpened = false;
+            this.comboGender.ItemBackColor = System.Drawing.Color.White;
+            this.comboGender.ItemBorderColor = System.Drawing.Color.White;
+            this.comboGender.ItemForeColor = System.Drawing.Color.Black;
+            this.comboGender.ItemHeight = 28;
+            this.comboGender.ItemHighLightColor = System.Drawing.Color.LightGray;
+            this.comboGender.ItemHighLightForeColor = System.Drawing.Color.Black;
+            this.comboGender.ItemTopMargin = 3;
+            this.comboGender.Location = new System.Drawing.Point(282, 177);
+            this.comboGender.MaximumSize = new System.Drawing.Size(260, 0);
+            this.comboGender.MinimumSize = new System.Drawing.Size(260, 0);
+            this.comboGender.Name = "comboGender";
+            this.comboGender.Size = new System.Drawing.Size(260, 34);
+            this.comboGender.TabIndex = 7;
+            this.comboGender.Text = null;
+            this.comboGender.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.comboGender.TextLeftMargin = 5;
             // 
             // bunifuLabel4
             // 
@@ -885,6 +975,7 @@
             this.txtLastNames.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtLastNames.Lines = new string[0];
             this.txtLastNames.Location = new System.Drawing.Point(282, 49);
+            this.txtLastNames.MaximumSize = new System.Drawing.Size(260, 35);
             this.txtLastNames.MaxLength = 150;
             this.txtLastNames.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtLastNames.Modified = false;
@@ -920,7 +1011,7 @@
             this.txtLastNames.SelectionLength = 0;
             this.txtLastNames.SelectionStart = 0;
             this.txtLastNames.ShortcutsEnabled = true;
-            this.txtLastNames.Size = new System.Drawing.Size(260, 37);
+            this.txtLastNames.Size = new System.Drawing.Size(260, 35);
             this.txtLastNames.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtLastNames.TabIndex = 2;
             this.txtLastNames.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1005,6 +1096,7 @@
             this.txtEmail.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmail.Lines = new string[0];
             this.txtEmail.Location = new System.Drawing.Point(282, 113);
+            this.txtEmail.MaximumSize = new System.Drawing.Size(526, 35);
             this.txtEmail.MaxLength = 256;
             this.txtEmail.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtEmail.Modified = false;
@@ -1040,7 +1132,7 @@
             this.txtEmail.SelectionLength = 0;
             this.txtEmail.SelectionStart = 0;
             this.txtEmail.ShortcutsEnabled = true;
-            this.txtEmail.Size = new System.Drawing.Size(260, 37);
+            this.txtEmail.Size = new System.Drawing.Size(526, 35);
             this.txtEmail.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtEmail.TabIndex = 5;
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1099,6 +1191,7 @@
             this.txtNames.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNames.Lines = new string[0];
             this.txtNames.Location = new System.Drawing.Point(16, 49);
+            this.txtNames.MaximumSize = new System.Drawing.Size(260, 35);
             this.txtNames.MaxLength = 150;
             this.txtNames.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtNames.Modified = false;
@@ -1134,7 +1227,7 @@
             this.txtNames.SelectionLength = 0;
             this.txtNames.SelectionStart = 0;
             this.txtNames.ShortcutsEnabled = true;
-            this.txtNames.Size = new System.Drawing.Size(260, 37);
+            this.txtNames.Size = new System.Drawing.Size(260, 35);
             this.txtNames.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtNames.TabIndex = 1;
             this.txtNames.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1200,7 +1293,7 @@
             this.dtBirth.IconColor = System.Drawing.Color.DimGray;
             this.dtBirth.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dtBirth.LeftTextMargin = 5;
-            this.dtBirth.Location = new System.Drawing.Point(548, 52);
+            this.dtBirth.Location = new System.Drawing.Point(548, 51);
             this.dtBirth.MinimumSize = new System.Drawing.Size(4, 32);
             this.dtBirth.Name = "dtBirth";
             this.dtBirth.Size = new System.Drawing.Size(260, 32);
@@ -1238,6 +1331,7 @@
             this.txtDUI.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDUI.Lines = new string[0];
             this.txtDUI.Location = new System.Drawing.Point(16, 113);
+            this.txtDUI.MaximumSize = new System.Drawing.Size(260, 35);
             this.txtDUI.MaxLength = 10;
             this.txtDUI.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtDUI.Modified = false;
@@ -1273,7 +1367,7 @@
             this.txtDUI.SelectionLength = 0;
             this.txtDUI.SelectionStart = 0;
             this.txtDUI.ShortcutsEnabled = true;
-            this.txtDUI.Size = new System.Drawing.Size(260, 37);
+            this.txtDUI.Size = new System.Drawing.Size(260, 35);
             this.txtDUI.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtDUI.TabIndex = 4;
             this.txtDUI.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1292,7 +1386,7 @@
             this.bunifuLabel5.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuLabel5.Location = new System.Drawing.Point(552, 95);
+            this.bunifuLabel5.Location = new System.Drawing.Point(20, 159);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel5.Size = new System.Drawing.Size(58, 16);
@@ -1331,7 +1425,7 @@
             this.txtAddress.IconRight = null;
             this.txtAddress.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAddress.Lines = new string[0];
-            this.txtAddress.Location = new System.Drawing.Point(16, 176);
+            this.txtAddress.Location = new System.Drawing.Point(17, 236);
             this.txtAddress.MaxLength = 500;
             this.txtAddress.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtAddress.Modified = false;
@@ -1367,9 +1461,9 @@
             this.txtAddress.SelectionLength = 0;
             this.txtAddress.SelectionStart = 0;
             this.txtAddress.ShortcutsEnabled = true;
-            this.txtAddress.Size = new System.Drawing.Size(526, 37);
+            this.txtAddress.Size = new System.Drawing.Size(791, 37);
             this.txtAddress.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtAddress.TabIndex = 7;
+            this.txtAddress.TabIndex = 9;
             this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtAddress.TextMarginBottom = 0;
             this.txtAddress.TextMarginLeft = 3;
@@ -1386,7 +1480,7 @@
             this.bunifuLabel6.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuLabel6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuLabel6.Location = new System.Drawing.Point(20, 157);
+            this.bunifuLabel6.Location = new System.Drawing.Point(21, 217);
             this.bunifuLabel6.Name = "bunifuLabel6";
             this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel6.Size = new System.Drawing.Size(66, 16);
@@ -1425,7 +1519,8 @@
             this.txtPhone.IconRight = null;
             this.txtPhone.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPhone.Lines = new string[0];
-            this.txtPhone.Location = new System.Drawing.Point(548, 113);
+            this.txtPhone.Location = new System.Drawing.Point(16, 177);
+            this.txtPhone.MaximumSize = new System.Drawing.Size(260, 35);
             this.txtPhone.MaxLength = 9;
             this.txtPhone.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPhone.Modified = false;
@@ -1461,7 +1556,7 @@
             this.txtPhone.SelectionLength = 0;
             this.txtPhone.SelectionStart = 0;
             this.txtPhone.ShortcutsEnabled = true;
-            this.txtPhone.Size = new System.Drawing.Size(260, 37);
+            this.txtPhone.Size = new System.Drawing.Size(260, 35);
             this.txtPhone.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtPhone.TabIndex = 6;
             this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1471,23 +1566,6 @@
             this.txtPhone.TextPlaceholder = "";
             this.txtPhone.UseSystemPasswordChar = false;
             this.txtPhone.WordWrap = true;
-            // 
-            // bunifuPictureBox1
-            // 
-            this.bunifuPictureBox1.AllowFocused = false;
-            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuPictureBox1.AutoSizeHeight = true;
-            this.bunifuPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuPictureBox1.BorderRadius = 17;
-            this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
-            this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(302, 23);
-            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(35, 35);
-            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuPictureBox1.TabIndex = 41;
-            this.bunifuPictureBox1.TabStop = false;
-            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // btnRegister
             // 
@@ -1536,7 +1614,7 @@
             this.btnRegister.IdleIconLeftImage = null;
             this.btnRegister.IdleIconRightImage = null;
             this.btnRegister.IndicateFocus = false;
-            this.btnRegister.Location = new System.Drawing.Point(361, 568);
+            this.btnRegister.Location = new System.Drawing.Point(361, 623);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnRegister.OnDisabledState.BorderRadius = 20;
@@ -1571,7 +1649,7 @@
             this.btnRegister.OnPressedState.IconLeftImage = null;
             this.btnRegister.OnPressedState.IconRightImage = null;
             this.btnRegister.Size = new System.Drawing.Size(153, 52);
-            this.btnRegister.TabIndex = 40;
+            this.btnRegister.TabIndex = 16;
             this.btnRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnRegister.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnRegister.TextMarginLeft = 0;
@@ -1594,7 +1672,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1129, 636);
+            this.ClientSize = new System.Drawing.Size(1129, 693);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1604,6 +1682,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
             this.bunifuGroupBox3.ResumeLayout(false);
             this.bunifuGroupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPassword)).EndInit();
@@ -1612,7 +1691,6 @@
             this.bunifuGroupBox2.PerformLayout();
             this.bunifuGroupBox1.ResumeLayout(false);
             this.bunifuGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1636,7 +1714,6 @@
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel9;
         public Bunifu.UI.WinForms.BunifuTextBox txtAffiliationNumber;
         public Bunifu.UI.WinForms.BunifuTextBox txtBankAccount;
-        public Bunifu.UI.WinForms.BunifuDropdown comboBank;
         private System.Windows.Forms.Label label1;
         private Bunifu.UI.WinForms.BunifuGroupBox bunifuGroupBox1;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
@@ -1655,8 +1732,11 @@
         public Bunifu.UI.WinForms.BunifuTextBox txtAddress;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
         public Bunifu.UI.WinForms.BunifuTextBox txtPhone;
-        private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnRegister;
         private System.Windows.Forms.Label txtLogin;
+        private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
+        public Bunifu.UI.WinForms.BunifuDropdown comboBank;
+        public Bunifu.UI.WinForms.BunifuDropdown comboGender;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
     }
 }

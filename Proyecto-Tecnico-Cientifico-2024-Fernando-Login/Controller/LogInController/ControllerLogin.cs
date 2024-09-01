@@ -26,6 +26,8 @@ namespace PTC2024.Controller.LogInController
             objLogIn.HidePassword.Click += new EventHandler(HidePassword);
             objLogIn.ShowPassword.Click += new EventHandler(ShowPassword);
             objLogIn.btnCerrar.Click += new EventHandler(Close);
+            objLogIn.TxtUserBunifu.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objLogIn.txtPasswordBunifu.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
         private void DataAccess(object sender, EventArgs e)
         {
@@ -184,6 +186,15 @@ namespace PTC2024.Controller.LogInController
         public void Close(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
         }
     }
 }
