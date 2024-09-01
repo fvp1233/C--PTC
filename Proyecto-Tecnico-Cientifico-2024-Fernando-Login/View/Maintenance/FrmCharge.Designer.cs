@@ -551,7 +551,7 @@
             this.dgvCharge.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvCharge.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCharge.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dgvCharge.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCharge.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvCharge.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCharge.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvCharge.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
@@ -644,6 +644,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(735, 459);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.txtBonus);

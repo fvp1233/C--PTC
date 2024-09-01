@@ -78,8 +78,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.40558F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.59441F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.4647F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.5353F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1131, 609);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -95,7 +95,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1125, 100);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1125, 76);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // txtEmployeeSearch
@@ -129,7 +129,7 @@
             this.txtEmployeeSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtEmployeeSearch.IconRight")));
             this.txtEmployeeSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmployeeSearch.Lines = new string[0];
-            this.txtEmployeeSearch.Location = new System.Drawing.Point(538, 30);
+            this.txtEmployeeSearch.Location = new System.Drawing.Point(538, 18);
             this.txtEmployeeSearch.MaxLength = 32767;
             this.txtEmployeeSearch.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtEmployeeSearch.Modified = false;
@@ -186,10 +186,10 @@
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(509, 94);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(509, 70);
             this.tableLayoutPanel3.TabIndex = 9;
             // 
             // label1
@@ -197,8 +197,8 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 10);
-            this.label1.Margin = new System.Windows.Forms.Padding(30, 0, 3, 0);
+            this.label1.Location = new System.Drawing.Point(15, 1);
+            this.label1.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(180, 40);
             this.label1.TabIndex = 1;
@@ -208,8 +208,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(40, 60);
-            this.label3.Margin = new System.Windows.Forms.Padding(40, 0, 3, 0);
+            this.label3.Location = new System.Drawing.Point(25, 42);
+            this.label3.Margin = new System.Windows.Forms.Padding(25, 0, 3, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(319, 16);
             this.label3.TabIndex = 2;
@@ -222,12 +222,12 @@
             this.tableLayoutPanel4.Controls.Add(this.dgvPermissions, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 109);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 85);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.34004F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.65996F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1125, 497);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1125, 521);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // dgvPermissions
@@ -293,7 +293,7 @@
             this.dgvPermissions.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
             this.dgvPermissions.HeaderBgColor = System.Drawing.Color.Empty;
             this.dgvPermissions.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvPermissions.Location = new System.Drawing.Point(3, 119);
+            this.dgvPermissions.Location = new System.Drawing.Point(3, 124);
             this.dgvPermissions.Name = "dgvPermissions";
             this.dgvPermissions.ReadOnly = true;
             this.dgvPermissions.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -319,7 +319,7 @@
             this.dgvPermissions.RowTemplate.Height = 50;
             this.dgvPermissions.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPermissions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPermissions.Size = new System.Drawing.Size(1119, 375);
+            this.dgvPermissions.Size = new System.Drawing.Size(1119, 394);
             this.dgvPermissions.TabIndex = 2;
             this.dgvPermissions.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
             // 
@@ -365,7 +365,7 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1119, 110);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1119, 115);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // bunifuPictureBox1
@@ -376,7 +376,7 @@
             this.bunifuPictureBox1.BorderRadius = 0;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
             this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(295, 10);
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(295, 13);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
             this.bunifuPictureBox1.Size = new System.Drawing.Size(89, 89);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -392,7 +392,7 @@
             this.bunifuPictureBox2.BorderRadius = 0;
             this.bunifuPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox2.Image")));
             this.bunifuPictureBox2.IsCircle = true;
-            this.bunifuPictureBox2.Location = new System.Drawing.Point(538, 14);
+            this.bunifuPictureBox2.Location = new System.Drawing.Point(538, 16);
             this.bunifuPictureBox2.Name = "bunifuPictureBox2";
             this.bunifuPictureBox2.Size = new System.Drawing.Size(82, 82);
             this.bunifuPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -448,7 +448,7 @@
             this.btnDeletePermission.IdleIconLeftImage = null;
             this.btnDeletePermission.IdleIconRightImage = null;
             this.btnDeletePermission.IndicateFocus = false;
-            this.btnDeletePermission.Location = new System.Drawing.Point(706, 26);
+            this.btnDeletePermission.Location = new System.Drawing.Point(706, 28);
             this.btnDeletePermission.Name = "btnDeletePermission";
             this.btnDeletePermission.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDeletePermission.OnDisabledState.BorderRadius = 20;
@@ -538,7 +538,7 @@
             this.btnGeneratePermission.IdleIconLeftImage = null;
             this.btnGeneratePermission.IdleIconRightImage = null;
             this.btnGeneratePermission.IndicateFocus = false;
-            this.btnGeneratePermission.Location = new System.Drawing.Point(923, 26);
+            this.btnGeneratePermission.Location = new System.Drawing.Point(923, 28);
             this.btnGeneratePermission.Name = "btnGeneratePermission";
             this.btnGeneratePermission.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnGeneratePermission.OnDisabledState.BorderRadius = 20;
@@ -587,7 +587,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1131, 609);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPermissions";
             this.Text = "FrmMaternity";
             this.tableLayoutPanel1.ResumeLayout(false);

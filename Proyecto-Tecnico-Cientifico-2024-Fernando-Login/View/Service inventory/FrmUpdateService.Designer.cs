@@ -290,9 +290,10 @@
             this.txtId});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(454, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(454, 27);
             this.menuStrip1.TabIndex = 95;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Visible = false;
             // 
             // txtId
             // 
@@ -610,6 +611,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(454, 513);
             this.Controls.Add(this.txtNombres);
             this.Controls.Add(this.txtDescripcion);
