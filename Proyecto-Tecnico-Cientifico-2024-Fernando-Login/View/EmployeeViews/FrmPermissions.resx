@@ -588,7 +588,7 @@
   <data name="cmsDeletePermission.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAANspJREFUeF7tnXm8vWPV/58/zUSE50sDIlKGKDORCJVIpaJBZYqIFBlKhAyZItKj
+        vQAADr0BR/uQrQAANspJREFUeF7tnXm8vWPV/58/zUSE50sDIlKGKDORCJVIpaJBZYqIFBlKhAyZItKj
         DBkyZJ4iQ6Yyz7OQMWPTn8/vc/Usr76/1XW+zj5n77Pua93v9+v1/qfY12fd51rrPs7e+77+CwAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACM/1122bnl0vLD8sty
         D/l1+Wm5upzF/lEAAADoCrpBzye/JE+Sz8j/HYfXyu/KeexlAAAAYCrRTXhW+RF5uLxT1m7Yg/hT+VZ7
@@ -828,7 +828,7 @@
   <data name="bunifuPictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAASxBJREFUeF7tnTHONDmSnteRI8gQIEC2LrCAbvALkK9eV1brBr03aBnyf91gZMpr
+        vQAADr0BR/uQrQAASxBJREFUeF7tnTHONDmSnteRI8gQIEC2LrCAbvALkK9eV1brBr03aBnyf91gZMpr
         3WD2BjM32L3B6gZSvvtNdlfXRFVFZgTJIPk8wGtMz/9VZTGZfBnBIPNvAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABe8R8P/fEv+vnQ
         T4e+HdJ/BwAAKMF/OCRzkknJrB51mtijmZ364ZD+7t8eWp3/dOj/vdE/Hno2e7UrAABAOjJemfBp1DIh
@@ -1154,7 +1154,7 @@
   <data name="bunifuPictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAFH1JREFUeF7t3WmsdWddxmFiTIBSpAWqkGBkkGKEEmSGlEmB0KYiQ0P8UCGIdlIM
+        vQAADr0BR/uQrQAAFH1JREFUeF7t3WmsdWddxmFiTIBSpAWqkGBkkGKEEmSGlEmB0KYiQ0P8UCGIdlIM
         piAyaEtBQCoiWMAPBQFTsGCqSJWKgK1CgLYMlmiLTKWAWCgzlI96r6QaXT7v27Of95yz/s/a15X8PlPW
         Xnnud5893QwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAoOmwdHR6UHp0emJ6ajo9PTe9JL0q/dFAvTy9MD0rPSM9JR2XHpaOSUclABjSQ9PT0zTQb00f
