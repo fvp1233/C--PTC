@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfile));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges11 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges12 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -79,7 +79,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1183, 688);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1163, 687);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -93,7 +93,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1177, 94);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1157, 94);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -108,7 +108,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(592, 88);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(582, 88);
             this.tableLayoutPanel5.TabIndex = 8;
             // 
             // label1
@@ -116,8 +116,8 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 8);
-            this.label1.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
+            this.label1.Location = new System.Drawing.Point(30, 8);
+            this.label1.Margin = new System.Windows.Forms.Padding(30, 0, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(519, 40);
             this.label1.TabIndex = 1;
@@ -126,8 +126,8 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 56);
-            this.label2.Margin = new System.Windows.Forms.Padding(25, 0, 3, 0);
+            this.label2.Location = new System.Drawing.Point(40, 56);
+            this.label2.Margin = new System.Windows.Forms.Padding(40, 0, 3, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(539, 17);
             this.label2.TabIndex = 2;
@@ -145,7 +145,7 @@
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1177, 582);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1157, 581);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel4
@@ -157,7 +157,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.12337F));
             this.tableLayoutPanel4.Controls.Add(this.picUser, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 1, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(26, 13);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(16, 12);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -221,7 +221,7 @@
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.30769F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.69231F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 248F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 247F));
             this.tableLayoutPanel7.Controls.Add(this.btnUpdate, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.btnSavePhoto, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.btnSecurityQ, 1, 0);
@@ -253,11 +253,11 @@
             this.btnUpdate.ColorContrastOnClick = 45;
             this.btnUpdate.ColorContrastOnHover = 45;
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges9.BottomLeft = true;
-            borderEdges9.BottomRight = true;
-            borderEdges9.TopLeft = true;
-            borderEdges9.TopRight = true;
-            this.btnUpdate.CustomizableEdges = borderEdges9;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnUpdate.CustomizableEdges = borderEdges1;
             this.btnUpdate.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnUpdate.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnUpdate.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -281,7 +281,7 @@
             this.btnUpdate.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnUpdate.IdleIconLeftImage")));
             this.btnUpdate.IdleIconRightImage = null;
             this.btnUpdate.IndicateFocus = false;
-            this.btnUpdate.Location = new System.Drawing.Point(209, 9);
+            this.btnUpdate.Location = new System.Drawing.Point(210, 9);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnUpdate.OnDisabledState.BorderRadius = 15;
@@ -343,11 +343,11 @@
             this.btnSavePhoto.ColorContrastOnClick = 45;
             this.btnSavePhoto.ColorContrastOnHover = 45;
             this.btnSavePhoto.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges10.BottomLeft = true;
-            borderEdges10.BottomRight = true;
-            borderEdges10.TopLeft = true;
-            borderEdges10.TopRight = true;
-            this.btnSavePhoto.CustomizableEdges = borderEdges10;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnSavePhoto.CustomizableEdges = borderEdges2;
             this.btnSavePhoto.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSavePhoto.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSavePhoto.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -433,11 +433,11 @@
             this.btnSecurityQ.ColorContrastOnClick = 45;
             this.btnSecurityQ.ColorContrastOnHover = 45;
             this.btnSecurityQ.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges11.BottomLeft = true;
-            borderEdges11.BottomRight = true;
-            borderEdges11.TopLeft = true;
-            borderEdges11.TopRight = true;
-            this.btnSecurityQ.CustomizableEdges = borderEdges11;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnSecurityQ.CustomizableEdges = borderEdges3;
             this.btnSecurityQ.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSecurityQ.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSecurityQ.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -461,7 +461,7 @@
             this.btnSecurityQ.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnSecurityQ.IdleIconLeftImage")));
             this.btnSecurityQ.IdleIconRightImage = null;
             this.btnSecurityQ.IndicateFocus = false;
-            this.btnSecurityQ.Location = new System.Drawing.Point(402, 9);
+            this.btnSecurityQ.Location = new System.Drawing.Point(403, 9);
             this.btnSecurityQ.Name = "btnSecurityQ";
             this.btnSecurityQ.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSecurityQ.OnDisabledState.BorderRadius = 15;
@@ -508,8 +508,7 @@
             this.lblUser.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(10, 133);
-            this.lblUser.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.lblUser.Location = new System.Drawing.Point(3, 133);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(65, 21);
             this.lblUser.TabIndex = 3;
@@ -520,8 +519,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(10, 106);
-            this.label4.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.label4.Location = new System.Drawing.Point(3, 106);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 23);
             this.label4.TabIndex = 2;
@@ -532,8 +530,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 41);
-            this.label5.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.label5.Location = new System.Drawing.Point(3, 41);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(210, 23);
             this.label5.TabIndex = 0;
@@ -544,8 +541,7 @@
             this.lblFullName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblFullName.AutoSize = true;
             this.lblFullName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullName.Location = new System.Drawing.Point(10, 71);
-            this.lblFullName.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.lblFullName.Location = new System.Drawing.Point(3, 71);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(150, 21);
             this.lblFullName.TabIndex = 1;
@@ -556,8 +552,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 173);
-            this.label3.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.label3.Location = new System.Drawing.Point(3, 173);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(242, 23);
             this.label3.TabIndex = 4;
@@ -568,8 +563,7 @@
             this.lblEAdress.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblEAdress.AutoSize = true;
             this.lblEAdress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEAdress.Location = new System.Drawing.Point(10, 201);
-            this.lblEAdress.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.lblEAdress.Location = new System.Drawing.Point(3, 201);
             this.lblEAdress.Name = "lblEAdress";
             this.lblEAdress.Size = new System.Drawing.Size(60, 21);
             this.lblEAdress.TabIndex = 5;
@@ -580,8 +574,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(10, 243);
-            this.label7.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.label7.Location = new System.Drawing.Point(3, 243);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 23);
             this.label7.TabIndex = 6;
@@ -592,8 +585,7 @@
             this.lblPhone.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(10, 272);
-            this.lblPhone.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.lblPhone.Location = new System.Drawing.Point(3, 272);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(79, 21);
             this.lblPhone.TabIndex = 7;
@@ -604,8 +596,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(10, 315);
-            this.label9.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.label9.Location = new System.Drawing.Point(3, 315);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(174, 23);
             this.label9.TabIndex = 8;
@@ -616,8 +607,7 @@
             this.lblCharge.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblCharge.AutoSize = true;
             this.lblCharge.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCharge.Location = new System.Drawing.Point(10, 344);
-            this.lblCharge.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.lblCharge.Location = new System.Drawing.Point(3, 344);
             this.lblCharge.Name = "lblCharge";
             this.lblCharge.Size = new System.Drawing.Size(79, 21);
             this.lblCharge.TabIndex = 9;
@@ -643,11 +633,11 @@
             this.btnSave.ColorContrastOnClick = 45;
             this.btnSave.ColorContrastOnHover = 45;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges12.BottomLeft = true;
-            borderEdges12.BottomRight = true;
-            borderEdges12.TopLeft = true;
-            borderEdges12.TopRight = true;
-            this.btnSave.CustomizableEdges = borderEdges12;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnSave.CustomizableEdges = borderEdges4;
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSave.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSave.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -717,8 +707,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1183, 688);
+            this.ClientSize = new System.Drawing.Size(1163, 687);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmProfile";
             this.Text = "FrmProfileSettings";

@@ -34,21 +34,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCategories));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCategories));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvCategories = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.cmsCategorie = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmsDeleteCategorie = new System.Windows.Forms.ToolStripMenuItem();
             this.btnGoBack = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.txtCategorie = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.cmsDeleteCategorie = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAddCategorie = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
             this.cmsCategorie.SuspendLayout();
@@ -107,7 +107,7 @@
             this.dgvCategories.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvCategories.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCategories.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dgvCategories.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvCategories.BackgroundColor = System.Drawing.Color.White;
             this.dgvCategories.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCategories.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvCategories.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
@@ -191,13 +191,6 @@
             this.cmsDeleteCategorie});
             this.cmsCategorie.Name = "cmsEmployee";
             this.cmsCategorie.Size = new System.Drawing.Size(185, 30);
-            // 
-            // cmsDeleteCategorie
-            // 
-            this.cmsDeleteCategorie.Image = ((System.Drawing.Image)(resources.GetObject("cmsDeleteCategorie.Image")));
-            this.cmsDeleteCategorie.Name = "cmsDeleteCategorie";
-            this.cmsDeleteCategorie.Size = new System.Drawing.Size(184, 26);
-            this.cmsDeleteCategorie.Text = "Eliminar categoría";
             // 
             // btnGoBack
             // 
@@ -367,6 +360,13 @@
             this.txtCategorie.UseSystemPasswordChar = false;
             this.txtCategorie.WordWrap = true;
             // 
+            // cmsDeleteCategorie
+            // 
+            this.cmsDeleteCategorie.Image = ((System.Drawing.Image)(resources.GetObject("cmsDeleteCategorie.Image")));
+            this.cmsDeleteCategorie.Name = "cmsDeleteCategorie";
+            this.cmsDeleteCategorie.Size = new System.Drawing.Size(184, 26);
+            this.cmsDeleteCategorie.Text = "Eliminar categoría";
+            // 
             // btnAddCategorie
             // 
             this.btnAddCategorie.AllowAnimations = true;
@@ -461,7 +461,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(583, 443);
             this.Controls.Add(this.btnAddCategorie);
             this.Controls.Add(this.bunifuSeparator1);

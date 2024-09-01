@@ -34,21 +34,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDepartments));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDepartments));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.dgvDepartments = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.cmsDepartment = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmsDeleteDepartment = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGoBack = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.txtDepartment = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.cmsDeleteDepartment = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAddDepartment = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).BeginInit();
             this.cmsDepartment.SuspendLayout();
@@ -69,7 +69,7 @@
             this.dgvDepartments.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvDepartments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDepartments.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dgvDepartments.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvDepartments.BackgroundColor = System.Drawing.Color.White;
             this.dgvDepartments.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDepartments.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDepartments.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
@@ -153,13 +153,6 @@
             this.cmsDeleteDepartment});
             this.cmsDepartment.Name = "cmsEmployee";
             this.cmsDepartment.Size = new System.Drawing.Size(213, 30);
-            // 
-            // cmsDeleteDepartment
-            // 
-            this.cmsDeleteDepartment.Image = ((System.Drawing.Image)(resources.GetObject("cmsDeleteDepartment.Image")));
-            this.cmsDeleteDepartment.Name = "cmsDeleteDepartment";
-            this.cmsDeleteDepartment.Size = new System.Drawing.Size(212, 26);
-            this.cmsDeleteDepartment.Text = "Eliminar departamento";
             // 
             // label2
             // 
@@ -366,6 +359,13 @@
             this.txtDepartment.UseSystemPasswordChar = false;
             this.txtDepartment.WordWrap = true;
             // 
+            // cmsDeleteDepartment
+            // 
+            this.cmsDeleteDepartment.Image = ((System.Drawing.Image)(resources.GetObject("cmsDeleteDepartment.Image")));
+            this.cmsDeleteDepartment.Name = "cmsDeleteDepartment";
+            this.cmsDeleteDepartment.Size = new System.Drawing.Size(212, 26);
+            this.cmsDeleteDepartment.Text = "Eliminar departamento";
+            // 
             // btnAddDepartment
             // 
             this.btnAddDepartment.AllowAnimations = true;
@@ -438,7 +438,7 @@
             this.btnAddDepartment.OnIdleState.BorderThickness = 1;
             this.btnAddDepartment.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnAddDepartment.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnAddDepartment.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnAddDepartment.OnIdleState.IconLeftImage")));
+            this.btnAddDepartment.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("BtnAddEmployee.OnIdleState.IconLeftImage")));
             this.btnAddDepartment.OnIdleState.IconRightImage = null;
             this.btnAddDepartment.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnAddDepartment.OnPressedState.BorderRadius = 15;
@@ -460,7 +460,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(583, 443);
             this.Controls.Add(this.btnAddDepartment);
             this.Controls.Add(this.bunifuSeparator1);

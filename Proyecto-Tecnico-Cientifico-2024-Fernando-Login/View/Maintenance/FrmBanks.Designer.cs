@@ -34,22 +34,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBanks));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBanks));
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvBanks = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.cmsBanks = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmsDeleteBank = new System.Windows.Forms.ToolStripMenuItem();
             this.btnGoBack = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.txtBank = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnAddBank = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
+            this.cmsBanks = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsDeleteBank = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBanks)).BeginInit();
             this.cmsBanks.SuspendLayout();
             this.SuspendLayout();
@@ -107,7 +107,7 @@
             this.dgvBanks.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvBanks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBanks.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dgvBanks.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvBanks.BackgroundColor = System.Drawing.Color.White;
             this.dgvBanks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBanks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvBanks.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
@@ -182,22 +182,6 @@
             this.dgvBanks.Size = new System.Drawing.Size(503, 180);
             this.dgvBanks.TabIndex = 202;
             this.dgvBanks.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
-            // 
-            // cmsBanks
-            // 
-            this.cmsBanks.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmsBanks.ImageScalingSize = new System.Drawing.Size(19, 19);
-            this.cmsBanks.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmsDeleteBank});
-            this.cmsBanks.Name = "cmsEmployee";
-            this.cmsBanks.Size = new System.Drawing.Size(166, 30);
-            // 
-            // cmsDeleteBank
-            // 
-            this.cmsDeleteBank.Image = ((System.Drawing.Image)(resources.GetObject("cmsDeleteBank.Image")));
-            this.cmsDeleteBank.Name = "cmsDeleteBank";
-            this.cmsDeleteBank.Size = new System.Drawing.Size(165, 26);
-            this.cmsDeleteBank.Text = "Eliminar banco";
             // 
             // btnGoBack
             // 
@@ -439,7 +423,7 @@
             this.btnAddBank.OnIdleState.BorderThickness = 1;
             this.btnAddBank.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnAddBank.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnAddBank.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnAddBank.OnIdleState.IconLeftImage")));
+            this.btnAddBank.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnAddCategorie.OnIdleState.IconLeftImage")));
             this.btnAddBank.OnIdleState.IconRightImage = null;
             this.btnAddBank.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnAddBank.OnPressedState.BorderRadius = 15;
@@ -457,11 +441,26 @@
             this.btnAddBank.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
             this.btnAddBank.UseDefaultRadiusAndThickness = true;
             // 
+            // cmsBanks
+            // 
+            this.cmsBanks.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmsBanks.ImageScalingSize = new System.Drawing.Size(19, 19);
+            this.cmsBanks.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsDeleteBank});
+            this.cmsBanks.Name = "cmsEmployee";
+            this.cmsBanks.Size = new System.Drawing.Size(166, 30);
+            // 
+            // cmsDeleteBank
+            // 
+            this.cmsDeleteBank.Image = ((System.Drawing.Image)(resources.GetObject("cmsDeleteBank.Image")));
+            this.cmsDeleteBank.Name = "cmsDeleteBank";
+            this.cmsDeleteBank.Size = new System.Drawing.Size(165, 26);
+            this.cmsDeleteBank.Text = "Eliminar banco";
+            // 
             // FrmBanks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(583, 443);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAddBank);
