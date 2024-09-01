@@ -162,7 +162,7 @@
             this.comboTipoEmpleado.FillDropDown = true;
             this.comboTipoEmpleado.FillIndicator = false;
             this.comboTipoEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboTipoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboTipoEmpleado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboTipoEmpleado.ForeColor = System.Drawing.Color.Black;
             this.comboTipoEmpleado.FormattingEnabled = true;
             this.comboTipoEmpleado.Icon = null;
@@ -600,6 +600,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(454, 513);
             this.Controls.Add(this.txtNombres);
             this.Controls.Add(this.txtDescripcion);
