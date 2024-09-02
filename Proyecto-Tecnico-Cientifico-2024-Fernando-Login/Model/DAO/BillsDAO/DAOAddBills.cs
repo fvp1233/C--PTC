@@ -197,33 +197,128 @@ namespace PTC2024.Model.DAO.BillsDAO
                 getConnection().Close();
             }
         }
+        /// <summary>
+        /// Busca la coincidencia de los nombres a ingresar
+        /// </summary>
+        /// <param name="CustomerName"></param>
+        /// <returns></returns>
 
-        public Dictionary<string, string> DataCustomer(string CustomerName)
+        public List<string> GetCustomerNames(string CustomerName)
         {
-            Command.Connection = getConnection();
-            Dictionary<string, string> clienteData = new Dictionary<string, string>();
+            List<string> customerNames = new List<string>();
 
-            string query = "SELECT IdCustomer, DUI, phone, email " +
-                           "FROM tbCustomer " +
-                           "WHERE RTRIM(LTRIM(names + ' ' + lastNames)) = RTRIM(LTRIM(@CustomerName))";
-
-            
-                SqlCommand cmd = new SqlCommand(query, Command.Connection);
-                cmd.Parameters.AddWithValue("@CustomerName", CustomerName);
-            SqlDataReader reader = cmd.ExecuteReader();
+            using (SqlConnection connection = getConnection())
+            {
+                // Abre la conexión solo si está cerrada
+                if (connection.State == ConnectionState.Closed)
                 {
-                    if (reader.Read())
+                    connection.Open();
+                }
+
+                string query = "SELECT DISTINCT TRIM(names + ' ' + lastNames) AS FullName " +
+                               "FROM tbCustomer " +
+                               "WHERE TRIM(names + ' ' + lastNames) LIKE '%' + @CustomerName + '%'";
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@CustomerName", CustomerName);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        clienteData["IdCustomer"] = reader["IdCustomer"].ToString();
-                        clienteData["DUI"] = reader["DUI"].ToString();
-                        clienteData["phone"] = reader["phone"].ToString();
-                        clienteData["email"] = reader["email"].ToString();
+                        while (reader.Read())
+                        {
+                            customerNames.Add(reader["FullName"].ToString());
+                        }
                     }
                 }
-            
+            }
+
+            return customerNames;
+        }
+
+        /// <summary>
+        /// Una vez encontrado el cliente este se filtran todos los datos que contiene
+        /// </summary>
+        /// <param name="CustomerName"></param>
+        /// <returns></returns>
+        public Dictionary<string, string> GetCustomerDetails(string CustomerName)
+        {
+            Dictionary<string, string> clienteData = new Dictionary<string, string>();
+
+            try
+            {
+                using (SqlConnection connection = getConnection())
+                {
+                    if (connection.State == ConnectionState.Closed)
+                    {
+                        connection.Open();
+                    }
+
+                    string query = "SELECT IdCustomer, DUI, phone, email " +
+                                   "FROM tbCustomer " +
+                                   "WHERE TRIM(names + ' ' + lastNames) = TRIM(@CustomerName)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@CustomerName", CustomerName);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                clienteData["IdCustomer"] = reader["IdCustomer"].ToString();
+                                clienteData["DUI"] = reader["DUI"].ToString();
+                                clienteData["phone"] = reader["phone"].ToString();
+                                clienteData["email"] = reader["email"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log del error o muestra el mensaje
+                MessageBox.Show($"Error al obtener detalles del cliente: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             return clienteData;
         }
+
+        public List<string> GetEmployeesNames(string EmployeeName)
+        {
+            List<string> EmployeeNames = new List<string>();
+
+            using (SqlConnection connection = getConnection())
+            {
+                // Abre la conexión solo si está cerrada
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+
+                string query = "SELECT DISTINCT TRIM(names + ' ' + lastName) AS FullName " +
+                               "FROM tbEmployee " +
+                               "WHERE TRIM(names + ' ' + lastName) LIKE '%' + @EmployeeName + '%'";
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@EmployeeName", EmployeeName);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            EmployeeNames.Add(reader["FullName"].ToString());
+                        }
+                    }
+                }
+            }
+
+            return EmployeeNames;
+        }
+
+
+
 
         public DataSet BillsD()
         {

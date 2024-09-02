@@ -27,15 +27,27 @@ namespace PTC2024.View.Facturacion
 
 
         }
-        public FrmAddBills(int accions, int id, string companyName, string NIT, string NRC, string customer, string serviceName, double Discount, double SubtotalPay, double TotalPay, string methodP, DateTime startDate, DateTime FinalDate,DateTime Dateissued, string employee, string statusBill, string CustomerDui, string CustomerPhone, string CustomerEmail)
+        public FrmAddBills(int accions, int IdBill1, string companyName, string NIT, string NRC, string customer, string serviceName, double Discount, double SubtotalPay, double TotalPay, string methodP, DateTime startDate, DateTime FinalDate,DateTime Dateissued, string employee, string statusBill, string CustomerDui, string CustomerPhone, string CustomerEmail)
         {
             InitializeComponent();
-            ControllerAddBills objAddBills = new ControllerAddBills(this, accions, id, companyName, NIT, NRC, customer, serviceName, Discount, SubtotalPay, TotalPay, methodP, startDate, FinalDate, Dateissued,employee, statusBill, CustomerDui, CustomerPhone, CustomerEmail);
+            ControllerAddBills objAddBills = new ControllerAddBills(this, accions, IdBill1, companyName, NIT, NRC, customer, serviceName, Discount, SubtotalPay, TotalPay, methodP, startDate, FinalDate, Dateissued,employee, statusBill, CustomerDui, CustomerPhone, CustomerEmail);
         }
         public FrmAddBills(int accions, int id, string IdServices1, float Price1)
         {
             InitializeComponent();
             ControllerAddBills objAddBills = new ControllerAddBills (this, accions, id, IdServices1, Price1);
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            //Verificar si Ctrl+C o Ctrl+V se presionaron
+            if (keyData == (Keys.Control | Keys.C) || keyData == (Keys.Control | Keys.V))
+            {
+                //Retorna true para ignorar el comando y evitar la acción de copiar o pegar
+                return true;
+            }
+
+            //Llamar al método base para manejar otras teclas
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }
