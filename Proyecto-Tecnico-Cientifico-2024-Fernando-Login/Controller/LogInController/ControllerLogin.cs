@@ -29,8 +29,9 @@ namespace PTC2024.Controller.LogInController
             objLogIn.TxtUserBunifu.MouseDown += new MouseEventHandler(DisableContextMenu);
             objLogIn.txtPasswordBunifu.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
-        private void DataAccess(object sender, EventArgs e)
+        async private void DataAccess(object sender, EventArgs e)
         {
+            await Task.Delay(2000);
             DAOLogin DAOData = new DAOLogin();
             CommonClasses common = new CommonClasses();
 
