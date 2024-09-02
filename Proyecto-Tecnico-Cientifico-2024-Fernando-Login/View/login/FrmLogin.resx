@@ -121,12 +121,12 @@
   <data name="bunifuSeparator1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAaEAAAAVCAYAAADvhFEVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB5SURBVHhe7c6xCUNBEEPB67+q68xGoFDRx4FtZkCw8JI9
-        AAAAAAAAAAAAAAAAAADw2L33tdasj5Y166NlzfpoWbM+Wtasj5Y1/0X/iifWmvXRsmZ9tKxZHy1r1kfL
-        mvXRsuaP9J4AAAAAAAAAAAAAAAAAAAAAP+OcN9vr8Hj9XIiuAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABNSURBVHhe7ddBCQAwEAPB+FcVZ+2nCvo5DmZgNYQEAAAA
+        AAAAAAAAAAAAAAC+tT2SJE1khCRJY70/BAAAAAAAAAAAAAAAAAAAALBGcgE63ZPVzMMgiwAAAABJRU5E
+        rkJggg==
 </value>
   </data>
-  <data name="bunifuCheckBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="chRememberMe.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAESSURBVDhP5ZStk8IwEMUrkSdPIpEnkSeRSP4EJPIkrhKJ

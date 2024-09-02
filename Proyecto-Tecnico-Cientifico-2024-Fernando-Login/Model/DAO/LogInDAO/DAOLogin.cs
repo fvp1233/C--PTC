@@ -101,5 +101,38 @@ namespace PTC2024.Model.DAO.LogInDAO
             }
         }
 
+        public int RememberMe()
+        {
+            try
+            {
+                //Conexion
+                command.Connection = getConnection();
+                //query
+                string query = "UPDATE tbUserData SET " +
+                               "rememberToken = @token, " +
+                               "tokenExpiry = @tokenExpiry " +
+                               "WHERE username = @username";
+                //Comando SQL
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                //Damos los parámetros
+                cmd.Parameters.AddWithValue("token", Token);
+                cmd.Parameters.AddWithValue("tokenExpiry", TokenExpiry);
+                cmd.Parameters.AddWithValue("username", Username);
+                //Ejecutamos la consulta
+                int answer = cmd.ExecuteNonQuery();
+                return answer;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return -1;
+            }
+            finally
+            {
+                command.Connection.Close(); 
+            }
+        }
+
+
     }
 }

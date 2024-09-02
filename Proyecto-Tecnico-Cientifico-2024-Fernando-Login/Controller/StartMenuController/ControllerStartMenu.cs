@@ -19,6 +19,7 @@ using PTC2024.View.ProfileSettings;
 using System.IO;
 using System.Drawing;
 using System.Windows.Forms.DataVisualization.Charting;
+using PTC2024.Model.DAO.StartMenuDAO;
 
 namespace PTC2024.Controller.StartMenuController
 {
@@ -165,16 +166,18 @@ namespace PTC2024.Controller.StartMenuController
 
         public void LogOut(object sender, EventArgs e)
         {
+            DAOStartMenu daoS = new DAOStartMenu();
             if (MessageBox.Show("¿Quiere cerrar la sesión?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 ClearVarSession();
                 objStartMenu.Hide();
+                DeleteLocalToken();
+                daoS.DeleteUserToken();
                 FrmLogin backToLogin = new FrmLogin();
                 backToLogin.Show();
                 
             }
-        }
-      
+        }    
 
         public void ClearVarSession()
         {
@@ -187,15 +190,64 @@ namespace PTC2024.Controller.StartMenuController
         
         public void CloseProgram(Object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("¿Desea cerrar el programa? \n La sesión se cerrará automáticamente", "Cerar programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //objeto del dao
+            DAOStartMenu daoStart = new DAOStartMenu();
+            //verificamos si existe un token local
+            string savedToken = Properties.Settings.Default.Token;
+            if (!string.IsNullOrEmpty(savedToken))
             {
-                Environment.Exit(0);
+                //Si existe un token, vamos a pasar a comprobar que ese token sea el mismo del usuario que tiene la sesión abierta
+                //damos valor a los getters
+                daoStart.Username = SessionVar.Username;
+                daoStart.Token = savedToken;
+                daoStart.CurrentDate = DateTime.Now;
+                bool answer = daoStart.CompararToken();
+                if (answer == true)
+                {
+                    //si la respuesta es true, el token local si pertenece al usuario y no ha expirado, por lo que solo damos un aviso al usuario
+                    if (MessageBox.Show("¿Desea cerrar el programa? \nSu sesión permanecerá abierta ya que usted pidió que se recordaran sus credenciales.", "Cerar programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        e.Cancel = true;
+                    }
+                }
+                else
+                {
+                    //Si la respuesta es false, significa que el token local no pertenece al usuario con la sesión abierta
+                    //ejecutamos todo con normalidad
+                    if (MessageBox.Show("¿Desea cerrar el programa? \nLa sesión se cerrará automáticamente", "Cerar programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        e.Cancel = true;
+                    }
+                }
             }
             else
             {
-                e.Cancel = true;
+                //Si no existe un token entonces todo se ejecuta con normalidad
+                if (MessageBox.Show("¿Desea cerrar el programa? \nLa sesión se cerrará automáticamente", "Cerar programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
             }
+            
+        }
 
+        public void DeleteLocalToken()
+        {
+            //eliminamos el token local
+            Properties.Settings.Default.Token = string.Empty;
+            Properties.Settings.Default.Save();
         }
        
     }
