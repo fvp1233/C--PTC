@@ -648,12 +648,16 @@
     <Content Include="Resources\ActualizarEmpleado.png" />
     <Content Include="Resources\adminMethod.png" />
     <Content Include="Resources\AgregarEmpleado.png" />
+    <Content Include="Resources\cambiarContra.png" />
+    <Content Include="Resources\cambiarContrab.png" />
+    <Content Include="Resources\configBlanco.png" />
     <Content Include="Resources\emailMethod.png" />
     <Content Include="Resources\generarPlanillas.png" />
     <Content Include="Resources\habilitar.png" />
     <Content Include="Resources\indemnizacion.png" />
     <Content Include="Resources\ojoAbierto.png" />
     <Content Include="Resources\ojoCerrado.png" />
+    <Content Include="Resources\perfilConfig.png" />
     <Content Include="Resources\preguntasSeguridad.png" />
     <Content Include="Resources\questionsMethod.png" />
     <Content Include="Resources\salir.png" />
