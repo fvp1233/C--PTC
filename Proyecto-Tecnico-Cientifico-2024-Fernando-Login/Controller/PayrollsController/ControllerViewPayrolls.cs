@@ -506,7 +506,8 @@ namespace PTC2024.Controller.EmployeesController
                 if (employeeStatus == 2)
                 {
                     int idEmployee = int.Parse(row["IdEmployee"].ToString());
-                    // Seleccionar todas las planillas no pagadas de este empleado
+                    // Seleccionar todas las planillas no
+                    // s de este empleado
                     DataRow[] unpaidPayrolls = payrollDt.Select($"IdEmployee = {idEmployee} AND IdPayrollStatus = 2");
 
                     // Eliminar cada planilla no pagada encontrada

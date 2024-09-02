@@ -18,6 +18,9 @@ using System.Numerics;
 using PTC2024.Model.DTO.CustomersDTO;
 using PTC2024.Model.DAO.PayrollsDAO;
 using PTC2024.Model.DTO.BillsDTO;
+using PTC2024.View.Clientes;
+using PTC2024.Controller.CustomersController;
+using PTC2024.Model.DAO.EmployeesDAO;
 
 namespace PTC2024.Controller.BillsController
 {
@@ -39,11 +42,17 @@ namespace PTC2024.Controller.BillsController
             objAddBills.btnAddBill.Click += new EventHandler(NewBill);
             objAddBills.btnRectify.Click += new EventHandler(RectifyBills);
             objAddBills.btnmore.Click += new EventHandler(More);
+            objAddBills.btnPlusC.Click += new EventHandler(AddOtherCustomer);
             objAddBills.btnBack.Click += new EventHandler(BackProcess);
             objAddBills.btnDeletemore.Click += new EventHandler(DataProcessS);
             objAddBills.txtSubTotal.TextChanged += new EventHandler(CalculateTotal);
             objAddBills.txtDiscount.TextChanged += new EventHandler(TxtDiscount_TextChanged);
-            //objAddBills.txtDiscount.KeyDown += new KeyEventHandler(txtDiscount_KeyDown);
+            objAddBills.txtCustomerName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            objAddBills.txtCustomerName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            objAddBills.txtCustomerName.TextChanged += txtCustomerName_TextChanged;
+            objAddBills.txtEmployee.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            objAddBills.txtEmployee.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            objAddBills.txtEmployee.TextChanged += txtEmployeeName_TextChanged;
             objAddBills.txtTotalPay.TextChanged += new EventHandler(CalculateTotal);
             objAddBills.dgvData.CellValueChanged += new DataGridViewCellEventHandler(CalculateTotal);
             objAddBills.dgvData.RowsAdded += new DataGridViewRowsAddedEventHandler(CalculateTotal);
@@ -52,7 +61,7 @@ namespace PTC2024.Controller.BillsController
 
 
         }
-        public ControllerAddBills(FrmAddBills view, int accions, int id, string companyName, string NIT, string NRC, string Customer, string serviceName, double Discount, double SubtotalPay, double TotalPay, string methodP, DateTime startDate, DateTime FinalDate, DateTime Dateissued, string employee, string statusBill, string CustomerDui, string CustomerPhone, string CustomerEmail)
+        public ControllerAddBills(FrmAddBills view, int accions, int IdBill1, string companyName, string NIT, string NRC, string Customer, string serviceName, double Discount, double SubtotalPay, double TotalPay, string methodP, DateTime startDate, DateTime FinalDate, DateTime Dateissued, string employee, string statusBill, string CustomerDui, string CustomerPhone, string CustomerEmail)
         {
             objAddBills = view;
             this.accions = accions;
@@ -61,7 +70,7 @@ namespace PTC2024.Controller.BillsController
 
             objAddBills.Load += new EventHandler(LoadDataServices);
             chooseAccions();
-            ChargeValues(id, companyName,  NIT,  NRC,  Customer, Discount, SubtotalPay, TotalPay,  startDate,  FinalDate,  Dateissued,  employee,  CustomerDui,  CustomerPhone,  CustomerEmail);
+            ChargeValues(IdBill1, companyName,  NIT,  NRC,  Customer, Discount, SubtotalPay, TotalPay,  startDate,  FinalDate,  Dateissued,  employee,  CustomerDui,  CustomerPhone,  CustomerEmail);
 
            objAddBills.btnRectify.Click += new EventHandler(RectifyBills);
         }
@@ -116,15 +125,15 @@ namespace PTC2024.Controller.BillsController
         {
             if (accions == 1)
             {
-                objAddBills.btnAddBill.Enabled = true;
-                objAddBills.btnBack.Enabled = true;
-                objAddBills.btnRectify.Enabled = true;
+                objAddBills.btnAddBill.Visible = false;
+                objAddBills.btnBack.Visible = true;
+                objAddBills.btnRectify.Visible = true;
             }
             else if (accions == 2)
             {
-                objAddBills.btnRectify.Enabled = true;
-                objAddBills.btnAddBill.Enabled = false;
-                objAddBills.btnBack.Enabled = false;
+                objAddBills.btnRectify.Visible = false;
+                objAddBills.btnAddBill.Visible = true;
+                objAddBills.btnBack.Visible = true;
             }
             else if (accions == 3)
             {
@@ -162,7 +171,22 @@ namespace PTC2024.Controller.BillsController
                 MessageBox.Show("El valor seleccionado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        /// <summary>
+        /// Método para agregar cliente no registrado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void AddOtherCustomer(object sender, EventArgs e)
+        {
+            FrmAddCustomers openA = new FrmAddCustomers();
+            openA.ShowDialog();
+            
+        }
+        /// <summary>
+        /// Método para calcular total, subtotal en base al descuento aplicado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void TxtDiscount_TextChanged(object sender, EventArgs e)
         {
             CalculateTotal(sender, e);
@@ -205,7 +229,11 @@ namespace PTC2024.Controller.BillsController
                 MessageBox.Show("Error al calcular el total: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+        /// <summary>
+        /// Método para eliminar los datos de dgvDetail
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void DataProcessS(object sender, EventArgs e)
         {
             if (objAddBills.dgvData.SelectedRows.Count > 0)
@@ -235,64 +263,95 @@ namespace PTC2024.Controller.BillsController
             }
 
         }
-
-        public void TxtCustomerName_Leave(object sender, EventArgs e)
+        /// <summary>
+        /// Método para autocompletar el textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void txtCustomerName_TextChanged(object sender, EventArgs e)
         {
-            DAOAddBills dAOAddBills = new DAOAddBills();
             string customerName = objAddBills.txtCustomerName.Text.Trim();
-            Dictionary<string, string> customerData = dAOAddBills.DataCustomer(customerName);
 
-            if (customerData.Count > 0)
+            if (!string.IsNullOrEmpty(customerName))
             {
-                objAddBills.txtDUICustomer.Text = customerData["DUI"];
-                objAddBills.txtCustomerPhone.Text = customerData["phone"];
-                objAddBills.txtCustomerEmail.Text = customerData["email"];
+                DAOAddBills dAOAddBills = new DAOAddBills();
+                List<string> customerNames = dAOAddBills.GetCustomerNames(customerName); // Obtener lista de nombres de cliente
+
+                AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
+                autoCompleteCollection.AddRange(customerNames.ToArray());
+
+                objAddBills.txtCustomerName.AutoCompleteCustomSource = autoCompleteCollection; // Asignar la fuente de autocompletado
             }
             else
             {
-                MessageBox.Show("Cliente no encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                objAddBills.txtCustomerName.AutoCompleteCustomSource = null; // Limpiar la fuente de autocompletado si el campo está vacío
             }
         }
 
-        /* public void ConfigurarAutocompletar()
-         {
-             AutoCompleteStringCollection autoCompleteCollection = GetAutocompleteData();
+        /// <summary>
+        /// Método para cargar los datos del cliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void TxtCustomerName_Leave(object sender, EventArgs e)
+        {
+            string customerName = objAddBills.txtCustomerName.Text.Trim();
 
-             // Configuración del TextBox de DUI
-             objAddBills.txtDUICustomer.AutoCompleteCustomSource = autoCompleteCollection;
-             objAddBills.txtDUICustomer.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-             objAddBills.txtDUICustomer.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            if (!string.IsNullOrEmpty(customerName))
+            {
+                DAOAddBills dAOAddBills = new DAOAddBills();
 
-             // Configuración del TextBox de Teléfono
-             objAddBills.txtCustomerPhone.AutoCompleteCustomSource = autoCompleteCollection;
-             objAddBills.txtCustomerPhone.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-             objAddBills.txtCustomerPhone.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                // Ahora usamos GetCustomerDetails para obtener los detalles del cliente
+                Dictionary<string, string> customerData = dAOAddBills.GetCustomerDetails(customerName);
 
-             // Configuración del TextBox de Email
-             objAddBills.txtCustomerEmail.AutoCompleteCustomSource = autoCompleteCollection;
-             objAddBills.txtCustomerEmail.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-             objAddBills.txtCustomerEmail.AutoCompleteSource = AutoCompleteSource.CustomSource;
-         }
+                if (customerData.Count > 0)
+                {
+                    objAddBills.txtDUICustomer.Text = customerData["DUI"];
+                    objAddBills.txtCustomerPhone.Text = customerData["phone"];
+                    objAddBills.txtCustomerEmail.Text = customerData["email"];
+                }
+                else
+                {
+                    MessageBox.Show("Cliente no encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
-         public AutoCompleteStringCollection GetAutocompleteData()
-         {
-             DAOAddBills dAOAddBills = new DAOAddBills();
-             // Obtener datos desde DAO
-             DataSet dataSet = dAOAddBills.DataCustomer();
+        public void txtEmployeeName_TextChanged(object sender, EventArgs e)
+        {
+            string EmployeeName = objAddBills.txtEmployee.Text.Trim();
 
-             AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
-             DataTable dataTable = dataSet.Tables[0];
+            if (!string.IsNullOrEmpty(EmployeeName))
+            {
+                DAOAddBills dAOAddBills = new DAOAddBills();
+                List<string> EmployeeNames = dAOAddBills.GetEmployeesNames(EmployeeName); // Obtener lista de nombres de cliente
 
-             foreach (DataRow row in dataTable.Rows)
-             {
-                 autoCompleteCollection.Add(row["DUI"].ToString());
-                 autoCompleteCollection.Add(row["phone"].ToString());
-                 autoCompleteCollection.Add(row["email"].ToString());
-             }
+                AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
+                autoCompleteCollection.AddRange(EmployeeNames.ToArray());
 
-             return autoCompleteCollection;
-         }
-        */
+                objAddBills.txtEmployee.AutoCompleteCustomSource = autoCompleteCollection; // Asignar la fuente de autocompletado
+            }
+            else
+            {
+                objAddBills.txtEmployee.AutoCompleteCustomSource = null; // Limpiar la fuente de autocompletado si el campo está vacío
+            }
+        }
+        public bool ValidateDates(DateTime startDate, DateTime finalDate)
+        {
+            if (startDate >= finalDate)
+            {
+                MessageBox.Show("La fecha de inicio debe ser anterior a la fecha de finalización.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (startDate < DateTime.Now)
+            {
+                MessageBox.Show("La fecha de inicio no puede estar en el pasado.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
         public void NewBill(object sender, EventArgs e)
 {
     if (!(
@@ -317,8 +376,24 @@ namespace PTC2024.Controller.BillsController
         daoNew.TotalPay = double.Parse(objAddBills.txtTotalPay.Text.Trim());
         daoNew.StartDate = objAddBills.dtStartDate.Value.Date;
         daoNew.FinalDate1 = objAddBills.dtFinalDate.Value.Date;
-        daoNew.Dateissued = objAddBills.dtfiscalPeriod.Value.Date;
-        daoNew.Services = objAddBills.comboServiceBill.SelectedValue.ToString();
+                if (daoNew.StartDate >= daoNew.FinalDate1)
+                {
+                    MessageBox.Show("La fecha de inicio debe ser anterior a la fecha de finalización.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (daoNew.StartDate >= DateTime.Now)
+                {
+                    MessageBox.Show("La fecha de inicio no valido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                daoNew.Dateissued = objAddBills.dtfiscalPeriod.Value.Date;
+                if (daoNew.Dateissued < DateTime.Now)
+                {
+                    MessageBox.Show("La fecha de emisión no valida.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                daoNew.Services = objAddBills.comboServiceBill.SelectedValue.ToString();
         daoNew.StatusBills = objAddBills.comboStatusBill.SelectedValue.ToString();
         daoNew.CustomerDui1 = objAddBills.txtDUICustomer.Text.Trim();
         daoNew.CustomerPhone1 = objAddBills.txtCustomerPhone.Text.Trim();
@@ -359,7 +434,80 @@ namespace PTC2024.Controller.BillsController
         MessageBox.Show("Por favor, complete todos los campos requeridos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
     }
 }
+        public void RectifyBills(object sender, EventArgs e)
+        {
+            // Establecer el ComboBox a "Rectificar" usando SelectedValue
+            objAddBills.comboStatusBill.SelectedValue = 5; 
 
+            if (!(
+                string.IsNullOrEmpty(objAddBills.txtNITCompany.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtNRCompany.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtDiscount.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtSubTotal.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtTotalPay.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtCustomerName.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtCustomerEmail.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtCustomerPhone.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtDUICustomer.Text.Trim()) ||
+                string.IsNullOrEmpty(objAddBills.txtEmployee.Text.Trim())))
+            {
+                DAOAddBills daoNew = new DAOAddBills();
+
+                // Rellenar la información de la factura
+                daoNew.CompanyName = objAddBills.txtRazónsocial.Text.Trim();
+                daoNew.NIT1 = objAddBills.txtNITCompany.Text.Trim();
+                daoNew.NRC1 = objAddBills.txtNRCompany.Text.Trim();
+                daoNew.Discount = double.Parse(objAddBills.txtDiscount.Text.Trim());
+                daoNew.SubtotalPay = double.Parse(objAddBills.txtSubTotal.Text.Trim());
+                daoNew.TotalPay = double.Parse(objAddBills.txtTotalPay.Text.Trim());
+                daoNew.StartDate = objAddBills.dtStartDate.Value.Date;
+                daoNew.FinalDate1 = objAddBills.dtFinalDate.Value.Date;
+                daoNew.Dateissued = objAddBills.dtfiscalPeriod.Value.Date;
+                daoNew.Services = objAddBills.comboServiceBill.SelectedValue.ToString();
+                daoNew.StatusBills = objAddBills.comboStatusBill.SelectedValue.ToString();
+                daoNew.CustomerDui1 = objAddBills.txtDUICustomer.Text.Trim();
+                daoNew.CustomerPhone1 = objAddBills.txtCustomerPhone.Text.Trim();
+                daoNew.CustomerEmail1 = objAddBills.txtCustomerEmail.Text.Trim();
+                daoNew.Employee = objAddBills.txtEmployee.Text.Trim();
+
+                int EmployeeId = daoNew.GetEmployeeIdByName(daoNew.Employee);
+                if (EmployeeId == 1)
+                {
+                    MessageBox.Show("Empleado no encontrado en la base de datos.");
+                    return;
+                }
+
+                daoNew.IdEmployee1 = EmployeeId;
+                daoNew.MethodP = objAddBills.comboMethodP.SelectedValue.ToString();
+
+                // Obtener IdCustomer basado en el nombre del cliente
+                daoNew.Customer = objAddBills.txtCustomerName.Text.Trim();
+                int customerId = daoNew.GetCustomerIdByName(daoNew.Customer);
+                if (customerId == 1)
+                {
+                    MessageBox.Show("Cliente no encontrado en la base de datos.");
+                    return;
+                }
+
+                daoNew.IdCustomer1 = customerId;
+                int checks = daoNew.RegisterBills();
+
+                // Verificamos el valor que nos retorna dicho método
+                if (checks == 1)
+                {
+                    MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    objAddBills.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, complete todos los campos requeridos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            objAddBills.Close();
+        }
+
+
+        /*
         public void RectifyBills(object sender, EventArgs e)
         {
             if (!(
@@ -427,7 +575,7 @@ namespace PTC2024.Controller.BillsController
             }
             objAddBills.Close();
         }
-
+        */
         public void BackProcess(object sender, EventArgs e)
             {
                 objAddBills.Close();
