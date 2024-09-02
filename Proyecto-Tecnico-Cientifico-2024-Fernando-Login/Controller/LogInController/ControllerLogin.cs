@@ -29,38 +29,81 @@ namespace PTC2024.Controller.LogInController
             objLogIn.TxtUserBunifu.MouseDown += new MouseEventHandler(DisableContextMenu);
             objLogIn.txtPasswordBunifu.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
-        private void DataAccess(object sender, EventArgs e)
+        async private void DataAccess(object sender, EventArgs e)
         {
+            await Task.Delay(2000);
             DAOLogin DAOData = new DAOLogin();
             CommonClasses common = new CommonClasses();
-            DAOData.Username = objLogIn.TxtUserBunifu.Text.Trim();
-            string encriptedpass = common.ComputeSha256Hash(objLogIn.txtPasswordBunifu.Text.Trim());
-            DAOData.Password = encriptedpass;
-            DAOData.UserStatus = 1;
-            bool answer = DAOData.ValidarLogin();
-            if (answer == true)
+
+            //Si el usuario selecciona el checkbox de recuerdame, se ejecuta este método.
+            if (objLogIn.chRememberMe.Checked == true)
             {
-                bool passwordFilter = ValidatePassword();
-                if (passwordFilter == true)
+                DAOData.Username = objLogIn.TxtUserBunifu.Text.Trim();
+                string encriptedpass2 = common.ComputeSha256Hash(objLogIn.txtPasswordBunifu.Text.Trim());
+                DAOData.Password = encriptedpass2;
+                DAOData.UserStatus = 1;
+                bool answer2 = DAOData.ValidarLogin();
+                if (answer2 == true)
                 {
-                    objLogIn.Hide();
-                    ChangePassword();
-                    objLogIn.TxtUserBunifu.Clear();
-                    objLogIn.txtPasswordBunifu.Clear();
-                    objLogIn.Show();
+                    //Si el acceso es correcto, entonces guardamos el token para recordar al usuario.
+                    UpdateToken();
+                    //validación para saber si se trata de una contraseña temporal
+                    bool passwordFilter = ValidatePassword();
+                    if (passwordFilter == true)
+                    {
+                        objLogIn.Hide();
+                        ChangePassword();
+                        objLogIn.TxtUserBunifu.Clear();
+                        objLogIn.txtPasswordBunifu.Clear();
+                        objLogIn.Show();
+                    }
+                    else
+                    {
+                        objLogIn.Hide();
+                        StartMenu startMenu = new StartMenu(objLogIn.TxtUserBunifu.Text);
+                        startMenu.Show();
+                    }
+
                 }
                 else
                 {
-                    objLogIn.Hide();
-                    StartMenu startMenu = new StartMenu(objLogIn.TxtUserBunifu.Text);
-                    startMenu.Show();
-                }              
-
+                    MessageBox.Show("Datos incorrectos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                MessageBox.Show("Datos incorrectos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //De otra forma, se inicia sesión normalmente.
+                DAOData.Username = objLogIn.TxtUserBunifu.Text.Trim();
+                string encriptedpass = common.ComputeSha256Hash(objLogIn.txtPasswordBunifu.Text.Trim());
+                DAOData.Password = encriptedpass;
+                DAOData.UserStatus = 1;
+                bool answer = DAOData.ValidarLogin();
+                if (answer == true)
+                {                    
+                    //validación para saber si se trata de una contraseña temporal
+                    bool passwordFilter = ValidatePassword();
+                    if (passwordFilter == true)
+                    {
+                        objLogIn.Hide();
+                        ChangePassword();
+                        objLogIn.TxtUserBunifu.Clear();
+                        objLogIn.txtPasswordBunifu.Clear();
+                        objLogIn.Show();
+                    }
+                    else
+                    {
+                        objLogIn.Hide();
+                        StartMenu startMenu = new StartMenu(objLogIn.TxtUserBunifu.Text);
+                        startMenu.Show();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Datos incorrectos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
+                       
         }
 
         #region ???
@@ -194,6 +237,30 @@ namespace PTC2024.Controller.LogInController
             if (e.Button == MouseButtons.Right)
             {
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
+        }
+
+        public void UpdateToken()
+        {
+            //Creamos objeto del DAO
+            DAOLogin daoLogin = new DAOLogin();
+            //Generamos un token GUID
+            string token = Guid.NewGuid().ToString();
+            //Vamos a guardarlo en la base de datos con una fecha de expiración de 7 días.
+            daoLogin.Token = token;
+            daoLogin.TokenExpiry = DateTime.Now.AddDays(7);
+            daoLogin.Username = objLogIn.TxtUserBunifu.Text.Trim();
+            //ejecutamos el método del DAO
+            int answer = daoLogin.RememberMe();
+            if (answer == 1)
+            {
+                //si la respuesta es 1, el token se guardó correctamente en la base y ahora pasamos a guardarlo localmente.
+                Properties.Settings.Default.Token = token;
+                Properties.Settings.Default.Save();
+            }
+            else
+            {
+                MessageBox.Show("Ocurrió un error y no se pudieron guardar sus credenciales, tendrá que volver a iniciar sesión.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

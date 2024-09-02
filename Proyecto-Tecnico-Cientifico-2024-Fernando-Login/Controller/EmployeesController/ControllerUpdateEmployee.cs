@@ -2,6 +2,7 @@
 using PTC2024.Model.DAO;
 using PTC2024.Model.DAO.EmployeesDAO;
 using PTC2024.View.Empleados;
+using PTC2024.View.formularios.inicio;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -96,6 +97,7 @@ namespace PTC2024.Controller.EmployeesController
 
         public void UpdateEmployee(object sender, EventArgs e)
         {
+            StartMenu objStart = new StartMenu(SessionVar.Username);
             //Verificación de que todos los campos estén llenos
             if (!(string.IsNullOrEmpty(objUpdateEmployee.txtNames.Text.Trim()) ||
                 string.IsNullOrEmpty(objUpdateEmployee.txtLastNames.Text.Trim()) ||
@@ -155,13 +157,14 @@ namespace PTC2024.Controller.EmployeesController
                                     int updateAnswer = daoUpdateEmployee.UpdateEmployee();
                                     //la evaluamos
                                     if (updateAnswer == 1)
-                                    {
-                                        MessageBox.Show("Los datos del empleado han sido actualizados con éxito.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    {                                        
                                         objUpdateEmployee.Close();
+                                        objUpdateEmployee.snackbar.Show(objStart, $"Los datos del empleado se actualizaron con éxito.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Los datos del empleado no pudieron ser actualizados.", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        objUpdateEmployee.snackbar.Show(objUpdateEmployee, "Proceso fallido: Los datos del empleado no se pudieron actualizar.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                                        //MessageBox.Show("Los datos del empleado no pudieron ser actualizados.", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     }
                                     //FIN DEL MANTENIMIENTO DE UPDATE EMPLOYEE
                                 }
