@@ -1,6 +1,8 @@
-﻿using PTC2024.Model.DAO.BillsDAO;
+﻿using PTC2024.Controller.Helper;
+using PTC2024.Model.DAO.BillsDAO;
 using PTC2024.Model.DAO.PayrollsDAO;
 using PTC2024.View.Empleados;
+using PTC2024.View.formularios.inicio;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,6 +16,7 @@ namespace PTC2024.Controller.EmployeesController
     internal class ControllerUpdatePayroll
     {
         FrmUpdatePayroll objUpdatePayroll;
+        StartMenu objStartForm;
         public ControllerUpdatePayroll(FrmUpdatePayroll Vista, int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, string affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, int daysWorkded, double daySalary, double grossPay, int hoursWorked, double hourSalary, int extraHours)
         {
             objUpdatePayroll = Vista;
@@ -39,19 +42,25 @@ namespace PTC2024.Controller.EmployeesController
                 int value = daoUpdatePayroll.UpdatePayroll();
                 if (value == 1)
                 {
-                    objUpdatePayroll.bunifuSnackbar1.Show(objUpdatePayroll, $"Los datos fueron actualizados de manera exitosa.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStartForm = objStart;
+                    objStartForm.snackBar.Show(objStartForm, $"Los datos fueron fueron actualizados exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
 
                 }
                 else
                 {
-                    objUpdatePayroll.bunifuSnackbar1.Show(objUpdatePayroll, $"¿Los datos no pudieron ser actualizados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStartForm = objStart;
+                    objStartForm.snackBar.Show(objStartForm, $"Los datos no pudieron ser actualizados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
 
                 }
                 objUpdatePayroll.Close();
             }
             else
             {
-                objUpdatePayroll.bunifuSnackbar1.Show(objUpdatePayroll, $"Los dias trabajados no pueden exceder los 30 dias", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"Los dias trabajados no pueden exceder los 30 días", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
         }
         public void ChargeValues(int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, string affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, int daysWorked, double daySalary, double grossPay, int hoursWorked, double hourSalary, int extraHours)
@@ -136,7 +145,9 @@ namespace PTC2024.Controller.EmployeesController
             catch (Exception)
             {
 
-                objUpdatePayroll.bunifuSnackbar1.Show(objUpdatePayroll, $"Recuerda ingresar un valor valido para los dias trabajados.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"Recuerda ingresar un valor valido en los dias trabajados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
 
         }
@@ -155,7 +166,9 @@ namespace PTC2024.Controller.EmployeesController
             else
             {
 
-                objUpdatePayroll.bunifuSnackbar1.Show(objUpdatePayroll, $"Recuerda ingresar un valor valido para las horas trabajadas.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"Recuerda ingresar un valor valido para las horas trabajadas", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
         }
 

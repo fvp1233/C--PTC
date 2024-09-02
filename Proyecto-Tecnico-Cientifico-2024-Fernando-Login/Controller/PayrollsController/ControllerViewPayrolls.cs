@@ -1,5 +1,9 @@
-﻿using PTC2024.Model.DAO.PayrollsDAO;
+﻿using PTC2024.Controller.Helper;
+using PTC2024.Controller.StartMenuController;
+using PTC2024.Model.DAO.PayrollsDAO;
 using PTC2024.View.Empleados;
+using PTC2024.View.formularios.inicio;
+using PTC2024.View.Start;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,6 +21,7 @@ namespace PTC2024.Controller.EmployeesController
     internal class ControllerViewPayrolls
     {
         FrmViewPayrolls objViewPayrolls;
+        StartMenu objStartForm;
         public ControllerViewPayrolls(FrmViewPayrolls Vista)
         {
             objViewPayrolls = Vista;
@@ -215,11 +220,15 @@ namespace PTC2024.Controller.EmployeesController
 
             if (returnValue == 1)
             {
-                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"Los datos fueron ingresados de manera exitosa.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"Los datos fueron fueron insertados exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
             else
             {
-                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"No hay empleados a los cuales generar planillas", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"No hay empleados a los cuales generar planillas", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
         }
 
@@ -327,12 +336,16 @@ namespace PTC2024.Controller.EmployeesController
 
             if (totalRowsAffected > 0)
             {
-                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"Los datos fueron fueron refrescados exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"Los datos fueron fueron refrescados exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
 
             }
             else
             {
-                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"Los datos no pudieron ser registrados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"Los datos no pudieron ser refrescados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
 
             }
         } 
@@ -421,12 +434,16 @@ namespace PTC2024.Controller.EmployeesController
 
             if (returnValue == 1)
             {
-                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"Las planillas de liquidación fueron ingresadas correctamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"Las planillas de liquidacion fueron registradas exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
 
             }
             else
             {
-                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"Los datos no pudieron ser registrados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"No hay empleados a los cuales registrar planillas de liquidación", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
 
             }
         }
@@ -439,11 +456,15 @@ namespace PTC2024.Controller.EmployeesController
             int returnedValues = daoUpdate.UpdatePayrollStatusPaid();
             if (returnedValues == 1)
             {
-                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"La planilla fue pagada exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"La planilla fue pagada exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
             else
             {
-                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"La planilla no pudo ser pagada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"La planilla no pudo ser pagada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
 
             }
             RefreshData();
@@ -457,12 +478,16 @@ namespace PTC2024.Controller.EmployeesController
             int returnedValues = daoUpdate.UpdatePayrollStatusUnPaid();
             if (returnedValues == 1)
             {
-                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"El pago fue revertido exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"El pago fue revertido exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
 
             }
             else
             {
-                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"El pago no pudo ser revertido", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"El pago no pudo ser revertido", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
 
             }
             RefreshData();
@@ -504,12 +529,16 @@ namespace PTC2024.Controller.EmployeesController
             RefreshData();
             if (returnValue == 1)
             {
-                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"Las planillas se eliminaron correctamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"Las planillas fueron eliminadas exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
 
             }
             else
             {
-                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"No hay empleados a los cuales eliminar planillas", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"No hay empleados a los cuales eliminar las planillas", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
 
             }
         }
