@@ -9,6 +9,7 @@ using PTC2024.View.Empleados;
 using System.Data;
 using System.Windows.Forms;
 using PTC2024.Controller.Helper;
+using PTC2024.View.formularios.inicio;
 
 namespace PTC2024.Controller
 {
@@ -122,6 +123,7 @@ namespace PTC2024.Controller
         }
         public void AgregarEmpleado(object sender, EventArgs e)
         {
+            StartMenu objMenu = new StartMenu(SessionVar.Username);
             //Validamos los campos vacíos
             if (!(string.IsNullOrEmpty(objAddEmployee.txtNames.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddEmployee.txtLastNames.Text.Trim()) ||
@@ -189,14 +191,15 @@ namespace PTC2024.Controller
                                         int valorRespuesta = daoInsertEmployee.RegisterEmployee();
                                         //Verificamos el valor que nos retorna dicho método
                                         if (valorRespuesta == 1)
-                                        {
-                                            MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        {                                           
                                             MessageBox.Show($"Usuario: {objAddEmployee.txtUsername.Text.Trim()} \n Contraseña: {objAddEmployee.txtUsername.Text.Trim() + "PU123"}", "Credenciales de acceso del empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             objAddEmployee.Close();
+
+                                            objAddEmployee.snackbar.Show(objMenu, $"Los datos del nuevo empleado fueron registrados.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
                                         }
                                         else
                                         {
-                                            MessageBox.Show("Los datos no pudieron ser registrados", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            objAddEmployee.snackbar.Show(objAddEmployee, $"Proceso fallido: Ocurrió un error y no se pudieron registrar los datos.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
                                         }
                                     }
                                     else

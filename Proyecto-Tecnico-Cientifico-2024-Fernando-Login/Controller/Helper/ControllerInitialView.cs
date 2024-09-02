@@ -29,6 +29,7 @@ namespace PTC2024.Controller.Helper
             DAOFirstUse daoFirstUse = new DAOFirstUse();
             DAOAddEmployee daoAddEmployee = new DAOAddEmployee();
             DAOInitialView daoInitial = new DAOInitialView();
+            StartMenu objMenu = new StartMenu(SessionVar.Username);
             //Primero que nada, evaluamos si existe un token de recuerdame en las variables locales.
             string savedToken = Properties.Settings.Default.Token;
             if (!string.IsNullOrEmpty(savedToken))
@@ -50,9 +51,9 @@ namespace PTC2024.Controller.Helper
                     if (credentials == true)
                     {
                         //si es true, se encontró un usuario y se leyeron sus datos correctamente
-                        MessageBox.Show("Se inició sesión por medio del token");
                         //abrimos el startMenu
                         Application.Run(new StartMenu(SessionVar.Username));
+                        objMenu.snackBar.Show(objMenu, $"Bienvenido de vuelta, {SessionVar.Username}.",Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
                     }
                     else
                     {

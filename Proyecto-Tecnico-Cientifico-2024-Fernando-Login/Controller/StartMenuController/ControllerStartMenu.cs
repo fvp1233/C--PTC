@@ -68,7 +68,7 @@ namespace PTC2024.Controller.StartMenuController
         public void ShowWelcomeSnackBar()
         {
             FrmWelcome objWelcome = new FrmWelcome();
-            objStartMenu.snackBar.Show(objStartMenu, $"Bienvenido, {SessionVar.Username}.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight );
+            objStartMenu.snackBar.Show(objStartMenu, $"Sesión iniciada con éxito, bienvenido {SessionVar.Username}.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
         }
 
         public void Access()
@@ -174,6 +174,7 @@ namespace PTC2024.Controller.StartMenuController
 
         async public void LogOut(object sender, EventArgs e)
         {
+            
             DAOStartMenu daoS = new DAOStartMenu();
             if (MessageBox.Show("¿Quiere cerrar la sesión?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -184,7 +185,7 @@ namespace PTC2024.Controller.StartMenuController
                 daoS.DeleteUserToken();
                 FrmLogin backToLogin = new FrmLogin();
                 backToLogin.Show();
-                
+                objStartMenu.snackBar.Show(backToLogin, "La sesión se cerró con éxito.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
         }    
 
