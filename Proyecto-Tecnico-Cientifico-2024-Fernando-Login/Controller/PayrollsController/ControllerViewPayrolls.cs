@@ -216,10 +216,6 @@ namespace PTC2024.Controller.EmployeesController
             if (returnValue == 1)
             {
                 objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"Los datos fueron ingresados de manera exitosa.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
-                //MessageBox.Show("Los datos han sido registrados exitosamente",
-                //                 "Proceso completado",
-                //                 MessageBoxButtons.OK,
-                //                 MessageBoxIcon.Information);
             }
             else
             {
@@ -331,17 +327,13 @@ namespace PTC2024.Controller.EmployeesController
 
             if (totalRowsAffected > 0)
             {
-                MessageBox.Show("Los datos han sido actualizados exitosamente",
-                                "Proceso completado",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
+                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"Los datos fueron fueron refrescados exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+
             }
             else
             {
-                MessageBox.Show("Los datos no pudieron ser actualizados",
-                                "Proceso interrumpido",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"Los datos no pudieron ser registrados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+
             }
         } 
         public void CreateCompensationPayroll(object sender, EventArgs e)
@@ -429,17 +421,13 @@ namespace PTC2024.Controller.EmployeesController
 
             if (returnValue == 1)
             {
-                MessageBox.Show("Las planillas de liquidación han sido registradas exitosamente",
-                                 "Proceso completado",
-                                 MessageBoxButtons.OK,
-                                 MessageBoxIcon.Information);
+                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"Las planillas de liquidación fueron ingresadas correctamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+
             }
             else
             {
-                MessageBox.Show("Las planillas de liquidación no pudieron ser registradas",
-                                "Proceso interrumpido",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"Los datos no pudieron ser registrados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+
             }
         }
         public void UpdatePayrollPaid(object sender, EventArgs e)
@@ -451,17 +439,12 @@ namespace PTC2024.Controller.EmployeesController
             int returnedValues = daoUpdate.UpdatePayrollStatusPaid();
             if (returnedValues == 1)
             {
-                MessageBox.Show("Los datos han sido actualizado exitosamente",
-                "Proceso completado",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"La planilla fue pagada exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
             }
             else
             {
-                MessageBox.Show("Los datos no pudieron ser actualizados debido a un error inesperado",
-                "Proceso interrumpido",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
+                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"La planilla no pudo ser pagada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+
             }
             RefreshData();
         }
@@ -474,17 +457,13 @@ namespace PTC2024.Controller.EmployeesController
             int returnedValues = daoUpdate.UpdatePayrollStatusUnPaid();
             if (returnedValues == 1)
             {
-                MessageBox.Show("Los datos han sido actualizado exitosamente",
-                "Proceso completado",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"El pago fue revertido exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+
             }
             else
             {
-                MessageBox.Show("Los datos no pudieron ser actualizados debido a un error inesperado",
-                "Proceso interrumpido",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
+                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"El pago no pudo ser revertido", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+
             }
             RefreshData();
         }
@@ -525,17 +504,13 @@ namespace PTC2024.Controller.EmployeesController
             RefreshData();
             if (returnValue == 1)
             {
-                MessageBox.Show("Los datos han sido eliminados exitosamente",
-                                "Proceso completado",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
+                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"Las planillas se eliminaron correctamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+
             }
             else
             {
-                MessageBox.Show("Los datos no pudieron ser eliminados",
-                                "Proceso interrumpido",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                objViewPayrolls.bunifuSnackbar1.Show(objViewPayrolls, $"No hay empleados a los cuales eliminar planillas", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+
             }
         }
         #region Aca estan los metodos $$$$$$

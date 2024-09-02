@@ -39,26 +39,19 @@ namespace PTC2024.Controller.EmployeesController
                 int value = daoUpdatePayroll.UpdatePayroll();
                 if (value == 1)
                 {
-                    MessageBox.Show("Los datos han sido actualizado exitosamente",
-                                    "Proceso completado",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
+                    objUpdatePayroll.bunifuSnackbar1.Show(objUpdatePayroll, $"Los datos fueron actualizados de manera exitosa.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+
                 }
                 else
                 {
-                    MessageBox.Show("Los datos no pudieron ser actualizados. Verifica los valores ingresados.",
-                                    "Proceso interrumpido",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
+                    objUpdatePayroll.bunifuSnackbar1.Show(objUpdatePayroll, $"¿Los datos no pudieron ser actualizados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+
                 }
                 objUpdatePayroll.Close();
             }
             else
             {
-                MessageBox.Show("Los dias trabajados no pueden exceder los 30 dias",
-                                    "Proceso interrumpido",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
+                objUpdatePayroll.bunifuSnackbar1.Show(objUpdatePayroll, $"Los dias trabajados no pueden exceder los 30 dias", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
             }
         }
         public void ChargeValues(int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, string affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, int daysWorked, double daySalary, double grossPay, int hoursWorked, double hourSalary, int extraHours)
@@ -143,7 +136,7 @@ namespace PTC2024.Controller.EmployeesController
             catch (Exception)
             {
 
-                MessageBox.Show("Recuerda ingresar un numero valido para las horas trabajadas.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                objUpdatePayroll.bunifuSnackbar1.Show(objUpdatePayroll, $"Recuerda ingresar un valor valido para los dias trabajados.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
             }
 
         }
@@ -161,7 +154,8 @@ namespace PTC2024.Controller.EmployeesController
             }
             else
             {
-                MessageBox.Show("Ingrese un número válido de días trabajados.", "Entrada inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                objUpdatePayroll.bunifuSnackbar1.Show(objUpdatePayroll, $"Recuerda ingresar un valor valido para las horas trabajadas.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
             }
         }
 

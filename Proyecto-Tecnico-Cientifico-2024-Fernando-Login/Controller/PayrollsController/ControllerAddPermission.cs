@@ -60,17 +60,13 @@ namespace PTC2024.Controller.PayrollsController
                         int returnedValues = DaoInsert.UpdateStatusEmployee();
                         if (returnedValues == 1)
                         {
-                            MessageBox.Show("Los datos han sido actualizado exitosamente",
-                            "Proceso completado",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
+                            objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"La empleada fue actualizada existosamente, inciando su su periodo de maternidad", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+
                         }
                         else
                         {
-                            MessageBox.Show("Los datos no pudieron ser actualizados debido a un error inesperado",
-                            "Proceso interrumpido",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
+                            objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"los datos no pudieron ser actualizados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+
                         }
                     }
                     else if (objAddPermission.cmbTypePermission.Text == "Paternidad")
@@ -80,48 +76,36 @@ namespace PTC2024.Controller.PayrollsController
                         int returnedValues = DaoInsert.UpdateStatusEmployee();
                         if (returnedValues == 1)
                         {
-                            MessageBox.Show("Los datos han sido actualizado exitosamente",
-                            "Proceso completado",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
+                            objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"El empleado fue actualizado extosamente, iniciando su periodo de paternidad", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+
                         }
                         else
                         {
-                            MessageBox.Show("Los datos no pudieron ser actualizados debido a un error inesperado",
-                            "Proceso interrumpido",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
+                            objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"los datos no pudieron ser actualizados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
                         }
                     }
                     DaoInsert.IdTypePermission = int.Parse(objAddPermission.cmbTypePermission.SelectedValue.ToString());
                     int returnedValue = DaoInsert.InsertPermission();
                     if (returnedValue == 1)
                     {
-                        MessageBox.Show("Los datos han sido registrados exitosamente",
-                    "Proceso completado",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                        objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"Los datos fueron registrados exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
                     }
                     else
                     {
-                        MessageBox.Show("Los datos no pudieron ser registrados",
-                                        "Proceso interrumpido",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Error);
+                        objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"los datos no pudieron insertados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+
                     }
                     Close();
                 }
                 else
                 {
-                    MessageBox.Show("La fecha ingresada no puede ser de un día anterior",
-                  "Fecha inválida",
-                  MessageBoxButtons.OK,
-                  MessageBoxIcon.Information);
+                    objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"la fecha ingresada no puede ser de un dia enterior", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+
                 }
             }
             else
             {
-                MessageBox.Show("Todos los campos son obligatorios, llene todos los apartados.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"Todos los campos son obligatorios, favor llenar todos los campos", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
             }
         }
         public void LoadEmployeeName(object sender, EventArgs e)
@@ -144,18 +128,12 @@ namespace PTC2024.Controller.PayrollsController
                     }
                     else
                     {
-                        MessageBox.Show("No se encontró un empleado con el ID proporcionado.",
-                                        "Empleado no encontrado",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information);
+                        objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"No se encontro al empleado con el ID proporcionado", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Por favor, ingrese un ID de empleado válido.",
-                                    "ID inválido",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
+                    objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"Favor ingresar un ID de empelado valido", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
                 }
             }
         }
