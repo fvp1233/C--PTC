@@ -20,13 +20,14 @@ namespace PTC2024.Model.DAO.PayrollsDAO
 				//Creamos la conexion para garantizar que este conectado a la base
 				Command.Connection = getConnection();
 				//Creamos el query
-				string query = "UPDATE tbPayroll SET daysWorked = @param1, daySalary = @param2, hoursWorked = @param3, hourSalary = @param4 WHERE IdPayroll = @param5";
+				string query = "UPDATE tbPayroll SET daysWorked = @param1, daySalary = @param2, hoursWorked = @param3, hourSalary = @param4, extraHours = @param5 WHERE IdPayroll = @param6";
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
 				cmd.Parameters.AddWithValue("@param1", DaysWorked);
 				cmd.Parameters.AddWithValue("@param2", DaySalary);
 				cmd.Parameters.AddWithValue("@param3", HoursWorked);
 				cmd.Parameters.AddWithValue("@param4", HoursSalary);
-                cmd.Parameters.AddWithValue("@param5", IdPayroll);
+                cmd.Parameters.AddWithValue("@param5", ExtraHours);
+				cmd.Parameters.AddWithValue("@param6", IdPayroll);
 				int answer = cmd.ExecuteNonQuery();
 				return answer;
 

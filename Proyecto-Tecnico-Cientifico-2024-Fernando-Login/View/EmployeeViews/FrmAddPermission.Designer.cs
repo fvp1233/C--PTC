@@ -43,7 +43,7 @@
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblEmployeeName = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.rtxtContext = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -95,7 +95,7 @@
             this.bunifuGroupBox1.BorderColor = System.Drawing.Color.LightGray;
             this.bunifuGroupBox1.BorderRadius = 10;
             this.bunifuGroupBox1.BorderThickness = 2;
-            this.bunifuGroupBox1.Controls.Add(this.bunifuLabel2);
+            this.bunifuGroupBox1.Controls.Add(this.lblEmployeeName);
             this.bunifuGroupBox1.Controls.Add(this.bunifuLabel1);
             this.bunifuGroupBox1.Controls.Add(this.bunifuCustomLabel8);
             this.bunifuGroupBox1.Controls.Add(this.rtxtContext);
@@ -124,24 +124,24 @@
             this.bunifuToolTip1.SetToolTipIcon(this.bunifuGroupBox1, null);
             this.bunifuToolTip1.SetToolTipTitle(this.bunifuGroupBox1, "");
             // 
-            // bunifuLabel2
+            // lblEmployeeName
             // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.AutoSize = false;
-            this.bunifuLabel2.CursorType = null;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(22, 316);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(777, 25);
-            this.bunifuLabel2.TabIndex = 117;
-            this.bunifuLabel2.Text = "nombreEmpleado";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuToolTip1.SetToolTip(this.bunifuLabel2, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel2, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel2, "");
+            this.lblEmployeeName.AllowParentOverrides = false;
+            this.lblEmployeeName.AutoEllipsis = false;
+            this.lblEmployeeName.AutoSize = false;
+            this.lblEmployeeName.CursorType = null;
+            this.lblEmployeeName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeName.Location = new System.Drawing.Point(22, 316);
+            this.lblEmployeeName.Name = "lblEmployeeName";
+            this.lblEmployeeName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblEmployeeName.Size = new System.Drawing.Size(777, 25);
+            this.lblEmployeeName.TabIndex = 117;
+            this.lblEmployeeName.Text = "nombreEmpleado";
+            this.lblEmployeeName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblEmployeeName.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.lblEmployeeName, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.lblEmployeeName, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.lblEmployeeName, "");
             // 
             // bunifuLabel1
             // 
@@ -838,8 +838,8 @@
         public Bunifu.UI.WinForms.BunifuTextBox txtIdEmployee;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         public Bunifu.UI.WinForms.BunifuTextBox rtxtContext;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
+        public Bunifu.UI.WinForms.BunifuLabel lblEmployeeName;
     }
 }

@@ -15,10 +15,10 @@ namespace PTC2024.View.Empleados
     public partial class FrmUpdatePayroll : Form
     {
 
-        public FrmUpdatePayroll(int nP,string dui, string employee, double salary, string possition, double bonus, string bankAccount, string affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate , int daysWorked, double daySalary, double grossPay, int hoursWorked, double hourSalary)
+        public FrmUpdatePayroll(int nP,string dui, string employee, double salary, string possition, double bonus, string bankAccount, string affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate , int daysWorked, double daySalary, double grossPay, int hoursWorked, double hourSalary, int extraHours)
         {
             InitializeComponent();
-            ControllerUpdatePayroll objUpdatePayroll = new ControllerUpdatePayroll(this, nP,dui, employee, salary, possition, bonus, bankAccount, affiliationNumber, afp, isss, rent, netSalary, discountEmployee, issueDate , daysWorked, daySalary, grossPay, hoursWorked, hourSalary);
+            ControllerUpdatePayroll objUpdatePayroll = new ControllerUpdatePayroll(this, nP,dui, employee, salary, possition, bonus, bankAccount, affiliationNumber, afp, isss, rent, netSalary, discountEmployee, issueDate , daysWorked, daySalary, grossPay, hoursWorked, hourSalary, extraHours);
             Region = Region.FromHrgn(CommonClasses.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
