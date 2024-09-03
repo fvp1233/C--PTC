@@ -139,6 +139,8 @@
     <Compile Include="Controller\ProfileController\ControllerProfile.cs" />
     <Compile Include="Controller\ProfileController\ControllerProfileConfiguration.cs" />
     <Compile Include="Controller\ProfileController\ControllerSecurityQuestions.cs" />
+    <Compile Include="Controller\Server\ControllerCEOPassword.cs" />
+    <Compile Include="Controller\Server\ControllerServerConfiguration.cs" />
     <Compile Include="Controller\ServicesController\ControllerAddService.cs" />
     <Compile Include="Controller\ServicesController\ControllerServices.cs" />
     <Compile Include="Controller\ServicesController\ControllerUpdateService.cs" />
@@ -441,6 +443,18 @@
     <Compile Include="View\ProfileSettings\FrmSecurityQuestions.Designer.cs">
       <DependentUpon>FrmSecurityQuestions.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Server\FrmConfirmPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Server\FrmConfirmPassword.Designer.cs">
+      <DependentUpon>FrmConfirmPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Server\FrmServerConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Server\FrmServerConfiguration.Designer.cs">
+      <DependentUpon>FrmServerConfiguration.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Service inventory\FrmUpdateService.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -597,6 +611,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ProfileSettings\FrmSecurityQuestions.resx">
       <DependentUpon>FrmSecurityQuestions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Server\FrmConfirmPassword.resx">
+      <DependentUpon>FrmConfirmPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Server\FrmServerConfiguration.resx">
+      <DependentUpon>FrmServerConfiguration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Service inventory\FrmUpdateService.resx">
       <DependentUpon>FrmUpdateService.cs</DependentUpon>
