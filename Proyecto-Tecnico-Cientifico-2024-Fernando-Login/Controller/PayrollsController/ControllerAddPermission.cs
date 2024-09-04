@@ -28,7 +28,25 @@ namespace PTC2024.Controller.PayrollsController
             objAddPermission.rtxtContext.KeyDown += new KeyEventHandler(pasteContext);
             objAddPermission.txtIdEmployee.KeyDown += new KeyEventHandler(pasteDisabledNames);
             objAddPermission.txtIdEmployee.Leave += new EventHandler(LoadEmployeeName);
+            objAddPermission.txtIdEmployee.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddPermission.txtIdEmployee.TextChanged += new EventHandler(idNum);
+            objAddPermission.rtxtContext.MouseDown += new MouseEventHandler(DisableContextMenu);
 
+        }
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
+        }
+        public void idNum(object sender, EventArgs e)
+        {
+            int cursorPosition = objAddPermission.txtIdEmployee.SelectionStart;
+            string text = new string(objAddPermission.txtIdEmployee.Text.Where(c => char.IsDigit(c)).ToArray());
+            objAddPermission.txtIdEmployee.Text = text;
+            objAddPermission.txtIdEmployee.SelectionStart = cursorPosition;
         }
         public void FillDropdown(object sender, EventArgs e)
         {
@@ -46,9 +64,10 @@ namespace PTC2024.Controller.PayrollsController
         }
         public void AddPermission(object sender, EventArgs e)
         {
-            if (double.TryParse(objAddPermission.txtIdEmployee.Text, out _))
+
+            if (!(string.IsNullOrEmpty(objAddPermission.rtxtContext.Text.Trim()) || string.IsNullOrEmpty(objAddPermission.txtIdEmployee.Text.Trim())))
             {
-                if (!(string.IsNullOrEmpty(objAddPermission.rtxtContext.Text.Trim()) || string.IsNullOrEmpty(objAddPermission.txtIdEmployee.Text.Trim())))
+                if (int.TryParse(objAddPermission.txtIdEmployee.Text, out _))
                 {
                     DAOAddPermission DaoInsert = new DAOAddPermission();
                     int employeeId = int.Parse(objAddPermission.txtIdEmployee.Text.Trim());
@@ -116,6 +135,23 @@ namespace PTC2024.Controller.PayrollsController
                                     objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"los datos no pudieron ser actualizados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
                                 }
                             }
+                            else if (objAddPermission.cmbTypePermission.Text == "Incapacidad")
+                            {
+                                DaoInsert.EmployeeStatus = 4;
+                                DaoInsert.IdEmployee = int.Parse(objAddPermission.txtIdEmployee.Text.Trim());
+                                int returnedValues = DaoInsert.UpdateStatusEmployee();
+                                if (returnedValues == 1)
+                                {
+                                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                                    objStartForm = objStart;
+                                    objStartForm.snackBar.Show(objStartForm, $"El empleado fue actualizado extosamente, iniciando su periodo de paternidad", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+
+                                }
+                                else
+                                {
+                                    objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"los datos no pudieron ser actualizados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                                }
+                            }
                             DaoInsert.IdTypePermission = int.Parse(objAddPermission.cmbTypePermission.SelectedValue.ToString());
                             int returnedValue = DaoInsert.InsertPermission();
                             if (returnedValue == 1)
@@ -141,13 +177,13 @@ namespace PTC2024.Controller.PayrollsController
                     }
                     else
                     {
-                        objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"Todos los campos son obligatorios, favor llenar todos los campos", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                        objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"Favor ingresar un valor numerico", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
                     }
                 }
             }
             else
             {
-                objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"Favor ingresar un valor numerico", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"Todos los campos son obligatorios, favor llenar todos los campos", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
             }
 
         }

@@ -13,10 +13,10 @@ namespace PTC2024.View.EmployeeViews
 {
     public partial class FrmUpdatePermission : Form
     {
-        public FrmUpdatePermission(int idEmployee, int idPermission, DateTime start, DateTime end, string context, string status, string typeP)
+        public FrmUpdatePermission(int idEmployee, int idPermission, DateTime start, DateTime end, string context, string status, string typeP, int idType, int idStatus)
         {
             InitializeComponent();
-            ControllerUpdatePermission objPermission = new ControllerUpdatePermission(this, idEmployee, idPermission, start, end, context, status, typeP);
+            ControllerUpdatePermission objPermission = new ControllerUpdatePermission(this, idEmployee, idPermission, start, end, context, status, typeP, idType, idStatus);
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {

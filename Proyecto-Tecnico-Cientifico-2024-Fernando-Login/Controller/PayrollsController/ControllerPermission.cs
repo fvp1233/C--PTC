@@ -54,7 +54,7 @@ namespace PTC2024.Controller.PayrollsController
         public void OpenUpdatePermission(object sender, EventArgs e)
         {
             int pos = objPermission.dgvPermissions.CurrentRow.Index;
-            int idEmployee, idPermission;
+            int idEmployee, idPermission, idType, idStatus;
             DateTime start, end;
             string context, status, typeP;
             idEmployee = int.Parse(objPermission.dgvPermissions[0, pos].Value.ToString());
@@ -64,7 +64,9 @@ namespace PTC2024.Controller.PayrollsController
             context = objPermission.dgvPermissions[4, pos].Value.ToString();
             status = objPermission.dgvPermissions[6, pos].Value.ToString();
             typeP = objPermission.dgvPermissions[5, pos].Value.ToString();
-            FrmUpdatePermission openUpdatePermission = new FrmUpdatePermission(idEmployee, idPermission, start, end, context, status, typeP);
+            idType = int.Parse(objPermission.dgvPermissions[7,pos].Value.ToString());
+            idStatus = int.Parse(objPermission.dgvPermissions[8,pos].Value.ToString());
+            FrmUpdatePermission openUpdatePermission = new FrmUpdatePermission(idEmployee, idPermission, start, end, context, status, typeP, idType, idStatus);
             openUpdatePermission.ShowDialog();
             RefreshData();
 
