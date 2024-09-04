@@ -30,7 +30,7 @@ namespace PTC2024.Model.DAO.ProfileDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"Excepcion SQL: {ex.Message}", "Error al procesar información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-008: No se pudieron actualizar los datos del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
             }
             finally
@@ -70,7 +70,7 @@ namespace PTC2024.Model.DAO.ProfileDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-033: No se pudieron actualizar los datos del empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
                 
             }
@@ -105,7 +105,7 @@ namespace PTC2024.Model.DAO.ProfileDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-022: No se pudo obtener los datos de los empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
@@ -139,7 +139,7 @@ namespace PTC2024.Model.DAO.ProfileDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-022: No se pudo obtener los datos de los empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
@@ -182,12 +182,7 @@ namespace PTC2024.Model.DAO.ProfileDAO
             }
             catch (SqlException sqlex)
             {
-                MessageBox.Show(sqlex.Message);
-                return false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-006: No se pudieron obtener los datos para el logIn");
                 return false;
             }
             finally

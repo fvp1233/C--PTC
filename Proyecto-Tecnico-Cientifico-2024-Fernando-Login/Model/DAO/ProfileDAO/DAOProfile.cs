@@ -31,6 +31,7 @@ namespace PTC2024.Model.DAO.ProfileDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-020: No se pudieron obtener los datos de los empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -53,7 +54,7 @@ namespace PTC2024.Model.DAO.ProfileDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"Excepcion SQL: {ex.Message}", "Error al procesar información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-008: No se pudieron actualizar los datos del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
             }
             finally
@@ -91,7 +92,7 @@ namespace PTC2024.Model.DAO.ProfileDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-131: No se pudo obtener la información de las preguntas de seguridad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
                 
             }
@@ -121,7 +122,7 @@ namespace PTC2024.Model.DAO.ProfileDAO
             }
             catch (SqlException ex) 
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-011: No se pudo eliminar la información de las preguntas de seguridad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
                 
             }
@@ -156,7 +157,7 @@ namespace PTC2024.Model.DAO.ProfileDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-020: No se pudieron obtener los datos de los empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally

@@ -50,7 +50,7 @@ namespace PTC2024.Model.DAO.LogInDAO
             }
             catch (SqlException sqlex)
             {
-                MessageBox.Show("EC-006: No se pudieron obtener los datos para la validación del LogIn");
+                MessageBox.Show("EC-006: No se pudieron obtener los datos para el logIn");
                 return false;
             }
             finally
