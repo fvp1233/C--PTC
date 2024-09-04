@@ -1,6 +1,7 @@
 ﻿using PTC2024.View.Alerts;
 using PTC2024.View.Dashboard;
 using PTC2024.View.Maintenance;
+using PTC2024.View.Server;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,7 @@ namespace PTC2024.Controller.MaintenanceController
             objMaintenance.pictureBanks.Click += new EventHandler(OpenBanks);
             objMaintenance.lblBanks.Click += new EventHandler(OpenBanks);
             objMaintenance.lblBanks2.Click += new EventHandler(OpenBanks);
+            objMaintenance.btnServerConfiguration.Click += new EventHandler(OpenCEOPassword);
         }
 
         public void OpenDepartments(object sender, EventArgs e)
@@ -55,6 +57,11 @@ namespace PTC2024.Controller.MaintenanceController
         {
             FrmBanks objBanks = new FrmBanks();
             objBanks.ShowDialog();
+        }
+        public void OpenCEOPassword(object sender, EventArgs e)
+        {
+            FrmConfirmPassword objOpen = new FrmConfirmPassword();
+            objOpen.ShowDialog();
         }
     }
 }

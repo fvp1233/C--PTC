@@ -1,4 +1,5 @@
 ﻿using PTC2024.Model.DAO.PayrollsDAO;
+using PTC2024.Model.DAO.ServicesDAO;
 using PTC2024.View.EmployeeViews;
 using System;
 using System.Collections.Generic;
@@ -13,13 +14,14 @@ namespace PTC2024.Controller.PayrollsController
     internal class ControllerPermission
     {
         FrmPermissions objPermission;
-        public ControllerPermission(FrmPermissions View) 
+        public ControllerPermission(FrmPermissions View)
         {
             objPermission = View;
             objPermission.Load += new EventHandler(LoadData);
             objPermission.btnGeneratePermission.Click += new EventHandler(OpenAddPermission);
             objPermission.cmsUpdatePermission.Click += new EventHandler(OpenUpdatePermission);
             objPermission.btnDeletePermission.Click += new EventHandler(DeshiblePermission);
+            objPermission.cmsDeletePermission.Click += new EventHandler(DeletePermission);
             objPermission.txtEmployeeSearch.KeyPress += new KeyPressEventHandler(SearchPermissionEvent);
         }
         public void LoadData(object sender, EventArgs e)
@@ -31,6 +33,7 @@ namespace PTC2024.Controller.PayrollsController
             DAOPermission daoRefresh = new DAOPermission();
             DataSet dataSet = daoRefresh.GetPermissions();
             objPermission.dgvPermissions.DataSource = dataSet.Tables["viewPermissions"];
+            objPermission.dgvPermissions.Columns[1].Visible = false;
         }
         public void SearchPermissionEvent(object sender, KeyPressEventArgs e)
         {
@@ -56,9 +59,9 @@ namespace PTC2024.Controller.PayrollsController
             string context, status, typeP;
             idEmployee = int.Parse(objPermission.dgvPermissions[0, pos].Value.ToString());
             idPermission = int.Parse(objPermission.dgvPermissions[1, pos].Value.ToString());
-            start = DateTime.Parse(objPermission.dgvPermissions[2,pos].Value.ToString());
-            end = DateTime.Parse(objPermission.dgvPermissions[3,pos].Value.ToString());
-            context = objPermission.dgvPermissions[4,pos].Value.ToString();
+            start = DateTime.Parse(objPermission.dgvPermissions[2, pos].Value.ToString());
+            end = DateTime.Parse(objPermission.dgvPermissions[3, pos].Value.ToString());
+            context = objPermission.dgvPermissions[4, pos].Value.ToString();
             status = objPermission.dgvPermissions[6, pos].Value.ToString();
             typeP = objPermission.dgvPermissions[5, pos].Value.ToString();
             FrmUpdatePermission openUpdatePermission = new FrmUpdatePermission(idEmployee, idPermission, start, end, context, status, typeP);
@@ -66,6 +69,30 @@ namespace PTC2024.Controller.PayrollsController
             RefreshData();
 
         }
+        public void DeletePermission(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro de borrar los datos, esta accion no se puede revertir", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                DAOPermission daoPermission = new DAOPermission();
+                int pos = objPermission.dgvPermissions.CurrentRow.Index;
+                daoPermission.IdPermission = int.Parse(objPermission.dgvPermissions[1, pos].Value.ToString());
+                int answer = daoPermission.DeletePermission();
+
+                /*Se evalua la respuesta*/
+                if (answer == 1)
+                {
+                    MessageBox.Show("Los datos se eliminaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Los datos no se eliminaron debido a un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                RefreshData();
+
+            }
+        }
+
+
         public void DeshiblePermission(object sender, EventArgs e)
         {
             DAOPermission DaoDeshiblePermission = new DAOPermission();
@@ -74,14 +101,14 @@ namespace PTC2024.Controller.PayrollsController
             DataTable dtPermissions = dsPermissions.Tables["tbPermissions"];
             DataTable dtEmployee = dsEmployee.Tables["tbEmployee"];
             int returnValue = 0;
-            foreach (DataRow dr in dtEmployee.Rows) 
+            foreach (DataRow dr in dtEmployee.Rows)
             {
                 int employeeStatus = int.Parse(dr["IdStatus"].ToString());
                 if (employeeStatus == 2)
                 {
                     int IdEmployee = int.Parse(dr["IdEmployee"].ToString());
                     DataRow[] permissions = dtPermissions.Select($"IdEmployee = {IdEmployee}");
-                    foreach(DataRow permissionRow in permissions)
+                    foreach (DataRow permissionRow in permissions)
                     {
                         int idPermission = int.Parse(permissionRow["IdPermission"].ToString());
                         DaoDeshiblePermission.IdStatusPermission = 3;
@@ -106,6 +133,5 @@ namespace PTC2024.Controller.PayrollsController
                                 MessageBoxIcon.Error);
             }
         }
-
     }
 }

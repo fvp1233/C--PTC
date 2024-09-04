@@ -1,5 +1,7 @@
-﻿using PTC2024.Model.DAO.PayrollsDAO;
+﻿using PTC2024.Controller.Helper;
+using PTC2024.Model.DAO.PayrollsDAO;
 using PTC2024.View.EmployeeViews;
+using PTC2024.View.formularios.inicio;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,14 +15,19 @@ namespace PTC2024.Controller.PayrollsController
     internal class ControllerAddPermission
     {
         FrmAddPermission objAddPermission;
+        StartMenu objStartForm;
+
         public ControllerAddPermission(FrmAddPermission View)
         {
             objAddPermission = View;
             objAddPermission.Load += new EventHandler(FillDropdown);
+            objAddPermission.cmbTypePermission.SelectedIndexChanged += new EventHandler(cmbTypePermission_SelectedIndexChangedM);
+            objAddPermission.cmbTypePermission.SelectedIndexChanged += new EventHandler(cmbTypePermission_SelectedIndexChangedP);
             objAddPermission.btnAddPermission.Click += new EventHandler(AddPermission);
             objAddPermission.btnCancel.Click += new EventHandler(CloseForm);
             objAddPermission.rtxtContext.KeyDown += new KeyEventHandler(pasteContext);
             objAddPermission.txtIdEmployee.KeyDown += new KeyEventHandler(pasteDisabledNames);
+            objAddPermission.txtIdEmployee.Leave += new EventHandler(LoadEmployeeName);
 
         }
         public void FillDropdown(object sender, EventArgs e)
@@ -42,43 +49,175 @@ namespace PTC2024.Controller.PayrollsController
             if (!(string.IsNullOrEmpty(objAddPermission.rtxtContext.Text.Trim()) || string.IsNullOrEmpty(objAddPermission.txtIdEmployee.Text.Trim())))
             {
                 DAOAddPermission DaoInsert = new DAOAddPermission();
-                if (objAddPermission.dtpStart.Value >= DateTime.Now && objAddPermission.dtpEnd.Value >= objAddPermission.dtpStart.Value)
+                int employeeId = int.Parse(objAddPermission.txtIdEmployee.Text.Trim());
+                DaoInsert.IdEmployee = employeeId;
+
+                DataSet ds = DaoInsert.GetEmployeeGender();
+
+                if (ds != null && ds.Tables["tbEmployee"].Rows.Count > 0)
                 {
-                    DaoInsert.Start = objAddPermission.dtpStart.Value.Date;
-                    DaoInsert.End = objAddPermission.dtpEnd.Value.Date;
-                    DaoInsert.Context = objAddPermission.rtxtContext.Text.Trim();
-                    DaoInsert.IdEmployee = int.Parse(objAddPermission.txtIdEmployee.Text.Trim());
-                    DaoInsert.IdStatusPermission = int.Parse(objAddPermission.cmbStatusPermission.SelectedValue.ToString());
-                    DaoInsert.IdTypePermission = int.Parse(objAddPermission.cmbTypePermission.SelectedValue.ToString());
-                    int returnedValue = DaoInsert.InsertPermission();
-                    if (returnedValue == 1)
+                    int idGender = Convert.ToInt32(ds.Tables["tbEmployee"].Rows[0]["IdGender"]);
+
+                    // Asumiendo que IdGender = 1 es Masculino y IdGender = 2 es Femenino.
+                    if (idGender == 1 && objAddPermission.cmbTypePermission.Text == "Maternidad")
                     {
-                        MessageBox.Show("Los datos han sido registrados exitosamente",
-                    "Proceso completado",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                        objAddPermission.bunifuSnackbar1.Show(objAddPermission, "No se puede asignar un permiso de maternidad a un empleado masculino.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                        return;
+                    }
+                    else if (idGender == 2 && objAddPermission.cmbTypePermission.Text == "Paternidad")
+                    {
+                        objAddPermission.bunifuSnackbar1.Show(objAddPermission, "No se puede asignar un permiso de paternidad a una empleada femenina.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                        return;
+                    }
+
+                    if (objAddPermission.dtpStart.Value >= DateTime.Now && objAddPermission.dtpEnd.Value >= objAddPermission.dtpStart.Value)
+                    {
+                        DaoInsert.Start = objAddPermission.dtpStart.Value.Date;
+                        DaoInsert.End = objAddPermission.dtpEnd.Value.Date;
+                        DaoInsert.Context = objAddPermission.rtxtContext.Text.Trim();
+                        DaoInsert.IdEmployee = employeeId;
+                        DaoInsert.IdStatusPermission = int.Parse(objAddPermission.cmbStatusPermission.SelectedValue.ToString());
+
+                        if (objAddPermission.cmbTypePermission.Text == "Maternidad")
+                        {
+                            DaoInsert.EmployeeStatus = 3;
+                            DaoInsert.IdEmployee = int.Parse(objAddPermission.txtIdEmployee.Text.Trim());
+                            int returnedValues = DaoInsert.UpdateStatusEmployee();
+                            if (returnedValues == 1)
+                            {
+                                StartMenu objStart = new StartMenu(SessionVar.Username);
+                                objStartForm = objStart;
+                                objStartForm.snackBar.Show(objStartForm, $"La empleada fue actualizada existosamente, inciando su su periodo de maternidad", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+
+                            }
+                            else
+                            {
+                                StartMenu objStart = new StartMenu(SessionVar.Username);
+                                objStartForm = objStart;
+                                objStartForm.snackBar.Show(objStartForm, $"los datos no pudieron ser actualizados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                            }
+                        }
+                        else if (objAddPermission.cmbTypePermission.Text == "Paternidad")
+                        {
+                            DaoInsert.EmployeeStatus = 4;
+                            DaoInsert.IdEmployee = int.Parse(objAddPermission.txtIdEmployee.Text.Trim());
+                            int returnedValues = DaoInsert.UpdateStatusEmployee();
+                            if (returnedValues == 1)
+                            {
+                                StartMenu objStart = new StartMenu(SessionVar.Username);
+                                objStartForm = objStart;
+                                objStartForm.snackBar.Show(objStartForm, $"El empleado fue actualizado extosamente, iniciando su periodo de paternidad", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+
+                            }
+                            else
+                            {
+                                objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"los datos no pudieron ser actualizados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                            }
+                        }
+                        DaoInsert.IdTypePermission = int.Parse(objAddPermission.cmbTypePermission.SelectedValue.ToString());
+                        int returnedValue = DaoInsert.InsertPermission();
+                        if (returnedValue == 1)
+                        {
+                            StartMenu objStart = new StartMenu(SessionVar.Username);
+                            objStartForm = objStart;
+                            objStartForm.snackBar.Show(objStartForm, $"El permiso fue registrado exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                        }
+                        else
+                        {
+                            StartMenu objStart = new StartMenu(SessionVar.Username);
+                            objStartForm = objStart;
+                            objStartForm.snackBar.Show(objStartForm, $"El permiso no pudo ser registrado", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+
+                        }
+                        Close();
                     }
                     else
                     {
-                        MessageBox.Show("Los datos no pudieron ser registrados",
-                                        "Proceso interrumpido",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Error);
+                        objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"la fecha ingresada no puede ser de un dia enterior", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+
                     }
-                    Close();
                 }
                 else
                 {
-                    MessageBox.Show("La fecha ingresada no puede ser de un dia anterior",
-                  "Fecha invalida",
-                  MessageBoxButtons.OK,
-                  MessageBoxIcon.Information);
+                    objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"Todos los campos son obligatorios, favor llenar todos los campos", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
                 }
             }
-            else
+        }
+        public void LoadEmployeeName(object sender, EventArgs e)
+        {
+            string employeeIdText = objAddPermission.txtIdEmployee.Text.Trim();
+            if (!string.IsNullOrEmpty(employeeIdText))
             {
-                MessageBox.Show("Todos los campos son obligatorios, llene todos los apartados.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                int employeeId;
+                if (int.TryParse(employeeIdText, out employeeId))
+                {
+                    DAOAddPermission dao = new DAOAddPermission();
+                    dao.IdEmployee = employeeId;
+                    DataSet ds = dao.GetEmployeeName();
+
+                    if (ds != null && ds.Tables["viewEmployees"].Rows.Count > 0)
+                    {
+                        DataRow row = ds.Tables["viewEmployees"].Rows[0];
+                        string employeeName = row["Nombre Completo"].ToString();
+                        objAddPermission.lblEmployeeName.Text = employeeName;
+                    }
+                    else
+                    {
+                        objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"No se encontro al empleado con el ID proporcionado", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                    }
+                }
+                else
+                {
+                    objAddPermission.bunifuSnackbar1.Show(objAddPermission, $"Favor ingresar un ID de empelado valido", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                }
             }
+        }
+
+        private void cmbTypePermission_SelectedIndexChangedM(object sender, EventArgs e)
+        {
+            if (objAddPermission.cmbTypePermission.SelectedItem != null)
+            {
+                // Verifica si se seleccionó "Maternidad"
+                if (objAddPermission.cmbTypePermission.Text == "Maternidad")
+                {
+                    // Sumar 112 días a la fecha seleccionada en dtpStart
+                    objAddPermission.dtpStart.ValueChanged += dtpStart_ValueChangedM;
+                }
+                else
+                {
+                    // Remover el evento si no es "Maternidad"
+                    objAddPermission.dtpStart.ValueChanged -= dtpStart_ValueChangedM;
+                }
+            }
+        }
+
+        public void dtpStart_ValueChangedM(object sender, EventArgs e)
+        {
+            // Sumar 112 días a la fecha de inicio seleccionada y asignarla a dtpEnd
+            objAddPermission.dtpEnd.Value = objAddPermission.dtpStart.Value.AddDays(112);
+        }
+        public void cmbTypePermission_SelectedIndexChangedP(object sender, EventArgs e)
+        {
+            if (objAddPermission.cmbTypePermission.SelectedItem != null)
+            {
+                // Verifica si se seleccionó "Maternidad"
+                if (objAddPermission.cmbTypePermission.Text == "Paternidad")
+                {
+                    // Sumar 112 días a la fecha seleccionada en dtpStart
+                    objAddPermission.dtpStart.ValueChanged += dtpStart_ValueChangedP;
+                }
+                else
+                {
+                    // Remover el evento si no es "Maternidad"
+                    objAddPermission.dtpStart.ValueChanged -= dtpStart_ValueChangedP;
+                }
+            }
+        }
+
+        public void dtpStart_ValueChangedP(object sender, EventArgs e)
+        {
+            // Sumar 112 días a la fecha de inicio seleccionada y asignarla a dtpEnd
+            objAddPermission.dtpEnd.Value = objAddPermission.dtpStart.Value.AddDays(3);
         }
         public void Close()
         {

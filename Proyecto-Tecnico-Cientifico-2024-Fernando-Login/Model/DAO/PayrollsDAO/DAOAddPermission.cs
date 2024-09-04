@@ -59,6 +59,29 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 Command.Connection.Close();
             }
         }
+        public DataSet GetGenderEmployee()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = "SELECT * FROM tbGenders";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "tbGenders");
+                return ds;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("EC-009: No se puedieron obtener los datos de la tabla tbStatusPermission");
+                return null;
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
         public DataSet GetPermissions()
         {
             try
@@ -80,6 +103,76 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             finally
             {
                 Command.Connection.Close();
+            }
+        }
+        public DataSet GetEmployeeName()
+        {
+            try
+            {
+                Command.Connection= getConnection();
+                string query = "SELECT CONCAT([Nombres],' ',[Apellidos],'/ DUI: ',DUI,'/ Género: ',[Género]) AS 'Nombre Completo' FROM viewEmployees WHERE [Código] = @param1";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("@param1", IdEmployee);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewEmployees");
+                return ds;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("EC-0100: No se puedieron obtener los datos de la tabla tbStatusPermission");
+                return null;
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
+        public DataSet GetEmployeeGender()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = "SELECT IdGender FROM tbEmployee WHERE IdEmployee = @IdEmployee";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("@IdEmployee", IdEmployee);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "tbEmployee");
+                return ds;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("EC-0100: No se puedieron obtener los datos de la tabla tbEmloyee");
+                return null;
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
+        public int UpdateStatusEmployee()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = "UPDATE tbEmployee SET IdStatus = @param1 WHERE IdEmployee = @param2";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("@param1", EmployeeStatus);
+                cmd.Parameters.AddWithValue("@param2", IdEmployee);
+                int answer = cmd.ExecuteNonQuery();
+                return answer;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Excepcion{e}");
+                return -1;
+            }
+            finally
+            {
+                getConnection().Close();
             }
         }
         public int InsertPermission()

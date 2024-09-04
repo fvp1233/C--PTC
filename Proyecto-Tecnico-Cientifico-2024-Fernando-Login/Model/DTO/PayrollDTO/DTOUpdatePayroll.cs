@@ -45,6 +45,7 @@ namespace PTC2024.Model.DTO.PayrollDTO
         private int hoursWorked;
         private double hoursSalary;
         private double gossSalary;
+        private int extraHours;
         //Estatus de planilla
         private int idPayrollStatus;
         private string payrollStatus;
@@ -85,5 +86,6 @@ namespace PTC2024.Model.DTO.PayrollDTO
         public double GossSalary { get => gossSalary; set => gossSalary = value; }
         public int HoursWorked { get => hoursWorked; set => hoursWorked = value; }
         public double HoursSalary { get => hoursSalary; set => hoursSalary = value; }
+        public int ExtraHours { get => extraHours; set => extraHours = value; }
     }
 }

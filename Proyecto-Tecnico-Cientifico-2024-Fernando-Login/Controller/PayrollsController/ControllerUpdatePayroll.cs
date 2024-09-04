@@ -1,6 +1,8 @@
-﻿using PTC2024.Model.DAO.BillsDAO;
+﻿using PTC2024.Controller.Helper;
+using PTC2024.Model.DAO.BillsDAO;
 using PTC2024.Model.DAO.PayrollsDAO;
 using PTC2024.View.Empleados;
+using PTC2024.View.formularios.inicio;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,14 +16,17 @@ namespace PTC2024.Controller.EmployeesController
     internal class ControllerUpdatePayroll
     {
         FrmUpdatePayroll objUpdatePayroll;
-        public ControllerUpdatePayroll(FrmUpdatePayroll Vista, int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, string affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, int daysWorkded, double daySalary, double grossPay, int hoursWorked, double hourSalary)
+        StartMenu objStartForm;
+        public ControllerUpdatePayroll(FrmUpdatePayroll Vista, int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, string affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, int daysWorkded, double daySalary, double grossPay, int hoursWorked, double hourSalary, int extraHours)
         {
             objUpdatePayroll = Vista;
             DisableComponents();
-            ChargeValues(nP, dui, employee, salary, possition, bonus, bankAccount, affiliationNumber, isss, afp, rent, netSalary, discountEmployee, issueDate, daysWorkded, daySalary, grossPay, hoursWorked, hourSalary);
+            ChargeValues(nP, dui, employee, salary, possition, bonus, bankAccount, affiliationNumber, isss, afp, rent, netSalary, discountEmployee, issueDate, daysWorkded, daySalary, grossPay, hoursWorked, hourSalary, extraHours);
             objUpdatePayroll.btnConfirm.Click += new EventHandler(UpdatePayrollStatus);
             objUpdatePayroll.btnCancelar.Click += new EventHandler(CloseForm);
             objUpdatePayroll.txtHoursWorked.KeyPress += new KeyPressEventHandler(DaysWorked);
+            objUpdatePayroll.txtDaysWorked.KeyPress += new KeyPressEventHandler(UpdateHoursWorked);
+
         }
         public void UpdatePayrollStatus(object sender, EventArgs e)
         {
@@ -32,33 +37,33 @@ namespace PTC2024.Controller.EmployeesController
                 daoUpdatePayroll.DaySalary = double.Parse(objUpdatePayroll.txtDaySalary.Text.Trim());
                 daoUpdatePayroll.HoursWorked = int.Parse(objUpdatePayroll.txtHoursWorked.Text.Trim());
                 daoUpdatePayroll.HoursSalary = double.Parse(objUpdatePayroll.txtHourSalary.Text.Trim());
+                daoUpdatePayroll.ExtraHours = int.Parse(objUpdatePayroll.txtExtraHours.Text.Trim());
                 daoUpdatePayroll.IdPayroll = int.Parse(objUpdatePayroll.txtIdPayroll.Text.Trim());
                 int value = daoUpdatePayroll.UpdatePayroll();
                 if (value == 1)
                 {
-                    MessageBox.Show("Los datos han sido actualizado exitosamente",
-                                    "Proceso completado",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStartForm = objStart;
+                    objStartForm.snackBar.Show(objStartForm, $"Los datos fueron fueron actualizados exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+
                 }
                 else
                 {
-                    MessageBox.Show("Los datos no pudieron ser actualizados. Verifica los valores ingresados.",
-                                    "Proceso interrumpido",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStartForm = objStart;
+                    objStartForm.snackBar.Show(objStartForm, $"Los datos no pudieron ser actualizados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+
                 }
                 objUpdatePayroll.Close();
             }
             else
             {
-                MessageBox.Show("Los dias trabajados no pueden exceder los 30 dias",
-                                    "Proceso interrumpido",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"Los dias trabajados no pueden exceder los 30 días", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
         }
-        public void ChargeValues(int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, string affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, int daysWorked, double daySalary, double grossPay, int hoursWorked, double hourSalary)
+        public void ChargeValues(int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, string affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, int daysWorked, double daySalary, double grossPay, int hoursWorked, double hourSalary, int extraHours)
         {
             try
             {
@@ -81,6 +86,7 @@ namespace PTC2024.Controller.EmployeesController
                 objUpdatePayroll.txtGrossPay.Text = grossPay.ToString();
                 objUpdatePayroll.txtHoursWorked.Text = hoursWorked.ToString();
                 objUpdatePayroll.txtHourSalary.Text = hourSalary.ToString();
+                objUpdatePayroll.txtExtraHours.Text = extraHours.ToString();
             }
             catch (Exception)
             {
@@ -107,30 +113,63 @@ namespace PTC2024.Controller.EmployeesController
             objUpdatePayroll.dtpDate.Enabled = false;
             objUpdatePayroll.txtGrossPay.Enabled = false;
             objUpdatePayroll.txtDaySalary.Enabled = false;
+            objUpdatePayroll.txtHourSalary.Enabled = false;
+
            
         }
         public void DaysWorked(object sender, KeyPressEventArgs e)
         {
-            // Obtén los valores actuales de horas y días trabajados
-            int daysWorked = int.Parse(objUpdatePayroll.txtDaysWorked.Text.ToString());
-            
-            double hoursWorked = double.Parse(objUpdatePayroll.txtHoursWorked.Text.ToString());
-
-            // Calcula la cantidad de días que deberían corresponder a las horas trabajadas actuales
-            int calculatedDays = (int)(hoursWorked / 8);
-
-            // Calcula la diferencia en días entre el valor actual y el nuevo cálculo
-            int daysDifference = daysWorked - calculatedDays;
-
-            // Solo actualiza los días trabajados si hay una reducción completa de 8 horas
-            if (hoursWorked % 8 == 0)
+            try
             {
-                daysWorked = calculatedDays;
+                // Obtén los valores actuales de horas y días trabajados
+                int daysWorked = int.Parse(objUpdatePayroll.txtDaysWorked.Text.ToString());
+
+                int hoursWorked = int.Parse(objUpdatePayroll.txtHoursWorked.Text.ToString());
+
+                // Calcula la cantidad de días que deberían corresponder a las horas trabajadas actuales
+                int calculatedDays = (int)(hoursWorked / 8);
+
+                // Calcula la diferencia en días entre el valor actual y el nuevo cálculo
+                int daysDifference = daysWorked - calculatedDays;
+
+                // Solo actualiza los días trabajados si hay una reducción completa de 8 horas
+                if (hoursWorked % 8 == 0)
+                {
+                    daysWorked = calculatedDays;
+                }
+
+                // Actualiza los valores en la interfaz de usuario
+                objUpdatePayroll.txtDaysWorked.Text = daysWorked.ToString();
+                objUpdatePayroll.txtHoursWorked.Text = hoursWorked.ToString();
+            }
+            catch (Exception)
+            {
+
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"Recuerda ingresar un valor valido en los dias trabajados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
 
-            // Actualiza los valores en la interfaz de usuario
-            objUpdatePayroll.txtDaysWorked.Text = daysWorked.ToString();
-            objUpdatePayroll.txtHoursWorked.Text = hoursWorked.ToString();
+        }
+        public void UpdateHoursWorked(object sender, KeyPressEventArgs e)
+        {
+            // Verifica que el valor de los días trabajados sea un número válido
+            int daysWorked;
+            if (int.TryParse(objUpdatePayroll.txtDaysWorked.Text, out daysWorked))
+            {
+                // Calcula las horas trabajadas en base a los días trabajados
+                int hoursWorked = daysWorked * 8;
+
+                // Actualiza el campo de horas trabajadas en la interfaz
+                objUpdatePayroll.txtHoursWorked.Text = hoursWorked.ToString();
+            }
+            else
+            {
+
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"Recuerda ingresar un valor valido para las horas trabajadas", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+            }
         }
 
         public void CloseForm(object sender, EventArgs e)

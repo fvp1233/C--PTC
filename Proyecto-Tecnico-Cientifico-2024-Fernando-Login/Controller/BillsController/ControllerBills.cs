@@ -12,6 +12,7 @@ using PTC2024.Model.DAO.EmployeesDAO;
 using PTC2024.Model.DTO.EmployeesDTO;
 using System.Drawing.Printing;
 using System.IO;
+using PTC2024.Model.DTO.BillsDTO;
 namespace PTC2024.Controller.BillsController
 {
     internal class ControllerBills
@@ -27,18 +28,19 @@ namespace PTC2024.Controller.BillsController
             objFormBills.btnNewBills.Click += new EventHandler(AddBills);
             objFormBills.cmsPrintBill.Click += new EventHandler(printBills);
             objFormBills.cmsOverrideBill.Click += new EventHandler(OverrideBills);
-            objFormBills.cmsRectifyBill.Click += new EventHandler(Rectificar);
+            objFormBills.cmsRectifyBill.Click += new EventHandler(Rectify);
             objFormBills.txtSearchB.KeyPress += new KeyPressEventHandler(SearchBills);
             objFormBills.dgvBills.CellMouseDown += new DataGridViewCellMouseEventHandler(objFormBills_CellMouseDown);
             objFormBills.dgvBills.SelectionChanged += new EventHandler(dgvBills_SelectionChanged);
-            objFormBills.cbEfectivo.Click += new EventHandler(CheckboxFiltersMethod);
-            objFormBills.cbCheque.Click += new EventHandler(CheckboxFiltersMethod);
-            objFormBills.cbCriptomoneda.Click += new EventHandler(CheckboxFiltersMethod);
-            objFormBills.cbEmitida.Click += new EventHandler(CheckboxFiltersStatus);
-            objFormBills.cbRectificada.Click += new EventHandler(CheckboxFiltersStatus);
-            objFormBills.cbPagada.Click += new EventHandler(CheckboxFiltersStatus);
-            objFormBills.cbAnulada.Click += new EventHandler(CheckboxFiltersStatus);
-            objFormBills.cbPendiente.Click += new EventHandler(CheckboxFiltersStatus);
+            objFormBills.cbEfectivo.Click += new EventHandler(CheckboxFiltersMethodCash);
+            objFormBills.cbCheque.Click += new EventHandler(CheckboxFiltersMethodPayCheck);
+            objFormBills.cbCriptomoneda.Click += new EventHandler(CheckboxFiltersMethodCryptocurrency);
+            objFormBills.cbEmitida.Click += new EventHandler(CheckboxFiltersStatusIssued);
+            objFormBills.cbRectificada.Click += new EventHandler(CheckboxFiltersStatusRectify);
+            objFormBills.cbPagada.Click += new EventHandler(CheckboxFiltersStatusPay);
+            objFormBills.cbAnulada.Click += new EventHandler(CheckboxFiltersStatusOverride);
+            objFormBills.cbPendiente.Click += new EventHandler(CheckboxFiltersStatusDue);
+            objFormBills.cmsRectifyBill.Visible = false;
             disabledBillId = -1;
         }
         /// <summary>
@@ -64,6 +66,8 @@ namespace PTC2024.Controller.BillsController
             //objFormBills.dgvBills.Columns[12].Visible = false;
             objFormBills.dgvBills.Columns[13].Visible = false;
             objFormBills.dgvBills.Columns[14].Visible = false;
+            objFormBills.dgvBills.Columns[18].Visible = false;
+            objFormBills.dgvBills.Columns[19].Visible = false;
 
         }
         //filtracion por busqueda
@@ -85,122 +89,199 @@ namespace PTC2024.Controller.BillsController
             objFormBills.dgvBills.DataSource = respuesta.Tables["viewBill"];
         }
         //Filtracion por checkBox
-        public void CheckboxFiltersMethod(object senderl, EventArgs e)
+        public void CheckboxFiltersMethodCash(object senderl, EventArgs e)
         {
-            //Creamos objeto del DAOEmployee
+
+                //Creamos objeto del dAOBills
+                DAOBills dAOBills = new DAOBills();
+                //Creamos una variable string que dependerá de que checkbox esta activado
+                string Method;
+                if (objFormBills.cbEfectivo.Checked == true)
+                {
+                    Method = objFormBills.cbEfectivo.Tag.ToString();
+                    objFormBills.cbCheque.Checked = false;
+                    objFormBills.cbCriptomoneda.Checked = false;
+                    //Creamos un dataset para capturar el que nos va a devolver el método en el DAO, y le enviamos la variable string que este tiene como parámetro
+                    DataSet ds = dAOBills.CheckboxFiltersMethod(Method);
+                    //Le damos el valor al datagrid
+                    objFormBills.dgvBills.DataSource = ds.Tables["viewBill"];
+
+                }
+                else
+                {
+                    ChargeData();
+                }
+            }
+
+        public void CheckboxFiltersMethodPayCheck(object senderl, EventArgs e)
+        {
+
+            //Creamos objeto del dAOBills
             DAOBills dAOBills = new DAOBills();
             //Creamos una variable string que dependerá de que checkbox esta activado
             string Method;
-            //Si un checkbox esta activado, todos los demás no
-            if (objFormBills.cbEfectivo.Checked == true)
-            {
-                Method = objFormBills.cbEfectivo.Tag.ToString();
-                objFormBills.cbCheque.Enabled = false;
-                objFormBills.cbCriptomoneda.Enabled = false;
-                //se crea un dataset que capturará el que nos envía el método en el DAO y le enviamos la variable string que necesita
-                DataSet dsCheckBoxMethod = dAOBills.CheckboxFiltersStatus(Method);
-                objFormBills.dgvBills.DataSource = dsCheckBoxMethod.Tables["viewBill"];
-            }
-            else if (objFormBills.cbCheque.Checked == true)
+            if (objFormBills.cbCheque.Checked == true)
             {
                 Method = objFormBills.cbCheque.Tag.ToString();
-                objFormBills.cbEfectivo.Enabled = false;
-                objFormBills.cbEfectivo.Enabled = false;
-                //se crea un dataset que capturará el que nos envía el método en el DAO y le enviamos la variable string que necesita
-                DataSet dsCheckBoxMethod = dAOBills.CheckboxFiltersMethod(Method);
-                objFormBills.dgvBills.DataSource = dsCheckBoxMethod.Tables["viewBill"];
-            }
-            else if (objFormBills.cbCriptomoneda.Checked == true)
-            {
-                Method = objFormBills.cbCriptomoneda.Tag.ToString();
-                objFormBills.cbEfectivo.Enabled = false;
-                objFormBills.cbCheque.Enabled = false;
-                //se crea un dataset que capturará el que nos envía el método en el DAO y le enviamos la variable string que necesita
-                DataSet dsCheckBoxMethod = dAOBills.CheckboxFiltersMethod(Method);
-                objFormBills.dgvBills.DataSource = dsCheckBoxMethod.Tables["viewBill"];
+                objFormBills.cbEfectivo.Checked = false;
+                objFormBills.cbCriptomoneda.Checked = false;
+                //Creamos un dataset para capturar el que nos va a devolver el método en el DAO, y le enviamos la variable string que este tiene como parámetro
+                DataSet ds = dAOBills.CheckboxFiltersMethod(Method);
+                //Le damos el valor al datagrid
+                objFormBills.dgvBills.DataSource = ds.Tables["viewBill"];
+
             }
             else
             {
-                //en caso de que ninguno esté checkeado, todos estarán habilitados y se refrescará el datagrid
-                objFormBills.cbEfectivo.Enabled = true;
-                objFormBills.cbCheque.Enabled = true;
-                objFormBills.cbCriptomoneda.Enabled = true;
-                
                 ChargeData();
             }
-            }
+        }
 
-        public void CheckboxFiltersStatus(object senderl, EventArgs e)
+        public void CheckboxFiltersMethodCryptocurrency(object senderl, EventArgs e)
         {
-            //Creamos objeto del DAOEmployee
+
+            //Creamos objeto del dAOBills
+            DAOBills dAOBills = new DAOBills();
+            //Creamos una variable string que dependerá de que checkbox esta activado
+            string Method;
+            if (objFormBills.cbCriptomoneda.Checked == true)
+            {
+                Method = objFormBills.cbCriptomoneda.Tag.ToString();
+                objFormBills.cbCheque.Checked = false;
+                objFormBills.cbEfectivo.Checked = false;
+                //Creamos un dataset para capturar el que nos va a devolver el método en el DAO, y le enviamos la variable string que este tiene como parámetro
+                DataSet ds = dAOBills.CheckboxFiltersMethod(Method);
+                //Le damos el valor al datagrid
+                objFormBills.dgvBills.DataSource = ds.Tables["viewBill"];
+
+            }
+            else
+            {
+                ChargeData();
+            }
+        }
+
+        public void CheckboxFiltersStatusIssued(object senderl, EventArgs e)
+        {
+            //Creamos objeto del dAOBills
             DAOBills dAOBills = new DAOBills();
             //Creamos una variable string que dependerá de que checkbox esta activado
             string status;
-            //Si un checkbox esta activado, todos los demás no
             if (objFormBills.cbEmitida.Checked == true)
             {
                 status = objFormBills.cbEmitida.Tag.ToString();
-                objFormBills.cbRectificada.Enabled = false;
-                objFormBills.cbPagada.Enabled = false;
-                objFormBills.cbAnulada.Enabled = false;
-                objFormBills.cbPendiente.Enabled = false;
-                //se crea un dataset que capturará el que nos envía el método en el DAO y le enviamos la variable string que necesita
+                objFormBills.cbRectificada.Checked = false;
+                objFormBills.cbPagada.Checked = false;
+                objFormBills.cbAnulada.Checked = false;
+                objFormBills.cbPendiente.Checked = false;
+                //Creamos un dataset para capturar el que nos va a devolver el método en el DAO, y le enviamos la variable string que este tiene como parámetro
                 DataSet ds = dAOBills.CheckboxFiltersStatus(status);
+                //Le damos el valor al datagrid
                 objFormBills.dgvBills.DataSource = ds.Tables["viewBill"];
-            }
-            else if (objFormBills.cbRectificada.Checked == true)
-            {
-                status = objFormBills.cbRectificada.Tag.ToString();
-                objFormBills.cbEmitida.Enabled = false;
-                objFormBills.cbPagada.Enabled = false;
-                objFormBills.cbAnulada.Enabled = false;
-                objFormBills.cbPendiente.Enabled = false;
-                //se crea un dataset que capturará el que nos envía el método en el DAO y le enviamos la variable string que necesita
-                DataSet ds = dAOBills.CheckboxFiltersStatus(status);
-                objFormBills.dgvBills.DataSource = ds.Tables["viewBill"];
-            }
-            else if (objFormBills.cbPagada.Checked == true)
-            {
-                status = objFormBills.cbPagada.Tag.ToString();
-                objFormBills.cbEmitida.Enabled = false;
-                objFormBills.cbRectificada.Enabled = false;
-                objFormBills.cbAnulada.Enabled = false;
-                objFormBills.cbPendiente.Enabled = false;
-                //se crea un dataset que capturará el que nos envía el método en el DAO y le enviamos la variable string que necesita
-                DataSet ds = dAOBills.CheckboxFiltersStatus(status);
-                objFormBills.dgvBills.DataSource = ds.Tables["viewBill"];
-            }
-            else if (objFormBills.cbAnulada.Checked == true)
-            {
-                status = objFormBills.cbAnulada.Tag.ToString();
-                objFormBills.cbEmitida.Enabled = false;
-                objFormBills.cbPagada.Enabled = false;
-                objFormBills.cbRectificada.Enabled = false;
-                objFormBills.cbPendiente.Enabled = false;
-                //se crea un dataset que capturará el que nos envía el método en el DAO y le enviamos la variable string que necesita
-                DataSet ds = dAOBills.CheckboxFiltersStatus(status);
-                objFormBills.dgvBills.DataSource = ds.Tables["viewBill"];
-            }
-            else if (objFormBills.cbPendiente.Checked == true)
-            {
-                status = objFormBills.cbPendiente.Tag.ToString();
-                objFormBills.cbEmitida.Enabled = false;
-                objFormBills.cbPagada.Enabled = false;
-                objFormBills.cbAnulada.Enabled = false;
-                objFormBills.cbRectificada.Enabled = false;
-                //se crea un dataset que capturará el que nos envía el método en el DAO y le enviamos la variable string que necesita
-                DataSet ds = dAOBills.CheckboxFiltersStatus(status);
-                objFormBills.dgvBills.DataSource = ds.Tables["viewBill"];
+
             }
             else
             {
-                //en caso de que ninguno esté checkeado, todos estarán habilitados y se refrescará el datagrid
-                objFormBills.cbEmitida.Enabled = true;
-                objFormBills.cbRectificada.Enabled = true;
-                objFormBills.cbPagada.Enabled = true;
-                objFormBills.cbAnulada.Enabled = true;
-                objFormBills.cbPendiente.Enabled = true;
+                ChargeData();
+            }
+        }
 
+        public void CheckboxFiltersStatusRectify(object senderl, EventArgs e)
+        {
+            //Creamos objeto del dAOBills
+            DAOBills dAOBills = new DAOBills();
+            //Creamos una variable string que dependerá de que checkbox esta activado
+            string status;
+            if (objFormBills.cbRectificada.Checked == true)
+            {
+                status = objFormBills.cbRectificada.Tag.ToString();
+                objFormBills.cbEmitida.Checked = false;
+                objFormBills.cbPagada.Checked = false;
+                objFormBills.cbAnulada.Checked = false;
+                objFormBills.cbPendiente.Checked = false;
+                //Creamos un dataset para capturar el que nos va a devolver el método en el DAO, y le enviamos la variable string que este tiene como parámetro
+                DataSet ds = dAOBills.CheckboxFiltersStatus(status);
+                //Le damos el valor al datagrid
+                objFormBills.dgvBills.DataSource = ds.Tables["viewBill"];
+
+            }
+            else
+            {
+                ChargeData();
+            }
+        }
+
+        public void CheckboxFiltersStatusPay (object senderl, EventArgs e)
+        {
+            //Creamos objeto del dAOBills
+            DAOBills dAOBills = new DAOBills();
+            //Creamos una variable string que dependerá de que checkbox esta activado
+            string status;
+            if (objFormBills.cbPagada.Checked == true)
+            {
+                status = objFormBills.cbPagada.Tag.ToString();
+                objFormBills.cbEmitida.Checked = false;
+                objFormBills.cbRectificada.Checked = false;
+                objFormBills.cbAnulada.Checked = false;
+                objFormBills.cbPendiente.Checked = false;
+                //Creamos un dataset para capturar el que nos va a devolver el método en el DAO, y le enviamos la variable string que este tiene como parámetro
+                DataSet ds = dAOBills.CheckboxFiltersStatus(status);
+                //Le damos el valor al datagrid
+                objFormBills.dgvBills.DataSource = ds.Tables["viewBill"];
+
+            }
+            else
+            {
+                ChargeData();
+            }
+        }
+
+        public void CheckboxFiltersStatusOverride(object senderl, EventArgs e)
+        {
+            //Creamos objeto del dAOBills
+            DAOBills dAOBills = new DAOBills();
+            //Creamos una variable string que dependerá de que checkbox esta activado
+            string status;
+            if (objFormBills.cbAnulada.Checked == true)
+            {
+                status = objFormBills.cbAnulada.Tag.ToString();
+                objFormBills.cbEmitida.Checked = false;
+                objFormBills.cbRectificada.Checked = false;
+                objFormBills.cbPagada.Checked = false;
+                objFormBills.cbPendiente.Checked = false;
+                //Creamos un dataset para capturar el que nos va a devolver el método en el DAO, y le enviamos la variable string que este tiene como parámetro
+                DataSet ds = dAOBills.CheckboxFiltersStatus(status);
+                //Le damos el valor al datagrid
+                objFormBills.dgvBills.DataSource = ds.Tables["viewBill"];
+
+            }
+            else
+            {
+                ChargeData();
+            }
+        }
+
+        public void CheckboxFiltersStatusDue(object senderl, EventArgs e)
+        {
+            //Creamos objeto del dAOBills
+            DAOBills dAOBills = new DAOBills();
+            //Creamos una variable string que dependerá de que checkbox esta activado
+            string status;
+            if (objFormBills.cbPendiente.Checked == true)
+            {
+                status = objFormBills.cbAnulada.Tag.ToString();
+                objFormBills.cbEmitida.Checked = false;
+                objFormBills.cbRectificada.Checked = false;
+                objFormBills.cbPagada.Checked = false;
+                objFormBills.cbAnulada.Checked = false;
+                //Creamos un dataset para capturar el que nos va a devolver el método en el DAO, y le enviamos la variable string que este tiene como parámetro
+                DataSet ds = dAOBills.CheckboxFiltersStatus(status);
+                //Le damos el valor al datagrid
+                objFormBills.dgvBills.DataSource = ds.Tables["viewBill"];
+
+            }
+            else
+            {
                 ChargeData();
             }
         }
@@ -294,51 +375,23 @@ namespace PTC2024.Controller.BillsController
         /// <param name="e"></param>
         public void AddBills(object sender, EventArgs e)
         {
-            FrmAddBills newBill = new FrmAddBills(1);
+            FrmAddBills newBill = new FrmAddBills(2);
             newBill.ShowDialog();
             ChargeData();
         }
-        
+
         /// <summary>
         /// Método para rectificar factura, cargando los datos y luego estos se puedan modificar nuevamente
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Rectificar(object sender, EventArgs e)
+        public void Rectify(object sender, EventArgs e)
         {
-            int row = objFormBills.dgvBills.CurrentRow.Index;
-            int id;
-            string NIT, NRC;
-            string companyName, serviceName, statusBill, customer, employee, methodP, CustomerDui, CustomerPhone, CustomerEmail;
-            DateTime startDate, FinalDate, Dateissued;
-            double Discount, SubtotalPay, TotalPay;
-            id = int.Parse(objFormBills.dgvBills[0, row].Value.ToString());
-            companyName = objFormBills.dgvBills[1, row].Value.ToString();
-            NIT = objFormBills.dgvBills[2, row].Value.ToString();
-            NRC = objFormBills.dgvBills[3, row].Value.ToString();
-            customer = objFormBills.dgvBills[4, row].Value.ToString();
-            CustomerDui = objFormBills.dgvBills[5, row].Value.ToString();
-            CustomerPhone = objFormBills.dgvBills[6, row].Value.ToString();
-            CustomerEmail = objFormBills.dgvBills[7, row].Value.ToString();
-            serviceName = objFormBills.dgvBills[8, row].Value.ToString();
-            Discount = double.Parse(objFormBills.dgvBills[9, row].Value.ToString());
-            SubtotalPay = double.Parse(objFormBills.dgvBills[10, row].Value.ToString());
-            TotalPay = double.Parse(objFormBills.dgvBills[11, row].Value.ToString());
-            methodP = objFormBills.dgvBills[12, row].Value.ToString();
-            startDate = DateTime.Parse(objFormBills.dgvBills[13, row].Value.ToString());
-            FinalDate = DateTime.Parse(objFormBills.dgvBills[14, row].Value.ToString());
-            employee = objFormBills.dgvBills[15, row].Value.ToString();
-            statusBill = objFormBills.dgvBills[16, row].Value.ToString();
-            Dateissued = DateTime.Parse(objFormBills.dgvBills[17, row].Value.ToString());
-
-            FrmAddBills rectifyBill = new FrmAddBills(1, id, companyName, NIT, NRC, customer, serviceName, Discount, SubtotalPay, TotalPay, methodP, startDate, FinalDate, Dateissued, employee, statusBill, CustomerDui, CustomerPhone, CustomerEmail);
-
+            FrmAddBills rectifyBill = new FrmAddBills(1);
             rectifyBill.ShowDialog();
             ChargeData();
 
-            /*FrmAddBills newBill = new FrmAddBills(1);
-            newBill.ShowDialog();
-            ChargeData();*/
+
         }
 
         /// <summary>
@@ -363,6 +416,8 @@ namespace PTC2024.Controller.BillsController
 
             if (controller.ConfirmValue == 1)
             {
+                DAOBills daoBills = new DAOBills();
+                DataSet ds = daoBills.over(idBill.ToString());
                 // Deshabilitar visualmente la fila y marcarla como solo lectura
                 MessageBox.Show("Factura anulada.", "Proceso Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 disabledBillId = idBill;
@@ -374,6 +429,7 @@ namespace PTC2024.Controller.BillsController
                 MessageBox.Show("Contraseña de administrador incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 MessageBox.Show("Operación cancelada.", "Cancelar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            ChargeData();
         }
 
         /// <summary>
@@ -392,11 +448,12 @@ namespace PTC2024.Controller.BillsController
                     row.DefaultCellStyle.ForeColor = Color.DarkGray;
                     row.DefaultCellStyle.SelectionBackColor = Color.LightGray;
                     row.DefaultCellStyle.SelectionForeColor = Color.DarkGray;
-                    objFormBills.cmsRectifyBill.Enabled = true;
+                    objFormBills.cmsRectifyBill.Visible = true;
                     ChargeData();
                     break;
                 }
             }
+            ChargeData();
         }
         /// <summary>
         /// Método que se utliza pa una fila especifica de dgvBills y la marca como solo lectura sin posibilidad de editarla

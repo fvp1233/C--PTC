@@ -59,6 +59,28 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 getConnection().Close();
             }
         }
+        public int DeletePermission()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = "DELETE tbPermissions WHERE IdPermission = @param1";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("param1", IdPermission);
+                int respuesta = cmd.ExecuteNonQuery();
+                return respuesta;
+            }
+            catch (Exception)
+            {
+
+                return -1;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+
+        }
         public DataSet GetPermissionsDisable()
         {
             try
