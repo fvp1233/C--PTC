@@ -37,6 +37,7 @@ namespace PTC2024.Controller.ProfileController
             objProfile.lblEAdress.Text = SessionVar.Email;
             objProfile.lblPhone.Text = SessionVar.Phone;
             objProfile.lblCharge.Text = SessionVar.Access;
+            objProfile.lblAddress.Text = SessionVar.Adress;
             objProfile.picUser.Image = ByteArrayToImage(SessionVar.ProfilePic);
         }
 
