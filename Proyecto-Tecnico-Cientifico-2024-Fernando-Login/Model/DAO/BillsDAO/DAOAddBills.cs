@@ -80,98 +80,7 @@ namespace PTC2024.Model.DAO.BillsDAO
         }
 
 
-        /*
-        public bool VerificarClienteExistente(string customer)
-        {
-            try
-            {
-                Command.Connection = getConnection();
-                string query = "SELECT COUNT(*) FROM tbCustomer WHERE Names = @customer";
-                SqlCommand cmd = new SqlCommand(query, Command.Connection);
-                cmd.Parameters.AddWithValue("@customer", customer);
-                int count = (int)cmd.ExecuteScalar();
 
-                return count > 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("EC-012: Error al verificar la existencia del cliente. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            finally
-            {
-                getConnection().Close();
-            }
-        }
-
-        public bool CustomerIdentificator(string customer)
-        {
-            try
-            {
-                Command.Connection = getConnection();
-                string query = "SELECT COUNT(*) FROM tbCustomer WHERE LastNames = @customer";
-                SqlCommand cmd = new SqlCommand(query, Command.Connection);
-                cmd.Parameters.AddWithValue("@customer", customer);
-                int count = (int)cmd.ExecuteScalar();
-
-                return count > 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("EC-012: Error al verificar la existencia del cliente. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            finally
-            {
-                getConnection().Close();
-            }
-        }
-        public bool CustomerD(string customer)
-        {
-            try
-            {
-                Command.Connection = getConnection();
-                string query = "SELECT COUNT(*) FROM tbCustomer WHERE DUI = @DUI1";
-                SqlCommand cmd = new SqlCommand(query, Command.Connection);
-                cmd.Parameters.AddWithValue("@DUI1", customer);
-                int count = (int)cmd.ExecuteScalar();
-
-                return count > 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("EC-012: Error al verificar la existencia del cliente. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            finally
-            {
-                getConnection().Close();
-            }
-        }
-        /*
-        public DataSet GetCustomer()
-        {
-            try
-            {
-                Command.Connection = getConnection();
-                string queryCustomer = "SELECT * FROM tbCustomer";
-                SqlCommand cmd = new SqlCommand(queryCustomer, Command.Connection);
-                cmd.ExecuteNonQuery();
-                SqlDataAdapter adp = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adp.Fill(ds, "tbCustomer");
-                return ds;
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-            finally
-            {
-                getConnection().Close();
-            }
-        }
-        */
         public DataSet DataServices()
         {
             try
@@ -207,30 +116,38 @@ namespace PTC2024.Model.DAO.BillsDAO
         {
             List<string> customerNames = new List<string>();
 
-            using (SqlConnection connection = getConnection())
+            try
             {
-                // Abre la conexión solo si está cerrada
-                if (connection.State == ConnectionState.Closed)
+                using (SqlConnection connection = getConnection())
                 {
-                    connection.Open();
-                }
-
-                string query = "SELECT DISTINCT TRIM(names + ' ' + lastNames) AS FullName " +
-                               "FROM tbCustomer " +
-                               "WHERE TRIM(names + ' ' + lastNames) LIKE '%' + @CustomerName + '%'";
-
-                using (SqlCommand cmd = new SqlCommand(query, connection))
-                {
-                    cmd.Parameters.AddWithValue("@CustomerName", CustomerName);
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    // Abre la conexión solo si está cerrada
+                    if (connection.State == ConnectionState.Closed)
                     {
-                        while (reader.Read())
+                        connection.Open();
+                    }
+
+                    string query = "SELECT DISTINCT TRIM(names + ' ' + lastNames) AS FullName " +
+                                   "FROM tbCustomer " +
+                                   "WHERE TRIM(names + ' ' + lastNames) LIKE '%' + @CustomerName + '%'";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@CustomerName", CustomerName);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            customerNames.Add(reader["FullName"].ToString());
+                            while (reader.Read())
+                            {
+                                customerNames.Add(reader["FullName"].ToString());
+                            }
                         }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                // Log del error o muestra el mensaje
+                MessageBox.Show($"Error al obtener nombres de cliente: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return customerNames;
@@ -283,35 +200,42 @@ namespace PTC2024.Model.DAO.BillsDAO
 
             return clienteData;
         }
-
+       
         public List<string> GetEmployeesNames(string EmployeeName)
         {
             List<string> EmployeeNames = new List<string>();
 
-            using (SqlConnection connection = getConnection())
+            try
             {
-                // Abre la conexión solo si está cerrada
-                if (connection.State == ConnectionState.Closed)
+                using (SqlConnection connection = getConnection())
                 {
-                    connection.Open();
-                }
-
-                string query = "SELECT DISTINCT TRIM(names + ' ' + lastName) AS FullName " +
-                               "FROM tbEmployee " +
-                               "WHERE TRIM(names + ' ' + lastName) LIKE '%' + @EmployeeName + '%'";
-
-                using (SqlCommand cmd = new SqlCommand(query, connection))
-                {
-                    cmd.Parameters.AddWithValue("@EmployeeName", EmployeeName);
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    // Abre la conexión solo si está cerrada
+                    if (connection.State == ConnectionState.Closed)
                     {
-                        while (reader.Read())
+                        connection.Open();
+                    }
+
+                    string query = "SELECT DISTINCT TRIM(names + ' ' + lastName) AS FullName " +
+                                   "FROM tbEmployee " +
+                                   "WHERE TRIM(names + ' ' + lastName) LIKE '%' + @EmployeeName + '%'";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@EmployeeName", EmployeeName);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            EmployeeNames.Add(reader["FullName"].ToString());
+                            while (reader.Read())
+                            {
+                                EmployeeNames.Add(reader["FullName"].ToString());
+                            }
                         }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al obtener nombres de empleados: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return EmployeeNames;
@@ -448,6 +372,44 @@ namespace PTC2024.Model.DAO.BillsDAO
                 Command.Connection.Close();
             }
         }
+
+        public DataSet Rectify(string status)
+        {
+            try
+            {
+                //Abrimos conexión con la base
+                Command.Connection = getConnection();
+                //Creamos el query para la filtración de los checkbox
+                string querystatus = "UPDATE tbBills SET IdStatusBill = 3 WHERE IdBill = @IdBill";
+                SqlCommand cmdStatus = new SqlCommand(querystatus, Command.Connection);
+                //Le damos valor a los parámetros de la consulta
+                cmdStatus.Parameters.AddWithValue("@IdBill", status);
+                //Ejecutamos el query
+                cmdStatus.ExecuteNonQuery();
+
+                //capturamos la respuesta con un adp
+                SqlDataAdapter adpCheckBoxStatus = new SqlDataAdapter(cmdStatus);
+                //Creamos un dataset
+                DataSet dsCheckBoxStatus = new DataSet();
+                //Llenamos el data set
+                adpCheckBoxStatus.Fill(dsCheckBoxStatus, "viewBill");
+                //retornamos el dataset
+                return dsCheckBoxStatus;
+            }
+            catch (Exception ex)
+            {
+                //Si ocurre un error en el try, devolvemos un null
+                MessageBox.Show(ex.Message);
+                return null;
+
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
+
+
         public int GetCustomerIdByName(string customerName)
         {
             int customerId = -1;
@@ -526,7 +488,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             return EmployeeId; // Devolver el valor de EmployeeId
         }
 
-
+        
     }
 }
 
