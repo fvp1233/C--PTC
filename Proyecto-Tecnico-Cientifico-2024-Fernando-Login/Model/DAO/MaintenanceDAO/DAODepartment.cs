@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PTC2024.Model.DAO.MaintenanceDAO
 {
@@ -26,7 +27,8 @@ namespace PTC2024.Model.DAO.MaintenanceDAO
             }
 			catch (Exception)
 			{
-				return -1;
+                MessageBox.Show("EC-118: No se pudieron agregar los departamentos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
 			}
 			finally
 			{
@@ -48,6 +50,7 @@ namespace PTC2024.Model.DAO.MaintenanceDAO
 			}
             catch (Exception)
             {
+                MessageBox.Show("EC-119: No se pudieron obtener los departamentos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -68,6 +71,7 @@ namespace PTC2024.Model.DAO.MaintenanceDAO
 			}
             catch (Exception)
             {
+                MessageBox.Show("EC-120: No se pudieron eliminar los departamentos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return -1;
             }

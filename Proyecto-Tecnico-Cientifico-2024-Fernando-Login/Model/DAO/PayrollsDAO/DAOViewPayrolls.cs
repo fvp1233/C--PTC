@@ -30,6 +30,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-045: No se pudieron obtener los datos de los empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -52,6 +53,8 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-046: No se pudieron obtener los datos de los usuarios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
             finally
@@ -74,6 +77,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-047: No se pudieron obtener los datos de las posiciones del negocio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -96,6 +100,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-048: No se pudieron obtener los datos de las planillas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -139,7 +144,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"EC-002: {ex.Message}", "Error Critico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-049: No se pudieron insertar los datos de las planillas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
@@ -167,6 +172,8 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-050: No se pudieron obtener los datos de la vista viewPayrolls", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
             finally
@@ -187,6 +194,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-051: No se pudieron eliminar las planillas de los empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return -1;
             }
@@ -225,7 +233,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"EC-003: {ex.Message}", "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-052: No se pudieron actualizar las planillas de los empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
@@ -247,7 +255,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"EC-003: {ex.Message}", "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-053: No se pudieron actualizar las planillas de los empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
@@ -269,7 +277,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"EC-003: {ex.Message}", "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-054: No se pudieron actualizar las planillas de los empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
@@ -293,7 +301,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
-
+                MessageBox.Show("EC-055: No se pudieron obtener las planillas de los empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -315,6 +323,8 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-056: No se pudieron obtener las planillas del primer trimestre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
             finally
@@ -336,6 +346,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-057: No se pudieron obtener las planillas del segundo trimestre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -357,6 +368,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-058: No se pudieron obtener las planillas del tercer trimestre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -378,6 +390,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-059: No se pudieron obtener las planillas del cuarto trimestre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -399,6 +412,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-060: No se pudieron obtener las planillas del primer mes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -421,6 +435,8 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-061: No se pudieron obtener las planillas del segundo mes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
             finally
@@ -442,6 +458,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-062: No se pudieron obtener las planillas del tercer mes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -463,6 +480,8 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-063: No se pudieron obtener las planillas del cuarto mes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
             finally
@@ -484,6 +503,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-064: No se pudieron obtener las planillas del quinto mes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -505,6 +525,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-065: No se pudieron obtener las planillas del sexto mes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -526,6 +547,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-066: No se pudieron obtener las planillas del septimo mes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -547,6 +569,8 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-067: No se pudieron obtener las planillas del octavo mes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
             finally
@@ -568,6 +592,8 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-068: No se pudieron obtener las planillas del noveno mes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
             finally
@@ -589,6 +615,8 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-069: No se pudieron obtener las planillas del decimo mes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
             finally
@@ -610,6 +638,8 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-070: No se pudieron obtener las planillas del decimoprimer mes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
             finally
@@ -631,6 +661,8 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-071: No se pudieron obtener las planillas del decimosegundo mes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
             finally
@@ -652,6 +684,8 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-072: No se pudieron obtener las planillas pagadas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
             finally
@@ -673,6 +707,8 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-073: No se pudieron obtener las planillas no pagadas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
             finally
@@ -694,6 +730,8 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-074: No se pudieron obtener las planillas de liquidación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return null;
             }
             finally

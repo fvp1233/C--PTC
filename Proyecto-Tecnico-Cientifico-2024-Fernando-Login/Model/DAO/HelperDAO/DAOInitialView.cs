@@ -36,7 +36,7 @@ namespace PTC2024.Model.DAO.HelperDAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-127: No se pudo obtener el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
@@ -81,12 +81,7 @@ namespace PTC2024.Model.DAO.HelperDAO
             }
             catch (SqlException sqlex)
             {
-                MessageBox.Show(sqlex.Message);
-                return false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-128: No se pudo obtener la información del logIn", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally

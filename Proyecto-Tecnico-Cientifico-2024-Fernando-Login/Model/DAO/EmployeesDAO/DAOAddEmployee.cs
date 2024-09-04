@@ -335,7 +335,7 @@ namespace PTC2024.Model.DAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-028: No se pudo insertar los datos del empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 RollBack();
                 return -1;
                 //se retorna -1 en caso de que haya ocurrido un error en el try
@@ -376,7 +376,7 @@ namespace PTC2024.Model.DAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-029: No se pudieron obtener los datos de la vista viewLogIn", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally 
@@ -410,7 +410,7 @@ namespace PTC2024.Model.DAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-030: No se pudieron obtener los datos del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
@@ -443,7 +443,7 @@ namespace PTC2024.Model.DAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-031: No se pudieron obtener los datos del empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
@@ -476,7 +476,7 @@ namespace PTC2024.Model.DAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-032: No se pudieron obtener los datos del empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally

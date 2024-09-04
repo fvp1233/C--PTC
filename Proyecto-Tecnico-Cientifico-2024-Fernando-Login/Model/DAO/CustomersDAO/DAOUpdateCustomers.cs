@@ -50,7 +50,7 @@ namespace PTC2024.Model.DAO.CustomersDAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("EC-106: No se pudo actualizar al cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
 
                 

@@ -42,7 +42,7 @@ namespace PTC2024.Model.DAO.ServicesDAO
             catch (SqlException ex)
             {
                 /*Este mensaje se mostrara en caso que haya ocurrrido un error*/
-                MessageBox.Show("EC-003: No se pudieron obtener las categorias de los servicios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("EC-098: No se pudieron obtener las categorias de servicios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 /*se retornara un valor nulo*/
                 return null;
             }
@@ -90,7 +90,7 @@ namespace PTC2024.Model.DAO.ServicesDAO
             catch (Exception ex)
             {
                 /*En caso haya ocurrido un error se mostrara este mensaje*/
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("EC-099: No se pudo insertar el servicios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 /*y se retornara -1*/
                 return -1;
             }

@@ -50,12 +50,7 @@ namespace PTC2024.Model.DAO.LogInDAO
             }
             catch (SqlException sqlex)
             {
-                MessageBox.Show(sqlex.Message);
-                return false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-006: No se pudieron obtener los datos para la validación del LogIn");
                 return false;
             }
             finally
@@ -92,7 +87,7 @@ namespace PTC2024.Model.DAO.LogInDAO
             catch (SqlException ex)
             {
                 //Si algo sale mal retornamos un false
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-007: No se pudieron obtener los datos para la validación de la contraseña temporal","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
@@ -124,7 +119,7 @@ namespace PTC2024.Model.DAO.LogInDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-008: No se pudieron actualizar los datos del usuario","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally

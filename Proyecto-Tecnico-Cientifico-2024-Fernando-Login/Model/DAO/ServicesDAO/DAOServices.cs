@@ -43,6 +43,7 @@ namespace PTC2024.Model.DAO.ServicesDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-094: No se pudieron obtener los datos de los servicios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 /*Si ocurrio un error se retornara un valor nulo*/
                 return null;
             }
@@ -78,6 +79,7 @@ namespace PTC2024.Model.DAO.ServicesDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-095: No se pudo eliminar los datos del servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 /*En caso haya un error se retorna -1*/
                 return -1;
             }
@@ -117,7 +119,7 @@ namespace PTC2024.Model.DAO.ServicesDAO
             catch (Exception ex)
             {
                 /*En caso haya ocurrido un error se mostrara este mensaje*/
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("EC-096: No se pudo obtener los datos del servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 /*Y se retornara un valor nulo*/
                 return null;
             }
@@ -157,6 +159,7 @@ namespace PTC2024.Model.DAO.ServicesDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-097: No se pudo obtener los datos del servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally

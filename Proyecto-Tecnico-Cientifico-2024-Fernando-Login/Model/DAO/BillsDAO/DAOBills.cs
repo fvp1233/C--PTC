@@ -36,6 +36,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-107: No se pudo obtener los datos de las facturas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
                 throw;
             }
@@ -72,7 +73,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             catch (Exception ex)
             {
                 /*En caso haya ocurrido un error se mostrara este mensaje*/
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("EC-107: No se pudo obtener los datos de las facturas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 /*Y se retornara un valor nulo*/
                 return null;
             }
@@ -110,7 +111,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al validar contraseña: " + ex.Message);
+                MessageBox.Show("EC-108: No se pudo verificar la contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -180,7 +181,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             catch (Exception ex)
             {
                 //Si ocurre un error en el try, devolvemos un null
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-107: No se pudo obtener los datos de las facturas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
 
             }
@@ -215,7 +216,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             catch (Exception ex)
             {
                 //Si ocurre un error en el try, devolvemos un null
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-107: No se pudo obtener los datos de las facturas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
 
             }
@@ -252,7 +253,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             catch (Exception ex)
             {
                 /*En caso haya ocurrido un error se mostrara este mensaje*/
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("EC-107: No se pudo obtener los datos de las facturas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 /*Y se retornara un valor nulo*/
                 return null;
             }
@@ -288,7 +289,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             catch (Exception ex)
             {
                 //Si ocurre un error en el try, devolvemos un null
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-109: No se pudo actualizar el estado de la factura", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
 
             }

@@ -30,7 +30,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
             catch (Exception)
             {
-                MessageBox.Show("No se pudieron obtener los empleados existentes");
+                MessageBox.Show("EC-020: No se pudieron obtener los datos de los empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
               
             }
@@ -55,7 +55,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
             catch (Exception)
             {
-                MessageBox.Show("No se pudieron obtener los empleados inactivos");
+                MessageBox.Show("EC-021: No se pudo obtener los datos de los empleados inactivos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
 
             }
@@ -81,6 +81,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-022: No se pudo obtener los datos de los empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -133,7 +134,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             catch (SqlException ex)
             {
                 //Si en caso ocurriera un error, se devuelve un -1
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-023: No se pudo actualizar el empleado a un estado de inactividad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
                 
             }
@@ -200,7 +201,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-024: No se pudo actualizar el empleado a un estado activo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
                 
             }
@@ -251,7 +252,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             catch (Exception ex)
             {
                 //Si ocurre un error en el try, devolvemos un null
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-025: No se pudieron obtener los datos del empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
                
             }
@@ -289,7 +290,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             catch (Exception ex)
             {
                 //Si ocurre un error en el try, devolvemos un null
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-026: No se pudieron obtener los datos del empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
 
             }
@@ -326,7 +327,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             catch (Exception ex)
             {
                 //Si ocurre un error en el try, devolvemos un null
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-027: No se pudieron obtener los datos del empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
 
             }

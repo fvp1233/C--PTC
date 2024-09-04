@@ -45,7 +45,7 @@ namespace PTC2024.Model.DAO.PasswordRecoverDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-131: No se pudo obtener la información de las preguntas de seguridad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally

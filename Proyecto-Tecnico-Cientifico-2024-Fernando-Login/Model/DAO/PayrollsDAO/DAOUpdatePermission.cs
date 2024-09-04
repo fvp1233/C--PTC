@@ -34,7 +34,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception e)
             {
-                MessageBox.Show($"Excepcion{e}");
+                MessageBox.Show("EC-091: No se pudo actualizar el permiso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
@@ -57,7 +57,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-009: No se puedieron obtener los datos de la tabla tbStatusPayroll");
+                MessageBox.Show("EC-092: No se pudo obtener el tipo de permiso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -80,7 +80,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-009: No se puedieron obtener los datos de la tabla tbStatusPermission");
+                MessageBox.Show("EC-093: No se pudo obtener el estado de permiso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally

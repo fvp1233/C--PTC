@@ -28,7 +28,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
 			}
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-009: No se puedieron obtener los datos de la tabla tbStatusPayroll");
+                MessageBox.Show("EC-083: No se pudo obtener los datos de los tipos de permisos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -51,7 +51,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-009: No se puedieron obtener los datos de la tabla tbStatusPermission");
+                MessageBox.Show("EC-084: No se pudo obtener los datos de los estados de permisos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -74,7 +74,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-009: No se puedieron obtener los datos de la tabla tbStatusPermission");
+                MessageBox.Show("EC-085: No se pudo obtener los generos de los empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -97,7 +97,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-0100: No se puedieron obtener los datos de la tabla tbStatusPermission");
+                MessageBox.Show("EC-086: No se pudo obtener los datos de los permisos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -121,7 +121,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-0100: No se puedieron obtener los datos de la tabla tbStatusPermission");
+                MessageBox.Show("EC-087: No se pudo obtener los datos del empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -145,7 +145,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-0100: No se puedieron obtener los datos de la tabla tbEmloyee");
+                MessageBox.Show("EC-088: No se pudo obtener los datos del empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -167,7 +167,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception e)
             {
-                MessageBox.Show($"Excepcion{e}");
+                MessageBox.Show("EC-089: No se pudo obtener los datos del empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
@@ -193,6 +193,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-090: No se pudo insertar el permiso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally

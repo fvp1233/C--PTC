@@ -35,7 +35,7 @@ namespace PTC2024.Model.DAO.StartMenuDAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-009: No se pudieron obtener los datos de ususario para comparar el token","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
@@ -63,6 +63,7 @@ namespace PTC2024.Model.DAO.StartMenuDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-010: No se pudo actualizar el token del usuario", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally

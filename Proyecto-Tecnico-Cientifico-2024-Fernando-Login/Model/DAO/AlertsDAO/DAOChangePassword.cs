@@ -37,7 +37,7 @@ namespace PTC2024.Model.DAO.AlertsDAO
             catch (SqlException ex)
             {
                 //Si algo sale mal en el try, retornamos un -1
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-130: No se pudo obtener la información del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
                 
             }

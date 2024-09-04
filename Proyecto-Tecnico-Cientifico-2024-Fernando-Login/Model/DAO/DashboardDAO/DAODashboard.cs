@@ -26,7 +26,7 @@ namespace PTC2024.Model.DAO.DashboardDAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error"); 
+                MessageBox.Show("EC-015: No se pudo obtener el numero de empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
@@ -46,7 +46,7 @@ namespace PTC2024.Model.DAO.DashboardDAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show("EC-016: No se pudo obtener el numero de servicios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
@@ -66,7 +66,7 @@ namespace PTC2024.Model.DAO.DashboardDAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show("EC-017: No se pudo obtener el numero de clientes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
@@ -86,7 +86,7 @@ namespace PTC2024.Model.DAO.DashboardDAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show("EC-018: No se pudo obtener el numero de facturas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
@@ -96,35 +96,47 @@ namespace PTC2024.Model.DAO.DashboardDAO
         }
         public void GetAnalisys()
         {
-            Command.Connection = getConnection();
-            //string queryFisrt = "SELECT MIN(issueDate) FROM tbPayroll";
-            //SqlCommand cmdFirst =  new SqlCommand(queryFisrt, Command.Connection);
-            //DateTime firstIssueD = (DateTime)cmdFirst.ExecuteScalar();
-            //FromDate = firstIssueD < FromDate ? firstIssueD : FromDate;
-            FromDate = new DateTime(2020, 8, 1);
-            ToDate = new DateTime(2025, 7, 7);
-            PayrollsList = new List<PayrollsByDate>();
-            string query = "SELECT issueDate,SUM(netPay) FROM tbPayroll WHERE issueDate BETWEEN @fromDate AND @toDate group by issueDate";
-            SqlCommand cmd = new SqlCommand(query, Command.Connection);
-            //cmd.Parameters.Add("@fromDate", System.Data.SqlDbType.DateTime).Value = FromDate;
-            //cmd.Parameters.Add("@toDate", System.Data.SqlDbType.DateTime).Value = ToDate;
-            cmd.Parameters.AddWithValue("@fromDate", FromDate);
-            cmd.Parameters.AddWithValue("@toDate", ToDate);
-            SqlDataReader reader = cmd.ExecuteReader();
-            var resultTable  = new List<KeyValuePair<DateTime, decimal>>();
-            while (reader.Read())
+            try
             {
-                resultTable.Add(new KeyValuePair<DateTime, decimal>((DateTime)reader[0], (decimal)reader[1]));
-                NetPay += (decimal)reader[1];
-            }
-            reader.Close();
-            foreach(var item in resultTable)
-            {
-                PayrollsList.Add(new PayrollsByDate()
+                Command.Connection = getConnection();
+                //string queryFisrt = "SELECT MIN(issueDate) FROM tbPayroll";
+                //SqlCommand cmdFirst =  new SqlCommand(queryFisrt, Command.Connection);
+                //DateTime firstIssueD = (DateTime)cmdFirst.ExecuteScalar();
+                //FromDate = firstIssueD < FromDate ? firstIssueD : FromDate;
+                FromDate = new DateTime(2020, 8, 1);
+                ToDate = new DateTime(2025, 7, 7);
+                PayrollsList = new List<PayrollsByDate>();
+                string query = "SELECT issueDate,SUM(netPay) FROM tbPayroll WHERE issueDate BETWEEN @fromDate AND @toDate group by issueDate";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                //cmd.Parameters.Add("@fromDate", System.Data.SqlDbType.DateTime).Value = FromDate;
+                //cmd.Parameters.Add("@toDate", System.Data.SqlDbType.DateTime).Value = ToDate;
+                cmd.Parameters.AddWithValue("@fromDate", FromDate);
+                cmd.Parameters.AddWithValue("@toDate", ToDate);
+                SqlDataReader reader = cmd.ExecuteReader();
+                var resultTable = new List<KeyValuePair<DateTime, decimal>>();
+                while (reader.Read())
                 {
-                    Date = item.Key.ToString("dd MMM"),
-                    TotalAmount = item.Value
-                });
+                    resultTable.Add(new KeyValuePair<DateTime, decimal>((DateTime)reader[0], (decimal)reader[1]));
+                    NetPay += (decimal)reader[1];
+                }
+                reader.Close();
+                foreach (var item in resultTable)
+                {
+                    PayrollsList.Add(new PayrollsByDate()
+                    {
+                        Date = item.Key.ToString("dd MMM"),
+                        TotalAmount = item.Value
+                    });
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("EC-019: No se pudo obtener el numero de planillas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            finally
+            {
+                Command.Connection.Close();
             }
         }
 

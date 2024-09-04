@@ -107,12 +107,7 @@ namespace PTC2024.Model.DAO.LogInDAO
             }
             catch (SqlException sqlex)
             {
-                MessageBox.Show(sqlex.Message);
-                return false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-132: No se pudo obtener los datos de la recuperación de contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally

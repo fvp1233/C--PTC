@@ -27,6 +27,8 @@ namespace PTC2024.Model.DAO.MaintenanceDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-118: No se pudieron actualizar los cargos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 //Se retorna -1 en caso que en el segmento del try haya ocurrido algún error.
                 return -1;
             }

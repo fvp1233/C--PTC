@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PTC2024.Model.DAO.ServicesDAO
 {
@@ -43,6 +44,7 @@ namespace PTC2024.Model.DAO.ServicesDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-100: No se pudo obtener las categorias de servicios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 /*En caso haiga un fallo se retornara un valor nulo*/
                 return null;
             }
@@ -85,6 +87,8 @@ namespace PTC2024.Model.DAO.ServicesDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-101: No se pudo actualizar el servicios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 /*En caso ocurra un error se retornara -1*/
                 return -1;
             }

@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PTC2024.Model.DAO.MaintenanceDAO
 {
@@ -26,6 +27,7 @@ namespace PTC2024.Model.DAO.MaintenanceDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-116: No se pudo agregar el cargo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
@@ -49,6 +51,7 @@ namespace PTC2024.Model.DAO.MaintenanceDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-116: No se pudieron obtener los cargos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -69,7 +72,7 @@ namespace PTC2024.Model.DAO.MaintenanceDAO
             }
             catch (Exception)
             {
-
+                MessageBox.Show("EC-117: No se pudieron eliminar los cargos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally

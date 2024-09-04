@@ -45,7 +45,7 @@ namespace PTC2024.Model.DAO.PasswordRecoverDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-129: No se pudo obtener la información del logIn", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
@@ -79,7 +79,7 @@ namespace PTC2024.Model.DAO.PasswordRecoverDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-130: No se pudo obtener la información del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
@@ -113,7 +113,7 @@ namespace PTC2024.Model.DAO.PasswordRecoverDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-130: No se pudo obtener la información del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
@@ -146,7 +146,7 @@ namespace PTC2024.Model.DAO.PasswordRecoverDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-008: No se pudieron actualizar los datos del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;               
             }
             finally

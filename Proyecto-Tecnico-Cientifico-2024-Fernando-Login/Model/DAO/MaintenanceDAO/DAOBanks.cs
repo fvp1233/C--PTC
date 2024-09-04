@@ -30,7 +30,7 @@ namespace PTC2024.Model.DAO.MaintenanceDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"{ex.Message}");
+                MessageBox.Show("EC-124: No se pudo obtener los bancos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;               
             }
             finally
@@ -52,7 +52,7 @@ namespace PTC2024.Model.DAO.MaintenanceDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"{ex.Message}");
+                MessageBox.Show("EC-125: No se pudo agregar el banco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
@@ -74,7 +74,7 @@ namespace PTC2024.Model.DAO.MaintenanceDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"{ex.Message}");
+                MessageBox.Show("EC-126: No se pudo eliminar el banco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally

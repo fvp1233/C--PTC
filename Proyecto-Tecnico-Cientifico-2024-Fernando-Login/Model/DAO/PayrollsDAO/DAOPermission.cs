@@ -29,7 +29,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-0100: No se puedieron obtener los datos de la tabla tbStatusPermission");
+                MessageBox.Show("EC-077: No se pudieron obtener los permisos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -51,7 +51,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception e)
             {
-                MessageBox.Show($"Excepcion{e}");
+                MessageBox.Show("EC-078: No se pudo actualizar el estado del permiso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
@@ -72,6 +72,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-079: No se pudo eliminar el permiso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return -1;
             }
@@ -96,7 +97,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-009: No se puedieron obtener los datos de la tabla tbStatusPayroll");
+                MessageBox.Show("EC-080: No se pudo obtener los datos de los permisos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -119,7 +120,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-009: No se puedieron obtener los datos de la tabla tbStatusPayroll");
+                MessageBox.Show("EC-081: No se pudo obtener los datos de los empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -142,6 +143,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-082: No se pudo obtener los datos de los permisos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return null;
             }

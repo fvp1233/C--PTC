@@ -56,6 +56,7 @@ namespace PTC2024.Model.DAO.CustomersDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-102: No se pudo obtener los datos de los clientes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
 
             }
@@ -89,6 +90,7 @@ namespace PTC2024.Model.DAO.CustomersDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-103: No se puddieron eliminar los datos del cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 /*En caso haya un error se retorna -1*/
                 return -1;
             }
@@ -128,7 +130,7 @@ namespace PTC2024.Model.DAO.CustomersDAO
             catch (Exception ex)
             {
                 //En caso haya ocurrido un error se mostrara este mensaje
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("EC-104: No se puddieron obtener los datos de los clientes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //Y se retornara un valor nulo
                 return null;
             }

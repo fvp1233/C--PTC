@@ -41,7 +41,7 @@ namespace PTC2024.Model.DAO.LogInDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-002: No se puedieron obtener los datos de los Diferentes Bancos");
+                MessageBox.Show("EC-003: No se puedieron obtener los datos de los Diferentes Bancos");
                 return null;
             }
             finally
@@ -69,8 +69,7 @@ namespace PTC2024.Model.DAO.LogInDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-002: No se puedieron obtener los datos de los Diferentes Bancos");
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-004: No se puedieron obtener los generos");
                 return null;
             }
             finally
@@ -143,7 +142,7 @@ namespace PTC2024.Model.DAO.LogInDAO
                 else
                 {
                     //si el usuario no se ingresó, entonces retornamos un 0
-                    MessageBox.Show("Hubo un error al ingresar el usuario o este ya es existente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("EC-005: No se pudieron insertar los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return 0;
                 }
             }

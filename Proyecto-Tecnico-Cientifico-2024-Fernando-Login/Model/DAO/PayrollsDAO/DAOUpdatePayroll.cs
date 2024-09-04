@@ -34,8 +34,8 @@ namespace PTC2024.Model.DAO.PayrollsDAO
 			}
 			catch (Exception e)
 			{
-				MessageBox.Show($"Excepcion{e}");
-				return -1;
+                MessageBox.Show("EC-075: No se pudo actualizar la planilla", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
 			}
 			finally 
 			{
@@ -57,7 +57,9 @@ namespace PTC2024.Model.DAO.PayrollsDAO
 			}
 			catch (Exception)
 			{
-				return null;
+                MessageBox.Show("EC-076: No se pudieron obtener los estados de la planilla", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return null;
 			}
 			finally
 			{

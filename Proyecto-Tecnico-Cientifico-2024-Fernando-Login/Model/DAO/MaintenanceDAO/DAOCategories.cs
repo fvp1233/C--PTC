@@ -27,12 +27,7 @@ namespace PTC2024.Model.DAO.MaintenanceDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
-                return -1;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show("EC-121: No se pudo agregar la categoria", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
@@ -54,14 +49,9 @@ namespace PTC2024.Model.DAO.MaintenanceDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show("EC-122: No se pudo eliminar la categoria", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
 
-            }
-            catch (Exception ex) 
-            {
-                MessageBox.Show(ex.Message, "Error");
-                return -1;
             }
             finally
             {
@@ -84,14 +74,11 @@ namespace PTC2024.Model.DAO.MaintenanceDAO
             }
             catch (SqlException ex)
             {
+                MessageBox.Show("EC-123: No se pudo obtener las categorias", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 MessageBox.Show(ex.Message, "Error");
                 return null;
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error");
-                return null;
             }
             finally
             {

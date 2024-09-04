@@ -41,7 +41,7 @@ namespace PTC2024.Model.DAO.CustomersDAO
             catch (SqlException ex)
             {
                 //En caso no se pudieron obtener los datos retornara un valor nulo y no se pudieron obtener los tipos de clientes
-                MessageBox.Show("EC-004: No se puedieron obtener los datos de los Tipos de Cliente");
+                MessageBox.Show("EC-105: No se puddieron obtener los datos de los tipos de clientes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -99,6 +99,7 @@ namespace PTC2024.Model.DAO.CustomersDAO
             }
             catch (Exception ex)
             {
+                MessageBox.Show("EC-106: No se pudo insertar al cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Rollback();
                 return -1;
             }

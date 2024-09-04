@@ -46,7 +46,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             }
             catch (Exception)
             {
-                MessageBox.Show("EC-007:No se obtuvieron los datos de Método de Pago");
+                MessageBox.Show("EC-110: No se pudieron obtener los metodos de pago", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
             finally
@@ -70,7 +70,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             }
             catch (Exception)
             {
-                MessageBox.Show("EC-008:No se obtuvieron los datos del estado de factura");
+                MessageBox.Show("EC-111: No se pudieron obtener los estados de facturas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
             finally
@@ -98,7 +98,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             catch (Exception
             )
             {
-                MessageBox.Show("EC-009:No se obtuvieron los datos de los servicios");
+                MessageBox.Show("EC-094: No se pudieron obtener los datos de los servicios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
             finally
@@ -147,7 +147,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             catch (Exception ex)
             {
                 // Log del error o muestra el mensaje
-                MessageBox.Show($"Error al obtener nombres de cliente: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-102: No se pudo obtener los datos de los clientes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return customerNames;
@@ -195,7 +195,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             catch (Exception ex)
             {
                 // Log del error o muestra el mensaje
-                MessageBox.Show($"Error al obtener detalles del cliente: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-102: No se pudo obtener los datos de los clientes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return clienteData;
@@ -235,7 +235,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al obtener nombres de empleados: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-020: No se pudieron obtener los datos de los empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return EmployeeNames;
@@ -259,6 +259,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-112: No se pudieron obtener los detalles de facturas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
                 throw;
             }
@@ -292,6 +293,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             }
             catch (Exception)
             {
+                MessageBox.Show("EC-113: No se pudieron obtener los datos de los servicios de facturas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
                 throw;
             }
@@ -321,7 +323,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("EC-011: No se obtuvo el precio del servicio. Error: " + ex.Message);
+                MessageBox.Show("EC-094: No se pudieron obtener los datos de los servicios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
             finally
@@ -364,7 +366,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("EC-10: No se ingresaron los datos. Error: " + ex.Message);
+                MessageBox.Show("EC-114: No se pudo insertar la factura", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
@@ -399,7 +401,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             catch (Exception ex)
             {
                 //Si ocurre un error en el try, devolvemos un null
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-115: No se pudo rectificar la factura", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
 
             }
@@ -443,7 +445,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("" + ex.Message);
+                MessageBox.Show("EC-102: No se pudo obtener los datos de los clientes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return customerId; // Devolver el valor de customerId
@@ -482,7 +484,7 @@ namespace PTC2024.Model.DAO.BillsDAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("" + ex.Message);
+                MessageBox.Show("EC-020: No se pudieron obtener los datos de los empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return EmployeeId; // Devolver el valor de EmployeeId

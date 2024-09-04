@@ -37,7 +37,7 @@ namespace PTC2024.Model.DAO.ProfileDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-014: No se pudieron insertar las preguntas de seguridad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally

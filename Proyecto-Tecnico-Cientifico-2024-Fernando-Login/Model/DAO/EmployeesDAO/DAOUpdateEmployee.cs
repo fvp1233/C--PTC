@@ -88,7 +88,6 @@ namespace PTC2024.Model.DAO.EmployeesDAO
                     }
                     else
                     {
-                        MessageBox.Show("Los datos del empleado fueron actualizados, pero debido a un error su nombre de usuario y el puesto no pudieron ser actualizados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return 1;
                     }
                 }
@@ -101,7 +100,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             catch (SqlException ex)
             {
                 //Si surge un error en el try, se devuelve un -1
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-033: No se pudieron actualizar los datos del empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
@@ -143,7 +142,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             catch (Exception ex)
             {
                 //si ocurre un error en el try retornamos un -1
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-034: La contraseña del empleado no pudo ser actualizada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
                 
             }
@@ -178,7 +177,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-035: No se pudieron obtener los datos del empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
@@ -212,7 +211,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-036: No se pudieron obtener los datos del empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
@@ -246,7 +245,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-002: No se puedieron obtener los datos de los Estados Civiles");
+                MessageBox.Show("EC-037: No se pudieron obtener los estados civiles", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -279,7 +278,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-003: No se puedieron obtener los datos de los Departamentos");
+                MessageBox.Show("EC-038: No se pudieron obtener los departamentos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -312,7 +311,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-004: No se puedieron obtener los datos de los Tipos de Empleado");
+                MessageBox.Show("EC-039: No se pudieron obtener los tipos de empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -345,7 +344,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"EC-005: No se puedieron obtener los datos de los Puestos de empleado\n\n{ex.Message}");
+                MessageBox.Show("EC-040: No se pudieron obtener los puestos del negocio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -382,7 +381,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"EC-005: No se puedieron obtener los datos de los Puestos de empleado\n\n{ex.Message}");
+                MessageBox.Show("EC-041: No se pudieron obtener los puestos del negocio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -415,7 +414,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-003: No se puedieron obtener los datos de los Estados de Empleado");
+                MessageBox.Show("EC-042: No se pudieron obtener los estados del empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -442,7 +441,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("No se pudieron obtener los datos de los Bancos");
+                MessageBox.Show("EC-043: No se pudieron obtener los bancos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
 
             }
@@ -471,8 +470,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-002: No se puedieron obtener los datos de los Diferentes Bancos");
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("EC-044: No se pudieron obtener los generos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally

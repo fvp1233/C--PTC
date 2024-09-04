@@ -33,12 +33,7 @@ namespace PTC2024.Model.DAO.FirstUseDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"Excepcion SQL: {ex.Message}", "Error al procesar información", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show($"Excepcion SQL: {ex.Message}", "Error al procesar información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"EC-002: No se pudieron insertar los datos", "Error al procesar información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
@@ -59,7 +54,7 @@ namespace PTC2024.Model.DAO.FirstUseDAO
             }
             catch (SqlException sqlex)
             {
-                MessageBox.Show(sqlex.Message);
+                MessageBox.Show($"EC-001: No se pudo verificar la existencia de una empres registrada en el sistema", "Error al verificar información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             catch (Exception ex)
