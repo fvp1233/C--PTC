@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using PTC2024.Model.DTO.ProfileDTO;
 using System.Windows.Forms;
+using PTC2024.Controller.Helper;
 
 namespace PTC2024.Model.DAO.ProfileDAO
 {
@@ -123,6 +124,40 @@ namespace PTC2024.Model.DAO.ProfileDAO
                 MessageBox.Show(ex.Message);
                 return -1;
                 
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
+
+
+        public bool GetEmployeeData()
+        {
+            try
+            {
+                command.Connection = getConnection();
+                string query = "SELECT * FROM viewEmployees WHERE [Usuario] = @user";
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                cmd.Parameters.AddWithValue("user", SessionVar.Username);
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    SessionVar.Names = rd.GetString(1);
+                    SessionVar.LastNames = rd.GetString(2);
+                    SessionVar.Dui = rd.GetString(3);
+                    SessionVar.Email = rd.GetString(5);
+                    SessionVar.Phone = rd.GetString(6);
+                    SessionVar.Adress = rd.GetString(7);
+                    SessionVar.BankAccount = rd.GetString(9);
+                    SessionVar.Affiliation = rd.GetString(11);
+                }
+                return rd.HasRows;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
             }
             finally
             {
