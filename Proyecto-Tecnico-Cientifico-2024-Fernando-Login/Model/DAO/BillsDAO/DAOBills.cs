@@ -262,6 +262,41 @@ namespace PTC2024.Model.DAO.BillsDAO
                 Command.Connection.Close();
             }
         }
+        public DataSet over(string status)
+        {
+            try
+            {
+                //Abrimos conexión con la base
+                Command.Connection = getConnection();
+                //Creamos el query para la filtración de los checkbox
+                string querystatus = "UPDATE tbBills SET IdStatusBill = 3 WHERE IdBill = @IdBill";
+                SqlCommand cmdStatus = new SqlCommand(querystatus, Command.Connection);
+                //Le damos valor a los parámetros de la consulta
+                cmdStatus.Parameters.AddWithValue("@IdBill", status);
+                //Ejecutamos el query
+                cmdStatus.ExecuteNonQuery();
+
+                //capturamos la respuesta con un adp
+                SqlDataAdapter adpCheckBoxStatus = new SqlDataAdapter(cmdStatus);
+                //Creamos un dataset
+                DataSet dsCheckBoxStatus = new DataSet();
+                //Llenamos el data set
+                adpCheckBoxStatus.Fill(dsCheckBoxStatus, "viewBill");
+                //retornamos el dataset
+                return dsCheckBoxStatus;
+            }
+            catch (Exception ex)
+            {
+                //Si ocurre un error en el try, devolvemos un null
+                MessageBox.Show(ex.Message);
+                return null;
+
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
     }
 
 }
