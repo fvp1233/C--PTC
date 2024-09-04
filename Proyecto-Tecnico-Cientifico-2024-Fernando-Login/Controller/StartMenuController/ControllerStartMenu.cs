@@ -20,6 +20,8 @@ using System.IO;
 using System.Drawing;
 using System.Windows.Forms.DataVisualization.Charting;
 using PTC2024.Model.DAO.StartMenuDAO;
+using PTC2024.Controller.ProfileController;
+using PTC2024.Model.DAO.ProfileDAO;
 
 namespace PTC2024.Controller.StartMenuController
 {
@@ -93,6 +95,10 @@ namespace PTC2024.Controller.StartMenuController
 
         private void LoadProfileSettings(object sender, EventArgs e)
         {
+            FrmProfile obj = new FrmProfile();
+            DAOProfile dAOProfile = new DAOProfile();
+            dAOProfile.Username = SessionVar.Username;
+            dAOProfile.GetEmployeeData();
             OpenForm<FrmProfile>();
         }
         private void LoadDefaultForm(object sender, EventArgs e)

@@ -24,9 +24,10 @@ namespace PTC2024.Controller.ProfileController
         {
             objProfile = View;
             objProfile.Load += new EventHandler(ChargeValues);
-            objProfile.btnSavePhoto.Click += new EventHandler(PutImage);
-            objProfile.btnSave.Click += new EventHandler(SaveInfo);
+            //objProfile.btnSavePhoto.Click += new EventHandler(PutImage);
+            //objProfile.btnSave.Click += new EventHandler(SaveInfo);
             objProfile.btnSecurityQ.Click += new EventHandler(SecurityQuestions);
+            objProfile.btnUpdate.Click += new EventHandler(UpdateInfo);
         }
 
         public void ChargeValues(object sender, EventArgs e)
@@ -36,6 +37,7 @@ namespace PTC2024.Controller.ProfileController
             objProfile.lblEAdress.Text = SessionVar.Email;
             objProfile.lblPhone.Text = SessionVar.Phone;
             objProfile.lblCharge.Text = SessionVar.Access;
+            objProfile.lblAddress.Text = SessionVar.Adress;
             objProfile.picUser.Image = ByteArrayToImage(SessionVar.ProfilePic);
         }
 
@@ -86,6 +88,7 @@ namespace PTC2024.Controller.ProfileController
                 MessageBox.Show($"{ex.Message}", "Error al procesar información", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         void PutImage(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -143,6 +146,14 @@ namespace PTC2024.Controller.ProfileController
                 openForm.ShowDialog();
             }
 
+        }
+
+        public void UpdateInfo(object sender, EventArgs e)
+        {
+            DAOProfile dAOProfile = new DAOProfile();
+            dAOProfile.GetEmployeeData();
+            FrmProfileConfiguration open = new FrmProfileConfiguration(SessionVar.Names, SessionVar.LastNames, SessionVar.Dui, SessionVar.Phone, SessionVar.Email, SessionVar.Adress, SessionVar.Affiliation, SessionVar.BankAccount);
+            open.ShowDialog();
         }
     }
 }
