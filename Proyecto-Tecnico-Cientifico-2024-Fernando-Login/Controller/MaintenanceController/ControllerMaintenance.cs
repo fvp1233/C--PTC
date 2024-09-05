@@ -33,6 +33,7 @@ namespace PTC2024.Controller.MaintenanceController
             objMaintenance.lblBanks.Click += new EventHandler(OpenBanks);
             objMaintenance.lblBanks2.Click += new EventHandler(OpenBanks);
             objMaintenance.btnServerConfiguration.Click += new EventHandler(OpenCEOPassword);
+            objMaintenance.btnBusinessConfiguration.Click += new EventHandler(OpenBusinessConfiguration);
         }
 
         public void OpenDepartments(object sender, EventArgs e)
@@ -61,6 +62,11 @@ namespace PTC2024.Controller.MaintenanceController
         public void OpenCEOPassword(object sender, EventArgs e)
         {
             FrmConfirmPassword objOpen = new FrmConfirmPassword();
+            objOpen.ShowDialog();
+        }
+        public void OpenBusinessConfiguration(object sender, EventArgs e)
+        {
+            FrmBusinessConfiguration objOpen = new FrmBusinessConfiguration();
             objOpen.ShowDialog();
         }
     }

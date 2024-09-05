@@ -1,4 +1,5 @@
-﻿using PTC2024.Model.DTO.StartMenuDTO;
+﻿using PTC2024.Controller.Helper;
+using PTC2024.Model.DTO.StartMenuDTO;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -35,17 +36,54 @@ namespace PTC2024.Model.DAO.StartMenuDAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("EC-009: No se pudieron obtener los datos de ususario para comparar el token","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-009: No se pudieron obtener los datos de ususario para comparar el token", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
             {
                 command.Connection.Close();
             }
-
-
+        } 
+        public bool ChargeInfoBusiness()
+        {
+            try
+            {
+                command.Connection = getConnection();
+                string query = "SELECT * FROM tbBusinessInfo";
+                SqlCommand cmd = new SqlCommand(query,command.Connection);
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    BusinessVar.IdBusiness = rd.GetInt32(0);
+                    BusinessVar.BusinessName = rd.GetString(1);
+                    BusinessVar.BusinessAdress = rd.GetString(2);
+                    BusinessVar.BusinessEmail = rd.GetString(3);
+                    BusinessVar.BusinessPhone = rd.GetString(5);
+                    BusinessVar.BusinessPBX = rd.GetString(6);
+                    if (!rd.IsDBNull(7))
+                    {
+                        long size = rd.GetBytes(7, 0, null, 0, 0);
+                        byte[] profilePic = new byte[size];
+                        rd.GetBytes(7, 0, profilePic, 0, (int)size);
+                        BusinessVar.BusinessImg = profilePic;
+                    }
+                    else
+                    {
+                        BusinessVar.BusinessImg = null; // Asignar null si el valor en la base de datos es null
+                    }
+                }
+                return rd.HasRows;
+            }
+            catch (SqlException sqlex)
+            {
+                MessageBox.Show("EC-135: No se pudieron obtener los datos del negocio");
+                return false;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
         }
-
         public int DeleteUserToken()
         {
             try

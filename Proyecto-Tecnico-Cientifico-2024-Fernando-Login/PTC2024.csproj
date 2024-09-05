@@ -117,6 +117,8 @@
   <ItemGroup>
     <Compile Include="Controller\Alerts\ControllerChangePassword.cs" />
     <Compile Include="Controller\Alerts\ControllerDeleteAlert.cs" />
+    <Compile Include="Controller\Helper\BusinessVar.cs" />
+    <Compile Include="Controller\MaintenanceController\ControllerBusinessConfiguration.cs" />
     <Compile Include="Controller\PasswordRecover\ControllerAdminMethod.cs" />
     <Compile Include="Controller\PasswordRecover\ControllerNextQuestionsMetod.cs" />
     <Compile Include="Controller\PasswordRecover\ControllerQuestionsMethod.cs" />
@@ -178,6 +180,7 @@
     <Compile Include="Model\DAO\FirstUseDAO\DAOFirstUse.cs" />
     <Compile Include="Model\DAO\HelperDAO\DAOInitialView.cs" />
     <Compile Include="Model\DAO\LogInDAO\DAOLogin.cs" />
+    <Compile Include="Model\DAO\MaintenanceDAO\DAOBusinessConfiguration.cs" />
     <Compile Include="Model\DAO\PasswordRecoverDAO\DAOAdminMethod.cs" />
     <Compile Include="Model\DAO\PasswordRecoverDAO\DAONextQuestionsMetod.cs" />
     <Compile Include="Model\DAO\PasswordRecoverDAO\DAOQuestionsMethod.cs" />
@@ -219,6 +222,7 @@
     <Compile Include="Model\DTO\LogInDTO\DTORecoverPassword.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTORegister.cs" />
     <Compile Include="Model\DTO\MaintenanceDTO\DTOBanks.cs" />
+    <Compile Include="Model\DTO\MaintenanceDTO\DTOBusinessConfiguration.cs" />
     <Compile Include="Model\DTO\MaintenanceDTO\DTOCategories.cs" />
     <Compile Include="Model\DTO\MaintenanceDTO\DTOCharge.cs" />
     <Compile Include="Model\DTO\MaintenanceDTO\DTODepartment.cs" />

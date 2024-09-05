@@ -53,7 +53,12 @@ namespace PTC2024.Controller.StartMenuController
             Access();
             objStartMenu.lblUser.Text = SessionVar.Username;
             objStartMenu.btnIcon.Image = ByteArrayToImage(SessionVar.ProfilePic);
-
+            DAOStartMenu daoStart = new DAOStartMenu();
+            bool chargeB = daoStart.ChargeInfoBusiness();
+            if( chargeB == true)
+            {
+                objStartMenu.snackBar.Show(objStartMenu, $"Datos del negoció cargados exitosamente, bienvenido {SessionVar.Username}.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+            }
         }
         public Image ByteArrayToImage(byte[] byteArray)
         {

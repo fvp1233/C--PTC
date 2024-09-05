@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMaintenance));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -52,6 +53,7 @@
             this.lblDepartments2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblDepartments = new Bunifu.UI.WinForms.BunifuLabel();
             this.pictureDepartments = new System.Windows.Forms.PictureBox();
+            this.btnBusinessConfiguration = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -135,10 +137,11 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.503395F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.panelBanks, 4, 1);
-            this.tableLayoutPanel2.Controls.Add(this.btnServerConfiguration, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.panelCategories, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.panelCharge, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.panelDepartments, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnBusinessConfiguration, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnServerConfiguration, 3, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 71);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -240,11 +243,11 @@
             this.btnServerConfiguration.ColorContrastOnClick = 45;
             this.btnServerConfiguration.ColorContrastOnHover = 45;
             this.btnServerConfiguration.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnServerConfiguration.CustomizableEdges = borderEdges1;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnServerConfiguration.CustomizableEdges = borderEdges2;
             this.btnServerConfiguration.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnServerConfiguration.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnServerConfiguration.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -268,7 +271,7 @@
             this.btnServerConfiguration.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnServerConfiguration.IdleIconLeftImage")));
             this.btnServerConfiguration.IdleIconRightImage = null;
             this.btnServerConfiguration.IndicateFocus = false;
-            this.btnServerConfiguration.Location = new System.Drawing.Point(875, 7);
+            this.btnServerConfiguration.Location = new System.Drawing.Point(590, 7);
             this.btnServerConfiguration.Name = "btnServerConfiguration";
             this.btnServerConfiguration.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnServerConfiguration.OnDisabledState.BorderRadius = 15;
@@ -292,7 +295,7 @@
             this.btnServerConfiguration.OnIdleState.BorderThickness = 1;
             this.btnServerConfiguration.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnServerConfiguration.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnServerConfiguration.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnSavePhoto.OnIdleState.IconLeftImage")));
+            this.btnServerConfiguration.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnServerConfiguration.OnIdleState.IconLeftImage")));
             this.btnServerConfiguration.OnIdleState.IconRightImage = null;
             this.btnServerConfiguration.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnServerConfiguration.OnPressedState.BorderRadius = 15;
@@ -526,6 +529,96 @@
             this.pictureDepartments.TabIndex = 0;
             this.pictureDepartments.TabStop = false;
             // 
+            // btnBusinessConfiguration
+            // 
+            this.btnBusinessConfiguration.AllowAnimations = true;
+            this.btnBusinessConfiguration.AllowMouseEffects = true;
+            this.btnBusinessConfiguration.AllowToggling = false;
+            this.btnBusinessConfiguration.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBusinessConfiguration.AnimationSpeed = 200;
+            this.btnBusinessConfiguration.AutoGenerateColors = false;
+            this.btnBusinessConfiguration.AutoRoundBorders = false;
+            this.btnBusinessConfiguration.AutoSizeLeftIcon = true;
+            this.btnBusinessConfiguration.AutoSizeRightIcon = true;
+            this.btnBusinessConfiguration.BackColor = System.Drawing.Color.Transparent;
+            this.btnBusinessConfiguration.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnBusinessConfiguration.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBusinessConfiguration.BackgroundImage")));
+            this.btnBusinessConfiguration.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnBusinessConfiguration.ButtonText = "Configuración de negocio ";
+            this.btnBusinessConfiguration.ButtonTextMarginLeft = 0;
+            this.btnBusinessConfiguration.ColorContrastOnClick = 45;
+            this.btnBusinessConfiguration.ColorContrastOnHover = 45;
+            this.btnBusinessConfiguration.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnBusinessConfiguration.CustomizableEdges = borderEdges1;
+            this.btnBusinessConfiguration.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnBusinessConfiguration.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnBusinessConfiguration.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnBusinessConfiguration.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnBusinessConfiguration.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
+            this.btnBusinessConfiguration.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.btnBusinessConfiguration.ForeColor = System.Drawing.Color.White;
+            this.btnBusinessConfiguration.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBusinessConfiguration.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnBusinessConfiguration.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnBusinessConfiguration.IconMarginLeft = 11;
+            this.btnBusinessConfiguration.IconPadding = 10;
+            this.btnBusinessConfiguration.IconRightAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBusinessConfiguration.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnBusinessConfiguration.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnBusinessConfiguration.IconSize = 25;
+            this.btnBusinessConfiguration.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnBusinessConfiguration.IdleBorderRadius = 15;
+            this.btnBusinessConfiguration.IdleBorderThickness = 1;
+            this.btnBusinessConfiguration.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnBusinessConfiguration.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnBusinessConfiguration.IdleIconLeftImage")));
+            this.btnBusinessConfiguration.IdleIconRightImage = null;
+            this.btnBusinessConfiguration.IndicateFocus = false;
+            this.btnBusinessConfiguration.Location = new System.Drawing.Point(305, 7);
+            this.btnBusinessConfiguration.Name = "btnBusinessConfiguration";
+            this.btnBusinessConfiguration.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnBusinessConfiguration.OnDisabledState.BorderRadius = 15;
+            this.btnBusinessConfiguration.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnBusinessConfiguration.OnDisabledState.BorderThickness = 1;
+            this.btnBusinessConfiguration.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnBusinessConfiguration.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnBusinessConfiguration.OnDisabledState.IconLeftImage = null;
+            this.btnBusinessConfiguration.OnDisabledState.IconRightImage = null;
+            this.btnBusinessConfiguration.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnBusinessConfiguration.onHoverState.BorderRadius = 15;
+            this.btnBusinessConfiguration.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnBusinessConfiguration.onHoverState.BorderThickness = 1;
+            this.btnBusinessConfiguration.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnBusinessConfiguration.onHoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnBusinessConfiguration.onHoverState.IconLeftImage = null;
+            this.btnBusinessConfiguration.onHoverState.IconRightImage = null;
+            this.btnBusinessConfiguration.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnBusinessConfiguration.OnIdleState.BorderRadius = 15;
+            this.btnBusinessConfiguration.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnBusinessConfiguration.OnIdleState.BorderThickness = 1;
+            this.btnBusinessConfiguration.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnBusinessConfiguration.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnBusinessConfiguration.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton21.OnIdleState.IconLeftImage")));
+            this.btnBusinessConfiguration.OnIdleState.IconRightImage = null;
+            this.btnBusinessConfiguration.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnBusinessConfiguration.OnPressedState.BorderRadius = 15;
+            this.btnBusinessConfiguration.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnBusinessConfiguration.OnPressedState.BorderThickness = 1;
+            this.btnBusinessConfiguration.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnBusinessConfiguration.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnBusinessConfiguration.OnPressedState.IconLeftImage = null;
+            this.btnBusinessConfiguration.OnPressedState.IconRightImage = null;
+            this.btnBusinessConfiguration.Size = new System.Drawing.Size(278, 76);
+            this.btnBusinessConfiguration.TabIndex = 9;
+            this.btnBusinessConfiguration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBusinessConfiguration.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnBusinessConfiguration.TextMarginLeft = 0;
+            this.btnBusinessConfiguration.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.btnBusinessConfiguration.UseDefaultRadiusAndThickness = true;
+            // 
             // FrmMaintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -580,5 +673,6 @@
         public Bunifu.UI.WinForms.BunifuShadowPanel panelBanks;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnServerConfiguration;
+        public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnBusinessConfiguration;
     }
 }

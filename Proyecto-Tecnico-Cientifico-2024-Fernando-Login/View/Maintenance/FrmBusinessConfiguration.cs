@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PTC2024.Controller.MaintenanceController;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,8 @@ namespace PTC2024.View.Maintenance
         public FrmBusinessConfiguration()
         {
             InitializeComponent();
+            ControllerBusinessConfiguration objController = new ControllerBusinessConfiguration(this);
         }
+
     }
 }
