@@ -73,13 +73,13 @@
             // 
             // bunifuCustomLabel2
             // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(75, 58);
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(0, 58);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(275, 15);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(454, 18);
             this.bunifuCustomLabel2.TabIndex = 70;
             this.bunifuCustomLabel2.Text = "Ingrese en cada campo la información solicitada:";
+            this.bunifuCustomLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuSeparator1
             // 
@@ -96,13 +96,13 @@
             // 
             // bunifuCustomLabel1
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(89, 30);
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(0, 30);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(295, 29);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(454, 29);
             this.bunifuCustomLabel1.TabIndex = 68;
             this.bunifuCustomLabel1.Text = "ACTUALIZAR SERVICIO";
+            this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnUpdateService
             // 
@@ -134,7 +134,7 @@
             this.btnUpdateService.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnUpdateService.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnUpdateService.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnUpdateService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateService.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateService.ForeColor = System.Drawing.Color.White;
             this.btnUpdateService.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdateService.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -224,7 +224,7 @@
             this.btnCloseUpdateService.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnCloseUpdateService.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnCloseUpdateService.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnCloseUpdateService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseUpdateService.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseUpdateService.ForeColor = System.Drawing.Color.White;
             this.btnCloseUpdateService.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCloseUpdateService.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -322,7 +322,7 @@
             this.comboTipoEmpleado.FillDropDown = true;
             this.comboTipoEmpleado.FillIndicator = false;
             this.comboTipoEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboTipoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboTipoEmpleado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboTipoEmpleado.ForeColor = System.Drawing.Color.Black;
             this.comboTipoEmpleado.FormattingEnabled = true;
             this.comboTipoEmpleado.Icon = null;
@@ -365,7 +365,7 @@
             this.txtNombres.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtNombres.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtNombres.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNombres.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombres.DefaultFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombres.DefaultText = "";
             this.txtNombres.FillColor = System.Drawing.Color.Gainsboro;
             this.txtNombres.HideSelection = true;
@@ -442,7 +442,7 @@
             this.txtDescripcion.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtDescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDescripcion.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.DefaultFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.DefaultText = "";
             this.txtDescripcion.FillColor = System.Drawing.Color.Gainsboro;
             this.txtDescripcion.HideSelection = true;
@@ -518,7 +518,7 @@
             this.txtMonto.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtMonto.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtMonto.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMonto.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMonto.DefaultFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMonto.DefaultText = "";
             this.txtMonto.FillColor = System.Drawing.Color.Gainsboro;
             this.txtMonto.HideSelection = true;
