@@ -18,10 +18,10 @@ namespace PTC2024.View.Clientes
     public partial class FrmUploadCustomers : Form
     {
         private int clientType;
-        public FrmUploadCustomers(int idClient,string dui, string names, string lastnames, string phone,string email, string address)
+        public FrmUploadCustomers(int idClient,string dui, string names, string lastnames, string phone,string email, string address, int idTypeC)
         {
             InitializeComponent();
-            ControllerUpdateCustomers obj = new ControllerUpdateCustomers(this,  idClient, dui, names, lastnames,   phone,  email,  address);
+            ControllerUpdateCustomers obj = new ControllerUpdateCustomers(this,  idClient, dui, names, lastnames,   phone,  email,  address, idTypeC);
             
         }
     }

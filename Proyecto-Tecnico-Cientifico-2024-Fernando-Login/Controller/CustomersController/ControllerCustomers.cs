@@ -91,8 +91,9 @@ namespace PTC2024.Controller.CustomersController
             string phone = objCustomers.dgvCustomers[4, pos].Value.ToString();
             string email = objCustomers.dgvCustomers[5, pos].Value.ToString();
             string address = objCustomers.dgvCustomers[6, pos].Value.ToString();
+            int idTypeC = int.Parse(objCustomers.dgvCustomers[8, pos].Value.ToString());
 
-            FrmUploadCustomers objUpdateCustomers = new FrmUploadCustomers(id, dui, names, lastNames, phone, email, address);
+            FrmUploadCustomers objUpdateCustomers = new FrmUploadCustomers(id, dui, names, lastNames, phone, email, address, idTypeC);
 
             objUpdateCustomers.ShowDialog();
             refreshData();

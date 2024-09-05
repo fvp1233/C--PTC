@@ -13,14 +13,14 @@ namespace PTC2024.Controller.CustomersController
     internal class ControllerUpdateCustomers
     {
         FrmUploadCustomers objUpdateCustomers;
-        
+        private int idTypeC;
 
         //Se declara el constructor con sus respectivos parametros
-        public ControllerUpdateCustomers(FrmUploadCustomers View, int idClient, string dui,string names, string lastnames,  string phone, string email, string address)
+        public ControllerUpdateCustomers(FrmUploadCustomers View, int idClient, string dui,string names, string lastnames,  string phone, string email, string address, int idTypeC)
         {
 
             objUpdateCustomers = View;
-            
+            this.idTypeC = idTypeC;
             ChargeValues(idClient, dui, names, lastnames, phone, email, address);
             //Evento para cargar los combos
             objUpdateCustomers.Load += new EventHandler(loadCombos);
@@ -39,6 +39,7 @@ namespace PTC2024.Controller.CustomersController
             objUpdateCustomers.dpClientType.DataSource = dsclientType.Tables["tbTypeC"];
             objUpdateCustomers.dpClientType.DisplayMember = "customerType";
             objUpdateCustomers.dpClientType.ValueMember = "IdTypeC";
+            objUpdateCustomers.dpClientType.SelectedValue = idTypeC;
 
 
         }
