@@ -252,6 +252,12 @@
     <Compile Include="View\Alerts\FrmDeleteAlert.Designer.cs">
       <DependentUpon>FrmDeleteAlert.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Maintenance\FrmBusinessConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Maintenance\FrmBusinessConfiguration.Designer.cs">
+      <DependentUpon>FrmBusinessConfiguration.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PasswordRecover\FrmAdminMethod.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -534,6 +540,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Alerts\FrmDeleteAlert.resx">
       <DependentUpon>FrmDeleteAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Maintenance\FrmBusinessConfiguration.resx">
+      <DependentUpon>FrmBusinessConfiguration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PasswordRecover\FrmAdminMethod.resx">
       <DependentUpon>FrmAdminMethod.cs</DependentUpon>
