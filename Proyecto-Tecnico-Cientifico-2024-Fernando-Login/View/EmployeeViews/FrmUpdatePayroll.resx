@@ -148,6 +148,27 @@
         E8PsHyNks6NdO2KiAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="txtDaysWorked.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKMAAAAgCAYAAAB+SMj2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABHSURBVHhe7dU7CgAgDETBHD039Sh+wNLaiMzAq9IuJAAA
+        AAAAAAAAAAAAAAAAAAAA4HeZ2WZdqm6N8XiQbmeMeqb9rKFaxAAMssS0VroXYwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="txtExtraHours.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKMAAAAgCAYAAAB+SMj2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABHSURBVHhe7dU7CgAgDETBHD039Sh+wNLaiMzAq9IuJAAA
+        AAAAAAAAAAAAAAAAAAAA4HeZ2WZdqm6N8XiQbmeMeqb9rKFaxAAMssS0VroXYwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="txtHoursWorked.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKMAAAAgCAYAAAB+SMj2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABHSURBVHhe7dU7CgAgDETBHD039Sh+wNLaiMzAq9IuJAAA
+        AAAAAAAAAAAAAAAAAAAA4HeZ2WZdqm6N8XiQbmeMeqb9rKFaxAAMssS0VroXYwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="dtpDate.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

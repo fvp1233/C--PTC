@@ -29,6 +29,8 @@ namespace PTC2024.Controller.PayrollsController
             objUpdatePermission.Load += new EventHandler(FillDropdown);
             objUpdatePermission.btnAddPermission.Click += new EventHandler(UpdatePermission);
             objUpdatePermission.txtIdEmployee.TextChanged += new EventHandler(idNum);
+            objUpdatePermission.txtIdEmployee.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdatePermission.rtxtContext.MouseDown += new MouseEventHandler(DisableContextMenu);           
             objUpdatePermission.btnCancel.Click += new EventHandler(CloseForm);
         }
         public void UpdatePermission(object sender, EventArgs e)
@@ -175,6 +177,14 @@ namespace PTC2024.Controller.PayrollsController
             string text = new string(objUpdatePermission.txtIdEmployee.Text.Where(c => char.IsDigit(c)).ToArray());
             objUpdatePermission.txtIdEmployee.Text = text;
             objUpdatePermission.txtIdEmployee.SelectionStart = cursorPosition;
+        }
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
         }
     }
 }

@@ -34,6 +34,8 @@ namespace PTC2024.Controller.PayrollsController
             DataSet dataSet = daoRefresh.GetPermissions();
             objPermission.dgvPermissions.DataSource = dataSet.Tables["viewPermissions"];
             objPermission.dgvPermissions.Columns[1].Visible = false;
+            objPermission.dgvPermissions.Columns[7].Visible = false;
+            objPermission.dgvPermissions.Columns[8].Visible = false;
         }
         public void SearchPermissionEvent(object sender, KeyPressEventArgs e)
         {

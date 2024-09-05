@@ -26,7 +26,12 @@ namespace PTC2024.Controller.EmployeesController
             objUpdatePayroll.btnCancelar.Click += new EventHandler(CloseForm);
             objUpdatePayroll.txtHoursWorked.KeyPress += new KeyPressEventHandler(DaysWorked);
             objUpdatePayroll.txtDaysWorked.KeyPress += new KeyPressEventHandler(UpdateHoursWorked);
-
+            objUpdatePayroll.txtHoursWorked.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdatePayroll.txtDaysWorked.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdatePayroll.txtExtraHours.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdatePayroll.txtHoursWorked.TextChanged += new EventHandler(HoursWorkedNum);
+            objUpdatePayroll.txtDaysWorked.TextChanged += new EventHandler(DaysWorkedNum);
+            objUpdatePayroll.txtExtraHours.TextChanged += new EventHandler(ExtraHoursNum);
         }
         public void UpdatePayrollStatus(object sender, EventArgs e)
         {
@@ -176,6 +181,35 @@ namespace PTC2024.Controller.EmployeesController
         {
             objUpdatePayroll.Close();
 
+        }
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
+        }
+        public void DaysWorkedNum(object sender, EventArgs e)
+        {
+            int cursorPosition = objUpdatePayroll.txtDaysWorked.SelectionStart;
+            string text = new string(objUpdatePayroll.txtDaysWorked.Text.Where(c => char.IsDigit(c)).ToArray());
+            objUpdatePayroll.txtDaysWorked.Text = text;
+            objUpdatePayroll.txtDaysWorked.SelectionStart = cursorPosition;
+        }
+        public void ExtraHoursNum(object sender, EventArgs e)
+        {
+            int cursorPosition = objUpdatePayroll.txtExtraHours.SelectionStart;
+            string text = new string(objUpdatePayroll.txtExtraHours.Text.Where(c => char.IsDigit(c)).ToArray());
+            objUpdatePayroll.txtExtraHours.Text = text;
+            objUpdatePayroll.txtExtraHours.SelectionStart = cursorPosition;
+        }
+        public void HoursWorkedNum(object sender, EventArgs e)
+        {
+            int cursorPosition = objUpdatePayroll.txtHoursWorked.SelectionStart;
+            string text = new string(objUpdatePayroll.txtHoursWorked.Text.Where(c => char.IsDigit(c)).ToArray());
+            objUpdatePayroll.txtHoursWorked.Text = text;
+            objUpdatePayroll.txtHoursWorked.SelectionStart = cursorPosition;
         }
     }
 }
