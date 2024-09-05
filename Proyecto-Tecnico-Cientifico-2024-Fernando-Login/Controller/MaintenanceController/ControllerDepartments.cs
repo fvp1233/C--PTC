@@ -55,20 +55,31 @@ namespace PTC2024.Controller.MaintenanceController
         }
         public void DeleteDepartment(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro de borrar los datos, esta accion no se puede revertir", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            DAODepartment dAODepartment = new DAODepartment();
+            int pos = objDep.dgvDepartments.CurrentRow.Index;
+
+            int idDepart = int.Parse(objDep.dgvDepartments[0, pos].Value.ToString());
+
+            if (idDepart > 5)
             {
-                DAODepartment dAODepartment = new DAODepartment();
-                int pos = objDep.dgvDepartments.CurrentRow.Index;
-                dAODepartment.IdDepartment = int.Parse(objDep.dgvDepartments[0, pos].Value.ToString());
-                int answer = dAODepartment.DeleteDepartment();
-                if (answer == 1)
+                if (MessageBox.Show("Estas seguro de borrar los datos, esta accion no se puede revertir", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show("Los datos se eliminaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    dAODepartment.IdDepartment = int.Parse(objDep.dgvDepartments[0, pos].Value.ToString());
+                    int answer = dAODepartment.DeleteDepartment();
+                    if (answer == 1)
+                    {
+                        MessageBox.Show("Los datos se eliminaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Los datos no se eliminaron debido a un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Los datos no se eliminaron debido a un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            else
+            {
+                objDep.snack.Show(objDep, "Este departamento no se puede eliminar.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomCenter);
             }
             RefreshData();
         }

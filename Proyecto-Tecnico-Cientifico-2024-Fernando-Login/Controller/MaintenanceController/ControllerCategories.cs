@@ -69,22 +69,31 @@ namespace PTC2024.Controller.MaintenanceController
 
         public void DeleteCategorie(object sender, EventArgs e)
         {
-            if(MessageBox.Show("¿Seguro que desea eliminar esta categoría?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            DAOCategories daoCategories = new DAOCategories();
+            int row = objCategories.dgvCategories.CurrentRow.Index;
+            int idCategory = int.Parse(objCategories.dgvCategories[0,row].Value.ToString());
+            if (idCategory > 5)
             {
-                DAOCategories daoCategories = new DAOCategories();
-                int row = objCategories.dgvCategories.CurrentRow.Index;
-                daoCategories.IdCategory = int.Parse(objCategories.dgvCategories[0, row].Value.ToString());
-                int returnedAnswer = daoCategories.DeleteCategorie();
-                if ( returnedAnswer == 1)
+                if (MessageBox.Show("¿Seguro que desea eliminar esta categoría?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show("La categoría se eliminó correctamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    daoCategories.IdCategory = int.Parse(objCategories.dgvCategories[0, row].Value.ToString());
+                    int returnedAnswer = daoCategories.DeleteCategorie();
+                    if (returnedAnswer == 1)
+                    {
+                        MessageBox.Show("La categoría se eliminó correctamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("La categoría no pudo ser eliminada", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    GetCategoriesDgv();
                 }
-                else
-                {
-                    MessageBox.Show("La categoría no pudo ser eliminada", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                GetCategoriesDgv();
             }
+            else
+            {
+                objCategories.snack.Show(objCategories, "Esta categoría no se puede eliminar.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomCenter);
+            }
+            
             
         }
     }

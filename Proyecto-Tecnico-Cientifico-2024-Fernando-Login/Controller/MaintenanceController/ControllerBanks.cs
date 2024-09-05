@@ -75,28 +75,36 @@ namespace PTC2024.Controller.MaintenanceController
 
         public void DeleteBank(object sender, EventArgs e)
         {
-            //Confirmación por parte del usuario
-            if(MessageBox.Show("¿Está seguro que desea eliminar este banco?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                //Creamos objeto de la clase DAO
-                DAOBanks daoBanks = new DAOBanks();
-                //Creamos la variable con la que sabremos que registro esta seleccionado en el datagrid
-                int row = objBanks.dgvBanks.CurrentRow.Index;
-                //Damos valor al getter del dao
-                daoBanks.IdBank = int.Parse(objBanks.dgvBanks[0, row].Value.ToString());
-                //ejecutamos el método del dao
-                int returnedAnswer = daoBanks.DeleteBank();
-                //validamos la respuesta devuelta
-                if (returnedAnswer == 1)
+            //Creamos objeto de la clase DAO
+            DAOBanks daoBanks = new DAOBanks();
+            //Creamos la variable con la que sabremos que registro esta seleccionado en el datagrid
+            int row = objBanks.dgvBanks.CurrentRow.Index;
+            int idBank = int.Parse(objBanks.dgvBanks[0, row].Value.ToString());
+            if (idBank > 12){
+                //Confirmación por parte del usuario
+                if (MessageBox.Show("¿Está seguro que desea eliminar este banco?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show("El banco se eliminó correctamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //Damos valor al getter del dao
+                    daoBanks.IdBank = int.Parse(objBanks.dgvBanks[0, row].Value.ToString());
+                    //ejecutamos el método del dao
+                    int returnedAnswer = daoBanks.DeleteBank();
+                    //validamos la respuesta devuelta
+                    if (returnedAnswer == 1)
+                    {
+                        MessageBox.Show("El banco se eliminó correctamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El banco no pudo ser eliminado", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    LoadDataGridBanks();
                 }
-                else
-                {
-                    MessageBox.Show("El banco no pudo ser eliminado", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                LoadDataGridBanks();
             }
+            else
+            {
+                objBanks.snack.Show(objBanks, "Este banco no se puede eliminar.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomCenter);
+            }
+            
         }
     }
 }
