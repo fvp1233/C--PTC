@@ -5,6 +5,7 @@ using PTC2024.Model.DAO.BillsDAO;
 using System.Data;
 using System.Windows.Forms;
 using PTC2024.View.BillsViews;
+using PTC2024.View.Reporting;
 using System.Security.Cryptography;
 using PTC2024.Controller.Helper;
 using System.Drawing;
@@ -13,6 +14,7 @@ using PTC2024.Model.DTO.EmployeesDTO;
 using System.Drawing.Printing;
 using System.IO;
 using PTC2024.Model.DTO.BillsDTO;
+using PTC2024.View.Reporting.Bills;
 namespace PTC2024.Controller.BillsController
 {
     internal class ControllerBills
@@ -293,79 +295,8 @@ namespace PTC2024.Controller.BillsController
         /// <param name="e"></param>
         public void printBills(object sender, EventArgs e)
         {
-            int row = objFormBills.dgvBills.CurrentRow.Index;
-            if (row < 0)
-            {
-                MessageBox.Show("Por favor, seleccione una factura para imprimir.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Obtener los datos de la fila seleccionada
-            int id = int.Parse(objFormBills.dgvBills[0, row].Value.ToString());
-            string companyName = objFormBills.dgvBills[1, row].Value.ToString();
-            string NIT = objFormBills.dgvBills[2, row].Value.ToString();
-            string NRC = objFormBills.dgvBills[3, row].Value.ToString();
-            string customer = objFormBills.dgvBills[4, row].Value.ToString();
-            string customerDui = objFormBills.dgvBills[5, row].Value.ToString();
-            string customerPhone = objFormBills.dgvBills[6, row].Value.ToString();
-            string customerEmail = objFormBills.dgvBills[7, row].Value.ToString();
-            string serviceName = objFormBills.dgvBills[8, row].Value.ToString();
-            double discount = double.Parse(objFormBills.dgvBills[9, row].Value.ToString());
-            double subtotalPay = double.Parse(objFormBills.dgvBills[10, row].Value.ToString());
-            double totalPay = double.Parse(objFormBills.dgvBills[11, row].Value.ToString());
-            string methodP = objFormBills.dgvBills[12, row].Value.ToString();
-            DateTime startDate = DateTime.Parse(objFormBills.dgvBills[13, row].Value.ToString());
-            DateTime finalDate = DateTime.Parse(objFormBills.dgvBills[14, row].Value.ToString());
-            DateTime dateissued = DateTime.Parse(objFormBills.dgvBills[17, row].Value.ToString());
-            string employee = objFormBills.dgvBills[15, row].Value.ToString();
-            string statusBill = objFormBills.dgvBills[16, row].Value.ToString();
-
-            // Crear el contenido de la factura
-            string content = $"Factura ID: {id}\n" +
-                             $"Empresa: {companyName}\n" +
-                             $"NIT: {NIT}\n" +
-                             $"NRC: {NRC}\n" +
-                             $"Cliente: {customer}\n" +
-                             $"DUI Cliente: {customerDui}\n" +
-                             $"Teléfono Cliente: {customerPhone}\n" +
-                             $"Email Cliente: {customerEmail}\n" +
-                             $"Servicio: {serviceName}\n" +
-                             $"Descuento: {discount}\n" +
-                             $"Subtotal: {subtotalPay}\n" +
-                             $"Total: {totalPay}\n" +
-                             $"Método de Pago: {methodP}\n" +
-                             $"Fecha de Inicio: {startDate.ToShortDateString()}\n" +
-                             $"Fecha Final: {finalDate.ToShortDateString()}\n" +
-                             $"Fecha de Emisión: {dateissued.ToShortDateString()}\n" +
-                             $"Empleado: {employee}\n" +
-                             $"Estado de la Factura: {statusBill}";
-
-            // Configurar el documento para impresión
-            PrintDocument printDocument = new PrintDocument();
-            printDocument.PrintPage += (s, ev) =>
-            {
-                ev.Graphics.DrawString(content, new Font("Arial", 12), Brushes.Black, new PointF(100, 100));
-            };
-
-            // Establecer la impresora a imprimir en archivo
-            printDocument.PrinterSettings.PrintToFile = true;
-
-            // Especificar la ruta completa para guardar el archivo PDF en la carpeta de Descargas
-            string downloadsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
-            string filePath = Path.Combine(downloadsPath, $"Factura_{id}.pdf");
-            printDocument.PrinterSettings.PrintFileName = filePath;
-
-            // Imprimir el documento
-            try
-            {
-                printDocument.Print();
-                MessageBox.Show($"Factura guardada como PDF en {filePath}.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al imprimir la factura: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
+            ReportingBill printbill = new ReportingBill();
+            printbill.ShowDialog(); 
         }
         
         /// <summary>
