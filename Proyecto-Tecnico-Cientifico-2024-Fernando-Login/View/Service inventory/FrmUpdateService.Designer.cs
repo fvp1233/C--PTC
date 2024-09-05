@@ -74,10 +74,10 @@
             // bunifuCustomLabel2
             // 
             this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.Location = new System.Drawing.Point(75, 58);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(303, 17);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(275, 15);
             this.bunifuCustomLabel2.TabIndex = 70;
             this.bunifuCustomLabel2.Text = "Ingrese en cada campo la información solicitada:";
             // 
@@ -97,10 +97,10 @@
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(89, 30);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(269, 28);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(295, 29);
             this.bunifuCustomLabel1.TabIndex = 68;
             this.bunifuCustomLabel1.Text = "ACTUALIZAR SERVICIO";
             // 
@@ -134,7 +134,7 @@
             this.btnUpdateService.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnUpdateService.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnUpdateService.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnUpdateService.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateService.ForeColor = System.Drawing.Color.White;
             this.btnUpdateService.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdateService.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -187,7 +187,7 @@
             this.btnUpdateService.OnPressedState.IconLeftImage = null;
             this.btnUpdateService.OnPressedState.IconRightImage = null;
             this.btnUpdateService.Size = new System.Drawing.Size(151, 52);
-            this.btnUpdateService.TabIndex = 94;
+            this.btnUpdateService.TabIndex = 6;
             this.btnUpdateService.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnUpdateService.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnUpdateService.TextMarginLeft = 0;
@@ -224,7 +224,7 @@
             this.btnCloseUpdateService.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnCloseUpdateService.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnCloseUpdateService.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnCloseUpdateService.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseUpdateService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseUpdateService.ForeColor = System.Drawing.Color.White;
             this.btnCloseUpdateService.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCloseUpdateService.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -277,7 +277,7 @@
             this.btnCloseUpdateService.OnPressedState.IconLeftImage = null;
             this.btnCloseUpdateService.OnPressedState.IconRightImage = null;
             this.btnCloseUpdateService.Size = new System.Drawing.Size(151, 52);
-            this.btnCloseUpdateService.TabIndex = 93;
+            this.btnCloseUpdateService.TabIndex = 5;
             this.btnCloseUpdateService.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCloseUpdateService.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnCloseUpdateService.TextMarginLeft = 0;
@@ -322,7 +322,7 @@
             this.comboTipoEmpleado.FillDropDown = true;
             this.comboTipoEmpleado.FillIndicator = false;
             this.comboTipoEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboTipoEmpleado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboTipoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboTipoEmpleado.ForeColor = System.Drawing.Color.Black;
             this.comboTipoEmpleado.FormattingEnabled = true;
             this.comboTipoEmpleado.Icon = null;
@@ -341,7 +341,7 @@
             this.comboTipoEmpleado.Location = new System.Drawing.Point(65, 313);
             this.comboTipoEmpleado.Name = "comboTipoEmpleado";
             this.comboTipoEmpleado.Size = new System.Drawing.Size(331, 32);
-            this.comboTipoEmpleado.TabIndex = 96;
+            this.comboTipoEmpleado.TabIndex = 3;
             this.comboTipoEmpleado.Text = null;
             this.comboTipoEmpleado.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.comboTipoEmpleado.TextLeftMargin = 5;
@@ -365,7 +365,7 @@
             this.txtNombres.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtNombres.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtNombres.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNombres.DefaultFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombres.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombres.DefaultText = "";
             this.txtNombres.FillColor = System.Drawing.Color.Gainsboro;
             this.txtNombres.HideSelection = true;
@@ -414,7 +414,7 @@
             this.txtNombres.ShortcutsEnabled = true;
             this.txtNombres.Size = new System.Drawing.Size(330, 32);
             this.txtNombres.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
-            this.txtNombres.TabIndex = 103;
+            this.txtNombres.TabIndex = 1;
             this.txtNombres.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtNombres.TextMarginBottom = 0;
             this.txtNombres.TextMarginLeft = 0;
@@ -442,7 +442,7 @@
             this.txtDescripcion.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtDescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDescripcion.DefaultFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.DefaultText = "";
             this.txtDescripcion.FillColor = System.Drawing.Color.Gainsboro;
             this.txtDescripcion.HideSelection = true;
@@ -490,7 +490,7 @@
             this.txtDescripcion.ShortcutsEnabled = true;
             this.txtDescripcion.Size = new System.Drawing.Size(330, 91);
             this.txtDescripcion.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
-            this.txtDescripcion.TabIndex = 102;
+            this.txtDescripcion.TabIndex = 2;
             this.txtDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtDescripcion.TextMarginBottom = 0;
             this.txtDescripcion.TextMarginLeft = 0;
@@ -518,7 +518,7 @@
             this.txtMonto.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtMonto.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtMonto.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMonto.DefaultFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMonto.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMonto.DefaultText = "";
             this.txtMonto.FillColor = System.Drawing.Color.Gainsboro;
             this.txtMonto.HideSelection = true;
@@ -567,7 +567,7 @@
             this.txtMonto.ShortcutsEnabled = true;
             this.txtMonto.Size = new System.Drawing.Size(330, 32);
             this.txtMonto.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
-            this.txtMonto.TabIndex = 101;
+            this.txtMonto.TabIndex = 4;
             this.txtMonto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtMonto.TextMarginBottom = 0;
             this.txtMonto.TextMarginLeft = 0;
