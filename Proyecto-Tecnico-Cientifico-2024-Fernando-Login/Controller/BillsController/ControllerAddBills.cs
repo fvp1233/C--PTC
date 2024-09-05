@@ -40,7 +40,6 @@ namespace PTC2024.Controller.BillsController
             objAddBills.Load += new EventHandler(LoadDataServices);
 
             objAddBills.btnAddBill.Click += new EventHandler(NewBill);
-            objAddBills.btnRectify.Click += new EventHandler(RectifyBills);
             objAddBills.btnmore.Click += new EventHandler(More);
             objAddBills.btnPlusC.Click += new EventHandler(AddOtherCustomer);
             objAddBills.btnBack.Click += new EventHandler(BackProcess);
@@ -57,8 +56,18 @@ namespace PTC2024.Controller.BillsController
             objAddBills.dgvData.CellValueChanged += new DataGridViewCellEventHandler(CalculateTotal);
             objAddBills.dgvData.RowsAdded += new DataGridViewRowsAddedEventHandler(CalculateTotal);
             objAddBills.dgvData.RowsRemoved += new DataGridViewRowsRemovedEventHandler(CalculateTotal);
-            //objAddBills.txtCustomerName.Leave += new EventHandler(TxtCustomerName_Leave);
-
+            objAddBills.txtRazónsocial.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtNITCompany.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtNRCompany.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtNRCompany.TextChanged += new EventHandler(NRCNumberMask);
+            objAddBills.txtEmployee.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtCustomerName.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtCustomerPhone.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtDUICustomer.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtCustomerEmail.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtDiscount.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtSubTotal.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtTotalPay.MouseDown += new MouseEventHandler(DisableContextMenu);
 
         }
         public ControllerAddBills(FrmAddBills view, int accions, string companyName, string NIT, string NRC, string Customer,   string CustomerDui, string CustomerPhone, string CustomerEmail, string employee)
@@ -72,7 +81,7 @@ namespace PTC2024.Controller.BillsController
             chooseAccions();
             ChargeValues( companyName, NIT, NRC, Customer,CustomerDui, CustomerPhone, CustomerEmail, employee);
 
-            objAddBills.btnRectify.Click += new EventHandler(RectifyBills);
+           // objAddBills.btnRectify.Click += new EventHandler(RectifyBills);
         }
 
         public ControllerAddBills(FrmAddBills view, int accions, int id, string IdServices, float Price1)
@@ -86,7 +95,7 @@ namespace PTC2024.Controller.BillsController
             ChargeV(id, IdServices, Price1);
 
 
-            objAddBills.btnRectify.Click += new EventHandler(RectifyBills);
+            //objAddBills.btnRectify.Click += new EventHandler(RectifyBills);
         }
 
 
@@ -466,7 +475,53 @@ namespace PTC2024.Controller.BillsController
             }
         }
 
-        public void RectifyBills(object sender, EventArgs e)
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
+        }
+
+        //Aplicamos una máscara que solo deje meter el guion y caracteres numéricos para los textbox de numero de afiliacion y cuenta bancaria.
+        public void NRCNumberMask(object sender, EventArgs e)
+        {
+            int cursorPosition = objAddBills.txtNRCompany.SelectionStart;
+            //Con esto se remueve cualquier dato no numérico excepto el guion
+            string text = new string(objAddBills.txtNRCompany.Text.Where(c => char.IsDigit(c) || c == '-').ToArray());
+            objAddBills.txtNRCompany.Text = text;
+            objAddBills.txtNRCompany.SelectionStart = cursorPosition;
+        }
+
+        public void NITMask(object sender, EventArgs e)
+        {
+            //Aqui se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar y no sea molesto para el usuario
+            int cursorPosition = objAddBills.txtNITCompany.SelectionStart;
+
+            //Con esto se remueve cualquier dato no numérico
+            string text = new string(objAddBills.txtNITCompany.Text.Where(c => char.IsDigit(c)).ToArray());
+
+            if (text.Length >= 14)
+            {
+                text = text.Insert(7, "-");
+
+            }
+
+            //Con esto se reposiciona el cursor, ya no se coloca antes del numero que va siguiente al guion, si no que se reajusta para que  se ponga en el orden que iba anteriormente
+            if (cursorPosition == 14)
+            {
+                cursorPosition++;
+            }
+
+            //Le asignamos la máscara al texto que se ponga en el textbox
+            objAddBills.txtNITCompany.Text = text;
+
+            //Restablecemos la posición del cursor con la variable que se guardó antes
+            objAddBills.txtNITCompany.SelectionStart = cursorPosition;
+        }
+
+        /*public void RectifyBills(object sender, EventArgs e)
         {
             if (!(
               string.IsNullOrEmpty(objAddBills.txtNITCompany.Text.Trim()) ||
@@ -539,75 +594,6 @@ namespace PTC2024.Controller.BillsController
                 MessageBox.Show("Por favor, complete todos los campos requeridos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            objAddBills.Close();
-        }
-
-        /*
-        public void RectifyBills(object sender, EventArgs e)
-        {
-            if (!(
-         string.IsNullOrEmpty(objAddBills.txtNITCompany.Text.Trim()) ||
-         string.IsNullOrEmpty(objAddBills.txtNRCompany.Text.Trim()) ||
-         string.IsNullOrEmpty(objAddBills.txtDiscount.Text.Trim()) ||
-         string.IsNullOrEmpty(objAddBills.txtSubTotal.Text.Trim()) ||
-         string.IsNullOrEmpty(objAddBills.txtTotalPay.Text.Trim()) ||
-         string.IsNullOrEmpty(objAddBills.txtCustomerName.Text.Trim()) ||
-         string.IsNullOrEmpty(objAddBills.txtCustomerEmail.Text.Trim()) ||
-         string.IsNullOrEmpty(objAddBills.txtCustomerPhone.Text.Trim()) ||
-         string.IsNullOrEmpty(objAddBills.txtDUICustomer.Text.Trim()) ||
-         string.IsNullOrEmpty(objAddBills.txtEmployee.Text.Trim())))
-            {
-                DAOAddBills daoNew = new DAOAddBills();
-
-                daoNew.CompanyName = objAddBills.txtRazónsocial.Text.Trim();
-                daoNew.NIT1 = objAddBills.txtNITCompany.Text.Trim();
-                daoNew.NRC1 = objAddBills.txtNRCompany.Text.Trim();
-                daoNew.Discount = double.Parse(objAddBills.txtDiscount.Text.Trim());
-                daoNew.SubtotalPay = double.Parse(objAddBills.txtSubTotal.Text.Trim());
-                daoNew.TotalPay = double.Parse(objAddBills.txtTotalPay.Text.Trim());
-                daoNew.StartDate = objAddBills.dtStartDate.Value.Date;
-                daoNew.FinalDate1 = objAddBills.dtFinalDate.Value.Date;
-                daoNew.Dateissued = objAddBills.dtfiscalPeriod.Value.Date;
-                daoNew.Services = objAddBills.comboServiceBill.SelectedValue.ToString();
-                daoNew.StatusBills = objAddBills.comboStatusBill.SelectedValue.ToString();
-                daoNew.CustomerDui1 = objAddBills.txtDUICustomer.Text.Trim();
-                daoNew.CustomerPhone1 = objAddBills.txtCustomerPhone.Text.Trim();
-                daoNew.CustomerEmail1 = objAddBills.txtCustomerEmail.Text.Trim();
-                daoNew.Employee = objAddBills.txtEmployee.Text.Trim();
-                int EmployeeId = daoNew.GetEmployeeIdByName(daoNew.Employee);
-                if (EmployeeId == 1)
-                {
-                    MessageBox.Show("Empleado no encontrado en la base de datos.");
-                    return;
-                }
-
-                daoNew.IdEmployee1 = EmployeeId;
-
-                daoNew.MethodP = objAddBills.comboMethodP.SelectedValue.ToString();
-
-                // Obtener IdCustomer basado en el nombre del cliente
-                daoNew.Customer = objAddBills.txtCustomerName.Text.Trim();
-                int customerId = daoNew.GetCustomerIdByName(daoNew.Customer);
-                if (customerId == 1)
-                {
-                    MessageBox.Show("Cliente no encontrado en la base de datos.");
-                    return;
-                }
-
-                daoNew.IdCustomer1 = customerId;
-                int checks = daoNew.RegisterBills();
-
-                // Verificamos el valor que nos retorna dicho método
-                if (checks == 1)
-                {
-                    MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    objAddBills.Close();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, complete todos los campos requeridos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
             objAddBills.Close();
         }
         */
