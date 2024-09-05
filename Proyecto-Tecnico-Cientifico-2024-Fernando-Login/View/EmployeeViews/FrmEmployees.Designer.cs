@@ -30,16 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmployees));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtEmployeeSearch = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -58,8 +58,8 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.cbActivo = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.cbInactivo = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.cbActivo = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.cbMaternidad = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.cbIncapacidad = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
@@ -190,26 +190,26 @@
             this.txtEmployeeSearch.Modified = false;
             this.txtEmployeeSearch.Multiline = false;
             this.txtEmployeeSearch.Name = "txtEmployeeSearch";
-            stateProperties9.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties9.FillColor = System.Drawing.Color.Empty;
-            stateProperties9.ForeColor = System.Drawing.Color.Empty;
-            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtEmployeeSearch.OnActiveState = stateProperties9;
-            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtEmployeeSearch.OnDisabledState = stateProperties10;
-            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties11.FillColor = System.Drawing.Color.Empty;
-            stateProperties11.ForeColor = System.Drawing.Color.Empty;
-            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtEmployeeSearch.OnHoverState = stateProperties11;
-            stateProperties12.BorderColor = System.Drawing.Color.Silver;
-            stateProperties12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            stateProperties12.ForeColor = System.Drawing.Color.White;
-            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtEmployeeSearch.OnIdleState = stateProperties12;
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtEmployeeSearch.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtEmployeeSearch.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtEmployeeSearch.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            stateProperties4.ForeColor = System.Drawing.Color.White;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtEmployeeSearch.OnIdleState = stateProperties4;
             this.txtEmployeeSearch.Padding = new System.Windows.Forms.Padding(3);
             this.txtEmployeeSearch.PasswordChar = '\0';
             this.txtEmployeeSearch.PlaceholderForeColor = System.Drawing.Color.White;
@@ -455,11 +455,11 @@
             this.BtnAddEmployee.ColorContrastOnClick = 45;
             this.BtnAddEmployee.ColorContrastOnHover = 45;
             this.BtnAddEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.BtnAddEmployee.CustomizableEdges = borderEdges3;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.BtnAddEmployee.CustomizableEdges = borderEdges1;
             this.BtnAddEmployee.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnAddEmployee.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnAddEmployee.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -532,7 +532,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.49619F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 198F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 294F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 295F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel13, 4, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel11, 3, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel9, 2, 1);
@@ -552,83 +552,29 @@
             // tableLayoutPanel13
             // 
             this.tableLayoutPanel13.ColumnCount = 2;
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.63636F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.36364F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.34483F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.65517F));
             this.tableLayoutPanel13.Controls.Add(this.flowLayoutPanel4, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 1, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(623, 29);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(622, 29);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(289, 92);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(290, 92);
             this.tableLayoutPanel13.TabIndex = 9;
             // 
             // flowLayoutPanel4
             // 
-            this.flowLayoutPanel4.Controls.Add(this.cbActivo);
             this.flowLayoutPanel4.Controls.Add(this.cbInactivo);
+            this.flowLayoutPanel4.Controls.Add(this.cbActivo);
             this.flowLayoutPanel4.Controls.Add(this.cbMaternidad);
             this.flowLayoutPanel4.Controls.Add(this.cbIncapacidad);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(27, 86);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(24, 86);
             this.flowLayoutPanel4.TabIndex = 0;
-            // 
-            // cbActivo
-            // 
-            this.cbActivo.AllowBindingControlAnimation = true;
-            this.cbActivo.AllowBindingControlColorChanges = false;
-            this.cbActivo.AllowBindingControlLocation = true;
-            this.cbActivo.AllowCheckBoxAnimation = false;
-            this.cbActivo.AllowCheckmarkAnimation = true;
-            this.cbActivo.AllowOnHoverStates = true;
-            this.cbActivo.AutoCheck = true;
-            this.cbActivo.BackColor = System.Drawing.Color.Transparent;
-            this.cbActivo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cbActivo.BackgroundImage")));
-            this.cbActivo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cbActivo.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
-            this.cbActivo.BorderRadius = 12;
-            this.cbActivo.Checked = false;
-            this.cbActivo.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
-            this.cbActivo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cbActivo.CustomCheckmarkImage = null;
-            this.cbActivo.Location = new System.Drawing.Point(3, 3);
-            this.cbActivo.MinimumSize = new System.Drawing.Size(15, 15);
-            this.cbActivo.Name = "cbActivo";
-            this.cbActivo.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
-            this.cbActivo.OnCheck.BorderRadius = 12;
-            this.cbActivo.OnCheck.BorderThickness = 2;
-            this.cbActivo.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
-            this.cbActivo.OnCheck.CheckmarkColor = System.Drawing.Color.White;
-            this.cbActivo.OnCheck.CheckmarkThickness = 2;
-            this.cbActivo.OnDisable.BorderColor = System.Drawing.Color.LightGray;
-            this.cbActivo.OnDisable.BorderRadius = 12;
-            this.cbActivo.OnDisable.BorderThickness = 2;
-            this.cbActivo.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.cbActivo.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
-            this.cbActivo.OnDisable.CheckmarkThickness = 2;
-            this.cbActivo.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.cbActivo.OnHoverChecked.BorderRadius = 12;
-            this.cbActivo.OnHoverChecked.BorderThickness = 2;
-            this.cbActivo.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
-            this.cbActivo.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
-            this.cbActivo.OnHoverChecked.CheckmarkThickness = 2;
-            this.cbActivo.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
-            this.cbActivo.OnHoverUnchecked.BorderRadius = 12;
-            this.cbActivo.OnHoverUnchecked.BorderThickness = 1;
-            this.cbActivo.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.cbActivo.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
-            this.cbActivo.OnUncheck.BorderRadius = 12;
-            this.cbActivo.OnUncheck.BorderThickness = 1;
-            this.cbActivo.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.cbActivo.Size = new System.Drawing.Size(16, 16);
-            this.cbActivo.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
-            this.cbActivo.TabIndex = 1;
-            this.cbActivo.Tag = "Activo";
-            this.cbActivo.ThreeState = false;
-            this.cbActivo.ToolTipText = null;
             // 
             // cbInactivo
             // 
@@ -648,7 +594,7 @@
             this.cbInactivo.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.cbInactivo.Cursor = System.Windows.Forms.Cursors.Default;
             this.cbInactivo.CustomCheckmarkImage = null;
-            this.cbInactivo.Location = new System.Drawing.Point(3, 25);
+            this.cbInactivo.Location = new System.Drawing.Point(3, 3);
             this.cbInactivo.MinimumSize = new System.Drawing.Size(15, 15);
             this.cbInactivo.Name = "cbInactivo";
             this.cbInactivo.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
@@ -679,10 +625,64 @@
             this.cbInactivo.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
             this.cbInactivo.Size = new System.Drawing.Size(16, 16);
             this.cbInactivo.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
-            this.cbInactivo.TabIndex = 2;
-            this.cbInactivo.Tag = "Inactivo";
+            this.cbInactivo.TabIndex = 1;
+            this.cbInactivo.Tag = "Activo";
             this.cbInactivo.ThreeState = false;
             this.cbInactivo.ToolTipText = null;
+            // 
+            // cbActivo
+            // 
+            this.cbActivo.AllowBindingControlAnimation = true;
+            this.cbActivo.AllowBindingControlColorChanges = false;
+            this.cbActivo.AllowBindingControlLocation = true;
+            this.cbActivo.AllowCheckBoxAnimation = false;
+            this.cbActivo.AllowCheckmarkAnimation = true;
+            this.cbActivo.AllowOnHoverStates = true;
+            this.cbActivo.AutoCheck = true;
+            this.cbActivo.BackColor = System.Drawing.Color.Transparent;
+            this.cbActivo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cbActivo.BackgroundImage")));
+            this.cbActivo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cbActivo.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.cbActivo.BorderRadius = 12;
+            this.cbActivo.Checked = false;
+            this.cbActivo.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.cbActivo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cbActivo.CustomCheckmarkImage = null;
+            this.cbActivo.Location = new System.Drawing.Point(3, 25);
+            this.cbActivo.MinimumSize = new System.Drawing.Size(15, 15);
+            this.cbActivo.Name = "cbActivo";
+            this.cbActivo.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cbActivo.OnCheck.BorderRadius = 12;
+            this.cbActivo.OnCheck.BorderThickness = 2;
+            this.cbActivo.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cbActivo.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.cbActivo.OnCheck.CheckmarkThickness = 2;
+            this.cbActivo.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.cbActivo.OnDisable.BorderRadius = 12;
+            this.cbActivo.OnDisable.BorderThickness = 2;
+            this.cbActivo.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbActivo.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.cbActivo.OnDisable.CheckmarkThickness = 2;
+            this.cbActivo.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cbActivo.OnHoverChecked.BorderRadius = 12;
+            this.cbActivo.OnHoverChecked.BorderThickness = 2;
+            this.cbActivo.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cbActivo.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.cbActivo.OnHoverChecked.CheckmarkThickness = 2;
+            this.cbActivo.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cbActivo.OnHoverUnchecked.BorderRadius = 12;
+            this.cbActivo.OnHoverUnchecked.BorderThickness = 1;
+            this.cbActivo.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbActivo.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.cbActivo.OnUncheck.BorderRadius = 12;
+            this.cbActivo.OnUncheck.BorderThickness = 1;
+            this.cbActivo.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cbActivo.Size = new System.Drawing.Size(16, 16);
+            this.cbActivo.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.cbActivo.TabIndex = 2;
+            this.cbActivo.Tag = "Inactivo";
+            this.cbActivo.ThreeState = false;
+            this.cbActivo.ToolTipText = null;
             // 
             // cbMaternidad
             // 
@@ -801,14 +801,14 @@
             this.tableLayoutPanel14.Controls.Add(this.label19, 0, 1);
             this.tableLayoutPanel14.Controls.Add(this.label20, 0, 0);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(36, 3);
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(33, 3);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 4;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(250, 86);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(254, 86);
             this.tableLayoutPanel14.TabIndex = 1;
             // 
             // label17
@@ -818,7 +818,7 @@
             this.label17.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(3, 66);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(244, 16);
+            this.label17.Size = new System.Drawing.Size(248, 16);
             this.label17.TabIndex = 3;
             this.label17.Text = "Incapacidad";
             // 
@@ -829,7 +829,7 @@
             this.label18.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(3, 44);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(244, 16);
+            this.label18.Size = new System.Drawing.Size(248, 16);
             this.label18.TabIndex = 2;
             this.label18.Text = "Maternidad";
             // 
@@ -840,9 +840,9 @@
             this.label19.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(3, 23);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(244, 16);
+            this.label19.Size = new System.Drawing.Size(248, 16);
             this.label19.TabIndex = 1;
-            this.label19.Text = "Inactivo";
+            this.label19.Text = "Paternidad";
             // 
             // label20
             // 
@@ -851,9 +851,9 @@
             this.label20.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(3, 2);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(244, 16);
+            this.label20.Size = new System.Drawing.Size(248, 16);
             this.label20.TabIndex = 0;
-            this.label20.Text = "Activo";
+            this.label20.Text = "Inactivo";
             // 
             // tableLayoutPanel11
             // 
@@ -863,7 +863,7 @@
             this.tableLayoutPanel11.Controls.Add(this.flowLayoutPanel3, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel12, 1, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(425, 29);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(424, 29);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -968,7 +968,7 @@
             this.tableLayoutPanel9.Controls.Add(this.flowLayoutPanel2, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(266, 29);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(265, 29);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1289,7 +1289,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(219, 92);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(218, 92);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -1301,7 +1301,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(26, 86);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(25, 86);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // cbTiempoCompleto
@@ -1529,7 +1529,7 @@
             this.tableLayoutPanel7.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(35, 3);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(34, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 4;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1588,7 +1588,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(266, 8);
+            this.label8.Location = new System.Drawing.Point(265, 8);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(119, 18);
             this.label8.TabIndex = 2;
@@ -1599,7 +1599,7 @@
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(623, 8);
+            this.label13.Location = new System.Drawing.Point(622, 8);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(60, 18);
             this.label13.TabIndex = 10;
@@ -1701,8 +1701,8 @@
         public Bunifu.UI.WinForms.BunifuCheckBox cbVoluntario;
         public Bunifu.UI.WinForms.BunifuCheckBox cbBecario;
         public Bunifu.UI.WinForms.BunifuCheckBox cbInterno;
-        public Bunifu.UI.WinForms.BunifuCheckBox cbActivo;
         public Bunifu.UI.WinForms.BunifuCheckBox cbInactivo;
+        public Bunifu.UI.WinForms.BunifuCheckBox cbActivo;
         public Bunifu.UI.WinForms.BunifuCheckBox cbMaternidad;
         public Bunifu.UI.WinForms.BunifuCheckBox cbIncapacidad;
         public Bunifu.UI.WinForms.BunifuCheckBox cbMarketing;

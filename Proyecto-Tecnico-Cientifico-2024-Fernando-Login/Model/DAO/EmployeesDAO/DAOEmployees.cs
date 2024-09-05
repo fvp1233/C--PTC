@@ -20,7 +20,7 @@ namespace PTC2024.Model.DAO.EmployeesDAO
             try
             {
                 Command.Connection = getConnection();
-                string query = "SELECT*FROM viewEmployees WHERE [Estado] = 'Activo' OR [Estado] = 'Maternidad' OR [Estado] = 'Incapacidad'";
+                string query = "SELECT*FROM viewEmployees WHERE [Estado] = 'Activo' OR [Estado] = 'Maternidad' OR [Estado] = 'Incapacidad' OR [Estado] = 'Paternidad'";
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
                 cmd.ExecuteNonQuery();
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);

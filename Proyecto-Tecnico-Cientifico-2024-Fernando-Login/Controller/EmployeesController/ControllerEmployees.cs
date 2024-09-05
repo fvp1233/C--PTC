@@ -604,7 +604,7 @@ namespace PTC2024.Controller.Employees
             string status;
             if (objEmployees.cbActivo.Checked == true)
             {
-                status = objEmployees.cbActivo.Tag.ToString();
+                status = "Paternidad";
                 objEmployees.cbInactivo.Checked = false;
                 objEmployees.cbIncapacidad.Checked = false;
                 objEmployees.cbMaternidad.Checked = false;
@@ -635,7 +635,7 @@ namespace PTC2024.Controller.Employees
             string status;
             if (objEmployees.cbInactivo.Checked == true)
             {
-                status = objEmployees.cbInactivo.Tag.ToString();
+                status = "Inactivo";
                 objEmployees.cbActivo.Checked = false;
                 objEmployees.cbIncapacidad.Checked = false;
                 objEmployees.cbMaternidad.Checked = false;

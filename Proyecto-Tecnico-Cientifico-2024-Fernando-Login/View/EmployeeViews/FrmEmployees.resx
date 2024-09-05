@@ -1045,7 +1045,7 @@
   <data name="cmsReactivateE.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAP7lJREFUeF7tnWf4HVXVt58P74cQCEnoBEJvUoQAoT0UkS7F0JGOQChB0aBA6CIE
+        vgAADr4B6kKxwAAAP7lJREFUeF7tnWf4HVXVt58P74cQCEnoBEJvUoQAoT0UkS7F0JGOQChB0aBA6CIE
         kKIYeg9NEEGlSYmQgJQgKoQSugIBBAEhtI/v+1uy8jLZTpL/OTNzZu+Z+76u+7qeR5J19l5rzezMOTOz
         /wcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAHrP4hfttYTcXY6Rl8l75FXyx3JbObf/UQAAAIgNLdTrybvl/+2Dv5V7+F8FAACAutHCPEhe4wt1
@@ -1334,7 +1334,7 @@
         RK5CYII=
 </value>
   </data>
-  <data name="cbActivo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="cbInactivo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEJSURBVDhPrZMhc8JAEIUjKysrkchKZCUSyU9AIitxkUhk
@@ -1345,7 +1345,7 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="cbInactivo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="cbActivo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEJSURBVDhPrZMhc8JAEIUjKysrkchKZCUSyU9AIitxkUhk
