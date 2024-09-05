@@ -739,6 +739,29 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 getConnection().Close();
             }
         }
+        public DataSet GetBusiness()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = "SELECT * FROM tbBusinessInfo";
+                SqlCommand cmdBonus = new SqlCommand(query, comand.Connection);
+                cmdBonus.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmdBonus);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "tbBusinessInfo");
+                return ds;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("EC-133: No se pudo obtener los datos de la empresa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
 
     }
 }

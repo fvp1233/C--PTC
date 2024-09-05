@@ -18,7 +18,7 @@ namespace PTC2024.Model.DAO.FirstUseDAO
             try
             {
                 command.Connection = getConnection();
-                string query = "INSERT INTO tbBusinessInfo VALUES(@param1, @param2, @param3, @param4, @param5, @param6, @param7)";
+                string query = "INSERT INTO tbBusinessInfo VALUES(@param1, @param2, @param3, @param4, @param5, @param6, @param7, @param8)";
                 SqlCommand cmd = new SqlCommand(query,command.Connection);
                 cmd.Parameters.AddWithValue("param1", NameBusiness);
                 cmd.Parameters.AddWithValue("param2", AddressBusiness);
@@ -27,13 +27,14 @@ namespace PTC2024.Model.DAO.FirstUseDAO
                 cmd.Parameters.AddWithValue("param5", PhoneBusiness);
                 cmd.Parameters.AddWithValue("param6", PbxBusiness);
                 cmd.Parameters.AddWithValue("param7", ImageBusiness);
+                cmd.Parameters.AddWithValue("param8", FirstUse);
                 int returnedValue = cmd.ExecuteNonQuery();
                 return returnedValue > 0;
 
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"EC-002: No se pudieron insertar los datos", "Error al procesar información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"{ex}EC-002: No se pudieron insertar los datos", "Error al procesar información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
