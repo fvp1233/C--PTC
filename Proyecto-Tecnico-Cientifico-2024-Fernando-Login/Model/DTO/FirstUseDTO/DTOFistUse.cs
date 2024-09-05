@@ -17,6 +17,7 @@ namespace PTC2024.Model.DTO.FirstUseDTO
         private string phoneBusiness;
         private string pbxBusiness;
         private byte[] imageBusiness;
+        private DateTime firstUse;
 
         public int IdBusiness { get => idBusiness; set => idBusiness = value; }
         public string NameBusiness { get => nameBusiness; set => nameBusiness = value; }
@@ -26,5 +27,6 @@ namespace PTC2024.Model.DTO.FirstUseDTO
         public string PhoneBusiness { get => phoneBusiness; set => phoneBusiness = value; }
         public string PbxBusiness { get => pbxBusiness; set => pbxBusiness = value; }
         public byte[] ImageBusiness { get => imageBusiness; set => imageBusiness = value; }
+        public DateTime FirstUse { get => firstUse; set => firstUse = value; }
     }
 }
