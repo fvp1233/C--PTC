@@ -19,26 +19,47 @@ namespace PTC2024.Model.DAO.MaintenanceDAO
             try
             {
                 Command.Connection = getConnection();
-                string query = "UPDATE tbBusinessInfo SET nameBusiness = @param1, addressBussines = @param2, emailBusiness = @param3, phoneBusiness = @param4, pbxBusiness = @param5, imageBusiness = @param6 WHERE idBusiness = @param7";
+                string query = "UPDATE tbBusinessInfo SET nameBusiness = @param1, addressBussines = @param2, emailBusiness = @param3, phoneBusiness = @param4, pbxBusiness = @param5 WHERE idBusiness = @param6";
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
-                cmd.Parameters.AddWithValue("nameBusiness", NameBusiness);
-                cmd.Parameters.AddWithValue("addressBussines", AddressBusiness);
-                cmd.Parameters.AddWithValue("emailBusiness", EmailBusiness);
-                cmd.Parameters.AddWithValue("phoneBusiness", PhoneBusiness);
-                cmd.Parameters.AddWithValue("pbxBusiness", PbxBusiness);
-                cmd.Parameters.AddWithValue("imageBusiness", ImageBusiness);
-                cmd.Parameters.AddWithValue("idBusiness", IdBusiness);
+                cmd.Parameters.AddWithValue("param1", NameBusiness);
+                cmd.Parameters.AddWithValue("param2", AddressBusiness);
+                cmd.Parameters.AddWithValue("param3", EmailBusiness);
+                cmd.Parameters.AddWithValue("param4", PhoneBusiness);
+                cmd.Parameters.AddWithValue("param5", PbxBusiness);
+                cmd.Parameters.AddWithValue("param6", IdBusiness);
                 int answer = cmd.ExecuteNonQuery();
                 return answer;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("EC-137: No se pudo actualizar la información del negocio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"{ex}EC-137: No se pudo actualizar la información del negocio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
             {
                 getConnection().Close();
+            }
+        }
+        public int SavePfp()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = "UPDATE tbBusinessInfo SET imageBusiness = @param1 WHERE idBusiness = @param2";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("param1", ImageBusiness);
+                cmd.Parameters.AddWithValue("param2", IdBusiness);
+                int returnedValue = cmd.ExecuteNonQuery();
+                return returnedValue;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("EC-008: No se pudieron actualizar los datos del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+            finally
+            {
+                Command.Connection.Close();
             }
         }
     }

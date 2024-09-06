@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBusinessConfiguration));
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -71,6 +72,7 @@
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnUploadPhoto = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.txtID = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.snack = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picBusiness)).BeginInit();
             this.SuspendLayout();
             // 
@@ -798,6 +800,76 @@
             this.txtID.UseSystemPasswordChar = false;
             this.txtID.WordWrap = true;
             // 
+            // snack
+            // 
+            this.snack.AllowDragging = false;
+            this.snack.AllowMultipleViews = true;
+            this.snack.ClickToClose = true;
+            this.snack.DoubleClickToClose = true;
+            this.snack.DurationAfterIdle = 3000;
+            this.snack.ErrorOptions.ActionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.snack.ErrorOptions.ActionBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.snack.ErrorOptions.ActionBorderRadius = 1;
+            this.snack.ErrorOptions.ActionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.snack.ErrorOptions.ActionForeColor = System.Drawing.Color.Black;
+            this.snack.ErrorOptions.BackColor = System.Drawing.Color.White;
+            this.snack.ErrorOptions.BorderColor = System.Drawing.Color.White;
+            this.snack.ErrorOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(199)))));
+            this.snack.ErrorOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.snack.ErrorOptions.ForeColor = System.Drawing.Color.Black;
+            this.snack.ErrorOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon")));
+            this.snack.ErrorOptions.IconLeftMargin = 12;
+            this.snack.FadeCloseIcon = false;
+            this.snack.Host = Bunifu.UI.WinForms.BunifuSnackbar.Hosts.FormOwner;
+            this.snack.InformationOptions.ActionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.snack.InformationOptions.ActionBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.snack.InformationOptions.ActionBorderRadius = 1;
+            this.snack.InformationOptions.ActionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.snack.InformationOptions.ActionForeColor = System.Drawing.Color.Black;
+            this.snack.InformationOptions.BackColor = System.Drawing.Color.White;
+            this.snack.InformationOptions.BorderColor = System.Drawing.Color.White;
+            this.snack.InformationOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.snack.InformationOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.snack.InformationOptions.ForeColor = System.Drawing.Color.Black;
+            this.snack.InformationOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon1")));
+            this.snack.InformationOptions.IconLeftMargin = 12;
+            this.snack.Margin = 10;
+            this.snack.MaximumSize = new System.Drawing.Size(0, 0);
+            this.snack.MaximumViews = 7;
+            this.snack.MessageRightMargin = 15;
+            this.snack.MessageTopMargin = 0;
+            this.snack.MinimumSize = new System.Drawing.Size(0, 0);
+            this.snack.ShowBorders = false;
+            this.snack.ShowCloseIcon = false;
+            this.snack.ShowIcon = true;
+            this.snack.ShowShadows = true;
+            this.snack.SuccessOptions.ActionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.snack.SuccessOptions.ActionBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.snack.SuccessOptions.ActionBorderRadius = 1;
+            this.snack.SuccessOptions.ActionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.snack.SuccessOptions.ActionForeColor = System.Drawing.Color.Black;
+            this.snack.SuccessOptions.BackColor = System.Drawing.Color.White;
+            this.snack.SuccessOptions.BorderColor = System.Drawing.Color.White;
+            this.snack.SuccessOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(255)))), ((int)(((byte)(237)))));
+            this.snack.SuccessOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.snack.SuccessOptions.ForeColor = System.Drawing.Color.Black;
+            this.snack.SuccessOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon2")));
+            this.snack.SuccessOptions.IconLeftMargin = 12;
+            this.snack.ViewsMargin = 7;
+            this.snack.WarningOptions.ActionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.snack.WarningOptions.ActionBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.snack.WarningOptions.ActionBorderRadius = 1;
+            this.snack.WarningOptions.ActionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.snack.WarningOptions.ActionForeColor = System.Drawing.Color.Black;
+            this.snack.WarningOptions.BackColor = System.Drawing.Color.White;
+            this.snack.WarningOptions.BorderColor = System.Drawing.Color.White;
+            this.snack.WarningOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(143)))));
+            this.snack.WarningOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.snack.WarningOptions.ForeColor = System.Drawing.Color.Black;
+            this.snack.WarningOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon3")));
+            this.snack.WarningOptions.IconLeftMargin = 12;
+            this.snack.ZoomCloseIcon = true;
+            // 
             // FrmBusinessConfiguration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -847,5 +919,6 @@
         public Bunifu.UI.WinForms.BunifuTextBox txtPhone;
         public Bunifu.UI.WinForms.BunifuTextBox txtPBX;
         public Bunifu.UI.WinForms.BunifuTextBox txtID;
+        public Bunifu.UI.WinForms.BunifuSnackbar snack;
     }
 }
