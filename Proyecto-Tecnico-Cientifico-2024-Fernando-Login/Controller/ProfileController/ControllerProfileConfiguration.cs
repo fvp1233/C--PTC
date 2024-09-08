@@ -29,6 +29,7 @@ namespace PTC2024.Controller.ProfileController
             objProfileC.txtBankA.TextChanged += new EventHandler(BankAccountMask);
             objProfileC.btnSavePhoto.Click += new EventHandler(PutImage);
             objProfileC.btnGuardar.Click += new EventHandler(UpdateInfo);
+            objProfileC.btnChangePassword.Click += new EventHandler(ChangePass);
 
         }
 
@@ -320,6 +321,12 @@ namespace PTC2024.Controller.ProfileController
             bool answer = daoProfile.CheckEmail();
             //Retornamos esta variable
             return answer;
+        }
+
+        public void ChangePass(object sender, EventArgs e)
+        {
+            FrmChangeUserPass open = new FrmChangeUserPass();
+            open.ShowDialog();
         }
     }
 }

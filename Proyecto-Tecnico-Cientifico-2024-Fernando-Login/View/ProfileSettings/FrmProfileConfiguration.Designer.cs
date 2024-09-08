@@ -734,7 +734,6 @@
             this.btnChangePassword.TextMarginLeft = 0;
             this.btnChangePassword.TextPadding = new System.Windows.Forms.Padding(0, 0, 13, 0);
             this.btnChangePassword.UseDefaultRadiusAndThickness = true;
-            this.btnChangePassword.Visible = false;
             // 
             // btnGuardar
             // 

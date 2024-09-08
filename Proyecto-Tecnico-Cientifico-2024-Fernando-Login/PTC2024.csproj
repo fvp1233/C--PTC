@@ -156,6 +156,7 @@
     <Compile Include="Controller\PayrollsController\ControllerUpdatePayroll.cs" />
     <Compile Include="Controller\PayrollsController\ControllerUpdatePermission.cs" />
     <Compile Include="Controller\PayrollsController\ControllerViewPayrolls.cs" />
+    <Compile Include="Controller\ProfileController\ControllerChangeUserPass.cs" />
     <Compile Include="Controller\ProfileController\ControllerProfile.cs" />
     <Compile Include="Controller\ProfileController\ControllerProfileConfiguration.cs" />
     <Compile Include="Controller\ProfileController\ControllerSecurityQuestions.cs" />
@@ -197,6 +198,7 @@
     <Compile Include="Model\DAO\PayrollsDAO\DAOUpdatePayroll.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOUpdatePermission.cs" />
     <Compile Include="Model\DAO\PayrollsDAO\DAOViewPayrolls.cs" />
+    <Compile Include="Model\DAO\ProfileDAO\DAOChangeUserPass.cs" />
     <Compile Include="Model\DAO\ProfileDAO\DAOProfile.cs" />
     <Compile Include="Model\DAO\ProfileDAO\DAOProfileConfiguration.cs" />
     <Compile Include="Model\DAO\ProfileDAO\DAOSecurityQuestions.cs" />
@@ -236,6 +238,7 @@
     <Compile Include="Model\DTO\PayrollDTO\DTOUpdatePayroll.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOUpdatePermission.cs" />
     <Compile Include="Model\DTO\PayrollDTO\DTOViewPayrolls.cs" />
+    <Compile Include="Model\DTO\ProfileDTO\DTOChangeUserPass.cs" />
     <Compile Include="Model\DTO\ProfileDTO\DTOProfile.cs" />
     <Compile Include="Model\DTO\ProfileDTO\DTOProfileConfiguration.cs" />
     <Compile Include="Model\DTO\ProfileDTO\DTOSecurityQuestions.cs" />
@@ -454,6 +457,12 @@
     <Compile Include="View\login\FrmRegister.Designer.cs">
       <DependentUpon>FrmRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ProfileSettings\FrmChangeUserPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProfileSettings\FrmChangeUserPass.Designer.cs">
+      <DependentUpon>FrmChangeUserPass.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ProfileSettings\FrmProfileConfiguration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -646,6 +655,9 @@
     <EmbeddedResource Include="View\login\FrmRegister.resx">
       <DependentUpon>FrmRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ProfileSettings\FrmChangeUserPass.resx">
+      <DependentUpon>FrmChangeUserPass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ProfileSettings\FrmProfile.resx">
       <DependentUpon>FrmProfile.cs</DependentUpon>
     </EmbeddedResource>
@@ -728,6 +740,7 @@
     <Content Include="Resources\AgregarEmpleado.png" />
     <Content Include="Resources\cambiarContra.png" />
     <Content Include="Resources\cambiarContrab.png" />
+    <Content Include="Resources\chequeBlanco.png" />
     <Content Include="Resources\configBlanco.png" />
     <Content Include="Resources\emailMethod.png" />
     <Content Include="Resources\generarPlanillas.png" />
