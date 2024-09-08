@@ -255,7 +255,7 @@ namespace PTC2024.Model.DAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-002: No se puedieron obtener los datos de los Diferentes Bancos");
+                MessageBox.Show("EC-002: No se puedieron obtener los Generos");
                 MessageBox.Show(ex.Message);
                 return null;
             }
