@@ -31,6 +31,10 @@ namespace PTC2024.Model.DAO.HelperDAO
                 cmd.Parameters.AddWithValue("currentDate", CurrentDate);
                 //creamos un reader
                 SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    string user = rd.GetString(0);
+                }
                 //devolvemos si el reader encontró algun registro
                 return rd.HasRows;
             }
@@ -81,7 +85,7 @@ namespace PTC2024.Model.DAO.HelperDAO
             }
             catch (SqlException sqlex)
             {
-                MessageBox.Show("EC-128: No se pudo obtener la información del logIn", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-128: No se pudo obtener la información del login", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally

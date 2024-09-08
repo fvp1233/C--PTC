@@ -55,10 +55,11 @@ namespace PTC2024.Controller.StartMenuController
             objStartMenu.btnIcon.Image = ByteArrayToImage(SessionVar.ProfilePic);
             DAOStartMenu daoStart = new DAOStartMenu();
             bool chargeB = daoStart.ChargeInfoBusiness();
-            if( chargeB == true)
+            if(chargeB == true)
             {
-                objStartMenu.snackBar.Show(objStartMenu, $"Datos del negoció cargados exitosamente, bienvenido {SessionVar.Username}.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                objStartMenu.snackBar.Show(objStartMenu, $"Datos del negocio cargados con éxito.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
             }
+            ShowWelcomeSnackBar();
         }
         public Image ByteArrayToImage(byte[] byteArray)
         {
@@ -108,8 +109,7 @@ namespace PTC2024.Controller.StartMenuController
         }
         private void LoadDefaultForm(object sender, EventArgs e)
         {
-            OpenForm<FrmWelcome>();
-            ShowWelcomeSnackBar();
+            OpenForm<FrmWelcome>();           
         }
         private void LoadDashboard(object sender, EventArgs e)
         {
@@ -189,10 +189,11 @@ namespace PTC2024.Controller.StartMenuController
             DAOStartMenu daoS = new DAOStartMenu();
             if (MessageBox.Show("¿Quiere cerrar la sesión?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                await Task.Delay(2000);
+                await Task.Delay(1000);
                 ClearVarSession();
                 objStartMenu.Hide();
                 DeleteLocalToken();
+                daoS.Username = SessionVar.Username;
                 daoS.DeleteUserToken();
                 FrmLogin backToLogin = new FrmLogin();
                 backToLogin.Show();

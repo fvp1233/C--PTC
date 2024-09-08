@@ -94,14 +94,19 @@ namespace PTC2024.Model.DAO.StartMenuDAO
                                "tokenExpiry = @param2 " +
                                "WHERE username = @param3";
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
-                cmd.Parameters.AddWithValue("param1", null);
-                cmd.Parameters.AddWithValue("param2", null);
+                cmd.Parameters.AddWithValue("param1", "");
+                cmd.Parameters.AddWithValue("param2", "");
                 cmd.Parameters.AddWithValue("param3", Username);
                 return cmd.ExecuteNonQuery();
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return -1;
+            }
             catch (Exception)
             {
-                MessageBox.Show("EC-010: No se pudo actualizar el token del usuario", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-010: No se pudo actualizar el token del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
