@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet_detalle" targetNamespace="http://tempuri.org/DataSet_detalle.xsd" xmlns:mstns="http://tempuri.org/DataSet_detalle.xsd" xmlns="http://tempuri.org/DataSet_detalle.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="db_aaa7ca_ricaldoneConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="db_aaa7ca_ricaldoneConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.PTC2024.Properties.Settings.GlobalReference.Default.db_aaa7ca_ricaldoneConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbBillDataSTableAdapter" GeneratorDataComponentClassName="tbBillDataSTableAdapter" Name="tbBillDataS" UserDataComponentName="tbBillDataSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_aaa7ca_ricaldoneConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT b.serviceName AS 'Servicio', a.Price AS 'Precio'
+FROM     tbBillDataS AS a INNER JOIN
+                  tbServices AS b ON a.IdServices = b.IdServices</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Servicio" DataSetColumn="Servicio" />
+              <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet_detalle" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet_detalle" msprop:Generator_DataSetName="DataSet_detalle">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tbBillDataS" msprop:Generator_RowEvHandlerName="tbBillDataSRowChangeEventHandler" msprop:Generator_RowDeletedName="tbBillDataSRowDeleted" msprop:Generator_RowDeletingName="tbBillDataSRowDeleting" msprop:Generator_RowEvArgName="tbBillDataSRowChangeEvent" msprop:Generator_TablePropName="tbBillDataS" msprop:Generator_RowChangedName="tbBillDataSRowChanged" msprop:Generator_RowChangingName="tbBillDataSRowChanging" msprop:Generator_TableClassName="tbBillDataSDataTable" msprop:Generator_RowClassName="tbBillDataSRow" msprop:Generator_TableVarName="tabletbBillDataS" msprop:Generator_UserTableName="tbBillDataS">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Servicio" msprop:Generator_ColumnPropNameInRow="Servicio" msprop:Generator_ColumnPropNameInTable="ServicioColumn" msprop:Generator_ColumnVarNameInTable="columnServicio" msprop:Generator_UserColumnName="Servicio">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Precio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_UserColumnName="Precio" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

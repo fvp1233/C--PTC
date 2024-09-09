@@ -295,10 +295,18 @@ namespace PTC2024.Controller.BillsController
         /// <param name="e"></param>
         public void printBills(object sender, EventArgs e)
         {
-            ReportingBill printbill = new ReportingBill();
-            printbill.ShowDialog(); 
+            if (objFormBills.dgvBills.CurrentRow != null)
+            {
+                int BillId = Convert.ToInt32(objFormBills.dgvBills.CurrentRow.Cells["N°"].Value);
+                PrintBill printbill = new PrintBill(BillId);
+                printbill.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una factura para imprimir.");
+            }
         }
-        
+
         /// <summary>
         /// Método para abrir formulario "Agregar factura"
         /// </summary>

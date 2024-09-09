@@ -313,6 +313,36 @@ namespace PTC2024.View.Reporting.Bills {
             
             private global::System.Data.DataColumn columnbillStatus;
             
+            private global::System.Data.DataColumn columnDUI;
+            
+            private global::System.Data.DataColumn columnnames;
+            
+            private global::System.Data.DataColumn columnlastNames;
+            
+            private global::System.Data.DataColumn columnIdServices;
+            
+            private global::System.Data.DataColumn columnIdStatusBill;
+            
+            private global::System.Data.DataColumn columnIdCustomer;
+            
+            private global::System.Data.DataColumn columnIdEmployee;
+            
+            private global::System.Data.DataColumn columnIdmethodP;
+            
+            private global::System.Data.DataColumn columnExpr1;
+            
+            private global::System.Data.DataColumn columnlastName;
+            
+            private global::System.Data.DataColumn columnphone;
+            
+            private global::System.Data.DataColumn columnemail;
+            
+            private global::System.Data.DataColumn columnExpr2;
+            
+            private global::System.Data.DataColumn columnIdDetail;
+            
+            private global::System.Data.DataColumn columnPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public tbBillsDataTable() {
@@ -484,6 +514,126 @@ namespace PTC2024.View.Reporting.Bills {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DUIColumn {
+                get {
+                    return this.columnDUI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn namesColumn {
+                get {
+                    return this.columnnames;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn lastNamesColumn {
+                get {
+                    return this.columnlastNames;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IdServicesColumn {
+                get {
+                    return this.columnIdServices;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IdStatusBillColumn {
+                get {
+                    return this.columnIdStatusBill;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IdCustomerColumn {
+                get {
+                    return this.columnIdCustomer;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IdEmployeeColumn {
+                get {
+                    return this.columnIdEmployee;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IdmethodPColumn {
+                get {
+                    return this.columnIdmethodP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Expr1Column {
+                get {
+                    return this.columnExpr1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn lastNameColumn {
+                get {
+                    return this.columnlastName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn phoneColumn {
+                get {
+                    return this.columnphone;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn emailColumn {
+                get {
+                    return this.columnemail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Expr2Column {
+                get {
+                    return this.columnExpr2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IdDetailColumn {
+                get {
+                    return this.columnIdDetail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PriceColumn {
+                get {
+                    return this.columnPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -535,7 +685,21 @@ namespace PTC2024.View.Reporting.Bills {
                         string paymentMethod, 
                         string serviceName, 
                         decimal serviceAmount, 
-                        string billStatus) {
+                        string billStatus, 
+                        string DUI, 
+                        string names, 
+                        string lastNames, 
+                        int IdServices, 
+                        int IdStatusBill, 
+                        int IdCustomer, 
+                        int IdEmployee, 
+                        int IdmethodP, 
+                        string Expr1, 
+                        string lastName, 
+                        string phone, 
+                        string email, 
+                        int Expr2, 
+                        decimal Price) {
                 tbBillsRow rowtbBillsRow = ((tbBillsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -554,7 +718,22 @@ namespace PTC2024.View.Reporting.Bills {
                         paymentMethod,
                         serviceName,
                         serviceAmount,
-                        billStatus};
+                        billStatus,
+                        DUI,
+                        names,
+                        lastNames,
+                        IdServices,
+                        IdStatusBill,
+                        IdCustomer,
+                        IdEmployee,
+                        IdmethodP,
+                        Expr1,
+                        lastName,
+                        phone,
+                        email,
+                        Expr2,
+                        null,
+                        Price};
                 rowtbBillsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbBillsRow);
                 return rowtbBillsRow;
@@ -601,6 +780,21 @@ namespace PTC2024.View.Reporting.Bills {
                 this.columnserviceName = base.Columns["serviceName"];
                 this.columnserviceAmount = base.Columns["serviceAmount"];
                 this.columnbillStatus = base.Columns["billStatus"];
+                this.columnDUI = base.Columns["DUI"];
+                this.columnnames = base.Columns["names"];
+                this.columnlastNames = base.Columns["lastNames"];
+                this.columnIdServices = base.Columns["IdServices"];
+                this.columnIdStatusBill = base.Columns["IdStatusBill"];
+                this.columnIdCustomer = base.Columns["IdCustomer"];
+                this.columnIdEmployee = base.Columns["IdEmployee"];
+                this.columnIdmethodP = base.Columns["IdmethodP"];
+                this.columnExpr1 = base.Columns["Expr1"];
+                this.columnlastName = base.Columns["lastName"];
+                this.columnphone = base.Columns["phone"];
+                this.columnemail = base.Columns["email"];
+                this.columnExpr2 = base.Columns["Expr2"];
+                this.columnIdDetail = base.Columns["IdDetail"];
+                this.columnPrice = base.Columns["Price"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -640,6 +834,36 @@ namespace PTC2024.View.Reporting.Bills {
                 base.Columns.Add(this.columnserviceAmount);
                 this.columnbillStatus = new global::System.Data.DataColumn("billStatus", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbillStatus);
+                this.columnDUI = new global::System.Data.DataColumn("DUI", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDUI);
+                this.columnnames = new global::System.Data.DataColumn("names", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnames);
+                this.columnlastNames = new global::System.Data.DataColumn("lastNames", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlastNames);
+                this.columnIdServices = new global::System.Data.DataColumn("IdServices", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdServices);
+                this.columnIdStatusBill = new global::System.Data.DataColumn("IdStatusBill", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdStatusBill);
+                this.columnIdCustomer = new global::System.Data.DataColumn("IdCustomer", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdCustomer);
+                this.columnIdEmployee = new global::System.Data.DataColumn("IdEmployee", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdEmployee);
+                this.columnIdmethodP = new global::System.Data.DataColumn("IdmethodP", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdmethodP);
+                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr1);
+                this.columnlastName = new global::System.Data.DataColumn("lastName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlastName);
+                this.columnphone = new global::System.Data.DataColumn("phone", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnphone);
+                this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemail);
+                this.columnExpr2 = new global::System.Data.DataColumn("Expr2", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr2);
+                this.columnIdDetail = new global::System.Data.DataColumn("IdDetail", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdDetail);
+                this.columnPrice = new global::System.Data.DataColumn("Price", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdBill}, true));
                 this.columnIdBill.AutoIncrement = true;
@@ -669,6 +893,25 @@ namespace PTC2024.View.Reporting.Bills {
                 this.columnserviceAmount.AllowDBNull = false;
                 this.columnbillStatus.AllowDBNull = false;
                 this.columnbillStatus.MaxLength = 20;
+                this.columnDUI.AllowDBNull = false;
+                this.columnDUI.MaxLength = 10;
+                this.columnnames.AllowDBNull = false;
+                this.columnnames.MaxLength = 100;
+                this.columnlastNames.AllowDBNull = false;
+                this.columnlastNames.MaxLength = 100;
+                this.columnExpr1.AllowDBNull = false;
+                this.columnExpr1.MaxLength = 150;
+                this.columnlastName.AllowDBNull = false;
+                this.columnlastName.MaxLength = 150;
+                this.columnphone.AllowDBNull = false;
+                this.columnphone.MaxLength = 9;
+                this.columnemail.AllowDBNull = false;
+                this.columnemail.MaxLength = 256;
+                this.columnIdDetail.AutoIncrement = true;
+                this.columnIdDetail.AutoIncrementSeed = -1;
+                this.columnIdDetail.AutoIncrementStep = -1;
+                this.columnIdDetail.AllowDBNull = false;
+                this.columnIdDetail.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1018,6 +1261,206 @@ namespace PTC2024.View.Reporting.Bills {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string DUI {
+                get {
+                    return ((string)(this[this.tabletbBills.DUIColumn]));
+                }
+                set {
+                    this[this.tabletbBills.DUIColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string names {
+                get {
+                    return ((string)(this[this.tabletbBills.namesColumn]));
+                }
+                set {
+                    this[this.tabletbBills.namesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string lastNames {
+                get {
+                    return ((string)(this[this.tabletbBills.lastNamesColumn]));
+                }
+                set {
+                    this[this.tabletbBills.lastNamesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int IdServices {
+                get {
+                    try {
+                        return ((int)(this[this.tabletbBills.IdServicesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'IdServices\' de la tabla \'tbBills\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbBills.IdServicesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int IdStatusBill {
+                get {
+                    try {
+                        return ((int)(this[this.tabletbBills.IdStatusBillColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'IdStatusBill\' de la tabla \'tbBills\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbBills.IdStatusBillColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int IdCustomer {
+                get {
+                    try {
+                        return ((int)(this[this.tabletbBills.IdCustomerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'IdCustomer\' de la tabla \'tbBills\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbBills.IdCustomerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int IdEmployee {
+                get {
+                    try {
+                        return ((int)(this[this.tabletbBills.IdEmployeeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'IdEmployee\' de la tabla \'tbBills\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbBills.IdEmployeeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int IdmethodP {
+                get {
+                    try {
+                        return ((int)(this[this.tabletbBills.IdmethodPColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'IdmethodP\' de la tabla \'tbBills\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbBills.IdmethodPColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Expr1 {
+                get {
+                    return ((string)(this[this.tabletbBills.Expr1Column]));
+                }
+                set {
+                    this[this.tabletbBills.Expr1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string lastName {
+                get {
+                    return ((string)(this[this.tabletbBills.lastNameColumn]));
+                }
+                set {
+                    this[this.tabletbBills.lastNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string phone {
+                get {
+                    return ((string)(this[this.tabletbBills.phoneColumn]));
+                }
+                set {
+                    this[this.tabletbBills.phoneColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string email {
+                get {
+                    return ((string)(this[this.tabletbBills.emailColumn]));
+                }
+                set {
+                    this[this.tabletbBills.emailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Expr2 {
+                get {
+                    try {
+                        return ((int)(this[this.tabletbBills.Expr2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Expr2\' de la tabla \'tbBills\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbBills.Expr2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int IdDetail {
+                get {
+                    return ((int)(this[this.tabletbBills.IdDetailColumn]));
+                }
+                set {
+                    this[this.tabletbBills.IdDetailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Price {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabletbBills.PriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Price\' de la tabla \'tbBills\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbBills.PriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsdiscountNull() {
                 return this.IsNull(this.tabletbBills.discountColumn);
             }
@@ -1062,6 +1505,90 @@ namespace PTC2024.View.Reporting.Bills {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetdateissuanceNull() {
                 this[this.tabletbBills.dateissuanceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsIdServicesNull() {
+                return this.IsNull(this.tabletbBills.IdServicesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetIdServicesNull() {
+                this[this.tabletbBills.IdServicesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsIdStatusBillNull() {
+                return this.IsNull(this.tabletbBills.IdStatusBillColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetIdStatusBillNull() {
+                this[this.tabletbBills.IdStatusBillColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsIdCustomerNull() {
+                return this.IsNull(this.tabletbBills.IdCustomerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetIdCustomerNull() {
+                this[this.tabletbBills.IdCustomerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsIdEmployeeNull() {
+                return this.IsNull(this.tabletbBills.IdEmployeeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetIdEmployeeNull() {
+                this[this.tabletbBills.IdEmployeeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsIdmethodPNull() {
+                return this.IsNull(this.tabletbBills.IdmethodPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetIdmethodPNull() {
+                this[this.tabletbBills.IdmethodPColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsExpr2Null() {
+                return this.IsNull(this.tabletbBills.Expr2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetExpr2Null() {
+                this[this.tabletbBills.Expr2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPriceNull() {
+                return this.IsNull(this.tabletbBills.PriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPriceNull() {
+                this[this.tabletbBills.PriceColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1241,6 +1768,21 @@ namespace PTC2024.View.Reporting.Bills.DataSet_RBillsTableAdapters {
             tableMapping.ColumnMappings.Add("serviceName", "serviceName");
             tableMapping.ColumnMappings.Add("serviceAmount", "serviceAmount");
             tableMapping.ColumnMappings.Add("billStatus", "billStatus");
+            tableMapping.ColumnMappings.Add("DUI", "DUI");
+            tableMapping.ColumnMappings.Add("names", "names");
+            tableMapping.ColumnMappings.Add("lastNames", "lastNames");
+            tableMapping.ColumnMappings.Add("IdServices", "IdServices");
+            tableMapping.ColumnMappings.Add("IdStatusBill", "IdStatusBill");
+            tableMapping.ColumnMappings.Add("IdCustomer", "IdCustomer");
+            tableMapping.ColumnMappings.Add("IdEmployee", "IdEmployee");
+            tableMapping.ColumnMappings.Add("IdmethodP", "IdmethodP");
+            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
+            tableMapping.ColumnMappings.Add("lastName", "lastName");
+            tableMapping.ColumnMappings.Add("phone", "phone");
+            tableMapping.ColumnMappings.Add("email", "email");
+            tableMapping.ColumnMappings.Add("Expr2", "Expr2");
+            tableMapping.ColumnMappings.Add("IdDetail", "IdDetail");
+            tableMapping.ColumnMappings.Add("Price", "Price");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1254,16 +1796,39 @@ namespace PTC2024.View.Reporting.Bills.DataSet_RBillsTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT tbBills.IdBill, tbBills.companyName, tbBills.NIT, tbBills.NRC, tbBills.CustomerDui, tbBills.CustomerPhone, tbBills.CustomerEmail, tbBills.discount, tbBills.subtotalPay, tbBills.totalPay, tbBills.startDate, tbBills.FinalDate, tbBills.dateissuance, 
-                  tbMethodP.paymentMethod, tbServices.serviceName, tbServices.serviceAmount, tbStatusBill.billStatus
+                  tbMethodP.paymentMethod, tbServices.serviceName, tbServices.serviceAmount, tbStatusBill.billStatus, tbCustomer.DUI, tbCustomer.names, tbCustomer.lastNames, tbBills.IdServices, tbBills.IdStatusBill, tbBills.IdCustomer, 
+                  tbBills.IdEmployee, tbBills.IdmethodP, tbEmployee.names AS Expr1, tbEmployee.lastName, tbCustomer.phone, tbCustomer.email, tbBillDataS.IdServices AS Expr2, tbBillDataS.IdDetail, tbBillDataS.Price
 FROM     tbBills INNER JOIN
                   tbMethodP ON tbBills.IdmethodP = tbMethodP.IdmethodP INNER JOIN
                   tbServices ON tbBills.IdServices = tbServices.IdServices INNER JOIN
-                  tbStatusBill ON tbBills.IdStatusBill = tbStatusBill.IdStatusBill";
+                  tbStatusBill ON tbBills.IdStatusBill = tbStatusBill.IdStatusBill INNER JOIN
+                  tbCustomer ON tbBills.IdCustomer = tbCustomer.IdCustomer INNER JOIN
+                  tbEmployee ON tbBills.IdEmployee = tbEmployee.IdEmployee INNER JOIN
+                  tbBillDataS ON tbServices.IdServices = tbBillDataS.IdServices";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT \r\n\ta.IdDetail AS \'Id detalle\',\r\n\tb.serviceName AS \'Servicio\',\r\n\ta.Price AS" +
+                " \'Precio\'\r\n\tFROM tbBillDataS a\r\n\r\nINNER JOIN tbServices b ON a.IdServices = b.Id" +
+                "Services";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT tbBills.IdBill, tbBills.companyName, tbBills.NIT, tbBills.NRC, tbBills.CustomerDui, tbBills.CustomerPhone, tbBills.CustomerEmail, tbBills.discount, tbBills.subtotalPay, tbBills.totalPay, tbBills.startDate, tbBills.FinalDate, tbBills.dateissuance, 
+                  tbMethodP.paymentMethod, tbServices.serviceName, tbServices.serviceAmount, tbStatusBill.billStatus, tbCustomer.DUI, tbCustomer.names, tbCustomer.lastNames, tbBills.IdServices, tbBills.IdStatusBill, tbBills.IdCustomer, 
+                  tbBills.IdEmployee, tbBills.IdmethodP, tbEmployee.names AS Expr1, tbEmployee.lastName, tbCustomer.phone, tbCustomer.email
+FROM     tbBills INNER JOIN
+                  tbMethodP ON tbBills.IdmethodP = tbMethodP.IdmethodP INNER JOIN
+                  tbServices ON tbBills.IdServices = tbServices.IdServices INNER JOIN
+                  tbStatusBill ON tbBills.IdStatusBill = tbStatusBill.IdStatusBill INNER JOIN
+                  tbCustomer ON tbBills.IdCustomer = tbCustomer.IdCustomer INNER JOIN
+                  tbEmployee ON tbBills.IdEmployee = tbEmployee.IdEmployee AND tbBills.IdBill = @param";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdBill", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1285,6 +1850,56 @@ FROM     tbBills INNER JOIN
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSet_RBills.tbBillsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet_RBills.tbBillsDataTable dataTable = new DataSet_RBills.tbBillsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByD(DataSet_RBills.tbBillsDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet_RBills.tbBillsDataTable GetDataBy1() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            DataSet_RBills.tbBillsDataTable dataTable = new DataSet_RBills.tbBillsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int PrintBill(DataSet_RBills.tbBillsDataTable dataTable, int param) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(param));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet_RBills.tbBillsDataTable GetDataBy(int param) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(param));
             DataSet_RBills.tbBillsDataTable dataTable = new DataSet_RBills.tbBillsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

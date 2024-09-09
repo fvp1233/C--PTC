@@ -152,34 +152,42 @@ namespace PTC2024.Controller.BillsController
 
         public void More(object sender, EventArgs e)
         {
-            DAOAddBills dAOAdd = new DAOAddBills();
-            if (int.TryParse(objAddBills.comboServiceBill.SelectedValue.ToString(), out int selectedServiceId))
+            try
             {
-                // Obtener el precio del servicio seleccionado
-                float price = dAOAdd.GetServicePrice(selectedServiceId);
-
-                // Añadir el servicio y precio a la base de datos
-                dAOAdd.IdServices1 = selectedServiceId;
-                dAOAdd.Price1 = price;
-                int An = dAOAdd.DataB();
-
-                // Verificamos el valor que nos retorna dicho método
-                if (An == 1)
+                DAOAddBills dAOAdd = new DAOAddBills();
+                if (int.TryParse(objAddBills.comboServiceBill.SelectedValue.ToString(), out int selectedServiceId))
                 {
-                    MessageBox.Show("Servicio seleccionado con éxito", "Proceso Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Obtener el precio del servicio seleccionado
+                    float price = dAOAdd.GetServicePrice(selectedServiceId);
+
+                    // Añadir el servicio y precio a la base de datos
+                    dAOAdd.IdServices1 = selectedServiceId;
+                    dAOAdd.Price1 = price;
+                    int result = dAOAdd.DataB();
+
+                    // Verificamos el valor que nos retorna dicho método
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Servicio seleccionado con éxito", "Proceso Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Por favor vuelva a seleccionar el servicio", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        objAddBills.Close();
+                    }
+                    InitialCharge();
                 }
                 else
                 {
-                    MessageBox.Show("Por favor vuelva a seleccionar el servicio", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    objAddBills.Close();
+                    MessageBox.Show("El valor seleccionado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                InitialCharge();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("El valor seleccionado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         /// <summary>
         /// Método para agregar cliente no registrado
         /// </summary>
