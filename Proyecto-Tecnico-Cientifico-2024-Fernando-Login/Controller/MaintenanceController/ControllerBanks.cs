@@ -42,7 +42,7 @@ namespace PTC2024.Controller.MaintenanceController
             objBanks.dgvBanks.DataSource = ds.Tables["viewBanks"];
         }
 
-        public void NewBank(object sender,EventArgs e)
+        public void NewBank(object sender, EventArgs e)
         {
             //Verificación de campos vacíos
             if (!(string.IsNullOrEmpty(objBanks.txtBank.Text)))
@@ -57,7 +57,7 @@ namespace PTC2024.Controller.MaintenanceController
                 //Validamos la respuesta que nos retornaron
                 if (returnedAnswer == 1)
                 {
-                    MessageBox.Show("El banco se agregó correctamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information );
+                    MessageBox.Show("El banco se agregó correctamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -80,31 +80,25 @@ namespace PTC2024.Controller.MaintenanceController
             //Creamos la variable con la que sabremos que registro esta seleccionado en el datagrid
             int row = objBanks.dgvBanks.CurrentRow.Index;
             int idBank = int.Parse(objBanks.dgvBanks[0, row].Value.ToString());
-            if (idBank > 12){
-                //Confirmación por parte del usuario
-                if (MessageBox.Show("¿Está seguro que desea eliminar este banco?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    //Damos valor al getter del dao
-                    daoBanks.IdBank = int.Parse(objBanks.dgvBanks[0, row].Value.ToString());
-                    //ejecutamos el método del dao
-                    int returnedAnswer = daoBanks.DeleteBank();
-                    //validamos la respuesta devuelta
-                    if (returnedAnswer == 1)
-                    {
-                        MessageBox.Show("El banco se eliminó correctamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("El banco no pudo ser eliminado", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    LoadDataGridBanks();
-                }
-            }
-            else
+            //Confirmación por parte del usuario
+            if (MessageBox.Show("¿Está seguro que desea eliminar este banco?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                objBanks.snack.Show(objBanks, "Este banco no se puede eliminar.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomCenter);
+                //Damos valor al getter del dao
+                daoBanks.IdBank = int.Parse(objBanks.dgvBanks[0, row].Value.ToString());
+                //ejecutamos el método del dao
+                int returnedAnswer = daoBanks.DeleteBank();
+                //validamos la respuesta devuelta
+                if (returnedAnswer == 1)
+                {
+                    MessageBox.Show("El banco se eliminó correctamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    objBanks.snack.Show(objBanks, "Este banco no se puede eliminar debido a que algun empleado pertenece a este banco", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomCenter);
+                }
+                LoadDataGridBanks();
             }
-            
+
         }
     }
 }

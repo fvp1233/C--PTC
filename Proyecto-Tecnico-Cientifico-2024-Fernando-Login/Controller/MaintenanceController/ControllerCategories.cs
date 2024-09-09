@@ -15,7 +15,7 @@ namespace PTC2024.Controller.MaintenanceController
         //objeto del formulario
         FrmCategories objCategories;
         //objeto de la clase DAOCategories
-        
+
         //Constructor del controlador
         public ControllerCategories(FrmCategories View)
         {
@@ -50,13 +50,13 @@ namespace PTC2024.Controller.MaintenanceController
                 DAOCategories daoCategories = new DAOCategories();
                 daoCategories.Category = objCategories.txtCategorie.Text.Trim();
                 int returnedAnswer = daoCategories.AddCategorie();
-                if ( returnedAnswer == 1)
+                if (returnedAnswer == 1)
                 {
                     MessageBox.Show("La categoría se ingresó correctamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("La categoría no pudo ser ingresada", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Information );
+                    MessageBox.Show("La categoría no pudo ser ingresada", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
@@ -71,30 +71,21 @@ namespace PTC2024.Controller.MaintenanceController
         {
             DAOCategories daoCategories = new DAOCategories();
             int row = objCategories.dgvCategories.CurrentRow.Index;
-            int idCategory = int.Parse(objCategories.dgvCategories[0,row].Value.ToString());
-            if (idCategory > 5)
+            int idCategory = int.Parse(objCategories.dgvCategories[0, row].Value.ToString());
+            if (MessageBox.Show("¿Seguro que desea eliminar esta categoría?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (MessageBox.Show("¿Seguro que desea eliminar esta categoría?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                daoCategories.IdCategory = int.Parse(objCategories.dgvCategories[0, row].Value.ToString());
+                int returnedAnswer = daoCategories.DeleteCategorie();
+                if (returnedAnswer == 1)
                 {
-                    daoCategories.IdCategory = int.Parse(objCategories.dgvCategories[0, row].Value.ToString());
-                    int returnedAnswer = daoCategories.DeleteCategorie();
-                    if (returnedAnswer == 1)
-                    {
-                        MessageBox.Show("La categoría se eliminó correctamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("La categoría no pudo ser eliminada", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    GetCategoriesDgv();
+                    MessageBox.Show("La categoría se eliminó correctamente", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    objCategories.snack.Show(objCategories, "Esta categoria no se puede eliminar debido a que algun servicio pertenece a esta categoria", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomCenter);
+                }
+                GetCategoriesDgv();
             }
-            else
-            {
-                objCategories.snack.Show(objCategories, "Esta categoría no se puede eliminar.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomCenter);
-            }
-            
-            
         }
     }
 }
