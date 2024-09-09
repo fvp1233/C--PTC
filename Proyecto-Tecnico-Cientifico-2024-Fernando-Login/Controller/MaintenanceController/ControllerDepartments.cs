@@ -61,28 +61,22 @@ namespace PTC2024.Controller.MaintenanceController
 
             int idDepart = int.Parse(objDep.dgvDepartments[0, pos].Value.ToString());
 
-            if (idDepart > 5)
+            if (MessageBox.Show("Estas seguro de borrar los datos, esta accion no se puede revertir", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (MessageBox.Show("Estas seguro de borrar los datos, esta accion no se puede revertir", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
 
-                    dAODepartment.IdDepartment = int.Parse(objDep.dgvDepartments[0, pos].Value.ToString());
-                    int answer = dAODepartment.DeleteDepartment();
-                    if (answer == 1)
-                    {
-                        MessageBox.Show("Los datos se eliminaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Los datos no se eliminaron debido a un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                dAODepartment.IdDepartment = int.Parse(objDep.dgvDepartments[0, pos].Value.ToString());
+                int answer = dAODepartment.DeleteDepartment();
+                if (answer == 1)
+                {
+                    MessageBox.Show("Los datos se eliminaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    objDep.snack.Show(objDep, "Este departamento no se puede eliminar debido a que un empleado pertenece a este departamento", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomCenter);
                 }
             }
-            else
-            {
-                objDep.snack.Show(objDep, "Este departamento no se puede eliminar.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomCenter);
-            }
             RefreshData();
+
         }
         public void LoadData(object sender, EventArgs e)
         {

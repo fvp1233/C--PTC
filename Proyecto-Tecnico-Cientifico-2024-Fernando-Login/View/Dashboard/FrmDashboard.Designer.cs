@@ -863,14 +863,14 @@
             series1.MarkerSize = 10;
             series1.Name = "Series1";
             this.chartPayrolls.Series.Add(series1);
-            this.chartPayrolls.Size = new System.Drawing.Size(781, 285);
+            this.chartPayrolls.Size = new System.Drawing.Size(827, 285);
             this.chartPayrolls.TabIndex = 16;
             this.chartPayrolls.Text = "chart1";
             title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
             title1.BackColor = System.Drawing.Color.Transparent;
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             title1.Name = "Title1";
-            title1.Text = "Total de";
+            title1.Text = "Resumen de pago de planillas";
             this.chartPayrolls.Titles.Add(title1);
             // 
             // chart2
@@ -886,7 +886,7 @@
             legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend2.Name = "Legend1";
             this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(813, 150);
+            this.chart2.Location = new System.Drawing.Point(850, 150);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             this.chart2.PaletteCustomColors = new System.Drawing.Color[] {
@@ -908,13 +908,13 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(342, 487);
+            this.chart2.Size = new System.Drawing.Size(305, 487);
             this.chart2.TabIndex = 17;
             this.chart2.Text = "chart2";
             title2.Alignment = System.Drawing.ContentAlignment.TopLeft;
             title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             title2.Name = "Title1";
-            title2.Text = "Total de";
+            title2.Text = "Top Servicios";
             this.chart2.Titles.Add(title2);
             // 
             // bunifuPanel6

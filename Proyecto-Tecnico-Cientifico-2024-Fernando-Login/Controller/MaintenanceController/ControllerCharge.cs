@@ -73,7 +73,7 @@ namespace PTC2024.Controller.MaintenanceController
                 }
                 else
                 {
-                    MessageBox.Show("Los datos no se eliminaron debido a un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    objCharge.snack.Show(objCharge, "Este cargo no se puede eliminar debido a que un empleado pertenece a este puesto", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomCenter);
                 }
             }
             RefreshData();

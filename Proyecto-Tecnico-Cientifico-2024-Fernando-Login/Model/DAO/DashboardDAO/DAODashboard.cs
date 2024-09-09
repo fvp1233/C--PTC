@@ -106,7 +106,7 @@ namespace PTC2024.Model.DAO.DashboardDAO
                 FromDate = new DateTime(2020, 8, 1);
                 ToDate = new DateTime(2025, 7, 7);
                 PayrollsList = new List<PayrollsByDate>();
-                string query = "SELECT issueDate,SUM(netPay) FROM tbPayroll WHERE issueDate BETWEEN @fromDate AND @toDate group by issueDate";
+                string query = "SELECT issueDate,SUM(netPay + christmasBonus) FROM tbPayroll WHERE issueDate BETWEEN @fromDate AND @toDate group by issueDate";
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
                 //cmd.Parameters.Add("@fromDate", System.Data.SqlDbType.DateTime).Value = FromDate;
                 //cmd.Parameters.Add("@toDate", System.Data.SqlDbType.DateTime).Value = ToDate;
