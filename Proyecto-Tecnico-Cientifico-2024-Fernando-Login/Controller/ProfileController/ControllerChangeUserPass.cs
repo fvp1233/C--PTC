@@ -99,7 +99,8 @@ namespace PTC2024.Controller.ProfileController
                             objChangeP.txtConfirmPass.Enabled = false;
                             objChangeP.btnSave.Enabled = false;
 
-                            objChangeP.snack.Show(objChangeP, "La contraseña se actualizó con exito.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 2500, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomLeft);
+                            SendEmail();
+                            objChangeP.snack.Show(objChangeP, "La contraseña se actualizó con exito.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 2500, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomLeft);                          
                         }
                         else
                         {
@@ -120,6 +121,22 @@ namespace PTC2024.Controller.ProfileController
             {
                 objChangeP.snack.Show(objChangeP, "Llene los campos necesarios.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 2000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomLeft);
             }
+        }
+
+        public void SendEmail()
+        {
+            Email email = new Email();
+            string para;
+            string de;
+            string subject;
+            string message;
+
+            para = SessionVar.Email;
+            de = "h2c.soporte.usuarios@gmail.com";
+            subject = "H2C: Cambio de contraseña";
+            message = $"Hola \b{SessionVar.FullName}\b, se te ha enviado este correo debido a que alguien realizó un cambio de contraseña en tu cuenta \b'{SessionVar.Username}'\b.\n\n Si tú no fuiste quien realizó este cambio de contraseña, contáctate inmediatamente con un administrador.";
+
+            email.SendPasswordChange(para, de, subject, message);
         }
     }
 }

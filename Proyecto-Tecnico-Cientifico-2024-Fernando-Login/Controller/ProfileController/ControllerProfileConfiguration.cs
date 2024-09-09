@@ -88,7 +88,7 @@ namespace PTC2024.Controller.ProfileController
                 int answer = daoProfile.SavePfp();
                 if (answer == 1)
                 {
-                    MessageBox.Show($"Tu foto de perfil se ha agregado exitosamente.", "Agregar Imagen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Tu nueva foto de perfil se ha agregado exitosamente.", "Agregar Imagen", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -166,7 +166,8 @@ namespace PTC2024.Controller.ProfileController
                                 objProfile.lblAddress.Text = SessionVar.Adress;
                                 objProfile.picUser.Image = ByteArrayToImage(SessionVar.ProfilePic);
                                 objProfileC.snack.Show(start, "Reinicie el programa o cierre y vuelva a iniciar sesión para ver todos los cambios.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
-                                objProfileC.snack.Show(start, "Su información se actualizó correctamente.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);                                
+                                objProfileC.snack.Show(start, "Su información se actualizó correctamente.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);      
+                                
                             }
                             else
                             {

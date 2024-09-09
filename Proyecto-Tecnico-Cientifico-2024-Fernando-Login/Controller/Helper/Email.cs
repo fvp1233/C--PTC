@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Mail;
 using System.Windows.Forms;
+using PTC2024.View.ProfileSettings;
 
 namespace PTC2024.Controller.Helper
 {
@@ -41,6 +42,35 @@ namespace PTC2024.Controller.Helper
             catch (Exception ex)
             {
                 MessageBox.Show($"Ocurrió un error enviando el email. \n Error: {ex.Message}", "Error");
+            }
+        }
+
+        public void SendPasswordChange(string para, string de, string subject, string message)
+        {
+            FrmChangeUserPass objChangeP = new FrmChangeUserPass();
+            try
+            {
+
+                Client.Host = "smtp.gmail.com";
+                Client.EnableSsl = true;
+                Client.Port = 587;
+                Client.Credentials = creds;
+
+                MailAddress to = new MailAddress(para);
+                MailAddress from = new MailAddress(de);
+                msg.Subject = subject;
+                msg.Body = message;
+                msg.From = from;
+                msg.To.Add(to);
+
+                //
+                Client.Send(msg);
+
+                objChangeP.snack.Show(objChangeP, "Se envío un correo al usuario.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 2000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomLeft);
+            }
+            catch (Exception ex)
+            {
+                objChangeP.snack.Show(objChangeP, "Hubo un error enviando el correo.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 2000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomLeft);
             }
         }
     }
