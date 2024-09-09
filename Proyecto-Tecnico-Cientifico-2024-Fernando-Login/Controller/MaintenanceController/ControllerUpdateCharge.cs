@@ -19,6 +19,8 @@ namespace PTC2024.Controller.MaintenanceController
             Disable();
             objUpdateCharge.btnUpdate.Click += new EventHandler(UpdateCharge);
             objUpdateCharge.btnGoBack.Click += new EventHandler(CloseForm);
+            objUpdateCharge.txtCharge.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateCharge.txtBonus.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
         public void UpdateCharge(object sender, EventArgs e)
         {
@@ -67,6 +69,15 @@ namespace PTC2024.Controller.MaintenanceController
         public void CloseForm(object sender, EventArgs e)
         {
             CloseUpdate();
+        }
+
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
         }
     }
 }

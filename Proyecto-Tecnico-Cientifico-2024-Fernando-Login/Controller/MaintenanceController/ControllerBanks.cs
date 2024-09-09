@@ -20,6 +20,7 @@ namespace PTC2024.Controller.MaintenanceController
             objBanks.btnAddBank.Click += new EventHandler(NewBank);
             objBanks.cmsDeleteBank.Click += new EventHandler(DeleteBank);
             objBanks.btnGoBack.Click += new EventHandler(CloseForm);
+            objBanks.txtBank.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
 
         public void InitialCharge(object sender, EventArgs e)
@@ -105,6 +106,15 @@ namespace PTC2024.Controller.MaintenanceController
                 objBanks.snack.Show(objBanks, "Este banco no se puede eliminar.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomCenter);
             }
             
+        }
+
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
         }
     }
 }

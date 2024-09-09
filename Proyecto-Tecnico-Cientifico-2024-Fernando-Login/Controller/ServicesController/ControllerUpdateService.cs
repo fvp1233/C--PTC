@@ -32,6 +32,9 @@ namespace PTC2024.Controller.ServicesController
             objUpdateService.Load += new EventHandler(ChargeDropDown);
             objUpdateService.btnCloseUpdateService.Click += new EventHandler(CloseUpdateService);
             objUpdateService.btnUpdateService.Click += new EventHandler(UpdateService);
+            objUpdateService.txtNombres.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateService.txtDescripcion.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateService.txtMonto.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
 
 
@@ -137,6 +140,15 @@ namespace PTC2024.Controller.ServicesController
             {
                 MessageBox.Show(ex.ToString());
 
+            }
+        }
+
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
         }
     }

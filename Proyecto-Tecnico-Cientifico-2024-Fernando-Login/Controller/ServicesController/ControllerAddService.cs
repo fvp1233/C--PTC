@@ -25,6 +25,9 @@ namespace PTC2024.Controller.ServicesController
             objAddService.Load += new EventHandler(ChargeDropDowns);
             objAddService.BtnCancelar.Click += new EventHandler(CloseAddService);
             objAddService.btnAddService.Click += new EventHandler(AddService);
+            objAddService.txtNombres.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddService.txtDescripcion.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddService.txtMonto.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
 
         /*Metodo para cargar el combobox*/
@@ -103,6 +106,15 @@ namespace PTC2024.Controller.ServicesController
         {
             /*Se cierra el formulario*/
             objAddService.Close();
+        }
+
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
         }
 
     }

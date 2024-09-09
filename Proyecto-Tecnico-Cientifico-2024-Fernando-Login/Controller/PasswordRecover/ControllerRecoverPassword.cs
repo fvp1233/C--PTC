@@ -22,6 +22,8 @@ namespace PTC2024.Controller.LogInController
             objPassword = View;
             objPassword.btnConfirm.Click += new EventHandler(RecoverPassword);
             objPassword.btnVolver.Click += new EventHandler(GoBack);
+            objPassword.txtUser.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objPassword.txtEmail.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
 
         public void RecoverPassword(object sender, EventArgs e)
@@ -70,6 +72,15 @@ namespace PTC2024.Controller.LogInController
             bool answer = DAORecover.ValidateCredentials();
 
             return answer;
+        }
+
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
         }
     }
 }

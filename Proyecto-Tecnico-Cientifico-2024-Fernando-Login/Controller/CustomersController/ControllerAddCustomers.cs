@@ -37,6 +37,12 @@ namespace PTC2024.Controller.CustomersController
             objAddCustomers.txtAddress.KeyDown += new KeyEventHandler(pasteDisabledAddress);
             objAddCustomers.txtPhone.KeyDown += new KeyEventHandler(pasteDisabledPhone);
             objAddCustomers.txtEmail.KeyDown += new KeyEventHandler(pasteDisabledEmail);
+            objAddCustomers.txtNames.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddCustomers.txtLastnames.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddCustomers.txtDui.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddCustomers.txtAddress.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddCustomers.txtPhone.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddCustomers.txtEmail.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
 
 
@@ -251,6 +257,14 @@ namespace PTC2024.Controller.CustomersController
             }
         }
 
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
+        }
     }
 }
 

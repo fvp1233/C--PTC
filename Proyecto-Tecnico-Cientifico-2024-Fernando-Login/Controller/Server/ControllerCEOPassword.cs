@@ -19,6 +19,7 @@ namespace PTC2024.Controller.Server
             objPassword.HidePassword.Click += new EventHandler(HidePassword);
             objPassword.ShowPassword.Click += new EventHandler(ShowPassword);
             objPassword.btnConfirm.Click += new EventHandler(VerifyPass);
+            objPassword.txtPassword.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
         public void VerifyPass(object sender, EventArgs e)
         {
@@ -59,6 +60,15 @@ namespace PTC2024.Controller.Server
         {
             objPassword.txtPassword.PasswordChar = '*';
             objPassword.HidePassword.Visible = false;
+        }
+
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
         }
     }
 }

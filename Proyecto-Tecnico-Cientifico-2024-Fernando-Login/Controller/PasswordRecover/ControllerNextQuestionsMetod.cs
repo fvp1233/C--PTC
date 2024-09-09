@@ -22,6 +22,9 @@ namespace PTC2024.Controller.PasswordRecover
             ChargeValues(username);
             objQuestionsM.btnVolver.Click += new EventHandler(Back);
             objQuestionsM.btnConfirm.Click += new EventHandler(CheckAnswers);
+            objQuestionsM.txtFirstAnswer.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objQuestionsM.txtSecondAnswer.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objQuestionsM.txtThirdAnswer.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
 
         public void Back(object sender, EventArgs e)
@@ -63,6 +66,15 @@ namespace PTC2024.Controller.PasswordRecover
             {
                 //si la respuesta es false, las respuestas no coinciden con el registro.
                 MessageBox.Show("Las respuestas no coinciden con el registro, inténtelo de nuevo", "Respuestas incorrectas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
         }
 

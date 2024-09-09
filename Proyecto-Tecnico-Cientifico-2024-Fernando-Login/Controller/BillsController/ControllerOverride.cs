@@ -32,6 +32,7 @@ namespace PTC2024.Controller.BillsController
             objoverrideBill.btnConfirm.Click += new EventHandler(ConfirmProcess);
             objoverrideBill.ShowPassword.Click += new EventHandler(ShowPassword);
             objoverrideBill.txtPasswordBunifu.Click += new EventHandler(HidePassword);
+            objoverrideBill.txtPasswordBunifu.MouseDown += new MouseEventHandler(DisableContextMenu);
 
         }
         /// <summary>
@@ -126,8 +127,15 @@ namespace PTC2024.Controller.BillsController
             get { return confirmValue; }
 
         }
-    
-    
 
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
         }
+
+    }
 }

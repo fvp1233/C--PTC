@@ -150,7 +150,6 @@
     <Compile Include="Controller\PayrollsController\ControllerAddPermission.cs" />
     <Compile Include="Controller\PayrollsController\ControllerInfoPayroll.cs" />
     <Compile Include="Controller\EmployeesController\ControllerEmployees.cs" />
-    <Compile Include="Controller\EmployeesController\ControllerPayrolls.cs" />
     <Compile Include="Controller\EmployeesController\ControllerUpdateEmployee.cs" />
     <Compile Include="Controller\PayrollsController\ControllerPermission.cs" />
     <Compile Include="Controller\PayrollsController\ControllerUpdatePayroll.cs" />

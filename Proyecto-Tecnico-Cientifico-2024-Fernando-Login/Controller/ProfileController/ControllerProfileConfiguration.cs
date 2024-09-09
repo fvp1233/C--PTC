@@ -30,6 +30,14 @@ namespace PTC2024.Controller.ProfileController
             objProfileC.btnSavePhoto.Click += new EventHandler(PutImage);
             objProfileC.btnGuardar.Click += new EventHandler(UpdateInfo);
             objProfileC.btnChangePassword.Click += new EventHandler(ChangePass);
+            objProfileC.txtNames.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objProfileC.txtLastNames.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objProfileC.txtEmail.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objProfileC.txtPhone.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objProfileC.txtDui.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objProfileC.txtBankA.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objProfileC.txtAffilliation.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objProfileC.txtAddress.MouseDown += new MouseEventHandler(DisableContextMenu);
 
         }
 
@@ -328,6 +336,15 @@ namespace PTC2024.Controller.ProfileController
         {
             FrmChangeUserPass open = new FrmChangeUserPass();
             open.ShowDialog();
+        }
+
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
         }
     }
 }

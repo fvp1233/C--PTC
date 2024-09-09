@@ -20,6 +20,9 @@ namespace PTC2024.Controller.ProfileController
             ChargeUser(username);
             objSecurityQ.btnSave.Click += new EventHandler(NewAnswers);
             objSecurityQ.btnVolver.Click += new EventHandler(GoBack);
+            objSecurityQ.txtFirstQ.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objSecurityQ.txtSecondQ.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objSecurityQ.txtThirdQ.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
 
         //método para cargar el user en su textbox
@@ -68,6 +71,15 @@ namespace PTC2024.Controller.ProfileController
         public void GoBack(object sender, EventArgs e)
         {
             objSecurityQ.Close();
+        }
+
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
         }
     }
 }

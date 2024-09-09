@@ -22,6 +22,9 @@ namespace PTC2024.Controller.ProfileController
             objChangeP = View;
             objChangeP.btnCheck.Click += new EventHandler(CheckPassword);
             objChangeP.btnSave.Click += new EventHandler(UpdatePass);
+            objChangeP.txtPass.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objChangeP.txtNewPass.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objChangeP.txtConfirmPass.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
 
         public void CheckPassword(object sender, EventArgs e)
@@ -137,6 +140,15 @@ namespace PTC2024.Controller.ProfileController
             message = $"Hola \b{SessionVar.FullName}\b, se te ha enviado este correo debido a que alguien realizó un cambio de contraseña en tu cuenta \b'{SessionVar.Username}'\b.\n\n Si tú no fuiste quien realizó este cambio de contraseña, contáctate inmediatamente con un administrador.";
 
             email.SendPasswordChange(para, de, subject, message);
+        }
+
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
         }
     }
 }

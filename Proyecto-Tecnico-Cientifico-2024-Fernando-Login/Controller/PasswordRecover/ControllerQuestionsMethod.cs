@@ -19,6 +19,7 @@ namespace PTC2024.Controller.PasswordRecover
             objQMethod = Vista;
             objQMethod.btnVolver.Click += new EventHandler(Back);
             objQMethod.btnConfirm.Click += new EventHandler(CheckRegister);
+            objQMethod.txtUser.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
 
         public void Back(object sender, EventArgs e)
@@ -58,6 +59,15 @@ namespace PTC2024.Controller.PasswordRecover
             {
                 //Si la respuesta es false, el usuario no existe
                 MessageBox.Show("No existe ningún empleado registrado con ese usuario", "Usuario inexistente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
         }
     }

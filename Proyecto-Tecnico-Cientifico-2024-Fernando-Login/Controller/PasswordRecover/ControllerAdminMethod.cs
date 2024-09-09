@@ -24,6 +24,11 @@ namespace PTC2024.Controller.PasswordRecover
             objAdminMethod.btnVolver.Click += new EventHandler(Back);
             objAdminMethod.btnConfirm.Click += new EventHandler(ChangePassword);
             objAdminMethod.btnReset.Click += new EventHandler(ResetPassword);
+            objAdminMethod.txtAdminUser.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAdminMethod.txtAdminPass.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAdminMethod.txtUser.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAdminMethod.txtUserNewPass.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAdminMethod.txtUserConfirmPass.MouseDown += new MouseEventHandler(DisableContextMenu);
 
         }
 
@@ -240,6 +245,15 @@ namespace PTC2024.Controller.PasswordRecover
             else
             {
                 return false;
+            }
+        }
+
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
         }
     }

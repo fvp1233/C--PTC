@@ -28,6 +28,12 @@ namespace PTC2024.Controller.CustomersController
             objUpdateCustomers.BtnActualizarCliente.Click += new EventHandler(UpdateCustomers);
             //Evento para cancelar el proceso
             objUpdateCustomers.BtnCancelar.Click += new EventHandler(CancelProcess);
+            objUpdateCustomers.txtNames.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateCustomers.txtLastNames.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateCustomers.txtDui.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateCustomers.txtAddress.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateCustomers.txtPhone.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateCustomers.txtEmail.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
 
         public void loadCombos(object sender, EventArgs e)
@@ -93,10 +99,17 @@ namespace PTC2024.Controller.CustomersController
 
         }
 
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
+        }
 
 
 
 
-
-}
+    }
 }

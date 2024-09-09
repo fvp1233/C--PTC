@@ -20,6 +20,7 @@ namespace PTC2024.Controller.MaintenanceController
             objDep.btnAddDepartment.Click += new EventHandler(NewDepartment);
             objDep.cmsDeleteDepartment.Click += new EventHandler(DeleteDepartment);
             objDep.btnGoBack.Click += new EventHandler(GoBack);
+            objDep.txtDepartment.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
         public void NewDepartment(object sender, EventArgs e)
         {
@@ -97,6 +98,15 @@ namespace PTC2024.Controller.MaintenanceController
         public void GoBack(object sender, EventArgs e)
         {
             objDep.Close();
+        }
+
+        private void DisableContextMenu(object sender, MouseEventArgs e)
+        {
+            // Desactiva el menú contextual al hacer clic derecho
+            if (e.Button == MouseButtons.Right)
+            {
+                ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
+            }
         }
     }
 }
