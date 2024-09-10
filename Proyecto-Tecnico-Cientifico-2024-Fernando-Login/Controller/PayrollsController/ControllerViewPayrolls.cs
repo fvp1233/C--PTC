@@ -121,14 +121,13 @@ namespace PTC2024.Controller.EmployeesController
                         int status = int.Parse(row["IdStatus"].ToString());
                         int idEmployee = int.Parse(row["IdEmployee"].ToString());
                         DateTime hireDate = DateTime.Parse(row["hireDate"].ToString());
-                        int startWorkYear = hireDate.Year;
-                        int startWorkMonth = hireDate.Month;
-                        int currentYear = DateTime.Now.Year;
                         double salary = double.Parse(row["salary"].ToString());
+
                         int daysWorked = 0;
                         double daySalary = 0;
                         double hourSalary = 0;
-                        int hoursWorked = 240;
+                        int hoursWorked = 0;
+
                         DataRow businessRow = businessDT.Rows[0];
                         DateTime firstUse = DateTime.Parse(businessRow["firstUse"].ToString());
                         int firstUseMonth = firstUse.Month;
@@ -136,11 +135,12 @@ namespace PTC2024.Controller.EmployeesController
 
                         if (status != 2)
                         {
-                            for (int year = firstUseYear; year <= currentYear; year++)
+                            for (int year = firstUseYear; year <= DateTime.Now.Year; year++)
                             {
                                 int startMonth = (year == firstUseYear) ? firstUseMonth : 1;
                                 for (int month = startMonth; month <= 12; month++)
                                 {
+                                    // Verificar si ya existe una planilla para el empleado en el mes
                                     DataRow[] existingPayrollRows = payrollDt.Select($"IdEmployee = {idEmployee} AND IssueDate = '{year}-{month:D2}-01'");
                                     if (existingPayrollRows.Length == 0)
                                     {
@@ -155,8 +155,25 @@ namespace PTC2024.Controller.EmployeesController
                                             {
                                                 DataRow bonusRow = bonusRows[0];
                                                 double roleBonus = double.Parse(bonusRow["positionBonus"].ToString());
-                                                daysWorked = 30;
-                                                daySalary = salary / daysWorked;
+
+                                                // Calcular días trabajados en el mes actual
+                                                DateTime currentDate = new DateTime(year, month, 1);
+                                                int totalDaysInMonth = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);
+
+                                                if (hireDate.Year == currentDate.Year && hireDate.Month == currentDate.Month)
+                                                {
+                                                    // Si es el primer mes de trabajo, calcular días trabajados desde la fecha de contratación
+                                                    daysWorked = totalDaysInMonth - hireDate.Day + 1;
+                                                    hoursWorked = daysWorked * 8; // Suponiendo 8 horas por día
+                                                }
+                                                else
+                                                {
+                                                    // Meses completos
+                                                    daysWorked = 30; // Asumimos 30 días para simplificar
+                                                    hoursWorked = 240;
+                                                }
+
+                                                daySalary = salary / 30;
                                                 hourSalary = daySalary / 8;
 
                                                 // Calcular salario total basado en horas trabajadas
@@ -217,7 +234,7 @@ namespace PTC2024.Controller.EmployeesController
             {
                 StartMenu objStart = new StartMenu(SessionVar.Username);
                 objStartForm = objStart;
-                objStartForm.snackBar.Show(objStartForm, $"Los datos fueron fueron insertados exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                objStartForm.snackBar.Show(objStartForm, $"Los datos fueron insertados exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
             else
             {
@@ -226,6 +243,7 @@ namespace PTC2024.Controller.EmployeesController
                 objStartForm.snackBar.Show(objStartForm, $"No hay empleados a los cuales generar planillas", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
         }
+
         public void RefreshData(object sender, EventArgs e)
         {
             DAOViewPayrolls DAOUpdatePayroll = new DAOViewPayrolls();
