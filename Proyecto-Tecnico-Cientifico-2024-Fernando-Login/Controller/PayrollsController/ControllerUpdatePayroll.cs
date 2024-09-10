@@ -24,14 +24,14 @@ namespace PTC2024.Controller.EmployeesController
             ChargeValues(nP, dui, employee, salary, possition, bonus, bankAccount, affiliationNumber, isss, afp, rent, netSalary, discountEmployee, issueDate, daysWorkded, daySalary, grossPay, hoursWorked, hourSalary, extraHours);
             objUpdatePayroll.btnConfirm.Click += new EventHandler(UpdatePayrollStatus);
             objUpdatePayroll.btnCancelar.Click += new EventHandler(CloseForm);
-            objUpdatePayroll.txtHoursWorked.KeyPress += new KeyPressEventHandler(DaysWorked);
-            objUpdatePayroll.txtDaysWorked.KeyPress += new KeyPressEventHandler(UpdateHoursWorked);
+            objUpdatePayroll.txtHoursWorked.TextChanged += new EventHandler(DaysWorked);
+            objUpdatePayroll.txtDaysWorked.TextChanged += new EventHandler(UpdateHoursWorked);
             objUpdatePayroll.txtHoursWorked.MouseDown += new MouseEventHandler(DisableContextMenu);
             objUpdatePayroll.txtDaysWorked.MouseDown += new MouseEventHandler(DisableContextMenu);
             objUpdatePayroll.txtExtraHours.MouseDown += new MouseEventHandler(DisableContextMenu);
-            objUpdatePayroll.txtHoursWorked.TextChanged += new EventHandler(HoursWorkedNum);
-            objUpdatePayroll.txtDaysWorked.TextChanged += new EventHandler(DaysWorkedNum);
-            objUpdatePayroll.txtExtraHours.TextChanged += new EventHandler(ExtraHoursNum);
+            objUpdatePayroll.txtHoursWorked.TextChange += new EventHandler(HoursWorkedNum);
+            objUpdatePayroll.txtDaysWorked.TextChange += new EventHandler(DaysWorkedNum);
+            objUpdatePayroll.txtExtraHours.TextChange += new EventHandler(ExtraHoursNum);
         }
         public void UpdatePayrollStatus(object sender, EventArgs e)
         {
@@ -122,7 +122,7 @@ namespace PTC2024.Controller.EmployeesController
 
            
         }
-        public void DaysWorked(object sender, KeyPressEventArgs e)
+        public void DaysWorked(object sender, EventArgs e)
         {
             try
             {
@@ -156,7 +156,7 @@ namespace PTC2024.Controller.EmployeesController
             }
 
         }
-        public void UpdateHoursWorked(object sender, KeyPressEventArgs e)
+        public void UpdateHoursWorked(object sender, EventArgs e)
         {
             // Verifica que el valor de los días trabajados sea un número válido
             int daysWorked;

@@ -88,8 +88,6 @@ namespace PTC2024.Controller.EmployeesController
                 }
             }
         }
-
-
         public double TruncateToTwoDecimals(double value)
         {
             return Math.Round(value, 2);
@@ -296,10 +294,18 @@ namespace PTC2024.Controller.EmployeesController
                                     roleBonus = double.Parse(bonusRow["positionBonus"].ToString());
                                 }
                             }
-
-                            // Calculando el salario bruto y neto con los valores recuperados
-                            double calculatedSalaryByHours = (hoursWorked + extraHours) * hourSalary;
-                            double calculatedSalary = TruncateToTwoDecimals(calculatedSalaryByHours + roleBonus);
+                            double calculatedSalaryByHours;
+                            double calculatedSalary;
+                            if (hoursWorked == 0)
+                            {
+                                calculatedSalary = 0;
+                            }
+                            else
+                            {
+                                // Calculando el salario bruto y neto con los valores recuperados
+                                calculatedSalaryByHours = (hoursWorked + extraHours) * hourSalary;
+                                calculatedSalary = TruncateToTwoDecimals(calculatedSalaryByHours + roleBonus);
+                            }
 
                             // Aplicar los descuentos igual que en CreatePayroll
                             double rent = GetRent(calculatedSalary);
@@ -329,7 +335,6 @@ namespace PTC2024.Controller.EmployeesController
                             DAOUpdatePayroll.DiscountEmployee = TruncateToTwoDecimals(GetEmployeeDiscount(calculatedSalary));
                             DAOUpdatePayroll.DiscountEmployer = TruncateToTwoDecimals(GetEmployerDiscount(calculatedSalary));
                             DAOUpdatePayroll.ChristmasBonus = christmasBonus;
-                            DAOUpdatePayroll.GossSalary = calculatedSalary;
                             DAOUpdatePayroll.DaySalary = daySalary;
                             DAOUpdatePayroll.DaysWorked = daysWorked;
                             DAOUpdatePayroll.HourSalary = hourSalary;
