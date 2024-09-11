@@ -33,6 +33,8 @@ namespace PTC2024.Controller.ProfileController
             objProfileC.txtNames.MouseDown += new MouseEventHandler(DisableContextMenu);
             objProfileC.txtLastNames.MouseDown += new MouseEventHandler(DisableContextMenu);
             objProfileC.txtEmail.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objProfileC.txtNames.TextChanged += new EventHandler(OnlyLettersName);
+            objProfileC.txtLastNames.TextChanged += new EventHandler(OnlyLettersLastName);
             objProfileC.txtPhone.MouseDown += new MouseEventHandler(DisableContextMenu);
             objProfileC.txtDui.MouseDown += new MouseEventHandler(DisableContextMenu);
             objProfileC.txtBankA.MouseDown += new MouseEventHandler(DisableContextMenu);
@@ -261,31 +263,37 @@ namespace PTC2024.Controller.ProfileController
         //Máscara para el textbox del telefono
         public void PhoneMask(object sender, EventArgs e)
         {
-            //Aqui se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar y no sea molesto para el usuario
+            // Aquí se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar
             int cursorPosition = objProfileC.txtPhone.SelectionStart;
 
-            //Con esto se remueve cualquier dato no numérico
+            // Remover cualquier dato no numérico
             string text = new string(objProfileC.txtPhone.Text.Where(c => char.IsDigit(c)).ToArray());
 
+            // Validar que el número empiece con 2, 6 o 7
+            if (text.Length > 0 && (text[0] != '2' && text[0] != '6' && text[0] != '7'))
+            {
+                // Si el primer carácter no es válido, limpiar el texto
+                text = string.Empty;
+            }
+
+            // Aplicar la máscara de teléfono (ej: ####-###)
             if (text.Length >= 5)
             {
                 text = text.Insert(4, "-");
-
             }
 
-            //Con esto se reposiciona el cursor, ya no se coloca antes del numero que va siguiente al guion, si no que se reajusta para que  se ponga en el orden que iba anteriormente
+            // Ajustar la posición del cursor si está después del guion
             if (cursorPosition == 5)
             {
                 cursorPosition++;
             }
 
-            //Le asignamos la máscara al texto que se ponga en el textbox
+            // Asignar el texto con la máscara al TextBox
             objProfileC.txtPhone.Text = text;
 
-            //Restablecemos la posición del cursor con la variable que se guardó antes
+            // Restablecer la posición del cursor
             objProfileC.txtPhone.SelectionStart = cursorPosition;
         }
-       
 
         //Aplicamos una máscara que solo deje meter el guion y caracteres numéricos para los textbox de numero de afiliacion y cuenta bancaria.
         public void AffiliatioNumberMask(object sender, EventArgs e)
@@ -346,5 +354,34 @@ namespace PTC2024.Controller.ProfileController
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
         }
+        public void OnlyLettersName(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objProfileC.txtNames.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras
+            string text = new string(objProfileC.txtNames.Text.Where(c => char.IsLetter(c)).ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objProfileC.txtNames.Text = text;
+
+            // Restaurar la posición del cursor
+            objProfileC.txtNames.SelectionStart = cursorPosition;
+        }
+        public void OnlyLettersLastName(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objProfileC.txtLastNames.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras
+            string text = new string(objProfileC.txtLastNames.Text.Where(c => char.IsLetter(c)).ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objProfileC.txtLastNames.Text = text;
+
+            // Restaurar la posición del cursor
+            objProfileC.txtLastNames.SelectionStart = cursorPosition;
+        }
+
     }
 }

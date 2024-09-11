@@ -30,6 +30,8 @@ namespace PTC2024.Controller
             objAddEmployee.txtAffiliationNumber.TextChanged += new EventHandler(AffiliatioNumberMask);
             objAddEmployee.txtBankAccount.TextChanged += new EventHandler(BankAccountMask);
             objAddEmployee.txtUsername.TextChanged += new EventHandler(UsernameMask);
+            objAddEmployee.txtNames.TextChanged += new EventHandler(OnlyLettersName);
+            objAddEmployee.txtLastNames.TextChanged += new EventHandler(OnlyLettersLastName);
             objAddEmployee.txtNames.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddEmployee.txtLastNames.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddEmployee.txtDUI.MouseDown += new MouseEventHandler(DisableContextMenu);
@@ -330,28 +332,35 @@ namespace PTC2024.Controller
         //Máscara para el textbox del telefono
         public void PhoneMask(object sender, EventArgs e)
         {
-            //Aqui se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar y no sea molesto para el usuario
+            // Aquí se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar
             int cursorPosition = objAddEmployee.txtPhone.SelectionStart;
 
-            //Con esto se remueve cualquier dato no numérico
+            // Remover cualquier dato no numérico
             string text = new string(objAddEmployee.txtPhone.Text.Where(c => char.IsDigit(c)).ToArray());
 
+            // Validar que el número empiece con 2, 6 o 7
+            if (text.Length > 0 && (text[0] != '2' && text[0] != '6' && text[0] != '7'))
+            {
+                // Si el primer carácter no es válido, limpiar el texto
+                text = string.Empty;
+            }
+
+            // Aplicar la máscara de teléfono (ej: ####-###)
             if (text.Length >= 5)
             {
                 text = text.Insert(4, "-");
-
             }
 
-            //Con esto se reposiciona el cursor, ya no se coloca antes del numero que va siguiente al guion, si no que se reajusta para que  se ponga en el orden que iba anteriormente
+            // Ajustar la posición del cursor si está después del guion
             if (cursorPosition == 5)
             {
                 cursorPosition++;
             }
 
-            //Le asignamos la máscara al texto que se ponga en el textbox
+            // Asignar el texto con la máscara al TextBox
             objAddEmployee.txtPhone.Text = text;
 
-            //Restablecemos la posición del cursor con la variable que se guardó antes
+            // Restablecer la posición del cursor
             objAddEmployee.txtPhone.SelectionStart = cursorPosition;
         }
 
@@ -431,6 +440,35 @@ namespace PTC2024.Controller
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
         }
+        public void OnlyLettersName(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objAddEmployee.txtNames.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras
+            string text = new string(objAddEmployee.txtNames.Text.Where(c => char.IsLetter(c)).ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objAddEmployee.txtNames.Text = text;
+
+            // Restaurar la posición del cursor
+            objAddEmployee.txtNames.SelectionStart = cursorPosition;
+        }
+        public void OnlyLettersLastName(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objAddEmployee.txtLastNames.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras
+            string text = new string(objAddEmployee.txtLastNames.Text.Where(c => char.IsLetter(c)).ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objAddEmployee.txtLastNames.Text = text;
+
+            // Restaurar la posición del cursor
+            objAddEmployee.txtLastNames.SelectionStart = cursorPosition;
+        }
+
 
     }
 }
