@@ -40,6 +40,7 @@ namespace PTC2024.Controller.ProfileController
             objProfileC.txtBankA.MouseDown += new MouseEventHandler(DisableContextMenu);
             objProfileC.txtAffilliation.MouseDown += new MouseEventHandler(DisableContextMenu);
             objProfileC.txtAddress.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objProfileC.txtEmail.TextChanged += new EventHandler(EmailValidation);
 
         }
 
@@ -382,6 +383,27 @@ namespace PTC2024.Controller.ProfileController
             // Restaurar la posición del cursor
             objProfileC.txtLastNames.SelectionStart = cursorPosition;
         }
+        public void EmailValidation(object sender, EventArgs e)
+        {
+            int cursorPosition = objProfileC.txtEmail.SelectionStart;
+
+            // Filtrar solo caracteres permitidos para un email: letras, números, @, . y algunos caracteres especiales comunes
+            string text = new string(objProfileC.txtEmail.Text.Where(c => char.IsLetterOrDigit(c) || c == '@' || c == '.' || c == '_' || c == '-').ToArray());
+
+            // Asegurarse de que el @ no sea el primer carácter
+            if (text.StartsWith("@"))
+            {
+                // Remover el @ si está al inicio
+                text = text.Substring(1);
+            }
+
+            // Asignar el texto filtrado al TextBox
+            objProfileC.txtEmail.Text = text;
+
+            // Restablecer la posición del cursor
+            objProfileC.txtEmail.SelectionStart = cursorPosition;
+        }
+
 
     }
 }

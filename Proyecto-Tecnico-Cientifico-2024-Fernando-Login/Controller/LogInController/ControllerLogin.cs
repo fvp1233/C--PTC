@@ -29,6 +29,7 @@ namespace PTC2024.Controller.LogInController
             objLogIn.btnCerrar.Click += new EventHandler(Close);
             objLogIn.TxtUserBunifu.MouseDown += new MouseEventHandler(DisableContextMenu);
             objLogIn.txtPasswordBunifu.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objLogIn.TxtUserBunifu.TextChanged += new EventHandler(UsernameMask);
         }
         async private void DataAccess(object sender, EventArgs e)
         {
@@ -263,6 +264,17 @@ namespace PTC2024.Controller.LogInController
             {
                 MessageBox.Show("Ocurrió un error y no se pudieron guardar sus credenciales, tendrá que volver a iniciar sesión.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+        public void UsernameMask(object sender, EventArgs e)
+        {
+            //Almacena la posición original del cursor
+            int cursorPosition = objLogIn.TxtUserBunifu.SelectionStart;
+
+            //Filtra el texto del TextBox para eliminar caracteres especiales
+            objLogIn.TxtUserBunifu.Text = new string(objLogIn.TxtUserBunifu.Text.Where(c => char.IsLetterOrDigit(c)).ToArray());
+
+            //Restaura la posición del cursor
+            objLogIn.TxtUserBunifu.SelectionStart = cursorPosition;
         }
     }
 }

@@ -42,6 +42,8 @@ namespace PTC2024.Controller
             objAddEmployee.txtAffiliationNumber.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddEmployee.txtBankAccount.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddEmployee.txtUsername.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddEmployee.txtSalary.TextChanged += new EventHandler(OnlyNum);
+            objAddEmployee.txtEmail.TextChanged += new EventHandler(EmailValidation);
         }
 
 
@@ -467,6 +469,48 @@ namespace PTC2024.Controller
 
             // Restaurar la posición del cursor
             objAddEmployee.txtLastNames.SelectionStart = cursorPosition;
+        }
+        public void OnlyNum(object sender, EventArgs e)
+        {
+            int cursorPosition = objAddEmployee.txtSalary.SelectionStart;
+
+            // Permitir solo dígitos y un solo punto decimal
+            string text = new string(objAddEmployee.txtSalary.Text.Where(c => char.IsDigit(c) || c == '.').ToArray());
+
+            // Asegurarse de que solo haya un punto decimal
+            int decimalCount = text.Count(c => c == '.');
+            if (decimalCount > 1)
+            {
+                // Si hay más de un punto decimal, remover los adicionales
+                int firstDecimalIndex = text.IndexOf('.');
+                text = text.Substring(0, firstDecimalIndex + 1) + text.Substring(firstDecimalIndex + 1).Replace(".", "");
+            }
+
+            // Asignar el texto filtrado al TextBox
+            objAddEmployee.txtSalary.Text = text;
+
+            // Restablecer la posición del cursor
+            objAddEmployee.txtSalary.SelectionStart = cursorPosition;
+        }
+        public void EmailValidation(object sender, EventArgs e)
+        {
+            int cursorPosition = objAddEmployee.txtEmail.SelectionStart;
+
+            // Filtrar solo caracteres permitidos para un email: letras, números, @, . y algunos caracteres especiales comunes
+            string text = new string(objAddEmployee.txtEmail.Text.Where(c => char.IsLetterOrDigit(c) || c == '@' || c == '.' || c == '_' || c == '-').ToArray());
+
+            // Asegurarse de que el @ no sea el primer carácter
+            if (text.StartsWith("@"))
+            {
+                // Remover el @ si está al inicio
+                text = text.Substring(1);
+            }
+
+            // Asignar el texto filtrado al TextBox
+            objAddEmployee.txtEmail.Text = text;
+
+            // Restablecer la posición del cursor
+            objAddEmployee.txtEmail.SelectionStart = cursorPosition;
         }
 
 

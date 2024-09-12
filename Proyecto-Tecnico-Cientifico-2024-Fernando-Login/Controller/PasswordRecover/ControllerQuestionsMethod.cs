@@ -20,6 +20,7 @@ namespace PTC2024.Controller.PasswordRecover
             objQMethod.btnVolver.Click += new EventHandler(Back);
             objQMethod.btnConfirm.Click += new EventHandler(CheckRegister);
             objQMethod.txtUser.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objQMethod.txtUser.TextChanged += new EventHandler(UsernameMask);
         }
 
         public void Back(object sender, EventArgs e)
@@ -70,5 +71,17 @@ namespace PTC2024.Controller.PasswordRecover
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
         }
+        public void UsernameMask(object sender, EventArgs e)
+        {
+            //Almacena la posición original del cursor
+            int cursorPosition = objQMethod.txtUser.SelectionStart;
+
+            //Filtra el texto del TextBox para eliminar caracteres especiales
+            objQMethod.txtUser.Text = new string(objQMethod.txtUser.Text.Where(c => char.IsLetterOrDigit(c)).ToArray());
+
+            //Restaura la posición del cursor
+            objQMethod.txtUser.SelectionStart = cursorPosition;
+        }
+
     }
 }

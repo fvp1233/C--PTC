@@ -24,6 +24,8 @@ namespace PTC2024.Controller.LogInController
             objPassword.btnVolver.Click += new EventHandler(GoBack);
             objPassword.txtUser.MouseDown += new MouseEventHandler(DisableContextMenu);
             objPassword.txtEmail.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objPassword.txtUser.TextChanged += new EventHandler(UsernameMask);
+            objPassword.txtEmail.TextChanged += new EventHandler(EmailValidation);
         }
 
         public void RecoverPassword(object sender, EventArgs e)
@@ -81,6 +83,37 @@ namespace PTC2024.Controller.LogInController
             {
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
+        }
+        public void UsernameMask(object sender, EventArgs e)
+        {
+            //Almacena la posición original del cursor
+            int cursorPosition = objPassword.txtUser.SelectionStart;
+
+            //Filtra el texto del TextBox para eliminar caracteres especiales
+            objPassword.txtUser.Text = new string(objPassword.txtUser.Text.Where(c => char.IsLetterOrDigit(c)).ToArray());
+
+            //Restaura la posición del cursor
+            objPassword.txtUser.SelectionStart = cursorPosition;
+        }
+        public void EmailValidation(object sender, EventArgs e)
+        {
+            int cursorPosition = objPassword.txtEmail.SelectionStart;
+
+            // Filtrar solo caracteres permitidos para un email: letras, números, @, . y algunos caracteres especiales comunes
+            string text = new string(objPassword.txtEmail.Text.Where(c => char.IsLetterOrDigit(c) || c == '@' || c == '.' || c == '_' || c == '-').ToArray());
+
+            // Asegurarse de que el @ no sea el primer carácter
+            if (text.StartsWith("@"))
+            {
+                // Remover el @ si está al inicio
+                text = text.Substring(1);
+            }
+
+            // Asignar el texto filtrado al TextBox
+            objPassword.txtEmail.Text = text;
+
+            // Restablecer la posición del cursor
+            objPassword.txtEmail.SelectionStart = cursorPosition;
         }
     }
 }

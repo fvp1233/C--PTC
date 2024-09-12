@@ -45,7 +45,10 @@ namespace PTC2024.Controller.LogInController
             objRegister.txtUser.MouseDown += new MouseEventHandler(DisableContextMenu);
             objRegister.txtPassword.MouseDown += new MouseEventHandler(DisableContextMenu);
             objRegister.txtConfirmedPassword.MouseDown += new MouseEventHandler(DisableContextMenu);
-
+            objRegister.txtNames.TextChanged += new EventHandler(OnlyLettersName);
+            objRegister.txtLastNames.TextChanged += new EventHandler(OnlyLettersLastName);
+            objRegister.txtEmail.TextChanged += new EventHandler(EmailValidation);
+            objRegister.txtUser.TextChanged += new EventHandler(UsernameMask);
         }
 
         public void LoadCombobox(object sender, EventArgs e)
@@ -273,28 +276,35 @@ namespace PTC2024.Controller.LogInController
         //Máscara para el textbox del telefono
         public void PhoneMask(object sender, EventArgs e)
         {
-            //Aqui se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar y no sea molesto para el usuario
+            // Aquí se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar
             int cursorPosition = objRegister.txtPhone.SelectionStart;
 
-            //Con esto se remueve cualquier dato no numérico
+            // Remover cualquier dato no numérico
             string text = new string(objRegister.txtPhone.Text.Where(c => char.IsDigit(c)).ToArray());
 
+            // Validar que el número empiece con 2, 6 o 7
+            if (text.Length > 0 && (text[0] != '2' && text[0] != '6' && text[0] != '7'))
+            {
+                // Si el primer carácter no es válido, limpiar el texto
+                text = string.Empty;
+            }
+
+            // Aplicar la máscara de teléfono (ej: ####-###)
             if (text.Length >= 5)
             {
                 text = text.Insert(4, "-");
-
             }
 
-            //Con esto se reposiciona el cursor, ya no se coloca antes del numero que va siguiente al guion, si no que se reajusta para que  se ponga en el orden que iba anteriormente
+            // Ajustar la posición del cursor si está después del guion
             if (cursorPosition == 5)
             {
                 cursorPosition++;
             }
 
-            //Le asignamos la máscara al texto que se ponga en el textbox
+            // Asignar el texto con la máscara al TextBox
             objRegister.txtPhone.Text = text;
 
-            //Restablecemos la posición del cursor con la variable que se guardó antes
+            // Restablecer la posición del cursor
             objRegister.txtPhone.SelectionStart = cursorPosition;
         }
 
@@ -337,6 +347,66 @@ namespace PTC2024.Controller.LogInController
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
         }
+        public void OnlyLettersName(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objRegister.txtNames.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras
+            string text = new string(objRegister.txtNames.Text.Where(c => char.IsLetter(c)).ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objRegister.txtNames.Text = text;
+
+            // Restaurar la posición del cursor
+            objRegister.txtNames.SelectionStart = cursorPosition;
+        }
+        public void OnlyLettersLastName(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objRegister.txtLastNames.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras
+            string text = new string(objRegister.txtLastNames.Text.Where(c => char.IsLetter(c)).ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objRegister.txtLastNames.Text = text;
+
+            // Restaurar la posición del cursor
+            objRegister.txtLastNames.SelectionStart = cursorPosition;
+        }
+        public void EmailValidation(object sender, EventArgs e)
+        {
+            int cursorPosition = objRegister.txtEmail.SelectionStart;
+
+            // Filtrar solo caracteres permitidos para un email: letras, números, @, . y algunos caracteres especiales comunes
+            string text = new string(objRegister.txtEmail.Text.Where(c => char.IsLetterOrDigit(c) || c == '@' || c == '.' || c == '_' || c == '-').ToArray());
+
+            // Asegurarse de que el @ no sea el primer carácter
+            if (text.StartsWith("@"))
+            {
+                // Remover el @ si está al inicio
+                text = text.Substring(1);
+            }
+
+            // Asignar el texto filtrado al TextBox
+            objRegister.txtEmail.Text = text;
+
+            // Restablecer la posición del cursor
+            objRegister.txtEmail.SelectionStart = cursorPosition;
+        }
+        public void UsernameMask(object sender, EventArgs e)
+        {
+            //Almacena la posición original del cursor
+            int cursorPosition = objRegister.txtUser.SelectionStart;
+
+            //Filtra el texto del TextBox para eliminar caracteres especiales
+            objRegister.txtUser.Text = new string(objRegister.txtUser.Text.Where(c => char.IsLetterOrDigit(c)).ToArray());
+
+            //Restaura la posición del cursor
+            objRegister.txtUser.SelectionStart = cursorPosition;
+        }
+
     }
 }
 

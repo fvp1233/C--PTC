@@ -30,6 +30,7 @@ namespace PTC2024.Controller.FirstUseController
             objFistUse.txtEmail.MouseDown += new MouseEventHandler(DisableContextMenu);
             objFistUse.txtPhone.MouseDown += new MouseEventHandler(DisableContextMenu);
             objFistUse.txtPBX.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objFistUse.txtEmail.TextChanged += new EventHandler(EmailValidation);
 
         }
         void SaveInfo(object sender, EventArgs e)
@@ -124,28 +125,35 @@ namespace PTC2024.Controller.FirstUseController
 
         public void PhoneMask(object sender, EventArgs e)
         {
-            //Aqui se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar y no sea molesto para el usuario
+            // Aquí se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar
             int cursorPosition = objFistUse.txtPhone.SelectionStart;
 
-            //Con esto se remueve cualquier dato no numérico
+            // Remover cualquier dato no numérico
             string text = new string(objFistUse.txtPhone.Text.Where(c => char.IsDigit(c)).ToArray());
 
+            // Validar que el número empiece con 2, 6 o 7
+            if (text.Length > 0 && (text[0] != '2' && text[0] != '6' && text[0] != '7'))
+            {
+                // Si el primer carácter no es válido, limpiar el texto
+                text = string.Empty;
+            }
+
+            // Aplicar la máscara de teléfono (ej: ####-###)
             if (text.Length >= 5)
             {
                 text = text.Insert(4, "-");
-
             }
 
-            //Con esto se reposiciona el cursor, ya no se coloca antes del numero que va siguiente al guion, si no que se reajusta para que  se ponga en el orden que iba anteriormente
+            // Ajustar la posición del cursor si está después del guion
             if (cursorPosition == 5)
             {
                 cursorPosition++;
             }
 
-            //Le asignamos la máscara al texto que se ponga en el textbox
+            // Asignar el texto con la máscara al TextBox
             objFistUse.txtPhone.Text = text;
 
-            //Restablecemos la posición del cursor con la variable que se guardó antes
+            // Restablecer la posición del cursor
             objFistUse.txtPhone.SelectionStart = cursorPosition;
         }
 
@@ -184,5 +192,26 @@ namespace PTC2024.Controller.FirstUseController
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
         }
+        public void EmailValidation(object sender, EventArgs e)
+        {
+            int cursorPosition = objFistUse.txtEmail.SelectionStart;
+
+            // Filtrar solo caracteres permitidos para un email: letras, números, @, . y algunos caracteres especiales comunes
+            string text = new string(objFistUse.txtEmail.Text.Where(c => char.IsLetterOrDigit(c) || c == '@' || c == '.' || c == '_' || c == '-').ToArray());
+
+            // Asegurarse de que el @ no sea el primer carácter
+            if (text.StartsWith("@"))
+            {
+                // Remover el @ si está al inicio
+                text = text.Substring(1);
+            }
+
+            // Asignar el texto filtrado al TextBox
+            objFistUse.txtEmail.Text = text;
+
+            // Restablecer la posición del cursor
+            objFistUse.txtEmail.SelectionStart = cursorPosition;
+        }
+
     }
 }
