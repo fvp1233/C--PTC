@@ -424,15 +424,13 @@ namespace PTC2024.Model.DAO.BillsDAO
                 {
                     cmd.Parameters.AddWithValue("@CustomerName", customerName);
 
-                    try
-                    {
-                        Command.Connection.Open();
+               
                         object result = cmd.ExecuteScalar();
                         if (result != null)
                         {
                             customerId = Convert.ToInt32(result);
                         }
-                    }
+                   /* }
                     catch (Exception)
                     {
                         MessageBox.Show("Cliente registrado");
@@ -440,7 +438,7 @@ namespace PTC2024.Model.DAO.BillsDAO
                     finally
                     {
                         Command.Connection.Close(); // Cerrar la conexión una vez
-                    }
+                    }*/
                 }
             }
             catch (Exception ex)
