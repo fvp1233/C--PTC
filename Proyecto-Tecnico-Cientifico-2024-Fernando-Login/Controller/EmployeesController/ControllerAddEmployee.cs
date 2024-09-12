@@ -168,6 +168,26 @@ namespace PTC2024.Controller
                                         //Se crea un objeto de la clase DAOAddEmployee y de la clase CommonClasses
                                         DAOAddEmployee daoInsertEmployee = new DAOAddEmployee();
                                         CommonClasses commonClasses = new CommonClasses();
+                                        //GENERACIÓN DE CONTRASEÑA ALEATORIA
+                                        Random random = new Random();
+
+                                        //Ahora especificamos los carácteres que podrá tomar el random para generar la contraseña aleatoria
+                                        const string chars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz0123456789";
+                                        //Esta variable define la longitud del string anterior, para que el arreglo que se creará pueda agarrar de los 61 carácteres que se encuentran ahí.
+                                        const int cLength = 61;
+
+                                        //Creamos un arreglo de chars de una longitud de 6 dígitos
+                                        var array = new char[6];
+
+                                        //ahora creamos un for que se encargará de escoger aleatoriamente 6 carácteres y los guardará en nuestro arreglo
+                                        for (int i = 0; i < 6; i++)
+                                        {
+                                            array[i] = chars[random.Next(chars.Length)];
+                                        }
+
+                                        //Ahora le damos valor a nuestra variable string con lo que hay en el arreglo.
+                                        string newPass = new string(array);
+
                                         //Datos para la creación de un empleado
                                         daoInsertEmployee.Names = objAddEmployee.txtNames.Text.Trim();
                                         daoInsertEmployee.LastNames = objAddEmployee.txtLastNames.Text.Trim();
@@ -189,7 +209,7 @@ namespace PTC2024.Controller
 
                                         //Datos para la creación del usuario
                                         daoInsertEmployee.Username = objAddEmployee.txtUsername.Text.Trim();
-                                        daoInsertEmployee.Password = commonClasses.ComputeSha256Hash(objAddEmployee.txtUsername.Text.Trim() + "PU123");
+                                        daoInsertEmployee.Password = commonClasses.ComputeSha256Hash(newPass);
                                         daoInsertEmployee.BusinessPosition = int.Parse(objAddEmployee.comboBusinessP.SelectedValue.ToString());
                                         daoInsertEmployee.UserSatus = true;
                                         daoInsertEmployee.BusinessInfo = 1;
@@ -198,10 +218,11 @@ namespace PTC2024.Controller
                                         //Verificamos el valor que nos retorna dicho método
                                         if (valorRespuesta == 1)
                                         {
-                                            MessageBox.Show($"Usuario: {objAddEmployee.txtUsername.Text.Trim()} \n Contraseña: {objAddEmployee.txtUsername.Text.Trim() + "PU123"}", "Credenciales de acceso del empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                            objAddEmployee.Close();
-
+                                            //MessageBox.Show($"Usuario: {objAddEmployee.txtUsername.Text.Trim()} \n Contraseña: {objAddEmployee.txtUsername.Text.Trim() + "PU123"}", "Credenciales de acceso del empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            MessageBox.Show("Se enviará un correo al email del nuevo empleado con sus credenciales para el inicio de sesión.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             objAddEmployee.snackbar.Show(objMenu, $"Los datos del nuevo empleado fueron registrados.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                                            SendEmail(newPass);
+                                            objAddEmployee.Close();
                                         }
                                         else
                                         {
@@ -534,6 +555,20 @@ namespace PTC2024.Controller
             objAddEmployee.txtEmail.SelectionStart = cursorPosition;
         }
 
+        public bool SendEmail(string pass)
+        {
+            DAOAddEmployee dao = new DAOAddEmployee();
+
+            string para = objAddEmployee.txtEmail.Text.Trim();
+            string de = "h2c.soporte.usuarios@gmail.com";
+            string subject = $"H2C: Bienvenido a {BusinessVar.BusinessName} nuevo empleado.";
+            string message = $"Hola {objAddEmployee.txtNames.Text.Trim()} {objAddEmployee.txtLastNames.Text.Trim()}, se ha registrado este correo electrónico en su perfil como nuevo empleado en la empresa {BusinessVar.BusinessName}.\nEn este correo le adjuntamos su credenciales para que pueda iniciar sesión en el sistema.\n\nNombre de usuario: {objAddEmployee.txtUsername.Text.Trim()} \nContraseña: {pass}";
+
+            Email email = new Email();
+            bool answer = email.NewEmployee(para, de, subject, message);
+
+            return answer;
+        }
 
     }
 }

@@ -40,7 +40,6 @@ namespace PTC2024.Controller.CustomersController
         //Metodo que carga los datos(refresca todo los datos del datagridview)
         public void LoadData(object sender, EventArgs e)
         {
-
             refreshData();
         }
 
@@ -124,6 +123,7 @@ namespace PTC2024.Controller.CustomersController
 
             //Se llena el datagridview con la vista del cliente, es decir llena todos los datos del cliente
             objCustomers.dgvCustomers.DataSource = ds.Tables["viewCustomers"];
+            objCustomers.dgvCustomers.Columns[8].Visible = false;
 
         }
 

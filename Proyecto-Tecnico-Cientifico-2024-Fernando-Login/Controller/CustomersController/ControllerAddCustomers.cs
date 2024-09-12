@@ -97,13 +97,16 @@ namespace PTC2024.Controller.CustomersController
 
                     if (AnswerValue == 1)
                     {//Si el valor es 1 se mostrara el mensaje
+                        SendEmail();
                         MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         objAddCustomers.Close();
+
                     }
                     else
                     {//Si el valor es diferente a 1 se mostrara el mensaje de error
                         MessageBox.Show("Los datos no pudieron ser registrados", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
                 }
                 else
                 {
@@ -305,6 +308,7 @@ namespace PTC2024.Controller.CustomersController
             // Restaurar la posición del cursor
             objAddCustomers.txtNames.SelectionStart = cursorPosition;
         }
+
         public void OnlyLettersLastName(object sender, EventArgs e)
         {
             // Obtener la posición actual del cursor
@@ -319,9 +323,18 @@ namespace PTC2024.Controller.CustomersController
             // Restaurar la posición del cursor
             objAddCustomers.txtLastnames.SelectionStart = cursorPosition;
         }
+
+        public bool SendEmail()
+        {
+            string para = objAddCustomers.txtEmail.Text.Trim();
+            string de = "h2c.soporte.usuarios@gmail.com";
+            string subject = "H2C: Gracias por visitarnos.";
+            string message = $"Hola estimado cliente, se ha registrado este correo electrónico en su perfil como cliente en la empresa {BusinessVar.BusinessName}.\nEste es un correo de confirmación, puede hacer caso omiso al mismo.";
+
+            Email email = new Email();
+            bool answer = email.CustomerEmail(para, de, subject, message);
+
+            return answer;
+        }
     }
 }
-
-
-
-

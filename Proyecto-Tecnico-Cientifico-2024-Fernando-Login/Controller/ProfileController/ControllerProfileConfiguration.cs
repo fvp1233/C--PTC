@@ -43,7 +43,6 @@ namespace PTC2024.Controller.ProfileController
             objProfileC.txtAffilliation.MouseDown += new MouseEventHandler(DisableContextMenu);
             objProfileC.txtAddress.MouseDown += new MouseEventHandler(DisableContextMenu);
             objProfileC.txtEmail.TextChanged += new EventHandler(EmailValidation);
-
         }
 
         public void ChargeValues(string names, string lastnames, string dui, string phone, string email, string adress, string affilitiation, string bankAccount)
@@ -129,6 +128,7 @@ namespace PTC2024.Controller.ProfileController
 
         public void UpdateInfo(object sender, EventArgs e)
         {
+            
             //validación campos vacíos
             if (!(string.IsNullOrEmpty(objProfileC.txtNames.Text.Trim()) ||
                   string.IsNullOrEmpty(objProfileC.txtLastNames.Text.Trim()) ||
@@ -149,43 +149,48 @@ namespace PTC2024.Controller.ProfileController
                         //validación para saber si el email ya esta registrado
                         if (CheckEmail() == false)
                         {
-                            //damos valor a los getters
-                            DAOProfileConfiguration daoP = new DAOProfileConfiguration();
-                            daoP.FirstName = objProfileC.txtNames.Text.Trim();
-                            daoP.LastName = objProfileC.txtLastNames.Text.Trim();
-                            daoP.Dui = objProfileC.txtDui.Text.Trim();
-                            daoP.Phone = objProfileC.txtPhone.Text.Trim();
-                            daoP.Email = objProfileC.txtEmail.Text.Trim();
-                            daoP.Address = objProfileC.txtAddress.Text.Trim();
-                            daoP.SecurityNumber = objProfileC.txtAffilliation.Text.Trim();
-                            daoP.BanckAccount = objProfileC.txtBankA.Text.Trim();
-                            daoP.Username = SessionVar.Username;
-                            //ejecutamos el método update
-                            int answer = daoP.UpdateInfo();
-                            if (answer == 1)
+                            bool answerEmail = SendEmail();
+                            if(answerEmail == true)
                             {
-                                //si es 1, los datos se actualizaron correctamente, pasamos a actualizar la foto ingresada.
-                                StartMenu start = new StartMenu(SessionVar.Username);
-                                FrmProfile objProfile = new FrmProfile();
-                                SavePfp();
-                                daoP.ReadNewCredentials();                               
-                                objProfileC.Close();
-                                daoP.ReadNewCredentials();
-                                start.btnIcon.Image = ByteArrayToImage(SessionVar.ProfilePic);
-                                objProfile.lblFullName.Text = SessionVar.FullName;
-                                objProfile.lblUser.Text = SessionVar.Username;
-                                objProfile.lblEAdress.Text = SessionVar.Email;
-                                objProfile.lblPhone.Text = SessionVar.Phone;
-                                objProfile.lblAddress.Text = SessionVar.Adress;
-                                objProfile.picUser.Image = ByteArrayToImage(SessionVar.ProfilePic);
-                                objProfileC.snack.Show(start, "Reinicie el programa o cierre y vuelva a iniciar sesión para ver todos los cambios.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
-                                objProfileC.snack.Show(start, "Su información se actualizó correctamente.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);      
-                                
+                                //damos valor a los getters
+                                DAOProfileConfiguration daoP = new DAOProfileConfiguration();
+                                daoP.FirstName = objProfileC.txtNames.Text.Trim();
+                                daoP.LastName = objProfileC.txtLastNames.Text.Trim();
+                                daoP.Dui = objProfileC.txtDui.Text.Trim();
+                                daoP.Phone = objProfileC.txtPhone.Text.Trim();
+                                daoP.Email = objProfileC.txtEmail.Text.Trim();
+                                daoP.Address = objProfileC.txtAddress.Text.Trim();
+                                daoP.SecurityNumber = objProfileC.txtAffilliation.Text.Trim();
+                                daoP.BanckAccount = objProfileC.txtBankA.Text.Trim();
+                                daoP.Username = SessionVar.Username;
+                                //ejecutamos el método update
+                                int answer = daoP.UpdateInfo();
+                                if (answer == 1)
+                                {
+                                    //si es 1, los datos se actualizaron correctamente, pasamos a actualizar la foto ingresada.
+                                    StartMenu start = new StartMenu(SessionVar.Username);
+                                    FrmProfile objProfile = new FrmProfile();
+                                    SavePfp();
+                                    daoP.ReadNewCredentials();
+                                    objProfileC.Close();
+                                    daoP.ReadNewCredentials();
+                                    start.btnIcon.Image = ByteArrayToImage(SessionVar.ProfilePic);
+                                    objProfile.lblFullName.Text = SessionVar.FullName;
+                                    objProfile.lblUser.Text = SessionVar.Username;
+                                    objProfile.lblEAdress.Text = SessionVar.Email;
+                                    objProfile.lblPhone.Text = SessionVar.Phone;
+                                    objProfile.lblAddress.Text = SessionVar.Adress;
+                                    objProfile.picUser.Image = ByteArrayToImage(SessionVar.ProfilePic);
+                                    objProfileC.snack.Show(start, "Reinicie el programa o cierre y vuelva a iniciar sesión para ver todos los cambios.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                                    objProfileC.snack.Show(start, "Su información se actualizó correctamente.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+
+                                }
+                                else
+                                {
+                                    objProfileC.snack.Show(objProfileC, "No se pudieron actualizar sus datos, inténtelo de nuevo", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomCenter);
+                                }
                             }
-                            else
-                            {
-                                objProfileC.snack.Show(objProfileC, "No se pudieron actualizar sus datos, inténtelo de nuevo", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomCenter);
-                            }
+                            
                         }
                         else
                         {
@@ -207,6 +212,7 @@ namespace PTC2024.Controller.ProfileController
                                     MessageBoxIcon.Warning);
             }
         }
+
         private bool ValidateEmail()
         {
             string email = objProfileC.txtEmail.Text.Trim();
@@ -419,6 +425,18 @@ namespace PTC2024.Controller.ProfileController
             objProfileC.txtEmail.SelectionStart = cursorPosition;
         }
 
+        public bool SendEmail()
+        {
+            string para = objProfileC.txtEmail.Text.Trim();
+            string de = "h2c.soporte.usuarios@gmail.com";
+            string subject = "H2C: Actualización del correo";
+            string message = $"Hola, {SessionVar.FullName}, se ha realizado un cambio de correo electrónico en su cuenta: '{SessionVar.Username}' con éxito.\nEste es un correo de confirmación, puede hacer caso omiso al mismo.";
+
+            Email email = new Email();
+            bool answer = email.UpdatedEmail(para, de, subject, message);
+
+            return answer;
+        }
 
     }
 }

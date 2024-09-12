@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PTC2024.Model.DAO.CustomersDAO;
 using PTC2024.View.Clientes;
+using PTC2024.Controller.Helper;
 
 namespace PTC2024.Controller.CustomersController
 {
@@ -72,9 +73,15 @@ namespace PTC2024.Controller.CustomersController
                 int answer = daoUpdateCustomers.updateCustomers();
                 if (answer == 1)
                 {
+                    SendEmail();
                     MessageBox.Show("Datos Actualizados");
                     objUpdateCustomers.Close();
                 }
+                else
+                {
+                    MessageBox.Show("Datos no se pudieron actualizar", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
           }
 
@@ -213,6 +220,18 @@ namespace PTC2024.Controller.CustomersController
             }
         }
 
+        public bool SendEmail()
+        {
+            string para = objUpdateCustomers.txtEmail.Text.Trim();
+            string de = "h2c.soporte.usuarios@gmail.com";
+            string subject = "H2C: Actualización del correo";
+            string message = $"Hola estimado cliente, se ha realizado un cambio de correo electrónico en su registro como cliente con éxito.\nEste es un correo de confirmación, puede hacer caso omiso al mismo.";
+
+            Email email = new Email();
+            bool answer = email.UpdatedEmail(para, de, subject, message);
+
+            return answer;
+        }
 
     }
 }
