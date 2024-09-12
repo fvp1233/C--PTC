@@ -322,7 +322,7 @@
             this.txtCategorie.Lines = new string[0];
             this.txtCategorie.Location = new System.Drawing.Point(40, 120);
             this.txtCategorie.MaximumSize = new System.Drawing.Size(305, 32);
-            this.txtCategorie.MaxLength = 40;
+            this.txtCategorie.MaxLength = 30;
             this.txtCategorie.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtCategorie.Modified = false;
             this.txtCategorie.Multiline = false;

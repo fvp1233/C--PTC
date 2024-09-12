@@ -353,7 +353,7 @@ namespace PTC2024.Controller.LogInController
             int cursorPosition = objRegister.txtNames.SelectionStart;
 
             // Filtrar el texto para que solo queden letras
-            string text = new string(objRegister.txtNames.Text.Where(c => char.IsLetter(c)).ToArray());
+            string text = new string(objRegister.txtNames.Text.Where(c => char.IsLetter(c) || char.IsWhiteSpace(c)).ToArray());
 
             // Actualizar el contenido del TextBox con el texto filtrado
             objRegister.txtNames.Text = text;
@@ -367,7 +367,7 @@ namespace PTC2024.Controller.LogInController
             int cursorPosition = objRegister.txtLastNames.SelectionStart;
 
             // Filtrar el texto para que solo queden letras
-            string text = new string(objRegister.txtLastNames.Text.Where(c => char.IsLetter(c)).ToArray());
+            string text = new string(objRegister.txtLastNames.Text.Where(c => char.IsLetter(c) || char.IsWhiteSpace(c)).ToArray());
 
             // Actualizar el contenido del TextBox con el texto filtrado
             objRegister.txtLastNames.Text = text;

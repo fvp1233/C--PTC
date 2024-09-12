@@ -150,7 +150,7 @@ namespace PTC2024.Controller.CustomersController
             int cursorPosition = objUpdateCustomers.txtNames.SelectionStart;
 
             // Filtrar el texto para que solo queden letras
-            string text = new string(objUpdateCustomers.txtNames.Text.Where(c => char.IsLetter(c)).ToArray());
+            string text = new string(objUpdateCustomers.txtNames.Text.Where(c => char.IsLetter(c) || char.IsWhiteSpace(c)).ToArray());
 
             // Actualizar el contenido del TextBox con el texto filtrado
             objUpdateCustomers.txtNames.Text = text;
@@ -164,7 +164,7 @@ namespace PTC2024.Controller.CustomersController
             int cursorPosition = objUpdateCustomers.txtLastNames.SelectionStart;
 
             // Filtrar el texto para que solo queden letras
-            string text = new string(objUpdateCustomers.txtLastNames.Text.Where(c => char.IsLetter(c)).ToArray());
+            string text = new string(objUpdateCustomers.txtLastNames.Text.Where(c => char.IsLetter(c) || char.IsWhiteSpace(c)).ToArray());
 
             // Actualizar el contenido del TextBox con el texto filtrado
             objUpdateCustomers.txtLastNames.Text = text;

@@ -447,8 +447,10 @@ namespace PTC2024.Controller
             // Obtener la posición actual del cursor
             int cursorPosition = objAddEmployee.txtNames.SelectionStart;
 
-            // Filtrar el texto para que solo queden letras
-            string text = new string(objAddEmployee.txtNames.Text.Where(c => char.IsLetter(c)).ToArray());
+            // Filtrar el texto para que solo queden letras y espacios
+            string text = new string(objAddEmployee.txtNames.Text
+                                       .Where(c => char.IsLetter(c) || char.IsWhiteSpace(c))
+                                       .ToArray());
 
             // Actualizar el contenido del TextBox con el texto filtrado
             objAddEmployee.txtNames.Text = text;
@@ -456,13 +458,14 @@ namespace PTC2024.Controller
             // Restaurar la posición del cursor
             objAddEmployee.txtNames.SelectionStart = cursorPosition;
         }
+
         public void OnlyLettersLastName(object sender, EventArgs e)
         {
             // Obtener la posición actual del cursor
             int cursorPosition = objAddEmployee.txtLastNames.SelectionStart;
 
             // Filtrar el texto para que solo queden letras
-            string text = new string(objAddEmployee.txtLastNames.Text.Where(c => char.IsLetter(c)).ToArray());
+            string text = new string(objAddEmployee.txtLastNames.Text.Where(c => char.IsLetter(c) || char.IsWhiteSpace(c)).ToArray());
 
             // Actualizar el contenido del TextBox con el texto filtrado
             objAddEmployee.txtLastNames.Text = text;

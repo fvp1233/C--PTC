@@ -361,7 +361,7 @@ namespace PTC2024.Controller.ProfileController
             int cursorPosition = objProfileC.txtNames.SelectionStart;
 
             // Filtrar el texto para que solo queden letras
-            string text = new string(objProfileC.txtNames.Text.Where(c => char.IsLetter(c)).ToArray());
+            string text = new string(objProfileC.txtNames.Text.Where(c => char.IsLetter(c) || char.IsWhiteSpace(c)).ToArray());
 
             // Actualizar el contenido del TextBox con el texto filtrado
             objProfileC.txtNames.Text = text;
@@ -375,7 +375,7 @@ namespace PTC2024.Controller.ProfileController
             int cursorPosition = objProfileC.txtLastNames.SelectionStart;
 
             // Filtrar el texto para que solo queden letras
-            string text = new string(objProfileC.txtLastNames.Text.Where(c => char.IsLetter(c)).ToArray());
+            string text = new string(objProfileC.txtLastNames.Text.Where(c => char.IsLetter(c) || char.IsWhiteSpace(c)).ToArray());
 
             // Actualizar el contenido del TextBox con el texto filtrado
             objProfileC.txtLastNames.Text = text;
