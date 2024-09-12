@@ -322,7 +322,7 @@
             this.txtBank.Lines = new string[0];
             this.txtBank.Location = new System.Drawing.Point(40, 120);
             this.txtBank.MaximumSize = new System.Drawing.Size(305, 32);
-            this.txtBank.MaxLength = 40;
+            this.txtBank.MaxLength = 50;
             this.txtBank.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtBank.Modified = false;
             this.txtBank.Multiline = false;
