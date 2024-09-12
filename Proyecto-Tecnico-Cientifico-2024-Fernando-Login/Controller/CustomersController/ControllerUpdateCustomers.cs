@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net.Sockets;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -57,28 +59,27 @@ namespace PTC2024.Controller.CustomersController
         public void UpdateCustomers(object sender, EventArgs e)
         {
             DAOUpdateCustomers daoUpdateCustomers = new DAOUpdateCustomers();
-
-            daoUpdateCustomers.IdClient = int.Parse(objUpdateCustomers.txtId.Text); 
-            daoUpdateCustomers.Dui = objUpdateCustomers.txtDui.Text;
-            daoUpdateCustomers.Name = objUpdateCustomers.txtNames.Text;
-            daoUpdateCustomers.LastNames = objUpdateCustomers.txtLastNames.Text;
-            daoUpdateCustomers.Email = objUpdateCustomers.txtEmail.Text;
-            daoUpdateCustomers.Address = objUpdateCustomers.txtAddress.Text;
-            daoUpdateCustomers.Phone = objUpdateCustomers.txtPhone.Text;
-            daoUpdateCustomers.ClientType = int.Parse(objUpdateCustomers.dpClientType.SelectedValue.ToString());
-
-            int answer = daoUpdateCustomers.updateCustomers();
-            if (answer == 1)
+            if (ValidateEmail() == true)
             {
-                MessageBox.Show("Datos Actualizados");
-                objUpdateCustomers.Close();
+                daoUpdateCustomers.IdClient = int.Parse(objUpdateCustomers.txtId.Text);
+                daoUpdateCustomers.Dui = objUpdateCustomers.txtDui.Text;
+                daoUpdateCustomers.Name = objUpdateCustomers.txtNames.Text;
+                daoUpdateCustomers.LastNames = objUpdateCustomers.txtLastNames.Text;
+                daoUpdateCustomers.Email = objUpdateCustomers.txtEmail.Text;
+                daoUpdateCustomers.Address = objUpdateCustomers.txtAddress.Text;
+                daoUpdateCustomers.Phone = objUpdateCustomers.txtPhone.Text;
+                daoUpdateCustomers.ClientType = int.Parse(objUpdateCustomers.dpClientType.SelectedValue.ToString());
+                int answer = daoUpdateCustomers.updateCustomers();
+                if (answer == 1)
+                {
+                    MessageBox.Show("Datos Actualizados");
+                    objUpdateCustomers.Close();
+                }
             }
-
           }
 
-        public void ChargeValues(int idClient, string dui, string names, string lastnames, string phone, string email, string address) {
-
-
+        public void ChargeValues(int idClient, string dui, string names, string lastnames, string phone, string email, string address) 
+        {
             try
             {
                 objUpdateCustomers.txtId.Text = idClient.ToString();
@@ -118,13 +119,6 @@ namespace PTC2024.Controller.CustomersController
 
             // Remover cualquier dato no numérico
             string text = new string(objUpdateCustomers.txtPhone.Text.Where(c => char.IsDigit(c)).ToArray());
-
-            // Validar que el número empiece con 2, 6 o 7
-            if (text.Length > 0 && (text[0] != '2' && text[0] != '6' && text[0] != '7'))
-            {
-                // Si el primer carácter no es válido, limpiar el texto
-                text = string.Empty;
-            }
 
             // Aplicar la máscara de teléfono (ej: ####-###)
             if (text.Length >= 5)
@@ -172,7 +166,52 @@ namespace PTC2024.Controller.CustomersController
             // Restaurar la posición del cursor
             objUpdateCustomers.txtLastNames.SelectionStart = cursorPosition;
         }
+        private bool ValidateEmail()
+        {
+            string email = objUpdateCustomers.txtEmail.Text.Trim();
 
+            // Verificar que el correo contenga una '@'
+            if (!email.Contains("@"))
+            {
+                MessageBox.Show("El formato del correo es incorrecto, verifique que contenga '@'.", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Asegurarse de que el correo tenga un dominio válido (parte después de '@')
+            string domain = email.Substring(email.LastIndexOf('@') + 1);
+
+            if (string.IsNullOrEmpty(domain))
+            {
+                MessageBox.Show("El formato del correo es incorrecto. No tiene un dominio válido.", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Verificar si el dominio tiene un registro MX
+            if (!DomainHasMXRecord(domain))
+            {
+                MessageBox.Show("El dominio del correo no existe o no tiene un servidor de correo válido.", "Dominio inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool DomainHasMXRecord(string domain)
+        {
+            try
+            {
+                // Obtener registros DNS del dominio
+                IPHostEntry hostEntry = Dns.GetHostEntry(domain);
+
+                // Verificar que tenga registros de mail (MX)
+                return hostEntry.AddressList.Length > 0;
+            }
+            catch (SocketException)
+            {
+                // Si ocurre un error al obtener la entrada DNS, el dominio no es válido o no tiene MX
+                return false;
+            }
+        }
 
 
     }

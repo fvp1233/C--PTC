@@ -9,6 +9,8 @@ using PTC2024.View.Clientes;
 using PTC2024.Controller.Helper;
 using System.Windows.Forms;
 using PTC2024.Model.DTO.CustomersDTO;
+using System.Net.Sockets;
+using System.Net;
 
 namespace PTC2024.Controller.CustomersController
 {
@@ -72,8 +74,7 @@ namespace PTC2024.Controller.CustomersController
                 string.IsNullOrEmpty(objAddCustomers.txtDui.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddCustomers.txtAddress.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddCustomers.txtEmail.Text.Trim()) ||
-                string.IsNullOrEmpty(objAddCustomers.txtPhone.Text.Trim()) ||
-                string.IsNullOrEmpty(objAddCustomers.comboTypeC.Text.Trim())
+                string.IsNullOrEmpty(objAddCustomers.txtPhone.Text.Trim())
                 ))
             {
                 emailValidation = ValidateEmail();
@@ -124,24 +125,47 @@ namespace PTC2024.Controller.CustomersController
         {
             string email = objAddCustomers.txtEmail.Text.Trim();
 
-            if ((!email.Contains("@")))
+            // Verificar que el correo contenga una '@'
+            if (!email.Contains("@"))
             {
                 MessageBox.Show("El formato del correo es incorrecto, verifique que contenga '@'.", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
-
             }
-            //validación de dominio del correo
-            string[] allowedDomains = { "gmail.com", "ricaldone.edu.sv" };
-            //La variable domain guarda la cadena de carácteres que se presente después de la arroba en el campo de correo
+
+            // Asegurarse de que el correo tenga un dominio válido (parte después de '@')
             string domain = email.Substring(email.LastIndexOf('@') + 1);
-            //Si la cadena de carácteres después de la arroba NO es uno de los dominios permitidos, nos envía un mensaje de error.
-            if (!allowedDomains.Contains(domain))
+
+            if (string.IsNullOrEmpty(domain))
             {
-                MessageBox.Show("Dominio de correo inválido. \n El sistema solo admite los dominios '@gmail.com' y '@ricaldone.edu.sv'", "Dominio no permitido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El formato del correo es incorrecto. No tiene un dominio válido.", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            //Si no se detecta ningún fallo en el email, se devuelve directamente un true.
+
+            // Verificar si el dominio tiene un registro MX
+            if (!DomainHasMXRecord(domain))
+            {
+                MessageBox.Show("El dominio del correo no existe o no tiene un servidor de correo válido.", "Dominio inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
             return true;
+        }
+
+        private bool DomainHasMXRecord(string domain)
+        {
+            try
+            {
+                // Obtener registros DNS del dominio
+                IPHostEntry hostEntry = Dns.GetHostEntry(domain);
+
+                // Verificar que tenga registros de mail (MX)
+                return hostEntry.AddressList.Length > 0;
+            }
+            catch (SocketException)
+            {
+                // Si ocurre un error al obtener la entrada DNS, el dominio no es válido o no tiene MX
+                return false;
+            }
         }
 
         public void DUIMask(object sender, EventArgs e)
@@ -184,13 +208,6 @@ namespace PTC2024.Controller.CustomersController
 
             // Remover cualquier dato no numérico
             string text = new string(objAddCustomers.txtPhone.Text.Where(c => char.IsDigit(c)).ToArray());
-
-            // Validar que el número empiece con 2, 6 o 7
-            if (text.Length > 0 && (text[0] != '2' && text[0] != '6' && text[0] != '7'))
-            {
-                // Si el primer carácter no es válido, limpiar el texto
-                text = string.Empty;
-            }
 
             // Aplicar la máscara de teléfono (ej: ####-###)
             if (text.Length >= 5)
