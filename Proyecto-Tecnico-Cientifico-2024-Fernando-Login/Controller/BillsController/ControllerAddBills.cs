@@ -30,6 +30,7 @@ namespace PTC2024.Controller.BillsController
         private int accions;
         private string IdServices;
         private string customer;
+        private DataSet reportDataSet;
         public ControllerAddBills(FrmAddBills View, int accions)
         {
             objAddBills = View;
@@ -71,15 +72,23 @@ namespace PTC2024.Controller.BillsController
             objAddBills.txtDUICustomer.TextChanged += new EventHandler(DUIMask);
             objAddBills.txtCustomerEmail.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddBills.txtDiscount.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtDiscount.TextChanged += new EventHandler(DiscountMask);
             objAddBills.txtSubTotal.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddBills.txtTotalPay.MouseDown += new MouseEventHandler(DisableContextMenu);
 
         }
+
+        private void TxtDiscount_TextChanged1(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         public ControllerAddBills(FrmAddBills view, int accions, string companyName, string NIT, string NRC, string Customer,   string CustomerDui, string CustomerPhone, string CustomerEmail, string employee)
         {
             objAddBills = view;
             this.accions = accions;
             this.customer = Customer;
+
 
 
             objAddBills.Load += new EventHandler(LoadDataServices);
@@ -193,6 +202,37 @@ namespace PTC2024.Controller.BillsController
             }
         }
 
+        public void UpdateDataSetForReport(DataSet reportDataSet)
+        {
+            // Recorrer todas las filas del DataGridView
+            foreach (DataGridViewRow row in objAddBills.dgvData.Rows)
+            {
+                // Revisar si la fila ha sido eliminada (o marcada como eliminada)
+                bool isDeleted = Convert.ToBoolean(row.Cells["IsDeletedColumn"].Value); // Suponiendo que tienes una columna que marca eliminados
+
+                // Si está eliminada, buscar y eliminar del DataSet
+                if (isDeleted)
+                {
+                    // Buscar la fila correspondiente en el DataSet por el ID del servicio
+                    string serviceName = row.Cells["Servicio"].Value.ToString();
+                    DataRow[] rowsToDelete = reportDataSet.Tables["tbBillDataS"].Select($"Servicio = '{serviceName}'");
+
+                    // Eliminar la fila del DataSet
+                    foreach (DataRow dr in rowsToDelete)
+                    {
+                        dr.Delete(); // Marcar como eliminada en el DataSet
+                    }
+                }
+            }
+
+            // Asegurarse de aceptar cambios para actualizar el estado del DataSet
+            reportDataSet.AcceptChanges();
+        }
+
+        public DataSet GetUpdatedDataSet()
+        {
+            return reportDataSet;
+        }
         /// <summary>
         /// Método para agregar cliente no registrado
         /// </summary>
@@ -524,7 +564,7 @@ namespace PTC2024.Controller.BillsController
                 MessageBox.Show("Por favor, complete todos los campos requeridos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
+        //Método para deshabilitar el contextmenu de los textbox
         private void DisableContextMenu(object sender, MouseEventArgs e)
         {
             // Desactiva el menú contextual al hacer clic derecho
@@ -552,38 +592,74 @@ namespace PTC2024.Controller.BillsController
         public void NRCNumberMask(object sender, EventArgs e)
         {
             int cursorPosition = objAddBills.txtNRCompany.SelectionStart;
-            //Con esto se remueve cualquier dato no numérico excepto el guion
+
+            // Remover cualquier dato no numérico excepto el guion
             string text = new string(objAddBills.txtNRCompany.Text.Where(c => char.IsDigit(c) || c == '-').ToArray());
+
+            // Asegurar que el texto no exceda los 17 caracteres
+            if (text.Length > 17)
+            {
+                text = text.Substring(0, 17);
+            }
+
+            // Formatear a ####-######-###-##
+            if (text.Length > 4 && !text.Contains("-"))
+            {
+                text = text.Insert(4, "-");
+            }
+
+            // Aplicar el texto formateado
             objAddBills.txtNRCompany.Text = text;
             objAddBills.txtNRCompany.SelectionStart = cursorPosition;
         }
 
+        //Método de validación de numeros NIT 
+
         public void NITMask(object sender, EventArgs e)
         {
-            //Aqui se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar y no sea molesto para el usuario
+            // Guardar la posición actual del cursor
             int cursorPosition = objAddBills.txtNITCompany.SelectionStart;
 
-            //Con esto se remueve cualquier dato no numérico
+            // Remover cualquier dato no numérico
             string text = new string(objAddBills.txtNITCompany.Text.Where(c => char.IsDigit(c)).ToArray());
 
-            if (text.Length >= 14)
-            {
-                text = text.Insert(7, "-");
+            // Formatear solo si el texto tiene al menos 4 caracteres
+            if (text.Length >= 4) text = text.Insert(4, "-");
+            if (text.Length >= 11) text = text.Insert(11, "-");
+            if (text.Length >= 15) text = text.Insert(15, "-");
 
-            }
+            // Limitar a 22 caracteres en total
+            if (text.Length > 22) text = text.Substring(0, 22);
 
-            //Con esto se reposiciona el cursor, ya no se coloca antes del numero que va siguiente al guion, si no que se reajusta para que  se ponga en el orden que iba anteriormente
-            if (cursorPosition == 14)
-            {
-                cursorPosition++;
-            }
-
-            //Le asignamos la máscara al texto que se ponga en el textbox
+            // Actualizar el texto en el campo de texto
             objAddBills.txtNITCompany.Text = text;
 
-            //Restablecemos la posición del cursor con la variable que se guardó antes
+            // Restaurar la posición del cursor
             objAddBills.txtNITCompany.SelectionStart = cursorPosition;
         }
+        //Método para admitir solo numeros en descuento
+        public void DiscountMask(object sender, EventArgs e)
+        {
+            // Guardar la posición actual del cursor
+            int cursorPosition = objAddBills.txtDiscount.SelectionStart;
+
+            // Permitir dígitos y un solo punto decimal
+            string text = new string(objAddBills.txtDiscount.Text.Where(c => char.IsDigit(c) || c == '.').ToArray());
+
+            // Asegurarse de que solo hay un punto decimal
+            int dotIndex = text.IndexOf('.');
+            if (dotIndex != -1)
+            {
+                text = text.Substring(0, dotIndex + 1) + text.Substring(dotIndex + 1).Replace(".", "");
+            }
+
+            // Actualizar el texto en el campo
+            objAddBills.txtDiscount.Text = text;
+
+            // Restaurar la posición del cursor
+            objAddBills.txtDiscount.SelectionStart = cursorPosition;
+        }
+
 
         //Método para establecer una máscara al textbox del DUI
         public void DUIMask(object sender, EventArgs e)
