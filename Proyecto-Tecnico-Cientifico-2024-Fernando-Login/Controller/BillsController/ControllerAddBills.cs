@@ -21,6 +21,8 @@ using PTC2024.Model.DTO.BillsDTO;
 using PTC2024.View.Clientes;
 using PTC2024.Controller.CustomersController;
 using PTC2024.Model.DAO.EmployeesDAO;
+using PTC2024.Controller.Helper;
+using PTC2024.View.formularios.inicio;
 
 namespace PTC2024.Controller.BillsController
 {
@@ -533,7 +535,9 @@ namespace PTC2024.Controller.BillsController
                 int EmployeeId = daoNew.GetEmployeeIdByName(daoNew.Employee);
                 if (EmployeeId == 1)
                 {
-                    MessageBox.Show("Empleado no encontrado en la base de datos.");
+                    StartMenu startMenu = new StartMenu(SessionVar.Username);
+                    startMenu.snackBar.Show(startMenu, $"Empleado no encontrado en la base de datos", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                    
                     return;
                 }
 
@@ -545,7 +549,9 @@ namespace PTC2024.Controller.BillsController
                 int customerId = daoNew.GetCustomerIdByName(daoNew.Customer);
                 if (customerId == 1)
                 {
-                    MessageBox.Show("Cliente no encontrado en la base de datos.");
+                    StartMenu startMenu = new StartMenu(SessionVar.Username);
+                    startMenu.snackBar.Show(startMenu, $"Cliente no encontrado en la base de datos", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                    
                     return;
                 }
 
@@ -555,13 +561,16 @@ namespace PTC2024.Controller.BillsController
                 // Verificamos el valor que nos retorna dicho método
                 if (checks == 1)
                 {
-                    MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    StartMenu startMenu = new StartMenu(SessionVar.Username);
+                    startMenu.snackBar.Show(startMenu, $"Los datos se registraron de manera exitosa", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                   
                     objAddBills.Close();
                 }
             }
             else
             {
-                MessageBox.Show("Por favor, complete todos los campos requeridos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                StartMenu startMenu = new StartMenu(SessionVar.Username);
+                startMenu.snackBar.Show(startMenu, $"Por favor, complete todos los campos requeridos", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
         }
         //Método para deshabilitar el contextmenu de los textbox
