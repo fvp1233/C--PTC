@@ -32,23 +32,53 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSet_Company = new PTC2024.View.Reporting.InfoCompany.DataSet_Company();
-            this.tbBusinessInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbBusinessInfoTableAdapter = new PTC2024.View.Reporting.InfoCompany.DataSet_CompanyTableAdapters.tbBusinessInfoTableAdapter();
             this.tbBillsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet_RBills = new PTC2024.View.Reporting.Bills.DataSet_RBills();
-            this.tbBillsTableAdapter = new PTC2024.View.Reporting.Bills.DataSet_RBillsTableAdapters.tbBillsTableAdapter();
-            this.dataSet_detalle = new PTC2024.View.Reporting.Bills.DataSet_detalle();
+            this.tbBusinessInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet_Company = new PTC2024.View.Reporting.InfoCompany.DataSet_Company();
             this.tbBillDataSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet_detalle = new PTC2024.View.Reporting.Bills.DataSet_detalle();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tbBusinessInfoTableAdapter = new PTC2024.View.Reporting.InfoCompany.DataSet_CompanyTableAdapters.tbBusinessInfoTableAdapter();
+            this.tbBillsTableAdapter = new PTC2024.View.Reporting.Bills.DataSet_RBillsTableAdapters.tbBillsTableAdapter();
             this.tbBillDataSTableAdapter = new PTC2024.View.Reporting.Bills.DataSet_detalleTableAdapters.tbBillDataSTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_Company)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbBusinessInfoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbBillsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_RBills)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_detalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbBusinessInfoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_Company)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbBillDataSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_detalle)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tbBillsBindingSource
+            // 
+            this.tbBillsBindingSource.DataMember = "tbBills";
+            this.tbBillsBindingSource.DataSource = this.dataSet_RBills;
+            // 
+            // dataSet_RBills
+            // 
+            this.dataSet_RBills.DataSetName = "DataSet_RBills";
+            this.dataSet_RBills.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbBusinessInfoBindingSource
+            // 
+            this.tbBusinessInfoBindingSource.DataMember = "tbBusinessInfo";
+            this.tbBusinessInfoBindingSource.DataSource = this.dataSet_Company;
+            // 
+            // dataSet_Company
+            // 
+            this.dataSet_Company.DataSetName = "DataSet_Company";
+            this.dataSet_Company.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbBillDataSBindingSource
+            // 
+            this.tbBillDataSBindingSource.DataMember = "tbBillDataS";
+            this.tbBillDataSBindingSource.DataSource = this.dataSet_detalle;
+            // 
+            // dataSet_detalle
+            // 
+            this.dataSet_detalle.DataSetName = "DataSet_detalle";
+            this.dataSet_detalle.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -69,43 +99,13 @@
             this.reportViewer1.Size = new System.Drawing.Size(1072, 757);
             this.reportViewer1.TabIndex = 0;
             // 
-            // dataSet_Company
-            // 
-            this.dataSet_Company.DataSetName = "DataSet_Company";
-            this.dataSet_Company.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbBusinessInfoBindingSource
-            // 
-            this.tbBusinessInfoBindingSource.DataMember = "tbBusinessInfo";
-            this.tbBusinessInfoBindingSource.DataSource = this.dataSet_Company;
-            // 
             // tbBusinessInfoTableAdapter
             // 
             this.tbBusinessInfoTableAdapter.ClearBeforeFill = true;
             // 
-            // tbBillsBindingSource
-            // 
-            this.tbBillsBindingSource.DataMember = "tbBills";
-            this.tbBillsBindingSource.DataSource = this.dataSet_RBills;
-            // 
-            // dataSet_RBills
-            // 
-            this.dataSet_RBills.DataSetName = "DataSet_RBills";
-            this.dataSet_RBills.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tbBillsTableAdapter
             // 
             this.tbBillsTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataSet_detalle
-            // 
-            this.dataSet_detalle.DataSetName = "DataSet_detalle";
-            this.dataSet_detalle.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbBillDataSBindingSource
-            // 
-            this.tbBillDataSBindingSource.DataMember = "tbBillDataS";
-            this.tbBillDataSBindingSource.DataSource = this.dataSet_detalle;
             // 
             // tbBillDataSTableAdapter
             // 
@@ -119,14 +119,15 @@
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PrintBill";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Factura";
             this.Load += new System.EventHandler(this.PrintBill_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_Company)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbBusinessInfoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbBillsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_RBills)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_detalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbBusinessInfoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_Company)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbBillDataSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_detalle)).EndInit();
             this.ResumeLayout(false);
 
         }
