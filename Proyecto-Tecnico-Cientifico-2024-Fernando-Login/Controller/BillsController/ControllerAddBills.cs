@@ -58,14 +58,14 @@ namespace PTC2024.Controller.BillsController
             objAddBills.dgvData.RowsAdded += new DataGridViewRowsAddedEventHandler(CalculateTotal);
             objAddBills.dgvData.RowsRemoved += new DataGridViewRowsRemovedEventHandler(CalculateTotal);
             objAddBills.txtRazónsocial.MouseDown += new MouseEventHandler(DisableContextMenu);
-            objAddBills.txtRazónsocial.TextChanged += new EventHandler(OnlyLetters);
+            objAddBills.txtRazónsocial.TextChanged += new EventHandler(OnlyLettersAndNumbers);
             objAddBills.txtNITCompany.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddBills.txtNRCompany.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddBills.txtNRCompany.TextChanged += new EventHandler(NRCNumberMask);
             objAddBills.txtEmployee.MouseDown += new MouseEventHandler(DisableContextMenu);
-            objAddBills.txtEmployee.TextChanged += new EventHandler(OnlyLetters);
+            objAddBills.txtEmployee.TextChanged += new EventHandler(OnlyLettersName);
             objAddBills.txtCustomerName.MouseDown += new MouseEventHandler(DisableContextMenu);
-            objAddBills.txtCustomerName.TextChanged += new EventHandler(OnlyLetters);
+            objAddBills.txtCustomerName.TextChanged += new EventHandler(OnlyLettersNameC);
             objAddBills.txtCustomerPhone.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddBills.txtCustomerPhone.TextChanged += new EventHandler(PhoneMask);
             objAddBills.txtDUICustomer.MouseDown += new MouseEventHandler(DisableContextMenu);
@@ -574,20 +574,59 @@ namespace PTC2024.Controller.BillsController
             }
         }
 
-        public void OnlyLetters(object sender, EventArgs e)
+        public void OnlyLettersAndNumbers(object sender, EventArgs e)
+        {
+                // Obtener la posición actual del cursor
+                int cursorPosition = objAddBills.txtRazónsocial.SelectionStart;
+
+                // Filtrar el texto para que solo queden letras, números, puntos y espacios
+                string text = new string(objAddBills.txtRazónsocial.Text
+                                           .Where(c => char.IsLetter(c) || char.IsDigit(c) || char.IsWhiteSpace(c) || c == '.')
+                                           .ToArray());
+
+                // Actualizar el contenido del TextBox con el texto filtrado
+                objAddBills.txtRazónsocial.Text = text;
+
+                // Restaurar la posición del cursor
+                objAddBills.txtRazónsocial.SelectionStart = cursorPosition;
+            
+
+        }
+
+        public void OnlyLettersName(object sender, EventArgs e)
         {
             // Obtener la posición actual del cursor
-            int cursorPosition = objAddBills.txtRazónsocial.SelectionStart;
+            int cursorPosition = objAddBills.txtEmployee.SelectionStart;
 
-            // Filtrar el texto para que solo queden letras
-            string text = new string(objAddBills.txtRazónsocial.Text.Where(c => char.IsLetter(c)).ToArray());
+            // Filtrar el texto para que solo queden letras y espacios
+            string text = new string(objAddBills.txtEmployee.Text
+                                       .Where(c => char.IsLetter(c) || char.IsWhiteSpace(c))
+                                       .ToArray());
 
             // Actualizar el contenido del TextBox con el texto filtrado
-            objAddBills.txtRazónsocial.Text = text;
+            objAddBills.txtEmployee.Text = text;
 
             // Restaurar la posición del cursor
-            objAddBills.txtRazónsocial.SelectionStart = cursorPosition;
+             objAddBills.txtEmployee.SelectionStart = cursorPosition;
         }
+
+        public void OnlyLettersNameC(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objAddBills.txtCustomerName.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras y espacios
+            string text = new string(objAddBills.txtCustomerName.Text
+                                       .Where(c => char.IsLetter(c) || char.IsWhiteSpace(c))
+                                       .ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objAddBills.txtCustomerName.Text = text;
+
+            // Restaurar la posición del cursor
+            objAddBills.txtCustomerName.SelectionStart = cursorPosition;
+        }
+
         //Aplicamos una máscara que solo deje meter el guion y caracteres numéricos para los textbox de numero de afiliacion y cuenta bancaria.
         public void NRCNumberMask(object sender, EventArgs e)
         {
@@ -700,13 +739,6 @@ namespace PTC2024.Controller.BillsController
 
             // Remover cualquier dato no numérico
             string text = new string(objAddBills.txtCustomerPhone.Text.Where(c => char.IsDigit(c)).ToArray());
-
-            // Validar que el número empiece con 2, 6 o 7
-            if (text.Length > 0 && (text[0] != '2' && text[0] != '6' && text[0] != '7'))
-            {
-                // Si el primer carácter no es válido, limpiar el texto
-                text = string.Empty;
-            }
 
             // Aplicar la máscara de teléfono (ej: ####-###)
             if (text.Length >= 5)
