@@ -62,6 +62,7 @@ namespace PTC2024.Controller.BillsController
             objAddBills.txtRazónsocial.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddBills.txtRazónsocial.TextChanged += new EventHandler(OnlyLettersAndNumbers);
             objAddBills.txtNITCompany.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtNITCompany.TextChanged += new EventHandler(NITMask);
             objAddBills.txtNRCompany.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddBills.txtNRCompany.TextChanged += new EventHandler(NRCNumberMask);
             objAddBills.txtEmployee.MouseDown += new MouseEventHandler(DisableContextMenu);
@@ -644,22 +645,36 @@ namespace PTC2024.Controller.BillsController
             // Remover cualquier dato no numérico excepto el guion
             string text = new string(objAddBills.txtNRCompany.Text.Where(c => char.IsDigit(c) || c == '-').ToArray());
 
-            // Asegurar que el texto no exceda los 17 caracteres
-            if (text.Length > 17)
+            // Remover todos los guiones para reformatear correctamente
+            text = text.Replace("-", "");
+
+            // Asegurar que el texto no exceda los 14 dígitos (sin guiones)
+            if (text.Length > 14)
             {
-                text = text.Substring(0, 17);
+                text = text.Substring(0, 14);
             }
 
             // Formatear a ####-######-###-##
-            if (text.Length > 4 && !text.Contains("-"))
+            if (text.Length > 4)
             {
                 text = text.Insert(4, "-");
+            }
+            if (text.Length > 11)
+            {
+                text = text.Insert(11, "-");
+            }
+            if (text.Length > 15)
+            {
+                text = text.Insert(15, "-");
             }
 
             // Aplicar el texto formateado
             objAddBills.txtNRCompany.Text = text;
+
+            // Restaurar la posición del cursor
             objAddBills.txtNRCompany.SelectionStart = cursorPosition;
         }
+
 
         //Método de validación de numeros NIT 
 
@@ -668,23 +683,40 @@ namespace PTC2024.Controller.BillsController
             // Guardar la posición actual del cursor
             int cursorPosition = objAddBills.txtNITCompany.SelectionStart;
 
-            // Remover cualquier dato no numérico
-            string text = new string(objAddBills.txtNITCompany.Text.Where(c => char.IsDigit(c)).ToArray());
+            // Remover cualquier dato no numérico excepto el guion
+            string text = new string(objAddBills.txtNITCompany.Text.Where(c => char.IsDigit(c) || c == '-').ToArray());
 
-            // Formatear solo si el texto tiene al menos 4 caracteres
-            if (text.Length >= 4) text = text.Insert(4, "-");
-            if (text.Length >= 11) text = text.Insert(11, "-");
-            if (text.Length >= 15) text = text.Insert(15, "-");
+            // Remover todos los guiones para reformatear correctamente
+            text = text.Replace("-", "");
 
-            // Limitar a 22 caracteres en total
-            if (text.Length > 22) text = text.Substring(0, 22);
+            // Asegurar que el texto no exceda los 14 dígitos (sin guiones)
+            if (text.Length > 14)
+            {
+                text = text.Substring(0, 14);
+            }
 
-            // Actualizar el texto en el campo de texto
+            // Formatear a ####-######-###-#
+            if (text.Length > 4)
+            {
+                text = text.Insert(4, "-");
+            }
+            if (text.Length > 11)
+            {
+                text = text.Insert(11, "-");
+            }
+            if (text.Length > 15)
+            {
+                text = text.Insert(15, "-");
+            }
+
+            // Aplicar el texto formateado
             objAddBills.txtNITCompany.Text = text;
 
             // Restaurar la posición del cursor
             objAddBills.txtNITCompany.SelectionStart = cursorPosition;
         }
+
+
         //Método para admitir solo numeros en descuento
         public void DiscountMask(object sender, EventArgs e)
         {
