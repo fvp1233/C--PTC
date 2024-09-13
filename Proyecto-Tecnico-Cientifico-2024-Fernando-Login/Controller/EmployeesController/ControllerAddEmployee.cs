@@ -534,6 +534,14 @@ namespace PTC2024.Controller
                 text = text.TrimStart('.');
             }
 
+            // Limitar a solo dos decimales después del punto
+            int decimalPosition = text.IndexOf('.');
+            if (decimalPosition != -1 && text.Length > decimalPosition + 3)
+            {
+                // Truncar a dos dígitos después del punto decimal
+                text = text.Substring(0, decimalPosition + 3);
+            }
+
             // Asignar el texto filtrado al TextBox
             objAddEmployee.txtSalary.Text = text;
 
