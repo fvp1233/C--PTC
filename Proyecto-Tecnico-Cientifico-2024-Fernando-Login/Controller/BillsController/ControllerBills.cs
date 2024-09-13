@@ -43,7 +43,6 @@ namespace PTC2024.Controller.BillsController
             objFormBills.cbPagada.Click += new EventHandler(CheckboxFiltersStatusPay);
             objFormBills.cbAnulada.Click += new EventHandler(CheckboxFiltersStatusOverride);
             objFormBills.cbPendiente.Click += new EventHandler(CheckboxFiltersStatusDue);
-            objFormBills.cmsRectifyBill.Visible = false;
             disabledBillId = -1;
         }
         /// <summary>
@@ -390,7 +389,6 @@ namespace PTC2024.Controller.BillsController
                     row.DefaultCellStyle.ForeColor = Color.DarkGray;
                     row.DefaultCellStyle.SelectionBackColor = Color.LightGray;
                     row.DefaultCellStyle.SelectionForeColor = Color.DarkGray;
-                    objFormBills.cmsRectifyBill.Visible = true;
                     ChargeData();
                     break;
                 }
