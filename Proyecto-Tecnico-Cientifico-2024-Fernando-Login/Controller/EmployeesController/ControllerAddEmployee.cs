@@ -528,6 +528,12 @@ namespace PTC2024.Controller
                 text = text.Substring(0, firstDecimalIndex + 1) + text.Substring(firstDecimalIndex + 1).Replace(".", "");
             }
 
+            // Evitar que el texto comience con un punto decimal
+            if (text.StartsWith("."))
+            {
+                text = text.TrimStart('.');
+            }
+
             // Asignar el texto filtrado al TextBox
             objAddEmployee.txtSalary.Text = text;
 

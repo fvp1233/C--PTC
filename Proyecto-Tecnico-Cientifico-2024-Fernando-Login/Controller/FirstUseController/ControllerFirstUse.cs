@@ -132,11 +132,6 @@ namespace PTC2024.Controller.FirstUseController
             string text = new string(objFistUse.txtPhone.Text.Where(c => char.IsDigit(c)).ToArray());
 
             // Validar que el número empiece con 2, 6 o 7
-            if (text.Length > 0 && (text[0] != '2' && text[0] != '6' && text[0] != '7'))
-            {
-                // Si el primer carácter no es válido, limpiar el texto
-                text = string.Empty;
-            }
 
             // Aplicar la máscara de teléfono (ej: ####-###)
             if (text.Length >= 5)

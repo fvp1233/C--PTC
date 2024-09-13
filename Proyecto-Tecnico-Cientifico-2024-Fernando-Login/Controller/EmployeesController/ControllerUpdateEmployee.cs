@@ -76,6 +76,7 @@ namespace PTC2024.Controller.EmployeesController
             objUpdateEmployee.txtBankAccount.MouseDown += new MouseEventHandler(DisableContextMenu);
             objUpdateEmployee.txtNames.TextChanged += new EventHandler(OnlyLettersName);
             objUpdateEmployee.txtLastNames.TextChanged += new EventHandler(OnlyLettersLastName);
+            objUpdateEmployee.txtSalary.TextChanged += new EventHandler(OnlyNum);
         }
 
         public void ChargeInfo(object sender, EventArgs e)
@@ -562,6 +563,34 @@ namespace PTC2024.Controller.EmployeesController
 
             // Restaurar la posición del cursor
             objUpdateEmployee.txtLastNames.SelectionStart = cursorPosition;
+        }
+        public void OnlyNum(object sender, EventArgs e)
+        {
+            int cursorPosition = objUpdateEmployee.txtSalary.SelectionStart;
+
+            // Permitir solo dígitos y un solo punto decimal
+            string text = new string(objUpdateEmployee.txtSalary.Text.Where(c => char.IsDigit(c) || c == '.').ToArray());
+
+            // Asegurarse de que solo haya un punto decimal
+            int decimalCount = text.Count(c => c == '.');
+            if (decimalCount > 1)
+            {
+                // Si hay más de un punto decimal, remover los adicionales
+                int firstDecimalIndex = text.IndexOf('.');
+                text = text.Substring(0, firstDecimalIndex + 1) + text.Substring(firstDecimalIndex + 1).Replace(".", "");
+            }
+
+            // Evitar que el texto comience con un punto decimal
+            if (text.StartsWith("."))
+            {
+                text = text.TrimStart('.');
+            }
+
+            // Asignar el texto filtrado al TextBox
+            objUpdateEmployee.txtSalary.Text = text;
+
+            // Restablecer la posición del cursor
+            objUpdateEmployee.txtSalary.SelectionStart = cursorPosition;
         }
 
     }

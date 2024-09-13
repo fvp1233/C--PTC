@@ -151,6 +151,34 @@ namespace PTC2024.Controller.ServicesController
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
         }
+        public void OnlyNum(object sender, EventArgs e)
+        {
+            int cursorPosition = objUpdateService.txtMonto.SelectionStart;
+
+            // Permitir solo dígitos y un solo punto decimal
+            string text = new string(objUpdateService.txtMonto.Text.Where(c => char.IsDigit(c) || c == '.').ToArray());
+
+            // Asegurarse de que solo haya un punto decimal
+            int decimalCount = text.Count(c => c == '.');
+            if (decimalCount > 1)
+            {
+                // Si hay más de un punto decimal, remover los adicionales
+                int firstDecimalIndex = text.IndexOf('.');
+                text = text.Substring(0, firstDecimalIndex + 1) + text.Substring(firstDecimalIndex + 1).Replace(".", "");
+            }
+
+            // Evitar que el texto comience con un punto decimal
+            if (text.StartsWith("."))
+            {
+                text = text.TrimStart('.');
+            }
+
+            // Asignar el texto filtrado al TextBox
+            objUpdateService.txtMonto.Text = text;
+
+            // Restablecer la posición del cursor
+            objUpdateService.txtMonto.SelectionStart = cursorPosition;
+        }
     }
 }
 

@@ -133,12 +133,19 @@ namespace PTC2024.Controller.ServicesController
                 text = text.Substring(0, firstDecimalIndex + 1) + text.Substring(firstDecimalIndex + 1).Replace(".", "");
             }
 
+            // Evitar que el texto comience con un punto decimal
+            if (text.StartsWith("."))
+            {
+                text = text.TrimStart('.');
+            }
+
             // Asignar el texto filtrado al TextBox
             objAddService.txtMonto.Text = text;
 
             // Restablecer la posición del cursor
             objAddService.txtMonto.SelectionStart = cursorPosition;
         }
+
 
     }
 }
