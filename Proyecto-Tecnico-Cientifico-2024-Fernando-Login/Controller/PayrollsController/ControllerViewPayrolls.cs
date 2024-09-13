@@ -338,6 +338,7 @@ namespace PTC2024.Controller.EmployeesController
                             DAOUpdatePayroll.DaySalary = daySalary;
                             DAOUpdatePayroll.DaysWorked = daysWorked;
                             DAOUpdatePayroll.HourSalary = hourSalary;
+                            DAOUpdatePayroll.GossSalary = calculatedSalary;
                             DAOUpdatePayroll.HoursWorked = hoursWorked;
                             DAOUpdatePayroll.ExtraHours = extraHours;
                             DAOUpdatePayroll.IdPayrollStatus = 2;

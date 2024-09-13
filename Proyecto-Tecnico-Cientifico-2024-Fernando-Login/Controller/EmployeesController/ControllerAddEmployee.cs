@@ -10,6 +10,8 @@ using System.Data;
 using System.Windows.Forms;
 using PTC2024.Controller.Helper;
 using PTC2024.View.formularios.inicio;
+using System.Net.Sockets;
+using System.Net;
 
 namespace PTC2024.Controller
 {
@@ -30,6 +32,8 @@ namespace PTC2024.Controller
             objAddEmployee.txtAffiliationNumber.TextChanged += new EventHandler(AffiliatioNumberMask);
             objAddEmployee.txtBankAccount.TextChanged += new EventHandler(BankAccountMask);
             objAddEmployee.txtUsername.TextChanged += new EventHandler(UsernameMask);
+            objAddEmployee.txtNames.TextChanged += new EventHandler(OnlyLettersName);
+            objAddEmployee.txtLastNames.TextChanged += new EventHandler(OnlyLettersLastName);
             objAddEmployee.txtNames.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddEmployee.txtLastNames.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddEmployee.txtDUI.MouseDown += new MouseEventHandler(DisableContextMenu);
@@ -40,6 +44,8 @@ namespace PTC2024.Controller
             objAddEmployee.txtAffiliationNumber.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddEmployee.txtBankAccount.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddEmployee.txtUsername.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddEmployee.txtSalary.TextChanged += new EventHandler(OnlyNum);
+            objAddEmployee.txtEmail.TextChanged += new EventHandler(EmailValidation);
         }
 
 
@@ -162,6 +168,26 @@ namespace PTC2024.Controller
                                         //Se crea un objeto de la clase DAOAddEmployee y de la clase CommonClasses
                                         DAOAddEmployee daoInsertEmployee = new DAOAddEmployee();
                                         CommonClasses commonClasses = new CommonClasses();
+                                        //GENERACIÓN DE CONTRASEÑA ALEATORIA
+                                        Random random = new Random();
+
+                                        //Ahora especificamos los carácteres que podrá tomar el random para generar la contraseña aleatoria
+                                        const string chars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz0123456789";
+                                        //Esta variable define la longitud del string anterior, para que el arreglo que se creará pueda agarrar de los 61 carácteres que se encuentran ahí.
+                                        const int cLength = 61;
+
+                                        //Creamos un arreglo de chars de una longitud de 6 dígitos
+                                        var array = new char[6];
+
+                                        //ahora creamos un for que se encargará de escoger aleatoriamente 6 carácteres y los guardará en nuestro arreglo
+                                        for (int i = 0; i < 6; i++)
+                                        {
+                                            array[i] = chars[random.Next(chars.Length)];
+                                        }
+
+                                        //Ahora le damos valor a nuestra variable string con lo que hay en el arreglo.
+                                        string newPass = new string(array);
+
                                         //Datos para la creación de un empleado
                                         daoInsertEmployee.Names = objAddEmployee.txtNames.Text.Trim();
                                         daoInsertEmployee.LastNames = objAddEmployee.txtLastNames.Text.Trim();
@@ -183,7 +209,7 @@ namespace PTC2024.Controller
 
                                         //Datos para la creación del usuario
                                         daoInsertEmployee.Username = objAddEmployee.txtUsername.Text.Trim();
-                                        daoInsertEmployee.Password = commonClasses.ComputeSha256Hash(objAddEmployee.txtUsername.Text.Trim() + "PU123");
+                                        daoInsertEmployee.Password = commonClasses.ComputeSha256Hash(newPass);
                                         daoInsertEmployee.BusinessPosition = int.Parse(objAddEmployee.comboBusinessP.SelectedValue.ToString());
                                         daoInsertEmployee.UserSatus = true;
                                         daoInsertEmployee.BusinessInfo = 1;
@@ -191,11 +217,12 @@ namespace PTC2024.Controller
                                         int valorRespuesta = daoInsertEmployee.RegisterEmployee();
                                         //Verificamos el valor que nos retorna dicho método
                                         if (valorRespuesta == 1)
-                                        {                                           
-                                            MessageBox.Show($"Usuario: {objAddEmployee.txtUsername.Text.Trim()} \n Contraseña: {objAddEmployee.txtUsername.Text.Trim() + "PU123"}", "Credenciales de acceso del empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                            objAddEmployee.Close();
-
+                                        {
+                                            //MessageBox.Show($"Usuario: {objAddEmployee.txtUsername.Text.Trim()} \n Contraseña: {objAddEmployee.txtUsername.Text.Trim() + "PU123"}", "Credenciales de acceso del empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            MessageBox.Show("Se enviará un correo al email del nuevo empleado con sus credenciales para el inicio de sesión.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             objAddEmployee.snackbar.Show(objMenu, $"Los datos del nuevo empleado fueron registrados.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                                            SendEmail(newPass);
+                                            objAddEmployee.Close();
                                         }
                                         else
                                         {
@@ -211,27 +238,27 @@ namespace PTC2024.Controller
                                 {
                                     MessageBox.Show("El DUI ingresado ya está registrado en el sistema.", "Documento de identidad", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
-                                
+
                             }
                             else
                             {
                                 MessageBox.Show("El nombre de usuario ya se encuentra en uso", "Nombre de usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
-                            
+
                         }
                         else
                         {
                             MessageBox.Show("El empleado debe tener al menos 18 años de edad.", "Edad no permitida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        
+
                     }
                     else
                     {
                         MessageBox.Show("Ingrese un valor numérico en el campo del salario", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    
-                }               
-                
+
+                }
+
             }
             else
             {
@@ -247,30 +274,53 @@ namespace PTC2024.Controller
         {
             objAddEmployee.Close();
         }
-
-        //validación de email
         private bool ValidateEmail()
         {
             string email = objAddEmployee.txtEmail.Text.Trim();
-            if (!(email.Contains("@")))
+
+            // Verificar que el correo contenga una '@'
+            if (!email.Contains("@"))
             {
                 MessageBox.Show("El formato del correo es incorrecto, verifique que contenga '@'.", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            //validación de dominio del correo
-            string[] allowedDomains = { "gmail.com", "ricaldone.edu.sv" };
-            //La variable domain guarda la cadena de carácteres que se presente después de la arroba en el campo de correo
+            // Asegurarse de que el correo tenga un dominio válido (parte después de '@')
             string domain = email.Substring(email.LastIndexOf('@') + 1);
-            //Si la cadena de carácteres después de la arroba NO es uno de los dominios permitidos, nos envía un mensaje de error.
-            if (!allowedDomains.Contains(domain))
+
+            if (string.IsNullOrEmpty(domain))
             {
-                MessageBox.Show("Dominio de correo inválido. \n El sistema solo admite los dominios '@gmail.com' y '@ricaldone.edu.sv'", "Dominio no permitido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El formato del correo es incorrecto. No tiene un dominio válido.", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            //Si no se detecta ningún fallo en el email, se devuelve directamente un true.
+
+            // Verificar si el dominio tiene un registro MX
+            if (!DomainHasMXRecord(domain))
+            {
+                MessageBox.Show("El dominio del correo no existe o no tiene un servidor de correo válido.", "Dominio inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
             return true;
         }
+
+        private bool DomainHasMXRecord(string domain)
+        {
+            try
+            {
+                // Obtener registros DNS del dominio
+                IPHostEntry hostEntry = Dns.GetHostEntry(domain);
+
+                // Verificar que tenga registros de mail (MX)
+                return hostEntry.AddressList.Length > 0;
+            }
+            catch (SocketException)
+            {
+                // Si ocurre un error al obtener la entrada DNS, el dominio no es válido o no tiene MX
+                return false;
+            }
+        }
+
 
         //Método encargado de verificar que el empleado sea mayor a 18 años
         public int ValidateAge()
@@ -330,28 +380,28 @@ namespace PTC2024.Controller
         //Máscara para el textbox del telefono
         public void PhoneMask(object sender, EventArgs e)
         {
-            //Aqui se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar y no sea molesto para el usuario
+            // Aquí se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar
             int cursorPosition = objAddEmployee.txtPhone.SelectionStart;
 
-            //Con esto se remueve cualquier dato no numérico
+            // Remover cualquier dato no numérico
             string text = new string(objAddEmployee.txtPhone.Text.Where(c => char.IsDigit(c)).ToArray());
 
+            // Aplicar la máscara de teléfono (ej: ####-###)
             if (text.Length >= 5)
             {
                 text = text.Insert(4, "-");
-
             }
 
-            //Con esto se reposiciona el cursor, ya no se coloca antes del numero que va siguiente al guion, si no que se reajusta para que  se ponga en el orden que iba anteriormente
+            // Ajustar la posición del cursor si está después del guion
             if (cursorPosition == 5)
             {
                 cursorPosition++;
             }
 
-            //Le asignamos la máscara al texto que se ponga en el textbox
+            // Asignar el texto con la máscara al TextBox
             objAddEmployee.txtPhone.Text = text;
 
-            //Restablecemos la posición del cursor con la variable que se guardó antes
+            // Restablecer la posición del cursor
             objAddEmployee.txtPhone.SelectionStart = cursorPosition;
         }
 
@@ -430,6 +480,100 @@ namespace PTC2024.Controller
             {
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
+        }
+        public void OnlyLettersName(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objAddEmployee.txtNames.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras y espacios
+            string text = new string(objAddEmployee.txtNames.Text
+                                       .Where(c => char.IsLetter(c) || char.IsWhiteSpace(c))
+                                       .ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objAddEmployee.txtNames.Text = text;
+
+            // Restaurar la posición del cursor
+            objAddEmployee.txtNames.SelectionStart = cursorPosition;
+        }
+
+        public void OnlyLettersLastName(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objAddEmployee.txtLastNames.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras
+            string text = new string(objAddEmployee.txtLastNames.Text.Where(c => char.IsLetter(c) || char.IsWhiteSpace(c)).ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objAddEmployee.txtLastNames.Text = text;
+
+            // Restaurar la posición del cursor
+            objAddEmployee.txtLastNames.SelectionStart = cursorPosition;
+        }
+        public void OnlyNum(object sender, EventArgs e)
+        {
+            int cursorPosition = objAddEmployee.txtSalary.SelectionStart;
+
+            // Permitir solo dígitos y un solo punto decimal
+            string text = new string(objAddEmployee.txtSalary.Text.Where(c => char.IsDigit(c) || c == '.').ToArray());
+
+            // Asegurarse de que solo haya un punto decimal
+            int decimalCount = text.Count(c => c == '.');
+            if (decimalCount > 1)
+            {
+                // Si hay más de un punto decimal, remover los adicionales
+                int firstDecimalIndex = text.IndexOf('.');
+                text = text.Substring(0, firstDecimalIndex + 1) + text.Substring(firstDecimalIndex + 1).Replace(".", "");
+            }
+
+            // Evitar que el texto comience con un punto decimal
+            if (text.StartsWith("."))
+            {
+                text = text.TrimStart('.');
+            }
+
+            // Asignar el texto filtrado al TextBox
+            objAddEmployee.txtSalary.Text = text;
+
+            // Restablecer la posición del cursor
+            objAddEmployee.txtSalary.SelectionStart = cursorPosition;
+        }
+        public void EmailValidation(object sender, EventArgs e)
+        {
+            int cursorPosition = objAddEmployee.txtEmail.SelectionStart;
+
+            // Filtrar solo caracteres permitidos para un email: letras, números, @, . y algunos caracteres especiales comunes
+            string text = new string(objAddEmployee.txtEmail.Text.Where(c => char.IsLetterOrDigit(c) || c == '@' || c == '.' || c == '_' || c == '-').ToArray());
+
+            // Asegurarse de que el @ no sea el primer carácter
+            if (text.StartsWith("@"))
+            {
+                // Remover el @ si está al inicio
+                text = text.Substring(1);
+            }
+
+            // Asignar el texto filtrado al TextBox
+            objAddEmployee.txtEmail.Text = text;
+
+            // Restablecer la posición del cursor
+            objAddEmployee.txtEmail.SelectionStart = cursorPosition;
+        }
+
+        public bool SendEmail(string pass)
+        {
+            DAOAddEmployee dao = new DAOAddEmployee();
+
+            string para = objAddEmployee.txtEmail.Text.Trim();
+            string de = "h2c.soporte.usuarios@gmail.com";
+            string subject = $"H2C: Bienvenido a {BusinessVar.BusinessName} nuevo empleado.";
+            string message = $"Hola {objAddEmployee.txtNames.Text.Trim()} {objAddEmployee.txtLastNames.Text.Trim()}, se ha registrado este correo electrónico en su perfil como nuevo empleado en la empresa {BusinessVar.BusinessName}.\nEn este correo le adjuntamos su credenciales para que pueda iniciar sesión en el sistema.\n\nNombre de usuario: {objAddEmployee.txtUsername.Text.Trim()} \nContraseña: {pass}";
+
+            Email email = new Email();
+            bool answer = email.NewEmployee(para, de, subject, message);
+
+            return answer;
         }
 
     }

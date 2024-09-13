@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Sockets;
+using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,7 +47,10 @@ namespace PTC2024.Controller.LogInController
             objRegister.txtUser.MouseDown += new MouseEventHandler(DisableContextMenu);
             objRegister.txtPassword.MouseDown += new MouseEventHandler(DisableContextMenu);
             objRegister.txtConfirmedPassword.MouseDown += new MouseEventHandler(DisableContextMenu);
-
+            objRegister.txtNames.TextChanged += new EventHandler(OnlyLettersName);
+            objRegister.txtLastNames.TextChanged += new EventHandler(OnlyLettersLastName);
+            objRegister.txtEmail.TextChanged += new EventHandler(EmailValidation);
+            objRegister.txtUser.TextChanged += new EventHandler(UsernameMask);
         }
 
         public void LoadCombobox(object sender, EventArgs e)
@@ -181,24 +186,48 @@ namespace PTC2024.Controller.LogInController
         private bool ValidateEmail()
         {
             string email = objRegister.txtEmail.Text.Trim();
-            if (!(email.Contains("@")))
+
+            // Verificar que el correo contenga una '@'
+            if (!email.Contains("@"))
             {
                 MessageBox.Show("El formato del correo es incorrecto, verifique que contenga '@'.", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            //validación de dominio del correo
-            string[] allowedDomains = { "gmail.com", "ricaldone.edu.sv" };
-            //La variable domain guarda la cadena de carácteres que se presente después de la arroba en el campo de correo
+            // Asegurarse de que el correo tenga un dominio válido (parte después de '@')
             string domain = email.Substring(email.LastIndexOf('@') + 1);
-            //Si la cadena de carácteres después de la arroba NO es uno de los dominios permitidos, nos envía un mensaje de error.
-            if (!allowedDomains.Contains(domain))
+
+            if (string.IsNullOrEmpty(domain))
             {
-                MessageBox.Show("Dominio de correo inválido. \n El sistema solo admite los dominios '@gmail.com' y '@ricaldone.edu.sv'", "Dominio no permitido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El formato del correo es incorrecto. No tiene un dominio válido.", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            //Si no se detecta ningún fallo en el email, se devuelve directamente un true.
+
+            // Verificar si el dominio tiene un registro MX
+            if (!DomainHasMXRecord(domain))
+            {
+                MessageBox.Show("El dominio del correo no existe o no tiene un servidor de correo válido.", "Dominio inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
             return true;
+        }
+
+        private bool DomainHasMXRecord(string domain)
+        {
+            try
+            {
+                // Obtener registros DNS del dominio
+                IPHostEntry hostEntry = Dns.GetHostEntry(domain);
+
+                // Verificar que tenga registros de mail (MX)
+                return hostEntry.AddressList.Length > 0;
+            }
+            catch (SocketException)
+            {
+                // Si ocurre un error al obtener la entrada DNS, el dominio no es válido o no tiene MX
+                return false;
+            }
         }
 
         //Método encargado de verificar la edad
@@ -273,28 +302,28 @@ namespace PTC2024.Controller.LogInController
         //Máscara para el textbox del telefono
         public void PhoneMask(object sender, EventArgs e)
         {
-            //Aqui se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar y no sea molesto para el usuario
+            // Aquí se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar
             int cursorPosition = objRegister.txtPhone.SelectionStart;
 
-            //Con esto se remueve cualquier dato no numérico
+            // Remover cualquier dato no numérico
             string text = new string(objRegister.txtPhone.Text.Where(c => char.IsDigit(c)).ToArray());
 
+            // Aplicar la máscara de teléfono (ej: ####-###)
             if (text.Length >= 5)
             {
                 text = text.Insert(4, "-");
-
             }
 
-            //Con esto se reposiciona el cursor, ya no se coloca antes del numero que va siguiente al guion, si no que se reajusta para que  se ponga en el orden que iba anteriormente
+            // Ajustar la posición del cursor si está después del guion
             if (cursorPosition == 5)
             {
                 cursorPosition++;
             }
 
-            //Le asignamos la máscara al texto que se ponga en el textbox
+            // Asignar el texto con la máscara al TextBox
             objRegister.txtPhone.Text = text;
 
-            //Restablecemos la posición del cursor con la variable que se guardó antes
+            // Restablecer la posición del cursor
             objRegister.txtPhone.SelectionStart = cursorPosition;
         }
 
@@ -337,6 +366,66 @@ namespace PTC2024.Controller.LogInController
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
         }
+        public void OnlyLettersName(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objRegister.txtNames.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras
+            string text = new string(objRegister.txtNames.Text.Where(c => char.IsLetter(c) || char.IsWhiteSpace(c)).ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objRegister.txtNames.Text = text;
+
+            // Restaurar la posición del cursor
+            objRegister.txtNames.SelectionStart = cursorPosition;
+        }
+        public void OnlyLettersLastName(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objRegister.txtLastNames.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras
+            string text = new string(objRegister.txtLastNames.Text.Where(c => char.IsLetter(c) || char.IsWhiteSpace(c)).ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objRegister.txtLastNames.Text = text;
+
+            // Restaurar la posición del cursor
+            objRegister.txtLastNames.SelectionStart = cursorPosition;
+        }
+        public void EmailValidation(object sender, EventArgs e)
+        {
+            int cursorPosition = objRegister.txtEmail.SelectionStart;
+
+            // Filtrar solo caracteres permitidos para un email: letras, números, @, . y algunos caracteres especiales comunes
+            string text = new string(objRegister.txtEmail.Text.Where(c => char.IsLetterOrDigit(c) || c == '@' || c == '.' || c == '_' || c == '-').ToArray());
+
+            // Asegurarse de que el @ no sea el primer carácter
+            if (text.StartsWith("@"))
+            {
+                // Remover el @ si está al inicio
+                text = text.Substring(1);
+            }
+
+            // Asignar el texto filtrado al TextBox
+            objRegister.txtEmail.Text = text;
+
+            // Restablecer la posición del cursor
+            objRegister.txtEmail.SelectionStart = cursorPosition;
+        }
+        public void UsernameMask(object sender, EventArgs e)
+        {
+            //Almacena la posición original del cursor
+            int cursorPosition = objRegister.txtUser.SelectionStart;
+
+            //Filtra el texto del TextBox para eliminar caracteres especiales
+            objRegister.txtUser.Text = new string(objRegister.txtUser.Text.Where(c => char.IsLetterOrDigit(c)).ToArray());
+
+            //Restaura la posición del cursor
+            objRegister.txtUser.SelectionStart = cursorPosition;
+        }
+
     }
 }
 

@@ -29,7 +29,8 @@ namespace PTC2024.Controller.PasswordRecover
             objAdminMethod.txtUser.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAdminMethod.txtUserNewPass.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAdminMethod.txtUserConfirmPass.MouseDown += new MouseEventHandler(DisableContextMenu);
-
+            objAdminMethod.txtAdminUser.TextChanged += new EventHandler(UsernameMask2);
+            objAdminMethod.txtUser.TextChanged += new EventHandler(UsernameMask);
         }
 
         public void ChangePassword(object sender, EventArgs e)
@@ -255,6 +256,28 @@ namespace PTC2024.Controller.PasswordRecover
             {
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
+        }
+        public void UsernameMask(object sender, EventArgs e)
+        {
+            //Almacena la posición original del cursor
+            int cursorPosition = objAdminMethod.txtUser.SelectionStart;
+
+            //Filtra el texto del TextBox para eliminar caracteres especiales
+            objAdminMethod.txtUser.Text = new string(objAdminMethod.txtUser.Text.Where(c => char.IsLetterOrDigit(c)).ToArray());
+
+            //Restaura la posición del cursor
+            objAdminMethod.txtUser.SelectionStart = cursorPosition;
+        }
+        public void UsernameMask2(object sender, EventArgs e)
+        {
+            //Almacena la posición original del cursor
+            int cursorPosition = objAdminMethod.txtAdminUser.SelectionStart;
+
+            //Filtra el texto del TextBox para eliminar caracteres especiales
+            objAdminMethod.txtAdminUser.Text = new string(objAdminMethod.txtAdminUser.Text.Where(c => char.IsLetterOrDigit(c)).ToArray());
+
+            //Restaura la posición del cursor
+            objAdminMethod.txtAdminUser.SelectionStart = cursorPosition;
         }
     }
 }

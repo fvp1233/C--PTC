@@ -15,6 +15,7 @@ using System.Drawing.Printing;
 using System.IO;
 using PTC2024.Model.DTO.BillsDTO;
 using PTC2024.View.Reporting.Bills;
+using PTC2024.View.formularios.inicio;
 namespace PTC2024.Controller.BillsController
 {
     internal class ControllerBills
@@ -42,7 +43,6 @@ namespace PTC2024.Controller.BillsController
             objFormBills.cbPagada.Click += new EventHandler(CheckboxFiltersStatusPay);
             objFormBills.cbAnulada.Click += new EventHandler(CheckboxFiltersStatusOverride);
             objFormBills.cbPendiente.Click += new EventHandler(CheckboxFiltersStatusDue);
-            objFormBills.cmsRectifyBill.Visible = false;
             disabledBillId = -1;
         }
         /// <summary>
@@ -358,15 +358,17 @@ namespace PTC2024.Controller.BillsController
                 DAOBills daoBills = new DAOBills();
                 DataSet ds = daoBills.over(idBill.ToString());
                 // Deshabilitar visualmente la fila y marcarla como solo lectura
-                MessageBox.Show("Factura anulada.", "Proceso Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                StartMenu startMenu = new StartMenu(SessionVar.Username);
+                startMenu.snackBar.Show(startMenu, $"Factura anulada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
                 disabledBillId = idBill;
                 DisableRow(idBill);
                 SetRowReadOnly(idBill);
             }
             else
             {
-                MessageBox.Show("Contraseña de administrador incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                MessageBox.Show("Operación cancelada.", "Cancelar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                StartMenu startMenu = new StartMenu(SessionVar.Username);
+                startMenu.snackBar.Show(startMenu, $"Contraseña de administrador incorrecta", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                startMenu.snackBar.Show(startMenu, $"Operación cancelada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
             ChargeData();
         }
@@ -387,7 +389,6 @@ namespace PTC2024.Controller.BillsController
                     row.DefaultCellStyle.ForeColor = Color.DarkGray;
                     row.DefaultCellStyle.SelectionBackColor = Color.LightGray;
                     row.DefaultCellStyle.SelectionForeColor = Color.DarkGray;
-                    objFormBills.cmsRectifyBill.Visible = true;
                     ChargeData();
                     break;
                 }

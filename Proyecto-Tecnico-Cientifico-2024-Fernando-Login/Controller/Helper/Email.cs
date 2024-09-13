@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Windows.Forms;
 using PTC2024.View.ProfileSettings;
+using PTC2024.View.formularios.inicio;
 
 namespace PTC2024.Controller.Helper
 {
@@ -71,6 +72,99 @@ namespace PTC2024.Controller.Helper
             catch (Exception ex)
             {
                 objChangeP.snack.Show(objChangeP, "Hubo un error enviando el correo.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 2000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomLeft);
+            }
+        }
+
+        public bool NewEmployee(string para, string de, string subject, string message)
+        {
+            StartMenu objS = new StartMenu(SessionVar.Username);
+            try
+            {
+
+                Client.Host = "smtp.gmail.com";
+                Client.EnableSsl = true;
+                Client.Port = 587;
+                Client.Credentials = creds;
+
+                MailAddress to = new MailAddress(para);
+                MailAddress from = new MailAddress(de);
+                msg.Subject = subject;
+                msg.Body = message;
+                msg.From = from;
+                msg.To.Add(to);
+
+                //
+                Client.Send(msg);
+
+                objS.snackBar.Show(objS, "Se envío un correo electrónico al email ingresado.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 2000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomLeft);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                objS.snackBar.Show(objS, "Hubo un error enviando el correo.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 2000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomLeft);
+                return false;
+            }
+        }
+
+        public bool UpdatedEmail(string para, string de, string subject, string message)
+        {
+            StartMenu objS = new StartMenu(SessionVar.Username);
+            try
+            {
+
+                Client.Host = "smtp.gmail.com";
+                Client.EnableSsl = true;
+                Client.Port = 587;
+                Client.Credentials = creds;
+
+                MailAddress to = new MailAddress(para);
+                MailAddress from = new MailAddress(de);
+                msg.Subject = subject;
+                msg.Body = message;
+                msg.From = from;
+                msg.To.Add(to);
+
+                
+                Client.Send(msg);
+
+                objS.snackBar.Show(objS, "Se envío un correo electrónico al nuevo email.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 2000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomLeft);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                objS.snackBar.Show(objS, "Hubo un error enviando el correo, no se puede actualizar.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 2000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomLeft);
+                return false;
+            }
+        }
+
+        public bool CustomerEmail(string para, string de, string subject, string message)
+        {
+            StartMenu objS = new StartMenu(SessionVar.Username);
+            try
+            {
+
+                Client.Host = "smtp.gmail.com";
+                Client.EnableSsl = true;
+                Client.Port = 587;
+                Client.Credentials = creds;
+
+                MailAddress to = new MailAddress(para);
+                MailAddress from = new MailAddress(de);
+                msg.Subject = subject;
+                msg.Body = message;
+                msg.From = from;
+                msg.To.Add(to);
+
+                //
+                Client.Send(msg);
+
+                objS.snackBar.Show(objS, "Se envío un correo electrónico al email del cliente.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 2000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomLeft);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                objS.snackBar.Show(objS, "No se pudo enviar un correo electrónico al email del cliente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 2000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomLeft);
+                return false;
             }
         }
     }

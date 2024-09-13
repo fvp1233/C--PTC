@@ -424,23 +424,12 @@ namespace PTC2024.Model.DAO.BillsDAO
                 {
                     cmd.Parameters.AddWithValue("@CustomerName", customerName);
 
-                    try
-                    {
-                        Command.Connection.Open();
+               
                         object result = cmd.ExecuteScalar();
                         if (result != null)
                         {
                             customerId = Convert.ToInt32(result);
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Cliente registrado");
-                    }
-                    finally
-                    {
-                        Command.Connection.Close(); // Cerrar la conexión una vez
-                    }
+                        }                  
                 }
             }
             catch (Exception ex)
@@ -463,23 +452,12 @@ namespace PTC2024.Model.DAO.BillsDAO
                 {
                     cmd.Parameters.AddWithValue("@EmployeeName", EmployeeName);
 
-                    try
-                    {
-                        Command.Connection.Open();
+                   
                         object result = cmd.ExecuteScalar();
                         if (result != null)
                         {
                             EmployeeId = Convert.ToInt32(result);
                         }
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Empleado registrado");
-                    }
-                    finally
-                    {
-                        Command.Connection.Close(); // Cerrar la conexión una vez
-                    }
                 }
             }
             catch (Exception ex)

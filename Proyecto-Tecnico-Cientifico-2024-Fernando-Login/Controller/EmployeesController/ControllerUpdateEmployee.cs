@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net.Sockets;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
@@ -72,6 +74,9 @@ namespace PTC2024.Controller.EmployeesController
             objUpdateEmployee.txtSalary.MouseDown += new MouseEventHandler(DisableContextMenu);
             objUpdateEmployee.txtAffiliationNumber.MouseDown += new MouseEventHandler(DisableContextMenu);
             objUpdateEmployee.txtBankAccount.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateEmployee.txtNames.TextChanged += new EventHandler(OnlyLettersName);
+            objUpdateEmployee.txtLastNames.TextChanged += new EventHandler(OnlyLettersLastName);
+            objUpdateEmployee.txtSalary.TextChanged += new EventHandler(OnlyNum);
         }
 
         public void ChargeInfo(object sender, EventArgs e)
@@ -334,26 +339,49 @@ namespace PTC2024.Controller.EmployeesController
         private bool ValidateEmail()
         {
             string email = objUpdateEmployee.txtEmail.Text.Trim();
-            if (!(email.Contains("@")))
+
+            // Verificar que el correo contenga una '@'
+            if (!email.Contains("@"))
             {
                 MessageBox.Show("El formato del correo es incorrecto, verifique que contenga '@'.", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            //validación de dominio del correo
-            string[] allowedDomains = { "gmail.com", "ricaldone.edu.sv" };
-            //La variable domain guarda la cadena de carácteres que se presente después de la arroba en el campo de correo
+            // Asegurarse de que el correo tenga un dominio válido (parte después de '@')
             string domain = email.Substring(email.LastIndexOf('@') + 1);
-            //Si la cadena de carácteres después de la arroba NO es uno de los dominios permitidos, nos envía un mensaje de error.
-            if (!allowedDomains.Contains(domain))
+
+            if (string.IsNullOrEmpty(domain))
             {
-                MessageBox.Show("Dominio de correo inválido. \n El sistema solo admite los dominios '@gmail.com' y '@ricaldone.edu.sv'", "Dominio no permitido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El formato del correo es incorrecto. No tiene un dominio válido.", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            //Si no se detecta ningún fallo en el email, se devuelve directamente un true.
+
+            // Verificar si el dominio tiene un registro MX
+            if (!DomainHasMXRecord(domain))
+            {
+                MessageBox.Show("El dominio del correo no existe o no tiene un servidor de correo válido.", "Dominio inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
             return true;
         }
 
+        private bool DomainHasMXRecord(string domain)
+        {
+            try
+            {
+                // Obtener registros DNS del dominio
+                IPHostEntry hostEntry = Dns.GetHostEntry(domain);
+
+                // Verificar que tenga registros de mail (MX)
+                return hostEntry.AddressList.Length > 0;
+            }
+            catch (SocketException)
+            {
+                // Si ocurre un error al obtener la entrada DNS, el dominio no es válido o no tiene MX
+                return false;
+            }
+        }
         private int ValidateAge()
         {
             //Declaramos la variable que captura el valor del dateTimePicker del formulario
@@ -436,31 +464,29 @@ namespace PTC2024.Controller.EmployeesController
         //Máscara para el textbox del telefono
         public void PhoneMask(object sender, EventArgs e)
         {
-            //Aqui se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar y no sea molesto para el usuario
+            // Aquí se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar
             int cursorPosition = objUpdateEmployee.txtPhone.SelectionStart;
 
-            //Con esto se remueve cualquier dato no numérico
+            // Remover cualquier dato no numérico
             string text = new string(objUpdateEmployee.txtPhone.Text.Where(c => char.IsDigit(c)).ToArray());
-
+            // Aplicar la máscara de teléfono (ej: ####-###)
             if (text.Length >= 5)
             {
                 text = text.Insert(4, "-");
-
             }
 
-            //Con esto se reposiciona el cursor, ya no se coloca antes del numero que va siguiente al guion, si no que se reajusta para que  se ponga en el orden que iba anteriormente
+            // Ajustar la posición del cursor si está después del guion
             if (cursorPosition == 5)
             {
                 cursorPosition++;
             }
 
-            //Le asignamos la máscara al texto que se ponga en el textbox
+            // Asignar el texto con la máscara al TextBox
             objUpdateEmployee.txtPhone.Text = text;
 
-            //Restablecemos la posición del cursor con la variable que se guardó antes
+            // Restablecer la posición del cursor
             objUpdateEmployee.txtPhone.SelectionStart = cursorPosition;
         }
-
         //Aplicamos una máscara que solo deje meter el guion y caracteres numéricos para los textbox de numero de afiliacion y cuenta bancaria.
         public void AffiliatioNumberMask(object sender, EventArgs e)
         {
@@ -509,6 +535,62 @@ namespace PTC2024.Controller.EmployeesController
             {
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
+        }
+        public void OnlyLettersName(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objUpdateEmployee.txtNames.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras
+            string text = new string(objUpdateEmployee.txtNames.Text.Where(c => char.IsLetter(c) || char.IsWhiteSpace(c)).ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objUpdateEmployee.txtNames.Text = text;
+
+            // Restaurar la posición del cursor
+            objUpdateEmployee.txtNames.SelectionStart = cursorPosition;
+        }
+        public void OnlyLettersLastName(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objUpdateEmployee.txtLastNames.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras
+            string text = new string(objUpdateEmployee.txtLastNames.Text.Where(c => char.IsLetter(c) || char.IsWhiteSpace(c)).ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objUpdateEmployee.txtLastNames.Text = text;
+
+            // Restaurar la posición del cursor
+            objUpdateEmployee.txtLastNames.SelectionStart = cursorPosition;
+        }
+        public void OnlyNum(object sender, EventArgs e)
+        {
+            int cursorPosition = objUpdateEmployee.txtSalary.SelectionStart;
+
+            // Permitir solo dígitos y un solo punto decimal
+            string text = new string(objUpdateEmployee.txtSalary.Text.Where(c => char.IsDigit(c) || c == '.').ToArray());
+
+            // Asegurarse de que solo haya un punto decimal
+            int decimalCount = text.Count(c => c == '.');
+            if (decimalCount > 1)
+            {
+                // Si hay más de un punto decimal, remover los adicionales
+                int firstDecimalIndex = text.IndexOf('.');
+                text = text.Substring(0, firstDecimalIndex + 1) + text.Substring(firstDecimalIndex + 1).Replace(".", "");
+            }
+
+            // Evitar que el texto comience con un punto decimal
+            if (text.StartsWith("."))
+            {
+                text = text.TrimStart('.');
+            }
+
+            // Asignar el texto filtrado al TextBox
+            objUpdateEmployee.txtSalary.Text = text;
+
+            // Restablecer la posición del cursor
+            objUpdateEmployee.txtSalary.SelectionStart = cursorPosition;
         }
 
     }

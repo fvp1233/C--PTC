@@ -21,6 +21,8 @@ using PTC2024.Model.DTO.BillsDTO;
 using PTC2024.View.Clientes;
 using PTC2024.Controller.CustomersController;
 using PTC2024.Model.DAO.EmployeesDAO;
+using PTC2024.Controller.Helper;
+using PTC2024.View.formularios.inicio;
 
 namespace PTC2024.Controller.BillsController
 {
@@ -30,6 +32,7 @@ namespace PTC2024.Controller.BillsController
         private int accions;
         private string IdServices;
         private string customer;
+        private DataSet reportDataSet;
         public ControllerAddBills(FrmAddBills View, int accions)
         {
             objAddBills = View;
@@ -57,24 +60,38 @@ namespace PTC2024.Controller.BillsController
             objAddBills.dgvData.RowsAdded += new DataGridViewRowsAddedEventHandler(CalculateTotal);
             objAddBills.dgvData.RowsRemoved += new DataGridViewRowsRemovedEventHandler(CalculateTotal);
             objAddBills.txtRazónsocial.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtRazónsocial.TextChanged += new EventHandler(OnlyLettersAndNumbers);
             objAddBills.txtNITCompany.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtNITCompany.TextChanged += new EventHandler(NITMask);
             objAddBills.txtNRCompany.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddBills.txtNRCompany.TextChanged += new EventHandler(NRCNumberMask);
             objAddBills.txtEmployee.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtEmployee.TextChanged += new EventHandler(OnlyLettersName);
             objAddBills.txtCustomerName.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtCustomerName.TextChanged += new EventHandler(OnlyLettersNameC);
             objAddBills.txtCustomerPhone.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtCustomerPhone.TextChanged += new EventHandler(PhoneMask);
             objAddBills.txtDUICustomer.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtDUICustomer.TextChanged += new EventHandler(DUIMask);
             objAddBills.txtCustomerEmail.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddBills.txtDiscount.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtDiscount.TextChanged += new EventHandler(DiscountMask);
             objAddBills.txtSubTotal.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddBills.txtTotalPay.MouseDown += new MouseEventHandler(DisableContextMenu);
 
         }
+
+        private void TxtDiscount_TextChanged1(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         public ControllerAddBills(FrmAddBills view, int accions, string companyName, string NIT, string NRC, string Customer,   string CustomerDui, string CustomerPhone, string CustomerEmail, string employee)
         {
             objAddBills = view;
             this.accions = accions;
             this.customer = Customer;
+
 
 
             objAddBills.Load += new EventHandler(LoadDataServices);
@@ -188,6 +205,37 @@ namespace PTC2024.Controller.BillsController
             }
         }
 
+        public void UpdateDataSetForReport(DataSet reportDataSet)
+        {
+            // Recorrer todas las filas del DataGridView
+            foreach (DataGridViewRow row in objAddBills.dgvData.Rows)
+            {
+                // Revisar si la fila ha sido eliminada (o marcada como eliminada)
+                bool isDeleted = Convert.ToBoolean(row.Cells["IsDeletedColumn"].Value); // Suponiendo que tienes una columna que marca eliminados
+
+                // Si está eliminada, buscar y eliminar del DataSet
+                if (isDeleted)
+                {
+                    // Buscar la fila correspondiente en el DataSet por el ID del servicio
+                    string serviceName = row.Cells["Servicio"].Value.ToString();
+                    DataRow[] rowsToDelete = reportDataSet.Tables["tbBillDataS"].Select($"Servicio = '{serviceName}'");
+
+                    // Eliminar la fila del DataSet
+                    foreach (DataRow dr in rowsToDelete)
+                    {
+                        dr.Delete(); // Marcar como eliminada en el DataSet
+                    }
+                }
+            }
+
+            // Asegurarse de aceptar cambios para actualizar el estado del DataSet
+            reportDataSet.AcceptChanges();
+        }
+
+        public DataSet GetUpdatedDataSet()
+        {
+            return reportDataSet;
+        }
         /// <summary>
         /// Método para agregar cliente no registrado
         /// </summary>
@@ -280,11 +328,66 @@ namespace PTC2024.Controller.BillsController
             }
 
         }
+
+        private string previousCustomerName = string.Empty; // Para evitar consultas repetidas
+
+        public async void txtCustomerName_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string customerName = objAddBills.txtCustomerName.Text.Trim();
+
+                // Solo buscar si el texto ha cambiado y tiene al menos 3 caracteres
+                if (customerName.Length >= 3 && customerName != previousCustomerName)
+                {
+                    previousCustomerName = customerName; // Actualizar el nombre de búsqueda previo
+
+                    DAOAddBills dAOAddBills = new DAOAddBills();
+
+                    // Obtener lista de nombres de cliente de manera asíncrona
+                    List<string> customerNames = await Task.Run(() => dAOAddBills.GetCustomerNames(customerName));
+
+                    if (customerNames.Count > 0)
+                    {
+                        AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
+                        autoCompleteCollection.AddRange(customerNames.ToArray());
+                        objAddBills.txtCustomerName.AutoCompleteCustomSource = autoCompleteCollection; // Asignar la fuente de autocompletado
+
+                        // Obtener los detalles del cliente de manera asíncrona
+                        Dictionary<string, string> customerData = await Task.Run(() => dAOAddBills.GetCustomerDetails(customerName));
+
+                        if (customerData.Count > 0)
+                        {
+                            // Actualizar formulario con los detalles del cliente
+                            objAddBills.txtDUICustomer.Text = customerData["DUI"];
+                            objAddBills.txtCustomerPhone.Text = customerData["phone"];
+                            objAddBills.txtCustomerEmail.Text = customerData["email"];
+                        }
+                    }
+                    else
+                    {
+                        objAddBills.txtCustomerName.AutoCompleteCustomSource = null; // Limpiar la fuente de autocompletado si no hay resultados
+                    }
+                }
+                else if (customerName.Length < 3)
+                {
+                    // Si el nombre tiene menos de 3 caracteres, limpiar la fuente de autocompletado
+                    objAddBills.txtCustomerName.AutoCompleteCustomSource = null;
+                    previousCustomerName = string.Empty; // Reiniciar la búsqueda previa
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         /// <summary>
         /// Método para autocompletar el textbox
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /*
         public void txtCustomerName_TextChanged(object sender, EventArgs e)
         {
             try
@@ -327,62 +430,43 @@ namespace PTC2024.Controller.BillsController
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-        /// <summary>
-        /// Método para cargar los datos del cliente
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /*  public void TxtCustomerName_Leave(object sender, EventArgs e)
-          {
-              string customerName = objAddBills.txtCustomerName.Text.Trim();
-
-              if (!string.IsNullOrEmpty(customerName))
-              {
-                  DAOAddBills dAOAddBills = new DAOAddBills();
-
-                  // Ahora usamos GetCustomerDetails para obtener los detalles del cliente
-                  Dictionary<string, string> customerData = dAOAddBills.GetCustomerDetails(customerName);
-
-                  if (customerData.Count > 0)
-                  {
-                      objAddBills.txtDUICustomer.Text = customerData["DUI"];
-                      objAddBills.txtCustomerPhone.Text = customerData["phone"];
-                      objAddBills.txtCustomerEmail.Text = customerData["email"];
-                  }
-                  else
-                  {
-                      MessageBox.Show("Cliente no encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                  }
-              }
-          }
         */
-        public void txtEmployeeName_TextChanged(object sender, EventArgs e)
+
+        private string previousEmployeeName = string.Empty; // Para almacenar el nombre de empleado anterior
+
+        public async void txtEmployeeName_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                string EmployeeName = objAddBills.txtEmployee.Text.Trim();
+                string employeeName = objAddBills.txtEmployee.Text.Trim();
 
-                if (!string.IsNullOrEmpty(EmployeeName))
+                // Solo buscar si el nombre tiene al menos 3 caracteres y es diferente al anterior
+                if (employeeName.Length >= 3 && employeeName != previousEmployeeName)
                 {
-                    DAOAddBills dAOAddBills = new DAOAddBills();
-                    List<string> EmployeeNames = dAOAddBills.GetEmployeesNames(EmployeeName); // Obtener lista de nombres de empleados
+                    previousEmployeeName = employeeName; // Actualizar el nombre de búsqueda anterior
 
-                    if (EmployeeNames.Count > 0)
+                    DAOAddBills dAOAddBills = new DAOAddBills();
+
+                    // Realizar la búsqueda de manera asíncrona para no bloquear la UI
+                    List<string> employeeNames = await Task.Run(() => dAOAddBills.GetEmployeesNames(employeeName));
+
+                    if (employeeNames.Count > 0)
                     {
+                        // Solo actualizar el autocompletado si los resultados son diferentes
                         AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
-                        autoCompleteCollection.AddRange(EmployeeNames.ToArray());
-                        objAddBills.txtEmployee.AutoCompleteCustomSource = autoCompleteCollection; // Asignar la fuente de autocompletado
+                        autoCompleteCollection.AddRange(employeeNames.ToArray());
+                        objAddBills.txtEmployee.AutoCompleteCustomSource = autoCompleteCollection;
                     }
                     else
                     {
-                        objAddBills.txtEmployee.AutoCompleteCustomSource = null; // Limpiar la fuente de autocompletado si no hay resultados
+                        objAddBills.txtEmployee.AutoCompleteCustomSource = null; // Limpiar si no hay resultados
                     }
                 }
-                else
+                else if (employeeName.Length < 3)
                 {
-                    objAddBills.txtEmployee.AutoCompleteCustomSource = null; // Limpiar la fuente de autocompletado si el campo está vacío
+                    // Limpiar el autocompletado si el nombre es muy corto
+                    objAddBills.txtEmployee.AutoCompleteCustomSource = null;
+                    previousEmployeeName = string.Empty; // Reiniciar el nombre previo
                 }
             }
             catch (Exception ex)
@@ -390,6 +474,7 @@ namespace PTC2024.Controller.BillsController
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         public bool ValidateDates(DateTime startDate, DateTime finalDate, DateTime dateIssued)
         {
@@ -451,7 +536,9 @@ namespace PTC2024.Controller.BillsController
                 int EmployeeId = daoNew.GetEmployeeIdByName(daoNew.Employee);
                 if (EmployeeId == 1)
                 {
-                    MessageBox.Show("Empleado no encontrado en la base de datos.");
+                    StartMenu startMenu = new StartMenu(SessionVar.Username);
+                    startMenu.snackBar.Show(startMenu, $"Empleado no encontrado en la base de datos", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                    
                     return;
                 }
 
@@ -463,7 +550,9 @@ namespace PTC2024.Controller.BillsController
                 int customerId = daoNew.GetCustomerIdByName(daoNew.Customer);
                 if (customerId == 1)
                 {
-                    MessageBox.Show("Cliente no encontrado en la base de datos.");
+                    StartMenu startMenu = new StartMenu(SessionVar.Username);
+                    startMenu.snackBar.Show(startMenu, $"Cliente no encontrado en la base de datos", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                    
                     return;
                 }
 
@@ -473,16 +562,19 @@ namespace PTC2024.Controller.BillsController
                 // Verificamos el valor que nos retorna dicho método
                 if (checks == 1)
                 {
-                    MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    StartMenu startMenu = new StartMenu(SessionVar.Username);
+                    startMenu.snackBar.Show(startMenu, $"Los datos se registraron de manera exitosa", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                   
                     objAddBills.Close();
                 }
             }
             else
             {
-                MessageBox.Show("Por favor, complete todos los campos requeridos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                StartMenu startMenu = new StartMenu(SessionVar.Username);
+                startMenu.snackBar.Show(startMenu, $"Por favor, complete todos los campos requeridos", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
         }
-
+        //Método para deshabilitar el contextmenu de los textbox
         private void DisableContextMenu(object sender, MouseEventArgs e)
         {
             // Desactiva el menú contextual al hacer clic derecho
@@ -492,119 +584,223 @@ namespace PTC2024.Controller.BillsController
             }
         }
 
+        public void OnlyLettersAndNumbers(object sender, EventArgs e)
+        {
+                // Obtener la posición actual del cursor
+                int cursorPosition = objAddBills.txtRazónsocial.SelectionStart;
+
+                // Filtrar el texto para que solo queden letras, números, puntos y espacios
+                string text = new string(objAddBills.txtRazónsocial.Text
+                                           .Where(c => char.IsLetter(c) || char.IsDigit(c) || char.IsWhiteSpace(c) || c == '.')
+                                           .ToArray());
+
+                // Actualizar el contenido del TextBox con el texto filtrado
+                objAddBills.txtRazónsocial.Text = text;
+
+                // Restaurar la posición del cursor
+                objAddBills.txtRazónsocial.SelectionStart = cursorPosition;
+            
+
+        }
+
+        public void OnlyLettersName(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objAddBills.txtEmployee.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras y espacios
+            string text = new string(objAddBills.txtEmployee.Text
+                                       .Where(c => char.IsLetter(c) || char.IsWhiteSpace(c))
+                                       .ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objAddBills.txtEmployee.Text = text;
+
+            // Restaurar la posición del cursor
+             objAddBills.txtEmployee.SelectionStart = cursorPosition;
+        }
+
+        public void OnlyLettersNameC(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objAddBills.txtCustomerName.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras y espacios
+            string text = new string(objAddBills.txtCustomerName.Text
+                                       .Where(c => char.IsLetter(c) || char.IsWhiteSpace(c))
+                                       .ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objAddBills.txtCustomerName.Text = text;
+
+            // Restaurar la posición del cursor
+            objAddBills.txtCustomerName.SelectionStart = cursorPosition;
+        }
+
         //Aplicamos una máscara que solo deje meter el guion y caracteres numéricos para los textbox de numero de afiliacion y cuenta bancaria.
         public void NRCNumberMask(object sender, EventArgs e)
         {
             int cursorPosition = objAddBills.txtNRCompany.SelectionStart;
-            //Con esto se remueve cualquier dato no numérico excepto el guion
+
+            // Remover cualquier dato no numérico excepto el guion
             string text = new string(objAddBills.txtNRCompany.Text.Where(c => char.IsDigit(c) || c == '-').ToArray());
+
+            // Remover todos los guiones para reformatear correctamente
+            text = text.Replace("-", "");
+
+            // Asegurar que el texto no exceda los 14 dígitos (sin guiones)
+            if (text.Length > 14)
+            {
+                text = text.Substring(0, 14);
+            }
+
+            // Formatear a ####-######-###-##
+            if (text.Length > 4)
+            {
+                text = text.Insert(4, "-");
+            }
+            if (text.Length > 11)
+            {
+                text = text.Insert(11, "-");
+            }
+            if (text.Length > 15)
+            {
+                text = text.Insert(15, "-");
+            }
+
+            // Aplicar el texto formateado
             objAddBills.txtNRCompany.Text = text;
+
+            // Restaurar la posición del cursor
             objAddBills.txtNRCompany.SelectionStart = cursorPosition;
         }
 
+
+        //Método de validación de numeros NIT 
+
         public void NITMask(object sender, EventArgs e)
         {
-            //Aqui se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar y no sea molesto para el usuario
+            // Guardar la posición actual del cursor
             int cursorPosition = objAddBills.txtNITCompany.SelectionStart;
 
-            //Con esto se remueve cualquier dato no numérico
-            string text = new string(objAddBills.txtNITCompany.Text.Where(c => char.IsDigit(c)).ToArray());
+            // Remover cualquier dato no numérico excepto el guion
+            string text = new string(objAddBills.txtNITCompany.Text.Where(c => char.IsDigit(c) || c == '-').ToArray());
 
-            if (text.Length >= 14)
+            // Remover todos los guiones para reformatear correctamente
+            text = text.Replace("-", "");
+
+            // Asegurar que el texto no exceda los 14 dígitos (sin guiones)
+            if (text.Length > 14)
             {
-                text = text.Insert(7, "-");
-
+                text = text.Substring(0, 14);
             }
 
-            //Con esto se reposiciona el cursor, ya no se coloca antes del numero que va siguiente al guion, si no que se reajusta para que  se ponga en el orden que iba anteriormente
-            if (cursorPosition == 14)
+            // Formatear a ####-######-###-#
+            if (text.Length > 4)
+            {
+                text = text.Insert(4, "-");
+            }
+            if (text.Length > 11)
+            {
+                text = text.Insert(11, "-");
+            }
+            if (text.Length > 15)
+            {
+                text = text.Insert(15, "-");
+            }
+
+            // Aplicar el texto formateado
+            objAddBills.txtNITCompany.Text = text;
+
+            // Restaurar la posición del cursor
+            objAddBills.txtNITCompany.SelectionStart = cursorPosition;
+        }
+
+
+        //Método para admitir solo numeros en descuento
+        public void DiscountMask(object sender, EventArgs e)
+        {
+            // Guardar la posición actual del cursor
+            int cursorPosition = objAddBills.txtDiscount.SelectionStart;
+
+            // Permitir dígitos y un solo punto decimal
+            string text = new string(objAddBills.txtDiscount.Text.Where(c => char.IsDigit(c) || c == '.').ToArray());
+
+            // Asegurarse de que solo hay un punto decimal
+            int dotIndex = text.IndexOf('.');
+            if (dotIndex != -1)
+            {
+                text = text.Substring(0, dotIndex + 1) + text.Substring(dotIndex + 1).Replace(".", "");
+            }
+
+            // Actualizar el texto en el campo
+            objAddBills.txtDiscount.Text = text;
+
+            // Restaurar la posición del cursor
+            objAddBills.txtDiscount.SelectionStart = cursorPosition;
+        }
+
+
+        //Método para establecer una máscara al textbox del DUI
+        public void DUIMask(object sender, EventArgs e)
+        {
+            // Aqui se guarda la posición inicial del cursor
+            int cursorPosition = objAddBills.txtDUICustomer.SelectionStart;
+
+            //Con esto se remueve cualquier dato no numérico excepto el guión
+            string text = new string(objAddBills.txtDUICustomer. Text.Where(c => char.IsDigit(c) || c == '-').ToArray());
+
+            //Si ya existe algun guión, se elimina.
+            text = text.Replace("-", "");
+
+            //Acá especificamos la máscara del DUI, cuando llegue al caracter numero 9, va a ingresar el guion por si solo
+            //
+            if (text.Length >= 9)
+            {
+                text = text.Insert(8, "-");
+                cursorPosition++;
+            }
+            else if (text.Length >= 1)
+            {
+                text = text.Insert(0, "");
+            }
+
+            //Le asignamos la máscara al texto que se presente en el textbox
+            objAddBills.txtDUICustomer.Text = text;
+
+            //Restablecemos la posicion del cursor
+            objAddBills.txtDUICustomer.SelectionStart = cursorPosition;
+        }
+
+        //Máscara para el textbox del telefono
+        public void PhoneMask(object sender, EventArgs e)
+        {
+            // Aquí se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar
+            int cursorPosition = objAddBills.txtCustomerPhone.SelectionStart;
+
+            // Remover cualquier dato no numérico
+            string text = new string(objAddBills.txtCustomerPhone.Text.Where(c => char.IsDigit(c)).ToArray());
+
+            // Aplicar la máscara de teléfono (ej: ####-###)
+            if (text.Length >= 5)
+            {
+                text = text.Insert(4, "-");
+            }
+
+            // Ajustar la posición del cursor si está después del guion
+            if (cursorPosition == 5)
             {
                 cursorPosition++;
             }
 
-            //Le asignamos la máscara al texto que se ponga en el textbox
-            objAddBills.txtNITCompany.Text = text;
+            // Asignar el texto con la máscara al TextBox
+            objAddBills.txtCustomerPhone.Text = text;
 
-            //Restablecemos la posición del cursor con la variable que se guardó antes
-            objAddBills.txtNITCompany.SelectionStart = cursorPosition;
+            // Restablecer la posición del cursor
+            objAddBills.txtCustomerPhone.SelectionStart = cursorPosition;
         }
 
-        /*public void RectifyBills(object sender, EventArgs e)
-        {
-            if (!(
-              string.IsNullOrEmpty(objAddBills.txtNITCompany.Text.Trim()) ||
-              string.IsNullOrEmpty(objAddBills.txtNRCompany.Text.Trim()) ||
-              string.IsNullOrEmpty(objAddBills.txtDiscount.Text.Trim()) ||
-              string.IsNullOrEmpty(objAddBills.txtSubTotal.Text.Trim()) ||
-              string.IsNullOrEmpty(objAddBills.txtTotalPay.Text.Trim()) ||
-              string.IsNullOrEmpty(objAddBills.txtCustomerName.Text.Trim()) ||
-              string.IsNullOrEmpty(objAddBills.txtCustomerEmail.Text.Trim()) ||
-              string.IsNullOrEmpty(objAddBills.txtCustomerPhone.Text.Trim()) ||
-              string.IsNullOrEmpty(objAddBills.txtDUICustomer.Text.Trim()) ||
-              string.IsNullOrEmpty(objAddBills.txtEmployee.Text.Trim())))
-            {
-                DAOAddBills daoNew = new DAOAddBills();
 
-                daoNew.CompanyName = objAddBills.txtRazónsocial.Text.Trim();
-                daoNew.NIT1 = objAddBills.txtNITCompany.Text.Trim();
-                daoNew.NRC1 = objAddBills.txtNRCompany.Text.Trim();
-                daoNew.Discount = double.Parse(objAddBills.txtDiscount.Text.Trim());
-                daoNew.SubtotalPay = double.Parse(objAddBills.txtSubTotal.Text.Trim());
-                daoNew.TotalPay = double.Parse(objAddBills.txtTotalPay.Text.Trim());
-                daoNew.StartDate = objAddBills.dtStartDate.Value.Date;
-                daoNew.FinalDate1 = objAddBills.dtFinalDate.Value.Date;
-                daoNew.Dateissued = objAddBills.dtfiscalPeriod.Value.Date;
-
-                // Validación de fechas utilizando el método ValidateDates
-                if (!ValidateDates(daoNew.StartDate, daoNew.FinalDate1, daoNew.Dateissued))
-                {
-                    return;
-                }
-
-                daoNew.Services = objAddBills.comboServiceBill.SelectedValue.ToString();
-                daoNew.StatusBills = objAddBills.comboStatusBill.SelectedValue.ToString();
-                daoNew.CustomerDui1 = objAddBills.txtDUICustomer.Text.Trim();
-                daoNew.CustomerPhone1 = objAddBills.txtCustomerPhone.Text.Trim();
-                daoNew.CustomerEmail1 = objAddBills.txtCustomerEmail.Text.Trim();
-                daoNew.Employee = objAddBills.txtEmployee.Text.Trim();
-
-                int EmployeeId = daoNew.GetEmployeeIdByName(daoNew.Employee);
-                if (EmployeeId == 1)
-                {
-                    MessageBox.Show("Empleado no encontrado en la base de datos.");
-                    return;
-                }
-
-                daoNew.IdEmployee1 = EmployeeId;
-                daoNew.MethodP = objAddBills.comboMethodP.SelectedValue.ToString();
-
-                // Obtener IdCustomer basado en el nombre del cliente
-                daoNew.Customer = objAddBills.txtCustomerName.Text.Trim();
-                int customerId = daoNew.GetCustomerIdByName(daoNew.Customer);
-                if (customerId == 1)
-                {
-                    MessageBox.Show("Cliente no encontrado en la base de datos.");
-                    return;
-                }
-
-                daoNew.IdCustomer1 = customerId;
-                int checks = daoNew.RegisterBills();
-
-                // Verificamos el valor que nos retorna dicho método
-                if (checks == 1)
-                {
-                    MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    objAddBills.Close();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, complete todos los campos requeridos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-            objAddBills.Close();
-        }
-        */
         public void BackProcess(object sender, EventArgs e)
         {
             objAddBills.Close();

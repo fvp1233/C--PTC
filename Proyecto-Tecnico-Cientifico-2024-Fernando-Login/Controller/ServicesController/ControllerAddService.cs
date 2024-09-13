@@ -28,6 +28,7 @@ namespace PTC2024.Controller.ServicesController
             objAddService.txtNombres.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddService.txtDescripcion.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddService.txtMonto.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddService.txtMonto.TextChanged += new EventHandler(OnlyNum);
         }
 
         /*Metodo para cargar el combobox*/
@@ -116,6 +117,44 @@ namespace PTC2024.Controller.ServicesController
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
         }
+        public void OnlyNum(object sender, EventArgs e)
+        {
+            int cursorPosition = objAddService.txtMonto.SelectionStart;
+
+            // Permitir solo dígitos y un solo punto decimal
+            string text = new string(objAddService.txtMonto.Text.Where(c => char.IsDigit(c) || c == '.').ToArray());
+
+            // Asegurarse de que solo haya un punto decimal
+            int decimalCount = text.Count(c => c == '.');
+            if (decimalCount > 1)
+            {
+                // Si hay más de un punto decimal, remover los adicionales
+                int firstDecimalIndex = text.IndexOf('.');
+                text = text.Substring(0, firstDecimalIndex + 1) + text.Substring(firstDecimalIndex + 1).Replace(".", "");
+            }
+
+            // Evitar que el texto comience con un punto decimal
+            if (text.StartsWith("."))
+            {
+                text = text.TrimStart('.');
+            }
+
+            // Limitar a solo dos decimales después del punto
+            int decimalPosition = text.IndexOf('.');
+            if (decimalPosition != -1 && text.Length > decimalPosition + 3)
+            {
+                // Truncar a dos dígitos después del punto decimal
+                text = text.Substring(0, decimalPosition + 3);
+            }
+
+            // Asignar el texto filtrado al TextBox
+            objAddService.txtMonto.Text = text;
+
+            // Restablecer la posición del cursor
+            objAddService.txtMonto.SelectionStart = cursorPosition;
+        }
+
+
 
     }
 }

@@ -147,7 +147,7 @@ namespace PTC2024.Model.DAO.BillsDAO
         {
             string storedHash = ""; 
             Command.Connection = getConnection();
-                string query = "SELECT password FROM tbUserData WHERE IdBusinessP = 1";
+                string query = "SELECT password FROM tbUserData WHERE IdBusinessP = 3";
                 SqlCommand command = new SqlCommand(query, Command.Connection);
                 storedHash = command.ExecuteScalar()?.ToString();
             

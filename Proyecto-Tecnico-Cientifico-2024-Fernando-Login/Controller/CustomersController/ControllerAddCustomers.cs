@@ -9,6 +9,8 @@ using PTC2024.View.Clientes;
 using PTC2024.Controller.Helper;
 using System.Windows.Forms;
 using PTC2024.Model.DTO.CustomersDTO;
+using System.Net.Sockets;
+using System.Net;
 
 namespace PTC2024.Controller.CustomersController
 {
@@ -34,6 +36,8 @@ namespace PTC2024.Controller.CustomersController
             objAddCustomers.txtNames.KeyDown += new KeyEventHandler(pasteDisabledNames);
             objAddCustomers.txtLastnames.KeyDown += new KeyEventHandler(pasteDisabledLastNames);
             objAddCustomers.txtDui.KeyDown += new KeyEventHandler(pasteDisabledDocument);
+            objAddCustomers.txtNames.TextChanged += new EventHandler(OnlyLettersName);
+            objAddCustomers.txtLastnames.TextChanged += new EventHandler(OnlyLettersLastName);
             objAddCustomers.txtAddress.KeyDown += new KeyEventHandler(pasteDisabledAddress);
             objAddCustomers.txtPhone.KeyDown += new KeyEventHandler(pasteDisabledPhone);
             objAddCustomers.txtEmail.KeyDown += new KeyEventHandler(pasteDisabledEmail);
@@ -70,8 +74,7 @@ namespace PTC2024.Controller.CustomersController
                 string.IsNullOrEmpty(objAddCustomers.txtDui.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddCustomers.txtAddress.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddCustomers.txtEmail.Text.Trim()) ||
-                string.IsNullOrEmpty(objAddCustomers.txtPhone.Text.Trim()) ||
-                string.IsNullOrEmpty(objAddCustomers.comboTypeC.Text.Trim())
+                string.IsNullOrEmpty(objAddCustomers.txtPhone.Text.Trim())
                 ))
             {
                 emailValidation = ValidateEmail();
@@ -94,13 +97,16 @@ namespace PTC2024.Controller.CustomersController
 
                     if (AnswerValue == 1)
                     {//Si el valor es 1 se mostrara el mensaje
+                        SendEmail();
                         MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         objAddCustomers.Close();
+
                     }
                     else
                     {//Si el valor es diferente a 1 se mostrara el mensaje de error
                         MessageBox.Show("Los datos no pudieron ser registrados", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
                 }
                 else
                 {
@@ -122,24 +128,47 @@ namespace PTC2024.Controller.CustomersController
         {
             string email = objAddCustomers.txtEmail.Text.Trim();
 
-            if ((!email.Contains("@")))
+            // Verificar que el correo contenga una '@'
+            if (!email.Contains("@"))
             {
                 MessageBox.Show("El formato del correo es incorrecto, verifique que contenga '@'.", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
-
             }
-            //validación de dominio del correo
-            string[] allowedDomains = { "gmail.com", "ricaldone.edu.sv" };
-            //La variable domain guarda la cadena de carácteres que se presente después de la arroba en el campo de correo
+
+            // Asegurarse de que el correo tenga un dominio válido (parte después de '@')
             string domain = email.Substring(email.LastIndexOf('@') + 1);
-            //Si la cadena de carácteres después de la arroba NO es uno de los dominios permitidos, nos envía un mensaje de error.
-            if (!allowedDomains.Contains(domain))
+
+            if (string.IsNullOrEmpty(domain))
             {
-                MessageBox.Show("Dominio de correo inválido. \n El sistema solo admite los dominios '@gmail.com' y '@ricaldone.edu.sv'", "Dominio no permitido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El formato del correo es incorrecto. No tiene un dominio válido.", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            //Si no se detecta ningún fallo en el email, se devuelve directamente un true.
+
+            // Verificar si el dominio tiene un registro MX
+            if (!DomainHasMXRecord(domain))
+            {
+                MessageBox.Show("El dominio del correo no existe o no tiene un servidor de correo válido.", "Dominio inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
             return true;
+        }
+
+        private bool DomainHasMXRecord(string domain)
+        {
+            try
+            {
+                // Obtener registros DNS del dominio
+                IPHostEntry hostEntry = Dns.GetHostEntry(domain);
+
+                // Verificar que tenga registros de mail (MX)
+                return hostEntry.AddressList.Length > 0;
+            }
+            catch (SocketException)
+            {
+                // Si ocurre un error al obtener la entrada DNS, el dominio no es válido o no tiene MX
+                return false;
+            }
         }
 
         public void DUIMask(object sender, EventArgs e)
@@ -177,28 +206,28 @@ namespace PTC2024.Controller.CustomersController
 
         public void PhoneMask(object sender, EventArgs e)
         {
-            //Aqui se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar y no sea molesto para el usuario
+            // Aquí se guarda la posición inicial del cursor, para que con el evento TextChanged el cursor no se mueva de lugar
             int cursorPosition = objAddCustomers.txtPhone.SelectionStart;
 
-            //Con esto se remueve cualquier dato no numérico
+            // Remover cualquier dato no numérico
             string text = new string(objAddCustomers.txtPhone.Text.Where(c => char.IsDigit(c)).ToArray());
 
+            // Aplicar la máscara de teléfono (ej: ####-###)
             if (text.Length >= 5)
             {
                 text = text.Insert(4, "-");
-
             }
 
-            //Con esto se reposiciona el cursor, ya no se coloca antes del numero que va siguiente al guion, si no que se reajusta para que  se ponga en el orden que iba anteriormente
+            // Ajustar la posición del cursor si está después del guion
             if (cursorPosition == 5)
             {
                 cursorPosition++;
             }
 
-            //Le asignamos la máscara al texto que se ponga en el textbox
+            // Asignar el texto con la máscara al TextBox
             objAddCustomers.txtPhone.Text = text;
 
-            //Restablecemos la posición del cursor con la variable que se guardó antes
+            // Restablecer la posición del cursor
             objAddCustomers.txtPhone.SelectionStart = cursorPosition;
         }
 
@@ -265,9 +294,47 @@ namespace PTC2024.Controller.CustomersController
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
         }
+        public void OnlyLettersName(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objAddCustomers.txtNames.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras
+            string text = new string(objAddCustomers.txtNames.Text.Where(c => char.IsLetter(c) || char.IsWhiteSpace(c)).ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objAddCustomers.txtNames.Text = text;
+
+            // Restaurar la posición del cursor
+            objAddCustomers.txtNames.SelectionStart = cursorPosition;
+        }
+
+        public void OnlyLettersLastName(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objAddCustomers.txtLastnames.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras
+            string text = new string(objAddCustomers.txtLastnames.Text.Where(c => char.IsLetter(c) || char.IsWhiteSpace(c)).ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objAddCustomers.txtLastnames.Text = text;
+
+            // Restaurar la posición del cursor
+            objAddCustomers.txtLastnames.SelectionStart = cursorPosition;
+        }
+
+        public bool SendEmail()
+        {
+            string para = objAddCustomers.txtEmail.Text.Trim();
+            string de = "h2c.soporte.usuarios@gmail.com";
+            string subject = "H2C: Gracias por visitarnos.";
+            string message = $"Hola estimado cliente, se ha registrado este correo electrónico en su perfil como cliente en la empresa {BusinessVar.BusinessName}.\nEste es un correo de confirmación, puede hacer caso omiso al mismo.";
+
+            Email email = new Email();
+            bool answer = email.CustomerEmail(para, de, subject, message);
+
+            return answer;
+        }
     }
 }
-
-
-
-
