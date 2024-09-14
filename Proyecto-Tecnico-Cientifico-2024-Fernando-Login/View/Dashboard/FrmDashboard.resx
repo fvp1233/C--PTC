@@ -163,7 +163,7 @@
   <data name="bunifuButton21.IdleIconLeftImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAIwpJREFUeF7t3Qe4blddJnDTQxpJqCH0KgERQRTRYWCIwIDSpYWmDqBUKSKICAoy
+        vQAADr0BR/uQrQAAIwpJREFUeF7t3Qe4blddJnDTQxpJqCH0KgERQRTRYWCIwIDSpYWmDqBUKSKICAoy
         gAgIDEWKoEJAFCkiDOKAQxEQQpABA1F6DxAIJBBS9F17/+94ud5yyld2+f2e5/8o997z7bXW3mu9Oefs
         vdcPAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAu/Fv//Zvl03dJ3WP+iMAYCwS4Eelnp7a4ez6KwBgDBLev5I6o4vx//Dy+msAYMgS2tdP
@@ -319,7 +319,7 @@
   <data name="bunifuButton21.OnIdleState.IconLeftImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAIwpJREFUeF7t3Qe4blddJnDTQxpJqCH0KgERQRTRYWCIwIDSpYWmDqBUKSKICAoy
+        vQAADr0BR/uQrQAAIwpJREFUeF7t3Qe4blddJnDTQxpJqCH0KgERQRTRYWCIwIDSpYWmDqBUKSKICAoy
         gAgIDEWKoEJAFCkiDOKAQxEQQpABA1F6DxAIJBBS9F17/+94ud5yyld2+f2e5/8o997z7bXW3mu9Oefs
         vdcPAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAu/Fv//Zvl03dJ3WP+iMAYCwS4Eelnp7a4ez6KwBgDBLev5I6o4vx//Dy+msAYMgS2tdP
@@ -625,7 +625,7 @@
   <data name="bunifuLabel15.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
-  <data name="bunifuLabel12.BaseStylesheet" xml:space="preserve">
+  <data name="lblTotalIncome.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI'; font-size: 11.25pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
   <data name="bunifuLabel13.BaseStylesheet" xml:space="preserve">

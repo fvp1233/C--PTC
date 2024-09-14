@@ -31,6 +31,9 @@ namespace PTC2024.Controller.DashboardController
 
             dAODashboard.NumberBills = dAODashboard.GetNumberBills();
             objDashboard.lblBills.Text = dAODashboard.NumberBills.ToString();
+
+            dAODashboard.TotalPay = dAODashboard.GetTotalIncome();
+            objDashboard.lblTotalIncome.Text = $"${dAODashboard.TotalPay:N2}";
         }
         public void ChargeChart(object sender, EventArgs e)
         {

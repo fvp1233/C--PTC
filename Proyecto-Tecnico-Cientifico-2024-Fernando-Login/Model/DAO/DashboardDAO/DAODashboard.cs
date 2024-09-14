@@ -94,6 +94,64 @@ namespace PTC2024.Model.DAO.DashboardDAO
                 Command.Connection.Close();
             }
         }
+        //public double GetTotalIncome()
+        //{
+        //    try
+        //    {
+        //        Command.Connection = getConnection();
+        //        string query = "SELECT SUM(totalPay) FROM tbBills WHERE IdStatusBill != 3";
+        //        SqlCommand cmd = new SqlCommand(query, Command.Connection);
+        //        TotalPay = (double)cmd.ExecuteScalar();
+        //        return TotalPay;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"{ex}EC-015: No se pudo obtener el numero de empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        return -1;
+        //    }
+        //    finally
+        //    {
+        //        Command.Connection.Close();
+        //    }
+        //}
+        public double GetTotalIncome()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+
+                // Asegúrate de que la conexión esté abierta
+                if (Command.Connection.State != System.Data.ConnectionState.Open)
+                {
+                    Command.Connection.Open();
+                }
+
+                string query = "SELECT SUM(totalPay) FROM tbBills WHERE IdStatusBill != 3";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+
+                // Aca ejecutamos la consulta
+                object result = cmd.ExecuteScalar();
+                // Intenta convertir el valor a double
+                TotalPay = Convert.ToDouble(result);
+
+                return TotalPay;
+            }
+            catch (Exception ex)
+            {
+                // Muestra el mensaje de error con detalles de la excepción
+                MessageBox.Show($"{ex.Message} - EC-015: No se pudo obtener el total de ingresos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
+            }
+            finally
+            {
+                // Asegúrate de cerrar la conexión si está abierta
+                if (Command.Connection.State == System.Data.ConnectionState.Open)
+                {
+                    Command.Connection.Close();
+                }
+            }
+        }
+
         public void GetAnalisys()
         {
             try
@@ -129,7 +187,7 @@ namespace PTC2024.Model.DAO.DashboardDAO
                     });
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("EC-019: No se pudo obtener el numero de planillas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 

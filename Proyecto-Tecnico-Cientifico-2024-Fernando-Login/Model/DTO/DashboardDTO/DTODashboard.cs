@@ -53,6 +53,21 @@ namespace PTC2024.Model.DTO.DashboardDTO
         //Estatus de planilla
         private int idPayrollStatus;
         private int statusPayroll;
+        //BILLS
+        private int IdBill;
+        private string companyName;
+        private string NIT;
+        private string NRC;
+        private double discount;
+        private double subtotalPay;
+        private double totalPay;
+        private DateTime startDate;
+        private DateTime FinalDate;
+        private DateTime dateissued;
+        private string services;
+        private string statusBills;
+        private string customer;
+        private string employee;
         //OTHERS
         private int numberEmployee;
         private int numberServices;
@@ -61,7 +76,6 @@ namespace PTC2024.Model.DTO.DashboardDTO
         private DateTime fromDate;
         private DateTime toDate;
         private List<PayrollsByDate>payrollsList;
-
         //EMPLOYEE
         public int IdEmployee { get => idEmployee; set => idEmployee = value; }
         public string Names { get => names; set => names = value; }
@@ -109,6 +123,21 @@ namespace PTC2024.Model.DTO.DashboardDTO
         public double GossSalary { get => gossSalary; set => gossSalary = value; }
         public int IdPayrollStatus { get => idPayrollStatus; set => idPayrollStatus = value; }
         public int StatusPayroll { get => statusPayroll; set => statusPayroll = value; }
+        //BILLS
+        public int IdBill1 { get => IdBill; set => IdBill = value; }
+        public string CompanyName { get => companyName; set => companyName = value; }
+        public string NIT1 { get => NIT; set => NIT = value; }
+        public string NRC1 { get => NRC; set => NRC = value; }
+        public double Discount { get => discount; set => discount = value; }
+        public double SubtotalPay { get => subtotalPay; set => subtotalPay = value; }
+        public double TotalPay { get => totalPay; set => totalPay = value; }
+        public DateTime StartDate { get => startDate; set => startDate = value; }
+        public DateTime FinalDate1 { get => FinalDate; set => FinalDate = value; }
+        public DateTime Dateissued { get => dateissued; set => dateissued = value; }
+        public string Services { get => services; set => services = value; }
+        public string StatusBills { get => statusBills; set => statusBills = value; }
+        public string Customer { get => customer; set => customer = value; }
+        public string Employee { get => employee; set => employee = value; }
         //PAYROLL
 
     }
