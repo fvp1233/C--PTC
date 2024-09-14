@@ -129,26 +129,20 @@ namespace PTC2024.Model.DAO.DashboardDAO
                 string query = "SELECT SUM(totalPay) FROM tbBills WHERE IdStatusBill != 3";
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
 
-                // Aca ejecutamos la consulta
-                object result = cmd.ExecuteScalar();
-                // Intenta convertir el valor a double
-                TotalPay = Convert.ToDouble(result);
+                double result = Convert.ToDouble(cmd.ExecuteScalar());
+
+                TotalPay = result;
 
                 return TotalPay;
             }
             catch (Exception ex)
             {
-                // Muestra el mensaje de error con detalles de la excepción
-                MessageBox.Show($"{ex.Message} - EC-015: No se pudo obtener el total de ingresos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-107: No se pudo obtener los datos de las facturas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
             finally
             {
-                // Asegúrate de cerrar la conexión si está abierta
-                if (Command.Connection.State == System.Data.ConnectionState.Open)
-                {
                     Command.Connection.Close();
-                }
             }
         }
 
