@@ -23,12 +23,12 @@ namespace PTC2024.Controller.ServicesController
             /*Eventos*/
             objAddService = view;
             objAddService.Load += new EventHandler(ChargeDropDowns);
-            objAddService.BtnCancelar.Click += new EventHandler(CloseAddService);
+            objAddService.btnCancel.Click += new EventHandler(CloseAddService);
             objAddService.btnAddService.Click += new EventHandler(AddService);
-            objAddService.txtNombres.MouseDown += new MouseEventHandler(DisableContextMenu);
-            objAddService.txtDescripcion.MouseDown += new MouseEventHandler(DisableContextMenu);
-            objAddService.txtMonto.MouseDown += new MouseEventHandler(DisableContextMenu);
-            objAddService.txtMonto.TextChanged += new EventHandler(OnlyNum);
+            objAddService.txtNameS.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddService.txtDescriptionS.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddService.txtAmount.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddService.txtAmount.TextChanged += new EventHandler(OnlyNum);
         }
 
         /*Metodo para cargar el combobox*/
@@ -40,11 +40,11 @@ namespace PTC2024.Controller.ServicesController
             /*Aca se obtiene el valor que retorno el metodo*/
             DataSet dsAddService = daoAddService.GetCategories();
             /*Se establece el DataSource del ComboBox con la tabla "tbCategoryS"*/
-            objAddService.comboTipoEmpleado.DataSource = dsAddService.Tables["tbCategoryS"];
+            objAddService.cmbCategoryS.DataSource = dsAddService.Tables["tbCategoryS"];
             /*Se establece el miembro a mostrar en el ComboBox con el nombre de la categoría*/
-            objAddService.comboTipoEmpleado.DisplayMember = "categoryName";
+            objAddService.cmbCategoryS.DisplayMember = "categoryName";
             /*Se establece el miembro de valor en el ComboBox con el Id de la categoría*/
-            objAddService.comboTipoEmpleado.ValueMember = "IdCategory";
+            objAddService.cmbCategoryS.ValueMember = "IdCategory";
         }
 
         /*Metodo para añadir servicio*/
@@ -53,7 +53,7 @@ namespace PTC2024.Controller.ServicesController
             bool Add;
 
             /*Se verifica si los campos no estan vacios*/
-            if (objAddService.txtNombres.Text.Trim() == "" || objAddService.txtMonto.Text.Trim() == "")
+            if (objAddService.txtNameS.Text.Trim() == "" || objAddService.txtAmount.Text.Trim() == "")
             {
                 Add = false;
                 MessageBox.Show("Favor rellenar los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -61,7 +61,7 @@ namespace PTC2024.Controller.ServicesController
             else
             {
                 Add = false;
-                if (double.TryParse(objAddService.txtMonto.Text,out double result))
+                if (double.TryParse(objAddService.txtAmount.Text,out double result))
                 {
                     Add = true;
                 }
@@ -79,10 +79,10 @@ namespace PTC2024.Controller.ServicesController
                 DAOAddService dAOAddService = new DAOAddService();
 
                 /* Se le dan valores a los atributos del DAOAddService*/
-                dAOAddService.Nombre = objAddService.txtNombres.Text;
-                dAOAddService.Descripcion = objAddService.txtDescripcion.Text;
-                dAOAddService.Categorias = (int)objAddService.comboTipoEmpleado.SelectedValue;
-                dAOAddService.Monto = double.Parse(objAddService.txtMonto.Text);
+                dAOAddService.Name = objAddService.txtNameS.Text;
+                dAOAddService.Description = objAddService.txtDescriptionS.Text;
+                dAOAddService.Category = (int)objAddService.cmbCategoryS.SelectedValue;
+                dAOAddService.Amount = double.Parse(objAddService.txtAmount.Text);
 
                 /*Se obtiene el valor que retorno el metodo InsertService*/
                 int respuesta = dAOAddService.InsertService();
@@ -119,10 +119,10 @@ namespace PTC2024.Controller.ServicesController
         }
         public void OnlyNum(object sender, EventArgs e)
         {
-            int cursorPosition = objAddService.txtMonto.SelectionStart;
+            int cursorPosition = objAddService.txtAmount.SelectionStart;
 
             // Permitir solo dígitos y un solo punto decimal
-            string text = new string(objAddService.txtMonto.Text.Where(c => char.IsDigit(c) || c == '.').ToArray());
+            string text = new string(objAddService.txtAmount.Text.Where(c => char.IsDigit(c) || c == '.').ToArray());
 
             // Asegurarse de que solo haya un punto decimal
             int decimalCount = text.Count(c => c == '.');
@@ -148,10 +148,10 @@ namespace PTC2024.Controller.ServicesController
             }
 
             // Asignar el texto filtrado al TextBox
-            objAddService.txtMonto.Text = text;
+            objAddService.txtAmount.Text = text;
 
             // Restablecer la posición del cursor
-            objAddService.txtMonto.SelectionStart = cursorPosition;
+            objAddService.txtAmount.SelectionStart = cursorPosition;
         }
 
 

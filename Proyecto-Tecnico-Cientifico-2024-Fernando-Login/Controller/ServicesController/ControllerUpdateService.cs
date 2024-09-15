@@ -16,34 +16,34 @@ namespace PTC2024.Controller.ServicesController
     {
         /*Se crea el objeto del formulario*/
         FrmUpdateService objUpdateService;
-        private string categoria;
-        private int idCategoria;
+        private string category;
+        private int idCategory;
         /*Se delara el constructor con sus respectivos parametros*/
-        public ControllerUpdateService(FrmUpdateService view, int id, string nombre, string descripcion, double monto, string categoria, int idCategoria)
+        public ControllerUpdateService(FrmUpdateService view, int id, string name, string description, double amount, string category, int idCategory)
         {
 
-            this.categoria = categoria;
-            this.idCategoria = idCategoria;
+            this.category = category;
+            this.idCategory = idCategory;
             /*Los controles del formulario ahora pasan al objeto del formulario*/
             objUpdateService = view;
             /*Este metodo cargara los valores de los parametros del constructor*/
-            ChargeValues(id, nombre, descripcion, monto);
+            ChargeValues(id, name, description, amount);
             /*Eventos*/
             objUpdateService.Load += new EventHandler(ChargeDropDown);
             objUpdateService.btnCloseUpdateService.Click += new EventHandler(CloseUpdateService);
             objUpdateService.btnUpdateService.Click += new EventHandler(UpdateService);
-            objUpdateService.txtNombres.MouseDown += new MouseEventHandler(DisableContextMenu);
-            objUpdateService.txtDescripcion.MouseDown += new MouseEventHandler(DisableContextMenu);
-            objUpdateService.txtMonto.MouseDown += new MouseEventHandler(DisableContextMenu);
-            objUpdateService.txtMonto.TextChanged += new EventHandler(OnlyNum);
+            objUpdateService.txtName.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateService.txtDescription.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateService.txtAmount.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdateService.txtAmount.TextChanged += new EventHandler(OnlyNum);
         }
 
         public void OnlyNum(object sender, EventArgs e)
         {
-            int cursorPosition = objUpdateService.txtMonto.SelectionStart;
+            int cursorPosition = objUpdateService.txtAmount.SelectionStart;
 
             // Permitir solo dígitos y un solo punto decimal
-            string text = new string(objUpdateService.txtMonto.Text.Where(c => char.IsDigit(c) || c == '.').ToArray());
+            string text = new string(objUpdateService.txtAmount.Text.Where(c => char.IsDigit(c) || c == '.').ToArray());
 
             // Asegurarse de que solo haya un punto decimal
             int decimalCount = text.Count(c => c == '.');
@@ -69,10 +69,10 @@ namespace PTC2024.Controller.ServicesController
             }
 
             // Asignar el texto filtrado al TextBox
-            objUpdateService.txtMonto.Text = text;
+            objUpdateService.txtAmount.Text = text;
 
             // Restablecer la posición del cursor
-            objUpdateService.txtMonto.SelectionStart = cursorPosition;
+            objUpdateService.txtAmount.SelectionStart = cursorPosition;
         }
 
 
@@ -86,10 +86,10 @@ namespace PTC2024.Controller.ServicesController
             DataSet answer = dAOUpdateService.GetCategories();
 
             /*Aca se les asignan los valores al comboBox*/
-            objUpdateService.comboTipoEmpleado.DataSource = answer.Tables["tbCategoryS"];
-            objUpdateService.comboTipoEmpleado.DisplayMember = "categoryName";
-            objUpdateService.comboTipoEmpleado.ValueMember = "IdCategory";
-            objUpdateService.comboTipoEmpleado.SelectedValue = idCategoria;
+            objUpdateService.cmbCategoryS.DataSource = answer.Tables["tbCategoryS"];
+            objUpdateService.cmbCategoryS.DisplayMember = "categoryName";
+            objUpdateService.cmbCategoryS.ValueMember = "IdCategory";
+            objUpdateService.cmbCategoryS.SelectedValue = idCategory;
         }
 
         /*Este metodo se ejecutara cuando se vayan actualizar los datos*/
@@ -98,7 +98,7 @@ namespace PTC2024.Controller.ServicesController
 
             bool Update;
             /*Se verifica si los campos no estan vacios*/
-            if (objUpdateService.txtNombres.Text.Trim() == "" || objUpdateService.txtMonto.Text.Trim() == "")
+            if (objUpdateService.txtName.Text.Trim() == "" || objUpdateService.txtAmount.Text.Trim() == "")
             {
                 Update = false;
                 MessageBox.Show("Favor llenar los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -106,7 +106,7 @@ namespace PTC2024.Controller.ServicesController
             else
             {
                 Update= false;
-                if (double.TryParse(objUpdateService.txtMonto.Text, out double result))
+                if (double.TryParse(objUpdateService.txtAmount.Text, out double result))
                 {
                     Update = true;
                 }
@@ -125,16 +125,16 @@ namespace PTC2024.Controller.ServicesController
 
                 /*Se les asigna el valor a los atributos de la clase*/
                 dAOUpdateService.ServiceId = int.Parse(objUpdateService.txtId.Text);
-                dAOUpdateService.Nombre = objUpdateService.txtNombres.Text;
-                dAOUpdateService.Descripcion = objUpdateService.txtDescripcion.Text;
-                dAOUpdateService.Categoria = int.Parse(objUpdateService.comboTipoEmpleado.SelectedValue.ToString());
-                dAOUpdateService.Monto = double.Parse(objUpdateService.txtMonto.Text);
+                dAOUpdateService.Name = objUpdateService.txtName.Text;
+                dAOUpdateService.Description = objUpdateService.txtDescription.Text;
+                dAOUpdateService.Category = int.Parse(objUpdateService.cmbCategoryS.SelectedValue.ToString());
+                dAOUpdateService.Amount = double.Parse(objUpdateService.txtAmount.Text);
 
                 /*Se obtiene el valor retornado por el metodo UpdateService y se guarda en la variable ValorRetornado*/
-                int ValorRetornado = dAOUpdateService.UpdateService();
+                int returnedValue = dAOUpdateService.UpdateService();
 
                 /*Se valida el valor retornado*/
-                if (ValorRetornado == 1)
+                if (returnedValue == 1)
                 {
                     MessageBox.Show("Los datos se actualizaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -158,7 +158,7 @@ namespace PTC2024.Controller.ServicesController
         }
 
         /*Este metodo asigna los valores de los parametros que se le llevaran al constructor*/
-        public void ChargeValues(int id, string nombre, string descripcion, double monto)
+        public void ChargeValues(int id, string name, string description, double amount)
         {
             try
             {
@@ -170,9 +170,9 @@ namespace PTC2024.Controller.ServicesController
 
                 /*Aca se les asignara un valor a los parametros para asi llevarlos al constructor*/
                 objUpdateService.txtId.Text = id.ToString();
-                objUpdateService.txtNombres.Text = nombre;
-                objUpdateService.txtDescripcion.Text = descripcion;
-                objUpdateService.txtMonto.Text = monto.ToString();
+                objUpdateService.txtName.Text = name;
+                objUpdateService.txtDescription.Text = description;
+                objUpdateService.txtAmount.Text = amount.ToString();
 
             }
             catch (Exception ex)

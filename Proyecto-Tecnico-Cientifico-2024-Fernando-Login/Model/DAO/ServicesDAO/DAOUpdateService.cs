@@ -72,17 +72,17 @@ namespace PTC2024.Model.DAO.ServicesDAO
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
 
                 /*Se les asigna un valor a los parametros de la consulta*/
-                cmd.Parameters.AddWithValue("@Nombre", Nombre);
-                cmd.Parameters.AddWithValue("@Descripcion", Descripcion);
-                cmd.Parameters.AddWithValue("@Monto", Monto);
-                cmd.Parameters.AddWithValue("@Categoria", Categoria);
+                cmd.Parameters.AddWithValue("@Nombre", Name);
+                cmd.Parameters.AddWithValue("@Descripcion", Description);
+                cmd.Parameters.AddWithValue("@Monto", Amount);
+                cmd.Parameters.AddWithValue("@Categoria", Category);
                 cmd.Parameters.AddWithValue("@Id", ServiceId);
 
                 /*Se ejecuta la consulta cuyo valor se guardara en la variable respuesta*/
-                int respuesta = cmd.ExecuteNonQuery();
+                int answer = cmd.ExecuteNonQuery();
 
                 /*Se retornara la respuesta*/
-                return respuesta;
+                return answer;
 
             }
             catch (Exception)

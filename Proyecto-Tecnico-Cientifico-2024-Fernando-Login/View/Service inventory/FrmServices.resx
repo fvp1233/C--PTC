@@ -1068,7 +1068,7 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYo1e84v8BZ00SrWv8dxAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnAgregarServicio.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddService.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKkAAAAzCAYAAADsKCgKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG3SURBVHhe7d0tTgNBGIfx10Fnm4BEIjkCR+ASJBgSJBIc
@@ -1082,7 +1082,7 @@
         TkSuQmCC
 </value>
   </data>
-  <data name="btnAgregarServicio.IdleIconLeftImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddService.IdleIconLeftImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAOzJJREFUeF7t3Qe8ZVWR7/HRmTdDNzRNzkFCkzNCMyA5SZIgAiIogkCjiAQlhwYE
