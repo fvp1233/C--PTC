@@ -51,7 +51,8 @@ namespace PTC2024.Controller.StartMenuController
         void InitialAccess(object sender, EventArgs e)
         {
             Access();
-            objStartMenu.lblUser.Text = SessionVar.Username;
+            objStartMenu.lblUser.Text = SessionVar.ShortUsername;
+            objStartMenu.lblRole.Text = SessionVar.Access;
             objStartMenu.btnIcon.Image = ByteArrayToImage(SessionVar.ProfilePic);
             DAOStartMenu daoStart = new DAOStartMenu();
             bool chargeB = daoStart.ChargeInfoBusiness();

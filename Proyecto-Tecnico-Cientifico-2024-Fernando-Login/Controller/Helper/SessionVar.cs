@@ -18,6 +18,7 @@ namespace PTC2024.Controller.Helper
         private static string charge = string.Empty;
         private static string bussinesP = string.Empty;
         private static int idBussinesP = 0;
+        private static string shortUsername = string.Empty;
 
         //Para actualizacion de perfil
         private static string names = string.Empty;
@@ -44,5 +45,6 @@ namespace PTC2024.Controller.Helper
         public static string Adress { get => adress; set => adress = value; }
         public static string BankAccount { get => bankAccount; set => bankAccount = value; }
         public static string Affiliation { get => affiliation; set => affiliation = value; }
+        public static string ShortUsername { get => shortUsername; set => shortUsername = value; }
     }
 }

@@ -27,6 +27,15 @@ namespace PTC2024.Model.DAO.LogInDAO
                 SqlDataReader rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {
+                    string username = rd.GetString(0);
+                    if (username.Length > 6 )
+                    {
+                        SessionVar.ShortUsername = username.Substring(0,7) + "...";
+                    }
+                    else
+                    {
+                        SessionVar.ShortUsername = rd.GetString(0);
+                    }
                     SessionVar.Username = rd.GetString(0);
                     SessionVar.Password = rd.GetString(1);
                     SessionVar.IdBussinesP = rd.GetInt32(3);
@@ -128,6 +137,9 @@ namespace PTC2024.Model.DAO.LogInDAO
             }
         }
 
+        public void DeterminateUserVars()
+        {
 
+        }
     }
 }
