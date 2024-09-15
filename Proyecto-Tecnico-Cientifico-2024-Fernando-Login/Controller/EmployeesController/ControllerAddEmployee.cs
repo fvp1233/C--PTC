@@ -22,9 +22,9 @@ namespace PTC2024.Controller
         public ControllerAddEmployee(FrmAddEmployee View)
         {
             objAddEmployee = View;
-            objAddEmployee.Load += new EventHandler(CargarCombos);
-            objAddEmployee.BtnAgregarEmpleado.Click += new EventHandler(AgregarEmpleado);
-            objAddEmployee.BtnCancelar.Click += new EventHandler(CancelarProceso);
+            objAddEmployee.Load += new EventHandler(ChargeCombos);
+            objAddEmployee.BtnAgregarEmpleado.Click += new EventHandler(AddEmployee);
+            objAddEmployee.BtnCancelar.Click += new EventHandler(GoBack);
             objAddEmployee.txtSalary.Enter += new EventHandler(EnterSalary);
             objAddEmployee.txtSalary.Leave += new EventHandler(LeaveSalary);
             objAddEmployee.txtDUI.TextChanged += new EventHandler(DUIMask);
@@ -49,7 +49,7 @@ namespace PTC2024.Controller
         }
 
 
-        public void CargarCombos(object sender, EventArgs e)
+        public void ChargeCombos(object sender, EventArgs e)
         {
             //creando objeto de la clase DAOAddEmployee
             DAOAddEmployee daoAddEmployee = new DAOAddEmployee();
@@ -127,7 +127,7 @@ namespace PTC2024.Controller
             objAddEmployee.lblSalaryRequest.Visible = false;
             objAddEmployee.lblSalary.Visible = true;
         }
-        public void AgregarEmpleado(object sender, EventArgs e)
+        public void AddEmployee(object sender, EventArgs e)
         {
             StartMenu objMenu = new StartMenu(SessionVar.Username);
             //Validamos los campos vacíos
@@ -270,10 +270,11 @@ namespace PTC2024.Controller
             //Fin del mantenimiento de agregar empleado.
         }
 
-        public void CancelarProceso(object sender, EventArgs e)
+        public void GoBack(object sender, EventArgs e)
         {
             objAddEmployee.Close();
         }
+
         private bool ValidateEmail()
         {
             string email = objAddEmployee.txtEmail.Text.Trim();
@@ -512,6 +513,7 @@ namespace PTC2024.Controller
             // Restaurar la posición del cursor
             objAddEmployee.txtLastNames.SelectionStart = cursorPosition;
         }
+
         public void OnlyNum(object sender, EventArgs e)
         {
             int cursorPosition = objAddEmployee.txtSalary.SelectionStart;

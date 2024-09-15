@@ -536,6 +536,7 @@ namespace PTC2024.Controller.EmployeesController
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
         }
+
         public void OnlyLettersName(object sender, EventArgs e)
         {
             // Obtener la posición actual del cursor
@@ -550,6 +551,7 @@ namespace PTC2024.Controller.EmployeesController
             // Restaurar la posición del cursor
             objUpdateEmployee.txtNames.SelectionStart = cursorPosition;
         }
+
         public void OnlyLettersLastName(object sender, EventArgs e)
         {
             // Obtener la posición actual del cursor
@@ -564,6 +566,7 @@ namespace PTC2024.Controller.EmployeesController
             // Restaurar la posición del cursor
             objUpdateEmployee.txtLastNames.SelectionStart = cursorPosition;
         }
+
         public void OnlyNum(object sender, EventArgs e)
         {
             int cursorPosition = objUpdateEmployee.txtSalary.SelectionStart;

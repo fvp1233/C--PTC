@@ -187,6 +187,7 @@ namespace PTC2024.Controller.FirstUseController
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
         }
+
         public void EmailValidation(object sender, EventArgs e)
         {
             int cursorPosition = objFistUse.txtEmail.SelectionStart;
