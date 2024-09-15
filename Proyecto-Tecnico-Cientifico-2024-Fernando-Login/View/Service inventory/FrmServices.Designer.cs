@@ -53,7 +53,7 @@
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.DgvServicios = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAgregarServicio = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
+            this.btnAddService = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
@@ -191,7 +191,7 @@
             this.txtSearch.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.DefaultText = "";
             this.txtSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtSearch.ForeColor = System.Drawing.Color.White;
@@ -268,22 +268,22 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 5);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 40);
+            this.label1.Size = new System.Drawing.Size(214, 39);
             this.label1.TabIndex = 1;
             this.label1.Text = "SERVICIOS";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(25, 51);
             this.label2.Margin = new System.Windows.Forms.Padding(25, 0, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(315, 16);
+            this.label2.Size = new System.Drawing.Size(278, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Haga click derecho sobre un servicio para más opciones.";
             // 
@@ -400,7 +400,7 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.74569F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.25431F));
-            this.tableLayoutPanel3.Controls.Add(this.btnAgregarServicio, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnAddService, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -409,95 +409,95 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1171, 136);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
-            // btnAgregarServicio
+            // btnAddService
             // 
-            this.btnAgregarServicio.AllowAnimations = true;
-            this.btnAgregarServicio.AllowMouseEffects = true;
-            this.btnAgregarServicio.AllowToggling = false;
-            this.btnAgregarServicio.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAgregarServicio.AnimationSpeed = 200;
-            this.btnAgregarServicio.AutoGenerateColors = false;
-            this.btnAgregarServicio.AutoRoundBorders = false;
-            this.btnAgregarServicio.AutoSizeLeftIcon = true;
-            this.btnAgregarServicio.AutoSizeRightIcon = true;
-            this.btnAgregarServicio.BackColor = System.Drawing.Color.Transparent;
-            this.btnAgregarServicio.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnAgregarServicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgregarServicio.BackgroundImage")));
-            this.btnAgregarServicio.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnAgregarServicio.ButtonText = "Agregar servicio";
-            this.btnAgregarServicio.ButtonTextMarginLeft = 0;
-            this.btnAgregarServicio.ColorContrastOnClick = 45;
-            this.btnAgregarServicio.ColorContrastOnHover = 45;
-            this.btnAgregarServicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddService.AllowAnimations = true;
+            this.btnAddService.AllowMouseEffects = true;
+            this.btnAddService.AllowToggling = false;
+            this.btnAddService.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddService.AnimationSpeed = 200;
+            this.btnAddService.AutoGenerateColors = false;
+            this.btnAddService.AutoRoundBorders = false;
+            this.btnAddService.AutoSizeLeftIcon = true;
+            this.btnAddService.AutoSizeRightIcon = true;
+            this.btnAddService.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddService.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnAddService.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddService.BackgroundImage")));
+            this.btnAddService.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnAddService.ButtonText = "Agregar servicio";
+            this.btnAddService.ButtonTextMarginLeft = 0;
+            this.btnAddService.ColorContrastOnClick = 45;
+            this.btnAddService.ColorContrastOnHover = 45;
+            this.btnAddService.Cursor = System.Windows.Forms.Cursors.Hand;
             borderEdges1.BottomLeft = true;
             borderEdges1.BottomRight = true;
             borderEdges1.TopLeft = true;
             borderEdges1.TopRight = true;
-            this.btnAgregarServicio.CustomizableEdges = borderEdges1;
-            this.btnAgregarServicio.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAgregarServicio.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnAgregarServicio.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnAgregarServicio.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnAgregarServicio.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnAgregarServicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarServicio.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarServicio.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarServicio.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnAgregarServicio.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnAgregarServicio.IconMarginLeft = 11;
-            this.btnAgregarServicio.IconPadding = 10;
-            this.btnAgregarServicio.IconRightAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarServicio.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnAgregarServicio.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnAgregarServicio.IconSize = 25;
-            this.btnAgregarServicio.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnAgregarServicio.IdleBorderRadius = 15;
-            this.btnAgregarServicio.IdleBorderThickness = 1;
-            this.btnAgregarServicio.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnAgregarServicio.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnAgregarServicio.IdleIconLeftImage")));
-            this.btnAgregarServicio.IdleIconRightImage = null;
-            this.btnAgregarServicio.IndicateFocus = false;
-            this.btnAgregarServicio.Location = new System.Drawing.Point(966, 42);
-            this.btnAgregarServicio.Name = "btnAgregarServicio";
-            this.btnAgregarServicio.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnAgregarServicio.OnDisabledState.BorderRadius = 15;
-            this.btnAgregarServicio.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnAgregarServicio.OnDisabledState.BorderThickness = 1;
-            this.btnAgregarServicio.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnAgregarServicio.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnAgregarServicio.OnDisabledState.IconLeftImage = null;
-            this.btnAgregarServicio.OnDisabledState.IconRightImage = null;
-            this.btnAgregarServicio.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnAgregarServicio.onHoverState.BorderRadius = 15;
-            this.btnAgregarServicio.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnAgregarServicio.onHoverState.BorderThickness = 1;
-            this.btnAgregarServicio.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnAgregarServicio.onHoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregarServicio.onHoverState.IconLeftImage = null;
-            this.btnAgregarServicio.onHoverState.IconRightImage = null;
-            this.btnAgregarServicio.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnAgregarServicio.OnIdleState.BorderRadius = 15;
-            this.btnAgregarServicio.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnAgregarServicio.OnIdleState.BorderThickness = 1;
-            this.btnAgregarServicio.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnAgregarServicio.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarServicio.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnAgregarServicio.OnIdleState.IconLeftImage")));
-            this.btnAgregarServicio.OnIdleState.IconRightImage = null;
-            this.btnAgregarServicio.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnAgregarServicio.OnPressedState.BorderRadius = 15;
-            this.btnAgregarServicio.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnAgregarServicio.OnPressedState.BorderThickness = 1;
-            this.btnAgregarServicio.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.btnAgregarServicio.OnPressedState.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregarServicio.OnPressedState.IconLeftImage = null;
-            this.btnAgregarServicio.OnPressedState.IconRightImage = null;
-            this.btnAgregarServicio.Size = new System.Drawing.Size(169, 51);
-            this.btnAgregarServicio.TabIndex = 2;
-            this.btnAgregarServicio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregarServicio.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAgregarServicio.TextMarginLeft = 0;
-            this.btnAgregarServicio.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.btnAgregarServicio.UseDefaultRadiusAndThickness = true;
+            this.btnAddService.CustomizableEdges = borderEdges1;
+            this.btnAddService.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddService.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnAddService.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnAddService.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnAddService.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
+            this.btnAddService.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddService.ForeColor = System.Drawing.Color.White;
+            this.btnAddService.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddService.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnAddService.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnAddService.IconMarginLeft = 11;
+            this.btnAddService.IconPadding = 10;
+            this.btnAddService.IconRightAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddService.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnAddService.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnAddService.IconSize = 25;
+            this.btnAddService.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnAddService.IdleBorderRadius = 15;
+            this.btnAddService.IdleBorderThickness = 1;
+            this.btnAddService.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnAddService.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnAddService.IdleIconLeftImage")));
+            this.btnAddService.IdleIconRightImage = null;
+            this.btnAddService.IndicateFocus = false;
+            this.btnAddService.Location = new System.Drawing.Point(966, 42);
+            this.btnAddService.Name = "btnAddService";
+            this.btnAddService.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnAddService.OnDisabledState.BorderRadius = 15;
+            this.btnAddService.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnAddService.OnDisabledState.BorderThickness = 1;
+            this.btnAddService.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnAddService.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnAddService.OnDisabledState.IconLeftImage = null;
+            this.btnAddService.OnDisabledState.IconRightImage = null;
+            this.btnAddService.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnAddService.onHoverState.BorderRadius = 15;
+            this.btnAddService.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnAddService.onHoverState.BorderThickness = 1;
+            this.btnAddService.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnAddService.onHoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnAddService.onHoverState.IconLeftImage = null;
+            this.btnAddService.onHoverState.IconRightImage = null;
+            this.btnAddService.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnAddService.OnIdleState.BorderRadius = 15;
+            this.btnAddService.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnAddService.OnIdleState.BorderThickness = 1;
+            this.btnAddService.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            this.btnAddService.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnAddService.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnAgregarServicio.OnIdleState.IconLeftImage")));
+            this.btnAddService.OnIdleState.IconRightImage = null;
+            this.btnAddService.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnAddService.OnPressedState.BorderRadius = 15;
+            this.btnAddService.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.btnAddService.OnPressedState.BorderThickness = 1;
+            this.btnAddService.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.btnAddService.OnPressedState.ForeColor = System.Drawing.Color.Black;
+            this.btnAddService.OnPressedState.IconLeftImage = null;
+            this.btnAddService.OnPressedState.IconRightImage = null;
+            this.btnAddService.Size = new System.Drawing.Size(169, 51);
+            this.btnAddService.TabIndex = 2;
+            this.btnAddService.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddService.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAddService.TextMarginLeft = 0;
+            this.btnAddService.TextPadding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.btnAddService.UseDefaultRadiusAndThickness = true;
             // 
             // tableLayoutPanel4
             // 
@@ -506,7 +506,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.87805F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 290F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 290F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 291F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel13, 4, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel11, 3, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel9, 2, 1);
@@ -529,11 +529,11 @@
             this.tableLayoutPanel13.Controls.Add(this.flowLayoutPanel4, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 1, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(635, 29);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(634, 29);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(285, 94);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(286, 94);
             this.tableLayoutPanel13.TabIndex = 9;
             // 
             // flowLayoutPanel4
@@ -776,7 +776,7 @@
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(246, 88);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(247, 88);
             this.tableLayoutPanel14.TabIndex = 1;
             // 
             // tableLayoutPanel11
@@ -787,7 +787,7 @@
             this.tableLayoutPanel11.Controls.Add(this.flowLayoutPanel3, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel12, 1, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(485, 29);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(484, 29);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -880,7 +880,7 @@
             this.tableLayoutPanel9.Controls.Add(this.flowLayoutPanel2, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(195, 29);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(194, 29);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1138,10 +1138,10 @@
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 3);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(3, 5);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(243, 16);
+            this.label12.Size = new System.Drawing.Size(243, 13);
             this.label12.TabIndex = 0;
             this.label12.Text = "Infraestructura";
             // 
@@ -1149,10 +1149,10 @@
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 26);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(3, 28);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(243, 16);
+            this.label8.Size = new System.Drawing.Size(243, 13);
             this.label8.TabIndex = 1;
             this.label8.Text = "Mantenimiento de equipos";
             // 
@@ -1160,10 +1160,10 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(41, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 18);
+            this.label3.Size = new System.Drawing.Size(86, 18);
             this.label3.TabIndex = 0;
             this.label3.Text = "Categoría:";
             // 
@@ -1179,7 +1179,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(148, 94);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(147, 94);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -1421,7 +1421,7 @@
             this.tableLayoutPanel7.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableLayoutPanel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel7.Location = new System.Drawing.Point(37, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 4;
@@ -1429,7 +1429,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(108, 88);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(107, 88);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // label6
@@ -1439,7 +1439,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(3, 49);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 13);
+            this.label6.Size = new System.Drawing.Size(101, 13);
             this.label6.TabIndex = 2;
             this.label6.Text = "Programación";
             // 
@@ -1447,10 +1447,10 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 25);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 26);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 16);
+            this.label5.Size = new System.Drawing.Size(101, 13);
             this.label5.TabIndex = 1;
             this.label5.Text = "Soporte";
             // 
@@ -1458,10 +1458,10 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 3);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 4);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 16);
+            this.label4.Size = new System.Drawing.Size(101, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Seguridad";
             // 
@@ -1510,7 +1510,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnAgregarServicio;
+        public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnAddService;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;

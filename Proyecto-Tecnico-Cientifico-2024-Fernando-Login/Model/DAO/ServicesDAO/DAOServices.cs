@@ -71,10 +71,10 @@ namespace PTC2024.Model.DAO.ServicesDAO
                 cmd.Parameters.AddWithValue("@Id", IdService1);
 
                 /*Se ejecuta la consulta que se guardara en la variable respuesta*/
-                int respuesta = cmd.ExecuteNonQuery();
+                int answer = cmd.ExecuteNonQuery();
 
                 /*Se retorna la respuesta*/
-                return respuesta;
+                return answer;
 
             }
             catch (Exception)

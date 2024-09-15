@@ -33,7 +33,7 @@ namespace PTC2024.Controller.LogInController
         }
         async private void DataAccess(object sender, EventArgs e)
         {
-            await Task.Delay(1000);
+            await Task.Delay(500);
             DAOLogin DAOData = new DAOLogin();
             CommonClasses common = new CommonClasses();
 

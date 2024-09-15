@@ -22,7 +22,7 @@ namespace PTC2024.Controller.ServicesController
 
             /*Aca se encuentran todos los eventos del Controlador de servicios*/
             objServices.Load += new EventHandler(ChargeData);
-            objServices.btnAgregarServicio.Click += new EventHandler(OpenAddService);
+            objServices.btnAddService.Click += new EventHandler(OpenAddService);
             objServices.cmsDeleteService.Click += new EventHandler(DeleteService);
             objServices.cmsUpdateService.Click += new EventHandler(OpenUpdateService);
             objServices.txtSearch.KeyPress += new KeyPressEventHandler(Search);
@@ -57,13 +57,13 @@ namespace PTC2024.Controller.ServicesController
 
             /*Aca le estamos dando valor a los parametros que se mandaran al objeto del formulario UpdateService*/
             int id = int.Parse(objServices.DgvServicios[0, pos].Value.ToString());
-            string nombre = objServices.DgvServicios[1, pos].Value.ToString();
-            string descripcion = objServices.DgvServicios[2, pos].Value.ToString();
-            double monto = double.Parse(objServices.DgvServicios[3, pos].Value.ToString());
-            string categoria = objServices.DgvServicios[4, pos].Value.ToString();
-            int idCategoria = (int)objServices.DgvServicios[5, pos].Value;
+            string name = objServices.DgvServicios[1, pos].Value.ToString();
+            string description = objServices.DgvServicios[2, pos].Value.ToString();
+            double amount = double.Parse(objServices.DgvServicios[3, pos].Value.ToString());
+            string category = objServices.DgvServicios[4, pos].Value.ToString();
+            int idCategory = (int)objServices.DgvServicios[5, pos].Value;
             /*Aca se crea un objeto del formulario UpdateService y se les agrega sus respectivos parametros*/
-            FrmUpdateService objUpdateService = new FrmUpdateService( id, nombre, descripcion, monto, categoria, idCategoria);
+            FrmUpdateService objUpdateService = new FrmUpdateService( id, name, description, amount, category, idCategory);
             /*Se abre el formulario*/
             objUpdateService.ShowDialog();
             /*Se refresca el DataGridView*/
@@ -121,9 +121,9 @@ namespace PTC2024.Controller.ServicesController
             dAOServices.Search1 = objServices.txtSearch.Text;
 
             /*Se captura la respuesta de l metodo SearchData y se le agrega su respectivo parametro*/
-            DataSet respuesta = dAOServices.SearchData(dAOServices.Search1);
+            DataSet answer = dAOServices.SearchData(dAOServices.Search1);
             /*Se le dice al DataGridView lo que tiene que mostrar*/
-            objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
+            objServices.DgvServicios.DataSource = answer.Tables["viewServices"];
         }
 
         /*Este se ejecutara cuando se haga click en cualquier checkbox*/
@@ -132,18 +132,18 @@ namespace PTC2024.Controller.ServicesController
             DAOServices dAOServices = new DAOServices();
 
             /*Se crea una variable cuyo valor dependera de cual checkbox este checkeado*/
-            string categoria = "";
+            string category = "";
 
             /*Se verificara cual checkbox esta checkeado*/
             /*Los demas checkbox estaran desabilitados si uno esta checkeado*/
             if (objServices.CbSeguridad.Checked == true)
             {
-                categoria = objServices.CbSeguridad.Tag.ToString();
+                category = objServices.CbSeguridad.Tag.ToString();
                 objServices.CbInfraestructura.Checked = false;
                 objServices.CbMantenimiento.Checked = false;
                 objServices.CbSoporte.Checked = false;
                 objServices.CbProgramacion.Checked = false;
-                DataSet respuesta = dAOServices.SearchDataCb(categoria);
+                DataSet respuesta = dAOServices.SearchDataCb(category);
                 objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
             }
             else
@@ -160,18 +160,18 @@ namespace PTC2024.Controller.ServicesController
             DAOServices dAOServices = new DAOServices();
 
             /*Se crea una variable cuyo valor dependera de cual checkbox este checkeado*/
-            string categoria = "";
+            string category = "";
 
             /*Se verificara cual checkbox esta checkeado*/
             /*Los demas checkbox estaran desabilitados si uno esta checkeado*/
             if (objServices.CbInfraestructura.Checked == true)
             {
-                categoria = objServices.CbInfraestructura.Tag.ToString();
+                category = objServices.CbInfraestructura.Tag.ToString();
                 objServices.CbSeguridad.Checked = false;
                 objServices.CbMantenimiento.Checked = false;
                 objServices.CbSoporte.Checked = false;
                 objServices.CbProgramacion.Checked = false;
-                DataSet respuesta = dAOServices.SearchDataCb(categoria);
+                DataSet respuesta = dAOServices.SearchDataCb(category);
                 objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
             }
             else
@@ -186,18 +186,18 @@ namespace PTC2024.Controller.ServicesController
             DAOServices dAOServices = new DAOServices();
 
             /*Se crea una variable cuyo valor dependera de cual checkbox este checkeado*/
-            string categoria = "";
+            string category = "";
 
             /*Se verificara cual checkbox esta checkeado*/
             /*Los demas checkbox estaran desabilitados si uno esta checkeado*/
             if (objServices.CbProgramacion.Checked == true)
             {
-                categoria = objServices.CbSoporte.Tag.ToString();
+                category = objServices.CbSoporte.Tag.ToString();
                 objServices.CbSeguridad.Checked = false;
                 objServices.CbInfraestructura.Checked = false;
                 objServices.CbMantenimiento.Checked = false;
                 objServices.CbSoporte.Checked = false;
-                DataSet respuesta = dAOServices.SearchDataCb(categoria);
+                DataSet respuesta = dAOServices.SearchDataCb(category);
                 objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
             }
             else
@@ -213,18 +213,18 @@ namespace PTC2024.Controller.ServicesController
             DAOServices dAOServices = new DAOServices();
 
             /*Se crea una variable cuyo valor dependera de cual checkbox este checkeado*/
-            string categoria = "";
+            string category = "";
 
             /*Se verificara cual checkbox esta checkeado*/
             /*Los demas checkbox estaran desabilitados si uno esta checkeado*/
             if (objServices.CbMantenimiento.Checked == true)
             {
-                categoria = objServices.CbMantenimiento.Tag.ToString();
+                category = objServices.CbMantenimiento.Tag.ToString();
                 objServices.CbSeguridad.Checked = false;
                 objServices.CbInfraestructura.Checked = false;
                 objServices.CbSoporte.Checked = false;
                 objServices.CbProgramacion.Checked = false;
-                DataSet respuesta = dAOServices.SearchDataCb(categoria);
+                DataSet respuesta = dAOServices.SearchDataCb(category);
                 objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
             }
             else
@@ -240,18 +240,18 @@ namespace PTC2024.Controller.ServicesController
             DAOServices dAOServices = new DAOServices();
 
             /*Se crea una variable cuyo valor dependera de cual checkbox este checkeado*/
-            string categoria = "";
+            string category = "";
 
             /*Se verificara cual checkbox esta checkeado*/
             /*Los demas checkbox estaran desabilitados si uno esta checkeado*/
             if (objServices.CbSoporte.Checked == true)
             {
-                categoria = objServices.CbProgramacion.Tag.ToString();
+                category = objServices.CbProgramacion.Tag.ToString();
                 objServices.CbSeguridad.Checked = false;
                 objServices.CbInfraestructura.Checked = false;
                 objServices.CbProgramacion.Checked = false;
                 objServices.CbMantenimiento.Checked = false;
-                DataSet respuesta = dAOServices.SearchDataCb(categoria);
+                DataSet respuesta = dAOServices.SearchDataCb(category);
                 objServices.DgvServicios.DataSource = respuesta.Tables["viewServices"];
             }
             else

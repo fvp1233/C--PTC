@@ -68,10 +68,10 @@ namespace PTC2024.Model.DAO.ServicesDAO
                 /*Se declara un comando que contiene la consulta con la conexion*/
                 SqlCommand cmd2 = new SqlCommand(query2, command.Connection);
                 /*Ya que esta consulta lleva parametros, aca es donde se llenan dichos parametros*/
-                cmd2.Parameters.AddWithValue("@NombreS", Nombre);
-                cmd2.Parameters.AddWithValue("@DescripcionS", Descripcion);
-                cmd2.Parameters.AddWithValue("@MontoS", Monto);
-                cmd2.Parameters.AddWithValue("@Categoria", Categorias);
+                cmd2.Parameters.AddWithValue("@NombreS", Name);
+                cmd2.Parameters.AddWithValue("@DescripcionS", Description);
+                cmd2.Parameters.AddWithValue("@MontoS", Amount);
+                cmd2.Parameters.AddWithValue("@Categoria", Category);
 
                 /*Se ejecuta la consulta y se guarda en la variable answer*/
                 int answer = cmd2.ExecuteNonQuery();
