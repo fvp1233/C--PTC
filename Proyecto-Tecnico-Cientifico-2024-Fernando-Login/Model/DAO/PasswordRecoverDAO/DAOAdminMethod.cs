@@ -54,6 +54,30 @@ namespace PTC2024.Model.DAO.PasswordRecoverDAO
             }
         }
 
+        //Método para verificar si se trata del CEO
+        public bool ValidateCEOCredentials()
+        {
+            try
+            {
+                command.Connection = getConnection();
+                string query = "SELECT * FROM viewLogIn WHERE username = @username COLLATE SQL_Latin1_General_CP1_CS_AS AND password = @password COLLATE SQL_Latin1_General_CP1_CS_AS AND userStatus = 1 AND IdBusinessP = 3 AND username = @username AND password = @password";
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                cmd.Parameters.AddWithValue("username", AdminUsername);
+                cmd.Parameters.AddWithValue("password", AdminPassword);
+                SqlDataReader rd = cmd.ExecuteReader();
+                return rd.HasRows;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("EC-129: No se pudo obtener la información del logIn", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+        }
+
         //Método para verificar que el usuario existe en el sistema
         public bool CheckUser()
         {
