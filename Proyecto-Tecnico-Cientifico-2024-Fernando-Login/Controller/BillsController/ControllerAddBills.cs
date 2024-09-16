@@ -59,8 +59,8 @@ namespace PTC2024.Controller.BillsController
             objAddBills.dgvData.CellValueChanged += new DataGridViewCellEventHandler(CalculateTotal);
             objAddBills.dgvData.RowsAdded += new DataGridViewRowsAddedEventHandler(CalculateTotal);
             objAddBills.dgvData.RowsRemoved += new DataGridViewRowsRemovedEventHandler(CalculateTotal);
-            objAddBills.txtRazónsocial.MouseDown += new MouseEventHandler(DisableContextMenu);
-            objAddBills.txtRazónsocial.TextChanged += new EventHandler(OnlyLettersAndNumbers);
+            objAddBills.txtcompanyN.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objAddBills.txtcompanyN.TextChanged += new EventHandler(OnlyLettersAndNumbers);
             objAddBills.txtNITCompany.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddBills.txtNITCompany.TextChanged += new EventHandler(NITMask);
             objAddBills.txtNRCompany.MouseDown += new MouseEventHandler(DisableContextMenu);
@@ -510,7 +510,7 @@ namespace PTC2024.Controller.BillsController
             {
                 DAOAddBills daoNew = new DAOAddBills();
 
-                daoNew.CompanyName = objAddBills.txtRazónsocial.Text.Trim();
+                daoNew.CompanyName = objAddBills.txtcompanyN.Text.Trim();
                 daoNew.NIT1 = objAddBills.txtNITCompany.Text.Trim();
                 daoNew.NRC1 = objAddBills.txtNRCompany.Text.Trim();
                 daoNew.Discount = double.Parse(objAddBills.txtDiscount.Text.Trim());
@@ -587,18 +587,18 @@ namespace PTC2024.Controller.BillsController
         public void OnlyLettersAndNumbers(object sender, EventArgs e)
         {
                 // Obtener la posición actual del cursor
-                int cursorPosition = objAddBills.txtRazónsocial.SelectionStart;
+                int cursorPosition = objAddBills.txtcompanyN.SelectionStart;
 
                 // Filtrar el texto para que solo queden letras, números, puntos y espacios
-                string text = new string(objAddBills.txtRazónsocial.Text
+                string text = new string(objAddBills.txtcompanyN.Text
                                            .Where(c => char.IsLetter(c) || char.IsDigit(c) || char.IsWhiteSpace(c) || c == '.')
                                            .ToArray());
 
                 // Actualizar el contenido del TextBox con el texto filtrado
-                objAddBills.txtRazónsocial.Text = text;
+                objAddBills.txtcompanyN.Text = text;
 
                 // Restaurar la posición del cursor
-                objAddBills.txtRazónsocial.SelectionStart = cursorPosition;
+                objAddBills.txtcompanyN.SelectionStart = cursorPosition;
             
 
         }
@@ -807,7 +807,7 @@ namespace PTC2024.Controller.BillsController
         }
         public void ChargeValues( string companyName, string NIT, string NRC, string customer, string CustomerDui, string CustomerPhone, string CustomerEmail, string employee)
         {
-            objAddBills.txtRazónsocial.Text = companyName;
+            objAddBills.txtcompanyN.Text = companyName;
             objAddBills.txtNITCompany.Text = NIT.ToString();
             objAddBills.txtNRCompany.Text = NRC.ToString();
             objAddBills.txtCustomerName.Text = customer.ToString();
