@@ -60,6 +60,7 @@ namespace PTC2024.Controller.StartMenuController
             {
                 objStartMenu.snackBar.Show(objStartMenu, $"Datos del negocio cargados con éxito.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
             }
+            objStartMenu.lblBusinessName.Text = BusinessVar.BusinessName;
             ShowWelcomeSnackBar();
         }
         public Image ByteArrayToImage(byte[] byteArray)
