@@ -748,9 +748,10 @@ namespace PTC2024.Controller.Employees
             int row = objEmployees.dgvEmployees.CurrentRow.Index;
             //Vamos a comparar el rol del usuario y del registro seleccionado
             string employeeRole = objEmployees.dgvEmployees[19, row].Value.ToString();
-            if (employeeRole == "Administrador" && SessionVar.Access == "Administrador")
+            string username = objEmployees.dgvEmployees[17, row].Value.ToString();
+            if (username != SessionVar.Username && employeeRole == "Administrador" && SessionVar.Access == "Administrador")
             {
-                //Significa que el usuario y el empleado seleccionado ambos son administradores
+                //Significa que el usuario y el empleado seleccionado ambos son administradores y no es él mismo
                 return true;
             }
             else

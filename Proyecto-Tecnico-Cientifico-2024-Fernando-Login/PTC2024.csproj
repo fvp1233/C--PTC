@@ -777,9 +777,17 @@
     <Content Include="Resources\generarPlanillas.png" />
     <Content Include="Resources\habilitar.png" />
     <Content Include="Resources\indemnizacion.png" />
+    <Content Include="Resources\mantenimientos.png" />
+    <Content Include="Resources\mantos.png" />
     <Content Include="Resources\ojoAbierto.png" />
     <Content Include="Resources\ojoCerrado.png" />
     <Content Include="Resources\perfilConfig.png" />
+    <Content Include="Resources\permisosNuevo.png" />
+    <Content Include="Resources\permisosReal.png" />
+    <Content Include="Resources\planillas.png" />
+    <Content Include="Resources\planillasNuevo.png" />
+    <Content Include="Resources\planillasNuevoNuevo.png" />
+    <Content Include="Resources\planillass.png" />
     <Content Include="Resources\preguntasSeguridad.png" />
     <Content Include="Resources\questionsMethod.png" />
     <Content Include="Resources\salir.png" />

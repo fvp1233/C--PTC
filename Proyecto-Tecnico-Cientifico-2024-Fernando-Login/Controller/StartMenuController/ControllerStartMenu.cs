@@ -51,7 +51,8 @@ namespace PTC2024.Controller.StartMenuController
         void InitialAccess(object sender, EventArgs e)
         {
             Access();
-            objStartMenu.lblUser.Text = SessionVar.Username;
+            objStartMenu.lblUser.Text = SessionVar.ShortUsername;
+            objStartMenu.lblRole.Text = SessionVar.Access;
             objStartMenu.btnIcon.Image = ByteArrayToImage(SessionVar.ProfilePic);
             DAOStartMenu daoStart = new DAOStartMenu();
             bool chargeB = daoStart.ChargeInfoBusiness();
@@ -59,6 +60,7 @@ namespace PTC2024.Controller.StartMenuController
             {
                 objStartMenu.snackBar.Show(objStartMenu, $"Datos del negocio cargados con éxito.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
             }
+            objStartMenu.lblBusinessName.Text = BusinessVar.BusinessName;
             ShowWelcomeSnackBar();
         }
         public Image ByteArrayToImage(byte[] byteArray)

@@ -93,6 +93,7 @@ namespace PTC2024.Controller.Helper
                     else
                     {
                         MessageBox.Show("Su token de inicio de sesión expiró. \nInicie sesión nuevamente", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DeleteLocalToken();
                         Application.Run(new FrmLogin());
                     }
                 }
@@ -117,7 +118,14 @@ namespace PTC2024.Controller.Helper
                 }
             }           
                                     
-        }      
-         
+        }
+
+        public static void DeleteLocalToken()
+        {
+            //eliminamos el token local
+            Properties.Settings.Default.Token = string.Empty;
+            Properties.Settings.Default.Save();
+        }
+
     }
 }
