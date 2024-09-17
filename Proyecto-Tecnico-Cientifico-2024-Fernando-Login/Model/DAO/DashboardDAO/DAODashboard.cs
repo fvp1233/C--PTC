@@ -3,11 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static TheArtOfDev.HtmlRenderer.Adapters.RGraphicsPath;
 
 namespace PTC2024.Model.DAO.DashboardDAO
 {
@@ -142,7 +144,7 @@ namespace PTC2024.Model.DAO.DashboardDAO
             }
             finally
             {
-                    Command.Connection.Close();
+                Command.Connection.Close();
             }
         }
 
@@ -151,17 +153,11 @@ namespace PTC2024.Model.DAO.DashboardDAO
             try
             {
                 Command.Connection = getConnection();
-                //string queryFisrt = "SELECT MIN(issueDate) FROM tbPayroll";
-                //SqlCommand cmdFirst =  new SqlCommand(queryFisrt, Command.Connection);
-                //DateTime firstIssueD = (DateTime)cmdFirst.ExecuteScalar();
-                //FromDate = firstIssueD < FromDate ? firstIssueD : FromDate;
                 FromDate = new DateTime(2020, 8, 1);
                 ToDate = new DateTime(2025, 7, 7);
                 PayrollsList = new List<PayrollsByDate>();
                 string query = "SELECT issueDate,SUM(netPay + christmasBonus) FROM tbPayroll WHERE issueDate BETWEEN @fromDate AND @toDate group by issueDate";
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
-                //cmd.Parameters.Add("@fromDate", System.Data.SqlDbType.DateTime).Value = FromDate;
-                //cmd.Parameters.Add("@toDate", System.Data.SqlDbType.DateTime).Value = ToDate;
                 cmd.Parameters.AddWithValue("@fromDate", FromDate);
                 cmd.Parameters.AddWithValue("@toDate", ToDate);
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -172,14 +168,37 @@ namespace PTC2024.Model.DAO.DashboardDAO
                     NetPay += (decimal)reader[1];
                 }
                 reader.Close();
-                foreach (var item in resultTable)
+                if (NumberDays <= 30)
                 {
-                    PayrollsList.Add(new PayrollsByDate()
-                    {
-                        Date = item.Key.ToString("dd MMM"),
-                        TotalAmount = item.Value
-                    });
+                    PayrollsList = (from orderlist in resultTable
+                                    group orderlist by orderlist.Key.ToString("dd MMM") into order
+                                    select new PayrollsByDate
+                                    {
+                                        Date = order.Key,
+                                        TotalAmount = order.Sum(amount => amount.Value)
+
+                                    }).ToList();
                 }
+                else if (NumberDays <= 92)
+                {
+                    PayrollsList = (from orderList in resultTable
+                                    group orderList by CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(orderList.Key, CalendarWeekRule.FirstDay, DayOfWeek.Monday)
+                                    into order
+                                    select new PayrollsByDate
+                                    {
+                                        Date = "Week " + order.Key.ToString(),
+                                        TotalAmount = order.Sum(amount => amount.Value)
+                                    }).ToList();
+                }
+
+                //foreach (var item in resultTable)
+                //{
+                //    PayrollsList.Add(new PayrollsByDate()
+                //    {
+                //        Date = item.Key.ToString("dd MMM"),
+                //        TotalAmount = item.Value
+                //    });
+                //}
             }
             catch (Exception ex)
             {
