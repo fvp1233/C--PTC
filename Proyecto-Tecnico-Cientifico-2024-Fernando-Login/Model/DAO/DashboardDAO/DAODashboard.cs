@@ -153,8 +153,8 @@ namespace PTC2024.Model.DAO.DashboardDAO
             try
             {
                 Command.Connection = getConnection();
-                FromDate = new DateTime(2020, 8, 1);
-                ToDate = new DateTime(2025, 7, 7);
+                //FromDate = new DateTime(2020, 8, 1);
+                //ToDate = new DateTime(2025, 7, 7);
                 PayrollsList = new List<PayrollsByDate>();
                 string query = "SELECT issueDate,SUM(netPay + christmasBonus) FROM tbPayroll WHERE issueDate BETWEEN @fromDate AND @toDate group by issueDate";
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
@@ -190,7 +190,27 @@ namespace PTC2024.Model.DAO.DashboardDAO
                                         TotalAmount = order.Sum(amount => amount.Value)
                                     }).ToList();
                 }
-
+                else if (NumberDays <= (365 * 2))
+                {
+                    bool isYear = NumberDays <= 365 ? true : false;
+                    PayrollsList = (from orderList in resultTable
+                                    group orderList by orderList.Key.ToString("MMM yyyy") into order
+                                    select new PayrollsByDate
+                                    {
+                                        Date = isYear ? order.Key.Substring(0, order.Key.IndexOf(" ")) : order.Key,
+                                        TotalAmount = order.Sum(amount => amount.Value)
+                                    }).ToList();
+                }
+                else
+                {
+                    PayrollsList = (from orderList in resultTable
+                                    group orderList by orderList.Key.ToString("yyyyy") into order
+                                    select new PayrollsByDate
+                                    {
+                                        Date = order.Key,
+                                        TotalAmount = order.Sum(amount => amount.Value)
+                                    }).ToList();
+                }
                 //foreach (var item in resultTable)
                 //{
                 //    PayrollsList.Add(new PayrollsByDate()
@@ -208,6 +228,30 @@ namespace PTC2024.Model.DAO.DashboardDAO
             finally
             {
                 Command.Connection.Close();
+            }
+        }
+        public bool LoadData(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                endDate = new DateTime(endDate.Year, endDate.Month, endDate.Day, endDate.Hour, endDate.Minute, 59);
+                if (startDate != this.FromDate || endDate != this.ToDate)
+                {
+                    this.FromDate = startDate;
+                    this.ToDate = endDate;
+                    this.NumberDays = (endDate - startDate).Days;
+                    GetAnalisys();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                return false;
             }
         }
 
