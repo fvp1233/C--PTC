@@ -10,6 +10,8 @@ using PTC2024.Model.DAO.CustomersDAO;
 using PTC2024.Model.DAO.PayrollsDAO;
 using PTC2024.Model.DAO.ServicesDAO;
 using PTC2024.View.Clientes;
+using PTC2024.View.Reporting;
+using PTC2024.View.Reporting.Customers;
 using PTC2024.View.Service_inventory;
 
 namespace PTC2024.Controller.CustomersController
@@ -34,6 +36,8 @@ namespace PTC2024.Controller.CustomersController
             objCustomers.cmsEliminarCliente.Click += new EventHandler(DeleteCustomer);
             //Evento para buscar clientes 
             objCustomers.txtSearch.KeyPress += new KeyPressEventHandler(Search);
+            //Evento para abrir reporte general
+            objCustomers.btnReportCustomers.Click += new EventHandler(OpenGeneralReport);
 
         }
 
@@ -189,6 +193,11 @@ namespace PTC2024.Controller.CustomersController
             phone = objCustomers.dgvCustomers[6, row].Value.ToString();
             employeeType = int.Parse(objCustomers.dgvCustomers[7, row].Value.ToString());
     }
+        public void OpenGeneralReport(object sender, EventArgs e)
+        { 
+            FrmReportAllCustomers openGeneralR = new FrmReportAllCustomers();
+            openGeneralR.ShowDialog();
+        }
     }
 }
 

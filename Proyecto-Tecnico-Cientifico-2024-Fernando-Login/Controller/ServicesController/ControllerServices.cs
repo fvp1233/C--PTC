@@ -1,6 +1,7 @@
 using PTC2024.Model.DAO.ServicesDAO;
 using PTC2024.View.InventarioServicios;
 using PTC2024.View.Service_inventory;
+using PTC2024.View.Reporting;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PTC2024.View.Reporting.Service;
 
 namespace PTC2024.Controller.ServicesController
 {
@@ -23,6 +25,7 @@ namespace PTC2024.Controller.ServicesController
             /*Aca se encuentran todos los eventos del Controlador de servicios*/
             objServices.Load += new EventHandler(ChargeData);
             objServices.btnAddService.Click += new EventHandler(OpenAddService);
+            objServices.btnReportServices.Click += new EventHandler(ReportAllServices);
             objServices.cmsDeleteService.Click += new EventHandler(DeleteService);
             objServices.cmsUpdateService.Click += new EventHandler(OpenUpdateService);
             objServices.txtSearch.KeyPress += new KeyPressEventHandler(Search);
@@ -47,6 +50,13 @@ namespace PTC2024.Controller.ServicesController
             DataSet Result = dAOServices.GetDataTable();
             objServices.DgvServicios.DataSource = Result.Tables["viewServices"];
             objServices.DgvServicios.Columns[5].Visible = false;
+        }
+
+        /*Método para abrir formulario de reporte general*/
+        public void ReportAllServices (object sender, EventArgs e)
+        {
+            FrmReportServices openReport = new FrmReportServices();
+            openReport.ShowDialog();
         }
 
         /*Este metodo se ejecutara cuando se haga click en actualizar servicio*/

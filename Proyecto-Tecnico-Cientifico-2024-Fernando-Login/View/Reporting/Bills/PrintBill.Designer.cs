@@ -1,6 +1,6 @@
 ﻿namespace PTC2024.View.Reporting.Bills
 {
-    partial class PrintBill
+    partial class FrmPrintBill
     {
         /// <summary>
         /// Required designer variable.
@@ -111,14 +111,14 @@
             // 
             this.tbBillDataSTableAdapter.ClearBeforeFill = true;
             // 
-            // PrintBill
+            // FrmPrintBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 757);
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "PrintBill";
+            this.Name = "FrmPrintBill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Factura";
             this.Load += new System.EventHandler(this.PrintBill_Load);

@@ -298,7 +298,7 @@ namespace PTC2024.Controller.BillsController
             if (objFormBills.dgvBills.CurrentRow != null)
             {
                 int BillId = Convert.ToInt32(objFormBills.dgvBills.CurrentRow.Cells["N°"].Value);
-                PrintBill printbill = new PrintBill(BillId);
+                FrmPrintBill printbill = new FrmPrintBill(BillId);
                 printbill.ShowDialog();
             }
             else

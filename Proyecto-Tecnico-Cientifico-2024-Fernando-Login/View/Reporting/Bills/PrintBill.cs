@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace PTC2024.View.Reporting.Bills
 {
-    public partial class PrintBill : Form
+    public partial class FrmPrintBill : Form
     {
         int BillId;
         private DataSet reportDataSet;
-        public PrintBill(int billId)
+        public FrmPrintBill(int billId)
         {
             InitializeComponent();
             BillId = billId;

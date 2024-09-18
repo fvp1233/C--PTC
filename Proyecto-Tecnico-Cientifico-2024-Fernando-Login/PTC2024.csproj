@@ -496,10 +496,43 @@
     <Compile Include="View\Reporting\Bills\PrintBill.Designer.cs">
       <DependentUpon>PrintBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Reporting\Customers\DataSet_Customers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Customers.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reporting\Customers\FrmReportAllCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reporting\Customers\FrmReportAllCustomers.Designer.cs">
+      <DependentUpon>FrmReportAllCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reporting\Employees\DataSet1_Employeesxsd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1_Employeesxsd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reporting\Employees\FrmReportAllEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reporting\Employees\FrmReportAllEmployees.Designer.cs">
+      <DependentUpon>FrmReportAllEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Reporting\InfoCompany\DataSet_Company.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_Company.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reporting\Service\DataSet_Servicexsd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Servicexsd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reporting\Service\ReportServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reporting\Service\ReportServices.Designer.cs">
+      <DependentUpon>ReportServices.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Server\FrmConfirmPassword.cs">
       <SubType>Form</SubType>
@@ -680,6 +713,18 @@
       <DependentUpon>PrintBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Reporting\Bills\Report_PrintB.rdlc" />
+    <EmbeddedResource Include="View\Reporting\Customers\FrmReportAllCustomers.resx">
+      <DependentUpon>FrmReportAllCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reporting\Customers\Report_AllCustomers.rdlc" />
+    <EmbeddedResource Include="View\Reporting\Employees\FrmReportAllEmployees.resx">
+      <DependentUpon>FrmReportAllEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reporting\Employees\Report_GeneralEmployee.rdlc" />
+    <EmbeddedResource Include="View\Reporting\Service\ReportServices.resx">
+      <DependentUpon>ReportServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reporting\Service\Report_Services.rdlc" />
     <EmbeddedResource Include="View\Server\FrmConfirmPassword.resx">
       <DependentUpon>FrmConfirmPassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -749,6 +794,28 @@
     <None Include="View\Reporting\Bills\DataSet_RBills.xss">
       <DependentUpon>DataSet_RBills.xsd</DependentUpon>
     </None>
+    <None Include="View\Reporting\Customers\DataSet_Customers.xsc">
+      <DependentUpon>DataSet_Customers.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reporting\Customers\DataSet_Customers.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Customers.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Reporting\Customers\DataSet_Customers.xss">
+      <DependentUpon>DataSet_Customers.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reporting\Employees\DataSet1_Employeesxsd.xsc">
+      <DependentUpon>DataSet1_Employeesxsd.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reporting\Employees\DataSet1_Employeesxsd.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1_Employeesxsd.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Reporting\Employees\DataSet1_Employeesxsd.xss">
+      <DependentUpon>DataSet1_Employeesxsd.xsd</DependentUpon>
+    </None>
     <None Include="View\Reporting\InfoCompany\DataSet_Company.xsc">
       <DependentUpon>DataSet_Company.xsd</DependentUpon>
     </None>
@@ -759,6 +826,17 @@
     </None>
     <None Include="View\Reporting\InfoCompany\DataSet_Company.xss">
       <DependentUpon>DataSet_Company.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reporting\Service\DataSet_Servicexsd.xsc">
+      <DependentUpon>DataSet_Servicexsd.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reporting\Service\DataSet_Servicexsd.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Servicexsd.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Reporting\Service\DataSet_Servicexsd.xss">
+      <DependentUpon>DataSet_Servicexsd.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

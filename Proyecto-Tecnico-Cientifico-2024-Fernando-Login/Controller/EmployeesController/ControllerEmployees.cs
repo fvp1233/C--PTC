@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PTC2024.View.Reporting;
 using PTC2024.View.Alerts;
 using PTC2024.Controller.Alerts;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ using PTC2024.Model.DTO.EmployeesDTO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using PTC2024.Controller.Helper;
 using PTC2024.Model.DAO;
+using PTC2024.View.Reporting.Employees;
 
 namespace PTC2024.Controller.Employees
 {
@@ -34,6 +36,7 @@ namespace PTC2024.Controller.Employees
             objEmployees.cmsUpdateEmployee.Click += new EventHandler(UpdateEmployee);
             objEmployees.cmsDeleteEmployee.Click += new EventHandler(DisableEmployee);
             objEmployees.cmsEmployeeInformation.Click += new EventHandler(ViewEmployeeInfo);
+            objEmployees.btnGeneralReport.Click += new EventHandler(GeneralReport);
             objEmployees.cmsReactivateE.Click += new EventHandler(EnableEmployee);
             objEmployees.txtEmployeeSearch.KeyPress += new KeyPressEventHandler(SearchEmployeeEvent);
             objEmployees.dgvEmployees.Click += new EventHandler(ContextMenuClick);
@@ -317,6 +320,12 @@ namespace PTC2024.Controller.Employees
                 MessageBox.Show("Ocurrió un error, el empleado no pudo ser rehabilitado", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             RefreshDataGridDisabledEmployees();
+        }
+
+        public void GeneralReport(object sender, EventArgs e)
+        { 
+            FrmReportAllEmployees openGeneralEmployees = new FrmReportAllEmployees();
+            openGeneralEmployees.ShowDialog();
         }
 
         public void CheckedTiempoCompleto(object sender, EventArgs e)
