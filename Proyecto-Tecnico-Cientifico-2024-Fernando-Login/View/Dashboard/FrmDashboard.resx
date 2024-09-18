@@ -624,4 +624,7 @@
         Q4C5suP23gKvUsJ/H3/9Yjfe+gt1YI6sz13TNMuUbGZC+AAr+iJt1b7knQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="bunifuLabel2.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Segoe UI Semibold'; font-size: 14.25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
+  </data>
 </root>

@@ -52,7 +52,7 @@ namespace PTC2024.Controller.DashboardController
                 objDashboard.chartPayrolls.Series[0].XValueMember = "Date";
                 objDashboard.chartPayrolls.Series[0].YValueMembers = "TotalAmount";
                 objDashboard.chartPayrolls.DataBind();
-                
+
                 dAODashboard.GetTopServices();
                 objDashboard.chrtTopServices.DataSource = dAODashboard.TopServices;
                 objDashboard.chrtTopServices.Series[0].XValueMember = "Key";
@@ -95,7 +95,7 @@ namespace PTC2024.Controller.DashboardController
             objDashboard.dgvBills.Columns[0].DividerWidth = 1;
             objDashboard.dgvBills.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             objDashboard.dgvBills.Columns[2].Visible = false;
-            objDashboard.dgvBills.Columns[3].Visible = false; 
+            objDashboard.dgvBills.Columns[3].Visible = false;
             objDashboard.dgvBills.Columns[5].Visible = false;
             objDashboard.dgvBills.Columns[6].Visible = false;
             objDashboard.dgvBills.Columns[7].Visible = false;
@@ -117,20 +117,29 @@ namespace PTC2024.Controller.DashboardController
         }
         public void YearRadialGauge()
         {
-            DateTime fechaActual = DateTime.Now;
+            DateTime actualDay = DateTime.Now;
 
-            DateTime primerDiaDelAño = new DateTime(fechaActual.Year, 1, 1);
-            DateTime ultimoDiaDelAño = new DateTime(fechaActual.Year, 12, 31);
+            DateTime firstDay = new DateTime(actualDay.Year, 1, 1);
+            DateTime lastDay = new DateTime(actualDay.Year, 12, 31);
 
-            int totalDiasDelAño = (ultimoDiaDelAño - primerDiaDelAño).Days + 1;
-            int diasTranscurridos = (fechaActual - primerDiaDelAño).Days + 1;
+            int totalDays = (lastDay - firstDay).Days; 
+            int days = (actualDay - firstDay).Days; 
 
-            // Asegúrate de que la división produce un número decimal
-            double porcentajeProgreso = (double)diasTranscurridos / totalDiasDelAño * 100;
+            objDashboard.rgYearProgress.Minimum = 1;
+            objDashboard.rgYearProgress.Maximum = totalDays;
 
-            objDashboard.rgYearProgress.Maximum = 100;
-            objDashboard.rgYearProgress.Value = (int)porcentajeProgreso; // Convierte a entero para el valor del Radial Gauge
+            objDashboard.rgYearProgress.ValueByTransition = days;
+
+            objDashboard.rgYearProgress.WarningMark = totalDays / 2;
+
+            objDashboard.rgYearProgress.Suffix = " día";
+
+            objDashboard.rgYearProgress.ShowRangeLabels = true;
+            objDashboard.rgYearProgress.ShowValueLabel = true;
+
+            objDashboard.rgYearProgress.ValueLabelColor = Color.Black;
         }
+
 
 
     }

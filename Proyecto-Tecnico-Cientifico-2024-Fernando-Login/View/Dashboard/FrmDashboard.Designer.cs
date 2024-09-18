@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea19 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend19 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title19 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea20 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend20 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title20 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.dtpStart = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.dtpEnd = new Bunifu.UI.WinForms.BunifuDatePicker();
@@ -75,6 +75,7 @@
             this.bunifuPanel8 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuShadowPanel4 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.rgYearProgress = new Bunifu.UI.WinForms.BunifuRadialGauge();
+            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel2.SuspendLayout();
             this.bunifuPanel3.SuspendLayout();
             this.bunifuPanel4.SuspendLayout();
@@ -177,11 +178,11 @@
             this.btnConfirm.ColorContrastOnClick = 45;
             this.btnConfirm.ColorContrastOnHover = 45;
             this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnConfirm.CustomizableEdges = borderEdges3;
+            borderEdges10.BottomLeft = true;
+            borderEdges10.BottomRight = true;
+            borderEdges10.TopLeft = true;
+            borderEdges10.TopRight = true;
+            this.btnConfirm.CustomizableEdges = borderEdges10;
             this.btnConfirm.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnConfirm.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnConfirm.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -393,45 +394,45 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartPayrolls.BackColor = System.Drawing.Color.Transparent;
-            chartArea5.AxisX.IsMarginVisible = false;
-            chartArea5.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
-            chartArea5.AxisX.MajorGrid.LineWidth = 0;
-            chartArea5.AxisX.MajorTickMark.LineColor = System.Drawing.Color.Transparent;
-            chartArea5.AxisX.MajorTickMark.LineWidth = 0;
-            chartArea5.AxisY.LabelStyle.ForeColor = System.Drawing.Color.DarkRed;
-            chartArea5.AxisY.LabelStyle.Format = "${}";
-            chartArea5.AxisY.LineColor = System.Drawing.Color.Transparent;
-            chartArea5.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Transparent;
-            chartArea5.BackColor = System.Drawing.SystemColors.Control;
-            chartArea5.Name = "ChartArea1";
-            this.chartPayrolls.ChartAreas.Add(chartArea5);
-            legend5.BackColor = System.Drawing.Color.Transparent;
-            legend5.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend5.Name = "Legend1";
-            this.chartPayrolls.Legends.Add(legend5);
+            chartArea19.AxisX.IsMarginVisible = false;
+            chartArea19.AxisX.MajorGrid.LineColor = System.Drawing.Color.Transparent;
+            chartArea19.AxisX.MajorGrid.LineWidth = 0;
+            chartArea19.AxisX.MajorTickMark.LineColor = System.Drawing.Color.Transparent;
+            chartArea19.AxisX.MajorTickMark.LineWidth = 0;
+            chartArea19.AxisY.LabelStyle.ForeColor = System.Drawing.Color.DarkRed;
+            chartArea19.AxisY.LabelStyle.Format = "${}";
+            chartArea19.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea19.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Transparent;
+            chartArea19.BackColor = System.Drawing.SystemColors.Control;
+            chartArea19.Name = "ChartArea1";
+            this.chartPayrolls.ChartAreas.Add(chartArea19);
+            legend19.BackColor = System.Drawing.Color.Transparent;
+            legend19.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend19.Name = "Legend1";
+            this.chartPayrolls.Legends.Add(legend19);
             this.chartPayrolls.Location = new System.Drawing.Point(13, 15);
             this.chartPayrolls.Name = "chartPayrolls";
-            series5.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
-            series5.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
-            series5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series5.BorderWidth = 3;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
-            series5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
-            series5.Legend = "Legend1";
-            series5.MarkerColor = System.Drawing.Color.Black;
-            series5.MarkerSize = 10;
-            series5.Name = "Series1";
-            this.chartPayrolls.Series.Add(series5);
+            series19.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
+            series19.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
+            series19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series19.BorderWidth = 3;
+            series19.ChartArea = "ChartArea1";
+            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
+            series19.Color = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            series19.Legend = "Legend1";
+            series19.MarkerColor = System.Drawing.Color.Black;
+            series19.MarkerSize = 10;
+            series19.Name = "Series1";
+            this.chartPayrolls.Series.Add(series19);
             this.chartPayrolls.Size = new System.Drawing.Size(664, 233);
             this.chartPayrolls.TabIndex = 16;
             this.chartPayrolls.Text = "chart1";
-            title5.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title5.BackColor = System.Drawing.Color.Transparent;
-            title5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            title5.Name = "Title1";
-            title5.Text = "Resumen de pago de planillas";
-            this.chartPayrolls.Titles.Add(title5);
+            title19.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title19.BackColor = System.Drawing.Color.Transparent;
+            title19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            title19.Name = "Title1";
+            title19.Text = "Resumen de pago de planillas";
+            this.chartPayrolls.Titles.Add(title19);
             // 
             // chrtTopServices
             // 
@@ -439,13 +440,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chrtTopServices.BackColor = System.Drawing.Color.Transparent;
-            chartArea6.BackColor = System.Drawing.Color.Transparent;
-            chartArea6.Name = "ChartArea1";
-            this.chrtTopServices.ChartAreas.Add(chartArea6);
-            legend6.BackColor = System.Drawing.Color.Transparent;
-            legend6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend6.Name = "Legend1";
-            this.chrtTopServices.Legends.Add(legend6);
+            chartArea20.BackColor = System.Drawing.Color.Transparent;
+            chartArea20.Name = "ChartArea1";
+            this.chrtTopServices.ChartAreas.Add(chartArea20);
+            legend20.BackColor = System.Drawing.Color.Transparent;
+            legend20.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend20.Name = "Legend1";
+            this.chrtTopServices.Legends.Add(legend20);
             this.chrtTopServices.Location = new System.Drawing.Point(24, 3);
             this.chrtTopServices.Name = "chrtTopServices";
             this.chrtTopServices.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
@@ -455,27 +456,27 @@
         System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(9)))), ((int)(((byte)(9))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(27)))), ((int)(((byte)(18))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(75)))), ((int)(((byte)(42)))))};
-            series6.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            series6.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series6.BorderColor = System.Drawing.SystemColors.Control;
-            series6.BorderWidth = 7;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            series6.IsValueShownAsLabel = true;
-            series6.IsXValueIndexed = true;
-            series6.LabelForeColor = System.Drawing.Color.White;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chrtTopServices.Series.Add(series6);
+            series20.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            series20.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series20.BorderColor = System.Drawing.SystemColors.Control;
+            series20.BorderWidth = 7;
+            series20.ChartArea = "ChartArea1";
+            series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            series20.IsValueShownAsLabel = true;
+            series20.IsXValueIndexed = true;
+            series20.LabelForeColor = System.Drawing.Color.White;
+            series20.Legend = "Legend1";
+            series20.Name = "Series1";
+            this.chrtTopServices.Series.Add(series20);
             this.chrtTopServices.Size = new System.Drawing.Size(324, 254);
             this.chrtTopServices.TabIndex = 17;
             this.chrtTopServices.Text = "chart2";
-            title6.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            title6.Name = "Title1";
-            title6.Text = "Top Servicios";
-            this.chrtTopServices.Titles.Add(title6);
+            title20.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            title20.Name = "Title1";
+            title20.Text = "Top Servicios";
+            this.chrtTopServices.Titles.Add(title20);
             // 
             // bunifuLabel14
             // 
@@ -714,12 +715,12 @@
             this.dgvBills.AllowDrop = true;
             this.dgvBills.AllowUserToAddRows = false;
             this.dgvBills.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvBills.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle46.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle46.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvBills.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
             this.dgvBills.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -730,14 +731,14 @@
             this.dgvBills.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvBills.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvBills.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBills.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBills.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
             this.dgvBills.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBills.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.dgvBills.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -757,14 +758,14 @@
             this.dgvBills.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvBills.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.dgvBills.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBills.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBills.DefaultCellStyle = dataGridViewCellStyle48;
             this.dgvBills.EnableHeadersVisualStyles = false;
             this.dgvBills.GridColor = System.Drawing.Color.Silver;
             this.dgvBills.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
@@ -774,21 +775,21 @@
             this.dgvBills.Name = "dgvBills";
             this.dgvBills.ReadOnly = true;
             this.dgvBills.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBills.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBills.RowHeadersDefaultCellStyle = dataGridViewCellStyle49;
             this.dgvBills.RowHeadersVisible = false;
             this.dgvBills.RowHeadersWidth = 40;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvBills.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvBills.RowsDefaultCellStyle = dataGridViewCellStyle50;
             this.dgvBills.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.dgvBills.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvBills.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
@@ -842,6 +843,7 @@
             this.bunifuShadowPanel4.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.bunifuShadowPanel4.BorderRadius = 20;
             this.bunifuShadowPanel4.BorderThickness = 1;
+            this.bunifuShadowPanel4.Controls.Add(this.bunifuLabel2);
             this.bunifuShadowPanel4.Controls.Add(this.rgYearProgress);
             this.bunifuShadowPanel4.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
             this.bunifuShadowPanel4.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
@@ -860,6 +862,9 @@
             // 
             // rgYearProgress
             // 
+            this.rgYearProgress.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rgYearProgress.AutoGenerateProgressColorWhenHigh = true;
             this.rgYearProgress.AutoGenerateProgressColorWhenLow = false;
             this.rgYearProgress.BackColor = System.Drawing.Color.Transparent;
@@ -890,10 +895,26 @@
             this.rgYearProgress.Suffix = "";
             this.rgYearProgress.TabIndex = 0;
             this.rgYearProgress.Thickness = 30;
-            this.rgYearProgress.Value = 40;
-            this.rgYearProgress.ValueByTransition = 40;
+            this.rgYearProgress.Value = 1;
+            this.rgYearProgress.ValueByTransition = 1;
             this.rgYearProgress.ValueLabelColor = System.Drawing.Color.Black;
             this.rgYearProgress.WarningMark = 70;
+            // 
+            // bunifuLabel2
+            // 
+            this.bunifuLabel2.AllowParentOverrides = false;
+            this.bunifuLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bunifuLabel2.AutoEllipsis = false;
+            this.bunifuLabel2.CursorType = null;
+            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel2.Location = new System.Drawing.Point(81, 16);
+            this.bunifuLabel2.Name = "bunifuLabel2";
+            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel2.Size = new System.Drawing.Size(154, 25);
+            this.bunifuLabel2.TabIndex = 12;
+            this.bunifuLabel2.Text = "Días transcurridos";
+            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // FrmDashboard
             // 
@@ -933,6 +954,7 @@
             this.bunifuPanel8.ResumeLayout(false);
             this.bunifuPanel8.PerformLayout();
             this.bunifuShadowPanel4.ResumeLayout(false);
+            this.bunifuShadowPanel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -972,5 +994,6 @@
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel8;
         private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel4;
         public Bunifu.UI.WinForms.BunifuRadialGauge rgYearProgress;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
     }
 }
