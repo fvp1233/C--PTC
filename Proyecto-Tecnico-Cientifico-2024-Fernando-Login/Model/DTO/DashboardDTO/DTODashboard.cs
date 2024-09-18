@@ -76,6 +76,8 @@ namespace PTC2024.Model.DTO.DashboardDTO
         private DateTime fromDate;
         private DateTime toDate;
         private int numberDays;
+        private List<KeyValuePair<string, int>> topServices;
+
         private List<PayrollsByDate>payrollsList;
         //EMPLOYEE
         public int IdEmployee { get => idEmployee; set => idEmployee = value; }
@@ -140,6 +142,7 @@ namespace PTC2024.Model.DTO.DashboardDTO
         public string Customer { get => customer; set => customer = value; }
         public string Employee { get => employee; set => employee = value; }
         public int NumberDays { get => numberDays; set => numberDays = value; }
+        public List<KeyValuePair<string, int>> TopServices { get => topServices; set => topServices = value; }
         //PAYROLL
 
     }

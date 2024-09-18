@@ -1,4 +1,5 @@
 ﻿using PTC2024.Model.DAO.DashboardDAO;
+using PTC2024.Model.DTO.DashboardDTO;
 using PTC2024.View.Dashboard;
 using System;
 using System.Collections.Generic;
@@ -15,12 +16,13 @@ namespace PTC2024.Controller.DashboardController
         {
             objDashboard = View;
             objDashboard.Load += new EventHandler(ChargeValues);
-            objDashboard.btnConfirm.Click += new EventHandler(ChargeValues);
+            objDashboard.btnConfirm.Click += new EventHandler(DtpSearch);
         }
         public void ChargeValues(object sender, EventArgs e)
         {
+            objDashboard.dtpEnd.Value = new DateTime(DateTime.Now.Year, 12, 31);
             DAODashboard dAODashboard = new DAODashboard();
-            var refreshData = dAODashboard.LoadData(objDashboard.dtpStart.Value, objDashboard.dtpEnd.Value);
+            bool refreshData = dAODashboard.LoadData(objDashboard.dtpStart.Value, objDashboard.dtpEnd.Value);
             if (refreshData == true)
             {
                 dAODashboard.NumberEmployee = dAODashboard.GetNumberEmployee();
@@ -42,8 +44,35 @@ namespace PTC2024.Controller.DashboardController
                 objDashboard.chartPayrolls.Series[0].XValueMember = "Date";
                 objDashboard.chartPayrolls.Series[0].YValueMembers = "TotalAmount";
                 objDashboard.chartPayrolls.DataBind();
+                
+                dAODashboard.GetTopServices();
+                objDashboard.chrtTopServices.DataSource = dAODashboard.TopServices;
+                objDashboard.chrtTopServices.Series[0].XValueMember = "Key";
+                objDashboard.chrtTopServices.Series[0].YValueMembers = "Value";
+                objDashboard.chrtTopServices.DataBind();
             }
+        }
+        public void DtpSearch(object sender, EventArgs e)
+        {
+            DAODashboard dAODashboard = new DAODashboard();
+            bool refreshData = dAODashboard.LoadData(objDashboard.dtpStart.Value, objDashboard.dtpEnd.Value);
+            if (refreshData == true)
+            {
+                dAODashboard.TotalPay = dAODashboard.GetTotalIncome();
+                objDashboard.lblTotalIncome.Text = $"${dAODashboard.TotalPay:N2}";
 
+                dAODashboard.GetAnalisys();
+                objDashboard.chartPayrolls.DataSource = dAODashboard.PayrollsList;
+                objDashboard.chartPayrolls.Series[0].XValueMember = "Date";
+                objDashboard.chartPayrolls.Series[0].YValueMembers = "TotalAmount";
+                objDashboard.chartPayrolls.DataBind();
+
+                dAODashboard.GetTopServices();
+                objDashboard.chrtTopServices.DataSource = dAODashboard.TopServices;
+                objDashboard.chrtTopServices.Series[0].XValueMember = "Key";
+                objDashboard.chrtTopServices.Series[0].YValueMembers = "Value";
+                objDashboard.chrtTopServices.DataBind();
+            }
         }
     }
 }

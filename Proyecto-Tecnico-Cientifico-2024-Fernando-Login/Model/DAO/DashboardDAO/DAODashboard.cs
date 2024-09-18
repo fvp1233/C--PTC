@@ -96,44 +96,27 @@ namespace PTC2024.Model.DAO.DashboardDAO
                 Command.Connection.Close();
             }
         }
-        //public double GetTotalIncome()
-        //{
-        //    try
-        //    {
-        //        Command.Connection = getConnection();
-        //        string query = "SELECT SUM(totalPay) FROM tbBills WHERE IdStatusBill != 3";
-        //        SqlCommand cmd = new SqlCommand(query, Command.Connection);
-        //        TotalPay = (double)cmd.ExecuteScalar();
-        //        return TotalPay;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"{ex}EC-015: No se pudo obtener el numero de empleados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return -1;
-        //    }
-        //    finally
-        //    {
-        //        Command.Connection.Close();
-        //    }
-        //}
+
         public double GetTotalIncome()
         {
             try
             {
                 Command.Connection = getConnection();
-
-                // Asegúrate de que la conexión esté abierta
-                if (Command.Connection.State != System.Data.ConnectionState.Open)
-                {
-                    Command.Connection.Open();
-                }
-
-                string query = "SELECT SUM(totalPay) FROM tbBills WHERE IdStatusBill != 3";
+                string query = "SELECT SUM(totalPay) FROM tbBills WHERE IdStatusBill != 3 AND dateissuance BETWEEN @fromDate AND @toDate";
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("@fromDate", FromDate);
+                cmd.Parameters.AddWithValue("@toDate", ToDate);
 
-                double result = Convert.ToDouble(cmd.ExecuteScalar());
+                object result = cmd.ExecuteScalar();
 
-                TotalPay = result;
+                if (result == DBNull.Value)
+                {
+                    TotalPay = 0; // No hay facturas en el rango de fechas
+                }
+                else
+                {
+                    TotalPay = Convert.ToDouble(result);
+                }
 
                 return TotalPay;
             }
@@ -153,8 +136,6 @@ namespace PTC2024.Model.DAO.DashboardDAO
             try
             {
                 Command.Connection = getConnection();
-                //FromDate = new DateTime(2020, 8, 1);
-                //ToDate = new DateTime(2025, 7, 7);
                 PayrollsList = new List<PayrollsByDate>();
                 string query = "SELECT issueDate,SUM(netPay + christmasBonus) FROM tbPayroll WHERE issueDate BETWEEN @fromDate AND @toDate group by issueDate";
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
@@ -170,23 +151,25 @@ namespace PTC2024.Model.DAO.DashboardDAO
                 reader.Close();
                 if (NumberDays <= 30)
                 {
+                    bool isYear = NumberDays <= 365 ? true : false;
                     PayrollsList = (from orderlist in resultTable
-                                    group orderlist by orderlist.Key.ToString("dd MMM") into order
+                                    group orderlist by orderlist.Key.ToString("MMM yyyy") into order
                                     select new PayrollsByDate
                                     {
-                                        Date = order.Key,
+                                        Date = isYear ? order.Key.Substring(0, order.Key.IndexOf(" ")) : order.Key,
                                         TotalAmount = order.Sum(amount => amount.Value)
 
                                     }).ToList();
                 }
                 else if (NumberDays <= 92)
                 {
+                    bool isYear = NumberDays <= 365 ? true : false;
                     PayrollsList = (from orderList in resultTable
-                                    group orderList by CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(orderList.Key, CalendarWeekRule.FirstDay, DayOfWeek.Monday)
+                                    group orderList by orderList.Key.ToString("MMM yyyy")
                                     into order
                                     select new PayrollsByDate
                                     {
-                                        Date = "Week " + order.Key.ToString(),
+                                        Date = isYear ? order.Key.Substring(0, order.Key.IndexOf(" ")) : order.Key,
                                         TotalAmount = order.Sum(amount => amount.Value)
                                     }).ToList();
                 }
@@ -211,14 +194,6 @@ namespace PTC2024.Model.DAO.DashboardDAO
                                         TotalAmount = order.Sum(amount => amount.Value)
                                     }).ToList();
                 }
-                //foreach (var item in resultTable)
-                //{
-                //    PayrollsList.Add(new PayrollsByDate()
-                //    {
-                //        Date = item.Key.ToString("dd MMM"),
-                //        TotalAmount = item.Value
-                //    });
-                //}
             }
             catch (Exception ex)
             {
@@ -230,6 +205,43 @@ namespace PTC2024.Model.DAO.DashboardDAO
                 Command.Connection.Close();
             }
         }
+        public void GetTopServices()
+        {
+            try
+            {
+                TopServices = new List<KeyValuePair<string, int>>(); // Initialize the list
+                Command.Connection = getConnection();
+                SqlDataReader reader;
+                string query = @"
+                SELECT TOP 5 S.serviceName, COUNT(B.idServices) AS ServiceCount
+                FROM tbBills B
+                INNER JOIN tbServices S ON B.idServices = S.idServices
+                WHERE B.dateissuance BETWEEN @fromDate AND @toDate
+                GROUP BY S.serviceName
+                ORDER BY ServiceCount DESC";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.Add("@fromDate", System.Data.SqlDbType.DateTime).Value = FromDate;
+                cmd.Parameters.Add("@toDate", System.Data.SqlDbType.DateTime).Value = ToDate;
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    TopServices.Add(
+                        new KeyValuePair<string, int>(reader["serviceName"].ToString(), (int)reader["ServiceCount"]));
+                }
+                reader.Close();
+
+            }
+            catch (Exception EX)
+            {
+                MessageBox.Show($"{EX}EC-019: No se pudo obtener el numero de planillas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
+
         public bool LoadData(DateTime startDate, DateTime endDate)
         {
             try
