@@ -1,4 +1,7 @@
-﻿using PTC2024.Model.DAO.DashboardDAO;
+﻿using System.Data;
+using System.Windows.Forms;
+using PTC2024.Model.DAO.BillsDAO;
+using PTC2024.Model.DAO.DashboardDAO;
 using PTC2024.Model.DTO.DashboardDTO;
 using PTC2024.View.Dashboard;
 using System;
@@ -6,6 +9,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PTC2024.Controller.Helper;
+using System.IO;
+using System.Drawing;
 
 namespace PTC2024.Controller.DashboardController
 {
@@ -16,12 +22,14 @@ namespace PTC2024.Controller.DashboardController
         {
             objDashboard = View;
             objDashboard.Load += new EventHandler(ChargeValues);
+            objDashboard.Load += new EventHandler(LoadDataBills);
             objDashboard.btnConfirm.Click += new EventHandler(DtpSearch);
         }
         public void ChargeValues(object sender, EventArgs e)
         {
             objDashboard.dtpEnd.Value = new DateTime(DateTime.Now.Year, 12, 31);
             DAODashboard dAODashboard = new DAODashboard();
+            YearRadialGauge();
             bool refreshData = dAODashboard.LoadData(objDashboard.dtpStart.Value, objDashboard.dtpEnd.Value);
             if (refreshData == true)
             {
@@ -74,5 +82,56 @@ namespace PTC2024.Controller.DashboardController
                 objDashboard.chrtTopServices.DataBind();
             }
         }
+        public void LoadDataBills(object sender, EventArgs e)
+        {
+            ChargeData();
+        }
+        public void ChargeData()
+        {
+            DAOBills dAOBills = new DAOBills();
+            DataSet ds = dAOBills.Bills();
+            //Llenando el datagridview
+            objDashboard.dgvBills.DataSource = ds.Tables["viewBill"];
+            objDashboard.dgvBills.Columns[0].DividerWidth = 1;
+            objDashboard.dgvBills.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            objDashboard.dgvBills.Columns[2].Visible = false;
+            objDashboard.dgvBills.Columns[3].Visible = false; 
+            objDashboard.dgvBills.Columns[5].Visible = false;
+            objDashboard.dgvBills.Columns[6].Visible = false;
+            objDashboard.dgvBills.Columns[7].Visible = false;
+            objDashboard.dgvBills.Columns[8].Visible = false;
+            objDashboard.dgvBills.Columns[9].Visible = false;
+            objDashboard.dgvBills.Columns[10].Visible = false;
+            objDashboard.dgvBills.Columns[12].Visible = false;
+
+
+            //objFormBills.dgvBills.Columns[12].Visible = false;
+            objDashboard.dgvBills.Columns[13].Visible = false;
+            objDashboard.dgvBills.Columns[15].Visible = false;
+            objDashboard.dgvBills.Columns[14].Visible = false;
+            objDashboard.dgvBills.Columns[16].Visible = false;
+            objDashboard.dgvBills.Columns[17].Visible = false;
+            objDashboard.dgvBills.Columns[18].Visible = false;
+            objDashboard.dgvBills.Columns[19].Visible = false;
+
+        }
+        public void YearRadialGauge()
+        {
+            DateTime fechaActual = DateTime.Now;
+
+            DateTime primerDiaDelAño = new DateTime(fechaActual.Year, 1, 1);
+            DateTime ultimoDiaDelAño = new DateTime(fechaActual.Year, 12, 31);
+
+            int totalDiasDelAño = (ultimoDiaDelAño - primerDiaDelAño).Days + 1;
+            int diasTranscurridos = (fechaActual - primerDiaDelAño).Days + 1;
+
+            // Asegúrate de que la división produce un número decimal
+            double porcentajeProgreso = (double)diasTranscurridos / totalDiasDelAño * 100;
+
+            objDashboard.rgYearProgress.Maximum = 100;
+            objDashboard.rgYearProgress.Value = (int)porcentajeProgreso; // Convierte a entero para el valor del Radial Gauge
+        }
+
+
     }
 }
