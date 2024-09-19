@@ -122,7 +122,7 @@ namespace PTC2024.Controller.DashboardController
             DateTime firstDay = new DateTime(actualDay.Year, 1, 1);
             DateTime lastDay = new DateTime(actualDay.Year, 12, 31);
 
-            int totalDays = (lastDay - firstDay).Days; 
+            int totalDays = (lastDay - firstDay).Days+1; 
             int days = (actualDay - firstDay).Days; 
 
             objDashboard.rgYearProgress.Minimum = 1;
