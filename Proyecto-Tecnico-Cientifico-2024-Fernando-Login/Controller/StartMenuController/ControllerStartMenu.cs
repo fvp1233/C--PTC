@@ -46,11 +46,14 @@ namespace PTC2024.Controller.StartMenuController
             objStartMenu.btnMaintenance.Click += new EventHandler(LoadMaintenance);
             objStartMenu.btnLogOut.Click += new EventHandler(LogOut);
             objStartMenu.FormClosing += new FormClosingEventHandler(CloseProgram);
+            objStartMenu.btnMenu.Click += new EventHandler(CloseMenu);
+            objStartMenu.btnClosedMenu.Click += new EventHandler(OpenMenu);
             
         }
         void InitialAccess(object sender, EventArgs e)
         {
             Access();
+            objStartMenu.tableLayoutBtnClose.Visible = false;
             objStartMenu.lblUser.Text = SessionVar.ShortUsername;
             objStartMenu.lblRole.Text = SessionVar.Access;
             objStartMenu.btnIcon.Image = ByteArrayToImage(SessionVar.ProfilePic);
@@ -274,5 +277,22 @@ namespace PTC2024.Controller.StartMenuController
             Properties.Settings.Default.Save();
         }
        
+        public void CloseMenu(object sender, EventArgs e)
+        {
+            objStartMenu.bunifuPanel1.Width = 55;
+            objStartMenu.tableLayoutBtnClose.Visible = true;
+            objStartMenu.tableLayoutBusiness.Visible = false;
+            objStartMenu.separator.Visible = false;
+            objStartMenu.tableLayoutProfile.Visible = false;
+        }
+
+        public void OpenMenu(object sender, EventArgs e)
+        {
+            objStartMenu.bunifuPanel1.Width = 185;
+            objStartMenu.tableLayoutBtnClose.Visible = false;
+            objStartMenu.tableLayoutBusiness.Visible = true;
+            objStartMenu.separator.Visible = true;
+            objStartMenu.tableLayoutProfile.Visible= true;
+        }
     }
 }
