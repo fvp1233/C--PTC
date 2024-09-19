@@ -40,8 +40,7 @@
       <HintPath>packages\Bunifu.UI.WinForms.7.0.0\lib\net472\Bunifu.UI.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>C:\Users\Estudiante\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -491,11 +490,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_RBills.xsd</DependentUpon>
     </Compile>
-    <Compile Include="View\Reporting\Bills\FrmPrintBill.cs">
+    <Compile Include="View\Reporting\Bills\PrintBill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Reporting\Bills\FrmPrintBill.Designer.cs">
-      <DependentUpon>FrmPrintBill.cs</DependentUpon>
+    <Compile Include="View\Reporting\Bills\PrintBill.Designer.cs">
+      <DependentUpon>PrintBill.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Reporting\Customers\DataSet_Customers.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -524,27 +523,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_Company.xsd</DependentUpon>
     </Compile>
-    <Compile Include="View\Reporting\Payrolls\DataSet_payroll.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet_payroll.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="View\Reporting\Payrolls\FrmReportGeneralPayroll.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Reporting\Payrolls\FrmReportGeneralPayroll.Designer.cs">
-      <DependentUpon>FrmReportGeneralPayroll.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Reporting\Service\DataSet_Servicexsd.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_Servicexsd.xsd</DependentUpon>
     </Compile>
-    <Compile Include="View\Reporting\Service\FrmReportServices.cs">
+    <Compile Include="View\Reporting\Service\ReportServices.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Reporting\Service\FrmReportServices.Designer.cs">
-      <DependentUpon>FrmReportServices.cs</DependentUpon>
+    <Compile Include="View\Reporting\Service\ReportServices.Designer.cs">
+      <DependentUpon>ReportServices.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Server\FrmConfirmPassword.cs">
       <SubType>Form</SubType>
@@ -721,8 +709,8 @@
     <EmbeddedResource Include="View\ProfileSettings\FrmSecurityQuestions.resx">
       <DependentUpon>FrmSecurityQuestions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Reporting\Bills\FrmPrintBill.resx">
-      <DependentUpon>FrmPrintBill.cs</DependentUpon>
+    <EmbeddedResource Include="View\Reporting\Bills\PrintBill.resx">
+      <DependentUpon>PrintBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Reporting\Bills\Report_PrintB.rdlc" />
     <EmbeddedResource Include="View\Reporting\Customers\FrmReportAllCustomers.resx">
@@ -733,11 +721,8 @@
       <DependentUpon>FrmReportAllEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Reporting\Employees\Report_GeneralEmployee.rdlc" />
-    <EmbeddedResource Include="View\Reporting\Payrolls\FrmReportGeneralPayroll.resx">
-      <DependentUpon>FrmReportGeneralPayroll.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Reporting\Service\FrmReportServices.resx">
-      <DependentUpon>FrmReportServices.cs</DependentUpon>
+    <EmbeddedResource Include="View\Reporting\Service\ReportServices.resx">
+      <DependentUpon>ReportServices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Reporting\Service\Report_Services.rdlc" />
     <EmbeddedResource Include="View\Server\FrmConfirmPassword.resx">
@@ -841,17 +826,6 @@
     </None>
     <None Include="View\Reporting\InfoCompany\DataSet_Company.xss">
       <DependentUpon>DataSet_Company.xsd</DependentUpon>
-    </None>
-    <None Include="View\Reporting\Payrolls\DataSet_payroll.xsc">
-      <DependentUpon>DataSet_payroll.xsd</DependentUpon>
-    </None>
-    <None Include="View\Reporting\Payrolls\DataSet_payroll.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet_payroll.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="View\Reporting\Payrolls\DataSet_payroll.xss">
-      <DependentUpon>DataSet_payroll.xsd</DependentUpon>
     </None>
     <None Include="View\Reporting\Service\DataSet_Servicexsd.xsc">
       <DependentUpon>DataSet_Servicexsd.xsd</DependentUpon>
