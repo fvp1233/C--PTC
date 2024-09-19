@@ -13,6 +13,7 @@ using PTC2024.Controller.Helper;
 using System.IO;
 using System.Drawing;
 using PTC2024.View.formularios.inicio;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PTC2024.Controller.DashboardController
 {
@@ -51,10 +52,23 @@ namespace PTC2024.Controller.DashboardController
 
                 dAODashboard.TotalPay = dAODashboard.GetTotalIncome();
                 objDashboard.lblTotalIncome.Text = $"${dAODashboard.TotalPay:N2}";
+                objDashboard.chartPayrolls.DataBind();
+
                 dAODashboard.GetAnalisys();
-                objDashboard.chartPayrolls.DataSource = dAODashboard.PayrollsList;
+                //objDashboard.chartPayrolls.DataSource = dAODashboard.PayrollsList;
+                objDashboard.chartPayrolls.Series[0].ChartArea = "ChartArea1";
                 objDashboard.chartPayrolls.Series[0].XValueMember = "Date";
                 objDashboard.chartPayrolls.Series[0].YValueMembers = "TotalAmount";
+
+                dAODashboard.GetSecondAnalisys();
+                //objDashboard.chartPayrolls.DataSource = dAODashboard.IncomeList;
+                objDashboard.chartPayrolls.Series[1].ChartArea = "ChartArea1";
+                objDashboard.chartPayrolls.Series[1].XValueMember = "DateIn";
+                objDashboard.chartPayrolls.Series[1].YValueMembers = "TotalIncome";
+
+                objDashboard.chartPayrolls.Series[0].Points.DataBindXY(dAODashboard.PayrollsList, "Date", dAODashboard.PayrollsList, "TotalAmount");
+                objDashboard.chartPayrolls.Series[1].Points.DataBindXY(dAODashboard.IncomeList, "DateIn", dAODashboard.IncomeList, "TotalIncome");
+
                 objDashboard.chartPayrolls.DataBind();
 
                 dAODashboard.GetTopServices();
@@ -75,9 +89,20 @@ namespace PTC2024.Controller.DashboardController
                 objDashboard.lblTotalIncome.Text = $"${dAODashboard.TotalPay:N2}";
 
                 dAODashboard.GetAnalisys();
-                objDashboard.chartPayrolls.DataSource = dAODashboard.PayrollsList;
+                //objDashboard.chartPayrolls.DataSource = dAODashboard.PayrollsList;
+                objDashboard.chartPayrolls.Series[0].ChartArea = "ChartArea1";
                 objDashboard.chartPayrolls.Series[0].XValueMember = "Date";
                 objDashboard.chartPayrolls.Series[0].YValueMembers = "TotalAmount";
+
+                dAODashboard.GetSecondAnalisys();
+                //objDashboard.chartPayrolls.DataSource = dAODashboard.IncomeList;
+                objDashboard.chartPayrolls.Series[1].ChartArea = "ChartArea1";
+                objDashboard.chartPayrolls.Series[1].XValueMember = "DateIn";
+                objDashboard.chartPayrolls.Series[1].YValueMembers = "TotalIncome";
+
+                objDashboard.chartPayrolls.Series[0].Points.DataBindXY(dAODashboard.PayrollsList, "Date", dAODashboard.PayrollsList, "TotalAmount");
+                objDashboard.chartPayrolls.Series[1].Points.DataBindXY(dAODashboard.IncomeList, "DateIn", dAODashboard.IncomeList, "TotalIncome");
+
                 objDashboard.chartPayrolls.DataBind();
 
                 dAODashboard.GetTopServices();
@@ -137,7 +162,7 @@ namespace PTC2024.Controller.DashboardController
 
             objDashboard.rgYearProgress.WarningMark = totalDays / 2;
 
-            objDashboard.rgYearProgress.Suffix = " día";
+            objDashboard.rgYearProgress.Prefix = " Día ";
 
             objDashboard.rgYearProgress.ShowRangeLabels = true;
             objDashboard.rgYearProgress.ShowValueLabel = true;
