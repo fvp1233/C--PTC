@@ -6,25 +6,25 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.26717cm</Width>
+              <Width>2.13488cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.50567cm</Width>
+              <Width>4.40798cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.2305cm</Width>
+              <Width>4.50382cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.23851cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.24613cm</Width>
+              <Width>3.71155cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.63783cm</Width>
+              <Width>3.51475cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.19333cm</Width>
+              <Width>3.83878cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -517,32 +517,21 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.00753cm</Top>
-        <Left>1.11337cm</Left>
+        <Top>1.43086cm</Top>
+        <Left>0.58117cm</Left>
         <Height>1.2cm</Height>
-        <Width>29.58063cm</Width>
+        <Width>25.35027cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
-      <Line Name="Line5">
-        <Top>14.32137cm</Top>
-        <Height>0cm</Height>
-        <Width>30.41883cm</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
     </ReportItems>
     <Height>5.64167in</Height>
     <Style />
   </Body>
-  <Width>12.08425in</Width>
+  <Width>10.4655in</Width>
   <Page>
     <PageHeader>
       <Height>2.87867cm</Height>
@@ -556,8 +545,8 @@
           <Sizing>FitProportional</Sizing>
           <Top>0.37705cm</Top>
           <Left>2.31917cm</Left>
-          <Height>2.12456cm</Height>
-          <Width>2.4525cm</Width>
+          <Height>1.95142cm</Height>
+          <Width>2.42604cm</Width>
           <ToolTip>=First(Fields!imageBusiness.Value, "DataSet2")</ToolTip>
           <Style>
             <Border>
@@ -586,9 +575,8 @@
           </Paragraphs>
           <rd:DefaultName>Textbox14</rd:DefaultName>
           <Top>0.37705cm</Top>
-          <Left>7.97137cm</Left>
           <Height>0.76933cm</Height>
-          <Width>12.57533cm</Width>
+          <Width>26.58237cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -621,7 +609,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>1.25222cm</Top>
-          <Left>12.9032cm</Left>
+          <Left>12.03008cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>2</ZIndex>
@@ -635,18 +623,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Line Name="Line3">
-          <Top>2.8702cm</Top>
-          <Left>0.11853cm</Left>
-          <Height>0cm</Height>
-          <Width>29.87696cm</Width>
-          <ZIndex>3</ZIndex>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-          </Style>
-        </Line>
       </ReportItems>
       <Style>
         <Border>
@@ -730,11 +706,11 @@
       </Style>
     </PageFooter>
     <PageHeight>21cm</PageHeight>
-    <PageWidth>29.7cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <PageWidth>27cm</PageWidth>
+    <LeftMargin>1cm</LeftMargin>
+    <RightMargin>1cm</RightMargin>
+    <TopMargin>1cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

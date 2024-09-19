@@ -396,8 +396,8 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>1.4097cm</Top>
         <Left>1.64639cm</Left>
-        <Height>1.34817cm</Height>
-        <Width>24.32511cm</Width>
+        <Height>1.34816cm</Height>
+        <Width>24.32512cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -482,9 +482,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox14</rd:DefaultName>
           <Top>0.4572cm</Top>
-          <Left>8.18303cm</Left>
+          <Left>0.0762cm</Left>
           <Height>0.76933cm</Height>
-          <Width>12.57533cm</Width>
+          <Width>27.051cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -500,7 +500,7 @@
           <Top>2.6162cm</Top>
           <Left>0.03387cm</Left>
           <Height>0cm</Height>
-          <Width>25.93763cm</Width>
+          <Width>27.09333cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -609,10 +609,10 @@
     </PageFooter>
     <PageHeight>21.59cm</PageHeight>
     <PageWidth>27.94cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <LeftMargin>1cm</LeftMargin>
+    <RightMargin>1cm</RightMargin>
+    <TopMargin>1cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>
