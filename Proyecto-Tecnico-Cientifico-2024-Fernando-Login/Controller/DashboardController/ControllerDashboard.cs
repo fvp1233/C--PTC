@@ -12,23 +12,27 @@ using System.Threading.Tasks;
 using PTC2024.Controller.Helper;
 using System.IO;
 using System.Drawing;
+using PTC2024.View.formularios.inicio;
 
 namespace PTC2024.Controller.DashboardController
 {
     internal class ControllerDashboard
     {
         FrmDashboard objDashboard;
+        StartMenu objStartMenu;
         public ControllerDashboard(FrmDashboard View)
         {
             objDashboard = View;
             objDashboard.Load += new EventHandler(ChargeValues);
             objDashboard.Load += new EventHandler(LoadDataBills);
             objDashboard.btnConfirm.Click += new EventHandler(DtpSearch);
+
         }
         public void ChargeValues(object sender, EventArgs e)
         {
             objDashboard.dtpEnd.Value = new DateTime(DateTime.Now.Year, 12, 31);
             DAODashboard dAODashboard = new DAODashboard();
+            ValidateDays();
             YearRadialGauge();
             bool refreshData = dAODashboard.LoadData(objDashboard.dtpStart.Value, objDashboard.dtpEnd.Value);
             if (refreshData == true)
@@ -63,6 +67,7 @@ namespace PTC2024.Controller.DashboardController
         public void DtpSearch(object sender, EventArgs e)
         {
             DAODashboard dAODashboard = new DAODashboard();
+            ValidateDays();
             bool refreshData = dAODashboard.LoadData(objDashboard.dtpStart.Value, objDashboard.dtpEnd.Value);
             if (refreshData == true)
             {
@@ -139,8 +144,12 @@ namespace PTC2024.Controller.DashboardController
 
             objDashboard.rgYearProgress.ValueLabelColor = Color.Black;
         }
-
-
+        public void ValidateDays()
+        {
+            int currentYear = DateTime.Now.Year;
+            objDashboard.dtpEnd.MaxDate = new DateTime(currentYear, 12, 31);
+            objDashboard.dtpStart.MaxDate = new DateTime(currentYear, 12, 31);
+        }
 
     }
 }
