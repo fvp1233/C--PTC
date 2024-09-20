@@ -57,6 +57,7 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.cmsUpdateUnpaid.Click += new EventHandler(UpdatePayrollToUnpaid);
             objViewPayrolls.cmsPayrollInformation.Click += new EventHandler(ViewInfoPayroll);
             objViewPayrolls.txtSearch.KeyPress += new KeyPressEventHandler(SearchPayrollEvent);
+            objViewPayrolls.txtSearch.TextChanged += new EventHandler(OnlyLetters);
         }
 
         private void ChangeStatus(object sender, EventArgs e)
@@ -979,5 +980,21 @@ namespace PTC2024.Controller.EmployeesController
             }
         }
         #endregion
+        public void OnlyLetters(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objViewPayrolls.txtSearch.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras y espacios
+            string text = new string(objViewPayrolls.txtSearch.Text
+                                       .Where(c => char.IsLetter(c) || char.IsWhiteSpace(c))
+                                       .ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objViewPayrolls.txtSearch.Text = text;
+
+            // Restaurar la posición del cursor
+            objViewPayrolls.txtSearch.SelectionStart = cursorPosition;
+        }
     }
 }

@@ -17,6 +17,14 @@ namespace PTC2024.Model.DTO.DashboardDTO
             public string Date { get => date; set => date = value; }
             public decimal TotalAmount { get => totalAmount; set => totalAmount = value; }
         }
+        public struct IncomesByDate
+        {
+            private string dateIn;
+            private decimal totalIncome;
+
+            public string DateIn { get => dateIn; set => dateIn = value; }
+            public decimal TotalIncome { get => totalIncome; set => totalIncome = value; }
+        }
         //EMPLOYEE
         private int idEmployee;
         private string names;
@@ -60,7 +68,7 @@ namespace PTC2024.Model.DTO.DashboardDTO
         private string NRC;
         private double discount;
         private double subtotalPay;
-        private double totalPay;
+        private decimal totalPay;
         private DateTime startDate;
         private DateTime FinalDate;
         private DateTime dateissued;
@@ -76,8 +84,8 @@ namespace PTC2024.Model.DTO.DashboardDTO
         private DateTime fromDate;
         private DateTime toDate;
         private int numberDays;
+        private List<IncomesByDate>incomeList;
         private List<KeyValuePair<string, int>> topServices;
-
         private List<PayrollsByDate>payrollsList;
         //EMPLOYEE
         public int IdEmployee { get => idEmployee; set => idEmployee = value; }
@@ -133,7 +141,6 @@ namespace PTC2024.Model.DTO.DashboardDTO
         public string NRC1 { get => NRC; set => NRC = value; }
         public double Discount { get => discount; set => discount = value; }
         public double SubtotalPay { get => subtotalPay; set => subtotalPay = value; }
-        public double TotalPay { get => totalPay; set => totalPay = value; }
         public DateTime StartDate { get => startDate; set => startDate = value; }
         public DateTime FinalDate1 { get => FinalDate; set => FinalDate = value; }
         public DateTime Dateissued { get => dateissued; set => dateissued = value; }
@@ -143,6 +150,8 @@ namespace PTC2024.Model.DTO.DashboardDTO
         public string Employee { get => employee; set => employee = value; }
         public int NumberDays { get => numberDays; set => numberDays = value; }
         public List<KeyValuePair<string, int>> TopServices { get => topServices; set => topServices = value; }
+        public decimal TotalPay { get => totalPay; set => totalPay = value; }
+        internal List<IncomesByDate> IncomeList { get => incomeList; set => incomeList = value; }
         //PAYROLL
 
     }

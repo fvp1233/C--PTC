@@ -97,7 +97,7 @@ namespace PTC2024.Model.DAO.DashboardDAO
             }
         }
 
-        public double GetTotalIncome()
+        public decimal GetTotalIncome()
         {
             try
             {
@@ -115,7 +115,7 @@ namespace PTC2024.Model.DAO.DashboardDAO
                 }
                 else
                 {
-                    TotalPay = Convert.ToDouble(result);
+                    TotalPay = Convert.ToDecimal(result);
                 }
 
                 return TotalPay;
@@ -176,85 +176,47 @@ namespace PTC2024.Model.DAO.DashboardDAO
                 Command.Connection.Close();
             }
         }
-
-        //Ahorita esto lo comento por que creo que no es necesario filtrarlo por varios formatos, pero ya veremos
-
-
-
-        //public void GetAnalisys()
-        //{
-        //    try
-        //    {
-        //        Command.Connection = getConnection();
-        //        PayrollsList = new List<PayrollsByDate>();
-        //        string query = "SELECT issueDate,SUM(netPay + christmasBonus) FROM tbPayroll WHERE issueDate BETWEEN @fromDate AND @toDate group by issueDate";
-        //        SqlCommand cmd = new SqlCommand(query, Command.Connection);
-        //        cmd.Parameters.AddWithValue("@fromDate", FromDate);
-        //        cmd.Parameters.AddWithValue("@toDate", ToDate);
-        //        SqlDataReader reader = cmd.ExecuteReader();
-        //        var resultTable = new List<KeyValuePair<DateTime, decimal>>();
-        //        while (reader.Read())
-        //        {
-        //            resultTable.Add(new KeyValuePair<DateTime, decimal>((DateTime)reader[0], (decimal)reader[1]));
-        //            NetPay += (decimal)reader[1];
-        //        }
-        //        reader.Close();
-        //        if (NumberDays <= 30)
-        //        {
-        //            bool isYear = NumberDays <= 365 ? true : false;
-        //            PayrollsList = (from orderlist in resultTable
-        //                            group orderlist by orderlist.Key.ToString("MMM yyyy") into order
-        //                            select new PayrollsByDate
-        //                            {
-        //                                Date = isYear ? order.Key.Substring(0, order.Key.IndexOf(" ")) : order.Key,
-        //                                TotalAmount = order.Sum(amount => amount.Value)
-
-        //                            }).ToList();
-        //        }
-        //        else if (NumberDays <= 92)
-        //        {
-        //            bool isYear = NumberDays <= 365 ? true : false;
-        //            PayrollsList = (from orderList in resultTable
-        //                            group orderList by orderList.Key.ToString("MMM yyyy")
-        //                            into order
-        //                            select new PayrollsByDate
-        //                            {
-        //                                Date = isYear ? order.Key.Substring(0, order.Key.IndexOf(" ")) : order.Key,
-        //                                TotalAmount = order.Sum(amount => amount.Value)
-        //                            }).ToList();
-        //        }
-        //        else if (NumberDays <= (365 * 2))
-        //        {
-        //            bool isYear = NumberDays <= 365 ? true : false;
-        //            PayrollsList = (from orderList in resultTable
-        //                            group orderList by orderList.Key.ToString("MMM yyyy") into order
-        //                            select new PayrollsByDate
-        //                            {
-        //                                Date = isYear ? order.Key.Substring(0, order.Key.IndexOf(" ")) : order.Key,
-        //                                TotalAmount = order.Sum(amount => amount.Value)
-        //                            }).ToList();
-        //        }
-        //        else
-        //        {
-        //            PayrollsList = (from orderList in resultTable
-        //                            group orderList by orderList.Key.ToString("yyyyy") into order
-        //                            select new PayrollsByDate
-        //                            {
-        //                                Date = order.Key,
-        //                                TotalAmount = order.Sum(amount => amount.Value)
-        //                            }).ToList();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("EC-019: No se pudo obtener el numero de planillas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-        //    }
-        //    finally
-        //    {
-        //        Command.Connection.Close();
-        //    }
-        //}
+        public void GetSecondAnalisys()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                IncomeList = new List<IncomesByDate>();
+                string query = @"		SELECT 
+              YEAR(dateissuance) AS Year, 
+              MONTH(dateissuance) AS Month, 
+              SUM(totalPay) AS TotalIncome 
+          FROM tbBills 
+          WHERE IdStatusBill != 3 AND dateissuance BETWEEN @fromDate AND @toDate 
+          GROUP BY YEAR(dateissuance), MONTH(dateissuance)
+          ORDER BY Year, Month";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("@fromDate", FromDate);
+                cmd.Parameters.AddWithValue("@toDate", ToDate);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int year = reader.GetInt32(0);
+                    int month = reader.GetInt32(1);
+                    decimal totalIncome = reader.GetDecimal(2);
+                    string dateFormatted = new DateTime(year, month, 1).ToString("MMM yyyy");
+                    IncomeList.Add(new IncomesByDate
+                    {
+                        DateIn = dateFormatted,
+                        TotalIncome = totalIncome
+                    });
+                    TotalPay += totalIncome;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("EC-019: No se pudo obtener el número de planillas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
         public void GetTopServices()
         {
             try
