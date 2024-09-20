@@ -35,6 +35,7 @@ namespace PTC2024.Controller.DashboardController
             DAODashboard dAODashboard = new DAODashboard();
             ValidateDays();
             YearRadialGauge();
+            CaptureDay();
             bool refreshData = dAODashboard.LoadData(objDashboard.dtpStart.Value, objDashboard.dtpEnd.Value);
             if (refreshData == true)
             {
@@ -175,6 +176,25 @@ namespace PTC2024.Controller.DashboardController
             objDashboard.dtpEnd.MaxDate = new DateTime(currentYear, 12, 31);
             objDashboard.dtpStart.MaxDate = new DateTime(currentYear, 12, 31);
         }
-
+        public void CaptureDay()
+        {
+            DateTime currentHour = DateTime.Now;
+            if (currentHour.Hour >=12 && currentHour.Hour <= 15)
+            {
+                objDashboard.lblTime.Text = "Buenas tardes, buen provecho";
+            }
+            else if(currentHour.Hour > 15 && currentHour.Hour <= 18)
+            {
+                objDashboard.lblTime.Text = "Buenas tardes";
+            }
+            else if(currentHour.Hour >=5 && currentHour.Hour <= 11)
+            {
+                objDashboard.lblTime.Text = "Buenos días";
+            }
+            else
+            {
+                objDashboard.lblTime.Text = "Buenas noches";
+            }
+        }
     }
 }
