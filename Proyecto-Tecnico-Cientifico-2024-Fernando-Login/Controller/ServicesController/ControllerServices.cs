@@ -202,7 +202,7 @@ namespace PTC2024.Controller.ServicesController
             /*Los demas checkbox estaran desabilitados si uno esta checkeado*/
             if (objServices.CbProgramacion.Checked == true)
             {
-                category = objServices.CbSoporte.Tag.ToString();
+                category = objServices.CbProgramacion.Tag.ToString();
                 objServices.CbSeguridad.Checked = false;
                 objServices.CbInfraestructura.Checked = false;
                 objServices.CbMantenimiento.Checked = false;
@@ -256,7 +256,7 @@ namespace PTC2024.Controller.ServicesController
             /*Los demas checkbox estaran desabilitados si uno esta checkeado*/
             if (objServices.CbSoporte.Checked == true)
             {
-                category = objServices.CbProgramacion.Tag.ToString();
+                category = objServices.CbSoporte.Tag.ToString();
                 objServices.CbSeguridad.Checked = false;
                 objServices.CbInfraestructura.Checked = false;
                 objServices.CbProgramacion.Checked = false;
