@@ -118,6 +118,7 @@
     <Compile Include="Controller\Alerts\ControllerChangePassword.cs" />
     <Compile Include="Controller\Alerts\ControllerDeleteAlert.cs" />
     <Compile Include="Controller\Helper\BusinessVar.cs" />
+    <Compile Include="Controller\Helper\XMLConnection.cs" />
     <Compile Include="Controller\MaintenanceController\ControllerBusinessConfiguration.cs" />
     <Compile Include="Controller\PasswordRecover\ControllerAdminMethod.cs" />
     <Compile Include="Controller\PasswordRecover\ControllerNextQuestionsMetod.cs" />
@@ -219,6 +220,7 @@
     <Compile Include="Model\DTO\EmployeesDTO\DTOUpdateEmployee.cs" />
     <Compile Include="Model\DTO\FirstUseDTO\DTOFistUse.cs" />
     <Compile Include="Model\DTO\HelperDTO\DTOInitialView.cs" />
+    <Compile Include="Model\DTO\HelperDTO\DTOXMLConnection.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTOLogin.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTORecoverPassword.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTORegister.cs" />
