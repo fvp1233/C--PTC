@@ -1,5 +1,6 @@
 ﻿using PTC2024.Controller.Helper;
 using PTC2024.Controller.StartMenuController;
+using PTC2024.Model.DAO.CustomersDAO;
 using PTC2024.Model.DAO.PayrollsDAO;
 using PTC2024.View.Empleados;
 using PTC2024.View.formularios.inicio;
@@ -26,7 +27,6 @@ namespace PTC2024.Controller.EmployeesController
         {
             objViewPayrolls = Vista;
             objViewPayrolls.Load += new EventHandler(LoadData);
-            objViewPayrolls.picNotification.Click += new EventHandler(ChangeStatus);
             objViewPayrolls.btnAll.Click += new EventHandler(SearchAll);
             objViewPayrolls.btnFirstT.Click += new EventHandler(SearchByFirstTrimester);
             objViewPayrolls.btnSecondT.Click += new EventHandler(SearchBySecondTrimester);
@@ -56,38 +56,8 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.cmsPayPayroll.Click += new EventHandler(UpdatePayrollPaid);
             objViewPayrolls.cmsUpdateUnpaid.Click += new EventHandler(UpdatePayrollToUnpaid);
             objViewPayrolls.cmsPayrollInformation.Click += new EventHandler(ViewInfoPayroll);
-            objViewPayrolls.txtSearch.KeyPress += new KeyPressEventHandler(SearchPayrollEvent);
+            objViewPayrolls.txtSearch.KeyDown += new KeyEventHandler(SearchPayrollEvent);
             objViewPayrolls.txtSearch.TextChanged += new EventHandler(OnlyLetters);
-        }
-
-        private void ChangeStatus(object sender, EventArgs e)
-        {
-            DAOViewPayrolls DAOUpdatePayroll = new DAOViewPayrolls();
-            DataSet employeeDs = DAOUpdatePayroll.GetEmployee();
-
-            if (employeeDs != null)
-            {
-                DataTable employeeDt = employeeDs.Tables["tbEmployee"];
-
-                foreach (DataRow row in employeeDt.Rows)
-                {
-                    int status = int.Parse(row["IdStatus"].ToString());
-                    if (status == 3) // Maternidad
-                    {
-                        // Obtener el nombre del empleado
-                        string employeeName = row["DUI"].ToString(); // Asegúrate de que "EmployeeName" es el nombre de la columna
-
-                        // Usar la fecha actual como la fecha de cambio de estado
-                        DateTime statusChangeDate = DateTime.Now;
-                        DateTime returnDate = statusChangeDate.AddDays(112);
-
-                        string message = $"El estado de la empleada {employeeName} cambió a maternidad hoy, {statusChangeDate.ToShortDateString()}.\n" +
-                                         $"Se espera su regreso el {returnDate.ToShortDateString()}.";
-
-                        MessageBox.Show(message, "Información de Maternidad", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-            }
         }
         public double TruncateToTwoDecimals(double value)
         {
@@ -690,9 +660,17 @@ namespace PTC2024.Controller.EmployeesController
         }
         #endregion
         //------------------Busqueda----------------------//
-        public void SearchPayrollEvent(object sender, KeyPressEventArgs e)
+        public void SearchPayrollEvent(object sender, KeyEventArgs e)
         {
-            SearchPayroll();
+            if (e.KeyCode == Keys.Enter)
+            {
+                SearchPayroll();
+
+            }
+            if (objViewPayrolls.txtSearch.Text == string.Empty)
+            {
+                RefreshData();
+            }
         }
         void SearchPayroll()
         {

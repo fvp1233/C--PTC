@@ -32,7 +32,7 @@ namespace PTC2024.Controller.BillsController
             objFormBills.cmsPrintBill.Click += new EventHandler(printBills);
             objFormBills.cmsOverrideBill.Click += new EventHandler(OverrideBills);
             objFormBills.cmsRectifyBill.Click += new EventHandler(Rectify);
-            objFormBills.txtSearchB.KeyPress += new KeyPressEventHandler(SearchBills);
+            objFormBills.txtSearchB.KeyDown += new KeyEventHandler(SearchBills);
             objFormBills.dgvBills.CellMouseDown += new DataGridViewCellMouseEventHandler(objFormBills_CellMouseDown);
             objFormBills.dgvBills.SelectionChanged += new EventHandler(dgvBills_SelectionChanged);
             objFormBills.cbEfectivo.Click += new EventHandler(CheckboxFiltersMethodCash);
@@ -73,9 +73,17 @@ namespace PTC2024.Controller.BillsController
 
         }
         //filtracion por busqueda
-        public void SearchBills(object sender, EventArgs e)
+        public void SearchBills(object sender, KeyEventArgs e)
         {
-            Search();
+            if (e.KeyCode == Keys.Enter)
+            {
+                Search();
+
+            }
+            if (objFormBills.txtSearchB.Text == string.Empty)
+            {
+                ChargeData();
+            }
         }
 
         public void Search()

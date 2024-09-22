@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PTC2024.View.Reporting.Service;
+using PTC2024.Model.DAO.CustomersDAO;
 
 namespace PTC2024.Controller.ServicesController
 {
@@ -28,7 +29,7 @@ namespace PTC2024.Controller.ServicesController
             objServices.btnReportServices.Click += new EventHandler(ReportAllServices);
             objServices.cmsDeleteService.Click += new EventHandler(DeleteService);
             objServices.cmsUpdateService.Click += new EventHandler(OpenUpdateService);
-            objServices.txtSearch.KeyPress += new KeyPressEventHandler(Search);
+            objServices.txtSearch.KeyDown += new KeyEventHandler(Search);
             objServices.CbSeguridad.Click += new EventHandler(SearchCheckBox1);
             objServices.CbInfraestructura.Click += new EventHandler(SearchCheckBox2);
             objServices.CbProgramacion.Click += new EventHandler(SearchCheckBox3);
@@ -123,17 +124,25 @@ namespace PTC2024.Controller.ServicesController
         }
 
         /*Este metodo se ejecutara cuando se escriba en el textbox para filtrar un servicio*/
-        public void Search(object sender, EventArgs e)
+        public void Search(object sender, KeyEventArgs e)
         {
-            DAOServices dAOServices = new DAOServices();
+            if (e.KeyCode == Keys.Enter)
+            {
+                DAOServices dAOServices = new DAOServices();
 
-            /*Aca se le da valor al atributo de la clase*/
-            dAOServices.Search1 = objServices.txtSearch.Text;
+                /*Aca se le da valor al atributo de la clase*/
+                dAOServices.Search1 = objServices.txtSearch.Text;
 
-            /*Se captura la respuesta de l metodo SearchData y se le agrega su respectivo parametro*/
-            DataSet answer = dAOServices.SearchData(dAOServices.Search1);
-            /*Se le dice al DataGridView lo que tiene que mostrar*/
-            objServices.DgvServicios.DataSource = answer.Tables["viewServices"];
+                /*Se captura la respuesta de l metodo SearchData y se le agrega su respectivo parametro*/
+                DataSet answer = dAOServices.SearchData(dAOServices.Search1);
+                /*Se le dice al DataGridView lo que tiene que mostrar*/
+                objServices.DgvServicios.DataSource = answer.Tables["viewServices"];
+            }
+            if (objServices.txtSearch.Text == string.Empty)
+            {
+                ChargeDgv();            
+            }
+
         }
 
         /*Este se ejecutara cuando se haga click en cualquier checkbox*/

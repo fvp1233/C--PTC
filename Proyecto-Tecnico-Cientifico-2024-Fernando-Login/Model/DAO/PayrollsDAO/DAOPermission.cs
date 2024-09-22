@@ -42,7 +42,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             try
             {
                 Command.Connection = getConnection();
-                string query = "UPDATE tbPermissions SET IdStatusPermission = @param1 WHERE IdEmployee = @param2";
+                string query = "UPDATE tbPermissions SET IdStatusPermission = @param1 WHERE IdEmployee = @param2 AND IdStatusPermission != 3";
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
                 cmd.Parameters.AddWithValue("@param1", IdStatusPermission);
                 cmd.Parameters.AddWithValue("@param2", IdEmployee);
@@ -144,6 +144,167 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             catch (Exception)
             {
                 MessageBox.Show("EC-082: No se pudo obtener los datos de los permisos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearchPermissionBy1()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = $"SELECT * FROM viewPermissions WHERE ([Tipo de permiso]) = 'Incapacidad' AND [Estado de permiso] != 'Deshabilitar'";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPermissions");
+                return ds;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("EC-074: No se pudieron obtener las planillas de liquidación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearchPermissionBy2()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = $"SELECT * FROM viewPermissions WHERE ([Tipo de permiso]) = 'Maternidad'  AND [Estado de permiso] != 'Deshabilitar'";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPermissions");
+                return ds;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("EC-074: No se pudieron obtener las planillas de liquidación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearchPermissionBy3()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = $"SELECT * FROM viewPermissions WHERE ([Tipo de permiso]) = 'Paternidad'  AND [Estado de permiso] != 'Deshabilitar'";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPermissions");
+                return ds;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("EC-074: No se pudieron obtener las planillas de liquidación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearchPermissionBy4()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = $"SELECT * FROM viewPermissions WHERE ([Tipo de permiso]) = 'Permiso'  AND [Estado de permiso] != 'Deshabilitar'";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPermissions");
+                return ds;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("EC-074: No se pudieron obtener las planillas de liquidación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearchPermissionBy5()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = $"SELECT * FROM viewPermissions WHERE ([Estado de permiso]) = 'En proceso'";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPermissions");
+                return ds;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("EC-074: No se pudieron obtener las planillas de liquidación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearchPermissionBy6()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = $"SELECT * FROM viewPermissions WHERE ([Estado de permiso]) = 'Completado'";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPermissions");
+                return ds;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("EC-074: No se pudieron obtener las planillas de liquidación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet SearchPermissionBy7()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = $"SELECT * FROM viewPermissions WHERE ([Estado de permiso]) = 'Deshabilitar'";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "viewPermissions");
+                return ds;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("EC-074: No se pudieron obtener las planillas de liquidación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return null;
             }

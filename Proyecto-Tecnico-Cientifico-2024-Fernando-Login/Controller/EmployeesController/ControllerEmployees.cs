@@ -38,7 +38,7 @@ namespace PTC2024.Controller.Employees
             objEmployees.cmsEmployeeInformation.Click += new EventHandler(ViewEmployeeInfo);
             objEmployees.btnGeneralReport.Click += new EventHandler(GeneralReport);
             objEmployees.cmsReactivateE.Click += new EventHandler(EnableEmployee);
-            objEmployees.txtEmployeeSearch.KeyPress += new KeyPressEventHandler(SearchEmployeeEvent);
+            objEmployees.txtEmployeeSearch.KeyDown += new KeyEventHandler(SearchEmployeeEvent);
             objEmployees.dgvEmployees.Click += new EventHandler(ContextMenuClick);
             objEmployees.cbTiempoCompleto.Click += new EventHandler(CheckedTiempoCompleto);
             objEmployees.cbVoluntario.Click += new EventHandler(CheckedVoluntario);
@@ -60,9 +60,18 @@ namespace PTC2024.Controller.Employees
             RefreshDataGridEmployees();
         }
 
-        public void SearchEmployeeEvent(object sender, EventArgs e)
+        public void SearchEmployeeEvent(object sender, KeyEventArgs e)
         {
-            SearchEmployee();
+            if (e.KeyCode == Keys.Enter)
+            {
+                SearchEmployee();
+
+            }
+            if (objEmployees.txtEmployeeSearch.Text == string.Empty)
+            {
+                RefreshDataGridEmployees();
+            }
+
         }
 
         public void SearchEmployee()
