@@ -66,8 +66,9 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 9F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -91,14 +92,14 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1125, 74);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1116, 74);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // txtEmployeeSearch
             // 
             this.txtEmployeeSearch.AcceptsReturn = false;
             this.txtEmployeeSearch.AcceptsTab = false;
-            this.txtEmployeeSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtEmployeeSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtEmployeeSearch.AnimationSpeed = 200;
             this.txtEmployeeSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txtEmployeeSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -125,7 +126,7 @@
             this.txtEmployeeSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtEmployeeSearch.IconRight")));
             this.txtEmployeeSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmployeeSearch.Lines = new string[0];
-            this.txtEmployeeSearch.Location = new System.Drawing.Point(538, 17);
+            this.txtEmployeeSearch.Location = new System.Drawing.Point(549, 17);
             this.txtEmployeeSearch.MaxLength = 32767;
             this.txtEmployeeSearch.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtEmployeeSearch.Modified = false;
@@ -185,7 +186,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(509, 68);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(505, 68);
             this.tableLayoutPanel3.TabIndex = 9;
             // 
             // label1
@@ -223,7 +224,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.34004F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.65996F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1125, 523);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1116, 523);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // dgvPermissions
@@ -315,7 +316,7 @@
             this.dgvPermissions.RowTemplate.Height = 50;
             this.dgvPermissions.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPermissions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPermissions.Size = new System.Drawing.Size(1119, 395);
+            this.dgvPermissions.Size = new System.Drawing.Size(1110, 395);
             this.dgvPermissions.TabIndex = 2;
             this.dgvPermissions.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
             // 
@@ -359,7 +360,7 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1119, 116);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1110, 116);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // btnDeletePermission
@@ -410,7 +411,7 @@
             this.btnDeletePermission.IdleIconLeftImage = null;
             this.btnDeletePermission.IdleIconRightImage = null;
             this.btnDeletePermission.IndicateFocus = false;
-            this.btnDeletePermission.Location = new System.Drawing.Point(706, 29);
+            this.btnDeletePermission.Location = new System.Drawing.Point(697, 29);
             this.btnDeletePermission.Name = "btnDeletePermission";
             this.btnDeletePermission.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDeletePermission.OnDisabledState.BorderRadius = 20;
@@ -500,7 +501,7 @@
             this.btnGeneratePermission.IdleIconLeftImage = null;
             this.btnGeneratePermission.IdleIconRightImage = null;
             this.btnGeneratePermission.IndicateFocus = false;
-            this.btnGeneratePermission.Location = new System.Drawing.Point(923, 29);
+            this.btnGeneratePermission.Location = new System.Drawing.Point(914, 29);
             this.btnGeneratePermission.Name = "btnGeneratePermission";
             this.btnGeneratePermission.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnGeneratePermission.OnDisabledState.BorderRadius = 20;

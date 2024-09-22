@@ -26,8 +26,10 @@ namespace PTC2024.Controller.Server
         {
             if (objServer.rdFalse.Checked == true)
             {
-                objServer.txtPasswordAuth.Enabled = true;
-                objServer.txtSqlAuth.Enabled = true;
+                objServer.txtPasswordAuth.Enabled = false;
+                objServer.txtSqlAuth.Enabled = false;
+                objServer.txtSqlAuth.Clear();
+                objServer.txtPasswordAuth.Clear();
             }
         }
 
@@ -35,8 +37,8 @@ namespace PTC2024.Controller.Server
         {
             if (objServer.rdTrue.Checked == true)
             {
-                objServer.txtPasswordAuth.Enabled = false;
-                objServer.txtSqlAuth.Enabled = false;
+                objServer.txtPasswordAuth.Enabled = true;
+                objServer.txtSqlAuth.Enabled = true;
                 objServer.txtSqlAuth.Clear();
                 objServer.txtPasswordAuth.Clear();
             }
