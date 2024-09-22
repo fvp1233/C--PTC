@@ -13,10 +13,10 @@ namespace PTC2024.View.Server
 {
     public partial class FrmServerConfiguration : Form
     {
-        public FrmServerConfiguration()
+        public FrmServerConfiguration(int origin)
         {
             InitializeComponent();
-            ControllerServerConfiguration objServer = new ControllerServerConfiguration(this);
+            ControllerServerConfiguration objServer = new ControllerServerConfiguration(this, origin);
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)

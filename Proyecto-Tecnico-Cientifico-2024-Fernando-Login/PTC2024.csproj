@@ -220,7 +220,7 @@
     <Compile Include="Model\DTO\EmployeesDTO\DTOUpdateEmployee.cs" />
     <Compile Include="Model\DTO\FirstUseDTO\DTOFistUse.cs" />
     <Compile Include="Model\DTO\HelperDTO\DTOInitialView.cs" />
-    <Compile Include="Model\DTO\HelperDTO\DTOXMLConnection.cs" />
+    <Compile Include="Model\DTO\DTOXMLConnection.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTOLogin.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTORecoverPassword.cs" />
     <Compile Include="Model\DTO\LogInDTO\DTORegister.cs" />

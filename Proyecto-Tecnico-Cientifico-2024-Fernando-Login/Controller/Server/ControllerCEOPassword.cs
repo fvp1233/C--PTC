@@ -29,7 +29,7 @@ namespace PTC2024.Controller.Server
             {
                 if (encryptedPass == SessionVar.Password)
                 {
-                    FrmServerConfiguration objOpen = new FrmServerConfiguration();
+                    FrmServerConfiguration objOpen = new FrmServerConfiguration(2);
                     objOpen.ShowDialog();
                     objOpen.Close();
                 }
