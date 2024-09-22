@@ -25,11 +25,14 @@ namespace PTC2024.Controller.Helper
         public static void InitialView()
         {
             //Creamos los objetos de las clases DAO para llamar a los métodos que usaremos
+            XMLConnection xmlCon = new XMLConnection();
             DAOLogin daoLogin = new DAOLogin();
             DAOFirstUse daoFirstUse = new DAOFirstUse();
             DAOAddEmployee daoAddEmployee = new DAOAddEmployee();
             DAOInitialView daoInitial = new DAOInitialView();
             StartMenu objMenu = new StartMenu(SessionVar.Username);
+            //Antes de todo, mandamos a llamar al método que comprueba que exista un archivo XML con los valores de conexión a la base de datos.
+            xmlCon.ReadXMLDocument();
             //Primero que nada, evaluamos si existe un token de recuerdame en las variables locales.
             string savedToken = Properties.Settings.Default.Token;
             if (!string.IsNullOrEmpty(savedToken))

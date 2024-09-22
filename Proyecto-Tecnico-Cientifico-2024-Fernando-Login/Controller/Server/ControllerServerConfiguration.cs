@@ -28,8 +28,18 @@ namespace PTC2024.Controller.Server
             objServer.txtPasswordAuth.MouseDown += new MouseEventHandler(DisableContextMenu);
             objServer.txtSqlAuth.MouseDown += new MouseEventHandler(DisableContextMenu);
             objServer.btnSave.Click += new EventHandler(SaveConfig);
+            if (origin == 1)
+            {
+                objServer.FormClosed += new FormClosedEventHandler(CloseProgram);
+            }
         }
-        
+
+        //Método para cerrar todo el programa en caso de que el usuario no coloque ningun valor y solo cierre el formulario cuando no existe ningún documento XML
+        public void CloseProgram(Object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
         public void VerifyOrigin(int origin)
         {
             if ((origin == 2))
@@ -41,14 +51,13 @@ namespace PTC2024.Controller.Server
 
             }
         }
+
         void rdFalseMarked(object sender, EventArgs e)
         {
             if (objServer.rdFalse.Checked == true)
             {
                 objServer.txtPasswordAuth.Enabled = false;
-                objServer.txtSqlAuth.Enabled = false;
-                objServer.txtSqlAuth.Clear();
-                objServer.txtPasswordAuth.Clear();
+                objServer.txtSqlAuth.Enabled = false;              
             }
         }
 
@@ -57,9 +66,7 @@ namespace PTC2024.Controller.Server
             if (objServer.rdTrue.Checked == true)
             {
                 objServer.txtPasswordAuth.Enabled = true;
-                objServer.txtSqlAuth.Enabled = true;
-                objServer.txtSqlAuth.Clear();
-                objServer.txtPasswordAuth.Clear();
+                objServer.txtSqlAuth.Enabled = true;                
             }
         }
 
@@ -134,7 +141,7 @@ namespace PTC2024.Controller.Server
                     DTOXMLConnection.Database = objServer.txtDB.Text.Trim();
                     DTOXMLConnection.User = objServer.txtSqlAuth.Text.Trim();
                     DTOXMLConnection.Password = objServer.txtPasswordAuth.Text.Trim();
-                    MessageBox.Show("El archivo con las credenciales de conexión se creó con éxito.","Archivo de conexión", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El archivo con las credenciales de conexión se creó con éxito. \nInicie el programa nuevamente.","Archivo de conexión", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     objServer.Dispose();
                 }
                 else

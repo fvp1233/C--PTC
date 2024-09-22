@@ -128,7 +128,7 @@
             this.txtDB.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtDB.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDB.DefaultFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDB.DefaultText = "";
+            this.txtDB.DefaultText = "db_aaa7ca_ricaldone";
             this.txtDB.FillColor = System.Drawing.Color.White;
             this.txtDB.HideSelection = true;
             this.txtDB.IconLeft = null;
@@ -136,7 +136,8 @@
             this.txtDB.IconPadding = 10;
             this.txtDB.IconRight = null;
             this.txtDB.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDB.Lines = new string[0];
+            this.txtDB.Lines = new string[] {
+        "db_aaa7ca_ricaldone"};
             this.txtDB.Location = new System.Drawing.Point(22, 103);
             this.txtDB.MaximumSize = new System.Drawing.Size(500, 32);
             this.txtDB.MaxLength = 32767;
@@ -172,7 +173,7 @@
             this.txtDB.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtDB.SelectedText = "";
             this.txtDB.SelectionLength = 0;
-            this.txtDB.SelectionStart = 0;
+            this.txtDB.SelectionStart = 19;
             this.txtDB.ShortcutsEnabled = true;
             this.txtDB.Size = new System.Drawing.Size(500, 32);
             this.txtDB.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
@@ -221,7 +222,7 @@
             this.txtServer.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtServer.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtServer.DefaultFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtServer.DefaultText = "";
+            this.txtServer.DefaultText = "SQL8005.site4now.net";
             this.txtServer.FillColor = System.Drawing.Color.White;
             this.txtServer.HideSelection = true;
             this.txtServer.IconLeft = null;
@@ -229,7 +230,8 @@
             this.txtServer.IconPadding = 10;
             this.txtServer.IconRight = null;
             this.txtServer.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtServer.Lines = new string[0];
+            this.txtServer.Lines = new string[] {
+        "SQL8005.site4now.net"};
             this.txtServer.Location = new System.Drawing.Point(22, 42);
             this.txtServer.MaximumSize = new System.Drawing.Size(500, 32);
             this.txtServer.MaxLength = 32767;
@@ -354,6 +356,7 @@
             // rdTrue
             // 
             this.rdTrue.AutoSize = true;
+            this.rdTrue.Checked = true;
             this.rdTrue.Location = new System.Drawing.Point(181, 56);
             this.rdTrue.Name = "rdTrue";
             this.rdTrue.Size = new System.Drawing.Size(76, 21);
@@ -385,7 +388,6 @@
             this.rdFalse.Name = "rdFalse";
             this.rdFalse.Size = new System.Drawing.Size(97, 21);
             this.rdFalse.TabIndex = 6;
-            this.rdFalse.TabStop = true;
             this.rdFalse.Text = "Deshabilitar";
             this.rdFalse.UseVisualStyleBackColor = true;
             // 
@@ -409,7 +411,7 @@
             this.txtPasswordAuth.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPasswordAuth.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPasswordAuth.DefaultFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPasswordAuth.DefaultText = "";
+            this.txtPasswordAuth.DefaultText = "Master2024";
             this.txtPasswordAuth.FillColor = System.Drawing.Color.White;
             this.txtPasswordAuth.HideSelection = true;
             this.txtPasswordAuth.IconLeft = null;
@@ -417,7 +419,8 @@
             this.txtPasswordAuth.IconPadding = 10;
             this.txtPasswordAuth.IconRight = null;
             this.txtPasswordAuth.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPasswordAuth.Lines = new string[0];
+            this.txtPasswordAuth.Lines = new string[] {
+        "Master2024"};
             this.txtPasswordAuth.Location = new System.Drawing.Point(291, 122);
             this.txtPasswordAuth.MaximumSize = new System.Drawing.Size(231, 32);
             this.txtPasswordAuth.MaxLength = 32767;
@@ -453,7 +456,7 @@
             this.txtPasswordAuth.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPasswordAuth.SelectedText = "";
             this.txtPasswordAuth.SelectionLength = 0;
-            this.txtPasswordAuth.SelectionStart = 0;
+            this.txtPasswordAuth.SelectionStart = 10;
             this.txtPasswordAuth.ShortcutsEnabled = true;
             this.txtPasswordAuth.Size = new System.Drawing.Size(231, 32);
             this.txtPasswordAuth.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
@@ -486,7 +489,7 @@
             this.txtSqlAuth.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtSqlAuth.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSqlAuth.DefaultFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSqlAuth.DefaultText = "";
+            this.txtSqlAuth.DefaultText = "db_aaa7ca_ricaldone_admin";
             this.txtSqlAuth.FillColor = System.Drawing.Color.White;
             this.txtSqlAuth.HideSelection = true;
             this.txtSqlAuth.IconLeft = null;
@@ -494,7 +497,8 @@
             this.txtSqlAuth.IconPadding = 10;
             this.txtSqlAuth.IconRight = null;
             this.txtSqlAuth.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSqlAuth.Lines = new string[0];
+            this.txtSqlAuth.Lines = new string[] {
+        "db_aaa7ca_ricaldone_admin"};
             this.txtSqlAuth.Location = new System.Drawing.Point(22, 122);
             this.txtSqlAuth.MaximumSize = new System.Drawing.Size(231, 32);
             this.txtSqlAuth.MaxLength = 32767;
@@ -530,7 +534,7 @@
             this.txtSqlAuth.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtSqlAuth.SelectedText = "";
             this.txtSqlAuth.SelectionLength = 0;
-            this.txtSqlAuth.SelectionStart = 0;
+            this.txtSqlAuth.SelectionStart = 25;
             this.txtSqlAuth.ShortcutsEnabled = true;
             this.txtSqlAuth.Size = new System.Drawing.Size(231, 32);
             this.txtSqlAuth.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
