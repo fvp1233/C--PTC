@@ -583,7 +583,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             try
             {
                 comand.Connection = getConnection();
-                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) = 8";
+                string query = $"SELECT * FROM viewPayrolls WHERE MONTH([Fecha de emisión]) = 9";
                 SqlCommand cmd = new SqlCommand(query, comand.Connection);
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();

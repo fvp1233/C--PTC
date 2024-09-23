@@ -53,6 +53,26 @@
             this.cmsUpdatePermission = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDeletePermission = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.cb5 = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.cb6 = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.cb7 = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.cb1 = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.cb2 = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.cb3 = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.cb4 = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.btnDeletePermission = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnGeneratePermission = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.tableLayoutPanel1.SuspendLayout();
@@ -62,12 +82,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermissions)).BeginInit();
             this.cmsPermission.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 9F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -76,7 +103,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.13629F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.86371F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1131, 609);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1183, 688);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -91,14 +118,14 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1125, 74);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1168, 84);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // txtEmployeeSearch
             // 
             this.txtEmployeeSearch.AcceptsReturn = false;
             this.txtEmployeeSearch.AcceptsTab = false;
-            this.txtEmployeeSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtEmployeeSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtEmployeeSearch.AnimationSpeed = 200;
             this.txtEmployeeSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txtEmployeeSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -125,7 +152,7 @@
             this.txtEmployeeSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtEmployeeSearch.IconRight")));
             this.txtEmployeeSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmployeeSearch.Lines = new string[0];
-            this.txtEmployeeSearch.Location = new System.Drawing.Point(538, 17);
+            this.txtEmployeeSearch.Location = new System.Drawing.Point(601, 22);
             this.txtEmployeeSearch.MaxLength = 32767;
             this.txtEmployeeSearch.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtEmployeeSearch.Modified = false;
@@ -185,7 +212,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(509, 68);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(529, 78);
             this.tableLayoutPanel3.TabIndex = 9;
             // 
             // label1
@@ -193,7 +220,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 1);
+            this.label1.Location = new System.Drawing.Point(15, 4);
             this.label1.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(180, 40);
@@ -204,12 +231,12 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 43);
+            this.label3.Location = new System.Drawing.Point(25, 49);
             this.label3.Margin = new System.Windows.Forms.Padding(25, 0, 3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(319, 16);
+            this.label3.Size = new System.Drawing.Size(321, 16);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Haga click derecho sobre una planilla para mas opciones";
+            this.label3.Text = "Haga click derecho sobre una permiso para mas opciones";
             // 
             // tableLayoutPanel4
             // 
@@ -218,12 +245,12 @@
             this.tableLayoutPanel4.Controls.Add(this.dgvPermissions, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 83);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 93);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.34004F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.65996F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1125, 523);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.07432F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.92567F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1168, 592);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // dgvPermissions
@@ -289,7 +316,7 @@
             this.dgvPermissions.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
             this.dgvPermissions.HeaderBgColor = System.Drawing.Color.Empty;
             this.dgvPermissions.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvPermissions.Location = new System.Drawing.Point(3, 125);
+            this.dgvPermissions.Location = new System.Drawing.Point(3, 109);
             this.dgvPermissions.Name = "dgvPermissions";
             this.dgvPermissions.ReadOnly = true;
             this.dgvPermissions.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -315,7 +342,7 @@
             this.dgvPermissions.RowTemplate.Height = 50;
             this.dgvPermissions.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPermissions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPermissions.Size = new System.Drawing.Size(1119, 395);
+            this.dgvPermissions.Size = new System.Drawing.Size(1162, 480);
             this.dgvPermissions.TabIndex = 2;
             this.dgvPermissions.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
             // 
@@ -327,31 +354,33 @@
             this.cmsUpdatePermission,
             this.cmsDeletePermission});
             this.cmsPermission.Name = "cmsPlanillas";
-            this.cmsPermission.Size = new System.Drawing.Size(181, 56);
+            this.cmsPermission.Size = new System.Drawing.Size(188, 78);
             // 
             // cmsUpdatePermission
             // 
             this.cmsUpdatePermission.Image = ((System.Drawing.Image)(resources.GetObject("cmsUpdatePermission.Image")));
             this.cmsUpdatePermission.Name = "cmsUpdatePermission";
-            this.cmsUpdatePermission.Size = new System.Drawing.Size(180, 26);
-            this.cmsUpdatePermission.Text = "Actualizar planilla";
+            this.cmsUpdatePermission.Size = new System.Drawing.Size(187, 26);
+            this.cmsUpdatePermission.Text = "Actualizar permiso";
             // 
             // cmsDeletePermission
             // 
             this.cmsDeletePermission.CheckOnClick = true;
             this.cmsDeletePermission.Image = ((System.Drawing.Image)(resources.GetObject("cmsDeletePermission.Image")));
             this.cmsDeletePermission.Name = "cmsDeletePermission";
-            this.cmsDeletePermission.Size = new System.Drawing.Size(180, 26);
+            this.cmsDeletePermission.Size = new System.Drawing.Size(187, 26);
             this.cmsDeletePermission.Text = "Eliminar permiso";
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 5;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.39622F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.60378F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.08187F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.91813F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 215F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 218F));
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel13, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnDeletePermission, 3, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnGeneratePermission, 4, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -359,8 +388,553 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1119, 116);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1162, 100);
             this.tableLayoutPanel5.TabIndex = 3;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.34483F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.65517F));
+            this.tableLayoutPanel6.Controls.Add(this.flowLayoutPanel1, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(284, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(397, 94);
+            this.tableLayoutPanel6.TabIndex = 99;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.cb5);
+            this.flowLayoutPanel1.Controls.Add(this.cb6);
+            this.flowLayoutPanel1.Controls.Add(this.cb7);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(35, 88);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // cb5
+            // 
+            this.cb5.AllowBindingControlAnimation = true;
+            this.cb5.AllowBindingControlColorChanges = false;
+            this.cb5.AllowBindingControlLocation = true;
+            this.cb5.AllowCheckBoxAnimation = false;
+            this.cb5.AllowCheckmarkAnimation = true;
+            this.cb5.AllowOnHoverStates = true;
+            this.cb5.AutoCheck = true;
+            this.cb5.BackColor = System.Drawing.Color.Transparent;
+            this.cb5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cb5.BackgroundImage")));
+            this.cb5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cb5.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.cb5.BorderRadius = 12;
+            this.cb5.Checked = false;
+            this.cb5.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.cb5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cb5.CustomCheckmarkImage = null;
+            this.cb5.Location = new System.Drawing.Point(3, 3);
+            this.cb5.MinimumSize = new System.Drawing.Size(15, 15);
+            this.cb5.Name = "cb5";
+            this.cb5.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb5.OnCheck.BorderRadius = 12;
+            this.cb5.OnCheck.BorderThickness = 2;
+            this.cb5.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb5.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.cb5.OnCheck.CheckmarkThickness = 2;
+            this.cb5.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.cb5.OnDisable.BorderRadius = 12;
+            this.cb5.OnDisable.BorderThickness = 2;
+            this.cb5.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb5.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.cb5.OnDisable.CheckmarkThickness = 2;
+            this.cb5.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cb5.OnHoverChecked.BorderRadius = 12;
+            this.cb5.OnHoverChecked.BorderThickness = 2;
+            this.cb5.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb5.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.cb5.OnHoverChecked.CheckmarkThickness = 2;
+            this.cb5.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb5.OnHoverUnchecked.BorderRadius = 12;
+            this.cb5.OnHoverUnchecked.BorderThickness = 1;
+            this.cb5.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb5.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.cb5.OnUncheck.BorderRadius = 12;
+            this.cb5.OnUncheck.BorderThickness = 1;
+            this.cb5.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb5.Size = new System.Drawing.Size(16, 16);
+            this.cb5.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.cb5.TabIndex = 1;
+            this.cb5.Tag = "Activo";
+            this.cb5.ThreeState = false;
+            this.cb5.ToolTipText = null;
+            // 
+            // cb6
+            // 
+            this.cb6.AllowBindingControlAnimation = true;
+            this.cb6.AllowBindingControlColorChanges = false;
+            this.cb6.AllowBindingControlLocation = true;
+            this.cb6.AllowCheckBoxAnimation = false;
+            this.cb6.AllowCheckmarkAnimation = true;
+            this.cb6.AllowOnHoverStates = true;
+            this.cb6.AutoCheck = true;
+            this.cb6.BackColor = System.Drawing.Color.Transparent;
+            this.cb6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cb6.BackgroundImage")));
+            this.cb6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cb6.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.cb6.BorderRadius = 12;
+            this.cb6.Checked = false;
+            this.cb6.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.cb6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cb6.CustomCheckmarkImage = null;
+            this.cb6.Location = new System.Drawing.Point(3, 25);
+            this.cb6.MinimumSize = new System.Drawing.Size(15, 15);
+            this.cb6.Name = "cb6";
+            this.cb6.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb6.OnCheck.BorderRadius = 12;
+            this.cb6.OnCheck.BorderThickness = 2;
+            this.cb6.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb6.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.cb6.OnCheck.CheckmarkThickness = 2;
+            this.cb6.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.cb6.OnDisable.BorderRadius = 12;
+            this.cb6.OnDisable.BorderThickness = 2;
+            this.cb6.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb6.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.cb6.OnDisable.CheckmarkThickness = 2;
+            this.cb6.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cb6.OnHoverChecked.BorderRadius = 12;
+            this.cb6.OnHoverChecked.BorderThickness = 2;
+            this.cb6.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb6.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.cb6.OnHoverChecked.CheckmarkThickness = 2;
+            this.cb6.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb6.OnHoverUnchecked.BorderRadius = 12;
+            this.cb6.OnHoverUnchecked.BorderThickness = 1;
+            this.cb6.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb6.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.cb6.OnUncheck.BorderRadius = 12;
+            this.cb6.OnUncheck.BorderThickness = 1;
+            this.cb6.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb6.Size = new System.Drawing.Size(16, 16);
+            this.cb6.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.cb6.TabIndex = 2;
+            this.cb6.Tag = "Inactivo";
+            this.cb6.ThreeState = false;
+            this.cb6.ToolTipText = null;
+            // 
+            // cb7
+            // 
+            this.cb7.AllowBindingControlAnimation = true;
+            this.cb7.AllowBindingControlColorChanges = false;
+            this.cb7.AllowBindingControlLocation = true;
+            this.cb7.AllowCheckBoxAnimation = false;
+            this.cb7.AllowCheckmarkAnimation = true;
+            this.cb7.AllowOnHoverStates = true;
+            this.cb7.AutoCheck = true;
+            this.cb7.BackColor = System.Drawing.Color.Transparent;
+            this.cb7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cb7.BackgroundImage")));
+            this.cb7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cb7.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.cb7.BorderRadius = 12;
+            this.cb7.Checked = false;
+            this.cb7.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.cb7.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cb7.CustomCheckmarkImage = null;
+            this.cb7.Location = new System.Drawing.Point(3, 47);
+            this.cb7.MinimumSize = new System.Drawing.Size(15, 15);
+            this.cb7.Name = "cb7";
+            this.cb7.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb7.OnCheck.BorderRadius = 12;
+            this.cb7.OnCheck.BorderThickness = 2;
+            this.cb7.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb7.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.cb7.OnCheck.CheckmarkThickness = 2;
+            this.cb7.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.cb7.OnDisable.BorderRadius = 12;
+            this.cb7.OnDisable.BorderThickness = 2;
+            this.cb7.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb7.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.cb7.OnDisable.CheckmarkThickness = 2;
+            this.cb7.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cb7.OnHoverChecked.BorderRadius = 12;
+            this.cb7.OnHoverChecked.BorderThickness = 2;
+            this.cb7.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb7.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.cb7.OnHoverChecked.CheckmarkThickness = 2;
+            this.cb7.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb7.OnHoverUnchecked.BorderRadius = 12;
+            this.cb7.OnHoverUnchecked.BorderThickness = 1;
+            this.cb7.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb7.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.cb7.OnUncheck.BorderRadius = 12;
+            this.cb7.OnUncheck.BorderThickness = 1;
+            this.cb7.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb7.Size = new System.Drawing.Size(16, 16);
+            this.cb7.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.cb7.TabIndex = 3;
+            this.cb7.Tag = "Maternidad";
+            this.cb7.ThreeState = false;
+            this.cb7.ToolTipText = null;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 1;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.label5, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(44, 3);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 4;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(350, 88);
+            this.tableLayoutPanel7.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(344, 16);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Deshabilitado";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(344, 16);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Completado";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(344, 16);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "En proceso";
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 2;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.34483F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.65517F));
+            this.tableLayoutPanel13.Controls.Add(this.flowLayoutPanel4, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 1, 0);
+            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 1;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(275, 94);
+            this.tableLayoutPanel13.TabIndex = 98;
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(this.cb1);
+            this.flowLayoutPanel4.Controls.Add(this.cb2);
+            this.flowLayoutPanel4.Controls.Add(this.cb3);
+            this.flowLayoutPanel4.Controls.Add(this.cb4);
+            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(22, 88);
+            this.flowLayoutPanel4.TabIndex = 0;
+            // 
+            // cb1
+            // 
+            this.cb1.AllowBindingControlAnimation = true;
+            this.cb1.AllowBindingControlColorChanges = false;
+            this.cb1.AllowBindingControlLocation = true;
+            this.cb1.AllowCheckBoxAnimation = false;
+            this.cb1.AllowCheckmarkAnimation = true;
+            this.cb1.AllowOnHoverStates = true;
+            this.cb1.AutoCheck = true;
+            this.cb1.BackColor = System.Drawing.Color.Transparent;
+            this.cb1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cb1.BackgroundImage")));
+            this.cb1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cb1.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.cb1.BorderRadius = 12;
+            this.cb1.Checked = false;
+            this.cb1.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.cb1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cb1.CustomCheckmarkImage = null;
+            this.cb1.Location = new System.Drawing.Point(3, 3);
+            this.cb1.MinimumSize = new System.Drawing.Size(15, 15);
+            this.cb1.Name = "cb1";
+            this.cb1.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb1.OnCheck.BorderRadius = 12;
+            this.cb1.OnCheck.BorderThickness = 2;
+            this.cb1.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb1.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.cb1.OnCheck.CheckmarkThickness = 2;
+            this.cb1.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.cb1.OnDisable.BorderRadius = 12;
+            this.cb1.OnDisable.BorderThickness = 2;
+            this.cb1.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb1.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.cb1.OnDisable.CheckmarkThickness = 2;
+            this.cb1.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cb1.OnHoverChecked.BorderRadius = 12;
+            this.cb1.OnHoverChecked.BorderThickness = 2;
+            this.cb1.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb1.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.cb1.OnHoverChecked.CheckmarkThickness = 2;
+            this.cb1.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb1.OnHoverUnchecked.BorderRadius = 12;
+            this.cb1.OnHoverUnchecked.BorderThickness = 1;
+            this.cb1.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb1.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.cb1.OnUncheck.BorderRadius = 12;
+            this.cb1.OnUncheck.BorderThickness = 1;
+            this.cb1.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb1.Size = new System.Drawing.Size(16, 16);
+            this.cb1.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.cb1.TabIndex = 1;
+            this.cb1.Tag = "Activo";
+            this.cb1.ThreeState = false;
+            this.cb1.ToolTipText = null;
+            // 
+            // cb2
+            // 
+            this.cb2.AllowBindingControlAnimation = true;
+            this.cb2.AllowBindingControlColorChanges = false;
+            this.cb2.AllowBindingControlLocation = true;
+            this.cb2.AllowCheckBoxAnimation = false;
+            this.cb2.AllowCheckmarkAnimation = true;
+            this.cb2.AllowOnHoverStates = true;
+            this.cb2.AutoCheck = true;
+            this.cb2.BackColor = System.Drawing.Color.Transparent;
+            this.cb2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cb2.BackgroundImage")));
+            this.cb2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cb2.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.cb2.BorderRadius = 12;
+            this.cb2.Checked = false;
+            this.cb2.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.cb2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cb2.CustomCheckmarkImage = null;
+            this.cb2.Location = new System.Drawing.Point(3, 25);
+            this.cb2.MinimumSize = new System.Drawing.Size(15, 15);
+            this.cb2.Name = "cb2";
+            this.cb2.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb2.OnCheck.BorderRadius = 12;
+            this.cb2.OnCheck.BorderThickness = 2;
+            this.cb2.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb2.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.cb2.OnCheck.CheckmarkThickness = 2;
+            this.cb2.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.cb2.OnDisable.BorderRadius = 12;
+            this.cb2.OnDisable.BorderThickness = 2;
+            this.cb2.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb2.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.cb2.OnDisable.CheckmarkThickness = 2;
+            this.cb2.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cb2.OnHoverChecked.BorderRadius = 12;
+            this.cb2.OnHoverChecked.BorderThickness = 2;
+            this.cb2.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb2.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.cb2.OnHoverChecked.CheckmarkThickness = 2;
+            this.cb2.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb2.OnHoverUnchecked.BorderRadius = 12;
+            this.cb2.OnHoverUnchecked.BorderThickness = 1;
+            this.cb2.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb2.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.cb2.OnUncheck.BorderRadius = 12;
+            this.cb2.OnUncheck.BorderThickness = 1;
+            this.cb2.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb2.Size = new System.Drawing.Size(16, 16);
+            this.cb2.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.cb2.TabIndex = 2;
+            this.cb2.Tag = "Inactivo";
+            this.cb2.ThreeState = false;
+            this.cb2.ToolTipText = null;
+            // 
+            // cb3
+            // 
+            this.cb3.AllowBindingControlAnimation = true;
+            this.cb3.AllowBindingControlColorChanges = false;
+            this.cb3.AllowBindingControlLocation = true;
+            this.cb3.AllowCheckBoxAnimation = false;
+            this.cb3.AllowCheckmarkAnimation = true;
+            this.cb3.AllowOnHoverStates = true;
+            this.cb3.AutoCheck = true;
+            this.cb3.BackColor = System.Drawing.Color.Transparent;
+            this.cb3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cb3.BackgroundImage")));
+            this.cb3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cb3.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.cb3.BorderRadius = 12;
+            this.cb3.Checked = false;
+            this.cb3.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.cb3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cb3.CustomCheckmarkImage = null;
+            this.cb3.Location = new System.Drawing.Point(3, 47);
+            this.cb3.MinimumSize = new System.Drawing.Size(15, 15);
+            this.cb3.Name = "cb3";
+            this.cb3.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb3.OnCheck.BorderRadius = 12;
+            this.cb3.OnCheck.BorderThickness = 2;
+            this.cb3.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb3.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.cb3.OnCheck.CheckmarkThickness = 2;
+            this.cb3.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.cb3.OnDisable.BorderRadius = 12;
+            this.cb3.OnDisable.BorderThickness = 2;
+            this.cb3.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb3.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.cb3.OnDisable.CheckmarkThickness = 2;
+            this.cb3.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cb3.OnHoverChecked.BorderRadius = 12;
+            this.cb3.OnHoverChecked.BorderThickness = 2;
+            this.cb3.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb3.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.cb3.OnHoverChecked.CheckmarkThickness = 2;
+            this.cb3.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb3.OnHoverUnchecked.BorderRadius = 12;
+            this.cb3.OnHoverUnchecked.BorderThickness = 1;
+            this.cb3.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb3.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.cb3.OnUncheck.BorderRadius = 12;
+            this.cb3.OnUncheck.BorderThickness = 1;
+            this.cb3.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb3.Size = new System.Drawing.Size(16, 16);
+            this.cb3.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.cb3.TabIndex = 3;
+            this.cb3.Tag = "Maternidad";
+            this.cb3.ThreeState = false;
+            this.cb3.ToolTipText = null;
+            // 
+            // cb4
+            // 
+            this.cb4.AllowBindingControlAnimation = true;
+            this.cb4.AllowBindingControlColorChanges = false;
+            this.cb4.AllowBindingControlLocation = true;
+            this.cb4.AllowCheckBoxAnimation = false;
+            this.cb4.AllowCheckmarkAnimation = true;
+            this.cb4.AllowOnHoverStates = true;
+            this.cb4.AutoCheck = true;
+            this.cb4.BackColor = System.Drawing.Color.Transparent;
+            this.cb4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cb4.BackgroundImage")));
+            this.cb4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cb4.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.cb4.BorderRadius = 12;
+            this.cb4.Checked = false;
+            this.cb4.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.cb4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cb4.CustomCheckmarkImage = null;
+            this.cb4.Location = new System.Drawing.Point(3, 69);
+            this.cb4.MinimumSize = new System.Drawing.Size(15, 15);
+            this.cb4.Name = "cb4";
+            this.cb4.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb4.OnCheck.BorderRadius = 12;
+            this.cb4.OnCheck.BorderThickness = 2;
+            this.cb4.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb4.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.cb4.OnCheck.CheckmarkThickness = 2;
+            this.cb4.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.cb4.OnDisable.BorderRadius = 12;
+            this.cb4.OnDisable.BorderThickness = 2;
+            this.cb4.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb4.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.cb4.OnDisable.CheckmarkThickness = 2;
+            this.cb4.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.cb4.OnHoverChecked.BorderRadius = 12;
+            this.cb4.OnHoverChecked.BorderThickness = 2;
+            this.cb4.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb4.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.cb4.OnHoverChecked.CheckmarkThickness = 2;
+            this.cb4.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(46)))), ((int)(((byte)(33)))));
+            this.cb4.OnHoverUnchecked.BorderRadius = 12;
+            this.cb4.OnHoverUnchecked.BorderThickness = 1;
+            this.cb4.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb4.OnUncheck.BorderColor = System.Drawing.Color.DarkGray;
+            this.cb4.OnUncheck.BorderRadius = 12;
+            this.cb4.OnUncheck.BorderThickness = 1;
+            this.cb4.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.cb4.Size = new System.Drawing.Size(16, 16);
+            this.cb4.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.cb4.TabIndex = 4;
+            this.cb4.Tag = "Incapacidad";
+            this.cb4.ThreeState = false;
+            this.cb4.ToolTipText = null;
+            // 
+            // tableLayoutPanel14
+            // 
+            this.tableLayoutPanel14.ColumnCount = 1;
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel14.Controls.Add(this.label17, 0, 3);
+            this.tableLayoutPanel14.Controls.Add(this.label18, 0, 2);
+            this.tableLayoutPanel14.Controls.Add(this.label19, 0, 1);
+            this.tableLayoutPanel14.Controls.Add(this.label20, 0, 0);
+            this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(31, 3);
+            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
+            this.tableLayoutPanel14.RowCount = 4;
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(241, 88);
+            this.tableLayoutPanel14.TabIndex = 1;
+            // 
+            // label17
+            // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(3, 68);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(235, 16);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Permiso";
+            // 
+            // label18
+            // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(3, 46);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(235, 16);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Maternidad";
+            // 
+            // label19
+            // 
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(3, 25);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(235, 16);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Paternidad";
+            // 
+            // label20
+            // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(3, 3);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(235, 16);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Incapacidad";
             // 
             // btnDeletePermission
             // 
@@ -377,7 +951,7 @@
             this.btnDeletePermission.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnDeletePermission.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeletePermission.BackgroundImage")));
             this.btnDeletePermission.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnDeletePermission.ButtonText = "Eliminar permiso";
+            this.btnDeletePermission.ButtonText = "Deshabilitar permisos";
             this.btnDeletePermission.ButtonTextMarginLeft = 0;
             this.btnDeletePermission.ColorContrastOnClick = 45;
             this.btnDeletePermission.ColorContrastOnHover = 45;
@@ -410,7 +984,7 @@
             this.btnDeletePermission.IdleIconLeftImage = null;
             this.btnDeletePermission.IdleIconRightImage = null;
             this.btnDeletePermission.IndicateFocus = false;
-            this.btnDeletePermission.Location = new System.Drawing.Point(706, 29);
+            this.btnDeletePermission.Location = new System.Drawing.Point(749, 21);
             this.btnDeletePermission.Name = "btnDeletePermission";
             this.btnDeletePermission.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDeletePermission.OnDisabledState.BorderRadius = 20;
@@ -500,7 +1074,7 @@
             this.btnGeneratePermission.IdleIconLeftImage = null;
             this.btnGeneratePermission.IdleIconRightImage = null;
             this.btnGeneratePermission.IndicateFocus = false;
-            this.btnGeneratePermission.Location = new System.Drawing.Point(923, 29);
+            this.btnGeneratePermission.Location = new System.Drawing.Point(966, 21);
             this.btnGeneratePermission.Name = "btnGeneratePermission";
             this.btnGeneratePermission.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnGeneratePermission.OnDisabledState.BorderRadius = 20;
@@ -547,9 +1121,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1131, 609);
+            this.ClientSize = new System.Drawing.Size(1183, 688);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPermissions";
             this.Text = "FrmMaternity";
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -560,6 +1133,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermissions)).EndInit();
             this.cmsPermission.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
+            this.tableLayoutPanel13.ResumeLayout(false);
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel14.ResumeLayout(false);
+            this.tableLayoutPanel14.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -580,5 +1161,25 @@
         public System.Windows.Forms.ToolStripMenuItem cmsDeletePermission;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnDeletePermission;
         public Bunifu.UI.WinForms.BunifuTextBox txtEmployeeSearch;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        public Bunifu.UI.WinForms.BunifuCheckBox cb1;
+        public Bunifu.UI.WinForms.BunifuCheckBox cb2;
+        public Bunifu.UI.WinForms.BunifuCheckBox cb3;
+        public Bunifu.UI.WinForms.BunifuCheckBox cb4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public Bunifu.UI.WinForms.BunifuCheckBox cb5;
+        public Bunifu.UI.WinForms.BunifuCheckBox cb6;
+        public Bunifu.UI.WinForms.BunifuCheckBox cb7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

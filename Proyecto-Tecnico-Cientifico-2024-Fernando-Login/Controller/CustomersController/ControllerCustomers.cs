@@ -35,7 +35,7 @@ namespace PTC2024.Controller.CustomersController
             //Evento para eliminar un cliente
             objCustomers.cmsEliminarCliente.Click += new EventHandler(DeleteCustomer);
             //Evento para buscar clientes 
-            objCustomers.txtSearch.KeyPress += new KeyPressEventHandler(Search);
+            objCustomers.txtSearch.KeyDown += new KeyEventHandler(Search);
             //Evento para abrir reporte general
             objCustomers.btnReportCustomers.Click += new EventHandler(OpenGeneralReport);
 
@@ -164,17 +164,24 @@ namespace PTC2024.Controller.CustomersController
         }
 
         //Metodo para buscar un cliente 
-        public void Search(object sender, EventArgs e)
+        public void Search(object sender, KeyEventArgs e)
         {
-            DAOCustomers dAOCustomers = new DAOCustomers();
+            if (e.KeyCode == Keys.Enter)
+            {
+                DAOCustomers dAOCustomers = new DAOCustomers();
 
-            //Aca se le da valor al atributo de la clase (con el textbox del search)
-            dAOCustomers.Search = objCustomers.txtSearch.Text;
+                //Aca se le da valor al atributo de la clase (con el textbox del search)
+                dAOCustomers.Search = objCustomers.txtSearch.Text;
 
-            //Se captura la respuesta del metodo SearchData del DAO y se le agrega su respectivo parametro
-            DataSet respuesta = dAOCustomers.SearchData(dAOCustomers.Search);
-            //Se le dice al DataGridView lo que tiene que mostrar (Vista de los clientes)
-            objCustomers.dgvCustomers.DataSource = respuesta.Tables["viewCustomers"];
+                //Se captura la respuesta del metodo SearchData del DAO y se le agrega su respectivo parametro
+                DataSet respuesta = dAOCustomers.SearchData(dAOCustomers.Search);
+                //Se le dice al DataGridView lo que tiene que mostrar (Vista de los clientes)
+                objCustomers.dgvCustomers.DataSource = respuesta.Tables["viewCustomers"];
+            }
+            if (objCustomers.txtSearch.Text == string.Empty)
+            {
+                refreshData();
+            }
         }
 
         public void ViewClientInfo (object sender, EventArgs e)

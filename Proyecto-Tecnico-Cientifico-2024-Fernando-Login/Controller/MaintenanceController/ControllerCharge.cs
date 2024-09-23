@@ -18,47 +18,10 @@ namespace PTC2024.Controller.MaintenanceController
         {
             objCharge = View;
             objCharge.Load += new EventHandler(LoadData);
-            objCharge.btnAddCharge.Click += new EventHandler(NewCharge);
             objCharge.cmsDeleteCharge.Click += new EventHandler(DeleteCharge);
             objCharge.cmsUpdateCharge.Click += new EventHandler(OpenUdateCharge);
             objCharge.btnGoBack.Click += new EventHandler(GoBack);
         }
-        public void NewCharge(object sender, EventArgs e)
-        {
-            if (!(string.IsNullOrEmpty(objCharge.txtCharge.Text.Trim()) || string.IsNullOrEmpty(objCharge.txtBonus.Text.Trim())))
-            {
-                DAOCharge DAOInsert = new DAOCharge();
-                DAOInsert.NameCharge = objCharge.txtCharge.Text.Trim();
-                DAOInsert.BonusCharge = double.Parse(objCharge.txtBonus.Text.Trim());
-                int returnedValue = DAOInsert.AddCharge();
-                if (returnedValue == 1)
-                {
-                    MessageBox.Show("Los datos han sido registrados exitosamente",
-                "Proceso completado",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Los datos no pudieron ser registrados",
-                                    "Proceso interrumpido",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("No se han llenado todos los campos solicitados, favor llenarlos",
-                                "Completar campos",
-                                MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-            }
-            RefreshData();
-            objCharge.txtCharge.Clear();
-            objCharge.txtBonus.Clear();
-        }
-
-
         public void DeleteCharge(object sender, EventArgs e)
         {
             if (MessageBox.Show("Estas seguro de borrar los datos, esta accion no se puede revertir", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

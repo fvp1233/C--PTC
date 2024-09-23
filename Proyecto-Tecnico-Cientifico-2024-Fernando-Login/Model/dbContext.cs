@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
+using PTC2024.Model.DTO.HelperDTO;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -25,10 +26,10 @@ namespace PTC2024.Model
         {
             try
             {
-                string server = "SQL8005.site4now.net";
-                string database = "db_aaa7ca_ricaldone";
-                string userId = "db_aaa7ca_ricaldone_admin";
-                string Password = "Master2024";
+                string server = DTOXMLConnection.Server;
+                string database = DTOXMLConnection.Database;
+                string userId = DTOXMLConnection.User;
+                string Password = DTOXMLConnection.Password;
                 SqlConnection conexion = new SqlConnection($"Server = {server}; DataBase = {database}; User Id = {userId}; Password = {Password}");
                 conexion.Open();
                 return conexion;
@@ -37,6 +38,22 @@ namespace PTC2024.Model
             catch (SqlException ex)
             {
                 MessageBox.Show("Código de error: EC-001 \nNo fue posible conectarse a la base de datos, favor verifique las credenciales o que tenga acceso al sistema.", "Error crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        //Prueba de conexión
+        public static SqlConnection VerifyConnection(string server, string database, string user, string password)
+        {
+            try
+            {
+                SqlConnection conexion = new SqlConnection($"Server = {server}; DataBase = {database}; User Id = {user}; Password = {password}");
+                conexion.Open();
+                return conexion;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"{ex.Message} Código de error: EC-001 \nNo fue posible conectarse a la base de datos, verifique las credenciales, consulte el manual de usuario.", "Error crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }

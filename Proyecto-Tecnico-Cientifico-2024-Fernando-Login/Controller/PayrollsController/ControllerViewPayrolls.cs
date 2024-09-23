@@ -1,5 +1,6 @@
 ﻿using PTC2024.Controller.Helper;
 using PTC2024.Controller.StartMenuController;
+using PTC2024.Model.DAO.CustomersDAO;
 using PTC2024.Model.DAO.PayrollsDAO;
 using PTC2024.View.Empleados;
 using PTC2024.View.formularios.inicio;
@@ -25,8 +26,7 @@ namespace PTC2024.Controller.EmployeesController
         public ControllerViewPayrolls(FrmViewPayrolls Vista)
         {
             objViewPayrolls = Vista;
-            objViewPayrolls.Load += new EventHandler(LoadData);
-            objViewPayrolls.picNotification.Click += new EventHandler(ChangeStatus);
+            //objViewPayrolls.Load += new EventHandler(LoadData);
             objViewPayrolls.btnAll.Click += new EventHandler(SearchAll);
             objViewPayrolls.btnFirstT.Click += new EventHandler(SearchByFirstTrimester);
             objViewPayrolls.btnSecondT.Click += new EventHandler(SearchBySecondTrimester);
@@ -56,38 +56,8 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.cmsPayPayroll.Click += new EventHandler(UpdatePayrollPaid);
             objViewPayrolls.cmsUpdateUnpaid.Click += new EventHandler(UpdatePayrollToUnpaid);
             objViewPayrolls.cmsPayrollInformation.Click += new EventHandler(ViewInfoPayroll);
-            objViewPayrolls.txtSearch.KeyPress += new KeyPressEventHandler(SearchPayrollEvent);
+            objViewPayrolls.txtSearch.KeyDown += new KeyEventHandler(SearchPayrollEvent);
             objViewPayrolls.txtSearch.TextChanged += new EventHandler(OnlyLetters);
-        }
-
-        private void ChangeStatus(object sender, EventArgs e)
-        {
-            DAOViewPayrolls DAOUpdatePayroll = new DAOViewPayrolls();
-            DataSet employeeDs = DAOUpdatePayroll.GetEmployee();
-
-            if (employeeDs != null)
-            {
-                DataTable employeeDt = employeeDs.Tables["tbEmployee"];
-
-                foreach (DataRow row in employeeDt.Rows)
-                {
-                    int status = int.Parse(row["IdStatus"].ToString());
-                    if (status == 3) // Maternidad
-                    {
-                        // Obtener el nombre del empleado
-                        string employeeName = row["DUI"].ToString(); // Asegúrate de que "EmployeeName" es el nombre de la columna
-
-                        // Usar la fecha actual como la fecha de cambio de estado
-                        DateTime statusChangeDate = DateTime.Now;
-                        DateTime returnDate = statusChangeDate.AddDays(112);
-
-                        string message = $"El estado de la empleada {employeeName} cambió a maternidad hoy, {statusChangeDate.ToShortDateString()}.\n" +
-                                         $"Se espera su regreso el {returnDate.ToShortDateString()}.";
-
-                        MessageBox.Show(message, "Información de Maternidad", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-            }
         }
         public double TruncateToTwoDecimals(double value)
         {
@@ -690,9 +660,13 @@ namespace PTC2024.Controller.EmployeesController
         }
         #endregion
         //------------------Busqueda----------------------//
-        public void SearchPayrollEvent(object sender, KeyPressEventArgs e)
+        public void SearchPayrollEvent(object sender, KeyEventArgs e)
         {
-            SearchPayroll();
+            if (e.KeyCode == Keys.Enter)
+            {
+                SearchPayroll();
+
+            }
         }
         void SearchPayroll()
         {
@@ -831,152 +805,351 @@ namespace PTC2024.Controller.EmployeesController
         }
         public void SearchByMonth1(object sender, EventArgs e)
         {
-            DAOViewPayrolls objSearch = new DAOViewPayrolls();
-            DataSet ds = objSearch.SearchPayrollJanuary();
-            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
-            if (objViewPayrolls.ch1.Checked == false)
+
+            if (objViewPayrolls.ch1.Checked == true)
             {
-                RefreshData();
+                DAOViewPayrolls objSearch = new DAOViewPayrolls();
+                DataSet ds = objSearch.SearchPayrollJanuary();
+                objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+                objViewPayrolls.ch2.Checked = false;
+                objViewPayrolls.ch3.Checked = false;
+                objViewPayrolls.ch4.Checked = false;
+                objViewPayrolls.ch5.Checked = false;
+                objViewPayrolls.ch6.Checked = false;
+                objViewPayrolls.ch7.Checked = false;
+                objViewPayrolls.ch8.Checked = false;
+                objViewPayrolls.ch9.Checked = false;
+                objViewPayrolls.ch10.Checked = false;
+                objViewPayrolls.ch11.Checked = false;
+                objViewPayrolls.ch12.Checked = false;
+                objViewPayrolls.chPaid.Checked = false;
+                objViewPayrolls.chuUnpaid.Checked = false;
+                objViewPayrolls.chCompensation.Checked = false;
             }
         }
         public void SearchByMonth2(object sender, EventArgs e)
         {
-            DAOViewPayrolls objSearch = new DAOViewPayrolls();
-            DataSet ds = objSearch.SearchPayrollFebruary();
-            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
-            if (objViewPayrolls.ch2.Checked == false)
+            if (objViewPayrolls.ch2.Checked == true)
             {
-                RefreshData();
+                DAOViewPayrolls objSearch = new DAOViewPayrolls();
+                DataSet ds = objSearch.SearchPayrollFebruary();
+                objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+                objViewPayrolls.ch1.Checked = false;
+                objViewPayrolls.ch3.Checked = false;
+                objViewPayrolls.ch4.Checked = false;
+                objViewPayrolls.ch5.Checked = false;
+                objViewPayrolls.ch6.Checked = false;
+                objViewPayrolls.ch7.Checked = false;
+                objViewPayrolls.ch8.Checked = false;
+                objViewPayrolls.ch9.Checked = false;
+                objViewPayrolls.ch10.Checked = false;
+                objViewPayrolls.ch11.Checked = false;
+                objViewPayrolls.ch12.Checked = false;
+                objViewPayrolls.chPaid.Checked = false;
+                objViewPayrolls.chuUnpaid.Checked = false;
+                objViewPayrolls.chCompensation.Checked = false;
             }
         }
         public void SearchByMonth3(object sender, EventArgs e)
         {
-            DAOViewPayrolls objSearch = new DAOViewPayrolls();
-            DataSet ds = objSearch.SearchPayrollMarch();
-            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
-            if (objViewPayrolls.ch3.Checked == false)
+
+            if (objViewPayrolls.ch3.Checked == true)
             {
-                RefreshData();
+                DAOViewPayrolls objSearch = new DAOViewPayrolls();
+                DataSet ds = objSearch.SearchPayrollMarch();
+                objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+                objViewPayrolls.ch2.Checked = false;
+                objViewPayrolls.ch1.Checked = false;
+                objViewPayrolls.ch4.Checked = false;
+                objViewPayrolls.ch5.Checked = false;
+                objViewPayrolls.ch6.Checked = false;
+                objViewPayrolls.ch7.Checked = false;
+                objViewPayrolls.ch8.Checked = false;
+                objViewPayrolls.ch9.Checked = false;
+                objViewPayrolls.ch10.Checked = false;
+                objViewPayrolls.ch11.Checked = false;
+                objViewPayrolls.ch12.Checked = false;
+                objViewPayrolls.chPaid.Checked = false;
+                objViewPayrolls.chuUnpaid.Checked = false;
+                objViewPayrolls.chCompensation.Checked = false;
             }
         }
         public void SearchByMonth4(object sender, EventArgs e)
         {
-            DAOViewPayrolls objSearch = new DAOViewPayrolls();
-            DataSet ds = objSearch.SearchPayrollApril();
-            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
-            if (objViewPayrolls.ch4.Checked == false)
+            if (objViewPayrolls.ch4.Checked == true)
             {
-                RefreshData();
+                DAOViewPayrolls objSearch = new DAOViewPayrolls();
+                DataSet ds = objSearch.SearchPayrollApril();
+                objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+                objViewPayrolls.ch2.Checked = false;
+                objViewPayrolls.ch1.Checked = false;
+                objViewPayrolls.ch3.Checked = false;
+                objViewPayrolls.ch5.Checked = false;
+                objViewPayrolls.ch6.Checked = false;
+                objViewPayrolls.ch7.Checked = false;
+                objViewPayrolls.ch8.Checked = false;
+                objViewPayrolls.ch9.Checked = false;
+                objViewPayrolls.ch10.Checked = false;
+                objViewPayrolls.ch11.Checked = false;
+                objViewPayrolls.ch12.Checked = false;
+                objViewPayrolls.chPaid.Checked = false;
+                objViewPayrolls.chuUnpaid.Checked = false;
+                objViewPayrolls.chCompensation.Checked = false;
             }
         }
         public void SearchByMonth5(object sender, EventArgs e)
         {
-            DAOViewPayrolls objSearch = new DAOViewPayrolls();
-            DataSet ds = objSearch.SearchPayrollMay();
-            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
-            if (objViewPayrolls.ch5.Checked == false)
+            if (objViewPayrolls.ch5.Checked == true)
             {
-                RefreshData();
+                DAOViewPayrolls objSearch = new DAOViewPayrolls();
+                DataSet ds = objSearch.SearchPayrollMay();
+                objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+                objViewPayrolls.ch2.Checked = false;
+                objViewPayrolls.ch1.Checked = false;
+                objViewPayrolls.ch3.Checked = false;
+                objViewPayrolls.ch4.Checked = false;
+                objViewPayrolls.ch6.Checked = false;
+                objViewPayrolls.ch7.Checked = false;
+                objViewPayrolls.ch8.Checked = false;
+                objViewPayrolls.ch9.Checked = false;
+                objViewPayrolls.ch10.Checked = false;
+                objViewPayrolls.ch11.Checked = false;
+                objViewPayrolls.ch12.Checked = false;
+                objViewPayrolls.chPaid.Checked = false;
+                objViewPayrolls.chuUnpaid.Checked = false;
+                objViewPayrolls.chCompensation.Checked = false;
             }
         }
         public void SearchByMonth6(object sender, EventArgs e)
         {
-            DAOViewPayrolls objSearch = new DAOViewPayrolls();
-            DataSet ds = objSearch.SearchPayrollJune();
-            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
-            if (objViewPayrolls.ch6.Checked == false)
+            if (objViewPayrolls.ch6.Checked == true)
             {
-                RefreshData();
+                DAOViewPayrolls objSearch = new DAOViewPayrolls();
+                DataSet ds = objSearch.SearchPayrollJune();
+                objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+                objViewPayrolls.ch2.Checked = false;
+                objViewPayrolls.ch1.Checked = false;
+                objViewPayrolls.ch3.Checked = false;
+                objViewPayrolls.ch4.Checked = false;
+                objViewPayrolls.ch5.Checked = false;
+                objViewPayrolls.ch7.Checked = false;
+                objViewPayrolls.ch8.Checked = false;
+                objViewPayrolls.ch9.Checked = false;
+                objViewPayrolls.ch10.Checked = false;
+                objViewPayrolls.ch11.Checked = false;
+                objViewPayrolls.ch12.Checked = false;
+                objViewPayrolls.chPaid.Checked = false;
+                objViewPayrolls.chuUnpaid.Checked = false;
+                objViewPayrolls.chCompensation.Checked = false;
             }
         }
         public void SearchByMonth7(object sender, EventArgs e)
         {
-            DAOViewPayrolls objSearch = new DAOViewPayrolls();
-            DataSet ds = objSearch.SearchPayrollJuly();
-            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
-            if (objViewPayrolls.ch7.Checked == false)
+            if (objViewPayrolls.ch7.Checked == true)
             {
-                RefreshData();
+                DAOViewPayrolls objSearch = new DAOViewPayrolls();
+                DataSet ds = objSearch.SearchPayrollJuly();
+                objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+                objViewPayrolls.ch2.Checked = false;
+                objViewPayrolls.ch1.Checked = false;
+                objViewPayrolls.ch3.Checked = false;
+                objViewPayrolls.ch4.Checked = false;
+                objViewPayrolls.ch6.Checked = false;
+                objViewPayrolls.ch5.Checked = false;
+                objViewPayrolls.ch8.Checked = false;
+                objViewPayrolls.ch9.Checked = false;
+                objViewPayrolls.ch10.Checked = false;
+                objViewPayrolls.ch11.Checked = false;
+                objViewPayrolls.ch12.Checked = false;
+                objViewPayrolls.chPaid.Checked = false;
+                objViewPayrolls.chuUnpaid.Checked = false;
+                objViewPayrolls.chCompensation.Checked = false;
             }
         }
         public void SearchByMonth8(object sender, EventArgs e)
         {
-            DAOViewPayrolls objSearch = new DAOViewPayrolls();
-            DataSet ds = objSearch.SearchPayrollAgust();
-            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
-            if (objViewPayrolls.ch8.Checked == false)
+            if (objViewPayrolls.ch8.Checked == true)
             {
-                RefreshData();
+                DAOViewPayrolls objSearch = new DAOViewPayrolls();
+                DataSet ds = objSearch.SearchPayrollAgust();
+                objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+                objViewPayrolls.ch2.Checked = false;
+                objViewPayrolls.ch1.Checked = false;
+                objViewPayrolls.ch3.Checked = false;
+                objViewPayrolls.ch4.Checked = false;
+                objViewPayrolls.ch6.Checked = false;
+                objViewPayrolls.ch7.Checked = false;
+                objViewPayrolls.ch5.Checked = false;
+                objViewPayrolls.ch9.Checked = false;
+                objViewPayrolls.ch10.Checked = false;
+                objViewPayrolls.ch11.Checked = false;
+                objViewPayrolls.ch12.Checked = false;
+                objViewPayrolls.chPaid.Checked = false;
+                objViewPayrolls.chuUnpaid.Checked = false;
+                objViewPayrolls.chCompensation.Checked = false;
             }
         }
         public void SearchByMonth9(object sender, EventArgs e)
         {
-            DAOViewPayrolls objSearch = new DAOViewPayrolls();
-            DataSet ds = objSearch.SearchPayrollSeptember();
-            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
-            if (objViewPayrolls.ch9.Checked == false)
+            if (objViewPayrolls.ch9.Checked == true)
             {
-                RefreshData();
+                DAOViewPayrolls objSearch = new DAOViewPayrolls();
+                DataSet ds = objSearch.SearchPayrollSeptember();
+                objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+                objViewPayrolls.ch2.Checked = false;
+                objViewPayrolls.ch1.Checked = false;
+                objViewPayrolls.ch3.Checked = false;
+                objViewPayrolls.ch4.Checked = false;
+                objViewPayrolls.ch6.Checked = false;
+                objViewPayrolls.ch7.Checked = false;
+                objViewPayrolls.ch5.Checked = false;
+                objViewPayrolls.ch8.Checked = false;
+                objViewPayrolls.ch10.Checked = false;
+                objViewPayrolls.ch11.Checked = false;
+                objViewPayrolls.ch12.Checked = false;
+                objViewPayrolls.chPaid.Checked = false;
+                objViewPayrolls.chuUnpaid.Checked = false;
+                objViewPayrolls.chCompensation.Checked = false;
             }
         }
         public void SearchByMonth10(object sender, EventArgs e)
         {
-            DAOViewPayrolls objSearch = new DAOViewPayrolls();
-            DataSet ds = objSearch.SearchPayrollOctober();
-            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
-            if (objViewPayrolls.ch10.Checked == false)
+            if (objViewPayrolls.ch10.Checked == true)
             {
-                RefreshData();
+                DAOViewPayrolls objSearch = new DAOViewPayrolls();
+                DataSet ds = objSearch.SearchPayrollOctober();
+                objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+                objViewPayrolls.ch2.Checked = false;
+                objViewPayrolls.ch1.Checked = false;
+                objViewPayrolls.ch3.Checked = false;
+                objViewPayrolls.ch4.Checked = false;
+                objViewPayrolls.ch6.Checked = false;
+                objViewPayrolls.ch7.Checked = false;
+                objViewPayrolls.ch5.Checked = false;
+                objViewPayrolls.ch9.Checked = false;
+                objViewPayrolls.ch8.Checked = false;
+                objViewPayrolls.ch11.Checked = false;
+                objViewPayrolls.ch12.Checked = false;
+                objViewPayrolls.chPaid.Checked = false;
+                objViewPayrolls.chuUnpaid.Checked = false;
+                objViewPayrolls.chCompensation.Checked = false;
             }
         }
         public void SearchByMonth11(object sender, EventArgs e)
         {
-            DAOViewPayrolls objSearch = new DAOViewPayrolls();
-            DataSet ds = objSearch.SearchPayrollNovember();
-            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
-            if (objViewPayrolls.ch11.Checked == false)
+            if (objViewPayrolls.ch11.Checked == true)
             {
-                RefreshData();
+                DAOViewPayrolls objSearch = new DAOViewPayrolls();
+                DataSet ds = objSearch.SearchPayrollNovember();
+                objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+                objViewPayrolls.ch2.Checked = false;
+                objViewPayrolls.ch1.Checked = false;
+                objViewPayrolls.ch3.Checked = false;
+                objViewPayrolls.ch4.Checked = false;
+                objViewPayrolls.ch6.Checked = false;
+                objViewPayrolls.ch7.Checked = false;
+                objViewPayrolls.ch5.Checked = false;
+                objViewPayrolls.ch9.Checked = false;
+                objViewPayrolls.ch8.Checked = false;
+                objViewPayrolls.ch10.Checked = false;
+                objViewPayrolls.ch12.Checked = false;
+                objViewPayrolls.chPaid.Checked = false;
+                objViewPayrolls.chuUnpaid.Checked = false;
+                objViewPayrolls.chCompensation.Checked = false;
             }
         }
         public void SearchByMonth12(object sender, EventArgs e)
         {
-            DAOViewPayrolls objSearch = new DAOViewPayrolls();
-            DataSet ds = objSearch.SearchPayrollDecember();
-            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
-            if (objViewPayrolls.ch12.Checked == false)
+            if (objViewPayrolls.ch12.Checked == true)
             {
-                RefreshData();
+                DAOViewPayrolls objSearch = new DAOViewPayrolls();
+                DataSet ds = objSearch.SearchPayrollDecember();
+                objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+                objViewPayrolls.ch2.Checked = false;
+                objViewPayrolls.ch1.Checked = false;
+                objViewPayrolls.ch3.Checked = false;
+                objViewPayrolls.ch4.Checked = false;
+                objViewPayrolls.ch6.Checked = false;
+                objViewPayrolls.ch7.Checked = false;
+                objViewPayrolls.ch5.Checked = false;
+                objViewPayrolls.ch9.Checked = false;
+                objViewPayrolls.ch8.Checked = false;
+                objViewPayrolls.ch10.Checked = false;
+                objViewPayrolls.ch11.Checked = false;
+                objViewPayrolls.chPaid.Checked = false;
+                objViewPayrolls.chuUnpaid.Checked = false;
+                objViewPayrolls.chCompensation.Checked = false;
             }
         }
         public void SearchByPaid(object sender, EventArgs e)
         {
-            DAOViewPayrolls objSearch = new DAOViewPayrolls();
-            DataSet ds = objSearch.SearchPaidPayrols();
-            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
-            if (objViewPayrolls.chPaid.Checked == false)
+
+            if (objViewPayrolls.chPaid.Checked == true)
             {
-                RefreshData();
+                DAOViewPayrolls objSearch = new DAOViewPayrolls();
+                DataSet ds = objSearch.SearchPaidPayrols();
+                objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+                objViewPayrolls.ch2.Checked = false;
+                objViewPayrolls.ch12.Checked = false;
+                objViewPayrolls.ch1.Checked = false;
+                objViewPayrolls.ch3.Checked = false;
+                objViewPayrolls.ch4.Checked = false;
+                objViewPayrolls.ch6.Checked = false;
+                objViewPayrolls.ch7.Checked = false;
+                objViewPayrolls.ch5.Checked = false;
+                objViewPayrolls.ch9.Checked = false;
+                objViewPayrolls.ch8.Checked = false;
+                objViewPayrolls.ch10.Checked = false;
+                objViewPayrolls.ch11.Checked = false;
+                objViewPayrolls.chuUnpaid.Checked = false;
+                objViewPayrolls.chCompensation.Checked = false;
             }
         }
         public void SearchByUnpaid(object sender, EventArgs e)
         {
-            DAOViewPayrolls objSearch = new DAOViewPayrolls();
-            DataSet ds = objSearch.SearchUnpaidPayrols();
-            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
-            if (objViewPayrolls.chuUnpaid.Checked == false)
+
+            if (objViewPayrolls.chuUnpaid.Checked == true)
             {
-                RefreshData();
+                DAOViewPayrolls objSearch = new DAOViewPayrolls();
+                DataSet ds = objSearch.SearchUnpaidPayrols();
+                objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+                objViewPayrolls.ch2.Checked = false;
+                objViewPayrolls.ch12.Checked = false;
+                objViewPayrolls.ch1.Checked = false;
+                objViewPayrolls.ch3.Checked = false;
+                objViewPayrolls.ch4.Checked = false;
+                objViewPayrolls.ch6.Checked = false;
+                objViewPayrolls.ch7.Checked = false;
+                objViewPayrolls.ch5.Checked = false;
+                objViewPayrolls.ch9.Checked = false;
+                objViewPayrolls.ch8.Checked = false;
+                objViewPayrolls.ch10.Checked = false;
+                objViewPayrolls.ch11.Checked = false;
+                objViewPayrolls.chPaid.Checked = false;
+                objViewPayrolls.chCompensation.Checked = false;
             }
         }
         public void SearchByCompensation(object sender, EventArgs e)
         {
-            DAOViewPayrolls objSearch = new DAOViewPayrolls();
-            DataSet ds = objSearch.SearcCompensationPayrols();
-            objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
-            if (objViewPayrolls.chCompensation.Checked == false)
+            if (objViewPayrolls.chCompensation.Checked == true)
             {
-                RefreshData();
+                DAOViewPayrolls objSearch = new DAOViewPayrolls();
+                DataSet ds = objSearch.SearcCompensationPayrols();
+                objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
+                objViewPayrolls.ch2.Checked = false;
+                objViewPayrolls.ch12.Checked = false;
+                objViewPayrolls.ch1.Checked = false;
+                objViewPayrolls.ch3.Checked = false;
+                objViewPayrolls.ch4.Checked = false;
+                objViewPayrolls.ch6.Checked = false;
+                objViewPayrolls.ch7.Checked = false;
+                objViewPayrolls.ch5.Checked = false;
+                objViewPayrolls.ch9.Checked = false;
+                objViewPayrolls.ch8.Checked = false;
+                objViewPayrolls.ch10.Checked = false;
+                objViewPayrolls.ch11.Checked = false;
+                objViewPayrolls.chPaid.Checked = false;
+                objViewPayrolls.chuUnpaid.Checked = false;
             }
         }
         #endregion

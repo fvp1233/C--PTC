@@ -49,5 +49,36 @@ namespace PTC2024.Controller.Helper
                 return builder.ToString();
             }
         }
+
+        //Método para descifrar un texto 
+        public string DecodeString(string encodedString)
+        {
+            try
+            {
+                byte[] decodedBytes = Convert.FromBase64String(encodedString);
+                // Convertir los bytes a una cadena
+                string decodedString = Encoding.UTF8.GetString(decodedBytes);
+                return decodedString.ToString();
+            }
+            catch (Exception ex)
+            {
+                return $"Error al descifrar: {ex.Message}";
+            }
+        }
+
+        public string EncodeString(string stringToEncode)
+        {
+            try
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(stringToEncode);
+                //Codificación base 64 string
+                string base64String = Convert.ToBase64String(bytes);
+                return base64String;
+            }
+            catch (Exception)
+            {
+                return string.Empty;
+            }
+        }
     }
 }
