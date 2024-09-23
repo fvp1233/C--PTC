@@ -223,6 +223,8 @@ namespace PTC2024.Controller
                                             objAddEmployee.snackbar.Show(objMenu, $"Los datos del nuevo empleado fueron registrados.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
                                             SendEmail(newPass);
                                             objAddEmployee.Close();
+                                            Audits objAudits = new Audits();
+                                            objAudits.Audit();
                                         }
                                         else
                                         {

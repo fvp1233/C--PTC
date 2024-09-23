@@ -102,5 +102,28 @@ namespace PTC2024.Model.DAO.HelperDAO
                 getConnection().Close();
             }
         }
+        public int InsertAudit()
+        {
+            try
+            {
+                command.Connection = getConnection();
+                string query = "INSERT INTO tbAudits VALUES(@param1, @param2, @param3, @param4)";
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+                cmd.Parameters.AddWithValue("param1", ActionType);
+                cmd.Parameters.AddWithValue("param2", TableName);
+                cmd.Parameters.AddWithValue("param3", ActionBy);
+                cmd.Parameters.AddWithValue("param4", ActionDate);
+                int answer = cmd.ExecuteNonQuery();
+                return answer;
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
     }
 }

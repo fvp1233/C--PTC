@@ -22,7 +22,7 @@ namespace PTC2024.Model
         public string User { get => user; set => user = value; }
         public string Password { get => password; set => password = value; }
 
-        public static SqlConnection getConnection()
+        public static SqlConnection getConnections()
         {
             try
             {
@@ -59,24 +59,24 @@ namespace PTC2024.Model
         }
 
         #region GetConnection para conexión a una base de manera local
-        //public static SqlConnection getConnection()
-        //{
-        //    try
-        //    {
+        public static SqlConnection getConnection()
+        {
+            try
+            {
 
-        //        string server = "PC\\SQLEXPRESS";
-        //        string database = "DBPTC_H2C24";
+                string server = "DESKTOP-L1S3JL8";
+                string database = "DBPTC_H2C24";
 
-        //        SqlConnection conexion = new SqlConnection($"Server = {server}; DataBase = {database}; Integrated Security = true");
-        //        conexion.Open();
-        //        return conexion;
-        //    }
-        //    catch (SqlException ex)
-        //    {
-        //        MessageBox.Show("Código de error: EC-001 \nNo fue posible conectarse a la base de datos, favor verifique las credenciales o que tenga acceso al sistema.", "Error crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return null;
-        //    }
-        //}
+                SqlConnection conexion = new SqlConnection($"Server = {server}; DataBase = {database}; Integrated Security = true");
+                conexion.Open();
+                return conexion;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Código de error: EC-001 \nNo fue posible conectarse a la base de datos, favor verifique las credenciales o que tenga acceso al sistema.", "Error crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
         #endregion
     }
 }

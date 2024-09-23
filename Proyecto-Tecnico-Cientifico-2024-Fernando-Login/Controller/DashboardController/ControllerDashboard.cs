@@ -39,6 +39,8 @@ namespace PTC2024.Controller.DashboardController
             bool refreshData = dAODashboard.LoadData(objDashboard.dtpStart.Value, objDashboard.dtpEnd.Value);
             if (refreshData == true)
             {
+                ChargeData();
+
                 dAODashboard.NumberEmployee = dAODashboard.GetNumberEmployee();
                 objDashboard.lblCantEmployee.Text = dAODashboard.NumberEmployee.ToString();
 
@@ -89,6 +91,7 @@ namespace PTC2024.Controller.DashboardController
                 dAODashboard.TotalPay = dAODashboard.GetTotalIncome();
                 objDashboard.lblTotalIncome.Text = $"${dAODashboard.TotalPay:N2}";
 
+                ChargeData();
                 dAODashboard.GetAnalisys();
                 //objDashboard.chartPayrolls.DataSource = dAODashboard.PayrollsList;
                 objDashboard.chartPayrolls.Series[0].ChartArea = "ChartArea1";
@@ -115,35 +118,25 @@ namespace PTC2024.Controller.DashboardController
         }
         public void LoadDataBills(object sender, EventArgs e)
         {
-            ChargeData();
+            DAODashboard dAODashboard = new DAODashboard();
+            bool refreshData = dAODashboard.LoadData(objDashboard.dtpStart.Value, objDashboard.dtpEnd.Value);
+            if (refreshData == true)
+            {
+                ChargeData();
+            }
         }
         public void ChargeData()
         {
-            DAOBills dAOBills = new DAOBills();
-            DataSet ds = dAOBills.Bills();
-            //Llenando el datagridview
-            objDashboard.dgvBills.DataSource = ds.Tables["viewBill"];
-            objDashboard.dgvBills.Columns[0].DividerWidth = 1;
-            objDashboard.dgvBills.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            objDashboard.dgvBills.Columns[2].Visible = false;
-            objDashboard.dgvBills.Columns[3].Visible = false;
-            objDashboard.dgvBills.Columns[5].Visible = false;
-            objDashboard.dgvBills.Columns[6].Visible = false;
-            objDashboard.dgvBills.Columns[7].Visible = false;
-            objDashboard.dgvBills.Columns[8].Visible = false;
-            objDashboard.dgvBills.Columns[9].Visible = false;
-            objDashboard.dgvBills.Columns[10].Visible = false;
-            objDashboard.dgvBills.Columns[12].Visible = false;
-
-
-            //objFormBills.dgvBills.Columns[12].Visible = false;
-            objDashboard.dgvBills.Columns[13].Visible = false;
-            objDashboard.dgvBills.Columns[15].Visible = false;
-            objDashboard.dgvBills.Columns[14].Visible = false;
-            objDashboard.dgvBills.Columns[16].Visible = false;
-            objDashboard.dgvBills.Columns[17].Visible = false;
-            objDashboard.dgvBills.Columns[18].Visible = false;
-            objDashboard.dgvBills.Columns[19].Visible = false;
+            DAODashboard dAODashboard = new DAODashboard();
+            bool refreshData = dAODashboard.LoadData(objDashboard.dtpStart.Value, objDashboard.dtpEnd.Value);
+            if (refreshData == true)
+            {
+                DataSet ds = dAODashboard.GetAudits();
+                //Llenando el datagridview
+                objDashboard.dgvAudits.DataSource = ds.Tables["tbAudits"];
+                objDashboard.dgvAudits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+                objDashboard.dgvAudits.Columns[0].Visible = false;
+            }
 
         }
         public void YearRadialGauge()
