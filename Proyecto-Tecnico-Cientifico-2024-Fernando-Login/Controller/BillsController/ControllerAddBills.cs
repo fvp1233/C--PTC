@@ -23,6 +23,7 @@ using PTC2024.Controller.CustomersController;
 using PTC2024.Model.DAO.EmployeesDAO;
 using PTC2024.Controller.Helper;
 using PTC2024.View.formularios.inicio;
+using PTC2024.Model.DAO.HelperDAO;
 
 namespace PTC2024.Controller.BillsController
 {
@@ -33,6 +34,7 @@ namespace PTC2024.Controller.BillsController
         private string IdServices;
         private string customer;
         private DataSet reportDataSet;
+        StartMenu objStartMenu;
         public ControllerAddBills(FrmAddBills View, int accions)
         {
             objAddBills = View;
@@ -564,7 +566,17 @@ namespace PTC2024.Controller.BillsController
                 {
                     StartMenu startMenu = new StartMenu(SessionVar.Username);
                     startMenu.snackBar.Show(startMenu, $"Los datos se registraron de manera exitosa", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
-                   
+                    DAOInitialView daoInitial = new DAOInitialView();
+                    daoInitial.ActionType = "Se inserto una factura";
+                    daoInitial.TableName = "tbBills";
+                    daoInitial.ActionBy = SessionVar.Username;
+                    daoInitial.ActionDate = DateTime.Now;
+                    int auditAnswer = daoInitial.InsertAudit();
+                    if (auditAnswer != 1)
+                    {
+                        objStartMenu.snackBar.Show(objStartMenu, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    }
+
                     objAddBills.Close();
                 }
             }

@@ -16,12 +16,15 @@ using System.IO;
 using PTC2024.Model.DTO.BillsDTO;
 using PTC2024.View.Reporting.Bills;
 using PTC2024.View.formularios.inicio;
+using PTC2024.Model.DAO.HelperDAO;
+
 namespace PTC2024.Controller.BillsController
 {
     internal class ControllerBills
     {
         FrmBills objFormBills;
         Form currentForm;
+        StartMenu objStartMenu;
         int disabledBillId;
 
         public ControllerBills(FrmBills View)
@@ -371,6 +374,16 @@ namespace PTC2024.Controller.BillsController
                 disabledBillId = idBill;
                 DisableRow(idBill);
                 SetRowReadOnly(idBill);
+                DAOInitialView daoInitial = new DAOInitialView();
+                daoInitial.ActionType = "Se anulo una factura";
+                daoInitial.TableName = "tbBills";
+                daoInitial.ActionBy = SessionVar.Username;
+                daoInitial.ActionDate = DateTime.Now;
+                int auditAnswer = daoInitial.InsertAudit();
+                if (auditAnswer != 1)
+                {
+                    objStartMenu.snackBar.Show(objStartMenu, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                }
             }
             else
             {

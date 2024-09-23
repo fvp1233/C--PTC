@@ -258,7 +258,7 @@ namespace PTC2024.Model.DAO.DashboardDAO
             try
             {
                 Command.Connection = getConnection();
-                string query = "SELECT * FROM tbAudits WHERE ActionDate BETWEEN @fromDate AND @toDate";
+                string query = "SELECT * FROM viewAudits WHERE [Fecha] BETWEEN @fromDate AND @toDate ORDER BY [FECHA] DESC";
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);
                 cmd.Parameters.AddWithValue("@fromDate", FromDate);
                 cmd.Parameters.AddWithValue("@toDate", ToDate);

@@ -22,6 +22,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using PTC2024.Model.DAO.StartMenuDAO;
 using PTC2024.Controller.ProfileController;
 using PTC2024.Model.DAO.ProfileDAO;
+using PTC2024.Model.DAO.HelperDAO;
 
 namespace PTC2024.Controller.StartMenuController
 {
@@ -62,6 +63,16 @@ namespace PTC2024.Controller.StartMenuController
             if(chargeB == true)
             {
                 objStartMenu.snackBar.Show(objStartMenu, $"Datos del negocio cargados con éxito.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                DAOInitialView daoInitial = new DAOInitialView();
+                daoInitial.ActionType = "Se inicio sesion";
+                daoInitial.TableName = "Log In";
+                daoInitial.ActionBy = SessionVar.Username;
+                daoInitial.ActionDate = DateTime.Now;
+                int auditAnswer = daoInitial.InsertAudit();
+                if (auditAnswer != 1)
+                {
+                    objStartMenu.snackBar.Show(objStartMenu, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                }
             }
             objStartMenu.lblBusinessName.Text = BusinessVar.BusinessName;
             ShowWelcomeSnackBar();
