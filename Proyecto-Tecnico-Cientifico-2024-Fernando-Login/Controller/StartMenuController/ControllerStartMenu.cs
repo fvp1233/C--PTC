@@ -206,6 +206,16 @@ namespace PTC2024.Controller.StartMenuController
             if (MessageBox.Show("¿Quiere cerrar la sesión?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 await Task.Delay(1000);
+                DAOInitialView daoInitial = new DAOInitialView();
+                daoInitial.ActionType = "Se cerró sesion";
+                daoInitial.TableName = "Log Out";
+                daoInitial.ActionBy = SessionVar.Username;
+                daoInitial.ActionDate = DateTime.Now;
+                int auditAnswer = daoInitial.InsertAudit();
+                if (auditAnswer != 1)
+                {
+                    objStartMenu.snackBar.Show(objStartMenu, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                }
                 ClearVarSession();
                 objStartMenu.Hide();
                 DeleteLocalToken();

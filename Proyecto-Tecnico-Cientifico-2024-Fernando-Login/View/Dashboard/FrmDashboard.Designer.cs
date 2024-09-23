@@ -567,8 +567,8 @@
             this.dgvAudits.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvAudits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAudits.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.dgvAudits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvAudits.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvAudits.BackgroundColor = System.Drawing.Color.White;
             this.dgvAudits.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAudits.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -614,11 +614,11 @@
             this.dgvAudits.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
             this.dgvAudits.HeaderBgColor = System.Drawing.Color.Empty;
             this.dgvAudits.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvAudits.Location = new System.Drawing.Point(22, 34);
+            this.dgvAudits.Location = new System.Drawing.Point(3, 34);
             this.dgvAudits.Name = "dgvAudits";
             this.dgvAudits.ReadOnly = true;
             this.dgvAudits.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -628,7 +628,7 @@
             this.dgvAudits.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAudits.RowHeadersVisible = false;
             this.dgvAudits.RowHeadersWidth = 40;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
@@ -639,9 +639,8 @@
             this.dgvAudits.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.dgvAudits.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.dgvAudits.RowTemplate.Height = 50;
-            this.dgvAudits.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvAudits.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAudits.Size = new System.Drawing.Size(339, 290);
+            this.dgvAudits.Size = new System.Drawing.Size(370, 290);
             this.dgvAudits.TabIndex = 11;
             this.dgvAudits.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
             // 
@@ -654,9 +653,9 @@
             this.bunifuLabel19.Location = new System.Drawing.Point(22, 5);
             this.bunifuLabel19.Name = "bunifuLabel19";
             this.bunifuLabel19.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel19.Size = new System.Drawing.Size(78, 23);
+            this.bunifuLabel19.Size = new System.Drawing.Size(85, 23);
             this.bunifuLabel19.TabIndex = 10;
-            this.bunifuLabel19.Text = "Facturas";
+            this.bunifuLabel19.Text = "Auditoria";
             this.bunifuLabel19.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel19.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
