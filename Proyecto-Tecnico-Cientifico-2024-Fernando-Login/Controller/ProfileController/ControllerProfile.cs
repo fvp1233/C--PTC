@@ -28,6 +28,9 @@ namespace PTC2024.Controller.ProfileController
             //objProfile.btnSave.Click += new EventHandler(SaveInfo);
             objProfile.btnSecurityQ.Click += new EventHandler(SecurityQuestions);
             objProfile.btnUpdate.Click += new EventHandler(UpdateInfo);
+            objProfile.btnUserManual.Click += new EventHandler(OpenManualU);
+            objProfile.btnManualT.Click += new EventHandler(OpenManualT);
+
         }
 
         public void ChargeValues(object sender, EventArgs e)
@@ -155,5 +158,31 @@ namespace PTC2024.Controller.ProfileController
             FrmProfileConfiguration open = new FrmProfileConfiguration(SessionVar.Names, SessionVar.LastNames, SessionVar.Dui, SessionVar.Phone, SessionVar.Email, SessionVar.Adress, SessionVar.Affiliation, SessionVar.BankAccount);
             open.ShowDialog();
         }
+        public void OpenManualU(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("file:///C:/Users/HP/Downloads/Manual%20de%20uso%20-%20Sistema%20ADUP%20.pdf");
+        }
+        public void OpenManualT(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("file:///C:/Users/HP/Downloads/Manual%20de%20uso%20-%20Sistema%20ADUP%20.pdf");
+            //string pdfPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Manual Técnico.pdf");
+
+            //if (System.IO.File.Exists(pdfPath))
+            //{
+            //    var psi = new System.Diagnostics.ProcessStartInfo
+            //    {
+            //        FileName = pdfPath,
+            //        UseShellExecute = true 
+            //    };
+
+            //    System.Diagnostics.Process.Start(psi);
+            //}
+            //else
+            //{
+            //    MessageBox.Show($"El archivo PDF no se encuentra en la ubicación: {pdfPath}", "Archivo no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+        }
+
+
     }
 }
