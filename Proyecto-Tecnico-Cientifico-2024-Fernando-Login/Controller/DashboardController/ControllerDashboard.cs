@@ -179,11 +179,11 @@ namespace PTC2024.Controller.DashboardController
         public void CaptureDay()
         {
             DateTime currentHour = DateTime.Now;
-            if (currentHour.Hour >=12 && currentHour.Hour <= 15)
+            if (currentHour.Hour >=12 && currentHour.Hour < 15)
             {
                 objDashboard.lblTime.Text = "Buenas tardes, buen provecho";
             }
-            else if(currentHour.Hour > 15 && currentHour.Hour <= 18)
+            else if(currentHour.Hour >= 15 && currentHour.Hour < 18)
             {
                 objDashboard.lblTime.Text = "Buenas tardes";
             }
