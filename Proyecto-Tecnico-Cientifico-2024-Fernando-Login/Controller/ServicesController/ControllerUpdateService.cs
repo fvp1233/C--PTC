@@ -1,5 +1,8 @@
-﻿using PTC2024.Model.DAO.ServicesDAO;
+﻿using PTC2024.Controller.Helper;
+using PTC2024.Model.DAO.HelperDAO;
+using PTC2024.Model.DAO.ServicesDAO;
 using PTC2024.Model.DTO.ServicesDTO;
+using PTC2024.View.formularios.inicio;
 using PTC2024.View.InventarioServicios;
 using PTC2024.View.Service_inventory;
 using System;
@@ -16,6 +19,7 @@ namespace PTC2024.Controller.ServicesController
     {
         /*Se crea el objeto del formulario*/
         FrmUpdateService objUpdateService;
+        StartMenu objStartMenu;
         private string category;
         private int idCategory;
         /*Se delara el constructor con sus respectivos parametros*/
@@ -137,6 +141,16 @@ namespace PTC2024.Controller.ServicesController
                 if (returnedValue == 1)
                 {
                     MessageBox.Show("Los datos se actualizaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DAOInitialView daoInitial = new DAOInitialView();
+                    daoInitial.ActionType = "Se actualizó un servicio";
+                    daoInitial.TableName = "tbService";
+                    daoInitial.ActionBy = SessionVar.Username;
+                    daoInitial.ActionDate = DateTime.Now;
+                    int auditAnswer = daoInitial.InsertAudit();
+                    if (auditAnswer != 1)
+                    {
+                        objStartMenu.snackBar.Show(objStartMenu, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    }
                 }
                 else
                 {

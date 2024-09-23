@@ -1,7 +1,10 @@
-﻿using PTC2024.Model.DAO.EmployeesDAO;
+﻿using PTC2024.Controller.Helper;
+using PTC2024.Model.DAO.EmployeesDAO;
+using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.Model.DAO.PayrollsDAO;
 using PTC2024.Model.DAO.ServicesDAO;
 using PTC2024.View.EmployeeViews;
+using PTC2024.View.formularios.inicio;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,6 +18,7 @@ namespace PTC2024.Controller.PayrollsController
     internal class ControllerPermission
     {
         FrmPermissions objPermission;
+        StartMenu objStart;
         public ControllerPermission(FrmPermissions View)
         {
             objPermission = View;
@@ -103,6 +107,16 @@ namespace PTC2024.Controller.PayrollsController
                 if (answer == 1)
                 {
                     MessageBox.Show("Los datos se eliminaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DAOInitialView daoInitial = new DAOInitialView();
+                    daoInitial.ActionType = "Se elimino un permiso";
+                    daoInitial.TableName = "tbPermission";
+                    daoInitial.ActionBy = SessionVar.Username;
+                    daoInitial.ActionDate = DateTime.Now;
+                    int auditAnswer = daoInitial.InsertAudit();
+                    if (auditAnswer != 1)
+                    {
+                        objStart.snackBar.Show(objStart, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    }
                 }
                 else
                 {
@@ -145,6 +159,16 @@ namespace PTC2024.Controller.PayrollsController
                                 "Proceso completado",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
+                DAOInitialView daoInitial = new DAOInitialView();
+                daoInitial.ActionType = "Se deshabilito un permiso de un empleado inactivo";
+                daoInitial.TableName = "tbPermission";
+                daoInitial.ActionBy = SessionVar.Username;
+                daoInitial.ActionDate = DateTime.Now;
+                int auditAnswer = daoInitial.InsertAudit();
+                if (auditAnswer != 1)
+                {
+                    objStart.snackBar.Show(objStart, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                }
             }
             else
             {

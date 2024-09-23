@@ -1,4 +1,5 @@
 ﻿using PTC2024.Controller.Helper;
+using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.Model.DAO.PayrollsDAO;
 using PTC2024.View.EmployeeViews;
 using PTC2024.View.formularios.inicio;
@@ -66,6 +67,16 @@ namespace PTC2024.Controller.PayrollsController
                             StartMenu objStart = new StartMenu(SessionVar.Username);
                             objStartForm = objStart;
                             objStartForm.snackBar.Show(objStartForm, $"La empleada fue actualizada existosamente, inciando su su periodo de maternidad", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                            DAOInitialView daoInitial = new DAOInitialView();
+                            daoInitial.ActionType = "Se actualizo un empleado";
+                            daoInitial.TableName = "tbEmployee";
+                            daoInitial.ActionBy = SessionVar.Username;
+                            daoInitial.ActionDate = DateTime.Now;
+                            int auditAnswer = daoInitial.InsertAudit();
+                            if (auditAnswer != 1)
+                            {
+                                objStartForm.snackBar.Show(objStartForm, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                            }
 
                         }
                         else
@@ -85,6 +96,16 @@ namespace PTC2024.Controller.PayrollsController
                             StartMenu objStart = new StartMenu(SessionVar.Username);
                             objStartForm = objStart;
                             objStartForm.snackBar.Show(objStartForm, $"El empleado fue actualizado extosamente, iniciando su periodo de paternidad", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                            DAOInitialView daoInitial = new DAOInitialView();
+                            daoInitial.ActionType = "Se actualizo un empleado";
+                            daoInitial.TableName = "tbEmployee";
+                            daoInitial.ActionBy = SessionVar.Username;
+                            daoInitial.ActionDate = DateTime.Now;
+                            int auditAnswer = daoInitial.InsertAudit();
+                            if (auditAnswer != 1)
+                            {
+                                objStartForm.snackBar.Show(objStartForm, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                            }
 
                         }
                         else
@@ -106,6 +127,16 @@ namespace PTC2024.Controller.PayrollsController
                         "Proceso completado",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
+                        DAOInitialView daoInitial = new DAOInitialView();
+                        daoInitial.ActionType = "Se actualizo un permiso";
+                        daoInitial.TableName = "tbPermission";
+                        daoInitial.ActionBy = SessionVar.Username;
+                        daoInitial.ActionDate = DateTime.Now;
+                        int auditAnswer = daoInitial.InsertAudit();
+                        if (auditAnswer != 1)
+                        {
+                            objStartForm.snackBar.Show(objStartForm, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                        }
                     }
                     else
                     {
