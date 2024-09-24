@@ -190,22 +190,22 @@ namespace PTC2024.Controller.EmployeesController
                                                     }
                                                 }
 
-                                                returnValue = DAOInsertPayroll.AddPayroll();
+                                                returnValue = DAOInsertPayroll.AddPayroll(); // Insertar planilla
+
+                                                // Actualizar el progreso de la ProgressBar
+                                                currentEmployee++;
+                                                int progress = (currentEmployee * 100) / totalEmployees;
+                                                progressBarForm.UpdateProgress(progress, $"Procesando empleado {currentEmployee} de {totalEmployees}");
                                             }
                                         }
                                     }
                                 }
                             }
                         }
-
-                        // Actualizar el progreso
-                        currentEmployee++;
-                        int progress = (currentEmployee * 100) / totalEmployees;
-                        progressBarForm.UpdateProgress(progress, $"Procesando empleado {currentEmployee} de {totalEmployees}");
                     }
                 });
 
-                RefreshData();
+                RefreshData(); // Refrescar los datos
             }
 
             // Cerrar el formulario del ProgressBar
