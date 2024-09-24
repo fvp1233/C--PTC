@@ -225,6 +225,7 @@ namespace PTC2024.Controller.EmployeesController
             }
         }
 
+
         public void RefreshData(object sender, EventArgs e)
         {
             DAOViewPayrolls DAOUpdatePayroll = new DAOViewPayrolls();
