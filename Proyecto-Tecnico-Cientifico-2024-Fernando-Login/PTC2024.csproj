@@ -260,6 +260,12 @@
     <Compile Include="View\Alerts\FrmDeleteAlert.Designer.cs">
       <DependentUpon>FrmDeleteAlert.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Alerts\ProgressBarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Alerts\ProgressBarForm.Designer.cs">
+      <DependentUpon>ProgressBarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Maintenance\FrmBusinessConfiguration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -597,6 +603,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Alerts\FrmDeleteAlert.resx">
       <DependentUpon>FrmDeleteAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Alerts\ProgressBarForm.resx">
+      <DependentUpon>ProgressBarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Maintenance\FrmBusinessConfiguration.resx">
       <DependentUpon>FrmBusinessConfiguration.cs</DependentUpon>

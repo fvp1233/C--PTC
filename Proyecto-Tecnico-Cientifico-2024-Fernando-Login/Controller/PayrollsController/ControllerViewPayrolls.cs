@@ -2,6 +2,7 @@
 using PTC2024.Controller.StartMenuController;
 using PTC2024.Model.DAO.CustomersDAO;
 using PTC2024.Model.DAO.PayrollsDAO;
+using PTC2024.View.Alerts;
 using PTC2024.View.Empleados;
 using PTC2024.View.formularios.inicio;
 using PTC2024.View.Start;
@@ -63,8 +64,12 @@ namespace PTC2024.Controller.EmployeesController
         {
             return Math.Round(value, 2);
         }
-        public void CreatePayroll(object sender, EventArgs e)
+        public async void CreatePayroll(object sender, EventArgs e)
         {
+            // Mostrar el formulario del ProgressBar
+            ProgressBarForm progressBarForm = new ProgressBarForm();
+            progressBarForm.Show();
+
             DAOViewPayrolls DAOInsertPayroll = new DAOViewPayrolls();
             DataSet employeeDs = DAOInsertPayroll.GetEmployee();
             DataSet bonusDs = DAOInsertPayroll.GetBonus();
@@ -83,7 +88,10 @@ namespace PTC2024.Controller.EmployeesController
                 DataTable payrollDt = payrollDs.Tables["tbPayroll"];
                 DataTable businessDT = businessDs.Tables["tbBusinessInfo"];
 
-                if (employeeDt != null && bonusDt != null && userDt != null && businessDT != null)
+                int totalEmployees = employeeDt.Rows.Count;
+                int currentEmployee = 0;
+
+                await Task.Run(() =>
                 {
                     foreach (DataRow row in employeeDt.Rows)
                     {
@@ -109,7 +117,6 @@ namespace PTC2024.Controller.EmployeesController
                                 int startMonth = (year == firstUseYear) ? firstUseMonth : 1;
                                 for (int month = startMonth; month <= 12; month++)
                                 {
-                                    // Verificar si ya existe una planilla para el empleado en el mes
                                     DataRow[] existingPayrollRows = payrollDt.Select($"IdEmployee = {idEmployee} AND IssueDate = '{year}-{month:D2}-01'");
                                     if (existingPayrollRows.Length == 0)
                                     {
@@ -125,27 +132,23 @@ namespace PTC2024.Controller.EmployeesController
                                                 DataRow bonusRow = bonusRows[0];
                                                 double roleBonus = double.Parse(bonusRow["positionBonus"].ToString());
 
-                                                // Calcular días trabajados en el mes actual
                                                 DateTime currentDate = new DateTime(year, month, 1);
                                                 int totalDaysInMonth = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);
 
                                                 if (hireDate.Year == currentDate.Year && hireDate.Month == currentDate.Month)
                                                 {
-                                                    // Si es el primer mes de trabajo, calcular días trabajados desde la fecha de contratación
                                                     daysWorked = totalDaysInMonth - hireDate.Day + 1;
-                                                    hoursWorked = daysWorked * 8; // Suponiendo 8 horas por día
+                                                    hoursWorked = daysWorked * 8;
                                                 }
                                                 else
                                                 {
-                                                    // Meses completos
-                                                    daysWorked = 30; // Asumimos 30 días para simplificar
+                                                    daysWorked = 30;
                                                     hoursWorked = 240;
                                                 }
 
                                                 daySalary = salary / 30;
                                                 hourSalary = daySalary / 8;
 
-                                                // Calcular salario total basado en horas trabajadas
                                                 double calculatedSalaryByHours = TruncateToTwoDecimals(hoursWorked * hourSalary);
                                                 double calculatedSalary = TruncateToTwoDecimals(calculatedSalaryByHours + roleBonus);
 
@@ -194,10 +197,19 @@ namespace PTC2024.Controller.EmployeesController
                                 }
                             }
                         }
+
+                        // Actualizar el progreso
+                        currentEmployee++;
+                        int progress = (currentEmployee * 100) / totalEmployees;
+                        progressBarForm.UpdateProgress(progress, $"Procesando empleado {currentEmployee} de {totalEmployees}");
                     }
-                }
+                });
+
                 RefreshData();
             }
+
+            // Cerrar el formulario del ProgressBar
+            progressBarForm.Close();
 
             if (returnValue == 1)
             {
