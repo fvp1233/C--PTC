@@ -69,7 +69,6 @@ namespace PTC2024.Controller.EmployeesController
         }
         public async void CreatePayroll(object sender, EventArgs e)
         {
-            // Mostrar el formulario del ProgressBar
             ProgressBarForm progressBarForm = new ProgressBarForm();
             progressBarForm.Show();
 
@@ -91,32 +90,32 @@ namespace PTC2024.Controller.EmployeesController
                 DataTable payrollDt = payrollDs.Tables["tbPayroll"];
                 DataTable businessDT = businessDs.Tables["tbBusinessInfo"];
 
-                int totalEmployees = employeeDt.Rows.Count;
+                int totalEmployees = 1;
                 int currentEmployee = 0;
 
-                await Task.Run(() =>
+
+                foreach (DataRow row in employeeDt.Rows)
                 {
-                    foreach (DataRow row in employeeDt.Rows)
+                    int status = int.Parse(row["IdStatus"].ToString());
+                    int idEmployee = int.Parse(row["IdEmployee"].ToString());
+                    DateTime hireDate = DateTime.Parse(row["hireDate"].ToString());
+                    double salary = double.Parse(row["salary"].ToString());
+
+                    int daysWorked = 0;
+                    double daySalary = 0;
+                    double hourSalary = 0;
+                    int hoursWorked = 0;
+
+                    DataRow businessRow = businessDT.Rows[0];
+                    DateTime firstUse = DateTime.Parse(businessRow["firstUse"].ToString());
+                    int firstUseMonth = firstUse.Month;
+                    int firstUseYear = firstUse.Year;
+
+                    if (status != 2)
                     {
-                        int status = int.Parse(row["IdStatus"].ToString());
-                        int idEmployee = int.Parse(row["IdEmployee"].ToString());
-                        DateTime hireDate = DateTime.Parse(row["hireDate"].ToString());
-                        double salary = double.Parse(row["salary"].ToString());
-
-                        int daysWorked = 0;
-                        double daySalary = 0;
-                        double hourSalary = 0;
-                        int hoursWorked = 0;
-
-                        DataRow businessRow = businessDT.Rows[0];
-                        DateTime firstUse = DateTime.Parse(businessRow["firstUse"].ToString());
-                        int firstUseMonth = firstUse.Month;
-                        int firstUseYear = firstUse.Year;
-
-                        if (status != 2)
+                        for (int year = firstUseYear; year <= DateTime.Now.Year; year++)
                         {
-                            for (int year = firstUseYear; year <= DateTime.Now.Year; year++)
-                            {
+ 
                                 int startMonth = (year == firstUseYear) ? firstUseMonth : 1;
                                 for (int month = startMonth; month <= 12; month++)
                                 {
@@ -126,6 +125,8 @@ namespace PTC2024.Controller.EmployeesController
                                         string username = row["username"].ToString();
                                         DataRow[] userRows = userDt.Select($"username = '{username}'");
                                         if (userRows.Length > 0)
+                                        {
+                                        await Task.Run(() =>
                                         {
                                             DataRow userRow = userRows[0];
                                             string businessRole = userRow["IdBusinessP"].ToString();
@@ -193,25 +194,21 @@ namespace PTC2024.Controller.EmployeesController
                                                     }
                                                 }
 
-                                                returnValue = DAOInsertPayroll.AddPayroll(); // Insertar planilla
-
-                                                // Actualizar el progreso de la ProgressBar
+                                                returnValue = DAOInsertPayroll.AddPayroll(); 
                                                 currentEmployee++;
                                                 int progress = (currentEmployee * 100) / totalEmployees;
-                                                progressBarForm.UpdateProgress(progress, $"Procesando empleado {currentEmployee} de {totalEmployees}");
+                                                progressBarForm.UpdateProgress(progress, $"Procesando planillas {currentEmployee} de {totalEmployees}");
                                             }
-                                        }
+                                            totalEmployees++;
+                                        });
                                     }
                                 }
                             }
                         }
                     }
-                });
-
-                RefreshData(); // Refrescar los datos
+                }
+                RefreshData();
             }
-
-            // Cerrar el formulario del ProgressBar
             progressBarForm.Close();
 
             if (returnValue == 1)
