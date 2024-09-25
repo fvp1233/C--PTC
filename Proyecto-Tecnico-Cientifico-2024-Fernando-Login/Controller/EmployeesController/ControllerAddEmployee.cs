@@ -12,6 +12,7 @@ using PTC2024.Controller.Helper;
 using PTC2024.View.formularios.inicio;
 using System.Net.Sockets;
 using System.Net;
+using PTC2024.Model.DAO.HelperDAO;
 
 namespace PTC2024.Controller
 {
@@ -222,6 +223,16 @@ namespace PTC2024.Controller
                                             MessageBox.Show("Se enviará un correo al email del nuevo empleado con sus credenciales para el inicio de sesión.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             objAddEmployee.snackbar.Show(objMenu, $"Los datos del nuevo empleado fueron registrados.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
                                             SendEmail(newPass);
+                                            DAOInitialView daoInitial = new DAOInitialView();
+                                            daoInitial.ActionType = "Se inserto un empleado";
+                                            daoInitial.TableName = "tbEmployee";
+                                            daoInitial.ActionBy = SessionVar.Username;
+                                            daoInitial.ActionDate = DateTime.Now;
+                                            int auditAnswer = daoInitial.InsertAudit();
+                                            if (auditAnswer != 1)
+                                            {
+                                                objAddEmployee.snackbar.Show(objMenu, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                                            }
                                             objAddEmployee.Close();
                                         }
                                         else

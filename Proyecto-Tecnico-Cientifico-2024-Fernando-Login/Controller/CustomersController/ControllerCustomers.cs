@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PTC2024.Controller.Helper;
 using PTC2024.Model.DAO.CustomersDAO;
+using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.Model.DAO.PayrollsDAO;
 using PTC2024.Model.DAO.ServicesDAO;
 using PTC2024.View.Clientes;
+using PTC2024.View.formularios.inicio;
 using PTC2024.View.Reporting;
 using PTC2024.View.Reporting.Customers;
 using PTC2024.View.Service_inventory;
@@ -19,6 +21,7 @@ namespace PTC2024.Controller.CustomersController
     class ControllerCustomers
     {
         FrmCustomers objCustomers;
+        StartMenu objStartMenu;
         public ControllerCustomers(FrmCustomers Vista)
         {
             objCustomers = Vista;
@@ -152,6 +155,16 @@ namespace PTC2024.Controller.CustomersController
                 if (answer == 1)
                 {
                     MessageBox.Show("Los datos se eliminaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DAOInitialView daoInitial = new DAOInitialView();
+                    daoInitial.ActionType = "Se elimino un cliente";
+                    daoInitial.TableName = "tbCustomer";
+                    daoInitial.ActionBy = SessionVar.Username;
+                    daoInitial.ActionDate = DateTime.Now;
+                    int auditAnswer = daoInitial.InsertAudit();
+                    if (auditAnswer != 1)
+                    {
+                        objStartMenu.snackBar.Show(objStartMenu, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    }
                 }
                 else
                 {

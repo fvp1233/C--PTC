@@ -1,6 +1,7 @@
 ﻿using PTC2024.Controller.Helper;
 using PTC2024.Model;
 using PTC2024.Model.DAO.BillsDAO;
+using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.Model.DAO.LogInDAO;
 using PTC2024.View.Alerts;
 using PTC2024.View.BillsViews;
@@ -23,6 +24,7 @@ namespace PTC2024.Controller.BillsController
 
         FrmOverrideBill objoverrideBill;
         int confirmValue;
+        StartMenu objStartMenu;
         //CONSTRUCTOR DEL FORMULARIO
         public ControllerOverride(FrmOverrideBill View)
         {
@@ -83,6 +85,16 @@ namespace PTC2024.Controller.BillsController
             {
                 ConfirmProcessValue(); // Establecer confirmación exitosa
                 objoverrideBill.Close(); // Ocultar formulario
+                DAOInitialView daoInitial = new DAOInitialView();
+                daoInitial.ActionType = "Se rectifico una factura";
+                daoInitial.TableName = "tbBills";
+                daoInitial.ActionBy = SessionVar.Username;
+                daoInitial.ActionDate = DateTime.Now;
+                int auditAnswer = daoInitial.InsertAudit();
+                if (auditAnswer != 1)
+                {
+                    objStartMenu.snackBar.Show(objStartMenu, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                }
             }
             else
             {

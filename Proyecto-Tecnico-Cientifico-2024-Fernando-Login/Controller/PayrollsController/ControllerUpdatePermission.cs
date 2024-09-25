@@ -1,4 +1,5 @@
 ﻿using PTC2024.Controller.Helper;
+using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.Model.DAO.PayrollsDAO;
 using PTC2024.View.EmployeeViews;
 using PTC2024.View.formularios.inicio;
@@ -27,11 +28,15 @@ namespace PTC2024.Controller.PayrollsController
             this.idStatus = idStatus;
             ChargeValues(idEmployee, idPermission, start, end, context, status, typeP, idType, idStatus);
             objUpdatePermission.Load += new EventHandler(FillDropdown);
+            objUpdatePermission.Load += new EventHandler(LoadEmployeeName);
             objUpdatePermission.btnAddPermission.Click += new EventHandler(UpdatePermission);
             objUpdatePermission.txtIdEmployee.TextChanged += new EventHandler(idNum);
             objUpdatePermission.txtIdEmployee.MouseDown += new MouseEventHandler(DisableContextMenu);
-            objUpdatePermission.rtxtContext.MouseDown += new MouseEventHandler(DisableContextMenu);           
+            objUpdatePermission.rtxtContext.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objUpdatePermission.txtIdEmployee.Leave += new EventHandler(LoadEmployeeName);
             objUpdatePermission.btnCancel.Click += new EventHandler(CloseForm);
+            objUpdatePermission.cmbTypePermission.SelectedIndexChanged += new EventHandler(cmbTypePermission_SelectedIndexChangedM);
+            objUpdatePermission.cmbTypePermission.SelectedIndexChanged += new EventHandler(cmbTypePermission_SelectedIndexChangedP);
         }
         public void UpdatePermission(object sender, EventArgs e)
         {
@@ -39,16 +44,18 @@ namespace PTC2024.Controller.PayrollsController
             {
                 DAOUpdatePermission daoUpdate = new DAOUpdatePermission();
                 DAOAddPermission DaoInsert = new DAOAddPermission();
+                int employeeId = int.Parse(objUpdatePermission.txtIdEmployee.Text.Trim());
+                DaoInsert.IdEmployee = employeeId;
                 DataSet ds = DaoInsert.GetEmployeeGender();
 
-                if (ds != null && ds.Tables["tbEmployee"].Rows.Count > 0)
+                if (ds != null && ds.Tables.Contains("tbEmployee") && ds.Tables["tbEmployee"].Rows.Count > 0)
                 {
                     int idGender = Convert.ToInt32(ds.Tables["tbEmployee"].Rows[0]["IdGender"]);
 
                     // Asumiendo que IdGender = 1 es Masculino y IdGender = 2 es Femenino.
                     if (idGender == 1 && objUpdatePermission.cmbTypePermission.Text == "Maternidad")
                     {
-                        objUpdatePermission.bunifuSnackbar1.Show(objStartForm, "No se puede asignar un permiso de maternidad a un empleado masculino.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                        objUpdatePermission.bunifuSnackbar1.Show(objUpdatePermission, "No se puede asignar un permiso de maternidad a un empleado masculino.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
                         return;
                     }
                     else if (idGender == 2 && objUpdatePermission.cmbTypePermission.Text == "Paternidad")
@@ -56,65 +63,96 @@ namespace PTC2024.Controller.PayrollsController
                         objUpdatePermission.bunifuSnackbar1.Show(objUpdatePermission, "No se puede asignar un permiso de paternidad a una empleada femenina.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
                         return;
                     }
-                    if (objUpdatePermission.cmbTypePermission.Text == "Maternidad")
+                }
+                if (objUpdatePermission.cmbTypePermission.Text == "Maternidad")
+                {
+                    DaoInsert.EmployeeStatus = 3;
+                    DaoInsert.IdEmployee = int.Parse(objUpdatePermission.txtIdEmployee.Text.Trim());
+                    int returnedValue = DaoInsert.UpdateStatusEmployee();
+                    if (returnedValue == 1)
                     {
-                        DaoInsert.EmployeeStatus = 3;
-                        DaoInsert.IdEmployee = int.Parse(objUpdatePermission.txtIdEmployee.Text.Trim());
-                        int returnedValue = DaoInsert.UpdateStatusEmployee();
-                        if (returnedValue == 1)
+                        StartMenu objStart = new StartMenu(SessionVar.Username);
+                        objStartForm = objStart;
+                        objStartForm.snackBar.Show(objStartForm, $"La empleada fue actualizada existosamente, inciando su su periodo de maternidad", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                        DAOInitialView daoInitial = new DAOInitialView();
+                        daoInitial.ActionType = "Se actualizo un empleado";
+                        daoInitial.TableName = "tbEmployee";
+                        daoInitial.ActionBy = SessionVar.Username;
+                        daoInitial.ActionDate = DateTime.Now;
+                        int auditAnswer = daoInitial.InsertAudit();
+                        if (auditAnswer != 1)
                         {
-                            StartMenu objStart = new StartMenu(SessionVar.Username);
-                            objStartForm = objStart;
-                            objStartForm.snackBar.Show(objStartForm, $"La empleada fue actualizada existosamente, inciando su su periodo de maternidad", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                            objStartForm.snackBar.Show(objStartForm, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                        }
 
-                        }
-                        else
-                        {
-                            StartMenu objStart = new StartMenu(SessionVar.Username);
-                            objStartForm = objStart;
-                            objStartForm.snackBar.Show(objStartForm, $"los datos no pudieron ser actualizados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
-                        }
-                    }
-                    else if (objUpdatePermission.cmbTypePermission.Text == "Paternidad")
-                    {
-                        DaoInsert.EmployeeStatus = 4;
-                        DaoInsert.IdEmployee = int.Parse(objUpdatePermission.txtIdEmployee.Text.Trim());
-                        int returnedValue = DaoInsert.UpdateStatusEmployee();
-                        if (returnedValue == 1)
-                        {
-                            StartMenu objStart = new StartMenu(SessionVar.Username);
-                            objStartForm = objStart;
-                            objStartForm.snackBar.Show(objStartForm, $"El empleado fue actualizado extosamente, iniciando su periodo de paternidad", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
-
-                        }
-                        else
-                        {
-                            objUpdatePermission.bunifuSnackbar1.Show(objUpdatePermission, $"los datos no pudieron ser actualizados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
-                        }
-                    }
-                    daoUpdate.Start = objUpdatePermission.dtpStart.Value;
-                    daoUpdate.End = objUpdatePermission.dtpEnd.Value;
-                    daoUpdate.Context = objUpdatePermission.rtxtContext.Text.Trim();
-                    daoUpdate.IdEmployee = int.Parse(objUpdatePermission.txtIdEmployee.Text.Trim());
-                    daoUpdate.IdPermission = int.Parse(objUpdatePermission.txtIdPermission.Text.Trim());
-                    daoUpdate.IdStatusPermission = (int)objUpdatePermission.cmbStatusPermission.SelectedValue;
-                    daoUpdate.IdTypePermission = (int)objUpdatePermission.cmbTypePermission.SelectedValue;
-                    int returnedValues = daoUpdate.UpdatePermission();
-                    if (returnedValues == 1)
-                    {
-                        MessageBox.Show("Los datos han sido actualizado exitosamente",
-                        "Proceso completado",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Los datos no pudieron ser actualizados debido a un error inesperado",
-                        "Proceso interrumpido",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                        StartMenu objStart = new StartMenu(SessionVar.Username);
+                        objStartForm = objStart;
+                        objStartForm.snackBar.Show(objStartForm, $"los datos no pudieron ser actualizados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
                     }
                 }
+                else if (objUpdatePermission.cmbTypePermission.Text == "Paternidad")
+                {
+                    DaoInsert.EmployeeStatus = 4;
+                    DaoInsert.IdEmployee = int.Parse(objUpdatePermission.txtIdEmployee.Text.Trim());
+                    int returnedValue = DaoInsert.UpdateStatusEmployee();
+                    if (returnedValue == 1)
+                    {
+                        StartMenu objStart = new StartMenu(SessionVar.Username);
+                        objStartForm = objStart;
+                        objStartForm.snackBar.Show(objStartForm, $"El empleado fue actualizado extosamente, iniciando su periodo de paternidad", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                        DAOInitialView daoInitial = new DAOInitialView();
+                        daoInitial.ActionType = "Se actualizo un empleado";
+                        daoInitial.TableName = "tbEmployee";
+                        daoInitial.ActionBy = SessionVar.Username;
+                        daoInitial.ActionDate = DateTime.Now;
+                        int auditAnswer = daoInitial.InsertAudit();
+                        if (auditAnswer != 1)
+                        {
+                            objStartForm.snackBar.Show(objStartForm, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                        }
+
+                    }
+                    else
+                    {
+                        objUpdatePermission.bunifuSnackbar1.Show(objUpdatePermission, $"los datos no pudieron ser actualizados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                    }
+                }
+                daoUpdate.Start = objUpdatePermission.dtpStart.Value;
+                daoUpdate.End = objUpdatePermission.dtpEnd.Value;
+                daoUpdate.Context = objUpdatePermission.rtxtContext.Text.Trim();
+                daoUpdate.IdEmployee = int.Parse(objUpdatePermission.txtIdEmployee.Text.Trim());
+                daoUpdate.IdPermission = int.Parse(objUpdatePermission.txtIdPermission.Text.Trim());
+                daoUpdate.IdStatusPermission = (int)objUpdatePermission.cmbStatusPermission.SelectedValue;
+                daoUpdate.IdTypePermission = (int)objUpdatePermission.cmbTypePermission.SelectedValue;
+                int returnedValues = daoUpdate.UpdatePermission();
+                if (returnedValues == 1)
+                {
+                    MessageBox.Show("Los datos han sido actualizado exitosamente",
+                    "Proceso completado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                    DAOInitialView daoInitial = new DAOInitialView();
+                    daoInitial.ActionType = "Se actualizo un permiso";
+                    daoInitial.TableName = "tbPermission";
+                    daoInitial.ActionBy = SessionVar.Username;
+                    daoInitial.ActionDate = DateTime.Now;
+                    int auditAnswer = daoInitial.InsertAudit();
+                    if (auditAnswer != 1)
+                    {
+                        objStartForm.snackBar.Show(objStartForm, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Los datos no pudieron ser actualizados debido a un error inesperado",
+                    "Proceso interrumpido",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+
             }
             catch (Exception ex)
             {
@@ -185,6 +223,81 @@ namespace PTC2024.Controller.PayrollsController
             {
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
+        }
+        public void LoadEmployeeName(object sender, EventArgs e)
+        {
+            string employeeIdText = objUpdatePermission.txtIdEmployee.Text.Trim();
+            if (!string.IsNullOrEmpty(employeeIdText))
+            {
+                int employeeId;
+                if (int.TryParse(employeeIdText, out employeeId))
+                {
+                    DAOAddPermission dao = new DAOAddPermission();
+                    dao.IdEmployee = employeeId;
+                    DataSet ds = dao.GetEmployeeName();
+
+                    if (ds != null && ds.Tables["viewEmployees"].Rows.Count > 0)
+                    {
+                        DataRow row = ds.Tables["viewEmployees"].Rows[0];
+                        string employeeName = row["Nombre Completo"].ToString();
+                        objUpdatePermission.lblId.Text = employeeName;
+                    }
+                    else
+                    {
+                        objUpdatePermission.bunifuSnackbar1.Show(objUpdatePermission, $"No se encontro al empleado con el ID proporcionado", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                    }
+                }
+                else
+                {
+                    objUpdatePermission.bunifuSnackbar1.Show(objUpdatePermission, $"Favor ingresar un ID de empelado valido", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                }
+            }
+        }
+        private void cmbTypePermission_SelectedIndexChangedM(object sender, EventArgs e)
+        {
+            if (objUpdatePermission.cmbTypePermission.SelectedItem != null)
+            {
+                // Verifica si se seleccionó "Maternidad"
+                if (objUpdatePermission.cmbTypePermission.Text == "Maternidad")
+                {
+                    // Sumar 112 días a la fecha seleccionada en dtpStart
+                    objUpdatePermission.dtpStart.ValueChanged += dtpStart_ValueChangedM;
+                }
+                else
+                {
+                    // Remover el evento si no es "Maternidad"
+                    objUpdatePermission.dtpStart.ValueChanged -= dtpStart_ValueChangedM;
+                }
+            }
+        }
+
+        public void dtpStart_ValueChangedM(object sender, EventArgs e)
+        {
+            // Sumar 112 días a la fecha de inicio seleccionada y asignarla a dtpEnd
+            objUpdatePermission.dtpEnd.Value = objUpdatePermission.dtpStart.Value.AddDays(112);
+        }
+        public void cmbTypePermission_SelectedIndexChangedP(object sender, EventArgs e)
+        {
+            if (objUpdatePermission.cmbTypePermission.SelectedItem != null)
+            {
+                // Verifica si se seleccionó "Maternidad"
+                if (objUpdatePermission.cmbTypePermission.Text == "Paternidad")
+                {
+                    // Sumar 112 días a la fecha seleccionada en dtpStart
+                    objUpdatePermission.dtpStart.ValueChanged += dtpStart_ValueChangedP;
+                }
+                else
+                {
+                    // Remover el evento si no es "Maternidad"
+                    objUpdatePermission.dtpStart.ValueChanged -= dtpStart_ValueChangedP;
+                }
+            }
+        }
+
+        public void dtpStart_ValueChangedP(object sender, EventArgs e)
+        {
+            // Sumar 112 días a la fecha de inicio seleccionada y asignarla a dtpEnd
+            objUpdatePermission.dtpEnd.Value = objUpdatePermission.dtpStart.Value.AddDays(3);
         }
     }
 }

@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PTC2024.View.Reporting.Service;
 using PTC2024.Model.DAO.CustomersDAO;
+using PTC2024.Controller.Helper;
+using PTC2024.Model.DAO.HelperDAO;
+using PTC2024.View.formularios.inicio;
 
 namespace PTC2024.Controller.ServicesController
 {
@@ -18,6 +21,7 @@ namespace PTC2024.Controller.ServicesController
     internal class ControllerServices
     {
         FrmServices objServices;
+        StartMenu objStartMenu;
 
         public ControllerServices(FrmServices view)
         {
@@ -110,6 +114,16 @@ namespace PTC2024.Controller.ServicesController
                 if (answer == 1)
                 {
                     MessageBox.Show("Los datos se eliminaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DAOInitialView daoInitial = new DAOInitialView();
+                    daoInitial.ActionType = "Se eliminó un servicio";
+                    daoInitial.TableName = "tbService";
+                    daoInitial.ActionBy = SessionVar.Username;
+                    daoInitial.ActionDate = DateTime.Now;
+                    int auditAnswer = daoInitial.InsertAudit();
+                    if (auditAnswer != 1)
+                    {
+                        objStartMenu.snackBar.Show(objStartMenu, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    }
                 }
                 else
                 {
