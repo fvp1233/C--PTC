@@ -13,12 +13,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using PTC2024.Model.DAO.HelperDAO;
 
 namespace PTC2024.Controller.EmployeesController
 {
     internal class ControllerUpdateEmployee
     {
         FrmUpdateEmployee objUpdateEmployee;
+        StartMenu objStartMenu;
         private string bank;
         private string department;
         private string employeeType;
@@ -32,7 +34,7 @@ namespace PTC2024.Controller.EmployeesController
         private int idStatus;
         private int idBusinessP;
         private int gender;
-
+        
         bool emailValidation;
         //CONSTRUCTOR
         public ControllerUpdateEmployee(FrmUpdateEmployee View, int employeeId, string names, string lastNames, string dui, DateTime birthDate, string email, string phone, string address, double salary, string bankAccount, string bank, string affiliationNumber, DateTime hireDate, string department, string employeeType, string maritalStatus, string status, string username, string businessP, int Idbank, int idDepartment, int idTypeE, int idMaritalS, int idStatus, int idBusinessP, int gender)
@@ -165,6 +167,16 @@ namespace PTC2024.Controller.EmployeesController
                                     {                                        
                                         objUpdateEmployee.Close();
                                         objUpdateEmployee.snackbar.Show(objStart, $"Los datos del empleado se actualizaron con éxito.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                                        DAOInitialView daoInitial = new DAOInitialView();
+                                        daoInitial.ActionType = "Se actualizo un empleado";
+                                        daoInitial.TableName = "tbEmployee";
+                                        daoInitial.ActionBy = SessionVar.Username;
+                                        daoInitial.ActionDate = DateTime.Now;
+                                        int auditAnswer = daoInitial.InsertAudit();
+                                        if (auditAnswer != 1)
+                                        {
+                                            objStartMenu.snackBar.Show(objStartMenu, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                                        }
                                     }
                                     else
                                     {

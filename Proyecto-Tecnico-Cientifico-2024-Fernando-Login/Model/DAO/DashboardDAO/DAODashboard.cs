@@ -253,6 +253,31 @@ namespace PTC2024.Model.DAO.DashboardDAO
                 Command.Connection.Close();
             }
         }
+        public DataSet GetAudits()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = "SELECT * FROM viewAudits WHERE [Fecha] BETWEEN @fromDate AND @toDate ORDER BY [FECHA] DESC";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("@fromDate", FromDate);
+                cmd.Parameters.AddWithValue("@toDate", ToDate);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "tbAudits");
+                return ds;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("EC-077: No se pudieron obtener los permisos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            finally
+            {
+                Command.Connection.Close();
+            }
+        }
+
 
         public bool LoadData(DateTime startDate, DateTime endDate)
         {

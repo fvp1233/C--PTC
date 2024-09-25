@@ -10,12 +10,15 @@ using System.Windows.Forms;
 using PTC2024.Model.DAO.CustomersDAO;
 using PTC2024.View.Clientes;
 using PTC2024.Controller.Helper;
+using PTC2024.Model.DAO.HelperDAO;
+using PTC2024.View.formularios.inicio;
 
 namespace PTC2024.Controller.CustomersController
 {
     internal class ControllerUpdateCustomers
     {
         FrmUploadCustomers objUpdateCustomers;
+        StartMenu objStartMenu;
         private int idTypeC;
 
         //Se declara el constructor con sus respectivos parametros
@@ -75,6 +78,16 @@ namespace PTC2024.Controller.CustomersController
                 {
                     SendEmail();
                     MessageBox.Show("Datos Actualizados");
+                    DAOInitialView daoInitial = new DAOInitialView();
+                    daoInitial.ActionType = "Se actualizo un cliente";
+                    daoInitial.TableName = "tbCustomer";
+                    daoInitial.ActionBy = SessionVar.Username;
+                    daoInitial.ActionDate = DateTime.Now;
+                    int auditAnswer = daoInitial.InsertAudit();
+                    if (auditAnswer != 1)
+                    {
+                        objStartMenu.snackBar.Show(objStartMenu, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    }
                     objUpdateCustomers.Close();
                 }
                 else

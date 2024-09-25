@@ -1,5 +1,8 @@
 ﻿using Microsoft.VisualBasic.Logging;
+using PTC2024.Controller.Helper;
+using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.Model.DAO.ServicesDAO;
+using PTC2024.View.formularios.inicio;
 using PTC2024.View.InventarioServicios;
 using System;
 using System.Collections.Generic;
@@ -16,7 +19,7 @@ namespace PTC2024.Controller.ServicesController
     {
         /*Objeto del formulario*/
         FrmAddService objAddService;
-
+        StartMenu objStartMenu;
         /*Constructor*/
         public ControllerAddService(FrmAddService view)
         {
@@ -92,6 +95,16 @@ namespace PTC2024.Controller.ServicesController
                 {
                     MessageBox.Show("Los datos se ingresaron correctamente", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     objAddService.Close();
+                    DAOInitialView daoInitial = new DAOInitialView();
+                    daoInitial.ActionType = "Se insertó un servicio";
+                    daoInitial.TableName = "tbEmployee";
+                    daoInitial.ActionBy = SessionVar.Username;
+                    daoInitial.ActionDate = DateTime.Now;
+                    int auditAnswer = daoInitial.InsertAudit();
+                    if (auditAnswer != 1)
+                    {
+                        objStartMenu.snackBar.Show(objStartMenu, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    }
                 }
                 else
                 {

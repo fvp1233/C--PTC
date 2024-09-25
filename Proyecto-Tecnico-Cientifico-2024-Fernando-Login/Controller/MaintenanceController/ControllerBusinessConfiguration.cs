@@ -12,6 +12,7 @@ using PTC2024.Model.DAO.MaintenanceDAO;
 using PTC2024.Model.DAO.ProfileDAO;
 using System.Windows.Forms;
 using PTC2024.View.formularios.inicio;
+using PTC2024.Model.DAO;
 
 namespace PTC2024.Controller.MaintenanceController
 {
@@ -31,6 +32,7 @@ namespace PTC2024.Controller.MaintenanceController
             objBusinessConf.txtAdress.MouseDown += new MouseEventHandler(DisableContextMenu);
             objBusinessConf.txtPBX.MouseDown += new MouseEventHandler(DisableContextMenu);
             objBusinessConf.txtPhone.MouseDown += new MouseEventHandler(DisableContextMenu);
+            objBusinessConf.txtEmail.TextChanged += new EventHandler(EmailValidation);
         }
         public void LoadData(object sender, EventArgs e)
         {
@@ -57,6 +59,8 @@ namespace PTC2024.Controller.MaintenanceController
             if (answer == 1)
             {
                 SavePfp();
+                MessageBox.Show("Se enviará un correo al email del usuario para confirmar el correo.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SendEmail();
                 StartMenu start = new StartMenu(SessionVar.Username);
                 objBusinessConf.snack.Show(start, "Reinicie el programa o cierre y vuelva a iniciar sesión para ver todos los cambios.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
                 objBusinessConf.snack.Show(start, "Su información se actualizó correctamente.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
@@ -191,6 +195,39 @@ namespace PTC2024.Controller.MaintenanceController
 
             //Restablecemos la posición del cursor con la variable que se guardó antes
             objBusinessConf.txtPBX.SelectionStart = cursorPosition;
+        }
+        public void EmailValidation(object sender, EventArgs e)
+        {
+            int cursorPosition = objBusinessConf.txtEmail.SelectionStart;
+
+            // Filtrar solo caracteres permitidos para un email: letras, números, @, . y algunos caracteres especiales comunes
+            string text = new string(objBusinessConf.txtEmail.Text.Where(c => char.IsLetterOrDigit(c) || c == '@' || c == '.' || c == '_' || c == '-').ToArray());
+
+            // Asegurarse de que el @ no sea el primer carácter
+            if (text.StartsWith("@"))
+            {
+                // Remover el @ si está al inicio
+                text = text.Substring(1);
+            }
+
+            // Asignar el texto filtrado al TextBox
+            objBusinessConf.txtEmail.Text = text;
+
+            // Restablecer la posición del cursor
+            objBusinessConf.txtEmail.SelectionStart = cursorPosition;
+        }
+        public bool SendEmail()
+        {
+
+            string para = objBusinessConf.txtEmail.Text.Trim();
+            string de = "h2c.soporte.usuarios@gmail.com";
+            string subject = $"H2C: Bienvenido a {BusinessVar.BusinessName} nuevo empleado.";
+            string message = $"Hola estimado usuario, este correo ahora esta asociado a la empresa {BusinessVar.BusinessName}.";
+
+            Email email = new Email();
+            bool answer = email.UpdateBusiness(para, de, subject, message);
+
+            return answer;
         }
     }
 

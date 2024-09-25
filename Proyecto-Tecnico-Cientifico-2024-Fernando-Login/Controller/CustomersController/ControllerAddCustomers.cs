@@ -11,12 +11,15 @@ using System.Windows.Forms;
 using PTC2024.Model.DTO.CustomersDTO;
 using System.Net.Sockets;
 using System.Net;
+using PTC2024.Model.DAO.HelperDAO;
+using PTC2024.View.formularios.inicio;
 
 namespace PTC2024.Controller.CustomersController
 {
     class ControllerAddCustomers
     {
         FrmAddCustomers objAddCustomers;
+        StartMenu objStartMenu;
         bool emailValidation; //Sirve para validar mas adelante el correo
 
         public ControllerAddCustomers(FrmAddCustomers Vista)
@@ -99,6 +102,16 @@ namespace PTC2024.Controller.CustomersController
                     {//Si el valor es 1 se mostrara el mensaje
                         SendEmail();
                         MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DAOInitialView daoInitial = new DAOInitialView();
+                        daoInitial.ActionType = "Se inserto un cliente";
+                        daoInitial.TableName = "tbCustomer";
+                        daoInitial.ActionBy = SessionVar.Username;
+                        daoInitial.ActionDate = DateTime.Now;
+                        int auditAnswer = daoInitial.InsertAudit();
+                        if (auditAnswer != 1)
+                        {
+                            objStartMenu.snackBar.Show(objStartMenu, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                        }
                         objAddCustomers.Close();
 
                     }

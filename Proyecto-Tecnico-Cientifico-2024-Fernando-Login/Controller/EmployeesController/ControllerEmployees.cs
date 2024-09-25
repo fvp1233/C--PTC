@@ -18,12 +18,15 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using PTC2024.Controller.Helper;
 using PTC2024.Model.DAO;
 using PTC2024.View.Reporting.Employees;
+using PTC2024.Model.DAO.HelperDAO;
+using PTC2024.View.formularios.inicio;
 
 namespace PTC2024.Controller.Employees
 {
     internal class ControllerEmployees
     {
         FrmEmployees objEmployees;
+        StartMenu objStart;
 
         //CONSTRUCTOR
         public ControllerEmployees(FrmEmployees Vista)
@@ -271,6 +274,16 @@ namespace PTC2024.Controller.Employees
                         {
                             openDeleteAlert.Close();
                             MessageBox.Show("El empleado fue deshabilitado junto a su usuario de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            DAOInitialView daoInitial = new DAOInitialView();
+                            daoInitial.ActionType = "Se deshabilito un empleado";
+                            daoInitial.TableName = "tbEmployee";
+                            daoInitial.ActionBy = SessionVar.Username;
+                            daoInitial.ActionDate = DateTime.Now;
+                            int auditAnswer = daoInitial.InsertAudit();
+                            if (auditAnswer != 1)
+                            {
+                                objStart.snackBar.Show(objStart, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                            }
                         }
                         else
                         {
@@ -323,6 +336,16 @@ namespace PTC2024.Controller.Employees
             {
                 //si es 1, se hizo el proceso.
                 MessageBox.Show("El empleado fue rehabilitado junto a su usuario de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DAOInitialView daoInitial = new DAOInitialView();
+                daoInitial.ActionType = "Se habilito un empleado";
+                daoInitial.TableName = "tbEmployee";
+                daoInitial.ActionBy = SessionVar.Username;
+                daoInitial.ActionDate = DateTime.Now;
+                int auditAnswer = daoInitial.InsertAudit();
+                if (auditAnswer != 1)
+                {
+                    objStart.snackBar.Show(objStart, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                }
             }
             else
             {
