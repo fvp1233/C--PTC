@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet_payrollxsd" targetNamespace="http://tempuri.org/DataSet_payrollxsd.xsd" xmlns:mstns="http://tempuri.org/DataSet_payrollxsd.xsd" xmlns="http://tempuri.org/DataSet_payrollxsd.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="db_aaa7ca_ricaldoneConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="db_aaa7ca_ricaldoneConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.PTC2024.Properties.Settings.GlobalReference.Default.db_aaa7ca_ricaldoneConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbPayrollTableAdapter" GeneratorDataComponentClassName="tbPayrollTableAdapter" Name="tbPayroll" UserDataComponentName="tbPayrollTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_aaa7ca_ricaldoneConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Payrolls" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Payrolls" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Payrolls">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT tbPayroll.IdPayroll, tbPayroll.netPay, tbPayroll.rent, tbPayroll.issueDate, tbPayroll.AFP, tbPayroll.ISSS, tbPayroll.ISSSEmployer, tbPayroll.AFPEmployer, tbPayroll.employeeDiscount, tbPayroll.employerDiscount, tbPayroll.christmasBonus, 
+                  tbPayroll.IdEmployee, tbPayroll.IdPayrollStatus, tbPayroll.daysWorked, tbPayroll.daySalary, tbPayroll.grossSalary, tbPayroll.hoursWorked, tbPayroll.hourSalary, tbPayroll.extraHours, tbEmployee.names, tbEmployee.lastName, 
+                  tbPayrollStatus.payrollStatus, tbDepartment.departmentName
+FROM     tbPayroll INNER JOIN
+                  tbEmployee ON tbPayroll.IdEmployee = tbEmployee.IdEmployee INNER JOIN
+                  tbPayrollStatus ON tbPayroll.IdPayrollStatus = tbPayrollStatus.IdPayrollStatus INNER JOIN
+                  tbDepartment ON tbEmployee.IdDepartment = tbDepartment.IdDepartment</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdPayroll" DataSetColumn="IdPayroll" />
+              <Mapping SourceColumn="netPay" DataSetColumn="netPay" />
+              <Mapping SourceColumn="rent" DataSetColumn="rent" />
+              <Mapping SourceColumn="issueDate" DataSetColumn="issueDate" />
+              <Mapping SourceColumn="AFP" DataSetColumn="AFP" />
+              <Mapping SourceColumn="ISSS" DataSetColumn="ISSS" />
+              <Mapping SourceColumn="ISSSEmployer" DataSetColumn="ISSSEmployer" />
+              <Mapping SourceColumn="AFPEmployer" DataSetColumn="AFPEmployer" />
+              <Mapping SourceColumn="employeeDiscount" DataSetColumn="employeeDiscount" />
+              <Mapping SourceColumn="employerDiscount" DataSetColumn="employerDiscount" />
+              <Mapping SourceColumn="christmasBonus" DataSetColumn="christmasBonus" />
+              <Mapping SourceColumn="IdEmployee" DataSetColumn="IdEmployee" />
+              <Mapping SourceColumn="IdPayrollStatus" DataSetColumn="IdPayrollStatus" />
+              <Mapping SourceColumn="daysWorked" DataSetColumn="daysWorked" />
+              <Mapping SourceColumn="daySalary" DataSetColumn="daySalary" />
+              <Mapping SourceColumn="grossSalary" DataSetColumn="grossSalary" />
+              <Mapping SourceColumn="hoursWorked" DataSetColumn="hoursWorked" />
+              <Mapping SourceColumn="hourSalary" DataSetColumn="hourSalary" />
+              <Mapping SourceColumn="extraHours" DataSetColumn="extraHours" />
+              <Mapping SourceColumn="names" DataSetColumn="names" />
+              <Mapping SourceColumn="lastName" DataSetColumn="lastName" />
+              <Mapping SourceColumn="payrollStatus" DataSetColumn="payrollStatus" />
+              <Mapping SourceColumn="departmentName" DataSetColumn="departmentName" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="db_aaa7ca_ricaldoneConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Payroll" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="Payroll" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Payroll">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT tbPayroll.IdPayroll, tbPayroll.netPay, tbPayroll.rent, tbPayroll.issueDate, tbPayroll.AFP, tbPayroll.ISSS, tbPayroll.ISSSEmployer, tbPayroll.AFPEmployer, tbPayroll.employeeDiscount, tbPayroll.employerDiscount, tbPayroll.christmasBonus, 
+                  tbPayroll.IdEmployee, tbPayroll.IdPayrollStatus, tbPayroll.daysWorked, tbPayroll.daySalary, tbPayroll.grossSalary, tbPayroll.hoursWorked, tbPayroll.hourSalary, tbPayroll.extraHours, tbEmployee.names, tbEmployee.lastName, 
+                  tbPayrollStatus.payrollStatus, tbDepartment.departmentName
+FROM     tbPayroll INNER JOIN
+                  tbEmployee ON tbPayroll.IdEmployee = tbEmployee.IdEmployee INNER JOIN
+                  tbPayrollStatus ON tbPayroll.IdPayrollStatus = tbPayrollStatus.IdPayrollStatus INNER JOIN
+                  tbDepartment ON tbEmployee.IdDepartment = tbDepartment.IdDepartment AND tbPayroll.IdPayroll = @param</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="param" ColumnName="IdPayroll" DataSourceName="db_aaa7ca_ricaldone.dbo.tbPayroll" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@param" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdPayroll" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet_payrollxsd" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet_payrollxsd" msprop:Generator_DataSetName="DataSet_payrollxsd">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tbPayroll" msprop:Generator_RowEvHandlerName="tbPayrollRowChangeEventHandler" msprop:Generator_RowDeletedName="tbPayrollRowDeleted" msprop:Generator_RowDeletingName="tbPayrollRowDeleting" msprop:Generator_RowEvArgName="tbPayrollRowChangeEvent" msprop:Generator_TablePropName="tbPayroll" msprop:Generator_RowChangedName="tbPayrollRowChanged" msprop:Generator_RowChangingName="tbPayrollRowChanging" msprop:Generator_TableClassName="tbPayrollDataTable" msprop:Generator_RowClassName="tbPayrollRow" msprop:Generator_TableVarName="tabletbPayroll" msprop:Generator_UserTableName="tbPayroll">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdPayroll" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="IdPayroll" msprop:Generator_ColumnPropNameInTable="IdPayrollColumn" msprop:Generator_ColumnVarNameInTable="columnIdPayroll" msprop:Generator_UserColumnName="IdPayroll" type="xs:int" />
+              <xs:element name="netPay" msprop:Generator_ColumnPropNameInRow="netPay" msprop:Generator_ColumnPropNameInTable="netPayColumn" msprop:Generator_ColumnVarNameInTable="columnnetPay" msprop:Generator_UserColumnName="netPay" type="xs:decimal" />
+              <xs:element name="rent" msprop:Generator_ColumnPropNameInRow="rent" msprop:Generator_ColumnPropNameInTable="rentColumn" msprop:Generator_ColumnVarNameInTable="columnrent" msprop:Generator_UserColumnName="rent" type="xs:decimal" />
+              <xs:element name="issueDate" msprop:Generator_ColumnPropNameInRow="issueDate" msprop:Generator_ColumnPropNameInTable="issueDateColumn" msprop:Generator_ColumnVarNameInTable="columnissueDate" msprop:Generator_UserColumnName="issueDate" type="xs:dateTime" />
+              <xs:element name="AFP" msprop:Generator_ColumnPropNameInRow="AFP" msprop:Generator_ColumnPropNameInTable="AFPColumn" msprop:Generator_ColumnVarNameInTable="columnAFP" msprop:Generator_UserColumnName="AFP" type="xs:decimal" />
+              <xs:element name="ISSS" msprop:Generator_ColumnPropNameInRow="ISSS" msprop:Generator_ColumnPropNameInTable="ISSSColumn" msprop:Generator_ColumnVarNameInTable="columnISSS" msprop:Generator_UserColumnName="ISSS" type="xs:decimal" />
+              <xs:element name="ISSSEmployer" msprop:Generator_ColumnPropNameInRow="ISSSEmployer" msprop:Generator_ColumnPropNameInTable="ISSSEmployerColumn" msprop:Generator_ColumnVarNameInTable="columnISSSEmployer" msprop:Generator_UserColumnName="ISSSEmployer" type="xs:decimal" />
+              <xs:element name="AFPEmployer" msprop:Generator_ColumnPropNameInRow="AFPEmployer" msprop:Generator_ColumnPropNameInTable="AFPEmployerColumn" msprop:Generator_ColumnVarNameInTable="columnAFPEmployer" msprop:Generator_UserColumnName="AFPEmployer" type="xs:decimal" />
+              <xs:element name="employeeDiscount" msprop:Generator_ColumnPropNameInRow="employeeDiscount" msprop:Generator_ColumnPropNameInTable="employeeDiscountColumn" msprop:Generator_ColumnVarNameInTable="columnemployeeDiscount" msprop:Generator_UserColumnName="employeeDiscount" type="xs:decimal" />
+              <xs:element name="employerDiscount" msprop:Generator_ColumnPropNameInRow="employerDiscount" msprop:Generator_ColumnPropNameInTable="employerDiscountColumn" msprop:Generator_ColumnVarNameInTable="columnemployerDiscount" msprop:Generator_UserColumnName="employerDiscount" type="xs:decimal" />
+              <xs:element name="christmasBonus" msprop:Generator_ColumnPropNameInRow="christmasBonus" msprop:Generator_ColumnPropNameInTable="christmasBonusColumn" msprop:Generator_ColumnVarNameInTable="columnchristmasBonus" msprop:Generator_UserColumnName="christmasBonus" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IdEmployee" msprop:Generator_ColumnPropNameInRow="IdEmployee" msprop:Generator_ColumnPropNameInTable="IdEmployeeColumn" msprop:Generator_ColumnVarNameInTable="columnIdEmployee" msprop:Generator_UserColumnName="IdEmployee" type="xs:int" />
+              <xs:element name="IdPayrollStatus" msprop:Generator_ColumnPropNameInRow="IdPayrollStatus" msprop:Generator_ColumnPropNameInTable="IdPayrollStatusColumn" msprop:Generator_ColumnVarNameInTable="columnIdPayrollStatus" msprop:Generator_UserColumnName="IdPayrollStatus" type="xs:int" />
+              <xs:element name="daysWorked" msprop:Generator_ColumnPropNameInRow="daysWorked" msprop:Generator_ColumnPropNameInTable="daysWorkedColumn" msprop:Generator_ColumnVarNameInTable="columndaysWorked" msprop:Generator_UserColumnName="daysWorked" type="xs:int" />
+              <xs:element name="daySalary" msprop:Generator_ColumnPropNameInRow="daySalary" msprop:Generator_ColumnPropNameInTable="daySalaryColumn" msprop:Generator_ColumnVarNameInTable="columndaySalary" msprop:Generator_UserColumnName="daySalary" type="xs:decimal" />
+              <xs:element name="grossSalary" msprop:Generator_ColumnPropNameInRow="grossSalary" msprop:Generator_ColumnPropNameInTable="grossSalaryColumn" msprop:Generator_ColumnVarNameInTable="columngrossSalary" msprop:Generator_UserColumnName="grossSalary" type="xs:decimal" />
+              <xs:element name="hoursWorked" msprop:Generator_ColumnPropNameInRow="hoursWorked" msprop:Generator_ColumnPropNameInTable="hoursWorkedColumn" msprop:Generator_ColumnVarNameInTable="columnhoursWorked" msprop:Generator_UserColumnName="hoursWorked" type="xs:int" />
+              <xs:element name="hourSalary" msprop:Generator_ColumnPropNameInRow="hourSalary" msprop:Generator_ColumnPropNameInTable="hourSalaryColumn" msprop:Generator_ColumnVarNameInTable="columnhourSalary" msprop:Generator_UserColumnName="hourSalary" type="xs:decimal" />
+              <xs:element name="extraHours" msprop:Generator_ColumnPropNameInRow="extraHours" msprop:Generator_ColumnPropNameInTable="extraHoursColumn" msprop:Generator_ColumnVarNameInTable="columnextraHours" msprop:Generator_UserColumnName="extraHours" type="xs:int" />
+              <xs:element name="names" msprop:Generator_ColumnPropNameInRow="names" msprop:Generator_ColumnPropNameInTable="namesColumn" msprop:Generator_ColumnVarNameInTable="columnnames" msprop:Generator_UserColumnName="names">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lastName" msprop:Generator_ColumnPropNameInRow="lastName" msprop:Generator_ColumnPropNameInTable="lastNameColumn" msprop:Generator_ColumnVarNameInTable="columnlastName" msprop:Generator_UserColumnName="lastName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="payrollStatus" msprop:Generator_ColumnPropNameInRow="payrollStatus" msprop:Generator_ColumnPropNameInTable="payrollStatusColumn" msprop:Generator_ColumnVarNameInTable="columnpayrollStatus" msprop:Generator_UserColumnName="payrollStatus">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="departmentName" msprop:Generator_ColumnPropNameInRow="departmentName" msprop:Generator_ColumnPropNameInTable="departmentNameColumn" msprop:Generator_ColumnVarNameInTable="columndepartmentName" msprop:Generator_UserColumnName="departmentName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbPayroll" />
+      <xs:field xpath="mstns:IdPayroll" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
