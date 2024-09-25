@@ -531,6 +531,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_Company.xsd</DependentUpon>
     </Compile>
+    <Compile Include="View\Reporting\Payrolls\DataSet_payrollxsd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_payrollxsd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reporting\Payrolls\FrmReportPayroll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Reporting\Payrolls\FrmReportPayroll.Designer.cs">
+      <DependentUpon>FrmReportPayroll.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Reporting\Service\DataSet_Servicexsd.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -732,6 +743,10 @@
       <DependentUpon>FrmReportAllEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Reporting\Employees\Report_GeneralEmployee.rdlc" />
+    <EmbeddedResource Include="View\Reporting\Payrolls\FrmReportPayroll.resx">
+      <DependentUpon>FrmReportPayroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reporting\Payrolls\Report_singlepayroll.rdlc" />
     <EmbeddedResource Include="View\Reporting\Service\ReportServices.resx">
       <DependentUpon>ReportServices.cs</DependentUpon>
     </EmbeddedResource>
@@ -837,6 +852,17 @@
     </None>
     <None Include="View\Reporting\InfoCompany\DataSet_Company.xss">
       <DependentUpon>DataSet_Company.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reporting\Payrolls\DataSet_payrollxsd.xsc">
+      <DependentUpon>DataSet_payrollxsd.xsd</DependentUpon>
+    </None>
+    <None Include="View\Reporting\Payrolls\DataSet_payrollxsd.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_payrollxsd.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View\Reporting\Payrolls\DataSet_payrollxsd.xss">
+      <DependentUpon>DataSet_payrollxsd.xsd</DependentUpon>
     </None>
     <None Include="View\Reporting\Service\DataSet_Servicexsd.xsc">
       <DependentUpon>DataSet_Servicexsd.xsd</DependentUpon>

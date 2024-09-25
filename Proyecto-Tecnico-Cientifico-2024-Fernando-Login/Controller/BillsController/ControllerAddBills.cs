@@ -384,56 +384,6 @@ namespace PTC2024.Controller.BillsController
             }
         }
 
-        /// <summary>
-        /// Método para autocompletar el textbox
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /*
-        public void txtCustomerName_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                string customerName = objAddBills.txtCustomerName.Text.Trim();
-
-                if (!string.IsNullOrEmpty(customerName))
-                {
-                    DAOAddBills dAOAddBills = new DAOAddBills();
-                    List<string> customerNames = dAOAddBills.GetCustomerNames(customerName); // Obtener lista de nombres de cliente
-
-                    if (customerNames.Count > 0)
-                    {
-                        AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
-                        autoCompleteCollection.AddRange(customerNames.ToArray());
-                        objAddBills.txtCustomerName.AutoCompleteCustomSource = autoCompleteCollection; // Asignar la fuente de autocompletado
-
-                        // Ahora usamos GetCustomerDetails para obtener los detalles del cliente
-                        Dictionary<string, string> customerData = dAOAddBills.GetCustomerDetails(customerName);
-
-                        if (customerData.Count > 0)
-                        {
-                            objAddBills.txtDUICustomer.Text = customerData["DUI"];
-                            objAddBills.txtCustomerPhone.Text = customerData["phone"];
-                            objAddBills.txtCustomerEmail.Text = customerData["email"];
-                        }
-                    }
-                    else
-                    {
-                        objAddBills.txtCustomerName.AutoCompleteCustomSource = null; // Limpiar la fuente de autocompletado si no hay resultados
-                    }
-                }
-                else
-                {
-                    objAddBills.txtCustomerName.AutoCompleteCustomSource = null; // Limpiar la fuente de autocompletado si el campo está vacío
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        */
-
         private string previousEmployeeName = string.Empty; // Para almacenar el nombre de empleado anterior
 
         public async void txtEmployeeName_TextChanged(object sender, EventArgs e)

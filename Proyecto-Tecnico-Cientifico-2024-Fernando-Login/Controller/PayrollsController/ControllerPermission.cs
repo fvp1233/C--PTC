@@ -213,7 +213,7 @@ namespace PTC2024.Controller.PayrollsController
                 objPermission.cb7.Checked = false;
                 objPermission.cb5.Checked = false;
 
-                DataSet ds = daoPermission.SearchPermissionBy2();
+                DataSet ds = daoPermission.SearchPermissionBy3();
                 objPermission.dgvPermissions.DataSource = ds.Tables["viewPermissions"];
             }
             else
@@ -236,7 +236,7 @@ namespace PTC2024.Controller.PayrollsController
                 objPermission.cb7.Checked = false;
 
 
-                DataSet ds = daoPermission.SearchPermissionBy3();
+                DataSet ds = daoPermission.SearchPermissionBy2();
                 objPermission.dgvPermissions.DataSource = ds.Tables["viewPermissions"];
             }
             else

@@ -5,6 +5,8 @@ using PTC2024.Model.DAO.PayrollsDAO;
 using PTC2024.View.Alerts;
 using PTC2024.View.Empleados;
 using PTC2024.View.formularios.inicio;
+using PTC2024.View.Reporting.Bills;
+using PTC2024.View.Reporting.Payrolls;
 using PTC2024.View.Start;
 using System;
 using System.Collections.Generic;
@@ -54,6 +56,7 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.cmsUpdatePayroll.Click += new EventHandler(OpenUpdatePayroll);
             objViewPayrolls.btnDeletePayrolls.Click += new EventHandler(DeletePayrolls);
             objViewPayrolls.dgvPayrolls.Click += new EventHandler(Disable);
+            objViewPayrolls.cmsDownloadPDF.Click += new EventHandler(Payroll);
             objViewPayrolls.cmsPayPayroll.Click += new EventHandler(UpdatePayrollPaid);
             objViewPayrolls.cmsUpdateUnpaid.Click += new EventHandler(UpdatePayrollToUnpaid);
             objViewPayrolls.cmsPayrollInformation.Click += new EventHandler(ViewInfoPayroll);
@@ -717,6 +720,12 @@ namespace PTC2024.Controller.EmployeesController
                 objViewPayrolls.cmsUpdatePayroll.Visible = true;
 
             }
+        }
+        public void Payroll(object sender, EventArgs e)
+        {
+            int idPayroll = Convert.ToInt32(objViewPayrolls.dgvPayrolls.CurrentRow.Cells["N°"].Value);
+            FrmReportPayroll print = new FrmReportPayroll(idPayroll);
+            print.ShowDialog();
         }
 
         //----------------------Metodos de interaccion con otros formularios---------------------------//
