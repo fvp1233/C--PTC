@@ -117,6 +117,7 @@
   <ItemGroup>
     <Compile Include="Controller\Alerts\ControllerChangePassword.cs" />
     <Compile Include="Controller\Alerts\ControllerDeleteAlert.cs" />
+    <Compile Include="Controller\Alerts\ControllerProgressBar.cs" />
     <Compile Include="Controller\Helper\BusinessVar.cs" />
     <Compile Include="Controller\Helper\XMLConnection.cs" />
     <Compile Include="Controller\MaintenanceController\ControllerBusinessConfiguration.cs" />

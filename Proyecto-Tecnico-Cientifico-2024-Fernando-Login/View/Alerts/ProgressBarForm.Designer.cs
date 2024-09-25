@@ -66,7 +66,7 @@
             this.lblStatus.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblStatus.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lblStatus.Location = new System.Drawing.Point(162, 60);
+            this.lblStatus.Location = new System.Drawing.Point(135, 60);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblStatus.Size = new System.Drawing.Size(91, 21);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PTC2024.Controller.Alerts;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,22 +16,7 @@ namespace PTC2024.View.Alerts
         public ProgressBarForm()
         {
             InitializeComponent();
-        }
-        public void UpdateProgress(int progress, string message)
-        {
-            if (progressBar.InvokeRequired)
-            {
-                progressBar.Invoke(new Action(() =>
-                {
-                    progressBar.Value = progress;
-                    lblStatus.Text = message;
-                }));
-            }
-            else
-            {
-                progressBar.Value = progress;
-                lblStatus.Text = message;
-            }
+            ControllerProgressBar objController = new ControllerProgressBar(this);
         }
     }
 }
