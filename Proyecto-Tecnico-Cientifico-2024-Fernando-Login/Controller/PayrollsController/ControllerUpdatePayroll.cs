@@ -36,38 +36,48 @@ namespace PTC2024.Controller.EmployeesController
         }
         public void UpdatePayrollStatus(object sender, EventArgs e)
         {
-            DAOUpdatePayroll daoUpdatePayroll = new DAOUpdatePayroll();
-            if (int.Parse(objUpdatePayroll.txtDaysWorked.Text) <= 30 && int.Parse(objUpdatePayroll.txtDaysWorked.Text) >=0)
+            if (!(string.IsNullOrEmpty(objUpdatePayroll.txtHoursWorked.Text.Trim()) || string.IsNullOrEmpty(objUpdatePayroll.txtDaysWorked.Text.Trim()) || string.IsNullOrEmpty(objUpdatePayroll.txtExtraHours.Text.Trim())))
             {
-                daoUpdatePayroll.DaysWorked = int.Parse(objUpdatePayroll.txtDaysWorked.Text.Trim());
-                daoUpdatePayroll.DaySalary = double.Parse(objUpdatePayroll.txtDaySalary.Text.Trim());
-                daoUpdatePayroll.HoursWorked = int.Parse(objUpdatePayroll.txtHoursWorked.Text.Trim());
-                daoUpdatePayroll.HoursSalary = double.Parse(objUpdatePayroll.txtHourSalary.Text.Trim());
-                daoUpdatePayroll.ExtraHours = int.Parse(objUpdatePayroll.txtExtraHours.Text.Trim());
-                daoUpdatePayroll.IdPayroll = int.Parse(objUpdatePayroll.txtIdPayroll.Text.Trim());
-                int value = daoUpdatePayroll.UpdatePayroll();
-                if (value == 1)
+                DAOUpdatePayroll daoUpdatePayroll = new DAOUpdatePayroll();
+                if (int.Parse(objUpdatePayroll.txtDaysWorked.Text) <= 30 && int.Parse(objUpdatePayroll.txtDaysWorked.Text) >= 0)
                 {
-                    StartMenu objStart = new StartMenu(SessionVar.Username);
-                    objStartForm = objStart;
-                    objStartForm.snackBar.Show(objStartForm, $"Los datos fueron fueron actualizados exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                    daoUpdatePayroll.DaysWorked = int.Parse(objUpdatePayroll.txtDaysWorked.Text.Trim());
+                    daoUpdatePayroll.DaySalary = double.Parse(objUpdatePayroll.txtDaySalary.Text.Trim());
+                    daoUpdatePayroll.HoursWorked = int.Parse(objUpdatePayroll.txtHoursWorked.Text.Trim());
+                    daoUpdatePayroll.HoursSalary = double.Parse(objUpdatePayroll.txtHourSalary.Text.Trim());
+                    daoUpdatePayroll.ExtraHours = int.Parse(objUpdatePayroll.txtExtraHours.Text.Trim());
+                    daoUpdatePayroll.IdPayroll = int.Parse(objUpdatePayroll.txtIdPayroll.Text.Trim());
+                    int value = daoUpdatePayroll.UpdatePayroll();
+                    if (value == 1)
+                    {
+                        StartMenu objStart = new StartMenu(SessionVar.Username);
+                        objStartForm = objStart;
+                        objStartForm.snackBar.Show(objStartForm, $"Los datos fueron fueron actualizados exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
 
+                    }
+                    else
+                    {
+                        StartMenu objStart = new StartMenu(SessionVar.Username);
+                        objStartForm = objStart;
+                        objStartForm.snackBar.Show(objStartForm, $"Los datos no pudieron ser actualizados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+
+                    }
+                    objUpdatePayroll.Close();
                 }
                 else
                 {
                     StartMenu objStart = new StartMenu(SessionVar.Username);
                     objStartForm = objStart;
-                    objStartForm.snackBar.Show(objStartForm, $"Los datos no pudieron ser actualizados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
-
+                    objStartForm.snackBar.Show(objStartForm, $"Los dias trabajados no pueden exceder los 30 días", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
                 }
-                objUpdatePayroll.Close();
             }
             else
             {
                 StartMenu objStart = new StartMenu(SessionVar.Username);
                 objStartForm = objStart;
-                objStartForm.snackBar.Show(objStartForm, $"Los dias trabajados no pueden exceder los 30 días", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                objStartForm.snackBar.Show(objStartForm, $"Favor llenar todos los campos", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
+
         }
         public void ChargeValues(int nP, string dui, string employee, double salary, string possition, double bonus, string bankAccount, string affiliationNumber, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, int daysWorked, double daySalary, double grossPay, int hoursWorked, double hourSalary, int extraHours)
         {
