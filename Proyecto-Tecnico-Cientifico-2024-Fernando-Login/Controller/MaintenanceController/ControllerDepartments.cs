@@ -20,6 +20,7 @@ namespace PTC2024.Controller.MaintenanceController
             objDep.btnAddDepartment.Click += new EventHandler(NewDepartment);
             objDep.cmsDeleteDepartment.Click += new EventHandler(DeleteDepartment);
             objDep.btnGoBack.Click += new EventHandler(GoBack);
+            objDep.txtDepartment.TextChanged += new EventHandler(OnlyLettersName);
             objDep.txtDepartment.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
         public void NewDepartment(object sender, EventArgs e)
