@@ -97,7 +97,7 @@ namespace PTC2024.Controller.ServicesController
                     objAddService.Close();
                     DAOInitialView daoInitial = new DAOInitialView();
                     daoInitial.ActionType = "Se insertó un servicio";
-                    daoInitial.TableName = "tbEmployee";
+                    daoInitial.TableName = "Servicios";
                     daoInitial.ActionBy = SessionVar.Username;
                     daoInitial.ActionDate = DateTime.Now;
                     int auditAnswer = daoInitial.InsertAudit();

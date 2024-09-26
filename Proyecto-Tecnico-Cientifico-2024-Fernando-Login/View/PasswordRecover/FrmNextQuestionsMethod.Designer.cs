@@ -157,7 +157,7 @@
             this.txtFirstAnswer.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFirstAnswer.Lines = new string[0];
             this.txtFirstAnswer.Location = new System.Drawing.Point(63, 114);
-            this.txtFirstAnswer.MaxLength = 32767;
+            this.txtFirstAnswer.MaxLength = 70;
             this.txtFirstAnswer.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtFirstAnswer.Modified = false;
             this.txtFirstAnswer.Multiline = false;
@@ -255,7 +255,7 @@
             this.txtSecondAnswer.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSecondAnswer.Lines = new string[0];
             this.txtSecondAnswer.Location = new System.Drawing.Point(63, 188);
-            this.txtSecondAnswer.MaxLength = 32767;
+            this.txtSecondAnswer.MaxLength = 70;
             this.txtSecondAnswer.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSecondAnswer.Modified = false;
             this.txtSecondAnswer.Multiline = false;
@@ -342,7 +342,7 @@
             this.txtThirdAnswer.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtThirdAnswer.Lines = new string[0];
             this.txtThirdAnswer.Location = new System.Drawing.Point(63, 269);
-            this.txtThirdAnswer.MaxLength = 32767;
+            this.txtThirdAnswer.MaxLength = 70;
             this.txtThirdAnswer.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtThirdAnswer.Modified = false;
             this.txtThirdAnswer.Multiline = false;

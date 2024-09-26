@@ -75,8 +75,8 @@ namespace PTC2024.Controller.PayrollsController
                         objStartForm = objStart;
                         objStartForm.snackBar.Show(objStartForm, $"La empleada fue actualizada existosamente, inciando su su periodo de maternidad", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
                         DAOInitialView daoInitial = new DAOInitialView();
-                        daoInitial.ActionType = "Se actualizo un empleado";
-                        daoInitial.TableName = "tbEmployee";
+                        daoInitial.ActionType = "Se actualizó un permiso";
+                        daoInitial.TableName = "Permisos";
                         daoInitial.ActionBy = SessionVar.Username;
                         daoInitial.ActionDate = DateTime.Now;
                         int auditAnswer = daoInitial.InsertAudit();

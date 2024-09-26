@@ -64,7 +64,7 @@ namespace PTC2024.Controller.StartMenuController
             {
                 objStartMenu.snackBar.Show(objStartMenu, $"Datos del negocio cargados con éxito.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
                 DAOInitialView daoInitial = new DAOInitialView();
-                daoInitial.ActionType = "Se inicio sesion";
+                daoInitial.ActionType = "Se inició sesion";
                 daoInitial.TableName = "Log In";
                 daoInitial.ActionBy = SessionVar.Username;
                 daoInitial.ActionDate = DateTime.Now;

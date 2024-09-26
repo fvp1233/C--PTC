@@ -169,7 +169,7 @@ namespace PTC2024.Controller.EmployeesController
                                         objUpdateEmployee.snackbar.Show(objStart, $"Los datos del empleado se actualizaron con éxito.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
                                         DAOInitialView daoInitial = new DAOInitialView();
                                         daoInitial.ActionType = "Se actualizo un empleado";
-                                        daoInitial.TableName = "tbEmployee";
+                                        daoInitial.TableName = "Empleados";
                                         daoInitial.ActionBy = SessionVar.Username;
                                         daoInitial.ActionDate = DateTime.Now;
                                         int auditAnswer = daoInitial.InsertAudit();

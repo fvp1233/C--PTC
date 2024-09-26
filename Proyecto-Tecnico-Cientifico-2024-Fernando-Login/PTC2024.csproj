@@ -128,7 +128,6 @@
     <Compile Include="Controller\BillsController\ControllerAddBills.cs" />
     <Compile Include="Controller\BillsController\ControllerBills.cs" />
     <Compile Include="Controller\BillsController\ControllerOverride.cs" />
-    <Compile Include="Controller\BillsController\ControllerUpdateBill.cs" />
     <Compile Include="Controller\CustomersController\ControllerAddCustomers.cs" />
     <Compile Include="Controller\CustomersController\ControllerCustomers.cs" />
     <Compile Include="Controller\CustomersController\ControllerUpdateCustomers.cs" />
@@ -303,12 +302,6 @@
     <Compile Include="View\BillsViews\FrmOverrideBill.Designer.cs">
       <DependentUpon>FrmOverrideBill.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\BillsViews\FrmUpdateBill.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\BillsViews\FrmUpdateBill.Designer.cs">
-      <DependentUpon>FrmUpdateBill.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\CustomersView\FrmAddCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,12 +313,6 @@
     </Compile>
     <Compile Include="View\CustomersView\FrmCustomers.Designer.cs">
       <DependentUpon>FrmCustomers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\CustomersView\FrmCustomersInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\CustomersView\FrmCustomersInfo.Designer.cs">
-      <DependentUpon>FrmCustomersInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="View\CustomersView\FrmUpdateCustomer.cs">
       <SubType>Form</SubType>
@@ -572,12 +559,6 @@
     <Compile Include="View\Service inventory\FrmUpdateService.Designer.cs">
       <DependentUpon>FrmUpdateService.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Service inventory\prueba.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Service inventory\prueba.Designer.cs">
-      <DependentUpon>prueba.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Start\FrmWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -637,17 +618,11 @@
     <EmbeddedResource Include="View\BillsViews\FrmOverrideBill.resx">
       <DependentUpon>FrmOverrideBill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\BillsViews\FrmUpdateBill.resx">
-      <DependentUpon>FrmUpdateBill.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\CustomersView\FrmAddCustomers.resx">
       <DependentUpon>FrmAddCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomersView\FrmCustomers.resx">
       <DependentUpon>FrmCustomers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\CustomersView\FrmCustomersInfo.resx">
-      <DependentUpon>FrmCustomersInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomersView\FrmUpdateCustomer.resx">
       <DependentUpon>FrmUpdateCustomer.cs</DependentUpon>
@@ -760,9 +735,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Service inventory\FrmUpdateService.resx">
       <DependentUpon>FrmUpdateService.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Service inventory\prueba.resx">
-      <DependentUpon>prueba.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Start\FrmWelcome.resx">
       <DependentUpon>FrmWelcome.cs</DependentUpon>

@@ -103,8 +103,8 @@ namespace PTC2024.Controller.CustomersController
                         SendEmail();
                         MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         DAOInitialView daoInitial = new DAOInitialView();
-                        daoInitial.ActionType = "Se inserto un cliente";
-                        daoInitial.TableName = "tbCustomer";
+                        daoInitial.ActionType = "Se insertó un cliente";
+                        daoInitial.TableName = "Cliente";
                         daoInitial.ActionBy = SessionVar.Username;
                         daoInitial.ActionDate = DateTime.Now;
                         int auditAnswer = daoInitial.InsertAudit();

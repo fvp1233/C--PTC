@@ -208,7 +208,7 @@
             this.rtxtContext.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.rtxtContext.Lines = new string[0];
             this.rtxtContext.Location = new System.Drawing.Point(22, 188);
-            this.rtxtContext.MaxLength = 100;
+            this.rtxtContext.MaxLength = 300;
             this.rtxtContext.MinimumSize = new System.Drawing.Size(1, 1);
             this.rtxtContext.Modified = false;
             this.rtxtContext.Multiline = true;

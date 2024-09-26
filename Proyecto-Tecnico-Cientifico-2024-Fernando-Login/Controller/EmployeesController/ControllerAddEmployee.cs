@@ -104,6 +104,9 @@ namespace PTC2024.Controller
             //objAddEmployee.comboBusinessInfo.ValueMember = "idBusiness";
 
             objAddEmployee.lblSalaryRequest.Visible = false;
+            objAddEmployee.dtBirthDate.Value = DateTime.Now;
+            objAddEmployee.dpHireDate.Value = DateTime.Now;
+            ValidateDays();
         }
 
         public void EnterSalary(object sender, EventArgs e)
@@ -225,7 +228,7 @@ namespace PTC2024.Controller
                                             SendEmail(newPass);
                                             DAOInitialView daoInitial = new DAOInitialView();
                                             daoInitial.ActionType = "Se inserto un empleado";
-                                            daoInitial.TableName = "tbEmployee";
+                                            daoInitial.TableName = "Empleados";
                                             daoInitial.ActionBy = SessionVar.Username;
                                             daoInitial.ActionDate = DateTime.Now;
                                             int auditAnswer = daoInitial.InsertAudit();
@@ -596,6 +599,11 @@ namespace PTC2024.Controller
 
             return answer;
         }
-
+        public void ValidateDays()
+        {
+            int currentYear = DateTime.Now.Year;
+            objAddEmployee.dtBirthDate.MaxDate = new DateTime(currentYear, 12, 31);
+            objAddEmployee.dpHireDate.MaxDate = new DateTime(currentYear, 12, 31);
+        }
     }
 }

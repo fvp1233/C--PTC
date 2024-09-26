@@ -1,4 +1,5 @@
 ﻿using PTC2024.Controller.Alerts;
+using PTC2024.Controller.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace PTC2024.View.Alerts
         {
             InitializeComponent();
             ControllerProgressBar objController = new ControllerProgressBar(this);
+            Region = Region.FromHrgn(CommonClasses.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
     }
 }

@@ -397,7 +397,7 @@
             this.txtAmount.Lines = new string[0];
             this.txtAmount.Location = new System.Drawing.Point(64, 365);
             this.txtAmount.MaximumSize = new System.Drawing.Size(330, 32);
-            this.txtAmount.MaxLength = 150;
+            this.txtAmount.MaxLength = 12;
             this.txtAmount.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtAmount.Modified = false;
             this.txtAmount.Multiline = false;

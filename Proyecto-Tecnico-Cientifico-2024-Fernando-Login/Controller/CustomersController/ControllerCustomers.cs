@@ -156,8 +156,8 @@ namespace PTC2024.Controller.CustomersController
                 {
                     MessageBox.Show("Los datos se eliminaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DAOInitialView daoInitial = new DAOInitialView();
-                    daoInitial.ActionType = "Se elimino un cliente";
-                    daoInitial.TableName = "tbCustomer";
+                    daoInitial.ActionType = "Se eliminó un cliente";
+                    daoInitial.TableName = "Clientes";
                     daoInitial.ActionBy = SessionVar.Username;
                     daoInitial.ActionDate = DateTime.Now;
                     int auditAnswer = daoInitial.InsertAudit();

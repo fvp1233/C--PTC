@@ -517,8 +517,8 @@ namespace PTC2024.Controller.BillsController
                     StartMenu startMenu = new StartMenu(SessionVar.Username);
                     startMenu.snackBar.Show(startMenu, $"Los datos se registraron de manera exitosa", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
                     DAOInitialView daoInitial = new DAOInitialView();
-                    daoInitial.ActionType = "Se inserto una factura";
-                    daoInitial.TableName = "tbBills";
+                    daoInitial.ActionType = "Se insertó una factura";
+                    daoInitial.TableName = "Facturas";
                     daoInitial.ActionBy = SessionVar.Username;
                     daoInitial.ActionDate = DateTime.Now;
                     int auditAnswer = daoInitial.InsertAudit();

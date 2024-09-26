@@ -86,34 +86,37 @@ namespace PTC2024.Controller.DashboardController
             DAODashboard dAODashboard = new DAODashboard();
             ValidateDays();
             bool refreshData = dAODashboard.LoadData(objDashboard.dtpStart.Value, objDashboard.dtpEnd.Value);
-            if (refreshData == true)
+            if (ValidateDaysEvent() == true)
             {
-                dAODashboard.TotalPay = dAODashboard.GetTotalIncome();
-                objDashboard.lblTotalIncome.Text = $"${dAODashboard.TotalPay:N2}";
+                if (refreshData == true)
+                {
+                    dAODashboard.TotalPay = dAODashboard.GetTotalIncome();
+                    objDashboard.lblTotalIncome.Text = $"${dAODashboard.TotalPay:N2}";
 
-                ChargeData();
-                dAODashboard.GetAnalisys();
-                //objDashboard.chartPayrolls.DataSource = dAODashboard.PayrollsList;
-                objDashboard.chartPayrolls.Series[0].ChartArea = "ChartArea1";
-                objDashboard.chartPayrolls.Series[0].XValueMember = "Date";
-                objDashboard.chartPayrolls.Series[0].YValueMembers = "TotalAmount";
+                    ChargeData();
+                    dAODashboard.GetAnalisys();
+                    //objDashboard.chartPayrolls.DataSource = dAODashboard.PayrollsList;
+                    objDashboard.chartPayrolls.Series[0].ChartArea = "ChartArea1";
+                    objDashboard.chartPayrolls.Series[0].XValueMember = "Date";
+                    objDashboard.chartPayrolls.Series[0].YValueMembers = "TotalAmount";
 
-                dAODashboard.GetSecondAnalisys();
-                //objDashboard.chartPayrolls.DataSource = dAODashboard.IncomeList;
-                objDashboard.chartPayrolls.Series[1].ChartArea = "ChartArea1";
-                objDashboard.chartPayrolls.Series[1].XValueMember = "DateIn";
-                objDashboard.chartPayrolls.Series[1].YValueMembers = "TotalIncome";
+                    dAODashboard.GetSecondAnalisys();
+                    //objDashboard.chartPayrolls.DataSource = dAODashboard.IncomeList;
+                    objDashboard.chartPayrolls.Series[1].ChartArea = "ChartArea1";
+                    objDashboard.chartPayrolls.Series[1].XValueMember = "DateIn";
+                    objDashboard.chartPayrolls.Series[1].YValueMembers = "TotalIncome";
 
-                objDashboard.chartPayrolls.Series[0].Points.DataBindXY(dAODashboard.PayrollsList, "Date", dAODashboard.PayrollsList, "TotalAmount");
-                objDashboard.chartPayrolls.Series[1].Points.DataBindXY(dAODashboard.IncomeList, "DateIn", dAODashboard.IncomeList, "TotalIncome");
+                    objDashboard.chartPayrolls.Series[0].Points.DataBindXY(dAODashboard.PayrollsList, "Date", dAODashboard.PayrollsList, "TotalAmount");
+                    objDashboard.chartPayrolls.Series[1].Points.DataBindXY(dAODashboard.IncomeList, "DateIn", dAODashboard.IncomeList, "TotalIncome");
 
-                objDashboard.chartPayrolls.DataBind();
+                    objDashboard.chartPayrolls.DataBind();
 
-                dAODashboard.GetTopServices();
-                objDashboard.chrtTopServices.DataSource = dAODashboard.TopServices;
-                objDashboard.chrtTopServices.Series[0].XValueMember = "Key";
-                objDashboard.chrtTopServices.Series[0].YValueMembers = "Value";
-                objDashboard.chrtTopServices.DataBind();
+                    dAODashboard.GetTopServices();
+                    objDashboard.chrtTopServices.DataSource = dAODashboard.TopServices;
+                    objDashboard.chrtTopServices.Series[0].XValueMember = "Key";
+                    objDashboard.chrtTopServices.Series[0].YValueMembers = "Value";
+                    objDashboard.chrtTopServices.DataBind();
+                }
             }
         }
         public void LoadDataBills(object sender, EventArgs e)
@@ -187,6 +190,25 @@ namespace PTC2024.Controller.DashboardController
             else
             {
                 objDashboard.lblTime.Text = "Buenas noches";
+            }
+        }
+        public bool ValidateDaysEvent()
+        {
+            StartMenu objStart = new StartMenu(SessionVar.Username);
+            objStartMenu = objStart;
+            if (objDashboard.dtpStart.Value > objDashboard.dtpEnd.Value)
+            {
+                objStartMenu.snackBar.Show(objStartMenu, $"La fecha de inicio no puede ser mayor a la fecha final ", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                return false;
+            }
+            else if (objDashboard.dtpEnd.Value < objDashboard.dtpStart.Value)
+            {
+                objStartMenu.snackBar.Show(objStartMenu, $"La fecha final no puede ser menor a la fecha inicial ", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.MiddleCenter);
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }

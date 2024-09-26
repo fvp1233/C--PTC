@@ -166,7 +166,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
-                MessageBox.Show("EC-074: No se pudieron obtener las planillas de liquidación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-077: No se pudieron obtener los permisos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return null;
             }
@@ -189,7 +189,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
-                MessageBox.Show("EC-074: No se pudieron obtener las planillas de liquidación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-077: No se pudieron obtener los permisos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return null;
             }
@@ -212,7 +212,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
-                MessageBox.Show("EC-074: No se pudieron obtener las planillas de liquidación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-077: No se pudieron obtener los permisos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return null;
             }
@@ -235,7 +235,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
-                MessageBox.Show("EC-074: No se pudieron obtener las planillas de liquidación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-077: No se pudieron obtener los permisos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return null;
             }
@@ -258,7 +258,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
-                MessageBox.Show("EC-074: No se pudieron obtener las planillas de liquidación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-077: No se pudieron obtener los permisos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return null;
             }
@@ -281,7 +281,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
-                MessageBox.Show("EC-074: No se pudieron obtener las planillas de liquidación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-077: No se pudieron obtener los permisos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return null;
             }
@@ -304,7 +304,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             }
             catch (Exception)
             {
-                MessageBox.Show("EC-074: No se pudieron obtener las planillas de liquidación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-077: No se pudieron obtener los permisos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return null;
             }

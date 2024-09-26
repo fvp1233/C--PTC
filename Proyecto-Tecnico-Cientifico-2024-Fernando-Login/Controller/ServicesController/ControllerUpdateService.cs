@@ -143,7 +143,7 @@ namespace PTC2024.Controller.ServicesController
                     MessageBox.Show("Los datos se actualizaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DAOInitialView daoInitial = new DAOInitialView();
                     daoInitial.ActionType = "Se actualizó un servicio";
-                    daoInitial.TableName = "tbService";
+                    daoInitial.TableName = "Servicios";
                     daoInitial.ActionBy = SessionVar.Username;
                     daoInitial.ActionDate = DateTime.Now;
                     int auditAnswer = daoInitial.InsertAudit();

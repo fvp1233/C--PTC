@@ -130,8 +130,8 @@ namespace PTC2024.Controller.PayrollsController
                                     objStartForm = objStart;
                                     objStartForm.snackBar.Show(objStartForm, $"El empleado fue actualizado extosamente, iniciando su periodo de paternidad", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
                                     DAOInitialView daoInitial = new DAOInitialView();
-                                    daoInitial.ActionType = "Se agrego un permiso";
-                                    daoInitial.TableName = "tbPermission";
+                                    daoInitial.ActionType = "Se agregó un permiso";
+                                    daoInitial.TableName = "Permisos";
                                     daoInitial.ActionBy = SessionVar.Username;
                                     daoInitial.ActionDate = DateTime.Now;
                                     int auditAnswer = daoInitial.InsertAudit();

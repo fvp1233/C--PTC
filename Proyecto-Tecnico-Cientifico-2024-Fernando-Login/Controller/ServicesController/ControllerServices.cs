@@ -116,7 +116,7 @@ namespace PTC2024.Controller.ServicesController
                     MessageBox.Show("Los datos se eliminaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DAOInitialView daoInitial = new DAOInitialView();
                     daoInitial.ActionType = "Se eliminó un servicio";
-                    daoInitial.TableName = "tbService";
+                    daoInitial.TableName = "Servicios";
                     daoInitial.ActionBy = SessionVar.Username;
                     daoInitial.ActionDate = DateTime.Now;
                     int auditAnswer = daoInitial.InsertAudit();

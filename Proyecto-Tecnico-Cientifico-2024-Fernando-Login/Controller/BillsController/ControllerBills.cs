@@ -375,8 +375,8 @@ namespace PTC2024.Controller.BillsController
                 DisableRow(idBill);
                 SetRowReadOnly(idBill);
                 DAOInitialView daoInitial = new DAOInitialView();
-                daoInitial.ActionType = "Se anulo una factura";
-                daoInitial.TableName = "tbBills";
+                daoInitial.ActionType = "Se anuló una factura";
+                daoInitial.TableName = "Facturas";
                 daoInitial.ActionBy = SessionVar.Username;
                 daoInitial.ActionDate = DateTime.Now;
                 int auditAnswer = daoInitial.InsertAudit();

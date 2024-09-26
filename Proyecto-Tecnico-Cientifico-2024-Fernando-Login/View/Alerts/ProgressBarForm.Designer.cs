@@ -37,7 +37,7 @@
             // 
             this.progressBar.AllowAnimations = false;
             this.progressBar.Animation = 0;
-            this.progressBar.AnimationSpeed = 220;
+            this.progressBar.AnimationSpeed = 10;
             this.progressBar.AnimationStep = 10;
             this.progressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
             this.progressBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("progressBar.BackgroundImage")));
@@ -79,7 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(471, 93);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.progressBar);

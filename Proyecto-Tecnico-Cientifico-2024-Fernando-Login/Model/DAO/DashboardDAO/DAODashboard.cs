@@ -170,6 +170,7 @@ namespace PTC2024.Model.DAO.DashboardDAO
             catch (Exception ex)
             {
                 MessageBox.Show("EC-019: No se pudo obtener el número de planillas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
             finally
             {
@@ -210,7 +211,7 @@ namespace PTC2024.Model.DAO.DashboardDAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("EC-019: No se pudo obtener el número de planillas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-107: No se pudo obtener los datos de las facturas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -245,7 +246,7 @@ namespace PTC2024.Model.DAO.DashboardDAO
             }
             catch (Exception EX)
             {
-                MessageBox.Show($"{EX}EC-019: No se pudo obtener el numero de planillas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-107: No se pudo obtener los datos de las facturas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             finally
@@ -269,7 +270,7 @@ namespace PTC2024.Model.DAO.DashboardDAO
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("EC-077: No se pudieron obtener los permisos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("EC-139: No se pudieron obtener las auditorias", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally

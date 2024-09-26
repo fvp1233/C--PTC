@@ -275,8 +275,8 @@ namespace PTC2024.Controller.Employees
                             openDeleteAlert.Close();
                             MessageBox.Show("El empleado fue deshabilitado junto a su usuario de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             DAOInitialView daoInitial = new DAOInitialView();
-                            daoInitial.ActionType = "Se deshabilito un empleado";
-                            daoInitial.TableName = "tbEmployee";
+                            daoInitial.ActionType = "Se deshabilitó un empleado";
+                            daoInitial.TableName = "Empleados";
                             daoInitial.ActionBy = SessionVar.Username;
                             daoInitial.ActionDate = DateTime.Now;
                             int auditAnswer = daoInitial.InsertAudit();
@@ -337,8 +337,8 @@ namespace PTC2024.Controller.Employees
                 //si es 1, se hizo el proceso.
                 MessageBox.Show("El empleado fue rehabilitado junto a su usuario de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DAOInitialView daoInitial = new DAOInitialView();
-                daoInitial.ActionType = "Se habilito un empleado";
-                daoInitial.TableName = "tbEmployee";
+                daoInitial.ActionType = "Se habilitó un empleado";
+                daoInitial.TableName = "Empleados";
                 daoInitial.ActionBy = SessionVar.Username;
                 daoInitial.ActionDate = DateTime.Now;
                 int auditAnswer = daoInitial.InsertAudit();

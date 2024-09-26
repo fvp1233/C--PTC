@@ -374,7 +374,7 @@
             this.txtPasswordBunifu.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPasswordBunifu.Lines = new string[0];
             this.txtPasswordBunifu.Location = new System.Drawing.Point(383, 195);
-            this.txtPasswordBunifu.MaxLength = 32767;
+            this.txtPasswordBunifu.MaxLength = 256;
             this.txtPasswordBunifu.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPasswordBunifu.Modified = false;
             this.txtPasswordBunifu.Multiline = false;
@@ -450,7 +450,7 @@
             this.TxtUserBunifu.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtUserBunifu.Lines = new string[0];
             this.TxtUserBunifu.Location = new System.Drawing.Point(383, 119);
-            this.TxtUserBunifu.MaxLength = 32767;
+            this.TxtUserBunifu.MaxLength = 50;
             this.TxtUserBunifu.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtUserBunifu.Modified = false;
             this.TxtUserBunifu.Multiline = false;

@@ -79,8 +79,8 @@ namespace PTC2024.Controller.CustomersController
                     SendEmail();
                     MessageBox.Show("Datos Actualizados");
                     DAOInitialView daoInitial = new DAOInitialView();
-                    daoInitial.ActionType = "Se actualizo un cliente";
-                    daoInitial.TableName = "tbCustomer";
+                    daoInitial.ActionType = "Se actualizó un cliente";
+                    daoInitial.TableName = "Clientes";
                     daoInitial.ActionBy = SessionVar.Username;
                     daoInitial.ActionDate = DateTime.Now;
                     int auditAnswer = daoInitial.InsertAudit();

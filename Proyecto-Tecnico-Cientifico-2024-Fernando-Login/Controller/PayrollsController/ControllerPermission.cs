@@ -61,6 +61,7 @@ namespace PTC2024.Controller.PayrollsController
             {
                 RefreshData();
             }
+
         }
         void SearchPermission()
         {
@@ -108,8 +109,8 @@ namespace PTC2024.Controller.PayrollsController
                 {
                     MessageBox.Show("Los datos se eliminaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DAOInitialView daoInitial = new DAOInitialView();
-                    daoInitial.ActionType = "Se elimino un permiso";
-                    daoInitial.TableName = "tbPermission";
+                    daoInitial.ActionType = "Se eliminó un permiso";
+                    daoInitial.TableName = "Permisos";
                     daoInitial.ActionBy = SessionVar.Username;
                     daoInitial.ActionDate = DateTime.Now;
                     int auditAnswer = daoInitial.InsertAudit();
@@ -160,8 +161,8 @@ namespace PTC2024.Controller.PayrollsController
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
                 DAOInitialView daoInitial = new DAOInitialView();
-                daoInitial.ActionType = "Se deshabilito un permiso de un empleado inactivo";
-                daoInitial.TableName = "tbPermission";
+                daoInitial.ActionType = "Se deshabilitó un permiso de un empleado inactivo";
+                daoInitial.TableName = "Permisos";
                 daoInitial.ActionBy = SessionVar.Username;
                 daoInitial.ActionDate = DateTime.Now;
                 int auditAnswer = daoInitial.InsertAudit();

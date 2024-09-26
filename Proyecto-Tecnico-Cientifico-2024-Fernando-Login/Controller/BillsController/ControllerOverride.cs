@@ -86,8 +86,8 @@ namespace PTC2024.Controller.BillsController
                 ConfirmProcessValue(); // Establecer confirmación exitosa
                 objoverrideBill.Close(); // Ocultar formulario
                 DAOInitialView daoInitial = new DAOInitialView();
-                daoInitial.ActionType = "Se rectifico una factura";
-                daoInitial.TableName = "tbBills";
+                daoInitial.ActionType = "Se rectificó una factura";
+                daoInitial.TableName = "Facturas";
                 daoInitial.ActionBy = SessionVar.Username;
                 daoInitial.ActionDate = DateTime.Now;
                 int auditAnswer = daoInitial.InsertAudit();

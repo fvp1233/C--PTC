@@ -2,6 +2,7 @@
 using PTC2024.Controller.Helper;
 using PTC2024.Controller.StartMenuController;
 using PTC2024.Model.DAO.CustomersDAO;
+using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.Model.DAO.PayrollsDAO;
 using PTC2024.View.Alerts;
 using PTC2024.View.Empleados;
@@ -200,7 +201,10 @@ namespace PTC2024.Controller.EmployeesController
                                                 int progress = (currentEmployee * 100) / totalEmployees;
                                                 objProgress.UpdateProgress(progress, $"Procesando planillas {currentEmployee} de {totalEmployees}");
                                             }
-                                            totalEmployees++;
+                                            if (returnValue == 1)
+                                            {
+                                                totalEmployees++;
+                                            }
                                         });
                                     }
                                 }
@@ -489,6 +493,16 @@ namespace PTC2024.Controller.EmployeesController
                 StartMenu objStart = new StartMenu(SessionVar.Username);
                 objStartForm = objStart;
                 objStartForm.snackBar.Show(objStartForm, $"La planilla fue pagada exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                DAOInitialView daoInitial = new DAOInitialView();
+                daoInitial.ActionType = "Se pagó una planilla";
+                daoInitial.TableName = "Planillas";
+                daoInitial.ActionBy = SessionVar.Username;
+                daoInitial.ActionDate = DateTime.Now;
+                int auditAnswer = daoInitial.InsertAudit();
+                if (auditAnswer != 1)
+                {
+                    objStart.snackBar.Show(objStart, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                }
             }
             else
             {
@@ -511,7 +525,16 @@ namespace PTC2024.Controller.EmployeesController
                 StartMenu objStart = new StartMenu(SessionVar.Username);
                 objStartForm = objStart;
                 objStartForm.snackBar.Show(objStartForm, $"El pago fue revertido exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
-
+                DAOInitialView daoInitial = new DAOInitialView();
+                daoInitial.ActionType = "Se revirtió un pago";
+                daoInitial.TableName = "Planillas";
+                daoInitial.ActionBy = SessionVar.Username;
+                daoInitial.ActionDate = DateTime.Now;
+                int auditAnswer = daoInitial.InsertAudit();
+                if (auditAnswer != 1)
+                {
+                    objStart.snackBar.Show(objStart, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                }
             }
             else
             {
@@ -560,11 +583,12 @@ namespace PTC2024.Controller.EmployeesController
                             DAOInsertPayroll.IdPayroll = idPayroll;
                             // Eliminar la planilla
                             returnValue = DAOInsertPayroll.DeletePayroll();
+                            currentEmployee++;
+                            int progress = (currentEmployee * 100) / totalEmployees;
+                            objProgress.UpdateProgress(progress, $"Procesando planillas {currentEmployee} de {totalEmployees}");
+                            totalEmployees++;
                         });
-                        currentEmployee++;
-                        int progress = (currentEmployee * 100) / totalEmployees;
-                        objProgress.UpdateProgress(progress, $"Procesando planillas {currentEmployee} de {totalEmployees}");
-                        totalEmployees++;
+
                     }
                 }
             }
