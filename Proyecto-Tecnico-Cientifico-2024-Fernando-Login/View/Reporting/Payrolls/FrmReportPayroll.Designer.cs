@@ -31,20 +31,40 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSet_Company = new PTC2024.View.Reporting.InfoCompany.DataSet_Company();
-            this.tbBusinessInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbBusinessInfoTableAdapter = new PTC2024.View.Reporting.InfoCompany.DataSet_CompanyTableAdapters.tbBusinessInfoTableAdapter();
             this.tbPayrollBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet_payrollxsd = new PTC2024.View.Reporting.Payrolls.DataSet_payrollxsd();
+            this.tbBusinessInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet_Company = new PTC2024.View.Reporting.InfoCompany.DataSet_Company();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tbBusinessInfoTableAdapter = new PTC2024.View.Reporting.InfoCompany.DataSet_CompanyTableAdapters.tbBusinessInfoTableAdapter();
             this.tbPayrollBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbPayrollTableAdapter = new PTC2024.View.Reporting.Payrolls.DataSet_payrollxsdTableAdapters.tbPayrollTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_Company)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbBusinessInfoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPayrollBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_payrollxsd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbBusinessInfoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_Company)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPayrollBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tbPayrollBindingSource1
+            // 
+            this.tbPayrollBindingSource1.DataMember = "tbPayroll";
+            this.tbPayrollBindingSource1.DataSource = this.dataSet_payrollxsd;
+            // 
+            // dataSet_payrollxsd
+            // 
+            this.dataSet_payrollxsd.DataSetName = "DataSet_payrollxsd";
+            this.dataSet_payrollxsd.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbBusinessInfoBindingSource
+            // 
+            this.tbBusinessInfoBindingSource.DataMember = "tbBusinessInfo";
+            this.tbBusinessInfoBindingSource.DataSource = this.dataSet_Company;
+            // 
+            // dataSet_Company
+            // 
+            this.dataSet_Company.DataSetName = "DataSet_Company";
+            this.dataSet_Company.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -62,29 +82,9 @@
             this.reportViewer1.Size = new System.Drawing.Size(1072, 757);
             this.reportViewer1.TabIndex = 0;
             // 
-            // dataSet_Company
-            // 
-            this.dataSet_Company.DataSetName = "DataSet_Company";
-            this.dataSet_Company.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbBusinessInfoBindingSource
-            // 
-            this.tbBusinessInfoBindingSource.DataMember = "tbBusinessInfo";
-            this.tbBusinessInfoBindingSource.DataSource = this.dataSet_Company;
-            // 
             // tbBusinessInfoTableAdapter
             // 
             this.tbBusinessInfoTableAdapter.ClearBeforeFill = true;
-            // 
-            // tbPayrollBindingSource1
-            // 
-            this.tbPayrollBindingSource1.DataMember = "tbPayroll";
-            this.tbPayrollBindingSource1.DataSource = this.dataSet_payrollxsd;
-            // 
-            // dataSet_payrollxsd
-            // 
-            this.dataSet_payrollxsd.DataSetName = "DataSet_payrollxsd";
-            this.dataSet_payrollxsd.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tbPayrollBindingSource
             // 
@@ -102,12 +102,13 @@
             this.ClientSize = new System.Drawing.Size(1072, 757);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmReportPayroll";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmReportPayroll";
             this.Load += new System.EventHandler(this.FrmReportPayroll_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_Company)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbBusinessInfoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPayrollBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_payrollxsd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbBusinessInfoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_Company)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPayrollBindingSource)).EndInit();
             this.ResumeLayout(false);
 

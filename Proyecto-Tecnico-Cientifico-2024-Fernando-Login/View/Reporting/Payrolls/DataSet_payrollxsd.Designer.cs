@@ -325,6 +325,14 @@ namespace PTC2024.View.Reporting.Payrolls {
             
             private global::System.Data.DataColumn columndepartmentName;
             
+            private global::System.Data.DataColumn columnaffiliationNumber;
+            
+            private global::System.Data.DataColumn columnDUI;
+            
+            private global::System.Data.DataColumn columnsalary;
+            
+            private global::System.Data.DataColumn columnbirthDate;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public tbPayrollDataTable() {
@@ -544,6 +552,38 @@ namespace PTC2024.View.Reporting.Payrolls {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn affiliationNumberColumn {
+                get {
+                    return this.columnaffiliationNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DUIColumn {
+                get {
+                    return this.columnDUI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn salaryColumn {
+                get {
+                    return this.columnsalary;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn birthDateColumn {
+                get {
+                    return this.columnbirthDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -601,7 +641,11 @@ namespace PTC2024.View.Reporting.Payrolls {
                         string names, 
                         string lastName, 
                         string payrollStatus, 
-                        string departmentName) {
+                        string departmentName, 
+                        string affiliationNumber, 
+                        string DUI, 
+                        decimal salary, 
+                        System.DateTime birthDate) {
                 tbPayrollRow rowtbPayrollRow = ((tbPayrollRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -626,7 +670,11 @@ namespace PTC2024.View.Reporting.Payrolls {
                         names,
                         lastName,
                         payrollStatus,
-                        departmentName};
+                        departmentName,
+                        affiliationNumber,
+                        DUI,
+                        salary,
+                        birthDate};
                 rowtbPayrollRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbPayrollRow);
                 return rowtbPayrollRow;
@@ -679,6 +727,10 @@ namespace PTC2024.View.Reporting.Payrolls {
                 this.columnlastName = base.Columns["lastName"];
                 this.columnpayrollStatus = base.Columns["payrollStatus"];
                 this.columndepartmentName = base.Columns["departmentName"];
+                this.columnaffiliationNumber = base.Columns["affiliationNumber"];
+                this.columnDUI = base.Columns["DUI"];
+                this.columnsalary = base.Columns["salary"];
+                this.columnbirthDate = base.Columns["birthDate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -730,6 +782,14 @@ namespace PTC2024.View.Reporting.Payrolls {
                 base.Columns.Add(this.columnpayrollStatus);
                 this.columndepartmentName = new global::System.Data.DataColumn("departmentName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndepartmentName);
+                this.columnaffiliationNumber = new global::System.Data.DataColumn("affiliationNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaffiliationNumber);
+                this.columnDUI = new global::System.Data.DataColumn("DUI", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDUI);
+                this.columnsalary = new global::System.Data.DataColumn("salary", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsalary);
+                this.columnbirthDate = new global::System.Data.DataColumn("birthDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbirthDate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdPayroll}, true));
                 this.columnIdPayroll.AutoIncrement = true;
@@ -763,6 +823,12 @@ namespace PTC2024.View.Reporting.Payrolls {
                 this.columnpayrollStatus.MaxLength = 20;
                 this.columndepartmentName.AllowDBNull = false;
                 this.columndepartmentName.MaxLength = 40;
+                this.columnaffiliationNumber.AllowDBNull = false;
+                this.columnaffiliationNumber.MaxLength = 9;
+                this.columnDUI.AllowDBNull = false;
+                this.columnDUI.MaxLength = 10;
+                this.columnsalary.AllowDBNull = false;
+                this.columnbirthDate.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1163,6 +1229,50 @@ namespace PTC2024.View.Reporting.Payrolls {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string affiliationNumber {
+                get {
+                    return ((string)(this[this.tabletbPayroll.affiliationNumberColumn]));
+                }
+                set {
+                    this[this.tabletbPayroll.affiliationNumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string DUI {
+                get {
+                    return ((string)(this[this.tabletbPayroll.DUIColumn]));
+                }
+                set {
+                    this[this.tabletbPayroll.DUIColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal salary {
+                get {
+                    return ((decimal)(this[this.tabletbPayroll.salaryColumn]));
+                }
+                set {
+                    this[this.tabletbPayroll.salaryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime birthDate {
+                get {
+                    return ((global::System.DateTime)(this[this.tabletbPayroll.birthDateColumn]));
+                }
+                set {
+                    this[this.tabletbPayroll.birthDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IschristmasBonusNull() {
                 return this.IsNull(this.tabletbPayroll.christmasBonusColumn);
             }
@@ -1356,6 +1466,10 @@ namespace PTC2024.View.Reporting.Payrolls.DataSet_payrollxsdTableAdapters {
             tableMapping.ColumnMappings.Add("lastName", "lastName");
             tableMapping.ColumnMappings.Add("payrollStatus", "payrollStatus");
             tableMapping.ColumnMappings.Add("departmentName", "departmentName");
+            tableMapping.ColumnMappings.Add("affiliationNumber", "affiliationNumber");
+            tableMapping.ColumnMappings.Add("DUI", "DUI");
+            tableMapping.ColumnMappings.Add("salary", "salary");
+            tableMapping.ColumnMappings.Add("birthDate", "birthDate");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1374,7 +1488,7 @@ namespace PTC2024.View.Reporting.Payrolls.DataSet_payrollxsdTableAdapters {
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT tbPayroll.IdPayroll, tbPayroll.netPay, tbPayroll.rent, tbPayroll.issueDate, tbPayroll.AFP, tbPayroll.ISSS, tbPayroll.ISSSEmployer, tbPayroll.AFPEmployer, tbPayroll.employeeDiscount, tbPayroll.employerDiscount, tbPayroll.christmasBonus, 
                   tbPayroll.IdEmployee, tbPayroll.IdPayrollStatus, tbPayroll.daysWorked, tbPayroll.daySalary, tbPayroll.grossSalary, tbPayroll.hoursWorked, tbPayroll.hourSalary, tbPayroll.extraHours, tbEmployee.names, tbEmployee.lastName, 
-                  tbPayrollStatus.payrollStatus, tbDepartment.departmentName
+                  tbPayrollStatus.payrollStatus, tbDepartment.departmentName, tbEmployee.affiliationNumber, tbEmployee.DUI, tbEmployee.salary, tbEmployee.birthDate
 FROM     tbPayroll INNER JOIN
                   tbEmployee ON tbPayroll.IdEmployee = tbEmployee.IdEmployee INNER JOIN
                   tbPayrollStatus ON tbPayroll.IdPayrollStatus = tbPayrollStatus.IdPayrollStatus INNER JOIN
@@ -1384,7 +1498,7 @@ FROM     tbPayroll INNER JOIN
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"SELECT tbPayroll.IdPayroll, tbPayroll.netPay, tbPayroll.rent, tbPayroll.issueDate, tbPayroll.AFP, tbPayroll.ISSS, tbPayroll.ISSSEmployer, tbPayroll.AFPEmployer, tbPayroll.employeeDiscount, tbPayroll.employerDiscount, tbPayroll.christmasBonus, 
                   tbPayroll.IdEmployee, tbPayroll.IdPayrollStatus, tbPayroll.daysWorked, tbPayroll.daySalary, tbPayroll.grossSalary, tbPayroll.hoursWorked, tbPayroll.hourSalary, tbPayroll.extraHours, tbEmployee.names, tbEmployee.lastName, 
-                  tbPayrollStatus.payrollStatus, tbDepartment.departmentName
+                  tbPayrollStatus.payrollStatus, tbDepartment.departmentName, tbEmployee.affiliationNumber, tbEmployee.DUI, tbEmployee.salary, tbEmployee.birthDate
 FROM     tbPayroll INNER JOIN
                   tbEmployee ON tbPayroll.IdEmployee = tbEmployee.IdEmployee INNER JOIN
                   tbPayrollStatus ON tbPayroll.IdPayrollStatus = tbPayrollStatus.IdPayrollStatus INNER JOIN
