@@ -1,4 +1,5 @@
-﻿using PTC2024.Model.DTO.HelperDTO;
+﻿using PTC2024.Model;
+using PTC2024.Model.DTO.HelperDTO;
 using PTC2024.View.Server;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace PTC2024.Controller.Helper
             string path = Path.Combine(Directory.GetCurrentDirectory().ToString(), "serverConfig.xml");
             if (File.Exists(path))
             {
+                
                 //Objeto tipo XML
                 XmlDocument xmlDocument = new XmlDocument();
                 xmlDocument.Load(path);
@@ -31,20 +33,25 @@ namespace PTC2024.Controller.Helper
                 XmlNode sqlAuthNode = root.SelectSingleNode("SqlAuth/text()");
                 XmlNode sqlPassNode = root.SelectSingleNode("SqlPass/text()");
 
-                //Ahora asignamos a variables string lo que extrajimos del documento
-                string capturedServer = serverNode.Value;
-                string capturedDatabase = databaseNode.Value;
-                string capturedSqlAuth = sqlAuthNode.Value;
-                string capturedSqlPass = sqlPassNode.Value;
+                string codeServer = serverNode.Value;
+                string codeDatabase = databaseNode.Value;
+                DTOXMLConnection.Server = common.DecodeString(codeServer);
+                DTOXMLConnection.Database = common.DecodeString(codeDatabase);
+                
+                if (sqlAuthNode != null && sqlPassNode != null)
+                {
+                    string codeUser = sqlAuthNode.Value;
+                    string codeP = sqlPassNode.Value;
 
-                //Ahora decodificamos el texto que se capturó en esas variables asignandolas de una vez a las variables usadas en el dbContext.
-                DTOXMLConnection.Server = common.DecodeString(capturedServer);
-                DTOXMLConnection.Database = common.DecodeString(capturedDatabase);
-                DTOXMLConnection.User = common.DecodeString(capturedSqlAuth);
-                DTOXMLConnection.Password = common.DecodeString(capturedSqlPass);
+                    DTOXMLConnection.User = common.DecodeString(codeUser);
+                    DTOXMLConnection.Password = common.DecodeString(codeP);
 
-                //Ahora el método getConnection del dbContext puede hacer su trabajo.
-
+                }
+                else
+                {
+                    DTOXMLConnection.User = common.DecodeString(string.Empty);
+                    DTOXMLConnection.Password = common.DecodeString(string.Empty);
+                }
             }
             else
             {

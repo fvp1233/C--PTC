@@ -29,17 +29,12 @@ namespace PTC2024.Model
                 SqlConnection connection;
                 if (string.IsNullOrEmpty(DTOXMLConnection.User) && string.IsNullOrEmpty(DTOXMLConnection.Password))
                 {
-                    connection = new SqlConnection($"Server = {DTOXMLConnection.Server}; DataBase = {DTOXMLConnection.Database}; IntegratednSecurity = true");
+                    connection = new SqlConnection($"Server = {DTOXMLConnection.Server}; DataBase = {DTOXMLConnection.Database}; Integrated Security = true");
                 }
                 else
                 {
                     connection = new SqlConnection($"Server = {DTOXMLConnection.Server}; DataBase = {DTOXMLConnection.Database}; User Id = {DTOXMLConnection.User}; Password = {DTOXMLConnection.Password}");
                 }
-                //string server = DTOXMLConnection.Server;
-                //string database = DTOXMLConnection.Database;
-                //string userId = DTOXMLConnection.User;
-                //string Password = DTOXMLConnection.Password;
-                //SqlConnection conexion = new SqlConnection($"Server = {server}; DataBase = {database}; User Id = {userId}; Password = {Password}");
                 connection.Open();
                 return connection;
             }
