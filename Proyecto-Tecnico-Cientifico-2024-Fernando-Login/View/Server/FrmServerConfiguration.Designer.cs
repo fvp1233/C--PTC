@@ -85,11 +85,9 @@
             this.bunifuGroupBox1.LabelAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.bunifuGroupBox1.LabelIndent = 10;
             this.bunifuGroupBox1.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
-            this.bunifuGroupBox1.Location = new System.Drawing.Point(391, 105);
-            this.bunifuGroupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuGroupBox1.Location = new System.Drawing.Point(293, 85);
             this.bunifuGroupBox1.Name = "bunifuGroupBox1";
-            this.bunifuGroupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuGroupBox1.Size = new System.Drawing.Size(723, 192);
+            this.bunifuGroupBox1.Size = new System.Drawing.Size(542, 156);
             this.bunifuGroupBox1.TabIndex = 1000;
             this.bunifuGroupBox1.TabStop = false;
             this.bunifuGroupBox1.Text = "Servidor";
@@ -101,11 +99,10 @@
             this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(29, 103);
-            this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuLabel2.Location = new System.Drawing.Point(22, 84);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(104, 20);
+            this.bunifuLabel2.Size = new System.Drawing.Size(84, 17);
             this.bunifuLabel2.TabIndex = 5;
             this.bunifuLabel2.Text = "Base de datos";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -140,9 +137,8 @@
             this.txtDB.IconRight = null;
             this.txtDB.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDB.Lines = new string[0];
-            this.txtDB.Location = new System.Drawing.Point(29, 127);
-            this.txtDB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtDB.MaximumSize = new System.Drawing.Size(667, 39);
+            this.txtDB.Location = new System.Drawing.Point(22, 103);
+            this.txtDB.MaximumSize = new System.Drawing.Size(500, 32);
             this.txtDB.MaxLength = 32767;
             this.txtDB.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtDB.Modified = false;
@@ -168,7 +164,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtDB.OnIdleState = stateProperties4;
-            this.txtDB.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDB.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtDB.PasswordChar = '\0';
             this.txtDB.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtDB.PlaceholderText = "";
@@ -178,7 +174,7 @@
             this.txtDB.SelectionLength = 0;
             this.txtDB.SelectionStart = 0;
             this.txtDB.ShortcutsEnabled = true;
-            this.txtDB.Size = new System.Drawing.Size(667, 39);
+            this.txtDB.Size = new System.Drawing.Size(500, 32);
             this.txtDB.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtDB.TabIndex = 2;
             this.txtDB.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -196,11 +192,10 @@
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(29, 28);
-            this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuLabel1.Location = new System.Drawing.Point(22, 23);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(91, 20);
+            this.bunifuLabel1.Size = new System.Drawing.Size(74, 17);
             this.bunifuLabel1.TabIndex = 3;
             this.bunifuLabel1.Text = "Servidor URL";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -235,9 +230,8 @@
             this.txtServer.IconRight = null;
             this.txtServer.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtServer.Lines = new string[0];
-            this.txtServer.Location = new System.Drawing.Point(29, 52);
-            this.txtServer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtServer.MaximumSize = new System.Drawing.Size(667, 39);
+            this.txtServer.Location = new System.Drawing.Point(22, 42);
+            this.txtServer.MaximumSize = new System.Drawing.Size(500, 32);
             this.txtServer.MaxLength = 32767;
             this.txtServer.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtServer.Modified = false;
@@ -263,7 +257,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtServer.OnIdleState = stateProperties8;
-            this.txtServer.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtServer.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtServer.PasswordChar = '\0';
             this.txtServer.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtServer.PlaceholderText = "";
@@ -273,7 +267,7 @@
             this.txtServer.SelectionLength = 0;
             this.txtServer.SelectionStart = 0;
             this.txtServer.ShortcutsEnabled = true;
-            this.txtServer.Size = new System.Drawing.Size(667, 39);
+            this.txtServer.Size = new System.Drawing.Size(500, 32);
             this.txtServer.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtServer.TabIndex = 1;
             this.txtServer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -301,11 +295,9 @@
             this.bunifuGroupBox2.LabelAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.bunifuGroupBox2.LabelIndent = 10;
             this.bunifuGroupBox2.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
-            this.bunifuGroupBox2.Location = new System.Drawing.Point(391, 304);
-            this.bunifuGroupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuGroupBox2.Location = new System.Drawing.Point(293, 247);
             this.bunifuGroupBox2.Name = "bunifuGroupBox2";
-            this.bunifuGroupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuGroupBox2.Size = new System.Drawing.Size(723, 215);
+            this.bunifuGroupBox2.Size = new System.Drawing.Size(542, 175);
             this.bunifuGroupBox2.TabIndex = 1000;
             this.bunifuGroupBox2.TabStop = false;
             this.bunifuGroupBox2.Text = "Configuración local";
@@ -319,11 +311,11 @@
             this.bunifuSeparator2.LineColor = System.Drawing.Color.Silver;
             this.bunifuSeparator2.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.bunifuSeparator2.LineThickness = 1;
-            this.bunifuSeparator2.Location = new System.Drawing.Point(29, 100);
-            this.bunifuSeparator2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.bunifuSeparator2.Location = new System.Drawing.Point(22, 81);
+            this.bunifuSeparator2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
             this.bunifuSeparator2.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator2.Size = new System.Drawing.Size(667, 15);
+            this.bunifuSeparator2.Size = new System.Drawing.Size(500, 12);
             this.bunifuSeparator2.TabIndex = 10;
             // 
             // bunifuLabel3
@@ -334,11 +326,10 @@
             this.bunifuLabel3.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel3.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel3.Location = new System.Drawing.Point(0, 36);
-            this.bunifuLabel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuLabel3.Location = new System.Drawing.Point(16, 22);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(723, 25);
+            this.bunifuLabel3.Size = new System.Drawing.Size(536, 28);
             this.bunifuLabel3.TabIndex = 2;
             this.bunifuLabel3.Text = "Seguridad integrada de Windows";
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -351,11 +342,10 @@
             this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel4.Location = new System.Drawing.Point(388, 127);
-            this.bunifuLabel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuLabel4.Location = new System.Drawing.Point(291, 103);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(182, 20);
+            this.bunifuLabel4.Size = new System.Drawing.Size(148, 17);
             this.bunifuLabel4.TabIndex = 9;
             this.bunifuLabel4.Text = "Password Authentication";
             this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -365,10 +355,9 @@
             // 
             this.rdTrue.AutoSize = true;
             this.rdTrue.Checked = true;
-            this.rdTrue.Location = new System.Drawing.Point(241, 69);
-            this.rdTrue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdTrue.Location = new System.Drawing.Point(181, 56);
             this.rdTrue.Name = "rdTrue";
-            this.rdTrue.Size = new System.Drawing.Size(89, 24);
+            this.rdTrue.Size = new System.Drawing.Size(76, 21);
             this.rdTrue.TabIndex = 5;
             this.rdTrue.TabStop = true;
             this.rdTrue.Text = "Habilitar";
@@ -381,11 +370,10 @@
             this.bunifuLabel5.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel5.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel5.Location = new System.Drawing.Point(29, 127);
-            this.bunifuLabel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuLabel5.Location = new System.Drawing.Point(22, 103);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(139, 20);
+            this.bunifuLabel5.Size = new System.Drawing.Size(116, 17);
             this.bunifuLabel5.TabIndex = 7;
             this.bunifuLabel5.Text = "SQL Authentication";
             this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -394,10 +382,9 @@
             // rdFalse
             // 
             this.rdFalse.AutoSize = true;
-            this.rdFalse.Location = new System.Drawing.Point(351, 69);
-            this.rdFalse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdFalse.Location = new System.Drawing.Point(263, 56);
             this.rdFalse.Name = "rdFalse";
-            this.rdFalse.Size = new System.Drawing.Size(115, 24);
+            this.rdFalse.Size = new System.Drawing.Size(97, 21);
             this.rdFalse.TabIndex = 6;
             this.rdFalse.Text = "Deshabilitar";
             this.rdFalse.UseVisualStyleBackColor = true;
@@ -431,9 +418,8 @@
             this.txtPasswordAuth.IconRight = null;
             this.txtPasswordAuth.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPasswordAuth.Lines = new string[0];
-            this.txtPasswordAuth.Location = new System.Drawing.Point(388, 150);
-            this.txtPasswordAuth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtPasswordAuth.MaximumSize = new System.Drawing.Size(308, 39);
+            this.txtPasswordAuth.Location = new System.Drawing.Point(291, 122);
+            this.txtPasswordAuth.MaximumSize = new System.Drawing.Size(231, 32);
             this.txtPasswordAuth.MaxLength = 32767;
             this.txtPasswordAuth.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPasswordAuth.Modified = false;
@@ -459,7 +445,7 @@
             stateProperties12.ForeColor = System.Drawing.Color.Empty;
             stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtPasswordAuth.OnIdleState = stateProperties12;
-            this.txtPasswordAuth.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPasswordAuth.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtPasswordAuth.PasswordChar = '\0';
             this.txtPasswordAuth.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtPasswordAuth.PlaceholderText = "";
@@ -469,7 +455,7 @@
             this.txtPasswordAuth.SelectionLength = 0;
             this.txtPasswordAuth.SelectionStart = 0;
             this.txtPasswordAuth.ShortcutsEnabled = true;
-            this.txtPasswordAuth.Size = new System.Drawing.Size(308, 39);
+            this.txtPasswordAuth.Size = new System.Drawing.Size(231, 32);
             this.txtPasswordAuth.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtPasswordAuth.TabIndex = 4;
             this.txtPasswordAuth.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -509,9 +495,8 @@
             this.txtSqlAuth.IconRight = null;
             this.txtSqlAuth.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSqlAuth.Lines = new string[0];
-            this.txtSqlAuth.Location = new System.Drawing.Point(29, 150);
-            this.txtSqlAuth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtSqlAuth.MaximumSize = new System.Drawing.Size(308, 39);
+            this.txtSqlAuth.Location = new System.Drawing.Point(22, 122);
+            this.txtSqlAuth.MaximumSize = new System.Drawing.Size(231, 32);
             this.txtSqlAuth.MaxLength = 32767;
             this.txtSqlAuth.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSqlAuth.Modified = false;
@@ -537,7 +522,7 @@
             stateProperties16.ForeColor = System.Drawing.Color.Empty;
             stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtSqlAuth.OnIdleState = stateProperties16;
-            this.txtSqlAuth.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSqlAuth.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtSqlAuth.PasswordChar = '\0';
             this.txtSqlAuth.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtSqlAuth.PlaceholderText = "";
@@ -547,7 +532,7 @@
             this.txtSqlAuth.SelectionLength = 0;
             this.txtSqlAuth.SelectionStart = 0;
             this.txtSqlAuth.ShortcutsEnabled = true;
-            this.txtSqlAuth.Size = new System.Drawing.Size(308, 39);
+            this.txtSqlAuth.Size = new System.Drawing.Size(231, 32);
             this.txtSqlAuth.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtSqlAuth.TabIndex = 3;
             this.txtSqlAuth.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -561,10 +546,9 @@
             // bunifuCustomLabel2
             // 
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(0, 49);
-            this.bunifuCustomLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(0, 40);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(1144, 18);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(858, 15);
             this.bunifuCustomLabel2.TabIndex = 109;
             this.bunifuCustomLabel2.Text = "Ingrese los valores en cada campo para la conexión a su base de datos";
             this.bunifuCustomLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -572,10 +556,9 @@
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(0, 10);
-            this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(0, 8);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(1144, 39);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(858, 32);
             this.bunifuCustomLabel1.TabIndex = 108;
             this.bunifuCustomLabel1.Text = "CONFIGURACIÓN DE SERVIDOR";
             this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -589,10 +572,9 @@
             this.bunifuPictureBox1.BorderRadius = 0;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
             this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(13, 105);
-            this.bunifuPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(10, 85);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(369, 341);
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(277, 300);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuPictureBox1.TabIndex = 110;
             this.bunifuPictureBox1.TabStop = false;
@@ -607,11 +589,11 @@
             this.bunifuSeparator1.LineColor = System.Drawing.Color.Silver;
             this.bunifuSeparator1.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Dash;
             this.bunifuSeparator1.LineThickness = 2;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(71, 71);
-            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(53, 58);
+            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator1.Size = new System.Drawing.Size(997, 26);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(748, 21);
             this.bunifuSeparator1.TabIndex = 1001;
             // 
             // bunifuPanel1
@@ -624,11 +606,10 @@
             this.bunifuPanel1.BorderThickness = 1;
             this.bunifuPanel1.Controls.Add(this.btnSave);
             this.bunifuPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bunifuPanel1.Location = new System.Drawing.Point(0, 543);
-            this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuPanel1.Location = new System.Drawing.Point(0, 441);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(1144, 66);
+            this.bunifuPanel1.Size = new System.Drawing.Size(858, 54);
             this.bunifuPanel1.TabIndex = 1002;
             // 
             // btnSave
@@ -673,14 +654,13 @@
             this.btnSave.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
             this.btnSave.IconSize = 25;
             this.btnSave.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            this.btnSave.IdleBorderRadius = 45;
+            this.btnSave.IdleBorderRadius = 36;
             this.btnSave.IdleBorderThickness = 1;
             this.btnSave.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnSave.IdleIconLeftImage = null;
             this.btnSave.IdleIconRightImage = null;
             this.btnSave.IndicateFocus = false;
-            this.btnSave.Location = new System.Drawing.Point(892, 12);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Location = new System.Drawing.Point(669, 10);
             this.btnSave.Name = "btnSave";
             this.btnSave.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSave.OnDisabledState.BorderRadius = 20;
@@ -714,7 +694,7 @@
             this.btnSave.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnSave.OnPressedState.IconLeftImage = null;
             this.btnSave.OnPressedState.IconRightImage = null;
-            this.btnSave.Size = new System.Drawing.Size(235, 47);
+            this.btnSave.Size = new System.Drawing.Size(176, 38);
             this.btnSave.TabIndex = 20;
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSave.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -724,10 +704,10 @@
             // 
             // FrmServerConfiguration
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1144, 609);
+            this.ClientSize = new System.Drawing.Size(858, 495);
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.bunifuPictureBox1);
@@ -736,7 +716,6 @@
             this.Controls.Add(this.bunifuGroupBox2);
             this.Controls.Add(this.bunifuGroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmServerConfiguration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmServerConfiguration";
