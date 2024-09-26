@@ -112,7 +112,7 @@
             this.txtBusinessName.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtBusinessName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtBusinessName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBusinessName.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtBusinessName.DefaultFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusinessName.DefaultText = "";
             this.txtBusinessName.FillColor = System.Drawing.Color.White;
             this.txtBusinessName.HideSelection = true;
@@ -158,7 +158,7 @@
             this.txtBusinessName.SelectionLength = 0;
             this.txtBusinessName.SelectionStart = 0;
             this.txtBusinessName.ShortcutsEnabled = true;
-            this.txtBusinessName.Size = new System.Drawing.Size(260, 39);
+            this.txtBusinessName.Size = new System.Drawing.Size(260, 37);
             this.txtBusinessName.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtBusinessName.TabIndex = 3;
             this.txtBusinessName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -208,7 +208,7 @@
             this.txtAdress.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtAdress.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtAdress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAdress.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtAdress.DefaultFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdress.DefaultText = "";
             this.txtAdress.FillColor = System.Drawing.Color.White;
             this.txtAdress.HideSelection = true;
@@ -254,7 +254,7 @@
             this.txtAdress.SelectionLength = 0;
             this.txtAdress.SelectionStart = 0;
             this.txtAdress.ShortcutsEnabled = true;
-            this.txtAdress.Size = new System.Drawing.Size(526, 39);
+            this.txtAdress.Size = new System.Drawing.Size(526, 37);
             this.txtAdress.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtAdress.TabIndex = 36;
             this.txtAdress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -294,7 +294,7 @@
             this.txtEmail.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtEmail.DefaultFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.DefaultText = "";
             this.txtEmail.FillColor = System.Drawing.Color.White;
             this.txtEmail.HideSelection = true;
@@ -340,7 +340,7 @@
             this.txtEmail.SelectionLength = 0;
             this.txtEmail.SelectionStart = 0;
             this.txtEmail.ShortcutsEnabled = true;
-            this.txtEmail.Size = new System.Drawing.Size(260, 39);
+            this.txtEmail.Size = new System.Drawing.Size(260, 37);
             this.txtEmail.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtEmail.TabIndex = 38;
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -380,7 +380,7 @@
             this.txtPhone.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtPhone.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPhone.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtPhone.DefaultFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.DefaultText = "";
             this.txtPhone.FillColor = System.Drawing.Color.White;
             this.txtPhone.HideSelection = true;
@@ -426,7 +426,7 @@
             this.txtPhone.SelectionLength = 0;
             this.txtPhone.SelectionStart = 0;
             this.txtPhone.ShortcutsEnabled = true;
-            this.txtPhone.Size = new System.Drawing.Size(260, 39);
+            this.txtPhone.Size = new System.Drawing.Size(260, 37);
             this.txtPhone.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtPhone.TabIndex = 40;
             this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -466,7 +466,7 @@
             this.txtPBX.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtPBX.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPBX.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPBX.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtPBX.DefaultFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPBX.DefaultText = "";
             this.txtPBX.FillColor = System.Drawing.Color.White;
             this.txtPBX.HideSelection = true;
@@ -512,7 +512,7 @@
             this.txtPBX.SelectionLength = 0;
             this.txtPBX.SelectionStart = 0;
             this.txtPBX.ShortcutsEnabled = true;
-            this.txtPBX.Size = new System.Drawing.Size(260, 39);
+            this.txtPBX.Size = new System.Drawing.Size(260, 37);
             this.txtPBX.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtPBX.TabIndex = 42;
             this.txtPBX.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -592,7 +592,7 @@
             this.btnSave.IdleIconLeftImage = null;
             this.btnSave.IdleIconRightImage = null;
             this.btnSave.IndicateFocus = false;
-            this.btnSave.Location = new System.Drawing.Point(446, 341);
+            this.btnSave.Location = new System.Drawing.Point(457, 337);
             this.btnSave.Name = "btnSave";
             this.btnSave.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSave.OnDisabledState.BorderRadius = 15;
@@ -682,7 +682,7 @@
             this.btnUploadPhoto.IdleIconLeftImage = null;
             this.btnUploadPhoto.IdleIconRightImage = null;
             this.btnUploadPhoto.IndicateFocus = false;
-            this.btnUploadPhoto.Location = new System.Drawing.Point(52, 341);
+            this.btnUploadPhoto.Location = new System.Drawing.Point(52, 329);
             this.btnUploadPhoto.Name = "btnUploadPhoto";
             this.btnUploadPhoto.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnUploadPhoto.OnDisabledState.BorderRadius = 15;
@@ -894,7 +894,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmBusinessConfiguration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmBusinessConfiguration";
+            this.Text = "Cofiguración del negocio";
             ((System.ComponentModel.ISupportInitialize)(this.picBusiness)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

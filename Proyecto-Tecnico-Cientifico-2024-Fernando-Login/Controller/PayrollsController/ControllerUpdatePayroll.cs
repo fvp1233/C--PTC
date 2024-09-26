@@ -32,6 +32,7 @@ namespace PTC2024.Controller.EmployeesController
             objUpdatePayroll.txtHoursWorked.TextChange += new EventHandler(HoursWorkedNum);
             objUpdatePayroll.txtDaysWorked.TextChange += new EventHandler(DaysWorkedNum);
             objUpdatePayroll.txtExtraHours.TextChange += new EventHandler(ExtraHoursNum);
+
         }
         public void UpdatePayrollStatus(object sender, EventArgs e)
         {

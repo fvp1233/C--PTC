@@ -71,7 +71,7 @@
             this.bunifuPictureBox1.IsCircle = true;
             this.bunifuPictureBox1.Location = new System.Drawing.Point(14, 17);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(98, 94);
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(98, 98);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuPictureBox1.TabIndex = 5;
             this.bunifuPictureBox1.TabStop = false;
@@ -282,7 +282,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmConfirmPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmConfirmPassword";
+            this.Text = "Introducir contraseña";
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HidePassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPassword)).EndInit();

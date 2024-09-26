@@ -25,7 +25,7 @@ namespace PTC2024.Controller.MaintenanceController
             objCategories.btnAddCategorie.Click += new EventHandler(AddCategorie);
             objCategories.cmsDeleteCategorie.Click += new EventHandler(DeleteCategorie);
             objCategories.txtCategorie.MouseDown += new MouseEventHandler(DisableContextMenu);
-
+            objCategories.txtCategorie.TextChanged += new EventHandler(OnlyLettersCategory);
         }
 
         public void InitialCharge(object sender, EventArgs e)
@@ -101,6 +101,23 @@ namespace PTC2024.Controller.MaintenanceController
             {
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
+        }
+
+        public void OnlyLettersCategory(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objCategories.txtCategorie.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras y espacios
+            string text = new string(objCategories.txtCategorie.Text
+                                       .Where(c => char.IsLetter(c) || char.IsWhiteSpace(c))
+                                       .ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objCategories.txtCategorie.Text = text;
+
+            // Restaurar la posición del cursor
+            objCategories.txtCategorie.SelectionStart = cursorPosition;
         }
     }
 }

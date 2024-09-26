@@ -102,5 +102,22 @@ namespace PTC2024.Controller.MaintenanceController
                 ((Bunifu.UI.WinForms.BunifuTextBox)sender).ContextMenu = new ContextMenu();  // Asigna un menú vacío
             }
         }
+
+        public void OnlyLettersName(object sender, EventArgs e)
+        {
+            // Obtener la posición actual del cursor
+            int cursorPosition = objDep.txtDepartment.SelectionStart;
+
+            // Filtrar el texto para que solo queden letras y espacios
+            string text = new string(objDep.txtDepartment.Text
+                                       .Where(c => char.IsLetter(c) || char.IsWhiteSpace(c))
+                                       .ToArray());
+
+            // Actualizar el contenido del TextBox con el texto filtrado
+            objDep.txtDepartment.Text = text;
+
+            // Restaurar la posición del cursor
+            objDep.txtDepartment.SelectionStart = cursorPosition;
+        }
     }
 }

@@ -44,32 +44,49 @@ namespace PTC2024.Controller.MaintenanceController
             objBusinessConf.txtPhone.Text = BusinessVar.BusinessPhone;
             objBusinessConf.txtPBX.Text = BusinessVar.BusinessPBX;
             objBusinessConf.txtID.Text = BusinessVar.IdBusiness.ToString();
-            objBusinessConf.txtID.Visible = false;
+            objBusinessConf.txtID.Visible = false; 
         }
         public void UpdateInfoBusiness(object sender, EventArgs e)
         {
-            DAOBusinessConfiguration DAObusiness = new DAOBusinessConfiguration();
-            DAObusiness.IdBusiness = BusinessVar.IdBusiness;
-            DAObusiness.NameBusiness = objBusinessConf.txtBusinessName.Text.Trim();
-            DAObusiness.AddressBusiness = objBusinessConf.txtAdress.Text.Trim();
-            DAObusiness.EmailBusiness = objBusinessConf.txtEmail.Text.Trim();
-            DAObusiness.PhoneBusiness = objBusinessConf.txtPBX.Text.Trim();
-            DAObusiness.PbxBusiness = objBusinessConf.txtPBX.Text.Trim();
-            int answer = DAObusiness.UpdateBusinessInfo();
-            if (answer == 1)
+            if (!(string.IsNullOrEmpty(objBusinessConf.txtBusinessName.Text.Trim())|| string.IsNullOrEmpty(objBusinessConf.txtEmail.Text.Trim()) ||string.IsNullOrEmpty(objBusinessConf.txtAdress.Text.Trim()) || string.IsNullOrEmpty(objBusinessConf.txtPBX.Text.Trim())|| string.IsNullOrEmpty(objBusinessConf.txtPhone.Text.Trim()))
+                )
             {
-                SavePfp();
-                MessageBox.Show("Se enviará un correo al email del usuario para confirmar el correo.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                SendEmail();
-                StartMenu start = new StartMenu(SessionVar.Username);
-                objBusinessConf.snack.Show(start, "Reinicie el programa o cierre y vuelva a iniciar sesión para ver todos los cambios.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
-                objBusinessConf.snack.Show(start, "Su información se actualizó correctamente.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
-                Close();
+                DAOBusinessConfiguration DAObusiness = new DAOBusinessConfiguration();
+                DAObusiness.IdBusiness = BusinessVar.IdBusiness;
+                DAObusiness.NameBusiness = objBusinessConf.txtBusinessName.Text.Trim();
+                DAObusiness.AddressBusiness = objBusinessConf.txtAdress.Text.Trim();
+                DAObusiness.EmailBusiness = objBusinessConf.txtEmail.Text.Trim();
+                DAObusiness.PhoneBusiness = objBusinessConf.txtPBX.Text.Trim();
+                DAObusiness.PbxBusiness = objBusinessConf.txtPBX.Text.Trim();
+                int answer = DAObusiness.UpdateBusinessInfo();
+                if (answer == 1)
+                {
+                    BusinessVar.BusinessName = objBusinessConf.txtBusinessName.Text.Trim();
+                    BusinessVar.BusinessAdress = objBusinessConf.txtAdress.Text.Trim();
+                    BusinessVar.BusinessEmail = objBusinessConf.txtEmail.Text.Trim();
+                    BusinessVar.BusinessPhone = objBusinessConf.txtPhone.Text.Trim();
+                    BusinessVar.BusinessPBX = objBusinessConf.txtPBX.Text.Trim();
+
+                    SavePfp();
+                    
+                    StartMenu start = new StartMenu(SessionVar.Username);
+                    MessageBox.Show("Se enviará un correo al email ingresado.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    objBusinessConf.snack.Show(start, "Se enviará un correo al email ingresado.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 2000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    SendEmail();
+                    objBusinessConf.snack.Show(start, "Reinicie el programa o cierre y vuelva a iniciar sesión para ver todos los cambios.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 5000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    objBusinessConf.snack.Show(start, "Su información se actualizó correctamente.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    Close();
+                }
+                else
+                {
+                    objBusinessConf.snack.Show(objBusinessConf, "No se pudieron actualizar sus datos, inténtelo de nuevo", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomCenter);
+                }
             }
             else
             {
-                objBusinessConf.snack.Show(objBusinessConf, "No se pudieron actualizar sus datos, inténtelo de nuevo", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomCenter);
+                objBusinessConf.snack.Show(objBusinessConf, "Favor llenar todos los campos con los datos solicitados", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomCenter);
             }
+
         }
         public void SavePfp()
         {
@@ -93,7 +110,8 @@ namespace PTC2024.Controller.MaintenanceController
                 int answer = daoBusiness.SavePfp();
                 if (answer == 1)
                 {
-                    MessageBox.Show($"Tu foto de perfil se ha agregado exitosamente.", "Agregar Imagen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"La foto del negocio se actualizó correctamente.", "Agregar Imagen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    BusinessVar.BusinessImg = imageBytes;
                 }
                 else
                 {
@@ -221,7 +239,7 @@ namespace PTC2024.Controller.MaintenanceController
 
             string para = objBusinessConf.txtEmail.Text.Trim();
             string de = "h2c.soporte.usuarios@gmail.com";
-            string subject = $"H2C: Bienvenido a {BusinessVar.BusinessName} nuevo empleado.";
+            string subject = $"H2C: Bienvenido a {BusinessVar.BusinessName}.";
             string message = $"Hola estimado usuario, este correo ahora esta asociado a la empresa {BusinessVar.BusinessName}.";
 
             Email email = new Email();

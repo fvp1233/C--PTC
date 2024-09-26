@@ -164,7 +164,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtDB.OnIdleState = stateProperties4;
-            this.txtDB.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtDB.Padding = new System.Windows.Forms.Padding(3);
             this.txtDB.PasswordChar = '\0';
             this.txtDB.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtDB.PlaceholderText = "";
@@ -257,7 +257,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtServer.OnIdleState = stateProperties8;
-            this.txtServer.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtServer.Padding = new System.Windows.Forms.Padding(3);
             this.txtServer.PasswordChar = '\0';
             this.txtServer.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtServer.PlaceholderText = "";
@@ -312,7 +312,7 @@
             this.bunifuSeparator2.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.bunifuSeparator2.LineThickness = 1;
             this.bunifuSeparator2.Location = new System.Drawing.Point(22, 81);
-            this.bunifuSeparator2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuSeparator2.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
             this.bunifuSeparator2.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.bunifuSeparator2.Size = new System.Drawing.Size(500, 12);
@@ -445,7 +445,7 @@
             stateProperties12.ForeColor = System.Drawing.Color.Empty;
             stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtPasswordAuth.OnIdleState = stateProperties12;
-            this.txtPasswordAuth.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtPasswordAuth.Padding = new System.Windows.Forms.Padding(3);
             this.txtPasswordAuth.PasswordChar = '\0';
             this.txtPasswordAuth.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtPasswordAuth.PlaceholderText = "";
@@ -522,7 +522,7 @@
             stateProperties16.ForeColor = System.Drawing.Color.Empty;
             stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtSqlAuth.OnIdleState = stateProperties16;
-            this.txtSqlAuth.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtSqlAuth.Padding = new System.Windows.Forms.Padding(3);
             this.txtSqlAuth.PasswordChar = '\0';
             this.txtSqlAuth.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtSqlAuth.PlaceholderText = "";
@@ -574,7 +574,7 @@
             this.bunifuPictureBox1.IsCircle = true;
             this.bunifuPictureBox1.Location = new System.Drawing.Point(10, 85);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(277, 300);
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(277, 277);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuPictureBox1.TabIndex = 110;
             this.bunifuPictureBox1.TabStop = false;
@@ -590,7 +590,7 @@
             this.bunifuSeparator1.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Dash;
             this.bunifuSeparator1.LineThickness = 2;
             this.bunifuSeparator1.Location = new System.Drawing.Point(53, 58);
-            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.bunifuSeparator1.Size = new System.Drawing.Size(748, 21);
@@ -718,7 +718,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmServerConfiguration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmServerConfiguration";
+            this.Text = "Configuración del servidor";
             this.bunifuGroupBox1.ResumeLayout(false);
             this.bunifuGroupBox1.PerformLayout();
             this.bunifuGroupBox2.ResumeLayout(false);

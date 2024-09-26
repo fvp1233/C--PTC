@@ -166,87 +166,95 @@ namespace PTC2024.Controller
                                 bool dui = CheckDUI();
                                 if (dui == false)
                                 {
-                                    bool email = CheckEmail();
-                                    if (email == false)
+                                    bool hireDate = HireDateValidation();
+                                    if (hireDate == true)
                                     {
-                                        //Se crea un objeto de la clase DAOAddEmployee y de la clase CommonClasses
-                                        DAOAddEmployee daoInsertEmployee = new DAOAddEmployee();
-                                        CommonClasses commonClasses = new CommonClasses();
-                                        //GENERACIÓN DE CONTRASEÑA ALEATORIA
-                                        Random random = new Random();
-
-                                        //Ahora especificamos los carácteres que podrá tomar el random para generar la contraseña aleatoria
-                                        const string chars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz0123456789";
-                                        //Esta variable define la longitud del string anterior, para que el arreglo que se creará pueda agarrar de los 61 carácteres que se encuentran ahí.
-                                        const int cLength = 61;
-
-                                        //Creamos un arreglo de chars de una longitud de 6 dígitos
-                                        var array = new char[6];
-
-                                        //ahora creamos un for que se encargará de escoger aleatoriamente 6 carácteres y los guardará en nuestro arreglo
-                                        for (int i = 0; i < 6; i++)
+                                        bool email = CheckEmail();
+                                        if (email == false)
                                         {
-                                            array[i] = chars[random.Next(chars.Length)];
-                                        }
+                                            //Se crea un objeto de la clase DAOAddEmployee y de la clase CommonClasses
+                                            DAOAddEmployee daoInsertEmployee = new DAOAddEmployee();
+                                            CommonClasses commonClasses = new CommonClasses();
+                                            //GENERACIÓN DE CONTRASEÑA ALEATORIA
+                                            Random random = new Random();
 
-                                        //Ahora le damos valor a nuestra variable string con lo que hay en el arreglo.
-                                        string newPass = new string(array);
+                                            //Ahora especificamos los carácteres que podrá tomar el random para generar la contraseña aleatoria
+                                            const string chars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz0123456789";
+                                            //Esta variable define la longitud del string anterior, para que el arreglo que se creará pueda agarrar de los 61 carácteres que se encuentran ahí.
+                                            const int cLength = 61;
 
-                                        //Datos para la creación de un empleado
-                                        daoInsertEmployee.Names = objAddEmployee.txtNames.Text.Trim();
-                                        daoInsertEmployee.LastNames = objAddEmployee.txtLastNames.Text.Trim();
-                                        daoInsertEmployee.Document = objAddEmployee.txtDUI.Text.Trim();
-                                        daoInsertEmployee.BirthDate = objAddEmployee.dtBirthDate.Value.Date;
-                                        daoInsertEmployee.Email = objAddEmployee.txtEmail.Text.Trim();
-                                        daoInsertEmployee.Phone = objAddEmployee.txtPhone.Text.Trim();
-                                        daoInsertEmployee.Address = objAddEmployee.txtAddress.Text.Trim();
-                                        daoInsertEmployee.Salary = double.Parse(objAddEmployee.txtSalary.Text.Trim());
-                                        daoInsertEmployee.BankAccount = objAddEmployee.txtBankAccount.Text.Trim();
-                                        daoInsertEmployee.AffiliationNumber = objAddEmployee.txtAffiliationNumber.Text.Trim();
-                                        daoInsertEmployee.HireDate = objAddEmployee.dpHireDate.Value.Date;
-                                        daoInsertEmployee.Bank = int.Parse(objAddEmployee.comboBanks.SelectedValue.ToString());
-                                        daoInsertEmployee.Department = int.Parse(objAddEmployee.comboDepartment.SelectedValue.ToString());
-                                        daoInsertEmployee.EmployeeType = int.Parse(objAddEmployee.comboEmployeeType.SelectedValue.ToString());
-                                        daoInsertEmployee.MaritalStatus = int.Parse(objAddEmployee.comboMaritalStatus.SelectedValue.ToString());
-                                        daoInsertEmployee.EmployeeStatus = 1;
-                                        daoInsertEmployee.Gender = int.Parse(objAddEmployee.comboGender.SelectedValue.ToString());
+                                            //Creamos un arreglo de chars de una longitud de 6 dígitos
+                                            var array = new char[6];
 
-                                        //Datos para la creación del usuario
-                                        daoInsertEmployee.Username = objAddEmployee.txtUsername.Text.Trim();
-                                        daoInsertEmployee.Password = commonClasses.ComputeSha256Hash(newPass);
-                                        daoInsertEmployee.BusinessPosition = int.Parse(objAddEmployee.comboBusinessP.SelectedValue.ToString());
-                                        daoInsertEmployee.UserSatus = true;
-                                        daoInsertEmployee.BusinessInfo = 1;
-                                        //AHORA INVOCAMOS EL MÉTODO RegisterEmployee A TRAVÉS DEL OBJETO daoInsertEmployee
-                                        int valorRespuesta = daoInsertEmployee.RegisterEmployee();
-                                        //Verificamos el valor que nos retorna dicho método
-                                        if (valorRespuesta == 1)
-                                        {
-                                            //MessageBox.Show($"Usuario: {objAddEmployee.txtUsername.Text.Trim()} \n Contraseña: {objAddEmployee.txtUsername.Text.Trim() + "PU123"}", "Credenciales de acceso del empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                            MessageBox.Show("Se enviará un correo al email del nuevo empleado con sus credenciales para el inicio de sesión.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                            objAddEmployee.snackbar.Show(objMenu, $"Los datos del nuevo empleado fueron registrados.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
-                                            SendEmail(newPass);
-                                            DAOInitialView daoInitial = new DAOInitialView();
-                                            daoInitial.ActionType = "Se inserto un empleado";
-                                            daoInitial.TableName = "Empleados";
-                                            daoInitial.ActionBy = SessionVar.Username;
-                                            daoInitial.ActionDate = DateTime.Now;
-                                            int auditAnswer = daoInitial.InsertAudit();
-                                            if (auditAnswer != 1)
+                                            //ahora creamos un for que se encargará de escoger aleatoriamente 6 carácteres y los guardará en nuestro arreglo
+                                            for (int i = 0; i < 6; i++)
                                             {
-                                                objAddEmployee.snackbar.Show(objMenu, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                                                array[i] = chars[random.Next(chars.Length)];
                                             }
-                                            objAddEmployee.Close();
+
+                                            //Ahora le damos valor a nuestra variable string con lo que hay en el arreglo.
+                                            string newPass = new string(array);
+
+                                            //Datos para la creación de un empleado
+                                            daoInsertEmployee.Names = objAddEmployee.txtNames.Text.Trim();
+                                            daoInsertEmployee.LastNames = objAddEmployee.txtLastNames.Text.Trim();
+                                            daoInsertEmployee.Document = objAddEmployee.txtDUI.Text.Trim();
+                                            daoInsertEmployee.BirthDate = objAddEmployee.dtBirthDate.Value.Date;
+                                            daoInsertEmployee.Email = objAddEmployee.txtEmail.Text.Trim();
+                                            daoInsertEmployee.Phone = objAddEmployee.txtPhone.Text.Trim();
+                                            daoInsertEmployee.Address = objAddEmployee.txtAddress.Text.Trim();
+                                            daoInsertEmployee.Salary = double.Parse(objAddEmployee.txtSalary.Text.Trim());
+                                            daoInsertEmployee.BankAccount = objAddEmployee.txtBankAccount.Text.Trim();
+                                            daoInsertEmployee.AffiliationNumber = objAddEmployee.txtAffiliationNumber.Text.Trim();
+                                            daoInsertEmployee.HireDate = objAddEmployee.dpHireDate.Value.Date;
+                                            daoInsertEmployee.Bank = int.Parse(objAddEmployee.comboBanks.SelectedValue.ToString());
+                                            daoInsertEmployee.Department = int.Parse(objAddEmployee.comboDepartment.SelectedValue.ToString());
+                                            daoInsertEmployee.EmployeeType = int.Parse(objAddEmployee.comboEmployeeType.SelectedValue.ToString());
+                                            daoInsertEmployee.MaritalStatus = int.Parse(objAddEmployee.comboMaritalStatus.SelectedValue.ToString());
+                                            daoInsertEmployee.EmployeeStatus = 1;
+                                            daoInsertEmployee.Gender = int.Parse(objAddEmployee.comboGender.SelectedValue.ToString());
+
+                                            //Datos para la creación del usuario
+                                            daoInsertEmployee.Username = objAddEmployee.txtUsername.Text.Trim();
+                                            daoInsertEmployee.Password = commonClasses.ComputeSha256Hash(newPass);
+                                            daoInsertEmployee.BusinessPosition = int.Parse(objAddEmployee.comboBusinessP.SelectedValue.ToString());
+                                            daoInsertEmployee.UserSatus = true;
+                                            daoInsertEmployee.BusinessInfo = 1;
+                                            //AHORA INVOCAMOS EL MÉTODO RegisterEmployee A TRAVÉS DEL OBJETO daoInsertEmployee
+                                            int valorRespuesta = daoInsertEmployee.RegisterEmployee();
+                                            //Verificamos el valor que nos retorna dicho método
+                                            if (valorRespuesta == 1)
+                                            {
+                                                //MessageBox.Show($"Usuario: {objAddEmployee.txtUsername.Text.Trim()} \n Contraseña: {objAddEmployee.txtUsername.Text.Trim() + "PU123"}", "Credenciales de acceso del empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                MessageBox.Show("Se enviará un correo al email del nuevo empleado con sus credenciales para el inicio de sesión.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                objAddEmployee.snackbar.Show(objMenu, $"Los datos del nuevo empleado fueron registrados.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                                                SendEmail(newPass);
+                                                DAOInitialView daoInitial = new DAOInitialView();
+                                                daoInitial.ActionType = "Se inserto un empleado";
+                                                daoInitial.TableName = "Empleados";
+                                                daoInitial.ActionBy = SessionVar.Username;
+                                                daoInitial.ActionDate = DateTime.Now;
+                                                int auditAnswer = daoInitial.InsertAudit();
+                                                if (auditAnswer != 1)
+                                                {
+                                                    objAddEmployee.snackbar.Show(objMenu, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                                                }
+                                                objAddEmployee.Close();
+                                            }
+                                            else
+                                            {
+                                                objAddEmployee.snackbar.Show(objAddEmployee, $"Proceso fallido: Ocurrió un error y no se pudieron registrar los datos.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                                            }
                                         }
                                         else
                                         {
-                                            objAddEmployee.snackbar.Show(objAddEmployee, $"Proceso fallido: Ocurrió un error y no se pudieron registrar los datos.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                                            MessageBox.Show("El correo ingresado ya está registrado en el sistema.", "Correo electrónico", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("El correo ingresado ya está registrado en el sistema.", "Correo electrónico", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    }
+                                        MessageBox.Show("La fecha de contratación no puede ser mayor a la fecha actual.", "Fecha de contratación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    }                             
                                 }
                                 else
                                 {
@@ -604,6 +612,19 @@ namespace PTC2024.Controller
             int currentYear = DateTime.Now.Year;
             objAddEmployee.dtBirthDate.MaxDate = new DateTime(currentYear, 12, 31);
             objAddEmployee.dpHireDate.MaxDate = new DateTime(currentYear, 12, 31);
+        }
+
+        public bool HireDateValidation()
+        {
+           
+            if(objAddEmployee.dpHireDate.Value > DateTime.Now)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
