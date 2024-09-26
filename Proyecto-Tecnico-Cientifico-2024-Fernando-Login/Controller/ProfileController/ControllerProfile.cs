@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -160,41 +161,43 @@ namespace PTC2024.Controller.ProfileController
         }
         public void OpenManualU(object sender, EventArgs e)
         {
-            string pdfPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MANUAL DE USUARIO - H2C.pdf");
+            string tempPath = Path.Combine(Path.GetTempPath(), "MANUAL DE USUARIO - H2C.pdf");
 
-            if (System.IO.File.Exists(pdfPath))
+            // Extraer el archivo PDF desde los recursos incrustados
+            using (var resource = Assembly.GetExecutingAssembly().GetManifestResourceStream("PTC2024.MANUAL DE USUARIO - H2C.pdf"))
+            using (var fileStream = new FileStream(tempPath, FileMode.Create, FileAccess.Write))
             {
-                var psi = new System.Diagnostics.ProcessStartInfo
-                {
-                    FileName = pdfPath,
-                    UseShellExecute = true
-                };
+                resource.CopyTo(fileStream);
+            }
 
-                System.Diagnostics.Process.Start(psi);
-            }
-            else
+            // Abrir el archivo PDF desde la ruta temporal
+            var psi = new System.Diagnostics.ProcessStartInfo
             {
-                MessageBox.Show($"El archivo PDF no se encuentra en la ubicación: {pdfPath}", "Archivo no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                FileName = tempPath,
+                UseShellExecute = true
+            }; 
+
+            System.Diagnostics.Process.Start(psi);
         }
         public void OpenManualT(object sender, EventArgs e)
         {
-            string pdfPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MANUAL TÉCNICO - H2C.pdf");
+            string tempPath = Path.Combine(Path.GetTempPath(), "MANUAL TÉCNICO - H2C.pdf");
 
-            if (System.IO.File.Exists(pdfPath))
+            // Extraer el archivo PDF desde los recursos incrustados
+            using (var resource = Assembly.GetExecutingAssembly().GetManifestResourceStream("PTC2024.MANUAL TÉCNICO - H2C.pdf"))
+            using (var fileStream = new FileStream(tempPath, FileMode.Create, FileAccess.Write))
             {
-                var psi = new System.Diagnostics.ProcessStartInfo
-                {
-                    FileName = pdfPath,
-                    UseShellExecute = true
-                };
+                resource.CopyTo(fileStream);
+            }
 
-                System.Diagnostics.Process.Start(psi);
-            }
-            else
+            // Abrir el archivo PDF desde la ruta temporal
+            var psi = new System.Diagnostics.ProcessStartInfo
             {
-                MessageBox.Show($"El archivo PDF no se encuentra en la ubicación: {pdfPath}", "Archivo no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                FileName = tempPath,
+                UseShellExecute = true
+            }; 
+
+            System.Diagnostics.Process.Start(psi);
         }
     }
 }
