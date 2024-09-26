@@ -26,13 +26,22 @@ namespace PTC2024.Model
         {
             try
             {
-                string server = DTOXMLConnection.Server;
-                string database = DTOXMLConnection.Database;
-                string userId = DTOXMLConnection.User;
-                string Password = DTOXMLConnection.Password;
-                SqlConnection conexion = new SqlConnection($"Server = {server}; DataBase = {database}; User Id = {userId}; Password = {Password}");
-                conexion.Open();
-                return conexion;
+                SqlConnection connection;
+                if (string.IsNullOrEmpty(DTOXMLConnection.User) && string.IsNullOrEmpty(DTOXMLConnection.Password))
+                {
+                    connection = new SqlConnection($"Server = {DTOXMLConnection.Server}; DataBase = {DTOXMLConnection.Database}; IntegratednSecurity = true");
+                }
+                else
+                {
+                    connection = new SqlConnection($"Server = {DTOXMLConnection.Server}; DataBase = {DTOXMLConnection.Database}; User Id = {DTOXMLConnection.User}; Password = {DTOXMLConnection.Password}");
+                }
+                //string server = DTOXMLConnection.Server;
+                //string database = DTOXMLConnection.Database;
+                //string userId = DTOXMLConnection.User;
+                //string Password = DTOXMLConnection.Password;
+                //SqlConnection conexion = new SqlConnection($"Server = {server}; DataBase = {database}; User Id = {userId}; Password = {Password}");
+                connection.Open();
+                return connection;
             }
 
             catch (SqlException ex)
@@ -47,9 +56,19 @@ namespace PTC2024.Model
         {
             try
             {
-                SqlConnection conexion = new SqlConnection($"Server = {server}; DataBase = {database}; User Id = {user}; Password = {password}");
-                conexion.Open();
-                return conexion;
+                SqlConnection connection;
+                if (string.IsNullOrEmpty(user) && string.IsNullOrEmpty(password))
+                {
+                    connection = new SqlConnection($"Server = {server}; DataBase = {database}; Integrated Security = true");
+                }
+                else
+                {
+                    connection = new SqlConnection($"Server = {server}; DataBase = {database}; User Id = {user}; Password = {password}");
+
+                }
+                //SqlConnection conexion = new SqlConnection($"Server = {server}; DataBase = {database}; User Id = {user}; Password = {password}");
+                connection.Open();
+                return connection;
             }
             catch (SqlException ex)
             {

@@ -164,23 +164,23 @@ namespace PTC2024.Controller.ProfileController
         }
         public void OpenManualT(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("file:///C:/Users/HP/Downloads/Manual%20de%20uso%20-%20Sistema%20ADUP%20.pdf");
-            //string pdfPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Manual Técnico.pdf");
+            //System.Diagnostics.Process.Start("file:///C:/Users/HP/Downloads/Manual%20de%20uso%20-%20Sistema%20ADUP%20.pdf");
+            string pdfPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MANUAL TÉCNICO - H2C.pdf");
 
-            //if (System.IO.File.Exists(pdfPath))
-            //{
-            //    var psi = new System.Diagnostics.ProcessStartInfo
-            //    {
-            //        FileName = pdfPath,
-            //        UseShellExecute = true 
-            //    };
+            if (System.IO.File.Exists(pdfPath))
+            {
+                var psi = new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = pdfPath,
+                    UseShellExecute = true
+                };
 
-            //    System.Diagnostics.Process.Start(psi);
-            //}
-            //else
-            //{
-            //    MessageBox.Show($"El archivo PDF no se encuentra en la ubicación: {pdfPath}", "Archivo no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+                System.Diagnostics.Process.Start(psi);
+            }
+            else
+            {
+                MessageBox.Show($"El archivo PDF no se encuentra en la ubicación: {pdfPath}", "Archivo no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
