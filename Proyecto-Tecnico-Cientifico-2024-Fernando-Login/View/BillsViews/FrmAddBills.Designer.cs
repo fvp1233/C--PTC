@@ -507,9 +507,9 @@
             this.bunifuCustomLabel22.Location = new System.Drawing.Point(17, 153);
             this.bunifuCustomLabel22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel22.Name = "bunifuCustomLabel22";
-            this.bunifuCustomLabel22.Size = new System.Drawing.Size(187, 19);
+            this.bunifuCustomLabel22.Size = new System.Drawing.Size(193, 19);
             this.bunifuCustomLabel22.TabIndex = 45;
-            this.bunifuCustomLabel22.Text = "Codigo del encargado:";
+            this.bunifuCustomLabel22.Text = "Nombre del encargado:";
             // 
             // bunifuCustomLabel7
             // 
