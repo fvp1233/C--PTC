@@ -23,6 +23,7 @@ using PTC2024.Model.DAO.StartMenuDAO;
 using PTC2024.Controller.ProfileController;
 using PTC2024.Model.DAO.ProfileDAO;
 using PTC2024.Model.DAO.HelperDAO;
+using PTC2024.Resources.Language;
 
 namespace PTC2024.Controller.StartMenuController
 {
@@ -53,6 +54,7 @@ namespace PTC2024.Controller.StartMenuController
         }
         void InitialAccess(object sender, EventArgs e)
         {
+            ChargeLanguage();
             Access();
             objStartMenu.tableLayoutBtnClose.Visible = false;
             objStartMenu.lblUser.Text = SessionVar.ShortUsername;
@@ -76,6 +78,22 @@ namespace PTC2024.Controller.StartMenuController
             }
             objStartMenu.lblBusinessName.Text = BusinessVar.BusinessName;
             ShowWelcomeSnackBar();
+        }
+        public void ChargeLanguage()
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+            EnglishL();
+        }
+        public void EnglishL()
+        {
+            objStartMenu.btnMenuDashboard.Text = English.dashboard;
+            objStartMenu.btnMenuEmployee.Text = English.employee;
+            objStartMenu.btnMenuPayroll.Text = English.payroll;
+            objStartMenu.btnpermissions.Text = English.permission;
+            objStartMenu.btnMenuServices.Text = English.service;
+            objStartMenu.btnMenuCustomers.Text = English.customer;
+            objStartMenu.btnMenuBills.Text = English.bills;
+            objStartMenu.btnMaintenance.Text = English.manteinance;
         }
         public Image ByteArrayToImage(byte[] byteArray)
         {

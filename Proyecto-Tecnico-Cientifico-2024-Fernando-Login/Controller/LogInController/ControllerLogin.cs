@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using PTC2024.View.Alerts;
 using PTC2024.View.login;
 using PTC2024.Model.DAO.StartMenuDAO;
+using PTC2024.Resources.Language;
 
 namespace PTC2024.Controller.LogInController
 {
@@ -30,6 +31,19 @@ namespace PTC2024.Controller.LogInController
             objLogIn.TxtUserBunifu.MouseDown += new MouseEventHandler(DisableContextMenu);
             objLogIn.txtPasswordBunifu.MouseDown += new MouseEventHandler(DisableContextMenu);
             objLogIn.TxtUserBunifu.TextChanged += new EventHandler(UsernameMask);
+        }
+        public void ChargeLanguage()
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+            EnglishL();
+        }
+        public void EnglishL()
+        {
+            objLogIn.lblUser.Text = English.user;
+            objLogIn.lblPassword.Text = English.password;
+            objLogIn.lblRemember.Text = English.remember;
+            objLogIn.btnLoginBunifu.Text = English.logIn;
+            objLogIn.linkRecoverPssword.Text = English.forgotP;
         }
         async private void DataAccess(object sender, EventArgs e)
         {
@@ -153,6 +167,7 @@ namespace PTC2024.Controller.LogInController
 
         public void InitialCharge(object sender, EventArgs e)
         {
+            ChargeLanguage();
             objLogIn.txtPasswordBunifu.PasswordChar = '*';
             objLogIn.HidePassword.Visible = false;
         }
