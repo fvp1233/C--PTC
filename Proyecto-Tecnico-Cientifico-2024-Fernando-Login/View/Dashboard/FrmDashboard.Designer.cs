@@ -450,7 +450,7 @@
             title1.BackColor = System.Drawing.Color.Transparent;
             title1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             title1.Name = "Title1";
-            title1.Text = "Resumen de pago de planillas";
+            title1.Text = "Resumen de pago de planillas / ingresos";
             this.chartPayrolls.Titles.Add(title1);
             // 
             // chrtTopServices

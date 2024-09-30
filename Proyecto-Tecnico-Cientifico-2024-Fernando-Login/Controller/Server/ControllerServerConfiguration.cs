@@ -1,11 +1,13 @@
 ﻿using PTC2024.Controller.Helper;
 using PTC2024.Model;
 using PTC2024.Model.DTO.HelperDTO;
+using PTC2024.Resources.Language;
 using PTC2024.View.Server;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Authentication.ExtendedProtection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +23,7 @@ namespace PTC2024.Controller.Server
         {
             objServer = View;
             VerifyOrigin(origin);
+            objServer.Load += new EventHandler(ChargeLanguage);
             objServer.rdFalse.CheckedChanged += new EventHandler(rdFalseMarked);
             objServer.rdTrue.CheckedChanged += new EventHandler(rdTrueMarked);
             objServer.txtDB.MouseDown += new MouseEventHandler(DisableContextMenu);
@@ -39,7 +42,25 @@ namespace PTC2024.Controller.Server
         {
             Environment.Exit(0);
         }
+        public void ChargeLanguage(object sender, EventArgs e)
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+            EnglishL();
+        }
+        public void EnglishL()
+        {
+            objServer.lblConfigServer.Text = English.server;
+            objServer.lblSubTitle.Text = English.titleServer;
+            objServer.lblServer.Text = English.serverURL;
+            objServer.lbldb.Text = English.dataBase;
+            objServer.lblSubTitle2.Text = English.titleServer2;
+            objServer.rdTrue.Text = English.enable;
+            objServer.rdFalse.Text = English.disable;
+            objServer.bunifuGroupBox1.Text = English.serverBox;
+            objServer.bunifuGroupBox2.Text = English.configBox;
+            objServer.btnSave.Text = English.saveConfigServer;
 
+        }
         public void VerifyOrigin(int origin)
         {
             if ((origin == 2))

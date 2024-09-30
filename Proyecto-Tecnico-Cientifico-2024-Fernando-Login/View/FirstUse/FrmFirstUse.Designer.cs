@@ -57,17 +57,17 @@
             this.btnAddImage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.bunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lbPBX = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtPBX = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtEmail = new Bunifu.UI.WinForms.BunifuTextBox();
             this.lblEmail = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblName = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtNameBusiness = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblCreationDate = new Bunifu.UI.WinForms.BunifuLabel();
             this.dtCreationDate = new Bunifu.UI.WinForms.BunifuDatePicker();
-            this.bunifuLabel8 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblPhone = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtAddress = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblAdress = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtPhone = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtLogin = new System.Windows.Forms.Label();
             this.bunifuPanel1.SuspendLayout();
@@ -219,17 +219,17 @@
             this.bunifuGroupBox1.BorderRadius = 8;
             this.bunifuGroupBox1.BorderThickness = 2;
             this.bunifuGroupBox1.Controls.Add(this.btnSave);
-            this.bunifuGroupBox1.Controls.Add(this.bunifuLabel1);
+            this.bunifuGroupBox1.Controls.Add(this.lbPBX);
             this.bunifuGroupBox1.Controls.Add(this.txtPBX);
             this.bunifuGroupBox1.Controls.Add(this.txtEmail);
             this.bunifuGroupBox1.Controls.Add(this.lblEmail);
-            this.bunifuGroupBox1.Controls.Add(this.bunifuLabel5);
+            this.bunifuGroupBox1.Controls.Add(this.lblName);
             this.bunifuGroupBox1.Controls.Add(this.txtNameBusiness);
-            this.bunifuGroupBox1.Controls.Add(this.bunifuLabel7);
+            this.bunifuGroupBox1.Controls.Add(this.lblCreationDate);
             this.bunifuGroupBox1.Controls.Add(this.dtCreationDate);
-            this.bunifuGroupBox1.Controls.Add(this.bunifuLabel8);
+            this.bunifuGroupBox1.Controls.Add(this.lblPhone);
             this.bunifuGroupBox1.Controls.Add(this.txtAddress);
-            this.bunifuGroupBox1.Controls.Add(this.bunifuLabel9);
+            this.bunifuGroupBox1.Controls.Add(this.lblAdress);
             this.bunifuGroupBox1.Controls.Add(this.txtPhone);
             this.bunifuGroupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.bunifuGroupBox1.ForeColor = System.Drawing.Color.White;
@@ -332,22 +332,22 @@
             this.btnSave.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnSave.UseDefaultRadiusAndThickness = true;
             // 
-            // bunifuLabel1
+            // lbPBX
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuLabel1.Location = new System.Drawing.Point(20, 311);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(24, 16);
-            this.bunifuLabel1.TabIndex = 24;
-            this.bunifuLabel1.Text = "PBX";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lbPBX.AllowParentOverrides = false;
+            this.lbPBX.AutoEllipsis = false;
+            this.lbPBX.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbPBX.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lbPBX.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPBX.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbPBX.Location = new System.Drawing.Point(20, 311);
+            this.lbPBX.Name = "lbPBX";
+            this.lbPBX.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbPBX.Size = new System.Drawing.Size(24, 16);
+            this.lbPBX.TabIndex = 24;
+            this.lbPBX.Text = "PBX";
+            this.lbPBX.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lbPBX.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // txtPBX
             // 
@@ -519,22 +519,22 @@
             this.lblEmail.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblEmail.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel5
+            // lblName
             // 
-            this.bunifuLabel5.AllowParentOverrides = false;
-            this.bunifuLabel5.AutoEllipsis = false;
-            this.bunifuLabel5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel5.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuLabel5.Location = new System.Drawing.Point(20, 30);
-            this.bunifuLabel5.Name = "bunifuLabel5";
-            this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(251, 16);
-            this.bunifuLabel5.TabIndex = 16;
-            this.bunifuLabel5.Text = "Nombre de la empresa / organización";
-            this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblName.AllowParentOverrides = false;
+            this.lblName.AutoEllipsis = false;
+            this.lblName.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblName.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblName.Location = new System.Drawing.Point(20, 30);
+            this.lblName.Name = "lblName";
+            this.lblName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblName.Size = new System.Drawing.Size(251, 16);
+            this.lblName.TabIndex = 16;
+            this.lblName.Text = "Nombre de la empresa / organización";
+            this.lblName.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblName.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // txtNameBusiness
             // 
@@ -613,22 +613,22 @@
             this.txtNameBusiness.UseSystemPasswordChar = false;
             this.txtNameBusiness.WordWrap = true;
             // 
-            // bunifuLabel7
+            // lblCreationDate
             // 
-            this.bunifuLabel7.AllowParentOverrides = false;
-            this.bunifuLabel7.AutoEllipsis = false;
-            this.bunifuLabel7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel7.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuLabel7.Location = new System.Drawing.Point(20, 242);
-            this.bunifuLabel7.Name = "bunifuLabel7";
-            this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel7.Size = new System.Drawing.Size(126, 16);
-            this.bunifuLabel7.TabIndex = 18;
-            this.bunifuLabel7.Text = "Fecha de creación:";
-            this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblCreationDate.AllowParentOverrides = false;
+            this.lblCreationDate.AutoEllipsis = false;
+            this.lblCreationDate.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblCreationDate.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblCreationDate.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreationDate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCreationDate.Location = new System.Drawing.Point(20, 242);
+            this.lblCreationDate.Name = "lblCreationDate";
+            this.lblCreationDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCreationDate.Size = new System.Drawing.Size(126, 16);
+            this.lblCreationDate.TabIndex = 18;
+            this.lblCreationDate.Text = "Fecha de creación:";
+            this.lblCreationDate.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblCreationDate.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // dtCreationDate
             // 
@@ -658,22 +658,22 @@
             this.dtCreationDate.TabIndex = 4;
             this.dtCreationDate.Value = new System.DateTime(2024, 7, 13, 16, 30, 0, 0);
             // 
-            // bunifuLabel8
+            // lblPhone
             // 
-            this.bunifuLabel8.AllowParentOverrides = false;
-            this.bunifuLabel8.AutoEllipsis = false;
-            this.bunifuLabel8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel8.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuLabel8.Location = new System.Drawing.Point(285, 242);
-            this.bunifuLabel8.Name = "bunifuLabel8";
-            this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel8.Size = new System.Drawing.Size(58, 16);
-            this.bunifuLabel8.TabIndex = 21;
-            this.bunifuLabel8.Text = "Teléfono:";
-            this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel8.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblPhone.AllowParentOverrides = false;
+            this.lblPhone.AutoEllipsis = false;
+            this.lblPhone.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblPhone.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblPhone.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblPhone.Location = new System.Drawing.Point(285, 242);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblPhone.Size = new System.Drawing.Size(58, 16);
+            this.lblPhone.TabIndex = 21;
+            this.lblPhone.Text = "Teléfono:";
+            this.lblPhone.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblPhone.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // txtAddress
             // 
@@ -752,22 +752,22 @@
             this.txtAddress.UseSystemPasswordChar = false;
             this.txtAddress.WordWrap = true;
             // 
-            // bunifuLabel9
+            // lblAdress
             // 
-            this.bunifuLabel9.AllowParentOverrides = false;
-            this.bunifuLabel9.AutoEllipsis = false;
-            this.bunifuLabel9.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel9.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuLabel9.Location = new System.Drawing.Point(20, 99);
-            this.bunifuLabel9.Name = "bunifuLabel9";
-            this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel9.Size = new System.Drawing.Size(66, 16);
-            this.bunifuLabel9.TabIndex = 22;
-            this.bunifuLabel9.Text = "Dirección:";
-            this.bunifuLabel9.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel9.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblAdress.AllowParentOverrides = false;
+            this.lblAdress.AutoEllipsis = false;
+            this.lblAdress.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblAdress.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblAdress.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdress.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblAdress.Location = new System.Drawing.Point(20, 99);
+            this.lblAdress.Name = "lblAdress";
+            this.lblAdress.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblAdress.Size = new System.Drawing.Size(66, 16);
+            this.lblAdress.TabIndex = 22;
+            this.lblAdress.Text = "Dirección:";
+            this.lblAdress.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblAdress.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // txtPhone
             // 
@@ -882,23 +882,23 @@
         #endregion
 
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
-        private System.Windows.Forms.Label txtLogin;
-        private Bunifu.UI.WinForms.BunifuGroupBox bunifuGroupBox1;
-        private Bunifu.UI.WinForms.BunifuLabel lblEmail;
         public Bunifu.UI.WinForms.BunifuTextBox txtEmail;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
         public Bunifu.UI.WinForms.BunifuTextBox txtNameBusiness;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
         public Bunifu.UI.WinForms.BunifuDatePicker dtCreationDate;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel8;
         public Bunifu.UI.WinForms.BunifuTextBox txtAddress;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel9;
         public Bunifu.UI.WinForms.BunifuTextBox txtPhone;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel2;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         public Bunifu.UI.WinForms.BunifuTextBox txtPBX;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnAddImage;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnSave;
         public System.Windows.Forms.PictureBox picBusiness;
+        public System.Windows.Forms.Label txtLogin;
+        public Bunifu.UI.WinForms.BunifuLabel lblName;
+        public Bunifu.UI.WinForms.BunifuLabel lblAdress;
+        public Bunifu.UI.WinForms.BunifuLabel lblEmail;
+        public Bunifu.UI.WinForms.BunifuLabel lblCreationDate;
+        public Bunifu.UI.WinForms.BunifuLabel lblPhone;
+        public Bunifu.UI.WinForms.BunifuLabel lbPBX;
+        public Bunifu.UI.WinForms.BunifuGroupBox bunifuGroupBox1;
     }
 }

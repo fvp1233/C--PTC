@@ -61,11 +61,119 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Add image.
+        /// </summary>
+        internal static string addImg {
+            get {
+                return ResourceManager.GetString("addImg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Adress:.
+        /// </summary>
+        internal static string adress {
+            get {
+                return ResourceManager.GetString("adress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Affiliation number.
+        /// </summary>
+        internal static string affNumber {
+            get {
+                return ResourceManager.GetString("affNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Bank:.
+        /// </summary>
+        internal static string bank {
+            get {
+                return ResourceManager.GetString("bank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Bank Account:.
+        /// </summary>
+        internal static string bankAccount {
+            get {
+                return ResourceManager.GetString("bankAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Bills.
         /// </summary>
         internal static string bills {
             get {
                 return ResourceManager.GetString("bills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Date of Birth:.
+        /// </summary>
+        internal static string birthDate {
+            get {
+                return ResourceManager.GetString("birthDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a BUSINES CONFIGURATION.
+        /// </summary>
+        internal static string businessConfig {
+            get {
+                return ResourceManager.GetString("businessConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Business data.
+        /// </summary>
+        internal static string businessData {
+            get {
+                return ResourceManager.GetString("businessData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Company / Organization Name.
+        /// </summary>
+        internal static string businessName {
+            get {
+                return ResourceManager.GetString("businessName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Local configuration.
+        /// </summary>
+        internal static string configBox {
+            get {
+                return ResourceManager.GetString("configBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirm password:.
+        /// </summary>
+        internal static string confirmPass {
+            get {
+                return ResourceManager.GetString("confirmPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Creation date:.
+        /// </summary>
+        internal static string creationDate {
+            get {
+                return ResourceManager.GetString("creationDate", resourceCulture);
             }
         }
         
@@ -88,6 +196,42 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Data Base.
+        /// </summary>
+        internal static string dataBase {
+            get {
+                return ResourceManager.GetString("dataBase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Disable.
+        /// </summary>
+        internal static string disable {
+            get {
+                return ResourceManager.GetString("disable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a DUI:.
+        /// </summary>
+        internal static string DUI {
+            get {
+                return ResourceManager.GetString("DUI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Email:.
+        /// </summary>
+        internal static string email {
+            get {
+                return ResourceManager.GetString("email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Employees.
         /// </summary>
         internal static string employee {
@@ -97,11 +241,65 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Enable.
+        /// </summary>
+        internal static string enable {
+            get {
+                return ResourceManager.GetString("enable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Financial data.
+        /// </summary>
+        internal static string financialDat {
+            get {
+                return ResourceManager.GetString("financialDat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Forgot password?.
         /// </summary>
         internal static string forgotP {
             get {
                 return ResourceManager.GetString("forgotP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Gender:.
+        /// </summary>
+        internal static string gender {
+            get {
+                return ResourceManager.GetString("gender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Hire date:.
+        /// </summary>
+        internal static string hireDate {
+            get {
+                return ResourceManager.GetString("hireDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Last names:.
+        /// </summary>
+        internal static string lastNames {
+            get {
+                return ResourceManager.GetString("lastNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Log in data.
+        /// </summary>
+        internal static string logData {
+            get {
+                return ResourceManager.GetString("logData", resourceCulture);
             }
         }
         
@@ -124,11 +322,29 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Names:.
+        /// </summary>
+        internal static string names {
+            get {
+                return ResourceManager.GetString("names", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Password.
         /// </summary>
         internal static string password {
             get {
                 return ResourceManager.GetString("password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Password:.
+        /// </summary>
+        internal static string passwordForm {
+            get {
+                return ResourceManager.GetString("passwordForm", resourceCulture);
             }
         }
         
@@ -142,11 +358,56 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a PBX:.
+        /// </summary>
+        internal static string pbx {
+            get {
+                return ResourceManager.GetString("pbx", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Permissions.
         /// </summary>
         internal static string permission {
             get {
                 return ResourceManager.GetString("permission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Personal data.
+        /// </summary>
+        internal static string personalData {
+            get {
+                return ResourceManager.GetString("personalData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Phone:.
+        /// </summary>
+        internal static string phone {
+            get {
+                return ResourceManager.GetString("phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sign Up.
+        /// </summary>
+        internal static string register {
+            get {
+                return ResourceManager.GetString("register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enter the information to create a super administrator account..
+        /// </summary>
+        internal static string registerSubTitle {
+            get {
+                return ResourceManager.GetString("registerSubTitle", resourceCulture);
             }
         }
         
@@ -160,6 +421,51 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Save Configuration.
+        /// </summary>
+        internal static string saveConfigServer {
+            get {
+                return ResourceManager.GetString("saveConfigServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Save info.
+        /// </summary>
+        internal static string saveinfo {
+            get {
+                return ResourceManager.GetString("saveinfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Server Configuration.
+        /// </summary>
+        internal static string server {
+            get {
+                return ResourceManager.GetString("server", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Server.
+        /// </summary>
+        internal static string serverBox {
+            get {
+                return ResourceManager.GetString("serverBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Server URL.
+        /// </summary>
+        internal static string serverURL {
+            get {
+                return ResourceManager.GetString("serverURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Services.
         /// </summary>
         internal static string service {
@@ -169,11 +475,38 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Enter the values in each field for the connection to your database..
+        /// </summary>
+        internal static string titleServer {
+            get {
+                return ResourceManager.GetString("titleServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Windows Integrated Security.
+        /// </summary>
+        internal static string titleServer2 {
+            get {
+                return ResourceManager.GetString("titleServer2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a User.
         /// </summary>
         internal static string user {
             get {
                 return ResourceManager.GetString("user", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a User:.
+        /// </summary>
+        internal static string userForm {
+            get {
+                return ResourceManager.GetString("userForm", resourceCulture);
             }
         }
     }

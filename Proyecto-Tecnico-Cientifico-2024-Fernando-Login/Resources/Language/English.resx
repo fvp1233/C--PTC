@@ -117,8 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="addImg" xml:space="preserve">
+    <value>Add image</value>
+  </data>
+  <data name="adress" xml:space="preserve">
+    <value>Adress:</value>
+  </data>
+  <data name="affNumber" xml:space="preserve">
+    <value>Affiliation number</value>
+  </data>
+  <data name="bank" xml:space="preserve">
+    <value>Bank:</value>
+  </data>
+  <data name="bankAccount" xml:space="preserve">
+    <value>Bank Account:</value>
+  </data>
   <data name="bills" xml:space="preserve">
     <value>Bills</value>
+  </data>
+  <data name="birthDate" xml:space="preserve">
+    <value>Date of Birth:</value>
+  </data>
+  <data name="businessConfig" xml:space="preserve">
+    <value>BUSINES CONFIGURATION</value>
+  </data>
+  <data name="businessData" xml:space="preserve">
+    <value>Business data</value>
+  </data>
+  <data name="businessName" xml:space="preserve">
+    <value>Company / Organization Name</value>
+  </data>
+  <data name="configBox" xml:space="preserve">
+    <value>Local configuration</value>
+  </data>
+  <data name="confirmPass" xml:space="preserve">
+    <value>Confirm password:</value>
+  </data>
+  <data name="creationDate" xml:space="preserve">
+    <value>Creation date:</value>
   </data>
   <data name="customer" xml:space="preserve">
     <value>Customers</value>
@@ -126,11 +162,41 @@
   <data name="dashboard" xml:space="preserve">
     <value>Dashboard</value>
   </data>
+  <data name="dataBase" xml:space="preserve">
+    <value>Data Base</value>
+  </data>
+  <data name="disable" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="DUI" xml:space="preserve">
+    <value>DUI:</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>Email:</value>
+  </data>
   <data name="employee" xml:space="preserve">
     <value>Employees</value>
   </data>
+  <data name="enable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="financialDat" xml:space="preserve">
+    <value>Financial data</value>
+  </data>
   <data name="forgotP" xml:space="preserve">
     <value>Forgot password?</value>
+  </data>
+  <data name="gender" xml:space="preserve">
+    <value>Gender:</value>
+  </data>
+  <data name="hireDate" xml:space="preserve">
+    <value>Hire date:</value>
+  </data>
+  <data name="lastNames" xml:space="preserve">
+    <value>Last names:</value>
+  </data>
+  <data name="logData" xml:space="preserve">
+    <value>Log in data</value>
   </data>
   <data name="logIn" xml:space="preserve">
     <value>Log In</value>
@@ -138,22 +204,67 @@
   <data name="manteinance" xml:space="preserve">
     <value>Maintenance</value>
   </data>
+  <data name="names" xml:space="preserve">
+    <value>Names:</value>
+  </data>
   <data name="password" xml:space="preserve">
     <value>Password</value>
+  </data>
+  <data name="passwordForm" xml:space="preserve">
+    <value>Password:</value>
   </data>
   <data name="payroll" xml:space="preserve">
     <value>Payrolls</value>
   </data>
+  <data name="pbx" xml:space="preserve">
+    <value>PBX:</value>
+  </data>
   <data name="permission" xml:space="preserve">
     <value>Permissions</value>
+  </data>
+  <data name="personalData" xml:space="preserve">
+    <value>Personal data</value>
+  </data>
+  <data name="phone" xml:space="preserve">
+    <value>Phone:</value>
+  </data>
+  <data name="register" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="registerSubTitle" xml:space="preserve">
+    <value>Enter the information to create a super administrator account.</value>
   </data>
   <data name="remember" xml:space="preserve">
     <value>Remember me</value>
   </data>
+  <data name="saveConfigServer" xml:space="preserve">
+    <value>Save Configuration</value>
+  </data>
+  <data name="saveinfo" xml:space="preserve">
+    <value>Save info</value>
+  </data>
+  <data name="server" xml:space="preserve">
+    <value>Server Configuration</value>
+  </data>
+  <data name="serverBox" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="serverURL" xml:space="preserve">
+    <value>Server URL</value>
+  </data>
   <data name="service" xml:space="preserve">
     <value>Services</value>
   </data>
+  <data name="titleServer" xml:space="preserve">
+    <value>Enter the values in each field for the connection to your database.</value>
+  </data>
+  <data name="titleServer2" xml:space="preserve">
+    <value>Windows Integrated Security</value>
+  </data>
   <data name="user" xml:space="preserve">
     <value>User</value>
+  </data>
+  <data name="userForm" xml:space="preserve">
+    <value>User:</value>
   </data>
 </root>

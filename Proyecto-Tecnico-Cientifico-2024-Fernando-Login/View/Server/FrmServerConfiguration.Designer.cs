@@ -47,21 +47,21 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.bunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lbldb = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtDB = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblServer = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtServer = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuGroupBox2 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.bunifuSeparator2 = new Bunifu.UI.WinForms.BunifuSeparator();
-            this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblSubTitle2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
             this.rdTrue = new System.Windows.Forms.RadioButton();
             this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
             this.rdFalse = new System.Windows.Forms.RadioButton();
             this.txtPasswordAuth = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtSqlAuth = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblSubTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblConfigServer = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
@@ -77,9 +77,9 @@
             this.bunifuGroupBox1.BorderColor = System.Drawing.Color.LightGray;
             this.bunifuGroupBox1.BorderRadius = 20;
             this.bunifuGroupBox1.BorderThickness = 2;
-            this.bunifuGroupBox1.Controls.Add(this.bunifuLabel2);
+            this.bunifuGroupBox1.Controls.Add(this.lbldb);
             this.bunifuGroupBox1.Controls.Add(this.txtDB);
-            this.bunifuGroupBox1.Controls.Add(this.bunifuLabel1);
+            this.bunifuGroupBox1.Controls.Add(this.lblServer);
             this.bunifuGroupBox1.Controls.Add(this.txtServer);
             this.bunifuGroupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuGroupBox1.LabelAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -92,21 +92,21 @@
             this.bunifuGroupBox1.TabStop = false;
             this.bunifuGroupBox1.Text = "Servidor";
             // 
-            // bunifuLabel2
+            // lbldb
             // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(22, 84);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(84, 17);
-            this.bunifuLabel2.TabIndex = 5;
-            this.bunifuLabel2.Text = "Base de datos";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lbldb.AllowParentOverrides = false;
+            this.lbldb.AutoEllipsis = false;
+            this.lbldb.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbldb.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lbldb.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldb.Location = new System.Drawing.Point(22, 84);
+            this.lbldb.Name = "lbldb";
+            this.lbldb.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbldb.Size = new System.Drawing.Size(84, 17);
+            this.lbldb.TabIndex = 5;
+            this.lbldb.Text = "Base de datos";
+            this.lbldb.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lbldb.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // txtDB
             // 
@@ -185,21 +185,21 @@
             this.txtDB.UseSystemPasswordChar = false;
             this.txtDB.WordWrap = true;
             // 
-            // bunifuLabel1
+            // lblServer
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(22, 23);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(74, 17);
-            this.bunifuLabel1.TabIndex = 3;
-            this.bunifuLabel1.Text = "Servidor URL";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblServer.AllowParentOverrides = false;
+            this.lblServer.AutoEllipsis = false;
+            this.lblServer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblServer.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblServer.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServer.Location = new System.Drawing.Point(22, 23);
+            this.lblServer.Name = "lblServer";
+            this.lblServer.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblServer.Size = new System.Drawing.Size(74, 17);
+            this.lblServer.TabIndex = 3;
+            this.lblServer.Text = "Servidor URL";
+            this.lblServer.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblServer.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // txtServer
             // 
@@ -284,7 +284,7 @@
             this.bunifuGroupBox2.BorderRadius = 20;
             this.bunifuGroupBox2.BorderThickness = 2;
             this.bunifuGroupBox2.Controls.Add(this.bunifuSeparator2);
-            this.bunifuGroupBox2.Controls.Add(this.bunifuLabel3);
+            this.bunifuGroupBox2.Controls.Add(this.lblSubTitle2);
             this.bunifuGroupBox2.Controls.Add(this.bunifuLabel4);
             this.bunifuGroupBox2.Controls.Add(this.rdTrue);
             this.bunifuGroupBox2.Controls.Add(this.bunifuLabel5);
@@ -318,22 +318,22 @@
             this.bunifuSeparator2.Size = new System.Drawing.Size(500, 12);
             this.bunifuSeparator2.TabIndex = 10;
             // 
-            // bunifuLabel3
+            // lblSubTitle2
             // 
-            this.bunifuLabel3.AllowParentOverrides = false;
-            this.bunifuLabel3.AutoEllipsis = false;
-            this.bunifuLabel3.AutoSize = false;
-            this.bunifuLabel3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel3.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel3.Location = new System.Drawing.Point(16, 22);
-            this.bunifuLabel3.Name = "bunifuLabel3";
-            this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(536, 28);
-            this.bunifuLabel3.TabIndex = 2;
-            this.bunifuLabel3.Text = "Seguridad integrada de Windows";
-            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblSubTitle2.AllowParentOverrides = false;
+            this.lblSubTitle2.AutoEllipsis = false;
+            this.lblSubTitle2.AutoSize = false;
+            this.lblSubTitle2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblSubTitle2.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblSubTitle2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTitle2.Location = new System.Drawing.Point(16, 22);
+            this.lblSubTitle2.Name = "lblSubTitle2";
+            this.lblSubTitle2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblSubTitle2.Size = new System.Drawing.Size(536, 28);
+            this.lblSubTitle2.TabIndex = 2;
+            this.lblSubTitle2.Text = "Seguridad integrada de Windows";
+            this.lblSubTitle2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSubTitle2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuLabel4
             // 
@@ -543,25 +543,25 @@
             this.txtSqlAuth.UseSystemPasswordChar = false;
             this.txtSqlAuth.WordWrap = true;
             // 
-            // bunifuCustomLabel2
+            // lblSubTitle
             // 
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(0, 40);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(858, 15);
-            this.bunifuCustomLabel2.TabIndex = 109;
-            this.bunifuCustomLabel2.Text = "Ingrese los valores en cada campo para la conexión a su base de datos";
-            this.bunifuCustomLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSubTitle.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTitle.Location = new System.Drawing.Point(0, 40);
+            this.lblSubTitle.Name = "lblSubTitle";
+            this.lblSubTitle.Size = new System.Drawing.Size(858, 15);
+            this.lblSubTitle.TabIndex = 109;
+            this.lblSubTitle.Text = "Ingrese los valores en cada campo para la conexión a su base de datos";
+            this.lblSubTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bunifuCustomLabel1
+            // lblConfigServer
             // 
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(0, 8);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(858, 32);
-            this.bunifuCustomLabel1.TabIndex = 108;
-            this.bunifuCustomLabel1.Text = "CONFIGURACIÓN DE SERVIDOR";
-            this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblConfigServer.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfigServer.Location = new System.Drawing.Point(0, 8);
+            this.lblConfigServer.Name = "lblConfigServer";
+            this.lblConfigServer.Size = new System.Drawing.Size(858, 32);
+            this.lblConfigServer.TabIndex = 108;
+            this.lblConfigServer.Text = "CONFIGURACIÓN DE SERVIDOR";
+            this.lblConfigServer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuPictureBox1
             // 
@@ -711,8 +711,8 @@
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.bunifuPictureBox1);
-            this.Controls.Add(this.bunifuCustomLabel2);
-            this.Controls.Add(this.bunifuCustomLabel1);
+            this.Controls.Add(this.lblSubTitle);
+            this.Controls.Add(this.lblConfigServer);
             this.Controls.Add(this.bunifuGroupBox2);
             this.Controls.Add(this.bunifuGroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -730,16 +730,8 @@
         }
 
         #endregion
-
-        private Bunifu.UI.WinForms.BunifuGroupBox bunifuGroupBox1;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
-        private Bunifu.UI.WinForms.BunifuGroupBox bunifuGroupBox2;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
         public System.Windows.Forms.RadioButton rdFalse;
         public System.Windows.Forms.RadioButton rdTrue;
@@ -751,5 +743,12 @@
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator2;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnSave;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblConfigServer;
+        public Bunifu.UI.WinForms.BunifuGroupBox bunifuGroupBox1;
+        public Bunifu.UI.WinForms.BunifuLabel lblServer;
+        public Bunifu.UI.WinForms.BunifuGroupBox bunifuGroupBox2;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblSubTitle;
+        public Bunifu.UI.WinForms.BunifuLabel lbldb;
+        public Bunifu.UI.WinForms.BunifuLabel lblSubTitle2;
     }
 }

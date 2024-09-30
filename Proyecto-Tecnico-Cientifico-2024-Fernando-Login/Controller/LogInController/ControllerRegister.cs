@@ -16,6 +16,7 @@ using PTC2024.Model.DAO;
 using PTC2024.Model.DAO.LogInDAO;
 using PTC2024.View.formularios.inicio;
 using PTC2024.View.login;
+using PTC2024.Resources.Language;
 
 namespace PTC2024.Controller.LogInController
 {
@@ -52,9 +53,39 @@ namespace PTC2024.Controller.LogInController
             objRegister.txtEmail.TextChanged += new EventHandler(EmailValidation);
             objRegister.txtUser.TextChanged += new EventHandler(UsernameMask);
         }
-
+        public void ChargeLanguage()
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+            EnglishL();
+        }
+        public void EnglishL()
+        {
+            objRegister.txtLogin.Text = English.register;
+            objRegister.lblSubTitle.Text = English.registerSubTitle;
+            objRegister.bunifuGroupBox1.Text = English.personalData;
+            objRegister.lblDui.Text = English.DUI;
+            objRegister.lblNames.Text = English.names;
+            objRegister.txtLastNames.Text = English.lastNames;
+            objRegister.lblBirth.Text = English.birthDate;
+            objRegister.lblEmail.Text = English.email;
+            objRegister.lblPhone.Text = English.phone;
+            objRegister.lblGender.Text = English.gender;
+            objRegister.lblAdress.Text = English.adress;
+            objRegister.lblFecha.Text = English.hireDate;
+            objRegister.bunifuGroupBox2.Text = English.financialDat;
+            objRegister.lblAfilitationN.Text = English.affNumber;
+            objRegister.lblBankAccount.Text = English.bankAccount;
+            objRegister.lblBank.Text = English.bank;
+            objRegister.bunifuGroupBox3.Text = English.logData;
+            objRegister.lblUser.Text = English.userForm;
+            objRegister.lblPassword.Text = English.password;
+            objRegister.lblConfirm.Text = English.confirmPass;
+            objRegister.btnRegister.Text = English.register;
+        }
         public void LoadCombobox(object sender, EventArgs e)
         {
+            ChargeLanguage();
+
             DAORegister DAOCombobox = new DAORegister();
             //Dropdown de diferentes bancos
             DataSet dsBank = DAOCombobox.ObtainBanks();
