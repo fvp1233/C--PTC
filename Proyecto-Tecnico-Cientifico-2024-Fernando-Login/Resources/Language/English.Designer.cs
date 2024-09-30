@@ -187,11 +187,83 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Audits.
+        /// </summary>
+        internal static string dashAudits {
+            get {
+                return ResourceManager.GetString("dashAudits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Number of bills:.
+        /// </summary>
+        internal static string dashBillsN {
+            get {
+                return ResourceManager.GetString("dashBillsN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Dashboard.
         /// </summary>
         internal static string dashboard {
             get {
                 return ResourceManager.GetString("dashboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Number of costumers:.
+        /// </summary>
+        internal static string dashCustomerN {
+            get {
+                return ResourceManager.GetString("dashCustomerN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Number of employees:.
+        /// </summary>
+        internal static string dashEmployeeN {
+            get {
+                return ResourceManager.GetString("dashEmployeeN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Payroll / Revenue Summary.
+        /// </summary>
+        internal static string dashGraphic {
+            get {
+                return ResourceManager.GetString("dashGraphic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Total revenue:.
+        /// </summary>
+        internal static string dashIncome {
+            get {
+                return ResourceManager.GetString("dashIncome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Number of services:.
+        /// </summary>
+        internal static string dashServicesN {
+            get {
+                return ResourceManager.GetString("dashServicesN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Top Services.
+        /// </summary>
+        internal static string dashTop {
+            get {
+                return ResourceManager.GetString("dashTop", resourceCulture);
             }
         }
         

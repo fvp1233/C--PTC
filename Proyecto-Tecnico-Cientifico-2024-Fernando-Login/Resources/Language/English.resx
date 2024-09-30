@@ -159,8 +159,32 @@
   <data name="customer" xml:space="preserve">
     <value>Customers</value>
   </data>
+  <data name="dashAudits" xml:space="preserve">
+    <value>Audits</value>
+  </data>
+  <data name="dashBillsN" xml:space="preserve">
+    <value>Number of bills:</value>
+  </data>
   <data name="dashboard" xml:space="preserve">
     <value>Dashboard</value>
+  </data>
+  <data name="dashCustomerN" xml:space="preserve">
+    <value>Number of costumers:</value>
+  </data>
+  <data name="dashEmployeeN" xml:space="preserve">
+    <value>Number of employees:</value>
+  </data>
+  <data name="dashGraphic" xml:space="preserve">
+    <value>Payroll / Revenue Summary</value>
+  </data>
+  <data name="dashIncome" xml:space="preserve">
+    <value>Total revenue:</value>
+  </data>
+  <data name="dashServicesN" xml:space="preserve">
+    <value>Number of services:</value>
+  </data>
+  <data name="dashTop" xml:space="preserve">
+    <value>Top Services</value>
   </data>
   <data name="dataBase" xml:space="preserve">
     <value>Data Base</value>

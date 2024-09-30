@@ -14,6 +14,7 @@ using System.IO;
 using System.Drawing;
 using PTC2024.View.formularios.inicio;
 using System.Windows.Forms.DataVisualization.Charting;
+using PTC2024.Resources.Language;
 
 namespace PTC2024.Controller.DashboardController
 {
@@ -31,6 +32,7 @@ namespace PTC2024.Controller.DashboardController
         }
         public void ChargeValues(object sender, EventArgs e)
         {
+            ChargeLanguage();
             objDashboard.dtpEnd.Value = new DateTime(DateTime.Now.Year, 12, 31);
             DAODashboard dAODashboard = new DAODashboard();
             ValidateDays();
@@ -80,6 +82,20 @@ namespace PTC2024.Controller.DashboardController
                 objDashboard.chrtTopServices.Series[0].YValueMembers = "Value";
                 objDashboard.chrtTopServices.DataBind();
             }
+        }
+        public void ChargeLanguage()
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+            EnglishL();
+        }
+        public void EnglishL()
+        {
+            objDashboard.lblEmployee.Text = English.dashEmployeeN;
+            objDashboard.lblBill.Text = English.dashBillsN;
+            objDashboard.lblService.Text = English.dashServicesN;
+            objDashboard.lblCustom.Text = English.dashCustomerN;
+            objDashboard.lblAudits.Text = English.dashAudits;
+            objDashboard.chartPayrolls.Titles[0].Text = English.dashGraphic; objDashboard.chrtTopServices.Titles[0].Text = English.dashTop;
         }
         public void DtpSearch(object sender, EventArgs e)
         {
@@ -149,8 +165,8 @@ namespace PTC2024.Controller.DashboardController
             DateTime firstDay = new DateTime(actualDay.Year, 1, 1);
             DateTime lastDay = new DateTime(actualDay.Year, 12, 31);
 
-            int totalDays = (lastDay - firstDay).Days+1; 
-            int days = (actualDay - firstDay).Days; 
+            int totalDays = (lastDay - firstDay).Days + 1;
+            int days = (actualDay - firstDay).Days;
 
             objDashboard.rgYearProgress.Minimum = 1;
             objDashboard.rgYearProgress.Maximum = totalDays;
@@ -175,15 +191,15 @@ namespace PTC2024.Controller.DashboardController
         public void CaptureDay()
         {
             DateTime currentHour = DateTime.Now;
-            if (currentHour.Hour >=12 && currentHour.Hour < 15)
+            if (currentHour.Hour >= 12 && currentHour.Hour < 15)
             {
                 objDashboard.lblTime.Text = "Buenas tardes, buen provecho";
             }
-            else if(currentHour.Hour >= 15 && currentHour.Hour < 18)
+            else if (currentHour.Hour >= 15 && currentHour.Hour < 18)
             {
                 objDashboard.lblTime.Text = "Buenas tardes";
             }
-            else if(currentHour.Hour >=5 && currentHour.Hour <= 11)
+            else if (currentHour.Hour >= 5 && currentHour.Hour <= 11)
             {
                 objDashboard.lblTime.Text = "Buenos días";
             }
