@@ -164,7 +164,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1028, 609);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1183, 688);
             this.tableLayoutPanel1.TabIndex = 1;
             this.bunifuToolTip1.SetToolTip(this.tableLayoutPanel1, "");
             this.bunifuToolTip1.SetToolTipIcon(this.tableLayoutPanel1, null);
@@ -182,7 +182,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1022, 84);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1177, 84);
             this.tableLayoutPanel3.TabIndex = 2;
             this.bunifuToolTip1.SetToolTip(this.tableLayoutPanel3, "");
             this.bunifuToolTip1.SetToolTipIcon(this.tableLayoutPanel3, null);
@@ -219,7 +219,7 @@
             this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
             this.txtSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(520, 22);
+            this.txtSearch.Location = new System.Drawing.Point(636, 22);
             this.txtSearch.MaxLength = 32767;
             this.txtSearch.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSearch.Modified = false;
@@ -245,7 +245,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.White;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtSearch.OnIdleState = stateProperties4;
-            this.txtSearch.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(3);
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.White;
             this.txtSearch.PlaceholderText = "Buscador";
@@ -282,7 +282,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(511, 78);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(589, 78);
             this.tableLayoutPanel2.TabIndex = 8;
             this.bunifuToolTip1.SetToolTip(this.tableLayoutPanel2, "");
             this.bunifuToolTip1.SetToolTipIcon(this.tableLayoutPanel2, null);
@@ -327,7 +327,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1022, 443);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1177, 522);
             this.tableLayoutPanel4.TabIndex = 3;
             this.bunifuToolTip1.SetToolTip(this.tableLayoutPanel4, "");
             this.bunifuToolTip1.SetToolTipIcon(this.tableLayoutPanel4, null);
@@ -346,7 +346,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 143F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1016, 437);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1171, 516);
             this.tableLayoutPanel5.TabIndex = 2;
             this.bunifuToolTip1.SetToolTip(this.tableLayoutPanel5, "");
             this.bunifuToolTip1.SetToolTipIcon(this.tableLayoutPanel5, null);
@@ -365,8 +365,8 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 135F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1010, 136);
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 134F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1165, 136);
             this.tableLayoutPanel6.TabIndex = 6;
             this.bunifuToolTip1.SetToolTip(this.tableLayoutPanel6, "");
             this.bunifuToolTip1.SetToolTipIcon(this.tableLayoutPanel6, null);
@@ -379,7 +379,7 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.49619F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 197F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 291F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 292F));
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel13, 4, 1);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel11, 3, 1);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel9, 2, 1);
@@ -392,7 +392,7 @@
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.42857F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.57143F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(672, 126);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(777, 126);
             this.tableLayoutPanel7.TabIndex = 2;
             this.bunifuToolTip1.SetToolTip(this.tableLayoutPanel7, "");
             this.bunifuToolTip1.SetToolTipIcon(this.tableLayoutPanel7, null);
@@ -406,11 +406,11 @@
             this.tableLayoutPanel13.Controls.Add(this.flowLayoutPanel4, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 1, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(383, 29);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(487, 29);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(286, 94);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(287, 94);
             this.tableLayoutPanel13.TabIndex = 9;
             this.bunifuToolTip1.SetToolTip(this.tableLayoutPanel13, "");
             this.bunifuToolTip1.SetToolTipIcon(this.tableLayoutPanel13, null);
@@ -424,7 +424,7 @@
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(23, 88);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(24, 88);
             this.flowLayoutPanel4.TabIndex = 0;
             this.bunifuToolTip1.SetToolTip(this.flowLayoutPanel4, "");
             this.bunifuToolTip1.SetToolTipIcon(this.flowLayoutPanel4, null);
@@ -609,7 +609,7 @@
             this.tableLayoutPanel14.Controls.Add(this.lblUnpaid, 0, 1);
             this.tableLayoutPanel14.Controls.Add(this.lblPay, 0, 0);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(32, 3);
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(33, 3);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 4;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -672,7 +672,7 @@
             this.tableLayoutPanel11.Controls.Add(this.flowLayoutPanel3, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel12, 1, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(186, 29);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(290, 29);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1011,7 +1011,7 @@
             this.tableLayoutPanel9.Controls.Add(this.flowLayoutPanel2, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(82, 29);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(186, 29);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1348,7 +1348,7 @@
             this.lblMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblMonth.AutoSize = true;
             this.lblMonth.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonth.Location = new System.Drawing.Point(14, 8);
+            this.lblMonth.Location = new System.Drawing.Point(29, 8);
             this.lblMonth.Name = "lblMonth";
             this.lblMonth.Size = new System.Drawing.Size(42, 18);
             this.lblMonth.TabIndex = 0;
@@ -1365,11 +1365,11 @@
             this.tableLayoutPanel8.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel15, 1, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(14, 29);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(29, 29);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(62, 94);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(151, 94);
             this.tableLayoutPanel8.TabIndex = 1;
             this.bunifuToolTip1.SetToolTip(this.tableLayoutPanel8, "");
             this.bunifuToolTip1.SetToolTipIcon(this.tableLayoutPanel8, null);
@@ -1384,7 +1384,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(6, 88);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(25, 88);
             this.flowLayoutPanel1.TabIndex = 0;
             this.bunifuToolTip1.SetToolTip(this.flowLayoutPanel1, "");
             this.bunifuToolTip1.SetToolTipIcon(this.flowLayoutPanel1, null);
@@ -1627,14 +1627,14 @@
             this.tableLayoutPanel15.Controls.Add(this.lblMonth2, 0, 1);
             this.tableLayoutPanel15.Controls.Add(this.lblMonth1, 0, 0);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(15, 3);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(34, 3);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 4;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(44, 88);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(114, 88);
             this.tableLayoutPanel15.TabIndex = 1;
             this.bunifuToolTip1.SetToolTip(this.tableLayoutPanel15, "");
             this.bunifuToolTip1.SetToolTipIcon(this.tableLayoutPanel15, null);
@@ -1647,7 +1647,7 @@
             this.lblMonth4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMonth4.Location = new System.Drawing.Point(3, 69);
             this.lblMonth4.Name = "lblMonth4";
-            this.lblMonth4.Size = new System.Drawing.Size(38, 16);
+            this.lblMonth4.Size = new System.Drawing.Size(108, 16);
             this.lblMonth4.TabIndex = 3;
             this.lblMonth4.Text = "Abril";
             this.bunifuToolTip1.SetToolTip(this.lblMonth4, "");
@@ -1659,9 +1659,9 @@
             this.lblMonth3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMonth3.AutoSize = true;
             this.lblMonth3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonth3.Location = new System.Drawing.Point(3, 44);
+            this.lblMonth3.Location = new System.Drawing.Point(3, 47);
             this.lblMonth3.Name = "lblMonth3";
-            this.lblMonth3.Size = new System.Drawing.Size(38, 23);
+            this.lblMonth3.Size = new System.Drawing.Size(108, 16);
             this.lblMonth3.TabIndex = 2;
             this.lblMonth3.Text = "Marzo";
             this.bunifuToolTip1.SetToolTip(this.lblMonth3, "");
@@ -1673,9 +1673,9 @@
             this.lblMonth2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMonth2.AutoSize = true;
             this.lblMonth2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonth2.Location = new System.Drawing.Point(3, 22);
+            this.lblMonth2.Location = new System.Drawing.Point(3, 25);
             this.lblMonth2.Name = "lblMonth2";
-            this.lblMonth2.Size = new System.Drawing.Size(38, 22);
+            this.lblMonth2.Size = new System.Drawing.Size(108, 16);
             this.lblMonth2.TabIndex = 1;
             this.lblMonth2.Text = "Febrero";
             this.bunifuToolTip1.SetToolTip(this.lblMonth2, "");
@@ -1689,7 +1689,7 @@
             this.lblMonth1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMonth1.Location = new System.Drawing.Point(3, 3);
             this.lblMonth1.Name = "lblMonth1";
-            this.lblMonth1.Size = new System.Drawing.Size(38, 16);
+            this.lblMonth1.Size = new System.Drawing.Size(108, 16);
             this.lblMonth1.TabIndex = 0;
             this.lblMonth1.Text = "Enero";
             this.bunifuToolTip1.SetToolTip(this.lblMonth1, "");
@@ -1701,7 +1701,7 @@
             this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(383, 8);
+            this.lblStatus.Location = new System.Drawing.Point(487, 8);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(143, 18);
             this.lblStatus.TabIndex = 10;
@@ -1720,12 +1720,12 @@
             this.tableLayoutPanel16.Controls.Add(this.btnActualizarPlanillas, 1, 0);
             this.tableLayoutPanel16.Controls.Add(this.btnCreatePayroll, 0, 0);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(685, 5);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(790, 5);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 2;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(320, 126);
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(370, 126);
             this.tableLayoutPanel16.TabIndex = 3;
             this.bunifuToolTip1.SetToolTip(this.tableLayoutPanel16, "");
             this.bunifuToolTip1.SetToolTipIcon(this.tableLayoutPanel16, null);
@@ -1779,7 +1779,7 @@
             this.btnDeletePayrolls.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnDeletePayrolls.IdleIconLeftImage")));
             this.btnDeletePayrolls.IdleIconRightImage = null;
             this.btnDeletePayrolls.IndicateFocus = false;
-            this.btnDeletePayrolls.Location = new System.Drawing.Point(163, 72);
+            this.btnDeletePayrolls.Location = new System.Drawing.Point(188, 69);
             this.btnDeletePayrolls.Name = "btnDeletePayrolls";
             this.btnDeletePayrolls.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDeletePayrolls.OnDisabledState.BorderRadius = 20;
@@ -1813,7 +1813,7 @@
             this.btnDeletePayrolls.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnDeletePayrolls.OnPressedState.IconLeftImage = null;
             this.btnDeletePayrolls.OnPressedState.IconRightImage = null;
-            this.btnDeletePayrolls.Size = new System.Drawing.Size(154, 45);
+            this.btnDeletePayrolls.Size = new System.Drawing.Size(179, 50);
             this.btnDeletePayrolls.TabIndex = 98;
             this.btnDeletePayrolls.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeletePayrolls.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1872,7 +1872,7 @@
             this.btnCompensation.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnCompensation.IdleIconLeftImage")));
             this.btnCompensation.IdleIconRightImage = null;
             this.btnCompensation.IndicateFocus = false;
-            this.btnCompensation.Location = new System.Drawing.Point(3, 72);
+            this.btnCompensation.Location = new System.Drawing.Point(3, 69);
             this.btnCompensation.Name = "btnCompensation";
             this.btnCompensation.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCompensation.OnDisabledState.BorderRadius = 20;
@@ -1906,7 +1906,7 @@
             this.btnCompensation.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnCompensation.OnPressedState.IconLeftImage = null;
             this.btnCompensation.OnPressedState.IconRightImage = null;
-            this.btnCompensation.Size = new System.Drawing.Size(154, 45);
+            this.btnCompensation.Size = new System.Drawing.Size(179, 50);
             this.btnCompensation.TabIndex = 97;
             this.btnCompensation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCompensation.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1965,7 +1965,7 @@
             this.btnActualizarPlanillas.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnActualizarPlanillas.IdleIconLeftImage")));
             this.btnActualizarPlanillas.IdleIconRightImage = null;
             this.btnActualizarPlanillas.IndicateFocus = false;
-            this.btnActualizarPlanillas.Location = new System.Drawing.Point(163, 9);
+            this.btnActualizarPlanillas.Location = new System.Drawing.Point(188, 6);
             this.btnActualizarPlanillas.Name = "btnActualizarPlanillas";
             this.btnActualizarPlanillas.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnActualizarPlanillas.OnDisabledState.BorderRadius = 20;
@@ -1999,7 +1999,7 @@
             this.btnActualizarPlanillas.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnActualizarPlanillas.OnPressedState.IconLeftImage = null;
             this.btnActualizarPlanillas.OnPressedState.IconRightImage = null;
-            this.btnActualizarPlanillas.Size = new System.Drawing.Size(154, 45);
+            this.btnActualizarPlanillas.Size = new System.Drawing.Size(179, 50);
             this.btnActualizarPlanillas.TabIndex = 96;
             this.btnActualizarPlanillas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnActualizarPlanillas.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2058,7 +2058,7 @@
             this.btnCreatePayroll.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnCreatePayroll.IdleIconLeftImage")));
             this.btnCreatePayroll.IdleIconRightImage = null;
             this.btnCreatePayroll.IndicateFocus = false;
-            this.btnCreatePayroll.Location = new System.Drawing.Point(3, 9);
+            this.btnCreatePayroll.Location = new System.Drawing.Point(3, 6);
             this.btnCreatePayroll.Name = "btnCreatePayroll";
             this.btnCreatePayroll.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCreatePayroll.OnDisabledState.BorderRadius = 20;
@@ -2092,7 +2092,7 @@
             this.btnCreatePayroll.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnCreatePayroll.OnPressedState.IconLeftImage = null;
             this.btnCreatePayroll.OnPressedState.IconRightImage = null;
-            this.btnCreatePayroll.Size = new System.Drawing.Size(154, 45);
+            this.btnCreatePayroll.Size = new System.Drawing.Size(179, 50);
             this.btnCreatePayroll.TabIndex = 94;
             this.btnCreatePayroll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCreatePayroll.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2193,7 +2193,7 @@
             this.dgvPayrolls.RowTemplate.Height = 50;
             this.dgvPayrolls.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPayrolls.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPayrolls.Size = new System.Drawing.Size(1010, 288);
+            this.dgvPayrolls.Size = new System.Drawing.Size(1165, 367);
             this.dgvPayrolls.TabIndex = 1;
             this.dgvPayrolls.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
             this.bunifuToolTip1.SetToolTip(this.dgvPayrolls, "");
@@ -2255,13 +2255,13 @@
             // 
             this.tableLayoutPanel17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tableLayoutPanel17.ColumnCount = 7;
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 167F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.32298F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.67702F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 164F));
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162F));
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 181F));
             this.tableLayoutPanel17.Controls.Add(this.btnAll, 1, 0);
             this.tableLayoutPanel17.Controls.Add(this.btnFirstT, 2, 0);
             this.tableLayoutPanel17.Controls.Add(this.btnSecondT, 3, 0);
@@ -2271,7 +2271,7 @@
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 1;
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel17.Size = new System.Drawing.Size(1022, 54);
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(1177, 54);
             this.tableLayoutPanel17.TabIndex = 4;
             this.bunifuToolTip1.SetToolTip(this.tableLayoutPanel17, "");
             this.bunifuToolTip1.SetToolTipIcon(this.tableLayoutPanel17, null);
@@ -2325,7 +2325,7 @@
             this.btnAll.IdleIconLeftImage = null;
             this.btnAll.IdleIconRightImage = null;
             this.btnAll.IndicateFocus = false;
-            this.btnAll.Location = new System.Drawing.Point(91, 7);
+            this.btnAll.Location = new System.Drawing.Point(230, 3);
             this.btnAll.Name = "btnAll";
             this.btnAll.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAll.OnDisabledState.BorderRadius = 20;
@@ -2359,7 +2359,7 @@
             this.btnAll.OnPressedState.ForeColor = System.Drawing.Color.Black;
             this.btnAll.OnPressedState.IconLeftImage = null;
             this.btnAll.OnPressedState.IconRightImage = null;
-            this.btnAll.Size = new System.Drawing.Size(82, 39);
+            this.btnAll.Size = new System.Drawing.Size(82, 48);
             this.btnAll.TabIndex = 6;
             this.btnAll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAll.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2418,7 +2418,7 @@
             this.btnFirstT.IdleIconLeftImage = null;
             this.btnFirstT.IdleIconRightImage = null;
             this.btnFirstT.IndicateFocus = false;
-            this.btnFirstT.Location = new System.Drawing.Point(184, 7);
+            this.btnFirstT.Location = new System.Drawing.Point(334, 3);
             this.btnFirstT.Name = "btnFirstT";
             this.btnFirstT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnFirstT.OnDisabledState.BorderRadius = 20;
@@ -2452,7 +2452,7 @@
             this.btnFirstT.OnPressedState.ForeColor = System.Drawing.Color.Black;
             this.btnFirstT.OnPressedState.IconLeftImage = null;
             this.btnFirstT.OnPressedState.IconRightImage = null;
-            this.btnFirstT.Size = new System.Drawing.Size(150, 39);
+            this.btnFirstT.Size = new System.Drawing.Size(150, 47);
             this.btnFirstT.TabIndex = 7;
             this.btnFirstT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnFirstT.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2511,7 +2511,7 @@
             this.btnSecondT.IdleIconLeftImage = null;
             this.btnSecondT.IdleIconRightImage = null;
             this.btnSecondT.IndicateFocus = false;
-            this.btnSecondT.Location = new System.Drawing.Point(350, 7);
+            this.btnSecondT.Location = new System.Drawing.Point(504, 3);
             this.btnSecondT.Name = "btnSecondT";
             this.btnSecondT.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSecondT.OnDisabledState.BorderRadius = 20;
@@ -2545,7 +2545,7 @@
             this.btnSecondT.OnPressedState.ForeColor = System.Drawing.Color.Black;
             this.btnSecondT.OnPressedState.IconLeftImage = null;
             this.btnSecondT.OnPressedState.IconRightImage = null;
-            this.btnSecondT.Size = new System.Drawing.Size(150, 39);
+            this.btnSecondT.Size = new System.Drawing.Size(150, 48);
             this.btnSecondT.TabIndex = 8;
             this.btnSecondT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSecondT.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2604,7 +2604,7 @@
             this.btnFourth.IdleIconLeftImage = null;
             this.btnFourth.IdleIconRightImage = null;
             this.btnFourth.IndicateFocus = false;
-            this.btnFourth.Location = new System.Drawing.Point(680, 7);
+            this.btnFourth.Location = new System.Drawing.Point(834, 3);
             this.btnFourth.Name = "btnFourth";
             this.btnFourth.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnFourth.OnDisabledState.BorderRadius = 20;
@@ -2638,7 +2638,7 @@
             this.btnFourth.OnPressedState.ForeColor = System.Drawing.Color.Black;
             this.btnFourth.OnPressedState.IconLeftImage = null;
             this.btnFourth.OnPressedState.IconRightImage = null;
-            this.btnFourth.Size = new System.Drawing.Size(150, 39);
+            this.btnFourth.Size = new System.Drawing.Size(150, 48);
             this.btnFourth.TabIndex = 9;
             this.btnFourth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnFourth.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2697,7 +2697,7 @@
             this.btnThirtht.IdleIconLeftImage = null;
             this.btnThirtht.IdleIconRightImage = null;
             this.btnThirtht.IndicateFocus = false;
-            this.btnThirtht.Location = new System.Drawing.Point(513, 7);
+            this.btnThirtht.Location = new System.Drawing.Point(667, 3);
             this.btnThirtht.Name = "btnThirtht";
             this.btnThirtht.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnThirtht.OnDisabledState.BorderRadius = 20;
@@ -2731,7 +2731,7 @@
             this.btnThirtht.OnPressedState.ForeColor = System.Drawing.Color.Black;
             this.btnThirtht.OnPressedState.IconLeftImage = null;
             this.btnThirtht.OnPressedState.IconRightImage = null;
-            this.btnThirtht.Size = new System.Drawing.Size(150, 39);
+            this.btnThirtht.Size = new System.Drawing.Size(150, 48);
             this.btnThirtht.TabIndex = 10;
             this.btnThirtht.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThirtht.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2756,7 +2756,7 @@
             this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(15, 3, 15, 3);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator1.Size = new System.Drawing.Size(998, 3);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(1153, 3);
             this.bunifuSeparator1.TabIndex = 5;
             this.bunifuToolTip1.SetToolTip(this.bunifuSeparator1, "");
             this.bunifuToolTip1.SetToolTipIcon(this.bunifuSeparator1, null);
@@ -2872,7 +2872,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.ClientSize = new System.Drawing.Size(1183, 688);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmViewPayrolls";
             this.Text = "FrmConsultarPlanillas";

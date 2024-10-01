@@ -129,8 +129,17 @@
   <data name="adress" xml:space="preserve">
     <value>Adress:</value>
   </data>
+  <data name="affiliationForm" xml:space="preserve">
+    <value>Affiliation number:</value>
+  </data>
   <data name="affNumber" xml:space="preserve">
     <value>Affiliation number</value>
+  </data>
+  <data name="afpEmployeer" xml:space="preserve">
+    <value>AFP employer:</value>
+  </data>
+  <data name="afpForm" xml:space="preserve">
+    <value>AFP:</value>
   </data>
   <data name="bank" xml:space="preserve">
     <value>Bank:</value>
@@ -138,11 +147,17 @@
   <data name="bankAccount" xml:space="preserve">
     <value>Bank Account:</value>
   </data>
+  <data name="bankAccountForm" xml:space="preserve">
+    <value>Banck account:</value>
+  </data>
   <data name="bills" xml:space="preserve">
     <value>Bills</value>
   </data>
   <data name="birthDate" xml:space="preserve">
     <value>Date of Birth:</value>
+  </data>
+  <data name="bonusForm" xml:space="preserve">
+    <value>Bonus:</value>
   </data>
   <data name="businessConfig" xml:space="preserve">
     <value>BUSINES CONFIGURATION</value>
@@ -153,8 +168,17 @@
   <data name="businessName" xml:space="preserve">
     <value>Company / Organization Name</value>
   </data>
+  <data name="christmasBonus" xml:space="preserve">
+    <value>Christmas bonus:</value>
+  </data>
+  <data name="compensation" xml:space="preserve">
+    <value>Compensation</value>
+  </data>
   <data name="configBox" xml:space="preserve">
     <value>Local configuration</value>
+  </data>
+  <data name="confirmForm" xml:space="preserve">
+    <value>Confirm</value>
   </data>
   <data name="confirmPass" xml:space="preserve">
     <value>Confirm password:</value>
@@ -195,6 +219,15 @@
   <data name="dataBase" xml:space="preserve">
     <value>Data Base</value>
   </data>
+  <data name="daySalaryForm" xml:space="preserve">
+    <value>Daily salary:</value>
+  </data>
+  <data name="daysWorkedForm" xml:space="preserve">
+    <value>Days worked:</value>
+  </data>
+  <data name="deletePayrolls" xml:space="preserve">
+    <value>Delete payrolls</value>
+  </data>
   <data name="department" xml:space="preserve">
     <value>Department</value>
   </data>
@@ -210,7 +243,13 @@
   <data name="disableEmp" xml:space="preserve">
     <value>Disable employee</value>
   </data>
+  <data name="downloadPayroll" xml:space="preserve">
+    <value>Download payroll</value>
+  </data>
   <data name="DUI" xml:space="preserve">
+    <value>DUI:</value>
+  </data>
+  <data name="duiForm" xml:space="preserve">
     <value>DUI:</value>
   </data>
   <data name="email" xml:space="preserve">
@@ -218,6 +257,15 @@
   </data>
   <data name="employee" xml:space="preserve">
     <value>Employees</value>
+  </data>
+  <data name="employeeDiscountForm" xml:space="preserve">
+    <value>Employee discount:</value>
+  </data>
+  <data name="employeeForm" xml:space="preserve">
+    <value>Employee:</value>
+  </data>
+  <data name="employeerDisc" xml:space="preserve">
+    <value>Employer discount:</value>
   </data>
   <data name="employeeRecord" xml:space="preserve">
     <value>View employee record</value>
@@ -234,11 +282,20 @@
   <data name="enableEmp" xml:space="preserve">
     <value>Enable employee</value>
   </data>
+  <data name="entraHoursForm" xml:space="preserve">
+    <value>Extra hours:</value>
+  </data>
   <data name="financialDat" xml:space="preserve">
     <value>Financial data</value>
   </data>
+  <data name="firstQuarter" xml:space="preserve">
+    <value>First quarter</value>
+  </data>
   <data name="forgotP" xml:space="preserve">
     <value>Forgot password?</value>
+  </data>
+  <data name="fourthQuarter" xml:space="preserve">
+    <value>Fourth quarter</value>
   </data>
   <data name="fullTime" xml:space="preserve">
     <value>Full time</value>
@@ -246,11 +303,29 @@
   <data name="gender" xml:space="preserve">
     <value>Gender:</value>
   </data>
+  <data name="generatePayrolls" xml:space="preserve">
+    <value>Generate payrolls</value>
+  </data>
   <data name="genReport" xml:space="preserve">
     <value>General report</value>
   </data>
+  <data name="gobackForm" xml:space="preserve">
+    <value>Go back</value>
+  </data>
+  <data name="grossSalaryForm" xml:space="preserve">
+    <value>Gross salary:</value>
+  </data>
   <data name="hireDate" xml:space="preserve">
     <value>Hire date:</value>
+  </data>
+  <data name="hireDateForm" xml:space="preserve">
+    <value>Hire date:</value>
+  </data>
+  <data name="hourlySalaryForm" xml:space="preserve">
+    <value>Hourly salary:</value>
+  </data>
+  <data name="hoursWorkedForm" xml:space="preserve">
+    <value>Hours worked:</value>
   </data>
   <data name="humanResources" xml:space="preserve">
     <value>Human resources</value>
@@ -258,11 +333,20 @@
   <data name="Inactive" xml:space="preserve">
     <value>Inactive</value>
   </data>
+  <data name="incomeForm" xml:space="preserve">
+    <value>Income:</value>
+  </data>
   <data name="interB" xml:space="preserve">
     <value>Intern</value>
   </data>
   <data name="intern" xml:space="preserve">
     <value>Work intern</value>
+  </data>
+  <data name="isssEmployeer" xml:space="preserve">
+    <value>ISSS employer:</value>
+  </data>
+  <data name="isssForm" xml:space="preserve">
+    <value>ISSS:</value>
   </data>
   <data name="lastNames" xml:space="preserve">
     <value>Last names:</value>
@@ -282,8 +366,53 @@
   <data name="Maternity" xml:space="preserve">
     <value>Maternity</value>
   </data>
+  <data name="month" xml:space="preserve">
+    <value>Month:</value>
+  </data>
+  <data name="month1" xml:space="preserve">
+    <value>June</value>
+  </data>
+  <data name="month10" xml:space="preserve">
+    <value>October</value>
+  </data>
+  <data name="month11" xml:space="preserve">
+    <value>November</value>
+  </data>
+  <data name="month12" xml:space="preserve">
+    <value>Dicember</value>
+  </data>
+  <data name="month2" xml:space="preserve">
+    <value>February</value>
+  </data>
+  <data name="month3" xml:space="preserve">
+    <value>March</value>
+  </data>
+  <data name="month4" xml:space="preserve">
+    <value>April</value>
+  </data>
+  <data name="month5" xml:space="preserve">
+    <value>May</value>
+  </data>
+  <data name="month6" xml:space="preserve">
+    <value>June</value>
+  </data>
+  <data name="month7" xml:space="preserve">
+    <value>July</value>
+  </data>
+  <data name="month8" xml:space="preserve">
+    <value>August</value>
+  </data>
+  <data name="month9" xml:space="preserve">
+    <value>September</value>
+  </data>
   <data name="names" xml:space="preserve">
     <value>Names:</value>
+  </data>
+  <data name="netSalaryForm" xml:space="preserve">
+    <value>Net salary:</value>
+  </data>
+  <data name="paid" xml:space="preserve">
+    <value>Paid</value>
   </data>
   <data name="password" xml:space="preserve">
     <value>Password</value>
@@ -294,8 +423,14 @@
   <data name="Paternity" xml:space="preserve">
     <value>Paternity</value>
   </data>
+  <data name="payPayroll" xml:space="preserve">
+    <value>Pay payroll</value>
+  </data>
   <data name="payroll" xml:space="preserve">
     <value>Payrolls</value>
+  </data>
+  <data name="payrollStatus" xml:space="preserve">
+    <value>Payroll status</value>
   </data>
   <data name="payrollSubTi" xml:space="preserve">
     <value>Right-click on a payroll for more options</value>
@@ -312,8 +447,17 @@
   <data name="personalData" xml:space="preserve">
     <value>Personal data</value>
   </data>
+  <data name="personalInfo" xml:space="preserve">
+    <value>Personal information</value>
+  </data>
   <data name="phone" xml:space="preserve">
     <value>Phone:</value>
+  </data>
+  <data name="positionForm" xml:space="preserve">
+    <value>Position:</value>
+  </data>
+  <data name="refreshData" xml:space="preserve">
+    <value>Refresh Data</value>
   </data>
   <data name="register" xml:space="preserve">
     <value>Sign Up</value>
@@ -323,6 +467,15 @@
   </data>
   <data name="remember" xml:space="preserve">
     <value>Remember me</value>
+  </data>
+  <data name="reversePayment" xml:space="preserve">
+    <value>Reverse payment</value>
+  </data>
+  <data name="salaryForm" xml:space="preserve">
+    <value>Salary:</value>
+  </data>
+  <data name="salaryInfo" xml:space="preserve">
+    <value>Salary information</value>
   </data>
   <data name="saveConfigServer" xml:space="preserve">
     <value>Save Configuration</value>
@@ -339,6 +492,9 @@
   <data name="searchForm" xml:space="preserve">
     <value>Search</value>
   </data>
+  <data name="secondQuarter" xml:space="preserve">
+    <value>Second quarter</value>
+  </data>
   <data name="server" xml:space="preserve">
     <value>Server Configuration</value>
   </data>
@@ -354,8 +510,17 @@
   <data name="status" xml:space="preserve">
     <value>Status</value>
   </data>
+  <data name="statusPayroll" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="subTtileUpdatePayroll" xml:space="preserve">
+    <value>Update the desired information</value>
+  </data>
   <data name="tecSupp" xml:space="preserve">
     <value>Technical support</value>
+  </data>
+  <data name="thirdQuarter" xml:space="preserve">
+    <value>Third quarter</value>
   </data>
   <data name="titleServer" xml:space="preserve">
     <value>Enter the values in each field for the connection to your database.</value>
@@ -363,17 +528,29 @@
   <data name="titleServer2" xml:space="preserve">
     <value>Windows Integrated Security</value>
   </data>
+  <data name="titleUpdatePayroll" xml:space="preserve">
+    <value>Modify payroll</value>
+  </data>
   <data name="typeEmployee" xml:space="preserve">
     <value>Type employee</value>
   </data>
+  <data name="unpaid" xml:space="preserve">
+    <value>Unpaid</value>
+  </data>
   <data name="updateEmp" xml:space="preserve">
     <value>Update employee</value>
+  </data>
+  <data name="updatePayrolls" xml:space="preserve">
+    <value>Update payrolls</value>
   </data>
   <data name="user" xml:space="preserve">
     <value>User</value>
   </data>
   <data name="userForm" xml:space="preserve">
     <value>User:</value>
+  </data>
+  <data name="viewPayroll" xml:space="preserve">
+    <value>View payroll</value>
   </data>
   <data name="volunteer" xml:space="preserve">
     <value>Volunteer</value>

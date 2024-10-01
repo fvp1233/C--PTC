@@ -4,6 +4,7 @@ using PTC2024.Controller.StartMenuController;
 using PTC2024.Model.DAO.CustomersDAO;
 using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.Model.DAO.PayrollsDAO;
+using PTC2024.Resources.Language;
 using PTC2024.View.Alerts;
 using PTC2024.View.Empleados;
 using PTC2024.View.formularios.inicio;
@@ -31,6 +32,7 @@ namespace PTC2024.Controller.EmployeesController
         public ControllerViewPayrolls(FrmViewPayrolls Vista)
         {
             objViewPayrolls = Vista;
+            objViewPayrolls.Load += new EventHandler(ChargeLanguage);
             //objViewPayrolls.Load += new EventHandler(LoadData);
             objViewPayrolls.btnAll.Click += new EventHandler(SearchAll);
             objViewPayrolls.btnFirstT.Click += new EventHandler(SearchByFirstTrimester);
@@ -64,6 +66,48 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.cmsPayrollInformation.Click += new EventHandler(ViewInfoPayroll);
             objViewPayrolls.txtSearch.KeyDown += new KeyEventHandler(SearchPayrollEvent);
             objViewPayrolls.txtSearch.TextChanged += new EventHandler(OnlyLetters);
+        }
+        public void ChargeLanguage(object sender, EventArgs e)
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+            EnglishL();
+        }
+        public void EnglishL()
+        {
+            objViewPayrolls.lblTitle.Text = English.payrollTitle;
+            objViewPayrolls.lblSubTitle.Text = English.payrollSubTi;
+            objViewPayrolls.txtSearch.Text = English.searchForm;
+            objViewPayrolls.btnAll.Text = English.searchAll;
+            objViewPayrolls.btnFirstT.Text = English.firstQuarter;
+            objViewPayrolls.btnSecondT.Text = English.secondQuarter;
+            objViewPayrolls.btnThirtht.Text = English.thirdQuarter;
+            objViewPayrolls.btnFourth.Text = English.fourthQuarter;
+            objViewPayrolls.lblMonth.Text = English.month;
+            objViewPayrolls.lblMonth1.Text = English.month1;
+            objViewPayrolls.lblMonth2.Text = English.month2;
+            objViewPayrolls.lblMonth3.Text = English.month3;
+            objViewPayrolls.lblMonth4.Text = English.month4;
+            objViewPayrolls.lblMonth5.Text = English.month5;
+            objViewPayrolls.lblMonth6.Text = English.month6;
+            objViewPayrolls.lblMonth7.Text = English.month7;
+            objViewPayrolls.lblMonth8.Text = English.month8;
+            objViewPayrolls.lblMonth9.Text = English.month9;
+            objViewPayrolls.lblMonth10.Text = English.month10;
+            objViewPayrolls.lblMonth11.Text = English.month11;
+            objViewPayrolls.lblMonth12.Text = English.month12;
+            objViewPayrolls.lblStatus.Text = English.payrollStatus;
+            objViewPayrolls.lblPay.Text = English.paid;
+            objViewPayrolls.lblUnpaid.Text = English.unpaid;
+            objViewPayrolls.lblCompensation.Text = English.compensation;
+            objViewPayrolls.btnCreatePayroll.Text = English.generatePayrolls;
+            objViewPayrolls.btnActualizarPlanillas.Text = English.refreshData;
+            objViewPayrolls.btnCompensation.Text = English.compensation;
+            objViewPayrolls.btnDeletePayrolls.Text = English.deletePayrolls;
+            objViewPayrolls.cmsUpdatePayroll.Text = English.updatePayrolls;
+            objViewPayrolls.cmsPayrollInformation.Text = English.viewPayroll;
+            objViewPayrolls.cmsPayPayroll.Text = English.payPayroll;
+            objViewPayrolls.cmsUpdateUnpaid.Text = English.reversePayment;
+            objViewPayrolls.cmsDownloadPDF.Text = English.downloadPayroll;
         }
         public double TruncateToTwoDecimals(double value)
         {
