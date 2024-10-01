@@ -29,6 +29,7 @@ namespace PTC2024.Controller.ServicesController
 
             /*Aca se encuentran todos los eventos del Controlador de servicios*/
             objServices.Load += new EventHandler(ChargeData);
+            objServices.btnAgenda.Click += new EventHandler(OpenAgenda);
             objServices.btnAddService.Click += new EventHandler(OpenAddService);
             objServices.btnReportServices.Click += new EventHandler(ReportAllServices);
             objServices.cmsDeleteService.Click += new EventHandler(DeleteService);
@@ -63,6 +64,13 @@ namespace PTC2024.Controller.ServicesController
             FrmReportServices openReport = new FrmReportServices();
             openReport.ShowDialog();
         }
+
+        public void OpenAgenda(object sender, EventArgs e)
+        {
+            FrmAgendaServices openAgenda = new FrmAgendaServices();
+            openAgenda.ShowDialog();
+        }
+
 
         /*Este metodo se ejecutara cuando se haga click en actualizar servicio*/
         public void OpenUpdateService(object sender, EventArgs e)
