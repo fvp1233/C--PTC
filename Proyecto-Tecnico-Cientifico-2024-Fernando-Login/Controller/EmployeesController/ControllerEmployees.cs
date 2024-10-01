@@ -69,7 +69,8 @@ namespace PTC2024.Controller.Employees
             objEmployees.lblSubTitle.Text = English.employeeSubTitle;
             objEmployees.lblType.Text = English.typeEmployee;
             objEmployees.lblTC.Text = English.volunteer;
-            objEmployees.lblTB.Text = English.intern;
+            objEmployees.lblTB.Text = English.interB;
+            objEmployees.lblBec.Text = English.intern;
             objEmployees.lblDepartment.Text = English.department;
             objEmployees.lblAdmin.Text = English.admin;
             objEmployees.lblDevelop.Text = English.develop;
@@ -77,13 +78,18 @@ namespace PTC2024.Controller.Employees
             objEmployees.lblRH.Text = English.humanResources;
             objEmployees.lblMark.Text = English.marketing;
             objEmployees.lblState.Text = English.status;
-            objEmployees.lblInc.Text = English.Inactive;
+            objEmployees.lblInac.Text = English.Inactive;
             objEmployees.lblPat.Text = English.Paternity;
             objEmployees.lblMat.Text = English.Maternity;
             objEmployees.lblInc.Text = English.disability;
             objEmployees.txtEmployeeSearch.Text = English.searchForm;
             objEmployees.BtnAddEmployee.Text = English.addEmployee;
             objEmployees.btnGeneralReport.Text = English.genReport;
+            objEmployees.cmsUpdateEmployee.Text = English.updateEmp;
+            objEmployees.cmsDeleteEmployee.Text = English.disableEmp;
+            objEmployees.cmsEmployeeInformation.Text = English.employeeRecord;
+            objEmployees.cmsReactivateE.Text = English.enableEmp;
+
         }
         public void LoadData (object sender, EventArgs e)
         {

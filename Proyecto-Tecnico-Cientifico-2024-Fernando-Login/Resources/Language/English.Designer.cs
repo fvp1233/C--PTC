@@ -331,6 +331,15 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Disable employee.
+        /// </summary>
+        internal static string disableEmp {
+            get {
+                return ResourceManager.GetString("disableEmp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a DUI:.
         /// </summary>
         internal static string DUI {
@@ -358,6 +367,15 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a View employee record.
+        /// </summary>
+        internal static string employeeRecord {
+            get {
+                return ResourceManager.GetString("employeeRecord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Right-click on an employee for more options.
         /// </summary>
         internal static string employeeSubTitle {
@@ -381,6 +399,15 @@ namespace PTC2024.Resources.Language {
         internal static string enable {
             get {
                 return ResourceManager.GetString("enable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enable employee.
+        /// </summary>
+        internal static string enableEmp {
+            get {
+                return ResourceManager.GetString("enableEmp", resourceCulture);
             }
         }
         
@@ -458,6 +485,15 @@ namespace PTC2024.Resources.Language {
         
         /// <summary>
         ///   Busca una cadena traducida similar a Intern.
+        /// </summary>
+        internal static string interB {
+            get {
+                return ResourceManager.GetString("interB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Work intern.
         /// </summary>
         internal static string intern {
             get {
@@ -565,6 +601,24 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Right-click on a payroll for more options.
+        /// </summary>
+        internal static string payrollSubTi {
+            get {
+                return ResourceManager.GetString("payrollSubTi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Payrolls.
+        /// </summary>
+        internal static string payrollTitle {
+            get {
+                return ResourceManager.GetString("payrollTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a PBX:.
         /// </summary>
         internal static string pbx {
@@ -642,6 +696,24 @@ namespace PTC2024.Resources.Language {
         internal static string saveinfo {
             get {
                 return ResourceManager.GetString("saveinfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a All.
+        /// </summary>
+        internal static string searchAll {
+            get {
+                return ResourceManager.GetString("searchAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a First trimester.
+        /// </summary>
+        internal static string searchFirstT {
+            get {
+                return ResourceManager.GetString("searchFirstT", resourceCulture);
             }
         }
         
@@ -732,6 +804,15 @@ namespace PTC2024.Resources.Language {
         internal static string typeEmployee {
             get {
                 return ResourceManager.GetString("typeEmployee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Update employee.
+        /// </summary>
+        internal static string updateEmp {
+            get {
+                return ResourceManager.GetString("updateEmp", resourceCulture);
             }
         }
         

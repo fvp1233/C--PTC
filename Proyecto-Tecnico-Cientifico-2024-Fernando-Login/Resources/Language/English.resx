@@ -207,6 +207,9 @@
   <data name="disable" xml:space="preserve">
     <value>Disable</value>
   </data>
+  <data name="disableEmp" xml:space="preserve">
+    <value>Disable employee</value>
+  </data>
   <data name="DUI" xml:space="preserve">
     <value>DUI:</value>
   </data>
@@ -216,6 +219,9 @@
   <data name="employee" xml:space="preserve">
     <value>Employees</value>
   </data>
+  <data name="employeeRecord" xml:space="preserve">
+    <value>View employee record</value>
+  </data>
   <data name="employeeSubTitle" xml:space="preserve">
     <value>Right-click on an employee for more options</value>
   </data>
@@ -224,6 +230,9 @@
   </data>
   <data name="enable" xml:space="preserve">
     <value>Enable</value>
+  </data>
+  <data name="enableEmp" xml:space="preserve">
+    <value>Enable employee</value>
   </data>
   <data name="financialDat" xml:space="preserve">
     <value>Financial data</value>
@@ -249,8 +258,11 @@
   <data name="Inactive" xml:space="preserve">
     <value>Inactive</value>
   </data>
-  <data name="intern" xml:space="preserve">
+  <data name="interB" xml:space="preserve">
     <value>Intern</value>
+  </data>
+  <data name="intern" xml:space="preserve">
+    <value>Work intern</value>
   </data>
   <data name="lastNames" xml:space="preserve">
     <value>Last names:</value>
@@ -285,6 +297,12 @@
   <data name="payroll" xml:space="preserve">
     <value>Payrolls</value>
   </data>
+  <data name="payrollSubTi" xml:space="preserve">
+    <value>Right-click on a payroll for more options</value>
+  </data>
+  <data name="payrollTitle" xml:space="preserve">
+    <value>Payrolls</value>
+  </data>
   <data name="pbx" xml:space="preserve">
     <value>PBX:</value>
   </data>
@@ -311,6 +329,12 @@
   </data>
   <data name="saveinfo" xml:space="preserve">
     <value>Save info</value>
+  </data>
+  <data name="searchAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="searchFirstT" xml:space="preserve">
+    <value>First trimester</value>
   </data>
   <data name="searchForm" xml:space="preserve">
     <value>Search</value>
@@ -341,6 +365,9 @@
   </data>
   <data name="typeEmployee" xml:space="preserve">
     <value>Type employee</value>
+  </data>
+  <data name="updateEmp" xml:space="preserve">
+    <value>Update employee</value>
   </data>
   <data name="user" xml:space="preserve">
     <value>User</value>
