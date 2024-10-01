@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmployees));
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -38,15 +39,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmployees));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtEmployeeSearch = new Bunifu.UI.WinForms.BunifuTextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblSubTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvEmployees = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.cmsEmployee = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -63,15 +63,15 @@
             this.cbMaternidad = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.cbIncapacidad = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.lblInc = new System.Windows.Forms.Label();
+            this.lblMat = new System.Windows.Forms.Label();
+            this.lblPat = new System.Windows.Forms.Label();
+            this.lblInac = new System.Windows.Forms.Label();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.cbMarketing = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblMark = new System.Windows.Forms.Label();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.cbAdmin = new Bunifu.UI.WinForms.BunifuCheckBox();
@@ -79,11 +79,11 @@
             this.cbSoporte = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.cbRecursosH = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblRH = new System.Windows.Forms.Label();
+            this.lblSop = new System.Windows.Forms.Label();
+            this.lblDevelop = new System.Windows.Forms.Label();
+            this.lblAdmin = new System.Windows.Forms.Label();
+            this.lblType = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.cbTiempoCompleto = new Bunifu.UI.WinForms.BunifuCheckBox();
@@ -92,11 +92,11 @@
             this.cbInterno = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblTB = new System.Windows.Forms.Label();
+            this.lblTV = new System.Windows.Forms.Label();
+            this.lblTC = new System.Windows.Forms.Label();
+            this.lblDepartment = new System.Windows.Forms.Label();
+            this.lblState = new System.Windows.Forms.Label();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.btnGeneralReport = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.BtnAddEmployee = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
@@ -239,8 +239,8 @@
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.lblTitle, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.lblSubTitle, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -250,28 +250,28 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(551, 80);
             this.tableLayoutPanel5.TabIndex = 7;
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 5);
-            this.label1.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(419, 40);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "CONSULTAR EMPLEADOS";
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(15, 5);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(419, 40);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "CONSULTAR EMPLEADOS";
             // 
-            // label2
+            // lblSubTitle
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 51);
-            this.label2.Margin = new System.Windows.Forms.Padding(25, 0, 3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(332, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Haga click derecho sobre un empleado para más opciones.";
+            this.lblSubTitle.AutoSize = true;
+            this.lblSubTitle.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTitle.Location = new System.Drawing.Point(25, 51);
+            this.lblSubTitle.Margin = new System.Windows.Forms.Padding(25, 0, 3, 0);
+            this.lblSubTitle.Name = "lblSubTitle";
+            this.lblSubTitle.Size = new System.Drawing.Size(332, 16);
+            this.lblSubTitle.TabIndex = 2;
+            this.lblSubTitle.Text = "Haga click derecho sobre un empleado para más opciones.";
             // 
             // tableLayoutPanel8
             // 
@@ -447,14 +447,14 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.8718F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 179F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 305F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 308F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel13, 4, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel11, 3, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel9, 2, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label3, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblType, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label8, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label13, 4, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblDepartment, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblState, 4, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(5, 5);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -472,11 +472,11 @@
             this.tableLayoutPanel13.Controls.Add(this.flowLayoutPanel4, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 1, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(612, 29);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(609, 29);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(300, 94);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(303, 94);
             this.tableLayoutPanel13.TabIndex = 9;
             // 
             // flowLayoutPanel4
@@ -711,10 +711,10 @@
             // 
             this.tableLayoutPanel14.ColumnCount = 1;
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.Controls.Add(this.label17, 0, 3);
-            this.tableLayoutPanel14.Controls.Add(this.label18, 0, 2);
-            this.tableLayoutPanel14.Controls.Add(this.label19, 0, 1);
-            this.tableLayoutPanel14.Controls.Add(this.label20, 0, 0);
+            this.tableLayoutPanel14.Controls.Add(this.lblInc, 0, 3);
+            this.tableLayoutPanel14.Controls.Add(this.lblMat, 0, 2);
+            this.tableLayoutPanel14.Controls.Add(this.lblPat, 0, 1);
+            this.tableLayoutPanel14.Controls.Add(this.lblInac, 0, 0);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel14.Location = new System.Drawing.Point(34, 3);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
@@ -723,52 +723,52 @@
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(263, 88);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(266, 88);
             this.tableLayoutPanel14.TabIndex = 1;
             // 
-            // label17
+            // lblInc
             // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(3, 68);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(257, 16);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "Incapacidad";
+            this.lblInc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblInc.AutoSize = true;
+            this.lblInc.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInc.Location = new System.Drawing.Point(3, 68);
+            this.lblInc.Name = "lblInc";
+            this.lblInc.Size = new System.Drawing.Size(260, 16);
+            this.lblInc.TabIndex = 3;
+            this.lblInc.Text = "Incapacidad";
             // 
-            // label18
+            // lblMat
             // 
-            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(3, 46);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(257, 16);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "Maternidad";
+            this.lblMat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMat.AutoSize = true;
+            this.lblMat.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMat.Location = new System.Drawing.Point(3, 46);
+            this.lblMat.Name = "lblMat";
+            this.lblMat.Size = new System.Drawing.Size(260, 16);
+            this.lblMat.TabIndex = 2;
+            this.lblMat.Text = "Maternidad";
             // 
-            // label19
+            // lblPat
             // 
-            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(3, 25);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(257, 16);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "Paternidad";
+            this.lblPat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPat.AutoSize = true;
+            this.lblPat.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPat.Location = new System.Drawing.Point(3, 25);
+            this.lblPat.Name = "lblPat";
+            this.lblPat.Size = new System.Drawing.Size(260, 16);
+            this.lblPat.TabIndex = 1;
+            this.lblPat.Text = "Paternidad";
             // 
-            // label20
+            // lblInac
             // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(3, 3);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(257, 16);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Inactivo";
+            this.lblInac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblInac.AutoSize = true;
+            this.lblInac.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInac.Location = new System.Drawing.Point(3, 3);
+            this.lblInac.Name = "lblInac";
+            this.lblInac.Size = new System.Drawing.Size(260, 16);
+            this.lblInac.TabIndex = 0;
+            this.lblInac.Text = "Inactivo";
             // 
             // tableLayoutPanel11
             // 
@@ -778,7 +778,7 @@
             this.tableLayoutPanel11.Controls.Add(this.flowLayoutPanel3, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel12, 1, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(433, 29);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(430, 29);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -852,7 +852,7 @@
             // 
             this.tableLayoutPanel12.ColumnCount = 1;
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Controls.Add(this.label16, 0, 0);
+            this.tableLayoutPanel12.Controls.Add(this.lblMark, 0, 0);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel12.Location = new System.Drawing.Point(32, 3);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
@@ -864,16 +864,16 @@
             this.tableLayoutPanel12.Size = new System.Drawing.Size(138, 88);
             this.tableLayoutPanel12.TabIndex = 1;
             // 
-            // label16
+            // lblMark
             // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(3, 3);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(132, 16);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Marketing";
+            this.lblMark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMark.AutoSize = true;
+            this.lblMark.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMark.Location = new System.Drawing.Point(3, 3);
+            this.lblMark.Name = "lblMark";
+            this.lblMark.Size = new System.Drawing.Size(132, 16);
+            this.lblMark.TabIndex = 0;
+            this.lblMark.Text = "Marketing";
             // 
             // tableLayoutPanel9
             // 
@@ -883,7 +883,7 @@
             this.tableLayoutPanel9.Controls.Add(this.flowLayoutPanel2, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(275, 29);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(272, 29);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1122,10 +1122,10 @@
             // 
             this.tableLayoutPanel10.ColumnCount = 1;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Controls.Add(this.label9, 0, 3);
-            this.tableLayoutPanel10.Controls.Add(this.label10, 0, 2);
-            this.tableLayoutPanel10.Controls.Add(this.label11, 0, 1);
-            this.tableLayoutPanel10.Controls.Add(this.label12, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.lblRH, 0, 3);
+            this.tableLayoutPanel10.Controls.Add(this.lblSop, 0, 2);
+            this.tableLayoutPanel10.Controls.Add(this.lblDevelop, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.lblAdmin, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(34, 3);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -1137,60 +1137,60 @@
             this.tableLayoutPanel10.Size = new System.Drawing.Size(115, 88);
             this.tableLayoutPanel10.TabIndex = 1;
             // 
-            // label9
+            // lblRH
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 70);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(109, 16);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Recursos Humanos";
+            this.lblRH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRH.AutoSize = true;
+            this.lblRH.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRH.Location = new System.Drawing.Point(3, 70);
+            this.lblRH.Name = "lblRH";
+            this.lblRH.Size = new System.Drawing.Size(109, 16);
+            this.lblRH.TabIndex = 3;
+            this.lblRH.Text = "Recursos Humanos";
             // 
-            // label10
+            // lblSop
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 49);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(109, 16);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Soporte Técnico";
+            this.lblSop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSop.AutoSize = true;
+            this.lblSop.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSop.Location = new System.Drawing.Point(3, 49);
+            this.lblSop.Name = "lblSop";
+            this.lblSop.Size = new System.Drawing.Size(109, 16);
+            this.lblSop.TabIndex = 2;
+            this.lblSop.Text = "Soporte Técnico";
             // 
-            // label11
+            // lblDevelop
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 26);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(109, 16);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Desarrollo";
+            this.lblDevelop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDevelop.AutoSize = true;
+            this.lblDevelop.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDevelop.Location = new System.Drawing.Point(3, 26);
+            this.lblDevelop.Name = "lblDevelop";
+            this.lblDevelop.Size = new System.Drawing.Size(109, 16);
+            this.lblDevelop.TabIndex = 1;
+            this.lblDevelop.Text = "Desarrollo";
             // 
-            // label12
+            // lblAdmin
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 3);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(109, 16);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Administración";
+            this.lblAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAdmin.AutoSize = true;
+            this.lblAdmin.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdmin.Location = new System.Drawing.Point(3, 3);
+            this.lblAdmin.Name = "lblAdmin";
+            this.lblAdmin.Size = new System.Drawing.Size(109, 16);
+            this.lblAdmin.TabIndex = 0;
+            this.lblAdmin.Text = "Administración";
             // 
-            // label3
+            // lblType
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 18);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Tipo de empleado:";
+            this.lblType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblType.AutoSize = true;
+            this.lblType.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.Location = new System.Drawing.Point(16, 8);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(148, 18);
+            this.lblType.TabIndex = 0;
+            this.lblType.Text = "Tipo de empleado:";
             // 
             // tableLayoutPanel6
             // 
@@ -1204,7 +1204,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(253, 94);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(250, 94);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -1216,7 +1216,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(24, 88);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(23, 88);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // cbTiempoCompleto
@@ -1440,18 +1440,18 @@
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Controls.Add(this.label7, 0, 3);
-            this.tableLayoutPanel7.Controls.Add(this.label6, 0, 2);
-            this.tableLayoutPanel7.Controls.Add(this.label5, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.lblTB, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.lblTV, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.lblTC, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(33, 3);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(32, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 4;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(217, 88);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(215, 88);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // label7
@@ -1461,64 +1461,64 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(3, 69);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(211, 16);
+            this.label7.Size = new System.Drawing.Size(209, 16);
             this.label7.TabIndex = 3;
             this.label7.Text = "Interno";
             // 
-            // label6
+            // lblTB
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 47);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(211, 16);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Becario";
+            this.lblTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTB.AutoSize = true;
+            this.lblTB.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTB.Location = new System.Drawing.Point(3, 47);
+            this.lblTB.Name = "lblTB";
+            this.lblTB.Size = new System.Drawing.Size(209, 16);
+            this.lblTB.TabIndex = 2;
+            this.lblTB.Text = "Becario";
             // 
-            // label5
+            // lblTV
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(211, 16);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Voluntario";
+            this.lblTV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTV.AutoSize = true;
+            this.lblTV.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTV.Location = new System.Drawing.Point(3, 25);
+            this.lblTV.Name = "lblTV";
+            this.lblTV.Size = new System.Drawing.Size(209, 16);
+            this.lblTV.TabIndex = 1;
+            this.lblTV.Text = "Voluntario";
             // 
-            // label4
+            // lblTC
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(211, 16);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Tiempo completo";
+            this.lblTC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTC.AutoSize = true;
+            this.lblTC.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTC.Location = new System.Drawing.Point(3, 3);
+            this.lblTC.Name = "lblTC";
+            this.lblTC.Size = new System.Drawing.Size(209, 16);
+            this.lblTC.TabIndex = 0;
+            this.lblTC.Text = "Tiempo completo";
             // 
-            // label8
+            // lblDepartment
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(275, 8);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(119, 18);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Departamento:";
+            this.lblDepartment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblDepartment.AutoSize = true;
+            this.lblDepartment.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepartment.Location = new System.Drawing.Point(272, 8);
+            this.lblDepartment.Name = "lblDepartment";
+            this.lblDepartment.Size = new System.Drawing.Size(119, 18);
+            this.lblDepartment.TabIndex = 2;
+            this.lblDepartment.Text = "Departamento:";
             // 
-            // label13
+            // lblState
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(612, 8);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(60, 18);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "Estado:";
+            this.lblState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblState.AutoSize = true;
+            this.lblState.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblState.Location = new System.Drawing.Point(609, 8);
+            this.lblState.Name = "lblState";
+            this.lblState.Size = new System.Drawing.Size(60, 18);
+            this.lblState.TabIndex = 10;
+            this.lblState.Text = "Estado:";
             // 
             // tableLayoutPanel15
             // 
@@ -1772,36 +1772,20 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblInac;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         public System.Windows.Forms.ToolStripMenuItem cmsUpdateEmployee;
         public System.Windows.Forms.ToolStripMenuItem cmsDeleteEmployee;
         public System.Windows.Forms.ToolStripMenuItem cmsEmployeeInformation;
@@ -1825,5 +1809,21 @@
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 BtnAddEmployee;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnGeneralReport;
         public Bunifu.UI.WinForms.BunifuTextBox txtEmployeeSearch;
+        public System.Windows.Forms.Label lblTitle;
+        public System.Windows.Forms.Label lblSubTitle;
+        public System.Windows.Forms.Label lblType;
+        public System.Windows.Forms.Label lblTV;
+        public System.Windows.Forms.Label lblTC;
+        public System.Windows.Forms.Label lblDepartment;
+        public System.Windows.Forms.Label lblTB;
+        public System.Windows.Forms.Label lblDevelop;
+        public System.Windows.Forms.Label lblAdmin;
+        public System.Windows.Forms.Label lblRH;
+        public System.Windows.Forms.Label lblSop;
+        public System.Windows.Forms.Label lblMark;
+        public System.Windows.Forms.Label lblState;
+        public System.Windows.Forms.Label lblMat;
+        public System.Windows.Forms.Label lblPat;
+        public System.Windows.Forms.Label lblInc;
     }
 }

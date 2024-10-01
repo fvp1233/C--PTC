@@ -20,6 +20,7 @@ using PTC2024.Model.DAO;
 using PTC2024.View.Reporting.Employees;
 using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.View.formularios.inicio;
+using PTC2024.Resources.Language;
 
 namespace PTC2024.Controller.Employees
 {
@@ -57,10 +58,37 @@ namespace PTC2024.Controller.Employees
             objEmployees.cbIncapacidad.Click += new EventHandler(CheckedIncapacidad);
             objEmployees.cbMaternidad.Click += new EventHandler(CheckedMaternidad);
         }
-
+        public void ChargeLanguage()
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+            EnglishL();
+        }
+        public void EnglishL()
+        {
+            objEmployees.lblTitle.Text = English.employeeTitle;
+            objEmployees.lblSubTitle.Text = English.employeeSubTitle;
+            objEmployees.lblType.Text = English.typeEmployee;
+            objEmployees.lblTC.Text = English.volunteer;
+            objEmployees.lblTB.Text = English.intern;
+            objEmployees.lblDepartment.Text = English.department;
+            objEmployees.lblAdmin.Text = English.admin;
+            objEmployees.lblDevelop.Text = English.develop;
+            objEmployees.lblSop.Text = English.tecSupp;
+            objEmployees.lblRH.Text = English.humanResources;
+            objEmployees.lblMark.Text = English.marketing;
+            objEmployees.lblState.Text = English.status;
+            objEmployees.lblInc.Text = English.Inactive;
+            objEmployees.lblPat.Text = English.Paternity;
+            objEmployees.lblMat.Text = English.Maternity;
+            objEmployees.lblInc.Text = English.disability;
+            objEmployees.txtEmployeeSearch.Text = English.searchForm;
+            objEmployees.BtnAddEmployee.Text = English.addEmployee;
+            objEmployees.btnGeneralReport.Text = English.genReport;
+        }
         public void LoadData (object sender, EventArgs e)
         {
             RefreshDataGridEmployees();
+            ChargeLanguage();
         }
 
         public void SearchEmployeeEvent(object sender, KeyEventArgs e)

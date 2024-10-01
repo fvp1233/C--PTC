@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="addEmployee" xml:space="preserve">
+    <value>Add employee</value>
+  </data>
   <data name="addImg" xml:space="preserve">
     <value>Add image</value>
+  </data>
+  <data name="admin" xml:space="preserve">
+    <value>Administration</value>
   </data>
   <data name="adress" xml:space="preserve">
     <value>Adress:</value>
@@ -189,6 +195,15 @@
   <data name="dataBase" xml:space="preserve">
     <value>Data Base</value>
   </data>
+  <data name="department" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="develop" xml:space="preserve">
+    <value>Develop</value>
+  </data>
+  <data name="disability" xml:space="preserve">
+    <value>Disability</value>
+  </data>
   <data name="disable" xml:space="preserve">
     <value>Disable</value>
   </data>
@@ -201,6 +216,12 @@
   <data name="employee" xml:space="preserve">
     <value>Employees</value>
   </data>
+  <data name="employeeSubTitle" xml:space="preserve">
+    <value>Right-click on an employee for more options</value>
+  </data>
+  <data name="employeeTitle" xml:space="preserve">
+    <value>Employees</value>
+  </data>
   <data name="enable" xml:space="preserve">
     <value>Enable</value>
   </data>
@@ -210,11 +231,26 @@
   <data name="forgotP" xml:space="preserve">
     <value>Forgot password?</value>
   </data>
+  <data name="fullTime" xml:space="preserve">
+    <value>Full time</value>
+  </data>
   <data name="gender" xml:space="preserve">
     <value>Gender:</value>
   </data>
+  <data name="genReport" xml:space="preserve">
+    <value>General report</value>
+  </data>
   <data name="hireDate" xml:space="preserve">
     <value>Hire date:</value>
+  </data>
+  <data name="humanResources" xml:space="preserve">
+    <value>Human resources</value>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="intern" xml:space="preserve">
+    <value>Intern</value>
   </data>
   <data name="lastNames" xml:space="preserve">
     <value>Last names:</value>
@@ -228,6 +264,12 @@
   <data name="manteinance" xml:space="preserve">
     <value>Maintenance</value>
   </data>
+  <data name="marketing" xml:space="preserve">
+    <value>Marketing</value>
+  </data>
+  <data name="Maternity" xml:space="preserve">
+    <value>Maternity</value>
+  </data>
   <data name="names" xml:space="preserve">
     <value>Names:</value>
   </data>
@@ -236,6 +278,9 @@
   </data>
   <data name="passwordForm" xml:space="preserve">
     <value>Password:</value>
+  </data>
+  <data name="Paternity" xml:space="preserve">
+    <value>Paternity</value>
   </data>
   <data name="payroll" xml:space="preserve">
     <value>Payrolls</value>
@@ -267,6 +312,9 @@
   <data name="saveinfo" xml:space="preserve">
     <value>Save info</value>
   </data>
+  <data name="searchForm" xml:space="preserve">
+    <value>Search</value>
+  </data>
   <data name="server" xml:space="preserve">
     <value>Server Configuration</value>
   </data>
@@ -279,16 +327,28 @@
   <data name="service" xml:space="preserve">
     <value>Services</value>
   </data>
+  <data name="status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="tecSupp" xml:space="preserve">
+    <value>Technical support</value>
+  </data>
   <data name="titleServer" xml:space="preserve">
     <value>Enter the values in each field for the connection to your database.</value>
   </data>
   <data name="titleServer2" xml:space="preserve">
     <value>Windows Integrated Security</value>
   </data>
+  <data name="typeEmployee" xml:space="preserve">
+    <value>Type employee</value>
+  </data>
   <data name="user" xml:space="preserve">
     <value>User</value>
   </data>
   <data name="userForm" xml:space="preserve">
     <value>User:</value>
+  </data>
+  <data name="volunteer" xml:space="preserve">
+    <value>Volunteer</value>
   </data>
 </root>
