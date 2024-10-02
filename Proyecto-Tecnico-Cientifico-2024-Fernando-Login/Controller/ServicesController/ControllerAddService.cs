@@ -2,6 +2,7 @@
 using PTC2024.Controller.Helper;
 using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.Model.DAO.ServicesDAO;
+using PTC2024.Resources.Language;
 using PTC2024.View.formularios.inicio;
 using PTC2024.View.InventarioServicios;
 using System;
@@ -33,12 +34,28 @@ namespace PTC2024.Controller.ServicesController
             objAddService.txtAmount.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddService.txtAmount.TextChanged += new EventHandler(OnlyNum);
         }
-
+        public void ChargeLanguage()
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+            EnglishL();
+        }
+        public void EnglishL()
+        {
+            objAddService.lblName.Text = English.addServiceTitle;
+            objAddService.lblInformation.Text = English.addServiceDesc;
+            objAddService.lblName.Text = English.addServiceDesc;
+            objAddService.lblName.Text = English.nameService;
+            objAddService.lblDescription.Text = English.description;
+            objAddService.lblCategory.Text = English.category;
+            objAddService.lblAmount.Text = English.amount;
+            objAddService.btnAddService.Text = English.add;
+            objAddService.btnCancel.Text = English.gobackForm;
+        }
         /*Metodo para cargar el combobox*/
         public void ChargeDropDowns(object sender, EventArgs e)
         {
             DAOAddService daoAddService = new DAOAddService();
-
+            ChargeLanguage();
             /*COMBO CATEGORIA DEL SERVICIO*/
             /*Aca se obtiene el valor que retorno el metodo*/
             DataSet dsAddService = daoAddService.GetCategories();

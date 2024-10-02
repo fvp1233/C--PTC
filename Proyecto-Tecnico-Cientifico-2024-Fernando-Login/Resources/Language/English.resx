@@ -117,11 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="add" xml:space="preserve">
+    <value>Add</value>
+  </data>
   <data name="addEmployee" xml:space="preserve">
     <value>Add employee</value>
   </data>
   <data name="addImg" xml:space="preserve">
     <value>Add image</value>
+  </data>
+  <data name="addService" xml:space="preserve">
+    <value>Add service</value>
+  </data>
+  <data name="addServiceDesc" xml:space="preserve">
+    <value>Enter the requested information in each field</value>
+  </data>
+  <data name="addServiceTitle" xml:space="preserve">
+    <value>ADD SERVICE</value>
   </data>
   <data name="admin" xml:space="preserve">
     <value>Administration</value>
@@ -140,6 +152,9 @@
   </data>
   <data name="afpForm" xml:space="preserve">
     <value>AFP:</value>
+  </data>
+  <data name="amount" xml:space="preserve">
+    <value>Amount:</value>
   </data>
   <data name="bank" xml:space="preserve">
     <value>Bank:</value>
@@ -167,6 +182,12 @@
   </data>
   <data name="businessName" xml:space="preserve">
     <value>Company / Organization Name</value>
+  </data>
+  <data name="category" xml:space="preserve">
+    <value>Category:</value>
+  </data>
+  <data name="categorySV" xml:space="preserve">
+    <value>Category</value>
   </data>
   <data name="christmasBonus" xml:space="preserve">
     <value>Christmas bonus:</value>
@@ -228,8 +249,14 @@
   <data name="deletePayrolls" xml:space="preserve">
     <value>Delete payrolls</value>
   </data>
+  <data name="deleteService" xml:space="preserve">
+    <value>Delete service</value>
+  </data>
   <data name="department" xml:space="preserve">
     <value>Department</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>Description:</value>
   </data>
   <data name="develop" xml:space="preserve">
     <value>Develop</value>
@@ -274,7 +301,7 @@
     <value>Right-click on an employee for more options</value>
   </data>
   <data name="employeeTitle" xml:space="preserve">
-    <value>Employees</value>
+    <value>EMPLOYEES</value>
   </data>
   <data name="enable" xml:space="preserve">
     <value>Enable</value>
@@ -284,6 +311,9 @@
   </data>
   <data name="entraHoursForm" xml:space="preserve">
     <value>Extra hours:</value>
+  </data>
+  <data name="equipmentMant" xml:space="preserve">
+    <value>Equipment maintenance</value>
   </data>
   <data name="financialDat" xml:space="preserve">
     <value>Financial data</value>
@@ -335,6 +365,9 @@
   </data>
   <data name="incomeForm" xml:space="preserve">
     <value>Income:</value>
+  </data>
+  <data name="infraestructure" xml:space="preserve">
+    <value>Infraestructure</value>
   </data>
   <data name="interB" xml:space="preserve">
     <value>Intern</value>
@@ -408,6 +441,9 @@
   <data name="names" xml:space="preserve">
     <value>Names:</value>
   </data>
+  <data name="nameService" xml:space="preserve">
+    <value>Name:</value>
+  </data>
   <data name="netSalaryForm" xml:space="preserve">
     <value>Net salary:</value>
   </data>
@@ -436,7 +472,7 @@
     <value>Right-click on a payroll for more options</value>
   </data>
   <data name="payrollTitle" xml:space="preserve">
-    <value>Payrolls</value>
+    <value>PAYROLLS</value>
   </data>
   <data name="pbx" xml:space="preserve">
     <value>PBX:</value>
@@ -455,6 +491,9 @@
   </data>
   <data name="positionForm" xml:space="preserve">
     <value>Position:</value>
+  </data>
+  <data name="programming" xml:space="preserve">
+    <value>Programming</value>
   </data>
   <data name="refreshData" xml:space="preserve">
     <value>Refresh Data</value>
@@ -483,6 +522,9 @@
   <data name="saveinfo" xml:space="preserve">
     <value>Save info</value>
   </data>
+  <data name="schedule" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
   <data name="searchAll" xml:space="preserve">
     <value>All</value>
   </data>
@@ -494,6 +536,9 @@
   </data>
   <data name="secondQuarter" xml:space="preserve">
     <value>Second quarter</value>
+  </data>
+  <data name="securitySV" xml:space="preserve">
+    <value>Security</value>
   </data>
   <data name="server" xml:space="preserve">
     <value>Server Configuration</value>
@@ -507,6 +552,15 @@
   <data name="service" xml:space="preserve">
     <value>Services</value>
   </data>
+  <data name="servicereport" xml:space="preserve">
+    <value>Service report</value>
+  </data>
+  <data name="services" xml:space="preserve">
+    <value>SERVICES</value>
+  </data>
+  <data name="servicesST" xml:space="preserve">
+    <value>Right-click on a service for more options</value>
+  </data>
   <data name="status" xml:space="preserve">
     <value>Status</value>
   </data>
@@ -515,6 +569,9 @@
   </data>
   <data name="subTtileUpdatePayroll" xml:space="preserve">
     <value>Update the desired information</value>
+  </data>
+  <data name="supportSV" xml:space="preserve">
+    <value>Support</value>
   </data>
   <data name="tecSupp" xml:space="preserve">
     <value>Technical support</value>
@@ -540,8 +597,14 @@
   <data name="updateEmp" xml:space="preserve">
     <value>Update employee</value>
   </data>
+  <data name="updateForm" xml:space="preserve">
+    <value>Update</value>
+  </data>
   <data name="updatePayrolls" xml:space="preserve">
     <value>Update payrolls</value>
+  </data>
+  <data name="updateService" xml:space="preserve">
+    <value>Update service</value>
   </data>
   <data name="user" xml:space="preserve">
     <value>User</value>

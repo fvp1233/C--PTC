@@ -14,6 +14,7 @@ using PTC2024.Model.DAO.CustomersDAO;
 using PTC2024.Controller.Helper;
 using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.View.formularios.inicio;
+using PTC2024.Resources.Language;
 
 namespace PTC2024.Controller.ServicesController
 {
@@ -42,10 +43,32 @@ namespace PTC2024.Controller.ServicesController
             objServices.CbSoporte.Click += new EventHandler(SearchCheckBox5);
 
         }
-
+        public void ChargeLanguage()
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+            EnglishL();
+        }
+        public void EnglishL()
+        {
+            objServices.lblServices.Text = English.services;
+            objServices.lblInformation.Text = English.servicesST;
+            objServices.lblCategory.Text = English.categorySV;
+            objServices.lblSupport.Text = English.supportSV;
+            objServices.lblSegurity.Text = English.securitySV;
+            objServices.lblProgramming.Text = English.programming;
+            objServices.lblInfrastructure.Text = English.infraestructure;
+            objServices.lblMaintenance.Text = English.manteinance;
+            objServices.txtSearch.Text = English.searchForm;
+            objServices.btnAgenda.Text = English.schedule;
+            objServices.btnAddService.Text = English.addService;
+            objServices.btnReportServices.Text = English.servicereport;
+            objServices.cmsUpdateService.Text = English.updateService;
+            objServices.cmsDeleteService.Text = English.deleteService;
+        }
         /*Este metodo cargara inicialmente el DataGridView*/
         public void ChargeData(object sender, EventArgs e)
         {
+            ChargeLanguage();
             ChargeDgv();
         }
 
