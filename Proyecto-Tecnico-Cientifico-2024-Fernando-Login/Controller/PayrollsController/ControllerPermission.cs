@@ -3,7 +3,6 @@ using PTC2024.Model.DAO.EmployeesDAO;
 using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.Model.DAO.PayrollsDAO;
 using PTC2024.Model.DAO.ServicesDAO;
-using PTC2024.Resources.Language;
 using PTC2024.View.EmployeeViews;
 using PTC2024.View.formularios.inicio;
 using System;
@@ -39,33 +38,8 @@ namespace PTC2024.Controller.PayrollsController
 
 
         }
-        public void ChargeLanguage()
-        {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
-            EnglishL();
-        }
-        public void EnglishL()
-        {
-            objPermission.lblTitle.Text = English.permissionsTitle;
-            objPermission.lblInfo.Text = English.permissionsSubTitle;
-            objPermission.lblCategory.Text = English.category;
-            objPermission.lblIncapacity.Text = English.sickLeave;
-            objPermission.lblPat.Text = English.Paternity;
-            objPermission.lblMat.Text = English.Maternity;
-            objPermission.lblPer.Text = English.permissionOption;
-            objPermission.lblStatus.Text = English.statusPayroll;
-            objPermission.lblProces.Text = English.progress;
-            objPermission.lblComplete.Text = English.completed;
-            objPermission.lblIncapacity.Text = English.sickLeave;
-            objPermission.txtEmployeeSearch.Text = English.searchForm;
-            objPermission.btnGeneratePermission.Text = English.createPermission;
-            objPermission.btnDeletePermission.Text = English.disablePermissions;
-            objPermission.cmsUpdatePermission.Text = English.updatePermission;
-            objPermission.cmsDeletePermission.Text = English.deletePermission;
-        }
         public void LoadData(object sender, EventArgs e)
         {
-            ChargeLanguage();
             RefreshData();
         }
         public void RefreshData()

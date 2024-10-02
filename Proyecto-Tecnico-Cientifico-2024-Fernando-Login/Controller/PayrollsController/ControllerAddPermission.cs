@@ -1,7 +1,6 @@
 ﻿using PTC2024.Controller.Helper;
 using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.Model.DAO.PayrollsDAO;
-using PTC2024.Resources.Language;
 using PTC2024.View.EmployeeViews;
 using PTC2024.View.formularios.inicio;
 using System;
@@ -35,26 +34,6 @@ namespace PTC2024.Controller.PayrollsController
             objAddPermission.rtxtContext.MouseDown += new MouseEventHandler(DisableContextMenu);
 
         }
-        public void ChargeLanguage()
-        {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
-            EnglishL();
-        }
-        public void EnglishL()
-        {
-            objAddPermission.lblTitle.Text = English.addPermission;
-            objAddPermission.lblSubtitle.Text = English.addSubTitleP;
-            objAddPermission.bunifuGroupBox1.Text = English.permissionBox;
-            objAddPermission.IdEmployee.Text = English.employeeId;
-            objAddPermission.lblTypeP.Text = English.typePermission;
-            objAddPermission.lblStatusP.Text = English.permissionStatus;
-            objAddPermission.lblStart.Text = English.start;
-            objAddPermission.lblEnd.Text = English.end;
-            objAddPermission.lblContext.Text = English.reason;
-            objAddPermission.lblEmployeeInfo.Text = English.employeForWhom;
-            objAddPermission.btnCancel.Text = English.gobackForm;
-            objAddPermission.btnAddPermission.Text = English.add;
-        }
         private void DisableContextMenu(object sender, MouseEventArgs e)
         {
             // Desactiva el menú contextual al hacer clic derecho
@@ -73,7 +52,7 @@ namespace PTC2024.Controller.PayrollsController
         public void FillDropdown(object sender, EventArgs e)
         {
             DAOAddPermission daoddPermission = new DAOAddPermission();
-            ChargeLanguage();
+
             DataSet dsTypePermission = daoddPermission.GetTypePermission();
             objAddPermission.cmbTypePermission.DataSource = dsTypePermission.Tables["tbTypePermission"];
             objAddPermission.cmbTypePermission.DisplayMember = "typePermisiion";

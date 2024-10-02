@@ -126,9 +126,6 @@
   <data name="addImg" xml:space="preserve">
     <value>Add image</value>
   </data>
-  <data name="addPermission" xml:space="preserve">
-    <value>ADD PERMISSION</value>
-  </data>
   <data name="addService" xml:space="preserve">
     <value>Add service</value>
   </data>
@@ -137,9 +134,6 @@
   </data>
   <data name="addServiceTitle" xml:space="preserve">
     <value>ADD SERVICE</value>
-  </data>
-  <data name="addSubTitleP" xml:space="preserve">
-    <value>Enter the requested information in each field</value>
   </data>
   <data name="admin" xml:space="preserve">
     <value>Administration</value>
@@ -201,9 +195,6 @@
   <data name="compensation" xml:space="preserve">
     <value>Compensation</value>
   </data>
-  <data name="completed" xml:space="preserve">
-    <value>Completed</value>
-  </data>
   <data name="configBox" xml:space="preserve">
     <value>Local configuration</value>
   </data>
@@ -212,9 +203,6 @@
   </data>
   <data name="confirmPass" xml:space="preserve">
     <value>Confirm password:</value>
-  </data>
-  <data name="createPermission" xml:space="preserve">
-    <value>Create permission</value>
   </data>
   <data name="creationDate" xml:space="preserve">
     <value>Creation date:</value>
@@ -261,9 +249,6 @@
   <data name="deletePayrolls" xml:space="preserve">
     <value>Delete payrolls</value>
   </data>
-  <data name="deletePermission" xml:space="preserve">
-    <value>Delete permission</value>
-  </data>
   <data name="deleteService" xml:space="preserve">
     <value>Delete service</value>
   </data>
@@ -282,14 +267,8 @@
   <data name="disable" xml:space="preserve">
     <value>Disable</value>
   </data>
-  <data name="disabled" xml:space="preserve">
-    <value>Disabled</value>
-  </data>
   <data name="disableEmp" xml:space="preserve">
     <value>Disable employee</value>
-  </data>
-  <data name="disablePermissions" xml:space="preserve">
-    <value>Disable permissions</value>
   </data>
   <data name="downloadPayroll" xml:space="preserve">
     <value>Download payroll</value>
@@ -312,9 +291,6 @@
   <data name="employeeForm" xml:space="preserve">
     <value>Employee:</value>
   </data>
-  <data name="employeeId" xml:space="preserve">
-    <value>Eployee ID:</value>
-  </data>
   <data name="employeerDisc" xml:space="preserve">
     <value>Employer discount:</value>
   </data>
@@ -327,17 +303,11 @@
   <data name="employeeTitle" xml:space="preserve">
     <value>EMPLOYEES</value>
   </data>
-  <data name="employeForWhom" xml:space="preserve">
-    <value>[EMPLOYEE FOR WHOM THE PERMISSION IS BEING CREATED]</value>
-  </data>
   <data name="enable" xml:space="preserve">
     <value>Enable</value>
   </data>
   <data name="enableEmp" xml:space="preserve">
     <value>Enable employee</value>
-  </data>
-  <data name="end" xml:space="preserve">
-    <value>End date:</value>
   </data>
   <data name="entraHoursForm" xml:space="preserve">
     <value>Extra hours:</value>
@@ -510,21 +480,6 @@
   <data name="permission" xml:space="preserve">
     <value>Permissions</value>
   </data>
-  <data name="permissionBox" xml:space="preserve">
-    <value>Permission</value>
-  </data>
-  <data name="permissionOption" xml:space="preserve">
-    <value>Permission</value>
-  </data>
-  <data name="permissionsSubTitle" xml:space="preserve">
-    <value>Right-click on a permission for more options</value>
-  </data>
-  <data name="permissionStatus" xml:space="preserve">
-    <value>Permission status:</value>
-  </data>
-  <data name="permissionsTitle" xml:space="preserve">
-    <value>PERMISSIONS</value>
-  </data>
   <data name="personalData" xml:space="preserve">
     <value>Personal data</value>
   </data>
@@ -539,12 +494,6 @@
   </data>
   <data name="programming" xml:space="preserve">
     <value>Programming</value>
-  </data>
-  <data name="progress" xml:space="preserve">
-    <value>In progress</value>
-  </data>
-  <data name="reason" xml:space="preserve">
-    <value>Reason:</value>
   </data>
   <data name="refreshData" xml:space="preserve">
     <value>Refresh Data</value>
@@ -612,20 +561,11 @@
   <data name="servicesST" xml:space="preserve">
     <value>Right-click on a service for more options</value>
   </data>
-  <data name="sickLeave" xml:space="preserve">
-    <value>Sick leave</value>
-  </data>
-  <data name="start" xml:space="preserve">
-    <value>Start date:</value>
-  </data>
   <data name="status" xml:space="preserve">
     <value>Status</value>
   </data>
   <data name="statusPayroll" xml:space="preserve">
     <value>Status:</value>
-  </data>
-  <data name="subTitle" xml:space="preserve">
-    <value>Enter the requested information in each field</value>
   </data>
   <data name="subTtileUpdatePayroll" xml:space="preserve">
     <value>Update the desired information</value>
@@ -651,9 +591,6 @@
   <data name="typeEmployee" xml:space="preserve">
     <value>Type employee</value>
   </data>
-  <data name="typePermission" xml:space="preserve">
-    <value>Type of permission:</value>
-  </data>
   <data name="unpaid" xml:space="preserve">
     <value>Unpaid</value>
   </data>
@@ -666,17 +603,8 @@
   <data name="updatePayrolls" xml:space="preserve">
     <value>Update payrolls</value>
   </data>
-  <data name="updatePermission" xml:space="preserve">
-    <value>Update permission</value>
-  </data>
-  <data name="updatePermissionS" xml:space="preserve">
-    <value>UPDATE PERMISSION</value>
-  </data>
   <data name="updateService" xml:space="preserve">
     <value>Update service</value>
-  </data>
-  <data name="updateSubTitleP" xml:space="preserve">
-    <value>Modify the necessary information</value>
   </data>
   <data name="user" xml:space="preserve">
     <value>User</value>

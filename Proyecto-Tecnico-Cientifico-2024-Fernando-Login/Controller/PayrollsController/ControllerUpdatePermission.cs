@@ -1,7 +1,6 @@
 ﻿using PTC2024.Controller.Helper;
 using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.Model.DAO.PayrollsDAO;
-using PTC2024.Resources.Language;
 using PTC2024.View.EmployeeViews;
 using PTC2024.View.formularios.inicio;
 using PTC2024.View.Service_inventory;
@@ -38,26 +37,6 @@ namespace PTC2024.Controller.PayrollsController
             objUpdatePermission.btnCancel.Click += new EventHandler(CloseForm);
             objUpdatePermission.cmbTypePermission.SelectedIndexChanged += new EventHandler(cmbTypePermission_SelectedIndexChangedM);
             objUpdatePermission.cmbTypePermission.SelectedIndexChanged += new EventHandler(cmbTypePermission_SelectedIndexChangedP);
-        }
-        public void ChargeLanguage()
-        {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
-            EnglishL();
-        }
-        public void EnglishL()
-        {
-            objUpdatePermission.lblTitle.Text = English.updatePermissionS;
-            objUpdatePermission.lblSubtitle.Text = English.updateSubTitleP;
-            objUpdatePermission.bunifuGroupBox1.Text = English.permissionBox;
-            objUpdatePermission.IdEmployee.Text = English.employeeId;
-            objUpdatePermission.lblTypeP.Text = English.typePermission;
-            objUpdatePermission.lblStatusP.Text = English.permissionStatus;
-            objUpdatePermission.lblStart.Text = English.start;
-            objUpdatePermission.lblEnd.Text = English.end;
-            objUpdatePermission.lblContext.Text = English.reason;
-            objUpdatePermission.lblEmployeeInfo.Text = English.employeForWhom;
-            objUpdatePermission.btnCancel.Text = English.gobackForm;
-            objUpdatePermission.btnAddPermission.Text = English.add;
         }
         public void UpdatePermission(object sender, EventArgs e)
         {
@@ -188,7 +167,7 @@ namespace PTC2024.Controller.PayrollsController
         public void FillDropdown(object sender, EventArgs e)
         {
             DAOUpdatePermission daoPermission = new DAOUpdatePermission();
-            ChargeLanguage();
+
             DataSet dsTypePermission = daoPermission.GetTypePermission();
             objUpdatePermission.cmbTypePermission.DataSource = dsTypePermission.Tables["tbTypePermission"];
             objUpdatePermission.cmbTypePermission.DisplayMember = "typePermisiion";

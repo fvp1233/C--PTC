@@ -30,34 +30,34 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddPermission));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            this.lblSubtitle = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.lblEmployeeName = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lblEmployeeInfo = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lblStatusP = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.rtxtContext = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtIdEmployee = new Bunifu.UI.WinForms.BunifuTextBox();
             this.cmbTypePermission = new Bunifu.UI.WinForms.BunifuDropdown();
-            this.lblTypeP = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbStatusPermission = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblContext = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblEnd = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.dtpEnd = new Bunifu.UI.WinForms.BunifuDatePicker();
-            this.lblStart = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.dtpStart = new Bunifu.UI.WinForms.BunifuDatePicker();
-            this.IdEmployee = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnAddPermission = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnCancel = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
@@ -65,31 +65,31 @@
             this.bunifuGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblSubtitle
+            // bunifuCustomLabel2
             // 
-            this.lblSubtitle.AutoSize = true;
-            this.lblSubtitle.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtitle.Location = new System.Drawing.Point(283, 44);
-            this.lblSubtitle.Name = "lblSubtitle";
-            this.lblSubtitle.Size = new System.Drawing.Size(300, 17);
-            this.lblSubtitle.TabIndex = 109;
-            this.lblSubtitle.Text = "Ingrese en cada campo la información solicitada";
-            this.bunifuToolTip1.SetToolTip(this.lblSubtitle, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblSubtitle, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblSubtitle, "");
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(283, 44);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(300, 17);
+            this.bunifuCustomLabel2.TabIndex = 109;
+            this.bunifuCustomLabel2.Text = "Ingrese en cada campo la información solicitada";
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel2, "");
             // 
-            // lblTitle
+            // bunifuCustomLabel1
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(297, 12);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(268, 32);
-            this.lblTitle.TabIndex = 108;
-            this.lblTitle.Text = "AGREGAR PERMISO";
-            this.bunifuToolTip1.SetToolTip(this.lblTitle, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblTitle, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblTitle, "");
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(297, 12);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(268, 32);
+            this.bunifuCustomLabel1.TabIndex = 108;
+            this.bunifuCustomLabel1.Text = "AGREGAR PERMISO";
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel1, "");
             // 
             // bunifuGroupBox1
             // 
@@ -97,20 +97,20 @@
             this.bunifuGroupBox1.BorderRadius = 10;
             this.bunifuGroupBox1.BorderThickness = 2;
             this.bunifuGroupBox1.Controls.Add(this.lblEmployeeName);
-            this.bunifuGroupBox1.Controls.Add(this.lblEmployeeInfo);
-            this.bunifuGroupBox1.Controls.Add(this.lblStatusP);
+            this.bunifuGroupBox1.Controls.Add(this.bunifuLabel1);
+            this.bunifuGroupBox1.Controls.Add(this.bunifuCustomLabel8);
             this.bunifuGroupBox1.Controls.Add(this.rtxtContext);
             this.bunifuGroupBox1.Controls.Add(this.txtIdEmployee);
             this.bunifuGroupBox1.Controls.Add(this.cmbTypePermission);
-            this.bunifuGroupBox1.Controls.Add(this.lblTypeP);
+            this.bunifuGroupBox1.Controls.Add(this.bunifuCustomLabel7);
             this.bunifuGroupBox1.Controls.Add(this.cmbStatusPermission);
             this.bunifuGroupBox1.Controls.Add(this.bunifuCustomLabel11);
-            this.bunifuGroupBox1.Controls.Add(this.lblContext);
-            this.bunifuGroupBox1.Controls.Add(this.lblEnd);
+            this.bunifuGroupBox1.Controls.Add(this.bunifuCustomLabel6);
+            this.bunifuGroupBox1.Controls.Add(this.bunifuCustomLabel4);
             this.bunifuGroupBox1.Controls.Add(this.dtpEnd);
-            this.bunifuGroupBox1.Controls.Add(this.lblStart);
+            this.bunifuGroupBox1.Controls.Add(this.bunifuCustomLabel5);
             this.bunifuGroupBox1.Controls.Add(this.dtpStart);
-            this.bunifuGroupBox1.Controls.Add(this.IdEmployee);
+            this.bunifuGroupBox1.Controls.Add(this.bunifuCustomLabel3);
             this.bunifuGroupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuGroupBox1.LabelAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.bunifuGroupBox1.LabelIndent = 10;
@@ -144,39 +144,39 @@
             this.bunifuToolTip1.SetToolTipIcon(this.lblEmployeeName, null);
             this.bunifuToolTip1.SetToolTipTitle(this.lblEmployeeName, "");
             // 
-            // lblEmployeeInfo
+            // bunifuLabel1
             // 
-            this.lblEmployeeInfo.AllowParentOverrides = false;
-            this.lblEmployeeInfo.AutoEllipsis = false;
-            this.lblEmployeeInfo.AutoSize = false;
-            this.lblEmployeeInfo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblEmployeeInfo.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblEmployeeInfo.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployeeInfo.Location = new System.Drawing.Point(22, 294);
-            this.lblEmployeeInfo.Name = "lblEmployeeInfo";
-            this.lblEmployeeInfo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblEmployeeInfo.Size = new System.Drawing.Size(777, 25);
-            this.lblEmployeeInfo.TabIndex = 116;
-            this.lblEmployeeInfo.Text = "[EMPLEADO AL QUE SE LE ESTÁ CREANDO EL PERMISO]";
-            this.lblEmployeeInfo.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblEmployeeInfo.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuToolTip1.SetToolTip(this.lblEmployeeInfo, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblEmployeeInfo, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblEmployeeInfo, "");
+            this.bunifuLabel1.AllowParentOverrides = false;
+            this.bunifuLabel1.AutoEllipsis = false;
+            this.bunifuLabel1.AutoSize = false;
+            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Location = new System.Drawing.Point(22, 294);
+            this.bunifuLabel1.Name = "bunifuLabel1";
+            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel1.Size = new System.Drawing.Size(777, 25);
+            this.bunifuLabel1.TabIndex = 116;
+            this.bunifuLabel1.Text = "[EMPLEADO AL QUE SE LE ESTÁ CREANDO EL PERMISO]";
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuToolTip1.SetToolTip(this.bunifuLabel1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuLabel1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuLabel1, "");
             // 
-            // lblStatusP
+            // bunifuCustomLabel8
             // 
-            this.lblStatusP.AutoSize = true;
-            this.lblStatusP.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusP.Location = new System.Drawing.Point(548, 30);
-            this.lblStatusP.Name = "lblStatusP";
-            this.lblStatusP.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblStatusP.Size = new System.Drawing.Size(146, 16);
-            this.lblStatusP.TabIndex = 115;
-            this.lblStatusP.Text = "Estado del permiso:";
-            this.bunifuToolTip1.SetToolTip(this.lblStatusP, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblStatusP, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblStatusP, "");
+            this.bunifuCustomLabel8.AutoSize = true;
+            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(548, 30);
+            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
+            this.bunifuCustomLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(146, 16);
+            this.bunifuCustomLabel8.TabIndex = 115;
+            this.bunifuCustomLabel8.Text = "Estado del permiso:";
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel8, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel8, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel8, "");
             // 
             // rtxtContext
             // 
@@ -213,26 +213,26 @@
             this.rtxtContext.Modified = false;
             this.rtxtContext.Multiline = true;
             this.rtxtContext.Name = "rtxtContext";
-            stateProperties9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            stateProperties9.FillColor = System.Drawing.Color.Empty;
-            stateProperties9.ForeColor = System.Drawing.Color.Empty;
-            stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.rtxtContext.OnActiveState = stateProperties9;
-            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.rtxtContext.OnDisabledState = stateProperties10;
-            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            stateProperties11.FillColor = System.Drawing.Color.Empty;
-            stateProperties11.ForeColor = System.Drawing.Color.Empty;
-            stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.rtxtContext.OnHoverState = stateProperties11;
-            stateProperties12.BorderColor = System.Drawing.Color.Gray;
-            stateProperties12.FillColor = System.Drawing.Color.Gainsboro;
-            stateProperties12.ForeColor = System.Drawing.Color.Empty;
-            stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.rtxtContext.OnIdleState = stateProperties12;
+            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.rtxtContext.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.rtxtContext.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.rtxtContext.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Gray;
+            stateProperties4.FillColor = System.Drawing.Color.Gainsboro;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.rtxtContext.OnIdleState = stateProperties4;
             this.rtxtContext.Padding = new System.Windows.Forms.Padding(3);
             this.rtxtContext.PasswordChar = '\0';
             this.rtxtContext.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -293,26 +293,26 @@
             this.txtIdEmployee.Modified = false;
             this.txtIdEmployee.Multiline = false;
             this.txtIdEmployee.Name = "txtIdEmployee";
-            stateProperties13.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            stateProperties13.FillColor = System.Drawing.Color.Empty;
-            stateProperties13.ForeColor = System.Drawing.Color.Empty;
-            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtIdEmployee.OnActiveState = stateProperties13;
-            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtIdEmployee.OnDisabledState = stateProperties14;
-            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
-            stateProperties15.FillColor = System.Drawing.Color.Empty;
-            stateProperties15.ForeColor = System.Drawing.Color.Empty;
-            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtIdEmployee.OnHoverState = stateProperties15;
-            stateProperties16.BorderColor = System.Drawing.Color.Gray;
-            stateProperties16.FillColor = System.Drawing.Color.Gainsboro;
-            stateProperties16.ForeColor = System.Drawing.Color.Empty;
-            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtIdEmployee.OnIdleState = stateProperties16;
+            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtIdEmployee.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtIdEmployee.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtIdEmployee.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Gray;
+            stateProperties8.FillColor = System.Drawing.Color.Gainsboro;
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtIdEmployee.OnIdleState = stateProperties8;
             this.txtIdEmployee.Padding = new System.Windows.Forms.Padding(3);
             this.txtIdEmployee.PasswordChar = '\0';
             this.txtIdEmployee.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -385,19 +385,19 @@
             this.bunifuToolTip1.SetToolTipIcon(this.cmbTypePermission, null);
             this.bunifuToolTip1.SetToolTipTitle(this.cmbTypePermission, "");
             // 
-            // lblTypeP
+            // bunifuCustomLabel7
             // 
-            this.lblTypeP.AutoSize = true;
-            this.lblTypeP.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTypeP.Location = new System.Drawing.Point(282, 30);
-            this.lblTypeP.Name = "lblTypeP";
-            this.lblTypeP.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTypeP.Size = new System.Drawing.Size(124, 16);
-            this.lblTypeP.TabIndex = 53;
-            this.lblTypeP.Text = "Tipo de permiso:";
-            this.bunifuToolTip1.SetToolTip(this.lblTypeP, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblTypeP, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblTypeP, "");
+            this.bunifuCustomLabel7.AutoSize = true;
+            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(282, 30);
+            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
+            this.bunifuCustomLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuCustomLabel7.Size = new System.Drawing.Size(124, 16);
+            this.bunifuCustomLabel7.TabIndex = 53;
+            this.bunifuCustomLabel7.Text = "Tipo de permiso:";
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel7, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel7, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel7, "");
             // 
             // cmbStatusPermission
             // 
@@ -461,33 +461,33 @@
             this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel11, null);
             this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel11, "");
             // 
-            // lblContext
+            // bunifuCustomLabel6
             // 
-            this.lblContext.AutoSize = true;
-            this.lblContext.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContext.Location = new System.Drawing.Point(23, 169);
-            this.lblContext.Name = "lblContext";
-            this.lblContext.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblContext.Size = new System.Drawing.Size(60, 16);
-            this.lblContext.TabIndex = 44;
-            this.lblContext.Text = "Motivo:";
-            this.bunifuToolTip1.SetToolTip(this.lblContext, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblContext, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblContext, "");
+            this.bunifuCustomLabel6.AutoSize = true;
+            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(23, 169);
+            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
+            this.bunifuCustomLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(60, 16);
+            this.bunifuCustomLabel6.TabIndex = 44;
+            this.bunifuCustomLabel6.Text = "Motivo:";
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel6, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel6, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel6, "");
             // 
-            // lblEnd
+            // bunifuCustomLabel4
             // 
-            this.lblEnd.AutoSize = true;
-            this.lblEnd.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnd.Location = new System.Drawing.Point(425, 100);
-            this.lblEnd.Name = "lblEnd";
-            this.lblEnd.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblEnd.Size = new System.Drawing.Size(33, 16);
-            this.lblEnd.TabIndex = 42;
-            this.lblEnd.Text = "Fin:";
-            this.bunifuToolTip1.SetToolTip(this.lblEnd, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblEnd, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblEnd, "");
+            this.bunifuCustomLabel4.AutoSize = true;
+            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(425, 100);
+            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
+            this.bunifuCustomLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(33, 16);
+            this.bunifuCustomLabel4.TabIndex = 42;
+            this.bunifuCustomLabel4.Text = "Fin:";
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel4, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel4, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel4, "");
             // 
             // dtpEnd
             // 
@@ -519,19 +519,19 @@
             this.bunifuToolTip1.SetToolTipTitle(this.dtpEnd, "");
             this.dtpEnd.Value = new System.DateTime(2024, 7, 13, 16, 30, 0, 0);
             // 
-            // lblStart
+            // bunifuCustomLabel5
             // 
-            this.lblStart.AutoSize = true;
-            this.lblStart.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStart.Location = new System.Drawing.Point(23, 100);
-            this.lblStart.Name = "lblStart";
-            this.lblStart.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblStart.Size = new System.Drawing.Size(49, 16);
-            this.lblStart.TabIndex = 40;
-            this.lblStart.Text = "Inicio:";
-            this.bunifuToolTip1.SetToolTip(this.lblStart, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.lblStart, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.lblStart, "");
+            this.bunifuCustomLabel5.AutoSize = true;
+            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(23, 100);
+            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
+            this.bunifuCustomLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(49, 16);
+            this.bunifuCustomLabel5.TabIndex = 40;
+            this.bunifuCustomLabel5.Text = "Inicio:";
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel5, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel5, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel5, "");
             // 
             // dtpStart
             // 
@@ -563,18 +563,18 @@
             this.bunifuToolTip1.SetToolTipTitle(this.dtpStart, "");
             this.dtpStart.Value = new System.DateTime(2024, 7, 13, 16, 30, 0, 0);
             // 
-            // IdEmployee
+            // bunifuCustomLabel3
             // 
-            this.IdEmployee.AutoSize = true;
-            this.IdEmployee.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IdEmployee.Location = new System.Drawing.Point(23, 30);
-            this.IdEmployee.Name = "IdEmployee";
-            this.IdEmployee.Size = new System.Drawing.Size(124, 16);
-            this.IdEmployee.TabIndex = 35;
-            this.IdEmployee.Text = "ID del empleado:";
-            this.bunifuToolTip1.SetToolTip(this.IdEmployee, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.IdEmployee, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.IdEmployee, "");
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(23, 30);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(124, 16);
+            this.bunifuCustomLabel3.TabIndex = 35;
+            this.bunifuCustomLabel3.Text = "ID del empleado:";
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel3, "");
             // 
             // btnAddPermission
             // 
@@ -596,11 +596,11 @@
             this.btnAddPermission.ColorContrastOnClick = 45;
             this.btnAddPermission.ColorContrastOnHover = 45;
             this.btnAddPermission.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnAddPermission.CustomizableEdges = borderEdges3;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnAddPermission.CustomizableEdges = borderEdges1;
             this.btnAddPermission.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddPermission.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAddPermission.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -689,11 +689,11 @@
             this.btnCancel.ColorContrastOnClick = 45;
             this.btnCancel.ColorContrastOnHover = 45;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnCancel.CustomizableEdges = borderEdges4;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnCancel.CustomizableEdges = borderEdges2;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCancel.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCancel.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -876,8 +876,8 @@
             this.Controls.Add(this.btnAddPermission);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.bunifuGroupBox1);
-            this.Controls.Add(this.lblSubtitle);
-            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.bunifuCustomLabel2);
+            this.Controls.Add(this.bunifuCustomLabel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAddPermission";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -890,27 +890,28 @@
         }
 
         #endregion
+
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private Bunifu.UI.WinForms.BunifuGroupBox bunifuGroupBox1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         public Bunifu.UI.WinForms.BunifuDatePicker dtpStart;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         public Bunifu.UI.WinForms.BunifuDatePicker dtpEnd;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnAddPermission;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnCancel;
         public Bunifu.UI.WinForms.BunifuDropdown cmbTypePermission;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
         public Bunifu.UI.WinForms.BunifuDropdown cmbStatusPermission;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
         public Bunifu.UI.WinForms.BunifuTextBox txtIdEmployee;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         public Bunifu.UI.WinForms.BunifuTextBox rtxtContext;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
         public Bunifu.UI.WinForms.BunifuLabel lblEmployeeName;
         public Bunifu.UI.WinForms.BunifuSnackbar bunifuSnackbar1;
-        public Bunifu.Framework.UI.BunifuCustomLabel lblTitle;
-        public Bunifu.Framework.UI.BunifuCustomLabel lblSubtitle;
-        public Bunifu.Framework.UI.BunifuCustomLabel IdEmployee;
-        public Bunifu.Framework.UI.BunifuCustomLabel lblTypeP;
-        public Bunifu.Framework.UI.BunifuCustomLabel lblStatusP;
-        public Bunifu.Framework.UI.BunifuCustomLabel lblStart;
-        public Bunifu.Framework.UI.BunifuCustomLabel lblEnd;
-        public Bunifu.UI.WinForms.BunifuLabel lblEmployeeInfo;
-        public Bunifu.Framework.UI.BunifuCustomLabel lblContext;
-        public Bunifu.UI.WinForms.BunifuGroupBox bunifuGroupBox1;
     }
 }
