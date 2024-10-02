@@ -329,7 +329,7 @@
             this.bunifuGroupBox2.Controls.Add(this.txtSalary);
             this.bunifuGroupBox2.Controls.Add(this.lblBonus);
             this.bunifuGroupBox2.Controls.Add(this.lblISSS);
-            this.bunifuGroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuGroupBox2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuGroupBox2.LabelAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.bunifuGroupBox2.LabelIndent = 10;
             this.bunifuGroupBox2.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
@@ -929,7 +929,7 @@
             this.bunifuGroupBox1.Controls.Add(this.txtEmployee);
             this.bunifuGroupBox1.Controls.Add(this.lblDUI);
             this.bunifuGroupBox1.Controls.Add(this.txtDUI);
-            this.bunifuGroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuGroupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuGroupBox1.LabelAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.bunifuGroupBox1.LabelIndent = 10;
             this.bunifuGroupBox1.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
@@ -944,7 +944,7 @@
             // 
             this.dtpIssueDate.AutoSize = true;
             this.dtpIssueDate.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpIssueDate.Location = new System.Drawing.Point(569, 84);
+            this.dtpIssueDate.Location = new System.Drawing.Point(535, 84);
             this.dtpIssueDate.Name = "dtpIssueDate";
             this.dtpIssueDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpIssueDate.Size = new System.Drawing.Size(137, 16);
@@ -964,23 +964,23 @@
             this.dtpDate.DPHeight = 0;
             this.dtpDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpDate.FillDatePicker = false;
-            this.dtpDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpDate.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDate.ForeColor = System.Drawing.Color.Black;
             this.dtpDate.Icon = ((System.Drawing.Image)(resources.GetObject("dtpDate.Icon")));
             this.dtpDate.IconColor = System.Drawing.Color.Gray;
             this.dtpDate.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dtpDate.LeftTextMargin = 5;
-            this.dtpDate.Location = new System.Drawing.Point(570, 103);
+            this.dtpDate.Location = new System.Drawing.Point(538, 103);
             this.dtpDate.MinimumSize = new System.Drawing.Size(4, 32);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(207, 32);
+            this.dtpDate.Size = new System.Drawing.Size(233, 32);
             this.dtpDate.TabIndex = 202;
             // 
             // lblAffiliation
             // 
             this.lblAffiliation.AutoSize = true;
             this.lblAffiliation.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAffiliation.Location = new System.Drawing.Point(348, 84);
+            this.lblAffiliation.Location = new System.Drawing.Point(337, 84);
             this.lblAffiliation.Name = "lblAffiliation";
             this.lblAffiliation.Size = new System.Drawing.Size(151, 16);
             this.lblAffiliation.TabIndex = 190;
@@ -999,7 +999,7 @@
             this.txtAffiliationNumber.LineIdleColor = System.Drawing.Color.Gray;
             this.txtAffiliationNumber.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtAffiliationNumber.LineThickness = 3;
-            this.txtAffiliationNumber.Location = new System.Drawing.Point(351, 104);
+            this.txtAffiliationNumber.Location = new System.Drawing.Point(340, 104);
             this.txtAffiliationNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtAffiliationNumber.Name = "txtAffiliationNumber";
             this.txtAffiliationNumber.Size = new System.Drawing.Size(190, 31);
@@ -1010,7 +1010,7 @@
             // 
             this.lblBankAccount.AutoSize = true;
             this.lblBankAccount.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBankAccount.Location = new System.Drawing.Point(11, 84);
+            this.lblBankAccount.Location = new System.Drawing.Point(21, 84);
             this.lblBankAccount.Name = "lblBankAccount";
             this.lblBankAccount.Size = new System.Drawing.Size(121, 16);
             this.lblBankAccount.TabIndex = 188;
@@ -1029,7 +1029,7 @@
             this.txtBankAccount.LineIdleColor = System.Drawing.Color.Gray;
             this.txtBankAccount.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtBankAccount.LineThickness = 3;
-            this.txtBankAccount.Location = new System.Drawing.Point(14, 104);
+            this.txtBankAccount.Location = new System.Drawing.Point(24, 104);
             this.txtBankAccount.Margin = new System.Windows.Forms.Padding(4);
             this.txtBankAccount.Name = "txtBankAccount";
             this.txtBankAccount.Size = new System.Drawing.Size(308, 31);
@@ -1049,10 +1049,10 @@
             this.txtPossition.LineIdleColor = System.Drawing.Color.Gray;
             this.txtPossition.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtPossition.LineThickness = 3;
-            this.txtPossition.Location = new System.Drawing.Point(570, 45);
+            this.txtPossition.Location = new System.Drawing.Point(538, 45);
             this.txtPossition.Margin = new System.Windows.Forms.Padding(4);
             this.txtPossition.Name = "txtPossition";
-            this.txtPossition.Size = new System.Drawing.Size(207, 31);
+            this.txtPossition.Size = new System.Drawing.Size(233, 31);
             this.txtPossition.TabIndex = 186;
             this.txtPossition.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -1060,7 +1060,7 @@
             // 
             this.lblCharge.AutoSize = true;
             this.lblCharge.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCharge.Location = new System.Drawing.Point(567, 25);
+            this.lblCharge.Location = new System.Drawing.Point(535, 25);
             this.lblCharge.Name = "lblCharge";
             this.lblCharge.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCharge.Size = new System.Drawing.Size(49, 16);
@@ -1071,7 +1071,7 @@
             // 
             this.lblEmployee.AutoSize = true;
             this.lblEmployee.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployee.Location = new System.Drawing.Point(11, 25);
+            this.lblEmployee.Location = new System.Drawing.Point(21, 25);
             this.lblEmployee.Name = "lblEmployee";
             this.lblEmployee.Size = new System.Drawing.Size(76, 16);
             this.lblEmployee.TabIndex = 159;
@@ -1090,7 +1090,7 @@
             this.txtEmployee.LineIdleColor = System.Drawing.Color.Gray;
             this.txtEmployee.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtEmployee.LineThickness = 3;
-            this.txtEmployee.Location = new System.Drawing.Point(14, 45);
+            this.txtEmployee.Location = new System.Drawing.Point(24, 45);
             this.txtEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmployee.Name = "txtEmployee";
             this.txtEmployee.Size = new System.Drawing.Size(308, 31);
@@ -1101,7 +1101,7 @@
             // 
             this.lblDUI.AutoSize = true;
             this.lblDUI.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDUI.Location = new System.Drawing.Point(348, 25);
+            this.lblDUI.Location = new System.Drawing.Point(337, 25);
             this.lblDUI.Name = "lblDUI";
             this.lblDUI.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblDUI.Size = new System.Drawing.Size(31, 16);
@@ -1121,7 +1121,7 @@
             this.txtDUI.LineIdleColor = System.Drawing.Color.Gray;
             this.txtDUI.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtDUI.LineThickness = 3;
-            this.txtDUI.Location = new System.Drawing.Point(351, 45);
+            this.txtDUI.Location = new System.Drawing.Point(340, 45);
             this.txtDUI.Margin = new System.Windows.Forms.Padding(4);
             this.txtDUI.Name = "txtDUI";
             this.txtDUI.Size = new System.Drawing.Size(190, 31);
