@@ -88,6 +88,15 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a ADD PERMISSION.
+        /// </summary>
+        internal static string addPermission {
+            get {
+                return ResourceManager.GetString("addPermission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Add service.
         /// </summary>
         internal static string addService {
@@ -111,6 +120,15 @@ namespace PTC2024.Resources.Language {
         internal static string addServiceTitle {
             get {
                 return ResourceManager.GetString("addServiceTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enter the requested information in each field.
+        /// </summary>
+        internal static string addSubTitleP {
+            get {
+                return ResourceManager.GetString("addSubTitleP", resourceCulture);
             }
         }
         
@@ -295,6 +313,15 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Completed.
+        /// </summary>
+        internal static string completed {
+            get {
+                return ResourceManager.GetString("completed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Local configuration.
         /// </summary>
         internal static string configBox {
@@ -318,6 +345,15 @@ namespace PTC2024.Resources.Language {
         internal static string confirmPass {
             get {
                 return ResourceManager.GetString("confirmPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Create permission.
+        /// </summary>
+        internal static string createPermission {
+            get {
+                return ResourceManager.GetString("createPermission", resourceCulture);
             }
         }
         
@@ -457,6 +493,15 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Delete permission.
+        /// </summary>
+        internal static string deletePermission {
+            get {
+                return ResourceManager.GetString("deletePermission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Delete service.
         /// </summary>
         internal static string deleteService {
@@ -511,11 +556,29 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Disabled.
+        /// </summary>
+        internal static string disabled {
+            get {
+                return ResourceManager.GetString("disabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Disable employee.
         /// </summary>
         internal static string disableEmp {
             get {
                 return ResourceManager.GetString("disableEmp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Disable permissions.
+        /// </summary>
+        internal static string disablePermissions {
+            get {
+                return ResourceManager.GetString("disablePermissions", resourceCulture);
             }
         }
         
@@ -583,6 +646,15 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Eployee ID:.
+        /// </summary>
+        internal static string employeeId {
+            get {
+                return ResourceManager.GetString("employeeId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Employer discount:.
         /// </summary>
         internal static string employeerDisc {
@@ -619,6 +691,15 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a [EMPLOYEE FOR WHOM THE PERMISSION IS BEING CREATED].
+        /// </summary>
+        internal static string employeForWhom {
+            get {
+                return ResourceManager.GetString("employeForWhom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Enable.
         /// </summary>
         internal static string enable {
@@ -633,6 +714,15 @@ namespace PTC2024.Resources.Language {
         internal static string enableEmp {
             get {
                 return ResourceManager.GetString("enableEmp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a End date:.
+        /// </summary>
+        internal static string end {
+            get {
+                return ResourceManager.GetString("end", resourceCulture);
             }
         }
         
@@ -1150,6 +1240,51 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Permission.
+        /// </summary>
+        internal static string permissionBox {
+            get {
+                return ResourceManager.GetString("permissionBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Permission.
+        /// </summary>
+        internal static string permissionOption {
+            get {
+                return ResourceManager.GetString("permissionOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Right-click on a permission for more options.
+        /// </summary>
+        internal static string permissionsSubTitle {
+            get {
+                return ResourceManager.GetString("permissionsSubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Permission status:.
+        /// </summary>
+        internal static string permissionStatus {
+            get {
+                return ResourceManager.GetString("permissionStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a PERMISSIONS.
+        /// </summary>
+        internal static string permissionsTitle {
+            get {
+                return ResourceManager.GetString("permissionsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Personal data.
         /// </summary>
         internal static string personalData {
@@ -1191,6 +1326,24 @@ namespace PTC2024.Resources.Language {
         internal static string programming {
             get {
                 return ResourceManager.GetString("programming", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a In progress.
+        /// </summary>
+        internal static string progress {
+            get {
+                return ResourceManager.GetString("progress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Reason:.
+        /// </summary>
+        internal static string reason {
+            get {
+                return ResourceManager.GetString("reason", resourceCulture);
             }
         }
         
@@ -1393,6 +1546,24 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Sick leave.
+        /// </summary>
+        internal static string sickLeave {
+            get {
+                return ResourceManager.GetString("sickLeave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Start date:.
+        /// </summary>
+        internal static string start {
+            get {
+                return ResourceManager.GetString("start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Status.
         /// </summary>
         internal static string status {
@@ -1407,6 +1578,15 @@ namespace PTC2024.Resources.Language {
         internal static string statusPayroll {
             get {
                 return ResourceManager.GetString("statusPayroll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enter the requested information in each field.
+        /// </summary>
+        internal static string subTitle {
+            get {
+                return ResourceManager.GetString("subTitle", resourceCulture);
             }
         }
         
@@ -1483,6 +1663,15 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Type of permission:.
+        /// </summary>
+        internal static string typePermission {
+            get {
+                return ResourceManager.GetString("typePermission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Unpaid.
         /// </summary>
         internal static string unpaid {
@@ -1519,11 +1708,38 @@ namespace PTC2024.Resources.Language {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Update permission.
+        /// </summary>
+        internal static string updatePermission {
+            get {
+                return ResourceManager.GetString("updatePermission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a UPDATE PERMISSION.
+        /// </summary>
+        internal static string updatePermissionS {
+            get {
+                return ResourceManager.GetString("updatePermissionS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Update service.
         /// </summary>
         internal static string updateService {
             get {
                 return ResourceManager.GetString("updateService", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Modify the necessary information.
+        /// </summary>
+        internal static string updateSubTitleP {
+            get {
+                return ResourceManager.GetString("updateSubTitleP", resourceCulture);
             }
         }
         

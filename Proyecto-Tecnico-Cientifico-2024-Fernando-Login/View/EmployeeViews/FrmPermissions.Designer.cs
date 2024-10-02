@@ -159,7 +159,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.8718F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 179F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 307F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 308F));
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel13, 4, 1);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel11, 3, 1);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel9, 2, 1);
@@ -183,11 +183,11 @@
             this.tableLayoutPanel13.Controls.Add(this.flowLayoutPanel4, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 1, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(610, 29);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(609, 29);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(302, 94);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(303, 94);
             this.tableLayoutPanel13.TabIndex = 9;
             // 
             // flowLayoutPanel4
@@ -210,7 +210,7 @@
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(265, 88);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(266, 88);
             this.tableLayoutPanel14.TabIndex = 1;
             // 
             // tableLayoutPanel11
@@ -221,7 +221,7 @@
             this.tableLayoutPanel11.Controls.Add(this.flowLayoutPanel3, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel12, 1, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(431, 29);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(430, 29);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -259,7 +259,7 @@
             this.tableLayoutPanel9.Controls.Add(this.flowLayoutPanel2, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(273, 29);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(272, 29);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -513,7 +513,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(251, 94);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(250, 94);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -760,7 +760,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(216, 88);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(215, 88);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // lblPer
@@ -770,7 +770,7 @@
             this.lblPer.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPer.Location = new System.Drawing.Point(3, 69);
             this.lblPer.Name = "lblPer";
-            this.lblPer.Size = new System.Drawing.Size(210, 16);
+            this.lblPer.Size = new System.Drawing.Size(209, 16);
             this.lblPer.TabIndex = 3;
             this.lblPer.Text = "Permiso";
             // 
@@ -781,7 +781,7 @@
             this.lblMat.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMat.Location = new System.Drawing.Point(3, 47);
             this.lblMat.Name = "lblMat";
-            this.lblMat.Size = new System.Drawing.Size(210, 16);
+            this.lblMat.Size = new System.Drawing.Size(209, 16);
             this.lblMat.TabIndex = 2;
             this.lblMat.Text = "Maternidad";
             // 
@@ -792,7 +792,7 @@
             this.lblPat.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPat.Location = new System.Drawing.Point(3, 25);
             this.lblPat.Name = "lblPat";
-            this.lblPat.Size = new System.Drawing.Size(210, 16);
+            this.lblPat.Size = new System.Drawing.Size(209, 16);
             this.lblPat.TabIndex = 1;
             this.lblPat.Text = "Paternidad";
             // 
@@ -803,7 +803,7 @@
             this.lblIncapacity.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIncapacity.Location = new System.Drawing.Point(3, 3);
             this.lblIncapacity.Name = "lblIncapacity";
-            this.lblIncapacity.Size = new System.Drawing.Size(210, 16);
+            this.lblIncapacity.Size = new System.Drawing.Size(209, 16);
             this.lblIncapacity.TabIndex = 0;
             this.lblIncapacity.Text = "Incapacidad";
             // 
@@ -812,7 +812,7 @@
             this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(273, 8);
+            this.lblStatus.Location = new System.Drawing.Point(272, 8);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(60, 18);
             this.lblStatus.TabIndex = 2;
@@ -1112,7 +1112,7 @@
             this.cmsUpdatePermission,
             this.cmsDeletePermission});
             this.cmsPermission.Name = "cmsPlanillas";
-            this.cmsPermission.Size = new System.Drawing.Size(188, 56);
+            this.cmsPermission.Size = new System.Drawing.Size(188, 78);
             // 
             // cmsUpdatePermission
             // 
