@@ -45,6 +45,7 @@
             this.cmsServices = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsUpdateService = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDeleteService = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsServiceInformation = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtSearch = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -104,23 +105,31 @@
             this.cmsServices.ImageScalingSize = new System.Drawing.Size(19, 19);
             this.cmsServices.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cmsUpdateService,
-            this.cmsDeleteService});
+            this.cmsDeleteService,
+            this.cmsServiceInformation});
             this.cmsServices.Name = "cmsEmployee";
-            this.cmsServices.Size = new System.Drawing.Size(184, 78);
+            this.cmsServices.Size = new System.Drawing.Size(197, 82);
             // 
             // cmsUpdateService
             // 
             this.cmsUpdateService.Image = ((System.Drawing.Image)(resources.GetObject("cmsUpdateService.Image")));
             this.cmsUpdateService.Name = "cmsUpdateService";
-            this.cmsUpdateService.Size = new System.Drawing.Size(183, 26);
+            this.cmsUpdateService.Size = new System.Drawing.Size(196, 26);
             this.cmsUpdateService.Text = "Actualizar servicio";
             // 
             // cmsDeleteService
             // 
             this.cmsDeleteService.Image = ((System.Drawing.Image)(resources.GetObject("cmsDeleteService.Image")));
             this.cmsDeleteService.Name = "cmsDeleteService";
-            this.cmsDeleteService.Size = new System.Drawing.Size(183, 26);
+            this.cmsDeleteService.Size = new System.Drawing.Size(196, 26);
             this.cmsDeleteService.Text = "Eliminar servicio";
+            // 
+            // cmsServiceInformation
+            // 
+            this.cmsServiceInformation.Image = ((System.Drawing.Image)(resources.GetObject("cmsServiceInformation.Image")));
+            this.cmsServiceInformation.Name = "cmsServiceInformation";
+            this.cmsServiceInformation.Size = new System.Drawing.Size(196, 26);
+            this.cmsServiceInformation.Text = "Ver ficha de servicio";
             // 
             // tableLayoutPanel1
             // 
@@ -400,7 +409,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.71429F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 575F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 188F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 186F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel11, 3, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel9, 2, 1);
             this.tableLayoutPanel4.Controls.Add(this.lblCategory, 1, 0);
@@ -420,11 +429,11 @@
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.73684F));
             this.tableLayoutPanel11.Controls.Add(this.btnAgenda, 0, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(740, 29);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(742, 29);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(183, 94);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(181, 94);
             this.tableLayoutPanel11.TabIndex = 8;
             // 
             // btnAgenda
@@ -475,7 +484,7 @@
             this.btnAgenda.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnAgenda.IdleIconLeftImage")));
             this.btnAgenda.IdleIconRightImage = null;
             this.btnAgenda.IndicateFocus = false;
-            this.btnAgenda.Location = new System.Drawing.Point(5, 21);
+            this.btnAgenda.Location = new System.Drawing.Point(4, 21);
             this.btnAgenda.Name = "btnAgenda";
             this.btnAgenda.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAgenda.OnDisabledState.BorderRadius = 15;
@@ -525,7 +534,7 @@
             this.tableLayoutPanel9.Controls.Add(this.flowLayoutPanel2, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(165, 29);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(167, 29);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -824,7 +833,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(133, 94);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(135, 94);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -836,7 +845,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(24, 88);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(25, 88);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // CbSeguridad
@@ -1067,14 +1076,14 @@
             this.tableLayoutPanel7.Controls.Add(this.lblSegurity, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(33, 3);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(34, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 4;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(97, 88);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(98, 88);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // lblProgramming
@@ -1084,7 +1093,7 @@
             this.lblProgramming.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProgramming.Location = new System.Drawing.Point(3, 49);
             this.lblProgramming.Name = "lblProgramming";
-            this.lblProgramming.Size = new System.Drawing.Size(91, 13);
+            this.lblProgramming.Size = new System.Drawing.Size(92, 13);
             this.lblProgramming.TabIndex = 2;
             this.lblProgramming.Text = "Programación";
             // 
@@ -1095,7 +1104,7 @@
             this.lblSupport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSupport.Location = new System.Drawing.Point(3, 26);
             this.lblSupport.Name = "lblSupport";
-            this.lblSupport.Size = new System.Drawing.Size(91, 13);
+            this.lblSupport.Size = new System.Drawing.Size(92, 13);
             this.lblSupport.TabIndex = 1;
             this.lblSupport.Text = "Soporte";
             // 
@@ -1106,7 +1115,7 @@
             this.lblSegurity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSegurity.Location = new System.Drawing.Point(3, 4);
             this.lblSegurity.Name = "lblSegurity";
-            this.lblSegurity.Size = new System.Drawing.Size(91, 13);
+            this.lblSegurity.Size = new System.Drawing.Size(92, 13);
             this.lblSegurity.TabIndex = 0;
             this.lblSegurity.Text = "Seguridad";
             // 
@@ -1340,6 +1349,7 @@
 
         #endregion
         public System.Windows.Forms.ContextMenuStrip cmsServices;
+        private System.Windows.Forms.ToolStripMenuItem cmsServiceInformation;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
@@ -1356,6 +1366,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Bunifu.UI.WinForms.BunifuCheckBox bunifuCheckBox4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.Label lblSegurity;
         public System.Windows.Forms.ToolStripMenuItem cmsUpdateService;
         public Bunifu.UI.WinForms.BunifuTextBox txtSearch;
         public System.Windows.Forms.ToolStripMenuItem cmsDeleteService;
@@ -1376,6 +1387,5 @@
         public System.Windows.Forms.Label lblProgramming;
         public System.Windows.Forms.Label lblInfrastructure;
         public System.Windows.Forms.Label lblMaintenance;
-        public System.Windows.Forms.Label lblSegurity;
     }
 }

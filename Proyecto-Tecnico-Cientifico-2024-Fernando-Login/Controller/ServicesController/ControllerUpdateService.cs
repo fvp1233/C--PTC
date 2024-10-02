@@ -2,7 +2,6 @@
 using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.Model.DAO.ServicesDAO;
 using PTC2024.Model.DTO.ServicesDTO;
-using PTC2024.Resources.Language;
 using PTC2024.View.formularios.inicio;
 using PTC2024.View.InventarioServicios;
 using PTC2024.View.Service_inventory;
@@ -42,23 +41,7 @@ namespace PTC2024.Controller.ServicesController
             objUpdateService.txtAmount.MouseDown += new MouseEventHandler(DisableContextMenu);
             objUpdateService.txtAmount.TextChanged += new EventHandler(OnlyNum);
         }
-        public void ChargeLanguage()
-        {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
-            EnglishL();
-        }
-        public void EnglishL()
-        {
-            objUpdateService.lblName.Text = English.addServiceTitle;
-            objUpdateService.lblInformation.Text = English.addServiceDesc;
-            objUpdateService.lblName.Text = English.addServiceDesc;
-            objUpdateService.lblName.Text = English.nameService;
-            objUpdateService.lblDescription.Text = English.description;
-            objUpdateService.lblCategory.Text = English.category;
-            objUpdateService.lblAmount.Text = English.amount;
-            objUpdateService.btnUpdateService.Text = English.updateForm;
-            objUpdateService.btnCloseUpdateService.Text = English.gobackForm;
-        }
+
         public void OnlyNum(object sender, EventArgs e)
         {
             int cursorPosition = objUpdateService.txtAmount.SelectionStart;
@@ -102,7 +85,7 @@ namespace PTC2024.Controller.ServicesController
         public void ChargeDropDown(object sender, EventArgs e)
         {
             DAOUpdateService dAOUpdateService = new DAOUpdateService();
-            ChargeLanguage();
+
             /*Se guarda el valor retornado de GetCategories en la variable answer*/
             DataSet answer = dAOUpdateService.GetCategories();
 
