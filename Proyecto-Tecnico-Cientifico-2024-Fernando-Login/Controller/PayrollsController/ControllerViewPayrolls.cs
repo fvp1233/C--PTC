@@ -66,6 +66,8 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.cmsPayrollInformation.Click += new EventHandler(ViewInfoPayroll);
             objViewPayrolls.txtSearch.KeyDown += new KeyEventHandler(SearchPayrollEvent);
             objViewPayrolls.txtSearch.TextChanged += new EventHandler(OnlyLetters);
+            objViewPayrolls.btnPayAll.Click += new EventHandler(UpdateXmonth);
+            objViewPayrolls.btnRevertPay.Click += new EventHandler(RevertPayXMonth);
         }
         public void ChargeLanguage(object sender, EventArgs e)
         {
@@ -273,6 +275,117 @@ namespace PTC2024.Controller.EmployeesController
                 objStartForm.snackBar.Show(objStartForm, $"No hay empleados a los cuales generar planillas", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
         }
+        public async void UpdateXmonth(object sender, EventArgs e)
+        {
+            ProgressBarForm progressBarForm = new ProgressBarForm();
+            progressBarForm.Show();
+            ControllerProgressBar objProgress = new ControllerProgressBar(progressBarForm);
+            DAOViewPayrolls DAOUpdatePayroll = new DAOViewPayrolls();
+
+            DataSet employeeDs = DAOUpdatePayroll.GetEmployee();
+            DataSet payrollDs = DAOUpdatePayroll.GetPayroll();
+
+            DateTime actualMonth = DateTime.Now;
+            int year = actualMonth.Year;
+            int month = actualMonth.Month;
+
+            if (employeeDs != null && payrollDs != null)
+            {
+                DataTable payrollDt = payrollDs.Tables["tbPayroll"];
+                int totalRowsAffected = 0;
+                int totalPayrolls = payrollDt.Rows.Count;
+                int currentPayroll = 0;
+
+                foreach (DataRow dr in payrollDt.Rows)
+                {
+                    DateTime issueDate = DateTime.Parse(dr["issueDate"].ToString());
+                    int idPayrollStatus = int.Parse(dr["IdPayrollStatus"].ToString());
+
+                    if (issueDate.Year == year && issueDate.Month == month && idPayrollStatus != 1)
+                    {
+                        await Task.Run(() =>
+                        {
+                            DAOUpdatePayroll.IdPayroll = int.Parse(dr["IdPayroll"].ToString());
+                            DAOUpdatePayroll.IdPayrollStatus = 1;
+
+                            totalRowsAffected += DAOUpdatePayroll.UpdatePayrollStatusPaid();
+
+                            currentPayroll++;
+                            int progress = (currentPayroll * 100) / totalPayrolls;
+                            objProgress.UpdateProgress(progress, $"Pagando planillas {currentPayroll} de {totalPayrolls}");
+                        });
+                    }
+                }
+
+                progressBarForm.Close();
+
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                if (totalRowsAffected > 0)
+                {
+                    objStart.snackBar.Show(objStart, $"Se pagaron todas las planillas del mes exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                }
+                else
+                {
+                    objStart.snackBar.Show(objStart, $"No se encontraron planillas pendientes para pagar", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                }
+            }
+        }
+        public async void RevertPayXMonth(object sender, EventArgs e)
+        {
+            ProgressBarForm progressBarForm = new ProgressBarForm();
+            progressBarForm.Show();
+            ControllerProgressBar objProgress = new ControllerProgressBar(progressBarForm);
+            DAOViewPayrolls DAOUpdatePayroll = new DAOViewPayrolls();
+
+            DataSet employeeDs = DAOUpdatePayroll.GetEmployee();
+            DataSet payrollDs = DAOUpdatePayroll.GetPayroll();
+
+            DateTime actualMonth = DateTime.Now;
+            int year = actualMonth.Year;
+            int month = actualMonth.Month;
+
+            if (employeeDs != null && payrollDs != null)
+            {
+                DataTable payrollDt = payrollDs.Tables["tbPayroll"];
+                int totalRowsAffected = 0;
+                int totalPayrolls = payrollDt.Rows.Count;
+                int currentPayroll = 0;
+
+                foreach (DataRow dr in payrollDt.Rows)
+                {
+                    DateTime issueDate = DateTime.Parse(dr["issueDate"].ToString());
+                    int idPayrollStatus = int.Parse(dr["IdPayrollStatus"].ToString());
+
+                    if (issueDate.Year == year && issueDate.Month == month && idPayrollStatus != 2)
+                    {
+                        await Task.Run(() =>
+                        {
+                            DAOUpdatePayroll.IdPayroll = int.Parse(dr["IdPayroll"].ToString());
+                            DAOUpdatePayroll.IdPayrollStatus = 2; 
+
+                            totalRowsAffected += DAOUpdatePayroll.UpdatePayrollStatusUnPaid();
+
+                            currentPayroll++;
+                            int progress = (currentPayroll * 100) / totalPayrolls;
+                            objProgress.UpdateProgress(progress, $"Revirtiendo planillas {currentPayroll} de {totalPayrolls}");
+                        });
+                    }
+                }
+
+                progressBarForm.Close();
+
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                if (totalRowsAffected > 0)
+                {
+                    objStart.snackBar.Show(objStart, $"Se revirtieron las planillas del mes exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                }
+                else
+                {
+                    objStart.snackBar.Show(objStart, $"No se encontraron planillas pagadas para revertir", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                }
+            }
+        }
+
 
 
         public async void RefreshData(object sender, EventArgs e)
