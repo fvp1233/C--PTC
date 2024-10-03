@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgendaServices));
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -38,6 +37,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgendaServices));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -49,11 +49,14 @@
             this.DgvAgendaServices = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnClose = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
+            this.label = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.cmbAgendaS = new Bunifu.UI.WinForms.BunifuDropdown();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvAgendaServices)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -70,14 +73,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.66666F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1075, 550);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(900, 550);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 620F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 407F));
             this.tableLayoutPanel2.Controls.Add(this.txtSearch, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -87,7 +90,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 112F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 112F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1069, 112);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(894, 112);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // txtSearch
@@ -121,7 +124,7 @@
             this.txtSearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconRight")));
             this.txtSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(477, 37);
+            this.txtSearch.Location = new System.Drawing.Point(490, 37);
             this.txtSearch.MaxLength = 32767;
             this.txtSearch.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSearch.Modified = false;
@@ -157,7 +160,7 @@
             this.txtSearch.SelectionLength = 0;
             this.txtSearch.SelectionStart = 0;
             this.txtSearch.ShortcutsEnabled = true;
-            this.txtSearch.Size = new System.Drawing.Size(564, 37);
+            this.txtSearch.Size = new System.Drawing.Size(401, 37);
             this.txtSearch.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -180,7 +183,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(443, 106);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(481, 106);
             this.tableLayoutPanel5.TabIndex = 7;
             // 
             // label1
@@ -218,12 +221,12 @@
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 121);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 5;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 284F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 9F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 261F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(1069, 405);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(894, 405);
             this.tableLayoutPanel8.TabIndex = 3;
             // 
             // DgvAgendaServices
@@ -286,7 +289,7 @@
             this.DgvAgendaServices.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(53)))));
             this.DgvAgendaServices.HeaderBgColor = System.Drawing.Color.Empty;
             this.DgvAgendaServices.HeaderForeColor = System.Drawing.Color.White;
-            this.DgvAgendaServices.Location = new System.Drawing.Point(3, 52);
+            this.DgvAgendaServices.Location = new System.Drawing.Point(3, 75);
             this.DgvAgendaServices.Name = "DgvAgendaServices";
             this.DgvAgendaServices.ReadOnly = true;
             this.DgvAgendaServices.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -312,22 +315,25 @@
             this.DgvAgendaServices.RowTemplate.Height = 50;
             this.DgvAgendaServices.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DgvAgendaServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvAgendaServices.Size = new System.Drawing.Size(1046, 278);
+            this.DgvAgendaServices.Size = new System.Drawing.Size(871, 255);
             this.DgvAgendaServices.TabIndex = 4;
             this.DgvAgendaServices.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Orange;
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.450549F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90.54945F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 415F));
+            this.tableLayoutPanel3.Controls.Add(this.cmbAgendaS, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1046, 25);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.84211F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.15789F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(871, 57);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // btnClose
@@ -378,7 +384,7 @@
             this.btnClose.IdleIconLeftImage = null;
             this.btnClose.IdleIconRightImage = null;
             this.btnClose.IndicateFocus = false;
-            this.btnClose.Location = new System.Drawing.Point(450, 344);
+            this.btnClose.Location = new System.Drawing.Point(363, 344);
             this.btnClose.Name = "btnClose";
             this.btnClose.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnClose.OnDisabledState.BorderRadius = 20;
@@ -420,12 +426,72 @@
             this.btnClose.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnClose.UseDefaultRadiusAndThickness = true;
             // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(46, 0);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(51, 16);
+            this.label.TabIndex = 99;
+            this.label.Text = "Filtrar:";
+            // 
+            // cmbAgendaS
+            // 
+            this.cmbAgendaS.BackColor = System.Drawing.Color.Transparent;
+            this.cmbAgendaS.BackgroundColor = System.Drawing.Color.LightGray;
+            this.cmbAgendaS.BorderColor = System.Drawing.Color.Silver;
+            this.cmbAgendaS.BorderRadius = 1;
+            this.cmbAgendaS.Color = System.Drawing.Color.Silver;
+            this.cmbAgendaS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbAgendaS.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.cmbAgendaS.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.cmbAgendaS.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.cmbAgendaS.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.cmbAgendaS.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.cmbAgendaS.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.cmbAgendaS.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbAgendaS.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.cmbAgendaS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAgendaS.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.cmbAgendaS.FillDropDown = true;
+            this.cmbAgendaS.FillIndicator = false;
+            this.cmbAgendaS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbAgendaS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAgendaS.ForeColor = System.Drawing.Color.Black;
+            this.cmbAgendaS.FormattingEnabled = true;
+            this.cmbAgendaS.Icon = null;
+            this.cmbAgendaS.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.cmbAgendaS.IndicatorColor = System.Drawing.Color.DimGray;
+            this.cmbAgendaS.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.cmbAgendaS.IndicatorThickness = 2;
+            this.cmbAgendaS.IsDropdownOpened = false;
+            this.cmbAgendaS.ItemBackColor = System.Drawing.Color.White;
+            this.cmbAgendaS.ItemBorderColor = System.Drawing.Color.White;
+            this.cmbAgendaS.ItemForeColor = System.Drawing.Color.Black;
+            this.cmbAgendaS.ItemHeight = 26;
+            this.cmbAgendaS.ItemHighLightColor = System.Drawing.Color.LightGray;
+            this.cmbAgendaS.ItemHighLightForeColor = System.Drawing.Color.Black;
+            this.cmbAgendaS.Items.AddRange(new object[] {
+            "Ninguno",
+            "Monto",
+            "Fecha de inicio",
+            "Fecha final"});
+            this.cmbAgendaS.ItemTopMargin = 3;
+            this.cmbAgendaS.Location = new System.Drawing.Point(46, 24);
+            this.cmbAgendaS.Name = "cmbAgendaS";
+            this.cmbAgendaS.Size = new System.Drawing.Size(222, 32);
+            this.cmbAgendaS.TabIndex = 100;
+            this.cmbAgendaS.Text = null;
+            this.cmbAgendaS.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.cmbAgendaS.TextLeftMargin = 5;
+            // 
             // FrmAgendaServices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1075, 550);
+            this.ClientSize = new System.Drawing.Size(900, 550);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAgendaServices";
@@ -437,6 +503,8 @@
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvAgendaServices)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -453,5 +521,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         public Bunifu.UI.WinForms.BunifuDataGridView DgvAgendaServices;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnClose;
+        public Bunifu.Framework.UI.BunifuCustomLabel label;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbAgendaS;
     }
 }

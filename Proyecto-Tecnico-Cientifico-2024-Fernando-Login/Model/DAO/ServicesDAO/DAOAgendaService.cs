@@ -40,5 +40,63 @@ namespace PTC2024.Model.DAO.ServicesDAO
             }
         }
 
+
+        public DataSet FilterData(string value)
+        {
+            try
+            {
+                command.Connection = getConnection();
+
+                string query = $"Select * From viewAgendaS Order By [{value}] Asc";
+
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+
+                cmd.ExecuteNonQuery();
+
+                DataSet ds = new DataSet();
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                adp.Fill(ds, "viewAgendaS");
+
+                return ds;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
+        public DataSet SearchData(string value)
+        {
+            try
+            {
+                command.Connection = getConnection();
+
+                string query = $"Select * From viewAgendaS Where Cliente Like '%{value}%' Or Descripción Like '%{value}%'";
+
+                SqlCommand cmd = new SqlCommand(query, command.Connection);
+
+                cmd.ExecuteNonQuery();
+
+                DataSet ds = new DataSet();
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                adp.Fill(ds, "viewAgendaS");
+
+                return ds;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }
