@@ -76,7 +76,7 @@ namespace PTC2024.Model.DAO.ServicesDAO
             {
                 command.Connection = getConnection();
 
-                string query = $"Select * From viewAgendaS Where Cliente Like '%{value}%' Or Descripción Like '%{value}%'";
+                string query = $"Select * From viewAgendaS Where Cliente Like '%{value}%' Or Descripción Like '%{value}%' Or Servicio Like '%{value}%'";
 
                 SqlCommand cmd = new SqlCommand(query, command.Connection);
 

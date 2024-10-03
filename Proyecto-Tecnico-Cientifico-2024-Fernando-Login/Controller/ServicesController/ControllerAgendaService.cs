@@ -20,7 +20,7 @@ namespace PTC2024.Controller.ServicesController
 
             objAgendaS.Load += new EventHandler(ChargeData);
             objAgendaS.btnClose.Click += new EventHandler(CloseForm);
-            objAgendaS.cmbAgendaS.SelectedIndexChanged += new EventHandler(FilterData);
+            objAgendaS.cmbFilterS.SelectedIndexChanged += new EventHandler(FilterData);
             objAgendaS.txtSearch.KeyDown += new KeyEventHandler(SearchData);
         }
 
@@ -39,11 +39,12 @@ namespace PTC2024.Controller.ServicesController
             objAgendaS.DgvAgendaServices.DataSource = Answer.Tables["viewAgendaS"];
         }
 
+
         public void FilterData(object sender, EventArgs e)
         {
             DAOAgendaService dAOAgendaService = new DAOAgendaService();
 
-            string value = objAgendaS.cmbAgendaS.SelectedItem.ToString();
+            string value = objAgendaS.cmbFilterS.SelectedItem.ToString();
 
             if(value != "Ninguno")
             {
