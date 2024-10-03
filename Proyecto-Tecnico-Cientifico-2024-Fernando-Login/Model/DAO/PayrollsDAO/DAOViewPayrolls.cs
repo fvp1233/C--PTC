@@ -762,6 +762,29 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 getConnection().Close();
             }
         }
+        public DataSet GetPreviousUnpaidPayrolls(DateTime selectedPayrollIssueDate)
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                DataSet ds = new DataSet();
+                string query = "SELECT * FROM tbPayroll WHERE issueDate < @selectedDate AND IdPayrollStatus != 1";
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                cmd.Parameters.AddWithValue("@selectedDate", selectedPayrollIssueDate);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds, "tbPayroll");
+                return ds;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("EC-073: No se pudieron obtener las planillas no pagadas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
     }
 }

@@ -66,6 +66,8 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.cmsPayrollInformation.Click += new EventHandler(ViewInfoPayroll);
             objViewPayrolls.txtSearch.KeyDown += new KeyEventHandler(SearchPayrollEvent);
             objViewPayrolls.txtSearch.TextChanged += new EventHandler(OnlyLetters);
+            objViewPayrolls.btnPayAll.Click += new EventHandler(UpdateXmonth);
+            objViewPayrolls.btnRevertPay.Click += new EventHandler(RevertPayXMonth);
         }
         public void ChargeLanguage(object sender, EventArgs e)
         {
@@ -163,7 +165,9 @@ namespace PTC2024.Controller.EmployeesController
                         {
 
                             int startMonth = (year == firstUseYear) ? firstUseMonth : 1;
-                            for (int month = startMonth; month <= 12; month++)
+                            DateTime currentMonth = DateTime.Now;
+                            int actualMonth = currentMonth.Month;
+                            for (int month = actualMonth; month == actualMonth; month++)
                             {
                                 DataRow[] existingPayrollRows = payrollDt.Select($"IdEmployee = {idEmployee} AND IssueDate = '{year}-{month:D2}-01'");
                                 if (existingPayrollRows.Length == 0)
@@ -273,8 +277,116 @@ namespace PTC2024.Controller.EmployeesController
                 objStartForm.snackBar.Show(objStartForm, $"No hay empleados a los cuales generar planillas", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
         }
+        public async void UpdateXmonth(object sender, EventArgs e)
+        {
+            ProgressBarForm progressBarForm = new ProgressBarForm();
+            progressBarForm.Show();
+            ControllerProgressBar objProgress = new ControllerProgressBar(progressBarForm);
+            DAOViewPayrolls DAOUpdatePayroll = new DAOViewPayrolls();
 
+            DataSet employeeDs = DAOUpdatePayroll.GetEmployee();
+            DataSet payrollDs = DAOUpdatePayroll.GetPayroll();
 
+            DateTime actualMonth = DateTime.Now;
+            int year = actualMonth.Year;
+            int month = actualMonth.Month;
+
+            if (employeeDs != null && payrollDs != null)
+            {
+                DataTable payrollDt = payrollDs.Tables["tbPayroll"];
+                int totalRowsAffected = 0;
+                int totalPayrolls = payrollDt.Rows.Count;
+                int currentPayroll = 0;
+
+                foreach (DataRow dr in payrollDt.Rows)
+                {
+                    DateTime issueDate = DateTime.Parse(dr["issueDate"].ToString());
+                    int idPayrollStatus = int.Parse(dr["IdPayrollStatus"].ToString());
+
+                    if (issueDate.Year == year && issueDate.Month == month && idPayrollStatus != 1)
+                    {
+                        await Task.Run(() =>
+                        {
+                            DAOUpdatePayroll.IdPayroll = int.Parse(dr["IdPayroll"].ToString());
+                            DAOUpdatePayroll.IdPayrollStatus = 1;
+
+                            totalRowsAffected += DAOUpdatePayroll.UpdatePayrollStatusPaid();
+
+                            currentPayroll++;
+                            int progress = (currentPayroll * 100) / totalPayrolls;
+                            objProgress.UpdateProgress(progress, $"Pagando planillas {currentPayroll} de {totalPayrolls}");
+                        });
+                    }
+                }
+
+                progressBarForm.Close();
+
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                if (totalRowsAffected > 0)
+                {
+                    objStart.snackBar.Show(objStart, $"Se pagaron todas las planillas del mes exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                }
+                else
+                {
+                    objStart.snackBar.Show(objStart, $"No se encontraron planillas pendientes para pagar", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                }
+            }
+        }
+        public async void RevertPayXMonth(object sender, EventArgs e)
+        {
+            ProgressBarForm progressBarForm = new ProgressBarForm();
+            progressBarForm.Show();
+            ControllerProgressBar objProgress = new ControllerProgressBar(progressBarForm);
+            DAOViewPayrolls DAOUpdatePayroll = new DAOViewPayrolls();
+
+            DataSet employeeDs = DAOUpdatePayroll.GetEmployee();
+            DataSet payrollDs = DAOUpdatePayroll.GetPayroll();
+
+            DateTime actualMonth = DateTime.Now;
+            int year = actualMonth.Year;
+            int month = actualMonth.Month;
+
+            if (employeeDs != null && payrollDs != null)
+            {
+                DataTable payrollDt = payrollDs.Tables["tbPayroll"];
+                int totalRowsAffected = 0;
+                int totalPayrolls = payrollDt.Rows.Count;
+                int currentPayroll = 0;
+
+                foreach (DataRow dr in payrollDt.Rows)
+                {
+                    DateTime issueDate = DateTime.Parse(dr["issueDate"].ToString());
+                    int idPayrollStatus = int.Parse(dr["IdPayrollStatus"].ToString());
+
+                    if (issueDate.Year == year && issueDate.Month == month && idPayrollStatus != 2)
+                    {
+                        await Task.Run(() =>
+                        {
+                            DAOUpdatePayroll.IdPayroll = int.Parse(dr["IdPayroll"].ToString());
+                            DAOUpdatePayroll.IdPayrollStatus = 2; 
+
+                            totalRowsAffected += DAOUpdatePayroll.UpdatePayrollStatusUnPaid();
+
+                            currentPayroll++;
+                            int progress = (currentPayroll * 100) / totalPayrolls;
+                            objProgress.UpdateProgress(progress, $"Revirtiendo planillas {currentPayroll} de {totalPayrolls}");
+                        });
+                    }
+                }
+
+                progressBarForm.Close();
+
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                if (totalRowsAffected > 0)
+                {
+                    objStart.snackBar.Show(objStart, $"Se revirtieron las planillas del mes exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                }
+                else
+                {
+                    objStart.snackBar.Show(objStart, $"No se encontraron planillas pagadas para revertir", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                }
+            }
+        }
         public async void RefreshData(object sender, EventArgs e)
         {
             ProgressBarForm progressBarForm = new ProgressBarForm();
@@ -525,38 +637,58 @@ namespace PTC2024.Controller.EmployeesController
                 }
             }
         }
+
+
         public void UpdatePayrollPaid(object sender, EventArgs e)
         {
             DAOViewPayrolls daoUpdate = new DAOViewPayrolls();
             int pos = objViewPayrolls.dgvPayrolls.CurrentRow.Index;
             daoUpdate.IdPayroll = int.Parse(objViewPayrolls.dgvPayrolls[0, pos].Value.ToString());
+
+            DateTime selectedPayrollIssueDate = DateTime.Parse(objViewPayrolls.dgvPayrolls[13, pos].Value.ToString());
+
+            DataSet previousUnpaidPayrolls = daoUpdate.GetPreviousUnpaidPayrolls(selectedPayrollIssueDate);
+            if (previousUnpaidPayrolls != null && previousUnpaidPayrolls.Tables[0].Rows.Count > 0)
+            {
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"No se puede pagar esta planilla. Existen planillas no pagadas en meses anteriores.",
+                    Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                return;
+            }
             daoUpdate.IdPayrollStatus = 1;
             int returnedValues = daoUpdate.UpdatePayrollStatusPaid();
+
             if (returnedValues == 1)
             {
                 StartMenu objStart = new StartMenu(SessionVar.Username);
                 objStartForm = objStart;
-                objStartForm.snackBar.Show(objStartForm, $"La planilla fue pagada exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                objStartForm.snackBar.Show(objStartForm, $"La planilla fue pagada exitosamente",
+                    Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+
                 DAOInitialView daoInitial = new DAOInitialView();
                 daoInitial.ActionType = "Se pagó una planilla";
                 daoInitial.TableName = "Planillas";
                 daoInitial.ActionBy = SessionVar.Username;
                 daoInitial.ActionDate = DateTime.Now;
                 int auditAnswer = daoInitial.InsertAudit();
+
                 if (auditAnswer != 1)
                 {
-                    objStart.snackBar.Show(objStart, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    objStart.snackBar.Show(objStart, $"La auditoría no pudo ser registrada",
+                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
                 }
             }
             else
             {
                 StartMenu objStart = new StartMenu(SessionVar.Username);
                 objStartForm = objStart;
-                objStartForm.snackBar.Show(objStartForm, $"La planilla no pudo ser pagada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
-
+                objStartForm.snackBar.Show(objStartForm, $"La planilla no pudo ser pagada",
+                    Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
             RefreshData();
         }
+
         public void UpdatePayrollToUnpaid(object sender, EventArgs e)
         {
             DAOViewPayrolls daoUpdate = new DAOViewPayrolls();
@@ -795,6 +927,7 @@ namespace PTC2024.Controller.EmployeesController
         void SearchPayroll()
         {
             DAOViewPayrolls objAdmin = new DAOViewPayrolls();
+            objViewPayrolls.dgvPayrolls.Enabled = true;
             DataSet ds = objAdmin.SearchPayroll(objViewPayrolls.txtSearch.Text.Trim());
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
         }
@@ -806,6 +939,7 @@ namespace PTC2024.Controller.EmployeesController
         {
             DAOViewPayrolls objRefresh = new DAOViewPayrolls();
             DataSet ds = objRefresh.GetEmployeesDgv();
+            objViewPayrolls.dgvPayrolls.Enabled = true;
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
             objViewPayrolls.dgvPayrolls.Columns[7].Visible = false;
             objViewPayrolls.dgvPayrolls.Columns[8].Visible = false;
@@ -905,30 +1039,39 @@ namespace PTC2024.Controller.EmployeesController
         #region Aca estan los metodos para los checkbox
         public void SearchAll(object sender, EventArgs e)
         {
+            objViewPayrolls.dgvPayrolls.Enabled = true;
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.GetEmployeesDgv();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
         }
         public void SearchByFirstTrimester(object sender, EventArgs e)
         {
+            objViewPayrolls.dgvPayrolls.Enabled = true;
+
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SerachPayrollFirstTrimester();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
         }
         public void SearchBySecondTrimester(object sender, EventArgs e)
         {
+            objViewPayrolls.dgvPayrolls.Enabled = true;
+
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SerachPayrollSecondTrimester();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
         }
         public void SearchByThirthTrimester(object sender, EventArgs e)
         {
+            objViewPayrolls.dgvPayrolls.Enabled = true;
+
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SerachPayrollThirthTrimester();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
         }
         public void SearchByFourthTrimester(object sender, EventArgs e)
         {
+            objViewPayrolls.dgvPayrolls.Enabled = true;
+
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SerachPayrollFourthTrimester();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
@@ -938,6 +1081,8 @@ namespace PTC2024.Controller.EmployeesController
 
             if (objViewPayrolls.ch1.Checked == true)
             {
+                objViewPayrolls.dgvPayrolls.Enabled = true;
+
                 DAOViewPayrolls objSearch = new DAOViewPayrolls();
                 DataSet ds = objSearch.SearchPayrollJanuary();
                 objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
@@ -961,6 +1106,8 @@ namespace PTC2024.Controller.EmployeesController
         {
             if (objViewPayrolls.ch2.Checked == true)
             {
+                objViewPayrolls.dgvPayrolls.Enabled = true;
+
                 DAOViewPayrolls objSearch = new DAOViewPayrolls();
                 DataSet ds = objSearch.SearchPayrollFebruary();
                 objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
@@ -985,6 +1132,8 @@ namespace PTC2024.Controller.EmployeesController
 
             if (objViewPayrolls.ch3.Checked == true)
             {
+                objViewPayrolls.dgvPayrolls.Enabled = true;
+
                 DAOViewPayrolls objSearch = new DAOViewPayrolls();
                 DataSet ds = objSearch.SearchPayrollMarch();
                 objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
@@ -1008,6 +1157,8 @@ namespace PTC2024.Controller.EmployeesController
         {
             if (objViewPayrolls.ch4.Checked == true)
             {
+                objViewPayrolls.dgvPayrolls.Enabled = true;
+
                 DAOViewPayrolls objSearch = new DAOViewPayrolls();
                 DataSet ds = objSearch.SearchPayrollApril();
                 objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
@@ -1031,6 +1182,8 @@ namespace PTC2024.Controller.EmployeesController
         {
             if (objViewPayrolls.ch5.Checked == true)
             {
+                objViewPayrolls.dgvPayrolls.Enabled = true;
+
                 DAOViewPayrolls objSearch = new DAOViewPayrolls();
                 DataSet ds = objSearch.SearchPayrollMay();
                 objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
@@ -1054,6 +1207,8 @@ namespace PTC2024.Controller.EmployeesController
         {
             if (objViewPayrolls.ch6.Checked == true)
             {
+                objViewPayrolls.dgvPayrolls.Enabled = true;
+
                 DAOViewPayrolls objSearch = new DAOViewPayrolls();
                 DataSet ds = objSearch.SearchPayrollJune();
                 objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
@@ -1077,6 +1232,8 @@ namespace PTC2024.Controller.EmployeesController
         {
             if (objViewPayrolls.ch7.Checked == true)
             {
+                objViewPayrolls.dgvPayrolls.Enabled = true;
+
                 DAOViewPayrolls objSearch = new DAOViewPayrolls();
                 DataSet ds = objSearch.SearchPayrollJuly();
                 objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
@@ -1100,6 +1257,8 @@ namespace PTC2024.Controller.EmployeesController
         {
             if (objViewPayrolls.ch8.Checked == true)
             {
+                objViewPayrolls.dgvPayrolls.Enabled = true;
+
                 DAOViewPayrolls objSearch = new DAOViewPayrolls();
                 DataSet ds = objSearch.SearchPayrollAgust();
                 objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
@@ -1123,6 +1282,8 @@ namespace PTC2024.Controller.EmployeesController
         {
             if (objViewPayrolls.ch9.Checked == true)
             {
+                objViewPayrolls.dgvPayrolls.Enabled = true;
+
                 DAOViewPayrolls objSearch = new DAOViewPayrolls();
                 DataSet ds = objSearch.SearchPayrollSeptember();
                 objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
@@ -1146,6 +1307,8 @@ namespace PTC2024.Controller.EmployeesController
         {
             if (objViewPayrolls.ch10.Checked == true)
             {
+                objViewPayrolls.dgvPayrolls.Enabled = true;
+
                 DAOViewPayrolls objSearch = new DAOViewPayrolls();
                 DataSet ds = objSearch.SearchPayrollOctober();
                 objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
@@ -1169,6 +1332,8 @@ namespace PTC2024.Controller.EmployeesController
         {
             if (objViewPayrolls.ch11.Checked == true)
             {
+                objViewPayrolls.dgvPayrolls.Enabled = true;
+
                 DAOViewPayrolls objSearch = new DAOViewPayrolls();
                 DataSet ds = objSearch.SearchPayrollNovember();
                 objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
@@ -1192,6 +1357,8 @@ namespace PTC2024.Controller.EmployeesController
         {
             if (objViewPayrolls.ch12.Checked == true)
             {
+                objViewPayrolls.dgvPayrolls.Enabled = true;
+
                 DAOViewPayrolls objSearch = new DAOViewPayrolls();
                 DataSet ds = objSearch.SearchPayrollDecember();
                 objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
@@ -1216,6 +1383,8 @@ namespace PTC2024.Controller.EmployeesController
 
             if (objViewPayrolls.chPaid.Checked == true)
             {
+                objViewPayrolls.dgvPayrolls.Enabled = true;
+
                 DAOViewPayrolls objSearch = new DAOViewPayrolls();
                 DataSet ds = objSearch.SearchPaidPayrols();
                 objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
@@ -1240,6 +1409,8 @@ namespace PTC2024.Controller.EmployeesController
 
             if (objViewPayrolls.chuUnpaid.Checked == true)
             {
+                objViewPayrolls.dgvPayrolls.Enabled = true;
+
                 DAOViewPayrolls objSearch = new DAOViewPayrolls();
                 DataSet ds = objSearch.SearchUnpaidPayrols();
                 objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
@@ -1263,6 +1434,8 @@ namespace PTC2024.Controller.EmployeesController
         {
             if (objViewPayrolls.chCompensation.Checked == true)
             {
+                objViewPayrolls.dgvPayrolls.Enabled = true;
+
                 DAOViewPayrolls objSearch = new DAOViewPayrolls();
                 DataSet ds = objSearch.SearcCompensationPayrols();
                 objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
