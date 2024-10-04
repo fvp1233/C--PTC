@@ -108,6 +108,29 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 getConnection().Close();
             }
         }
+        public DataSet GetUnpaidPayrolls()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string queryPayroll = "SELECT * FROM tbPayroll WHERE IdPayrollStatus !=1";
+                SqlCommand cmdPayroll = new SqlCommand(@queryPayroll, comand.Connection);
+                cmdPayroll.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmdPayroll);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "tbPayroll");
+                return ds;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("EC-048: No se pudieron obtener los datos de las planillas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
         public int AddPayroll()
         {
             try
