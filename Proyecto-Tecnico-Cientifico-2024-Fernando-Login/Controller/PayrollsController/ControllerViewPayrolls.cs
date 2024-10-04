@@ -141,7 +141,6 @@ namespace PTC2024.Controller.EmployeesController
                 int totalEmployees = 1;
                 int currentEmployee = 0;
 
-
                 foreach (DataRow row in employeeDt.Rows)
                 {
                     int status = int.Parse(row["IdStatus"].ToString());
@@ -149,39 +148,46 @@ namespace PTC2024.Controller.EmployeesController
                     DateTime hireDate = DateTime.Parse(row["hireDate"].ToString());
                     double salary = double.Parse(row["salary"].ToString());
 
-                    int daysWorked = 0;
-                    double daySalary = 0;
-                    double hourSalary = 0;
-                    int hoursWorked = 0;
-
                     DataRow businessRow = businessDT.Rows[0];
                     DateTime firstUse = DateTime.Parse(businessRow["firstUse"].ToString());
                     int firstUseMonth = firstUse.Month;
                     int firstUseYear = firstUse.Year;
 
+                    // unicamente se le generaran a los empleados activos
                     if (status != 2)
                     {
+                        //Aca establecemos la generación de planillas la cual va desde el año de uso hasta el año acutal
                         for (int year = firstUseYear; year <= DateTime.Now.Year; year++)
                         {
+                            // Aca definimos el mes inicial de la generación de planillas
+                            int startMonth = (year == firstUseYear) ? firstUseMonth : 1; // Inicia en el mes de primero uso unicamente si es el primer año
 
-                            int startMonth = (year == firstUseYear) ? firstUseMonth : 1;
-                            DateTime currentMonth = DateTime.Now;
-                            int actualMonth = currentMonth.Month;
-                            for (int month = actualMonth; month == actualMonth; month++)
+                            //Si el empleado fue contratado despues del primer uso del sistema, entonces el startMonth sera el mes de la fecha de contratación
+                            if (hireDate.Year == year && hireDate.Month > startMonth)
                             {
+                                startMonth = hireDate.Month;
+                            }
+
+                            // Establecemos la generación de planillas hasta el mes actual
+                            int endMonth = (year == DateTime.Now.Year) ? DateTime.Now.Month : 12;
+
+                            for (int month = startMonth; month <= endMonth; month++)
+                            {
+                                // Verificamos si la planilla ya existe
                                 DataRow[] existingPayrollRows = payrollDt.Select($"IdEmployee = {idEmployee} AND IssueDate = '{year}-{month:D2}-01'");
                                 if (existingPayrollRows.Length == 0)
                                 {
+
                                     string username = row["username"].ToString();
                                     DataRow[] userRows = userDt.Select($"username = '{username}'");
                                     if (userRows.Length > 0)
                                     {
-                                        await Task.Run(() =>
+                                        DataRow userRow = userRows[0];
+                                        string businessRole = userRow["IdBusinessP"].ToString();
+                                        DataRow[] bonusRows = bonusDt.Select($"IdBusinessP = '{businessRole}'");
+                                        if (bonusRows.Length > 0)
                                         {
-                                            DataRow userRow = userRows[0];
-                                            string businessRole = userRow["IdBusinessP"].ToString();
-                                            DataRow[] bonusRows = bonusDt.Select($"IdBusinessP = '{businessRole}'");
-                                            if (bonusRows.Length > 0)
+                                            await Task.Run(() =>
                                             {
                                                 DataRow bonusRow = bonusRows[0];
                                                 double roleBonus = double.Parse(bonusRow["positionBonus"].ToString());
@@ -189,8 +195,11 @@ namespace PTC2024.Controller.EmployeesController
                                                 DateTime currentDate = new DateTime(year, month, 1);
                                                 int totalDaysInMonth = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);
 
+                                                int daysWorked = 0;
+                                                int hoursWorked = 0;
                                                 if (hireDate.Year == currentDate.Year && hireDate.Month == currentDate.Month)
                                                 {
+                                                    // Caso de un empleado contratado en el mismo mes que estamos generando la planilla
                                                     daysWorked = totalDaysInMonth - hireDate.Day + 1;
                                                     hoursWorked = daysWorked * 8;
                                                 }
@@ -200,9 +209,8 @@ namespace PTC2024.Controller.EmployeesController
                                                     hoursWorked = 240;
                                                 }
 
-                                                daySalary = salary / 30;
-                                                hourSalary = daySalary / 8;
-
+                                                double daySalary = salary / 30;
+                                                double hourSalary = daySalary / 8;
                                                 double calculatedSalaryByHours = TruncateToTwoDecimals(hoursWorked * hourSalary);
                                                 double calculatedSalary = TruncateToTwoDecimals(calculatedSalaryByHours + roleBonus);
 
@@ -243,17 +251,16 @@ namespace PTC2024.Controller.EmployeesController
                                                         DAOInsertPayroll.ChristmasBonus = christmasBonus;
                                                     }
                                                 }
-
                                                 returnValue = DAOInsertPayroll.AddPayroll();
                                                 currentEmployee++;
                                                 int progress = (currentEmployee * 100) / totalEmployees;
                                                 objProgress.UpdateProgress(progress, $"Procesando planillas {currentEmployee} de {totalEmployees}");
-                                            }
-                                            if (returnValue == 1)
-                                            {
-                                                totalEmployees++;
-                                            }
-                                        });
+                                                if (returnValue == 1)
+                                                {
+                                                    totalEmployees++;
+                                                }
+                                            });
+                                        }
                                     }
                                 }
                             }
@@ -277,12 +284,36 @@ namespace PTC2024.Controller.EmployeesController
                 objStartForm.snackBar.Show(objStartForm, $"No hay empleados a los cuales generar planillas", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
         }
+       
         public async void UpdateXmonth(object sender, EventArgs e)
         {
+            // Verificar si el día es = 30
+            DateTime actualDate = DateTime.Now;
+            if (actualDate.Day != 30)
+            {
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStart.snackBar.Show(objStart, "Este proceso solo se puede ejecutar el día 30 del mes", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                return; // Nos salimos del método si el día es diferente de 30
+            }
+
+            // Continuar con el proceso si es el día 30
             ProgressBarForm progressBarForm = new ProgressBarForm();
             progressBarForm.Show();
             ControllerProgressBar objProgress = new ControllerProgressBar(progressBarForm);
             DAOViewPayrolls DAOUpdatePayroll = new DAOViewPayrolls();
+            StartMenu objStartMenu = new StartMenu(SessionVar.Username);
+
+            // Verificar si hay planillas no pagadas en meses anteriores
+            DateTime lastDayOfPreviousMonth = new DateTime(actualDate.Year, actualDate.Month, 1).AddDays(-1);
+            DataSet previousUnpaidPayrolls = DAOUpdatePayroll.GetPreviousUnpaidPayrolls(lastDayOfPreviousMonth);
+
+            if (previousUnpaidPayrolls != null && previousUnpaidPayrolls.Tables[0].Rows.Count > 0)
+            {
+                objStartMenu.snackBar.Show(objStartMenu, "No se puede pagar las planillas de este mes. Existen planillas no pagadas en meses anteriores.",
+                    Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                progressBarForm.Close();
+                return; // Salir si hay planillas no pagadas
+            }
 
             DataSet employeeDs = DAOUpdatePayroll.GetEmployee();
             DataSet payrollDs = DAOUpdatePayroll.GetPayroll();
@@ -311,7 +342,20 @@ namespace PTC2024.Controller.EmployeesController
                             DAOUpdatePayroll.IdPayrollStatus = 1;
 
                             totalRowsAffected += DAOUpdatePayroll.UpdatePayrollStatusPaid();
+                            if (totalRowsAffected > 0)
+                            {
+                                DAOInitialView daoInitial = new DAOInitialView();
+                                daoInitial.ActionType = "Se pagó una planilla";
+                                daoInitial.TableName = "Planillas";
+                                daoInitial.ActionBy = SessionVar.Username;
+                                daoInitial.ActionDate = DateTime.Now;
+                                int auditAnswer = daoInitial.InsertAudit();
 
+                                if (auditAnswer != 1)
+                                {
+                                    objStartMenu.snackBar.Show(objStartMenu, "La auditoría no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                                }
+                            }
                             currentPayroll++;
                             int progress = (currentPayroll * 100) / totalPayrolls;
                             objProgress.UpdateProgress(progress, $"Pagando planillas {currentPayroll} de {totalPayrolls}");
@@ -320,24 +364,25 @@ namespace PTC2024.Controller.EmployeesController
                 }
 
                 progressBarForm.Close();
-
-                StartMenu objStart = new StartMenu(SessionVar.Username);
                 if (totalRowsAffected > 0)
                 {
-                    objStart.snackBar.Show(objStart, $"Se pagaron todas las planillas del mes exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    objStartMenu.snackBar.Show(objStartMenu, "Se pagaron todas las planillas del mes exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
                 }
                 else
                 {
-                    objStart.snackBar.Show(objStart, $"No se encontraron planillas pendientes para pagar", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    objStartMenu.snackBar.Show(objStartMenu, "No se encontraron planillas pendientes para pagar", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Information, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
                 }
             }
         }
+
         public async void RevertPayXMonth(object sender, EventArgs e)
         {
             ProgressBarForm progressBarForm = new ProgressBarForm();
             progressBarForm.Show();
             ControllerProgressBar objProgress = new ControllerProgressBar(progressBarForm);
             DAOViewPayrolls DAOUpdatePayroll = new DAOViewPayrolls();
+            StartMenu objStart = new StartMenu(SessionVar.Username);
+
 
             DataSet employeeDs = DAOUpdatePayroll.GetEmployee();
             DataSet payrollDs = DAOUpdatePayroll.GetPayroll();
@@ -363,10 +408,24 @@ namespace PTC2024.Controller.EmployeesController
                         await Task.Run(() =>
                         {
                             DAOUpdatePayroll.IdPayroll = int.Parse(dr["IdPayroll"].ToString());
-                            DAOUpdatePayroll.IdPayrollStatus = 2; 
+                            DAOUpdatePayroll.IdPayrollStatus = 2;
 
                             totalRowsAffected += DAOUpdatePayroll.UpdatePayrollStatusUnPaid();
+                            if (totalRowsAffected > 0)
+                            {
+                                DAOInitialView daoInitial = new DAOInitialView();
+                                daoInitial.ActionType = "Se revirtio el pago de una planilla";
+                                daoInitial.TableName = "Planillas";
+                                daoInitial.ActionBy = SessionVar.Username;
+                                daoInitial.ActionDate = DateTime.Now;
+                                int auditAnswer = daoInitial.InsertAudit();
 
+                                if (auditAnswer != 1)
+                                {
+                                    objStart.snackBar.Show(objStart, $"La auditoría no pudo ser registrada",
+                                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                                }
+                            }
                             currentPayroll++;
                             int progress = (currentPayroll * 100) / totalPayrolls;
                             objProgress.UpdateProgress(progress, $"Revirtiendo planillas {currentPayroll} de {totalPayrolls}");
@@ -376,7 +435,6 @@ namespace PTC2024.Controller.EmployeesController
 
                 progressBarForm.Close();
 
-                StartMenu objStart = new StartMenu(SessionVar.Username);
                 if (totalRowsAffected > 0)
                 {
                     objStart.snackBar.Show(objStart, $"Se revirtieron las planillas del mes exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
@@ -393,13 +451,12 @@ namespace PTC2024.Controller.EmployeesController
             progressBarForm.Show();
             ControllerProgressBar objProgress = new ControllerProgressBar(progressBarForm);
 
-            int totalEmployees = 1;
-            int currentEmployee = 0;
             DAOViewPayrolls DAOUpdatePayroll = new DAOViewPayrolls();
             DataSet employeeDs = DAOUpdatePayroll.GetEmployee();
             DataSet bonusDs = DAOUpdatePayroll.GetBonus();
             DataSet userDs = DAOUpdatePayroll.GetUsername();
             DataSet payrollDs = DAOUpdatePayroll.GetPayroll();
+            DataSet unpaidPayrollsDs = DAOUpdatePayroll.GetUnpaidPayrolls();
             int totalRowsAffected = 0;
 
             if (employeeDs != null && payrollDs != null && bonusDs != null && userDs != null)
@@ -408,6 +465,9 @@ namespace PTC2024.Controller.EmployeesController
                 DataTable payrollDt = payrollDs.Tables["tbPayroll"];
                 DataTable bonusDt = bonusDs.Tables["tbBusinessP"];
                 DataTable userDt = userDs.Tables["tbUserData"];
+                DataTable unpaidDt = unpaidPayrollsDs.Tables["tbPayroll"];
+                int totalEmployees = unpaidDt.Rows.Count;
+                int currentEmployee = 0;
 
                 foreach (DataRow row in employeeDt.Rows)
                 {
@@ -501,7 +561,6 @@ namespace PTC2024.Controller.EmployeesController
                                 currentEmployee++;
                                 int progress = (currentEmployee * 100) / totalEmployees;
                                 objProgress.UpdateProgress(progress, $"Procesando planillas {currentEmployee} de {totalEmployees}");
-                                totalEmployees++;
                             });
                         }
                     }
@@ -694,6 +753,23 @@ namespace PTC2024.Controller.EmployeesController
             DAOViewPayrolls daoUpdate = new DAOViewPayrolls();
             int pos = objViewPayrolls.dgvPayrolls.CurrentRow.Index;
             daoUpdate.IdPayroll = int.Parse(objViewPayrolls.dgvPayrolls[0, pos].Value.ToString());
+
+            // Obtener la fecha de emisión de la planilla
+            DateTime issueDate = DateTime.Parse(objViewPayrolls.dgvPayrolls[13, pos].Value.ToString()); // Asumiendo que la fecha está en la columna 3 del DataGridView
+
+            // Validar si la planilla corresponde al mes anterior o anterior a ese
+            DateTime currentDate = DateTime.Now;
+            DateTime previousMonth = currentDate.AddMonths(-1);
+
+            if (issueDate.Year < currentDate.Year || (issueDate.Year == currentDate.Year && issueDate.Month < currentDate.Month))
+            {
+                // Si la planilla corresponde a un mes anterior, no se puede revertir
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStartForm = objStart;
+                objStartForm.snackBar.Show(objStartForm, $"No se puede revertir el pago de una planilla de un mes anterior", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                return; // Salir del método sin realizar la reversión
+            }
+
             daoUpdate.IdPayrollStatus = 2;
             int returnedValues = daoUpdate.UpdatePayrollStatusUnPaid();
             if (returnedValues == 1)
@@ -701,6 +777,8 @@ namespace PTC2024.Controller.EmployeesController
                 StartMenu objStart = new StartMenu(SessionVar.Username);
                 objStartForm = objStart;
                 objStartForm.snackBar.Show(objStartForm, $"El pago fue revertido exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+
+                // Registrar la auditoría
                 DAOInitialView daoInitial = new DAOInitialView();
                 daoInitial.ActionType = "Se revirtió un pago";
                 daoInitial.TableName = "Planillas";
@@ -709,7 +787,7 @@ namespace PTC2024.Controller.EmployeesController
                 int auditAnswer = daoInitial.InsertAudit();
                 if (auditAnswer != 1)
                 {
-                    objStart.snackBar.Show(objStart, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    objStart.snackBar.Show(objStart, $"La auditoría no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
                 }
             }
             else
@@ -717,10 +795,10 @@ namespace PTC2024.Controller.EmployeesController
                 StartMenu objStart = new StartMenu(SessionVar.Username);
                 objStartForm = objStart;
                 objStartForm.snackBar.Show(objStartForm, $"El pago no pudo ser revertido", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
-
             }
             RefreshData();
         }
+
         public async void DeletePayrolls(object sender, EventArgs e)
         {
             ProgressBarForm progressBarForm = new ProgressBarForm();
