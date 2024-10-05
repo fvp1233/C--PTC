@@ -61,7 +61,7 @@
             // 
             // lblAddService
             // 
-            this.lblAddService.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddService.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddService.Location = new System.Drawing.Point(0, 22);
             this.lblAddService.Name = "lblAddService";
             this.lblAddService.Size = new System.Drawing.Size(454, 29);
@@ -83,7 +83,7 @@
             // 
             // lblInformation
             // 
-            this.lblInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInformation.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInformation.Location = new System.Drawing.Point(2, 50);
             this.lblInformation.Name = "lblInformation";
             this.lblInformation.Size = new System.Drawing.Size(449, 17);
@@ -94,40 +94,40 @@
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
-            this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategory.Location = new System.Drawing.Point(61, 287);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(79, 16);
+            this.lblCategory.Size = new System.Drawing.Size(76, 16);
             this.lblCategory.TabIndex = 62;
             this.lblCategory.Text = "Categoría:";
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescription.Location = new System.Drawing.Point(61, 174);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(94, 16);
+            this.lblDescription.Size = new System.Drawing.Size(88, 16);
             this.lblDescription.TabIndex = 60;
             this.lblDescription.Text = "Descripción:";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(61, 114);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(66, 16);
+            this.lblName.Size = new System.Drawing.Size(63, 16);
             this.lblName.TabIndex = 58;
             this.lblName.Text = "Nombre:";
             // 
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmount.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmount.Location = new System.Drawing.Point(61, 346);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(53, 16);
+            this.lblAmount.Size = new System.Drawing.Size(51, 16);
             this.lblAmount.TabIndex = 64;
             this.lblAmount.Text = "Monto:";
             // 
@@ -162,7 +162,7 @@
             this.cmbCategoryS.FillDropDown = true;
             this.cmbCategoryS.FillIndicator = false;
             this.cmbCategoryS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbCategoryS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategoryS.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategoryS.ForeColor = System.Drawing.Color.Black;
             this.cmbCategoryS.FormattingEnabled = true;
             this.cmbCategoryS.Icon = null;
@@ -216,7 +216,7 @@
             this.btnAddService.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnAddService.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnAddService.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnAddService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddService.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddService.ForeColor = System.Drawing.Color.White;
             this.btnAddService.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddService.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -306,7 +306,7 @@
             this.btnCancel.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnCancel.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnCancel.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -385,7 +385,7 @@
             this.txtAmount.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtAmount.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAmount.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmount.DefaultFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmount.DefaultText = "";
             this.txtAmount.FillColor = System.Drawing.Color.Gainsboro;
             this.txtAmount.HideSelection = true;
@@ -462,7 +462,7 @@
             this.txtDescriptionS.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtDescriptionS.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtDescriptionS.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDescriptionS.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescriptionS.DefaultFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescriptionS.DefaultText = "";
             this.txtDescriptionS.FillColor = System.Drawing.Color.Gainsboro;
             this.txtDescriptionS.HideSelection = true;
@@ -538,7 +538,7 @@
             this.txtNameS.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtNameS.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtNameS.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNameS.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameS.DefaultFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameS.DefaultText = "";
             this.txtNameS.FillColor = System.Drawing.Color.Gainsboro;
             this.txtNameS.HideSelection = true;

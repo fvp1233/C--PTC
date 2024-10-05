@@ -604,6 +604,12 @@
     <Compile Include="View\Service inventory\FrmAgendaServices.Designer.cs">
       <DependentUpon>FrmAgendaServices.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Service inventory\FrmPruebas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Service inventory\FrmPruebas.Designer.cs">
+      <DependentUpon>FrmPruebas.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Service inventory\FrmUpdateService.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -790,6 +796,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Service inventory\FrmAgendaServices.resx">
       <DependentUpon>FrmAgendaServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Service inventory\FrmPruebas.resx">
+      <DependentUpon>FrmPruebas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Service inventory\FrmUpdateService.resx">
       <DependentUpon>FrmUpdateService.cs</DependentUpon>
