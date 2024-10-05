@@ -14,7 +14,6 @@ using System.IO;
 using System.Drawing;
 using PTC2024.View.formularios.inicio;
 using System.Windows.Forms.DataVisualization.Charting;
-using PTC2024.Resources.Language;
 
 namespace PTC2024.Controller.DashboardController
 {
@@ -32,7 +31,6 @@ namespace PTC2024.Controller.DashboardController
         }
         public void ChargeValues(object sender, EventArgs e)
         {
-            ChargeLanguage();
             objDashboard.dtpEnd.Value = new DateTime(DateTime.Now.Year, 12, 31);
             DAODashboard dAODashboard = new DAODashboard();
             ValidateDays();
@@ -82,20 +80,6 @@ namespace PTC2024.Controller.DashboardController
                 objDashboard.chrtTopServices.Series[0].YValueMembers = "Value";
                 objDashboard.chrtTopServices.DataBind();
             }
-        }
-        public void ChargeLanguage()
-        {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
-            EnglishL();
-        }
-        public void EnglishL()
-        {
-            objDashboard.lblEmployee.Text = English.dashEmployeeN;
-            objDashboard.lblBill.Text = English.dashBillsN;
-            objDashboard.lblService.Text = English.dashServicesN;
-            objDashboard.lblCustom.Text = English.dashCustomerN;
-            objDashboard.lblAudits.Text = English.dashAudits;
-            objDashboard.chartPayrolls.Titles[0].Text = English.dashGraphic; objDashboard.chrtTopServices.Titles[0].Text = English.dashTop;
         }
         public void DtpSearch(object sender, EventArgs e)
         {

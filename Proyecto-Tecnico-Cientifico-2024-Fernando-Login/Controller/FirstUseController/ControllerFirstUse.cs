@@ -1,5 +1,4 @@
 ﻿using PTC2024.Model.DAO.FirstUseDAO;
-using PTC2024.Resources.Language;
 using PTC2024.View.FirstUse;
 using PTC2024.View.login;
 using System;
@@ -24,7 +23,6 @@ namespace PTC2024.Controller.FirstUseController
             objFistUse = View;
             View.btnSave.Click += new EventHandler(SaveInfo);
             View.btnAddImage.Click += new EventHandler(PutImage);
-            objFistUse.Load += new EventHandler(ChargeLanguage);
             objFistUse.txtPhone.TextChanged += new EventHandler(PhoneMask);
             objFistUse.txtPBX.TextChanged += new EventHandler(PBXMask);
             objFistUse.txtNameBusiness.MouseDown += new MouseEventHandler(DisableContextMenu);
@@ -34,24 +32,6 @@ namespace PTC2024.Controller.FirstUseController
             objFistUse.txtPBX.MouseDown += new MouseEventHandler(DisableContextMenu);
             objFistUse.txtEmail.TextChanged += new EventHandler(EmailValidation);
 
-        }
-        public void ChargeLanguage(object sender, EventArgs e)
-        {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
-            EnglishL();
-        }
-        public void EnglishL()
-        {
-            objFistUse.txtLogin.Text = English.businessConfig;
-            objFistUse.bunifuGroupBox1.Text = English.businessData;
-            objFistUse.lblName.Text = English.businessName;
-            objFistUse.lblAdress.Text = English.adress;
-            objFistUse.lblEmail.Text = English.email;
-            objFistUse.lblCreationDate.Text = English.creationDate;
-            objFistUse.lblPhone.Text = English.phone;
-            objFistUse.lbPBX.Text = English.pbx;
-            objFistUse.btnSave.Text = English.saveinfo;
-            objFistUse.btnAddImage.Text = English.addImg;
         }
         void SaveInfo(object sender, EventArgs e)
         {

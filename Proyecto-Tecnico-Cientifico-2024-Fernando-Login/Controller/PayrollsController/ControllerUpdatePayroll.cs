@@ -1,7 +1,6 @@
 ﻿using PTC2024.Controller.Helper;
 using PTC2024.Model.DAO.BillsDAO;
 using PTC2024.Model.DAO.PayrollsDAO;
-using PTC2024.Resources.Language;
 using PTC2024.View.Empleados;
 using PTC2024.View.formularios.inicio;
 using System;
@@ -23,7 +22,6 @@ namespace PTC2024.Controller.EmployeesController
             objUpdatePayroll = Vista;
             DisableComponents();
             ChargeValues(nP, dui, employee, salary, possition, bonus, bankAccount, affiliationNumber, isss, afp, rent, netSalary, discountEmployee, issueDate, daysWorkded, daySalary, grossPay, hoursWorked, hourSalary, extraHours);
-            objUpdatePayroll.Load += new EventHandler(ChargeLanguage);
             objUpdatePayroll.btnConfirm.Click += new EventHandler(UpdatePayrollStatus);
             objUpdatePayroll.btnCancelar.Click += new EventHandler(CloseForm);
             objUpdatePayroll.txtHoursWorked.TextChanged += new EventHandler(DaysWorked);
@@ -35,39 +33,6 @@ namespace PTC2024.Controller.EmployeesController
             objUpdatePayroll.txtDaysWorked.TextChange += new EventHandler(DaysWorkedNum);
             objUpdatePayroll.txtExtraHours.TextChange += new EventHandler(ExtraHoursNum);
 
-        }
-        public void ChargeLanguage(object sender, EventArgs e)
-        {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
-            EnglishL();
-        }
-        public void EnglishL()
-        {
-            objUpdatePayroll.lblTitle.Text = English.titleUpdatePayroll;
-            objUpdatePayroll.lblSubTitle.Text = English.subTtileUpdatePayroll;
-            objUpdatePayroll.lblEmployee.Text = English.employeeForm;
-            objUpdatePayroll.lblDUI.Text = English.duiForm;
-            objUpdatePayroll.lblCharge.Text = English.positionForm;
-            objUpdatePayroll.lblBankAccount.Text = English.bankAccountForm;
-            objUpdatePayroll.lblAffiliation.Text = English.affiliationForm;
-            objUpdatePayroll.dtpIssueDate.Text = English.hireDateForm;
-            objUpdatePayroll.lblSalary.Text = English.salaryForm;
-            objUpdatePayroll.lblHoursWorked.Text = English.hoursWorkedForm;
-            objUpdatePayroll.lblExtraHours.Text = English.entraHoursForm;
-            objUpdatePayroll.lblDaysWorked.Text = English.daysWorkedForm;
-            objUpdatePayroll.lblSalaryXDay.Text = English.daySalaryForm;
-            objUpdatePayroll.lblSalaryXHour.Text = English.hourlySalaryForm;
-            objUpdatePayroll.lblBonus.Text = English.bonusForm;
-            objUpdatePayroll.lblGrossSalary.Text = English.grossSalaryForm;
-            objUpdatePayroll.lblISSS.Text = English.isssForm;
-            objUpdatePayroll.lblAFP.Text = English.afpForm;
-            objUpdatePayroll.lblIncome.Text = English.incomeForm;
-            objUpdatePayroll.lblDiscount.Text = English.employeeDiscountForm;
-            objUpdatePayroll.lblNetPay.Text = English.netSalaryForm;
-            objUpdatePayroll.btnConfirm.Text = English.confirmForm;
-            objUpdatePayroll.btnCancelar.Text = English.gobackForm;
-            objUpdatePayroll.bunifuGroupBox1.Text = English.personalInfo;
-            objUpdatePayroll.bunifuGroupBox2.Text = English.salaryInfo;
         }
         public void UpdatePayrollStatus(object sender, EventArgs e)
         {

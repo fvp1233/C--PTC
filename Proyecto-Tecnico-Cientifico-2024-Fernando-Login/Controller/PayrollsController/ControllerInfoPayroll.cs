@@ -1,5 +1,4 @@
 ﻿using PTC2024.Model.DAO.PayrollsDAO;
-using PTC2024.Resources.Language;
 using PTC2024.View.Empleados;
 using System;
 using System.Collections.Generic;
@@ -18,43 +17,9 @@ namespace PTC2024.Controller.EmployeesController
         public ControllerInfoPayroll(FrmInfoPayroll Vista, string dui, string employee, string possition, double bonus, string bankAccount, string affiliationNumber,double salary, double grossPay, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate, double christmasBonus, double issEmployer, double afpEmployer, double discountEmployer,string payrollStatus, int daysWorked, double daySalary)
         {
             objInfoPayroll = Vista;
-            objInfoPayroll.Load += new EventHandler(ChargeLanguage);
             DisableComponents();
             ChargeValues(dui, employee, possition, bonus, bankAccount, affiliationNumber, salary, grossPay, afp, isss, rent, netSalary, discountEmployee, issueDate, christmasBonus, issEmployer, afpEmployer, discountEmployer, payrollStatus, daysWorked, daySalary);
             objInfoPayroll.btnCancelar.Click += new EventHandler(CloseForm);
-        }
-        public void ChargeLanguage(object sender, EventArgs e)
-        {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
-            EnglishL();
-        }
-        public void EnglishL()
-        {
-            objInfoPayroll.lblPayroll.Text = English.payroll;
-            objInfoPayroll.lblEmployee.Text = English.employeeForm;
-            objInfoPayroll.lblDUI.Text = English.duiForm;
-            objInfoPayroll.lblCharge.Text = English.positionForm;
-            objInfoPayroll.lblBankAccount.Text = English.bankAccountForm;
-            objInfoPayroll.lblAffiliation.Text = English.affiliationForm;
-            objInfoPayroll.dtpIssueDate.Text = English.hireDateForm;
-            objInfoPayroll.lblSalary.Text = English.salaryForm;
-            objInfoPayroll.lblDaysWorked.Text = English.daysWorkedForm;
-            objInfoPayroll.lblSalaryXDay.Text = English.daySalaryForm;
-            objInfoPayroll.lblBonus.Text = English.bonusForm;
-            objInfoPayroll.lblGrossSalary.Text = English.grossSalaryForm;
-            objInfoPayroll.lblISSS.Text = English.isssForm;
-            objInfoPayroll.lblAFP.Text = English.afpForm;
-            objInfoPayroll.lblIncome.Text = English.incomeForm;
-            objInfoPayroll.lblDiscount.Text = English.employeeDiscountForm;
-            objInfoPayroll.lblNetPay.Text = English.netSalaryForm;
-            objInfoPayroll.lblEmployeerD.Text = English.isssEmployeer;
-            objInfoPayroll.lblAFPeMPLOYEER.Text = English.afpEmployeer;
-            objInfoPayroll.lblDiscountEmployeer.Text = English.employeerDisc;
-            objInfoPayroll.lblCb.Text = English.christmasBonus;
-            objInfoPayroll.lblStatus.Text = English.statusPayroll;
-            objInfoPayroll.btnCancelar.Text = English.gobackForm;
-            objInfoPayroll.bunifuGroupBox1.Text = English.personalInfo;
-            objInfoPayroll.bunifuGroupBox2.Text = English.salaryInfo;
         }
         public void ChargeValues(string dui, string employee, string possition, double bonus, string bankAccount, string affiliationNumber, double salary,  double grossPay, double afp, double isss, double rent, double netSalary, double discountEmployee, DateTime issueDate,double christmasBonus, double issEmployer, double afpEmployer, double discountEmployer, string payrollStatus, int daysWorked, double daySalary)
         {
