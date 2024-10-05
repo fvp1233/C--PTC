@@ -221,7 +221,7 @@
             this.txtFirstQ.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txtFirstQ.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.txtFirstQ.AutoSizeHeight = true;
-            this.txtFirstQ.BackColor = System.Drawing.Color.LightGray;
+            this.txtFirstQ.BackColor = System.Drawing.Color.Gainsboro;
             this.txtFirstQ.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtFirstQ.BackgroundImage")));
             this.txtFirstQ.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtFirstQ.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -234,7 +234,7 @@
             this.txtFirstQ.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFirstQ.DefaultFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstQ.DefaultText = "";
-            this.txtFirstQ.FillColor = System.Drawing.Color.LightGray;
+            this.txtFirstQ.FillColor = System.Drawing.Color.Gainsboro;
             this.txtFirstQ.HideSelection = true;
             this.txtFirstQ.IconLeft = null;
             this.txtFirstQ.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -264,7 +264,7 @@
             stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtFirstQ.OnHoverState = stateProperties3;
             stateProperties4.BorderColor = System.Drawing.Color.DarkGray;
-            stateProperties4.FillColor = System.Drawing.Color.LightGray;
+            stateProperties4.FillColor = System.Drawing.Color.Gainsboro;
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtFirstQ.OnIdleState = stateProperties4;
@@ -312,7 +312,7 @@
             this.txtSecondQ.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txtSecondQ.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.txtSecondQ.AutoSizeHeight = true;
-            this.txtSecondQ.BackColor = System.Drawing.Color.LightGray;
+            this.txtSecondQ.BackColor = System.Drawing.Color.Gainsboro;
             this.txtSecondQ.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtSecondQ.BackgroundImage")));
             this.txtSecondQ.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtSecondQ.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -325,7 +325,7 @@
             this.txtSecondQ.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSecondQ.DefaultFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSecondQ.DefaultText = "";
-            this.txtSecondQ.FillColor = System.Drawing.Color.LightGray;
+            this.txtSecondQ.FillColor = System.Drawing.Color.Gainsboro;
             this.txtSecondQ.HideSelection = true;
             this.txtSecondQ.IconLeft = null;
             this.txtSecondQ.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -355,7 +355,7 @@
             stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtSecondQ.OnHoverState = stateProperties7;
             stateProperties8.BorderColor = System.Drawing.Color.DarkGray;
-            stateProperties8.FillColor = System.Drawing.Color.LightGray;
+            stateProperties8.FillColor = System.Drawing.Color.Gainsboro;
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtSecondQ.OnIdleState = stateProperties8;
@@ -388,7 +388,7 @@
             this.txtThirdQ.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txtThirdQ.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.txtThirdQ.AutoSizeHeight = true;
-            this.txtThirdQ.BackColor = System.Drawing.Color.LightGray;
+            this.txtThirdQ.BackColor = System.Drawing.Color.Gainsboro;
             this.txtThirdQ.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtThirdQ.BackgroundImage")));
             this.txtThirdQ.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtThirdQ.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -401,7 +401,7 @@
             this.txtThirdQ.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtThirdQ.DefaultFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtThirdQ.DefaultText = "";
-            this.txtThirdQ.FillColor = System.Drawing.Color.LightGray;
+            this.txtThirdQ.FillColor = System.Drawing.Color.Gainsboro;
             this.txtThirdQ.HideSelection = true;
             this.txtThirdQ.IconLeft = null;
             this.txtThirdQ.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -431,7 +431,7 @@
             stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtThirdQ.OnHoverState = stateProperties11;
             stateProperties12.BorderColor = System.Drawing.Color.DarkGray;
-            stateProperties12.FillColor = System.Drawing.Color.LightGray;
+            stateProperties12.FillColor = System.Drawing.Color.Gainsboro;
             stateProperties12.ForeColor = System.Drawing.Color.Empty;
             stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtThirdQ.OnIdleState = stateProperties12;
@@ -627,7 +627,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(694, 417);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.txtUser);

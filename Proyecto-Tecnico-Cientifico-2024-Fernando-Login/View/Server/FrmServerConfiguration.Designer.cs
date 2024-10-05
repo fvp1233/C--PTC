@@ -572,9 +572,9 @@
             this.bunifuPictureBox1.BorderRadius = 0;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
             this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(10, 85);
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(10, 86);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(277, 277);
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(277, 336);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuPictureBox1.TabIndex = 110;
             this.bunifuPictureBox1.TabStop = false;

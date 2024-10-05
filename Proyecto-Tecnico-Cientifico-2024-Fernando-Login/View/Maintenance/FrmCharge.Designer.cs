@@ -91,6 +91,7 @@
             this.cmsDeleteCharge.Name = "cmsDeleteCharge";
             this.cmsDeleteCharge.Size = new System.Drawing.Size(173, 26);
             this.cmsDeleteCharge.Text = "Eliminar cargo";
+            this.cmsDeleteCharge.Visible = false;
             // 
             // txtId
             // 

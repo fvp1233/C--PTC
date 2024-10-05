@@ -1,4 +1,5 @@
-﻿using PTC2024.Controller.PayrollsController;
+﻿using PTC2024.Controller.Helper;
+using PTC2024.Controller.PayrollsController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace PTC2024.View.EmployeeViews
         {
             InitializeComponent();
             ControllerUpdatePermission objPermission = new ControllerUpdatePermission(this, idEmployee, idPermission, start, end, context, status, typeP, idType, idStatus);
+            Region = Region.FromHrgn(CommonClasses.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {

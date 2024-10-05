@@ -126,7 +126,7 @@
             this.txtNames.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txtNames.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.txtNames.AutoSizeHeight = true;
-            this.txtNames.BackColor = System.Drawing.Color.LightGray;
+            this.txtNames.BackColor = System.Drawing.Color.Gainsboro;
             this.txtNames.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtNames.BackgroundImage")));
             this.txtNames.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtNames.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -139,7 +139,7 @@
             this.txtNames.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNames.DefaultFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNames.DefaultText = "";
-            this.txtNames.FillColor = System.Drawing.Color.LightGray;
+            this.txtNames.FillColor = System.Drawing.Color.Gainsboro;
             this.txtNames.HideSelection = true;
             this.txtNames.IconLeft = null;
             this.txtNames.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -169,7 +169,7 @@
             stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtNames.OnHoverState = stateProperties3;
             stateProperties4.BorderColor = System.Drawing.Color.DarkGray;
-            stateProperties4.FillColor = System.Drawing.Color.LightGray;
+            stateProperties4.FillColor = System.Drawing.Color.Gainsboro;
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtNames.OnIdleState = stateProperties4;
@@ -288,7 +288,7 @@
             this.txtDui.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txtDui.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.txtDui.AutoSizeHeight = true;
-            this.txtDui.BackColor = System.Drawing.Color.LightGray;
+            this.txtDui.BackColor = System.Drawing.Color.Gainsboro;
             this.txtDui.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtDui.BackgroundImage")));
             this.txtDui.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtDui.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -301,7 +301,7 @@
             this.txtDui.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDui.DefaultFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDui.DefaultText = "";
-            this.txtDui.FillColor = System.Drawing.Color.LightGray;
+            this.txtDui.FillColor = System.Drawing.Color.Gainsboro;
             this.txtDui.HideSelection = true;
             this.txtDui.IconLeft = null;
             this.txtDui.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -331,7 +331,7 @@
             stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtDui.OnHoverState = stateProperties11;
             stateProperties12.BorderColor = System.Drawing.Color.DarkGray;
-            stateProperties12.FillColor = System.Drawing.Color.LightGray;
+            stateProperties12.FillColor = System.Drawing.Color.Gainsboro;
             stateProperties12.ForeColor = System.Drawing.Color.Empty;
             stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtDui.OnIdleState = stateProperties12;
@@ -374,7 +374,7 @@
             this.txtPhone.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txtPhone.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.txtPhone.AutoSizeHeight = true;
-            this.txtPhone.BackColor = System.Drawing.Color.LightGray;
+            this.txtPhone.BackColor = System.Drawing.Color.Gainsboro;
             this.txtPhone.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtPhone.BackgroundImage")));
             this.txtPhone.BorderColorActive = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtPhone.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -387,7 +387,7 @@
             this.txtPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPhone.DefaultFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.DefaultText = "";
-            this.txtPhone.FillColor = System.Drawing.Color.LightGray;
+            this.txtPhone.FillColor = System.Drawing.Color.Gainsboro;
             this.txtPhone.HideSelection = true;
             this.txtPhone.IconLeft = null;
             this.txtPhone.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -417,7 +417,7 @@
             stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtPhone.OnHoverState = stateProperties15;
             stateProperties16.BorderColor = System.Drawing.Color.DarkGray;
-            stateProperties16.FillColor = System.Drawing.Color.LightGray;
+            stateProperties16.FillColor = System.Drawing.Color.Gainsboro;
             stateProperties16.ForeColor = System.Drawing.Color.Empty;
             stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtPhone.OnIdleState = stateProperties16;
