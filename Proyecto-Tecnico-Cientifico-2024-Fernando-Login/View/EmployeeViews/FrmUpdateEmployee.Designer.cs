@@ -140,7 +140,7 @@
             // 
             // bunifuCustomLabel1
             // 
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(0, 19);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(1088, 32);
@@ -1000,10 +1000,10 @@
             // lblHireDate
             // 
             this.lblHireDate.AutoSize = true;
-            this.lblHireDate.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHireDate.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHireDate.Location = new System.Drawing.Point(352, 156);
             this.lblHireDate.Name = "lblHireDate";
-            this.lblHireDate.Size = new System.Drawing.Size(168, 16);
+            this.lblHireDate.Size = new System.Drawing.Size(158, 16);
             this.lblHireDate.TabIndex = 92;
             this.lblHireDate.Text = "Fecha de contratación:";
             // 
@@ -1037,31 +1037,31 @@
             // lblNames
             // 
             this.lblNames.AutoSize = true;
-            this.lblNames.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNames.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNames.Location = new System.Drawing.Point(12, 29);
             this.lblNames.Name = "lblNames";
-            this.lblNames.Size = new System.Drawing.Size(74, 16);
+            this.lblNames.Size = new System.Drawing.Size(69, 16);
             this.lblNames.TabIndex = 33;
             this.lblNames.Text = "Nombres:";
             // 
             // lblLastNames
             // 
             this.lblLastNames.AutoSize = true;
-            this.lblLastNames.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastNames.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLastNames.Location = new System.Drawing.Point(350, 30);
             this.lblLastNames.Name = "lblLastNames";
             this.lblLastNames.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblLastNames.Size = new System.Drawing.Size(76, 16);
+            this.lblLastNames.Size = new System.Drawing.Size(73, 16);
             this.lblLastNames.TabIndex = 34;
             this.lblLastNames.Text = "Apellidos:";
             // 
             // lblDui
             // 
             this.lblDui.AutoSize = true;
-            this.lblDui.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDui.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDui.Location = new System.Drawing.Point(688, 29);
             this.lblDui.Name = "lblDui";
-            this.lblDui.Size = new System.Drawing.Size(35, 16);
+            this.lblDui.Size = new System.Drawing.Size(32, 16);
             this.lblDui.TabIndex = 37;
             this.lblDui.Text = "DUI:";
             // 
@@ -1113,11 +1113,11 @@
             // lblBirth
             // 
             this.lblBirth.AutoSize = true;
-            this.lblBirth.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBirth.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBirth.Location = new System.Drawing.Point(12, 92);
             this.lblBirth.Name = "lblBirth";
             this.lblBirth.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblBirth.Size = new System.Drawing.Size(157, 16);
+            this.lblBirth.Size = new System.Drawing.Size(148, 16);
             this.lblBirth.TabIndex = 38;
             this.lblBirth.Text = "Fecha de nacimiento:";
             // 
@@ -1196,10 +1196,10 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.Location = new System.Drawing.Point(350, 91);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(78, 16);
+            this.lblAddress.Size = new System.Drawing.Size(73, 16);
             this.lblAddress.TabIndex = 40;
             this.lblAddress.Text = "Dirección:";
             // 
@@ -1251,63 +1251,63 @@
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.Location = new System.Drawing.Point(688, 92);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPhone.Size = new System.Drawing.Size(71, 16);
+            this.lblPhone.Size = new System.Drawing.Size(65, 16);
             this.lblPhone.TabIndex = 41;
             this.lblPhone.Text = "Teléfono:";
             // 
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.Location = new System.Drawing.Point(691, 217);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(63, 16);
+            this.lblGender.Size = new System.Drawing.Size(59, 16);
             this.lblGender.TabIndex = 90;
             this.lblGender.Text = "Género:";
             // 
             // lblEmployeeType
             // 
             this.lblEmployeeType.AutoSize = true;
-            this.lblEmployeeType.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeType.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeeType.Location = new System.Drawing.Point(352, 218);
             this.lblEmployeeType.Name = "lblEmployeeType";
             this.lblEmployeeType.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblEmployeeType.Size = new System.Drawing.Size(136, 16);
+            this.lblEmployeeType.Size = new System.Drawing.Size(130, 16);
             this.lblEmployeeType.TabIndex = 49;
             this.lblEmployeeType.Text = "Tipo de empleado:";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(12, 156);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(135, 16);
+            this.lblEmail.Size = new System.Drawing.Size(130, 16);
             this.lblEmail.TabIndex = 44;
             this.lblEmail.Text = "Email empresarial:";
             // 
             // lblDepartment
             // 
             this.lblDepartment.AutoSize = true;
-            this.lblDepartment.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepartment.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDepartment.Location = new System.Drawing.Point(13, 217);
             this.lblDepartment.Name = "lblDepartment";
-            this.lblDepartment.Size = new System.Drawing.Size(110, 16);
+            this.lblDepartment.Size = new System.Drawing.Size(104, 16);
             this.lblDepartment.TabIndex = 48;
             this.lblDepartment.Text = "Departamento:";
             // 
             // lblMarital
             // 
             this.lblMarital.AutoSize = true;
-            this.lblMarital.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarital.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMarital.Location = new System.Drawing.Point(689, 157);
             this.lblMarital.Name = "lblMarital";
             this.lblMarital.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblMarital.Size = new System.Drawing.Size(94, 16);
+            this.lblMarital.Size = new System.Drawing.Size(87, 16);
             this.lblMarital.TabIndex = 45;
             this.lblMarital.Text = "Estado Civil:";
             // 
@@ -1630,22 +1630,22 @@
             // lblSalary
             // 
             this.lblSalary.AutoSize = true;
-            this.lblSalary.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalary.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSalary.Location = new System.Drawing.Point(12, 23);
             this.lblSalary.Name = "lblSalary";
             this.lblSalary.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSalary.Size = new System.Drawing.Size(59, 16);
+            this.lblSalary.Size = new System.Drawing.Size(57, 16);
             this.lblSalary.TabIndex = 108;
             this.lblSalary.Text = "Salario:";
             // 
             // lblBank
             // 
             this.lblBank.AutoSize = true;
-            this.lblBank.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBank.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBank.Location = new System.Drawing.Point(771, 22);
             this.lblBank.Name = "lblBank";
             this.lblBank.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblBank.Size = new System.Drawing.Size(55, 16);
+            this.lblBank.Size = new System.Drawing.Size(52, 16);
             this.lblBank.TabIndex = 100;
             this.lblBank.Text = "Banco:";
             // 
@@ -1697,22 +1697,22 @@
             // lblBankAcc
             // 
             this.lblBankAcc.AutoSize = true;
-            this.lblBankAcc.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBankAcc.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBankAcc.Location = new System.Drawing.Point(519, 23);
             this.lblBankAcc.Name = "lblBankAcc";
             this.lblBankAcc.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblBankAcc.Size = new System.Drawing.Size(125, 16);
+            this.lblBankAcc.Size = new System.Drawing.Size(123, 16);
             this.lblBankAcc.TabIndex = 97;
             this.lblBankAcc.Text = "Cuenta bancaria:";
             // 
             // lblAffiliation
             // 
             this.lblAffiliation.AutoSize = true;
-            this.lblAffiliation.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAffiliation.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAffiliation.Location = new System.Drawing.Point(268, 23);
             this.lblAffiliation.Name = "lblAffiliation";
             this.lblAffiliation.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblAffiliation.Size = new System.Drawing.Size(155, 16);
+            this.lblAffiliation.Size = new System.Drawing.Size(149, 16);
             this.lblAffiliation.TabIndex = 99;
             this.lblAffiliation.Text = "Número de afiliación:";
             // 
@@ -1741,10 +1741,10 @@
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.Location = new System.Drawing.Point(352, 26);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(158, 16);
+            this.lblStatus.Size = new System.Drawing.Size(150, 16);
             this.lblStatus.TabIndex = 107;
             this.lblStatus.Text = "Estado del empleado:";
             // 
@@ -1828,10 +1828,10 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.Location = new System.Drawing.Point(15, 26);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(145, 16);
+            this.lblUsername.Size = new System.Drawing.Size(136, 16);
             this.lblUsername.TabIndex = 106;
             this.lblUsername.Text = "Nombre de usuario:";
             // 
@@ -1883,10 +1883,10 @@
             // lblRole
             // 
             this.lblRole.AutoSize = true;
-            this.lblRole.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRole.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRole.Location = new System.Drawing.Point(688, 26);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(159, 16);
+            this.lblRole.Size = new System.Drawing.Size(148, 16);
             this.lblRole.TabIndex = 50;
             this.lblRole.Text = "Puesto del empleado:";
             // 
