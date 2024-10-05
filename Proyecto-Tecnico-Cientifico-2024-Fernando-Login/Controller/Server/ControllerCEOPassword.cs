@@ -18,10 +18,14 @@ namespace PTC2024.Controller.Server
             objPassword.Load += new EventHandler(InitialCharge);
             objPassword.HidePassword.Click += new EventHandler(HidePassword);
             objPassword.ShowPassword.Click += new EventHandler(ShowPassword);
-            objPassword.btnConfirm.Click += new EventHandler(VerifyPass);
+            objPassword.btnConfirm.Click += new EventHandler(VerifyEvent);
             objPassword.txtPassword.MouseDown += new MouseEventHandler(DisableContextMenu);
         }
-        public void VerifyPass(object sender, EventArgs e)
+        public void VerifyEvent(object sender, EventArgs e)
+        {
+            VerifyPass();
+        }
+        public bool VerifyPass()
         {
             CommonClasses common = new CommonClasses();
             string encryptedPass = common.ComputeSha256Hash(objPassword.txtPassword.Text);
@@ -32,15 +36,18 @@ namespace PTC2024.Controller.Server
                     FrmServerConfiguration objOpen = new FrmServerConfiguration(2);
                     objOpen.ShowDialog();
                     objOpen.Close();
+                    return true;
                 }
                 else
                 {
                     MessageBox.Show("Acceso denegado, las credenciales no tienen los permisos suficientes.", "Error al validar contraseña", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
                 }
             }
             else
             {
                 MessageBox.Show("Favor llenar todos los campos", "Campos vacios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
         }
         public void ShowPassword(object sender, EventArgs e)

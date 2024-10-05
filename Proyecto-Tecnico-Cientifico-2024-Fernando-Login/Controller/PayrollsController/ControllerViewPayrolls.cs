@@ -1,5 +1,6 @@
 ﻿using PTC2024.Controller.Alerts;
 using PTC2024.Controller.Helper;
+using PTC2024.Controller.Server;
 using PTC2024.Controller.StartMenuController;
 using PTC2024.Model.DAO.CustomersDAO;
 using PTC2024.Model.DAO.HelperDAO;
@@ -9,6 +10,7 @@ using PTC2024.View.Empleados;
 using PTC2024.View.formularios.inicio;
 using PTC2024.View.Reporting.Bills;
 using PTC2024.View.Reporting.Payrolls;
+using PTC2024.View.Server;
 using PTC2024.View.Start;
 using System;
 using System.Collections.Generic;
@@ -239,7 +241,7 @@ namespace PTC2024.Controller.EmployeesController
                 objStartForm.snackBar.Show(objStartForm, $"No hay empleados a los cuales generar planillas", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
         }
-       
+
         public async void UpdateXmonth(object sender, EventArgs e)
         {
             // Verificar si el día es = 30
@@ -701,6 +703,7 @@ namespace PTC2024.Controller.EmployeesController
                     Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
             RefreshData();
+
         }
 
         public void UpdatePayrollToUnpaid(object sender, EventArgs e)
@@ -716,14 +719,14 @@ namespace PTC2024.Controller.EmployeesController
             DateTime currentDate = DateTime.Now;
             DateTime previousMonth = currentDate.AddMonths(-1);
 
-            if (issueDate.Year < currentDate.Year || (issueDate.Year == currentDate.Year && issueDate.Month < currentDate.Month))
-            {
-                // Si la planilla corresponde a un mes anterior, no se puede revertir
-                StartMenu objStart = new StartMenu(SessionVar.Username);
-                objStartForm = objStart;
-                objStartForm.snackBar.Show(objStartForm, $"No se puede revertir el pago de una planilla de un mes anterior", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
-                return; // Salir del método sin realizar la reversión
-            }
+            //if (issueDate.Year < currentDate.Year || (issueDate.Year == currentDate.Year && issueDate.Month < currentDate.Month))
+            //{
+            //    // Si la planilla corresponde a un mes anterior, no se puede revertir
+            //    StartMenu objStart = new StartMenu(SessionVar.Username);
+            //    objStartForm = objStart;
+            //    objStartForm.snackBar.Show(objStartForm, $"No se puede revertir el pago de una planilla de un mes anterior", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+            //    return; // Salir del método sin realizar la reversión
+            //}
 
             daoUpdate.IdPayrollStatus = 2;
             int returnedValues = daoUpdate.UpdatePayrollStatusUnPaid();
