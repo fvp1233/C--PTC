@@ -122,6 +122,7 @@ namespace PTC2024.Controller.BillsController
 
         public void LoadDataServices(object sender, EventArgs e)
         {
+            objAddBills.dtfiscalPeriod.Value = DateTime.Now;
             InitialCharge();
 
         }
