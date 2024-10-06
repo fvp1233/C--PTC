@@ -13,5 +13,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=SQL8005.site4now.net;Initial Catalog=db_aaa7ca_ricaldone;Persist Security Info=True;User ID=db_aaa7ca_ricaldone_admin;Password=Master2024</Value>
     </Setting>
+    <Setting Name="darkMode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

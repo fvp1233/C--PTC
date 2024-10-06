@@ -127,6 +127,50 @@ namespace PTC2024.Controller.DashboardController
             {
                 ChargeData();
             }
+            if (Properties.Settings.Default.darkMode == true)
+            {
+                objDashboard.BackColor = Color.FromArgb(18, 18, 18);
+                objDashboard.lblTitle.ForeColor = Color.White;
+                objDashboard.dtpStart.BackColor = Color.FromArgb(45, 45, 45);
+                objDashboard.dtpStart.ForeColor = Color.White;
+                objDashboard.dtpEnd.BackColor = Color.FromArgb(45, 45, 45);
+                objDashboard.dtpEnd.ForeColor = Color.White;
+                objDashboard.btnConfirm.OnIdleState.BorderColor = Color.FromArgb(0, 102, 204);
+                objDashboard.btnConfirm.OnIdleState.FillColor = Color.FromArgb(0, 102, 204);
+                objDashboard.panel1.PanelColor = Color.FromArgb(30, 30, 30);
+                objDashboard.panel2.PanelColor = Color.FromArgb(30, 30, 30);
+                objDashboard.panel3.PanelColor = Color.FromArgb(30, 30, 30);
+                objDashboard.panel4.PanelColor = Color.FromArgb(30, 30, 30);
+                objDashboard.lblEmployee.ForeColor = Color.White;
+                objDashboard.lblCantEmployee.ForeColor = Color.White;
+                objDashboard.lblBill.ForeColor = Color.White;
+                objDashboard.lblBills.ForeColor = Color.White;
+                objDashboard.lblService.ForeColor = Color.White;
+                objDashboard.lblServices.ForeColor = Color.White;
+                objDashboard.lblCustom.ForeColor = Color.White;
+                objDashboard.lblCustomers.ForeColor = Color.White;
+                objDashboard.lblRevenue.ForeColor = Color.White;
+                objDashboard.lblTotalIncome.ForeColor = Color.White;
+                objDashboard.lblAudits.ForeColor = Color.White;
+                objDashboard.dgvAudits.BackgroundColor = Color.FromArgb(45, 45, 45);
+                objDashboard.dgvAudits.HeaderBackColor = Color.LightSlateGray;
+                objDashboard.dgvAudits.GridColor = Color.FromArgb(45, 45, 45);
+                objDashboard.dgvAudits.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
+                objDashboard.dgvAudits.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSlateGray;
+                objDashboard.chartPayrolls.Titles[0].ForeColor = Color.White;
+                objDashboard.chartPayrolls.Legends[0].ForeColor = Color.White;
+                objDashboard.chrtTopServices.Titles[0].ForeColor = Color.White;
+                objDashboard.chrtTopServices.Legends[0].ForeColor = Color.White;
+                objDashboard.lblTime.ForeColor = Color.White;
+                objDashboard.rgYearProgress.ForeColor = Color.White;
+                objDashboard.panelEmployees.BackgroundColor = Color.FromArgb(45, 45, 45);
+                objDashboard.panelBills.BackgroundColor = Color.FromArgb(45, 45, 45);
+                objDashboard.panelServices.BackgroundColor = Color.FromArgb(45, 45, 45);
+                objDashboard.panelCustom.BackgroundColor = Color.FromArgb(45, 45, 45);
+                objDashboard.panelIn.BackgroundColor = Color.FromArgb(45, 45, 45);
+                objDashboard.btnConfirm.IdleFillColor = Color.FromArgb(0, 102, 204);
+                objDashboard.chartPayrolls.ChartAreas[0].BackColor = Color.FromArgb(45, 45, 45);
+            }
         }
         public void ChargeData()
         {
