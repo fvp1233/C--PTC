@@ -53,7 +53,7 @@ namespace PTC2024.Controller.FirstUseController
                     DAOSave.PhoneBusiness = objFistUse.txtPhone.Text.Trim();
                     DAOSave.PbxBusiness = objFistUse.txtPBX.Text.Trim();                    //Guardar Imagen
                     Image image = objFistUse.picBusiness.Image;
-                    DAOSave.FirstUse = DateTime.Now;
+                    DAOSave.FirstUse = objFistUse.dtCreationDate.Value.Date;
                     byte[] imageBytes;
                     if (image == null)
                     {
