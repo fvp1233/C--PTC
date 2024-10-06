@@ -44,8 +44,8 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtSearchB = new Bunifu.UI.WinForms.BunifuTextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblSubTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvBills = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.cmsBills = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -60,28 +60,28 @@
             this.cbAnulada = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.cbPendiente = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblCanceled = new System.Windows.Forms.Label();
+            this.lblPen = new System.Windows.Forms.Label();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.cbEmitida = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.cbRectificada = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.cbPagada = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblPaid = new System.Windows.Forms.Label();
+            this.lblRec = new System.Windows.Forms.Label();
+            this.lblEm = new System.Windows.Forms.Label();
+            this.lblPayMeth = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.cbEfectivo = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.cbCheque = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.cbCriptomoneda = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblCrypto = new System.Windows.Forms.Label();
+            this.lblCheque = new System.Windows.Forms.Label();
+            this.lblCash = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -216,8 +216,8 @@
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.lblTitle, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.lblSubTitle, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -227,28 +227,28 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(551, 67);
             this.tableLayoutPanel5.TabIndex = 7;
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 1);
-            this.label1.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 40);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "FACTURAS";
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(15, 1);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(184, 40);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "FACTURAS";
             // 
-            // label2
+            // lblSubTitle
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 42);
-            this.label2.Margin = new System.Windows.Forms.Padding(25, 0, 3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(332, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Haga click derecho sobre un empleado para más opciones.";
+            this.lblSubTitle.AutoSize = true;
+            this.lblSubTitle.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTitle.Location = new System.Drawing.Point(25, 42);
+            this.lblSubTitle.Margin = new System.Windows.Forms.Padding(25, 0, 3, 0);
+            this.lblSubTitle.Name = "lblSubTitle";
+            this.lblSubTitle.Size = new System.Drawing.Size(332, 16);
+            this.lblSubTitle.TabIndex = 2;
+            this.lblSubTitle.Text = "Haga click derecho sobre un empleado para más opciones.";
             // 
             // tableLayoutPanel8
             // 
@@ -500,12 +500,12 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.855072F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90.14493F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 563F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 564F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel11, 3, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel9, 2, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label3, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblPayMeth, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label8, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblStatus, 2, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(5, 5);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -523,11 +523,11 @@
             this.tableLayoutPanel11.Controls.Add(this.flowLayoutPanel3, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel12, 1, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(354, 28);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(353, 28);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(558, 86);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(559, 86);
             this.tableLayoutPanel11.TabIndex = 8;
             // 
             // flowLayoutPanel3
@@ -537,7 +537,7 @@
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(24, 80);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(25, 80);
             this.flowLayoutPanel3.TabIndex = 0;
             // 
             // cbAnulada
@@ -652,10 +652,10 @@
             // 
             this.tableLayoutPanel12.ColumnCount = 1;
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Controls.Add(this.label9, 0, 0);
-            this.tableLayoutPanel12.Controls.Add(this.label16, 0, 1);
+            this.tableLayoutPanel12.Controls.Add(this.lblCanceled, 0, 0);
+            this.tableLayoutPanel12.Controls.Add(this.lblPen, 0, 1);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(33, 3);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(34, 3);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 4;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -665,27 +665,27 @@
             this.tableLayoutPanel12.Size = new System.Drawing.Size(522, 80);
             this.tableLayoutPanel12.TabIndex = 1;
             // 
-            // label9
+            // lblCanceled
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 1);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(516, 16);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Anulada";
+            this.lblCanceled.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCanceled.AutoSize = true;
+            this.lblCanceled.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCanceled.Location = new System.Drawing.Point(3, 1);
+            this.lblCanceled.Name = "lblCanceled";
+            this.lblCanceled.Size = new System.Drawing.Size(516, 16);
+            this.lblCanceled.TabIndex = 4;
+            this.lblCanceled.Text = "Anulada";
             // 
-            // label16
+            // lblPen
             // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(3, 20);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(516, 16);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Pendiente";
+            this.lblPen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPen.AutoSize = true;
+            this.lblPen.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPen.Location = new System.Drawing.Point(3, 20);
+            this.lblPen.Name = "lblPen";
+            this.lblPen.Size = new System.Drawing.Size(516, 16);
+            this.lblPen.TabIndex = 0;
+            this.lblPen.Text = "Pendiente";
             // 
             // tableLayoutPanel9
             // 
@@ -695,7 +695,7 @@
             this.tableLayoutPanel9.Controls.Add(this.flowLayoutPanel2, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(234, 28);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(233, 28);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -879,9 +879,9 @@
             // 
             this.tableLayoutPanel10.ColumnCount = 1;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Controls.Add(this.label10, 0, 2);
-            this.tableLayoutPanel10.Controls.Add(this.label11, 0, 1);
-            this.tableLayoutPanel10.Controls.Add(this.label12, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.lblPaid, 0, 2);
+            this.tableLayoutPanel10.Controls.Add(this.lblRec, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.lblEm, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(32, 3);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -893,49 +893,49 @@
             this.tableLayoutPanel10.Size = new System.Drawing.Size(79, 80);
             this.tableLayoutPanel10.TabIndex = 1;
             // 
-            // label10
+            // lblPaid
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 48);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 16);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Pagada";
+            this.lblPaid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPaid.AutoSize = true;
+            this.lblPaid.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaid.Location = new System.Drawing.Point(3, 48);
+            this.lblPaid.Name = "lblPaid";
+            this.lblPaid.Size = new System.Drawing.Size(73, 16);
+            this.lblPaid.TabIndex = 2;
+            this.lblPaid.Text = "Pagada";
             // 
-            // label11
+            // lblRec
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 25);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 16);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Rectificada";
+            this.lblRec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRec.AutoSize = true;
+            this.lblRec.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRec.Location = new System.Drawing.Point(3, 25);
+            this.lblRec.Name = "lblRec";
+            this.lblRec.Size = new System.Drawing.Size(73, 16);
+            this.lblRec.TabIndex = 1;
+            this.lblRec.Text = "Rectificada";
             // 
-            // label12
+            // lblEm
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 3);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 16);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Emitida";
+            this.lblEm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblEm.AutoSize = true;
+            this.lblEm.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEm.Location = new System.Drawing.Point(3, 3);
+            this.lblEm.Name = "lblEm";
+            this.lblEm.Size = new System.Drawing.Size(73, 16);
+            this.lblEm.TabIndex = 0;
+            this.lblEm.Text = "Emitida";
             // 
-            // label3
+            // lblPayMeth
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 18);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Método de pago:";
+            this.lblPayMeth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblPayMeth.AutoSize = true;
+            this.lblPayMeth.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayMeth.Location = new System.Drawing.Point(25, 7);
+            this.lblPayMeth.Name = "lblPayMeth";
+            this.lblPayMeth.Size = new System.Drawing.Size(138, 18);
+            this.lblPayMeth.TabIndex = 0;
+            this.lblPayMeth.Text = "Método de pago:";
             // 
             // tableLayoutPanel6
             // 
@@ -949,7 +949,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(203, 86);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(202, 86);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -1129,9 +1129,9 @@
             // 
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Controls.Add(this.label6, 0, 2);
-            this.tableLayoutPanel7.Controls.Add(this.label5, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.lblCrypto, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.lblCheque, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.lblCash, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(32, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -1140,52 +1140,52 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.18182F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(168, 80);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(167, 80);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
-            // label6
+            // lblCrypto
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 47);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(162, 16);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Criptomoneda";
+            this.lblCrypto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCrypto.AutoSize = true;
+            this.lblCrypto.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCrypto.Location = new System.Drawing.Point(3, 47);
+            this.lblCrypto.Name = "lblCrypto";
+            this.lblCrypto.Size = new System.Drawing.Size(161, 16);
+            this.lblCrypto.TabIndex = 2;
+            this.lblCrypto.Text = "Criptomoneda";
             // 
-            // label5
+            // lblCheque
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 26);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(162, 16);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Cheque";
+            this.lblCheque.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCheque.AutoSize = true;
+            this.lblCheque.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheque.Location = new System.Drawing.Point(3, 26);
+            this.lblCheque.Name = "lblCheque";
+            this.lblCheque.Size = new System.Drawing.Size(161, 16);
+            this.lblCheque.TabIndex = 1;
+            this.lblCheque.Text = "Cheque";
             // 
-            // label4
+            // lblCash
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 4);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(162, 16);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Efectivo";
+            this.lblCash.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCash.AutoSize = true;
+            this.lblCash.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCash.Location = new System.Drawing.Point(3, 4);
+            this.lblCash.Name = "lblCash";
+            this.lblCash.Size = new System.Drawing.Size(161, 16);
+            this.lblCash.TabIndex = 0;
+            this.lblCash.Text = "Efectivo";
             // 
-            // label8
+            // lblStatus
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(234, 7);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 18);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Estado:";
+            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Location = new System.Drawing.Point(233, 7);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(60, 18);
+            this.lblStatus.TabIndex = 2;
+            this.lblStatus.Text = "Estado:";
             // 
             // FrmBills
             // 
@@ -1227,8 +1227,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnNewBills;
@@ -1236,22 +1234,12 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         public System.Windows.Forms.ContextMenuStrip cmsBills;
         public Bunifu.UI.WinForms.BunifuTextBox txtSearchB;
         public System.Windows.Forms.ToolStripMenuItem cmsPrintBill;
@@ -1266,5 +1254,17 @@
         public Bunifu.UI.WinForms.BunifuCheckBox cbAnulada;
         public Bunifu.UI.WinForms.BunifuCheckBox cbPendiente;
         public Bunifu.UI.WinForms.BunifuDataGridView dgvBills;
+        public System.Windows.Forms.Label lblTitle;
+        public System.Windows.Forms.Label lblSubTitle;
+        public System.Windows.Forms.Label lblPayMeth;
+        public System.Windows.Forms.Label lblStatus;
+        public System.Windows.Forms.Label lblCheque;
+        public System.Windows.Forms.Label lblCash;
+        public System.Windows.Forms.Label lblEm;
+        public System.Windows.Forms.Label lblCrypto;
+        public System.Windows.Forms.Label lblPaid;
+        public System.Windows.Forms.Label lblRec;
+        public System.Windows.Forms.Label lblPen;
+        public System.Windows.Forms.Label lblCanceled;
     }
 }
