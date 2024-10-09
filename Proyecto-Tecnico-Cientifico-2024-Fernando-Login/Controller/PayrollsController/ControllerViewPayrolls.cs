@@ -343,11 +343,9 @@ namespace PTC2024.Controller.EmployeesController
 
             DataSet employeeDs = DAOUpdatePayroll.GetEmployee();
             DataSet payrollDs = DAOUpdatePayroll.GetPayroll();
-
             DateTime actualMonth = DateTime.Now;
             int year = actualMonth.Year;
             int month = actualMonth.Month;
-
             if (employeeDs != null && payrollDs != null)
             {
                 DataTable payrollDt = payrollDs.Tables["tbPayroll"];
@@ -660,6 +658,8 @@ namespace PTC2024.Controller.EmployeesController
             DAOViewPayrolls daoUpdate = new DAOViewPayrolls();
             int pos = objViewPayrolls.dgvPayrolls.CurrentRow.Index;
             daoUpdate.IdPayroll = int.Parse(objViewPayrolls.dgvPayrolls[0, pos].Value.ToString());
+            DateTime issueDate = DateTime.Parse(objViewPayrolls.dgvPayrolls[13, pos].Value.ToString());
+            int monthPayroll = issueDate.Month;
 
             DateTime selectedPayrollIssueDate = DateTime.Parse(objViewPayrolls.dgvPayrolls[13, pos].Value.ToString());
 
@@ -672,34 +672,58 @@ namespace PTC2024.Controller.EmployeesController
                     Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
                 return;
             }
-            daoUpdate.IdPayrollStatus = 1;
-            int returnedValues = daoUpdate.UpdatePayrollStatusPaid();
-
-            if (returnedValues >= 1)
+            int currentMonth = DateTime.Now.Month;
+            if (monthPayroll != currentMonth)
             {
-                StartMenu objStart = new StartMenu(SessionVar.Username);
-                objStartForm = objStart;
-                objStartForm.snackBar.Show(objStartForm, $"La planilla fue pagada exitosamente",
-                    Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
-
-                DAOInitialView daoInitial = new DAOInitialView();
-                daoInitial.ActionType = "Se pagó una planilla";
-                daoInitial.TableName = "Planillas";
-                daoInitial.ActionBy = SessionVar.Username;
-                daoInitial.ActionDate = DateTime.Now;
-                int auditAnswer = daoInitial.InsertAudit();
-
-                if (auditAnswer != 1)
+                FrmConfirmPayment objForm = new FrmConfirmPayment();
+                ControllerConfirmPayment objController = new ControllerConfirmPayment(objForm);
+                objForm.ShowDialog();
+                if (objController.ConfirmValue == 1)
                 {
-                    objStart.snackBar.Show(objStart, $"La auditoría no pudo ser registrada",
-                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    daoUpdate.IdPayrollStatus = 1;
+                    int returnedValues = daoUpdate.UpdatePayrollStatusPaid();
+
+                    if (returnedValues >= 1)
+                    {
+                        StartMenu objStart = new StartMenu(SessionVar.Username);
+                        objStartForm = objStart;
+                        objStartForm.snackBar.Show(objStartForm, $"La planilla fue pagada exitosamente",
+                            Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+
+                        DAOInitialView daoInitial = new DAOInitialView();
+                        daoInitial.ActionType = "Se pagó una planilla";
+                        daoInitial.TableName = "Planillas";
+                        daoInitial.ActionBy = SessionVar.Username;
+                        daoInitial.ActionDate = DateTime.Now;
+                        int auditAnswer = daoInitial.InsertAudit();
+
+                        if (auditAnswer != 1)
+                        {
+                            objStart.snackBar.Show(objStart, $"La auditoría no pudo ser registrada",
+                                Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                        }
+                    }
+                    else
+                    {
+                        StartMenu objStart = new StartMenu(SessionVar.Username);
+                        objStartForm = objStart;
+                        objStartForm.snackBar.Show(objStartForm, $"La planilla no pudo ser pagada",
+                            Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                    }
+                }
+                else
+                {
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStartForm = objStart;
+                    objStartForm.snackBar.Show(objStartForm, $"Se necesita la contraseña del CEO para realizar este proceso",
+                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
                 }
             }
             else
             {
                 StartMenu objStart = new StartMenu(SessionVar.Username);
                 objStartForm = objStart;
-                objStartForm.snackBar.Show(objStartForm, $"La planilla no pudo ser pagada",
+                objStartForm.snackBar.Show(objStartForm, $"Las planillas de este mes unicamente pueden ser pagadas el día 30",
                     Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
             RefreshData();
@@ -713,46 +737,50 @@ namespace PTC2024.Controller.EmployeesController
             daoUpdate.IdPayroll = int.Parse(objViewPayrolls.dgvPayrolls[0, pos].Value.ToString());
 
             // Obtener la fecha de emisión de la planilla
-            DateTime issueDate = DateTime.Parse(objViewPayrolls.dgvPayrolls[13, pos].Value.ToString()); // Asumiendo que la fecha está en la columna 3 del DataGridView
-
+            DateTime issueDate = DateTime.Parse(objViewPayrolls.dgvPayrolls[13, pos].Value.ToString());
+            int monthPayroll = issueDate.Month;
             // Validar si la planilla corresponde al mes anterior o anterior a ese
             DateTime currentDate = DateTime.Now;
             DateTime previousMonth = currentDate.AddMonths(-1);
 
-            //if (issueDate.Year < currentDate.Year || (issueDate.Year == currentDate.Year && issueDate.Month < currentDate.Month))
-            //{
-            //    // Si la planilla corresponde a un mes anterior, no se puede revertir
-            //    StartMenu objStart = new StartMenu(SessionVar.Username);
-            //    objStartForm = objStart;
-            //    objStartForm.snackBar.Show(objStartForm, $"No se puede revertir el pago de una planilla de un mes anterior", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
-            //    return; // Salir del método sin realizar la reversión
-            //}
-
-            daoUpdate.IdPayrollStatus = 2;
-            int returnedValues = daoUpdate.UpdatePayrollStatusUnPaid();
-            if (returnedValues >= 1)
+            FrmConfirmPayment objConfirmPayment = new FrmConfirmPayment();
+            ControllerConfirmPayment objController = new ControllerConfirmPayment(objConfirmPayment);
+            objConfirmPayment.ShowDialog();
+            if (objController.ConfirmValue == 1)
             {
-                StartMenu objStart = new StartMenu(SessionVar.Username);
-                objStartForm = objStart;
-                objStartForm.snackBar.Show(objStartForm, $"El pago fue revertido exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
-
-                // Registrar la auditoría
-                DAOInitialView daoInitial = new DAOInitialView();
-                daoInitial.ActionType = "Se revirtió un pago";
-                daoInitial.TableName = "Planillas";
-                daoInitial.ActionBy = SessionVar.Username;
-                daoInitial.ActionDate = DateTime.Now;
-                int auditAnswer = daoInitial.InsertAudit();
-                if (auditAnswer != 1)
+                daoUpdate.IdPayrollStatus = 2;
+                int returnedValues = daoUpdate.UpdatePayrollStatusUnPaid();
+                if (returnedValues >= 1)
                 {
-                    objStart.snackBar.Show(objStart, $"La auditoría no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStartForm = objStart;
+                    objStartForm.snackBar.Show(objStartForm, $"El pago fue revertido exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+
+                    // Registrar la auditoría
+                    DAOInitialView daoInitial = new DAOInitialView();
+                    daoInitial.ActionType = "Se revirtió un pago";
+                    daoInitial.TableName = "Planillas";
+                    daoInitial.ActionBy = SessionVar.Username;
+                    daoInitial.ActionDate = DateTime.Now;
+                    int auditAnswer = daoInitial.InsertAudit();
+                    if (auditAnswer != 1)
+                    {
+                        objStart.snackBar.Show(objStart, $"La auditoría no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    }
+                }
+                else
+                {
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStartForm = objStart;
+                    objStartForm.snackBar.Show(objStartForm, $"El pago no pudo ser revertido", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
                 }
             }
             else
             {
                 StartMenu objStart = new StartMenu(SessionVar.Username);
                 objStartForm = objStart;
-                objStartForm.snackBar.Show(objStartForm, $"El pago no pudo ser revertido", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                objStartForm.snackBar.Show(objStartForm, $"Se necesita la contraseña del CEO para realizar este proceso",
+                    Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
             RefreshData();
         }

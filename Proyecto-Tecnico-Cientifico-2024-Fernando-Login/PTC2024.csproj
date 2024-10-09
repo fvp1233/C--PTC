@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Alerts\ControllerChangePassword.cs" />
+    <Compile Include="Controller\Alerts\ControllerConfirmPayment.cs" />
     <Compile Include="Controller\Alerts\ControllerDeleteAlert.cs" />
     <Compile Include="Controller\Alerts\ControllerProgressBar.cs" />
     <Compile Include="Controller\Helper\BusinessVar.cs" />
@@ -293,6 +294,12 @@
     </Compile>
     <Compile Include="View\Alerts\FrmChangePassword.Designer.cs">
       <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Alerts\FrmConfirmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Alerts\FrmConfirmPayment.Designer.cs">
+      <DependentUpon>FrmConfirmPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Alerts\FrmDeleteAlert.cs">
       <SubType>Form</SubType>
@@ -645,6 +652,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="View\Alerts\FrmChangePassword.resx">
       <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Alerts\FrmConfirmPayment.resx">
+      <DependentUpon>FrmConfirmPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Alerts\FrmDeleteAlert.resx">
       <DependentUpon>FrmDeleteAlert.cs</DependentUpon>
