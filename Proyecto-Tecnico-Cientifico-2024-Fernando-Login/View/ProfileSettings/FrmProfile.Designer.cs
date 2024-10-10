@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfile));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblSubtitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.btnManualT = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnUserManual = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
@@ -49,15 +49,15 @@
             this.btnUpdate = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnSecurityQ = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.lblUser = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblUserTitle = new System.Windows.Forms.Label();
+            this.lblEmployeeName = new System.Windows.Forms.Label();
             this.lblFullName = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblEmailTitle = new System.Windows.Forms.Label();
             this.lblEAdress = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblPTitle = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblATitle = new System.Windows.Forms.Label();
+            this.lblRoleTitle = new System.Windows.Forms.Label();
             this.lblCharge = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
@@ -108,8 +108,8 @@
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.lblTitle, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.lblSubtitle, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -119,27 +119,27 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(592, 68);
             this.tableLayoutPanel5.TabIndex = 8;
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 1);
-            this.label1.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(433, 40);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Configuración de usuario";
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(15, 1);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(433, 40);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "Configuración de usuario";
             // 
-            // label2
+            // lblSubtitle
             // 
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 43);
-            this.label2.Margin = new System.Windows.Forms.Padding(25, 0, 3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(539, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Personalice los datos de su usuario. Para ver todos los cambios, cierre e inicie " +
+            this.lblSubtitle.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtitle.Location = new System.Drawing.Point(25, 43);
+            this.lblSubtitle.Margin = new System.Windows.Forms.Padding(25, 0, 3, 0);
+            this.lblSubtitle.Name = "lblSubtitle";
+            this.lblSubtitle.Size = new System.Drawing.Size(539, 17);
+            this.lblSubtitle.TabIndex = 2;
+            this.lblSubtitle.Text = "Personalice los datos de su usuario. Para ver todos los cambios, cierre e inicie " +
     "sesión nuevamente.";
             // 
             // tableLayoutPanel8
@@ -177,11 +177,11 @@
             this.btnManualT.ColorContrastOnClick = 45;
             this.btnManualT.ColorContrastOnHover = 45;
             this.btnManualT.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnManualT.CustomizableEdges = borderEdges1;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.btnManualT.CustomizableEdges = borderEdges5;
             this.btnManualT.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnManualT.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnManualT.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -267,11 +267,11 @@
             this.btnUserManual.ColorContrastOnClick = 45;
             this.btnUserManual.ColorContrastOnHover = 45;
             this.btnUserManual.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnUserManual.CustomizableEdges = borderEdges2;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.btnUserManual.CustomizableEdges = borderEdges6;
             this.btnUserManual.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnUserManual.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnUserManual.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -389,15 +389,15 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 0, 13);
             this.tableLayoutPanel6.Controls.Add(this.lblUser, 0, 3);
-            this.tableLayoutPanel6.Controls.Add(this.label4, 0, 2);
-            this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.lblUserTitle, 0, 2);
+            this.tableLayoutPanel6.Controls.Add(this.lblEmployeeName, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.lblFullName, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.label3, 0, 4);
+            this.tableLayoutPanel6.Controls.Add(this.lblEmailTitle, 0, 4);
             this.tableLayoutPanel6.Controls.Add(this.lblEAdress, 0, 5);
-            this.tableLayoutPanel6.Controls.Add(this.label7, 0, 6);
+            this.tableLayoutPanel6.Controls.Add(this.lblPTitle, 0, 6);
             this.tableLayoutPanel6.Controls.Add(this.lblPhone, 0, 7);
-            this.tableLayoutPanel6.Controls.Add(this.label9, 0, 8);
-            this.tableLayoutPanel6.Controls.Add(this.label6, 0, 10);
+            this.tableLayoutPanel6.Controls.Add(this.lblATitle, 0, 8);
+            this.tableLayoutPanel6.Controls.Add(this.lblRoleTitle, 0, 10);
             this.tableLayoutPanel6.Controls.Add(this.lblCharge, 0, 11);
             this.tableLayoutPanel6.Controls.Add(this.lblAddress, 0, 9);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -455,11 +455,11 @@
             this.btnUpdate.ColorContrastOnClick = 45;
             this.btnUpdate.ColorContrastOnHover = 45;
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnUpdate.CustomizableEdges = borderEdges3;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.btnUpdate.CustomizableEdges = borderEdges7;
             this.btnUpdate.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnUpdate.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnUpdate.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -545,11 +545,11 @@
             this.btnSecurityQ.ColorContrastOnClick = 45;
             this.btnSecurityQ.ColorContrastOnHover = 45;
             this.btnSecurityQ.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnSecurityQ.CustomizableEdges = borderEdges4;
+            borderEdges8.BottomLeft = true;
+            borderEdges8.BottomRight = true;
+            borderEdges8.TopLeft = true;
+            borderEdges8.TopRight = true;
+            this.btnSecurityQ.CustomizableEdges = borderEdges8;
             this.btnSecurityQ.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSecurityQ.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSecurityQ.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -627,29 +627,29 @@
             this.lblUser.TabIndex = 3;
             this.lblUser.Text = "usuario";
             // 
-            // label4
+            // lblUserTitle
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(10, 106);
-            this.label4.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 19);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "USUARIO:";
+            this.lblUserTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblUserTitle.AutoSize = true;
+            this.lblUserTitle.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserTitle.Location = new System.Drawing.Point(10, 106);
+            this.lblUserTitle.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.lblUserTitle.Name = "lblUserTitle";
+            this.lblUserTitle.Size = new System.Drawing.Size(79, 19);
+            this.lblUserTitle.TabIndex = 2;
+            this.lblUserTitle.Text = "USUARIO:";
             // 
-            // label5
+            // lblEmployeeName
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 35);
-            this.label5.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(164, 19);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "NOMBRE EMPLEADO:";
+            this.lblEmployeeName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblEmployeeName.AutoSize = true;
+            this.lblEmployeeName.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeName.Location = new System.Drawing.Point(10, 35);
+            this.lblEmployeeName.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.lblEmployeeName.Name = "lblEmployeeName";
+            this.lblEmployeeName.Size = new System.Drawing.Size(164, 19);
+            this.lblEmployeeName.TabIndex = 0;
+            this.lblEmployeeName.Text = "NOMBRE EMPLEADO:";
             // 
             // lblFullName
             // 
@@ -663,17 +663,17 @@
             this.lblFullName.TabIndex = 1;
             this.lblFullName.Text = "nombreCompleto";
             // 
-            // label3
+            // lblEmailTitle
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 178);
-            this.label3.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(186, 19);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "CORREO ELECTRÓNICO:";
+            this.lblEmailTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblEmailTitle.AutoSize = true;
+            this.lblEmailTitle.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailTitle.Location = new System.Drawing.Point(10, 178);
+            this.lblEmailTitle.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.lblEmailTitle.Name = "lblEmailTitle";
+            this.lblEmailTitle.Size = new System.Drawing.Size(186, 19);
+            this.lblEmailTitle.TabIndex = 4;
+            this.lblEmailTitle.Text = "CORREO ELECTRÓNICO:";
             // 
             // lblEAdress
             // 
@@ -687,17 +687,17 @@
             this.lblEAdress.TabIndex = 5;
             this.lblEAdress.Text = "correo";
             // 
-            // label7
+            // lblPTitle
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(10, 251);
-            this.label7.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 19);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "TELÉFONO:";
+            this.lblPTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblPTitle.AutoSize = true;
+            this.lblPTitle.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPTitle.Location = new System.Drawing.Point(10, 251);
+            this.lblPTitle.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.lblPTitle.Name = "lblPTitle";
+            this.lblPTitle.Size = new System.Drawing.Size(89, 19);
+            this.lblPTitle.TabIndex = 6;
+            this.lblPTitle.Text = "TELÉFONO:";
             // 
             // lblPhone
             // 
@@ -711,29 +711,29 @@
             this.lblPhone.TabIndex = 7;
             this.lblPhone.Text = "telefono.";
             // 
-            // label9
+            // lblATitle
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(10, 330);
-            this.label9.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 19);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "DIRECCIÓN:";
+            this.lblATitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblATitle.AutoSize = true;
+            this.lblATitle.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblATitle.Location = new System.Drawing.Point(10, 330);
+            this.lblATitle.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.lblATitle.Name = "lblATitle";
+            this.lblATitle.Size = new System.Drawing.Size(98, 19);
+            this.lblATitle.TabIndex = 8;
+            this.lblATitle.Text = "DIRECCIÓN:";
             // 
-            // label6
+            // lblRoleTitle
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(10, 405);
-            this.label6.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 19);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "ROL DE ACCESO:";
+            this.lblRoleTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblRoleTitle.AutoSize = true;
+            this.lblRoleTitle.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoleTitle.Location = new System.Drawing.Point(10, 405);
+            this.lblRoleTitle.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.lblRoleTitle.Name = "lblRoleTitle";
+            this.lblRoleTitle.Size = new System.Drawing.Size(134, 19);
+            this.lblRoleTitle.TabIndex = 10;
+            this.lblRoleTitle.Text = "ROL DE ACCESO:";
             // 
             // lblCharge
             // 
@@ -805,23 +805,14 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
         public System.Windows.Forms.Label lblFullName;
         public System.Windows.Forms.Label lblUser;
         public System.Windows.Forms.Label lblEAdress;
         public System.Windows.Forms.Label lblPhone;
         public Bunifu.UI.WinForms.BunifuPictureBox picUser;
-        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
-        private System.Windows.Forms.Label label6;
         public System.Windows.Forms.Label lblCharge;
         public System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
@@ -830,5 +821,14 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnManualT;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnUserManual;
+        public System.Windows.Forms.Label lblTitle;
+        public System.Windows.Forms.Label lblSubtitle;
+        public System.Windows.Forms.Label lblUserTitle;
+        public System.Windows.Forms.Label lblEmployeeName;
+        public System.Windows.Forms.Label lblEmailTitle;
+        public System.Windows.Forms.Label lblPTitle;
+        public System.Windows.Forms.Label lblATitle;
+        public System.Windows.Forms.Label lblRoleTitle;
+        public Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
     }
 }

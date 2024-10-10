@@ -6,6 +6,7 @@ using PTC2024.View.ProfileSettings;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Odbc;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -43,6 +44,42 @@ namespace PTC2024.Controller.ProfileController
             objProfile.lblCharge.Text = SessionVar.Access;
             objProfile.lblAddress.Text = SessionVar.Adress;
             objProfile.picUser.Image = ByteArrayToImage(SessionVar.ProfilePic);
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objProfile.BackColor = Color.FromArgb(18,18,18);
+                objProfile.lblTitle.ForeColor = Color.White;
+                objProfile.lblSubtitle.ForeColor = Color.White;
+                objProfile.bunifuSeparator1.LineColor = Color.White;
+                objProfile.lblEmployeeName.ForeColor = Color.White;
+                objProfile.lblFullName.ForeColor = Color.White;
+                objProfile.lblUserTitle.ForeColor = Color.White;
+                objProfile.lblUser.ForeColor = Color.White;
+                objProfile.lblEmailTitle.ForeColor = Color.White;
+                objProfile.lblEAdress.ForeColor = Color.White;
+                objProfile.lblPTitle.ForeColor = Color.White;
+                objProfile.lblPhone.ForeColor = Color.White;
+                objProfile.lblATitle.ForeColor = Color.White;
+                objProfile.lblAddress.ForeColor = Color.White;
+                objProfile.lblRoleTitle.ForeColor = Color.White;
+                objProfile.lblCharge.ForeColor = Color.White;
+                objProfile.btnManualT.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objProfile.btnManualT.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objProfile.btnManualT.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objProfile.btnManualT.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objProfile.btnSecurityQ.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objProfile.btnSecurityQ.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objProfile.btnSecurityQ.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objProfile.btnSecurityQ.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objProfile.btnUpdate.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objProfile.btnUpdate.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objProfile.btnUpdate.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objProfile.btnUpdate.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objProfile.btnUserManual.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objProfile.btnUserManual.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objProfile.btnUserManual.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objProfile.btnUserManual.IdleBorderColor = Color.FromArgb(26, 32, 161);
+
+            }
         }
 
         public Image ByteArrayToImage(byte[] byteArray)
