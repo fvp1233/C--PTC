@@ -1,5 +1,6 @@
 ﻿using PTC2024.Controller.Alerts;
 using PTC2024.Controller.BillsController;
+using PTC2024.Controller.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,7 @@ namespace PTC2024.View.BillsViews
         {
             InitializeComponent();
             ControllerOverride objOverride = new ControllerOverride(this);
+            Region = Region.FromHrgn(CommonClasses.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)

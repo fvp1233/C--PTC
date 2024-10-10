@@ -33,7 +33,7 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panelBanks = new Bunifu.UI.WinForms.BunifuShadowPanel();
@@ -86,7 +86,7 @@
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.lblTitle, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.bunifuSeparator1, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
@@ -97,17 +97,17 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(1177, 62);
             this.tableLayoutPanel5.TabIndex = 8;
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 3);
-            this.label1.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(310, 40);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "MANTENIMIENTOS";
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(15, 3);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(279, 40);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "Mantenimientos";
             // 
             // bunifuSeparator1
             // 
@@ -625,7 +625,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1183, 688);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMaintenance";
             this.Text = "FrmMaintenance";
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -652,7 +651,6 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         public Bunifu.UI.WinForms.BunifuShadowPanel panelDepartments;
         public Bunifu.UI.WinForms.BunifuShadowPanel panelCharge;
@@ -670,8 +668,9 @@
         public System.Windows.Forms.PictureBox pictureBanks;
         public Bunifu.UI.WinForms.BunifuShadowPanel panelCategories;
         public Bunifu.UI.WinForms.BunifuShadowPanel panelBanks;
-        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnServerConfiguration;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnBusinessConfiguration;
+        public System.Windows.Forms.Label lblTitle;
+        public Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
     }
 }

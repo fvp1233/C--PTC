@@ -15,6 +15,7 @@ using PTC2024.View.Start;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Odbc;
 using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
@@ -33,6 +34,7 @@ namespace PTC2024.Controller.EmployeesController
         public ControllerViewPayrolls(FrmViewPayrolls Vista)
         {
             objViewPayrolls = Vista;
+            objViewPayrolls.Load += new EventHandler(InitialCharge);
             objViewPayrolls.btnAll.Click += new EventHandler(SearchAll);
             objViewPayrolls.btnFirstT.Click += new EventHandler(SearchByFirstTrimester);
             objViewPayrolls.btnSecondT.Click += new EventHandler(SearchBySecondTrimester);
@@ -71,6 +73,85 @@ namespace PTC2024.Controller.EmployeesController
         public double TruncateToTwoDecimals(double value)
         {
             return Math.Round(value, 2);
+        }
+
+        public void InitialCharge(object sender, EventArgs e)
+        {
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objViewPayrolls.BackColor = Color.FromArgb(18,18,18);
+                objViewPayrolls.lblTitle.ForeColor = Color.White;
+                objViewPayrolls.lblSubTitle.ForeColor = Color.White;
+                objViewPayrolls.lblMonth.ForeColor = Color.White;
+                objViewPayrolls.lblMonth1.ForeColor = Color.White;
+                objViewPayrolls.lblMonth2.ForeColor = Color.White;
+                objViewPayrolls.lblMonth3.ForeColor = Color.White;
+                objViewPayrolls.lblMonth4.ForeColor = Color.White;
+                objViewPayrolls.lblMonth5.ForeColor = Color.White;
+                objViewPayrolls.lblMonth6.ForeColor = Color.White;
+                objViewPayrolls.lblMonth7.ForeColor = Color.White;
+                objViewPayrolls.lblMonth8.ForeColor = Color.White;
+                objViewPayrolls.lblMonth9.ForeColor = Color.White;
+                objViewPayrolls.lblMonth10.ForeColor = Color.White;
+                objViewPayrolls.lblMonth11.ForeColor = Color.White;
+                objViewPayrolls.lblMonth12.ForeColor = Color.White;
+                objViewPayrolls.lblPay.ForeColor = Color.White;
+                objViewPayrolls.lblUnpaid.ForeColor = Color.White;
+                objViewPayrolls.lblCompensation.ForeColor = Color.White;
+                objViewPayrolls.btnAll.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnAll.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnAll.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnAll.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnFirstT.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnFirstT.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnFirstT.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnFirstT.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnSecondT.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnSecondT.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnSecondT.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnSecondT.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnThirtht.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnThirtht.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnThirtht.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnThirtht.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnFourth.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnFourth.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnFourth.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnFourth.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnCreatePayroll.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnCreatePayroll.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnCreatePayroll.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnCreatePayroll.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnActualizarPlanillas.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnActualizarPlanillas.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnActualizarPlanillas.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnActualizarPlanillas.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnCompensation.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnCompensation.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnCompensation.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnCompensation.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnDeletePayrolls.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnDeletePayrolls.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnDeletePayrolls.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.btnDeletePayrolls.IdleBorderColor = Color.FromArgb(26, 32, 161); 
+                objViewPayrolls.btnPayAll.OnIdleState.FillColor = Color.FromArgb(255, 128, 0);
+                objViewPayrolls.btnPayAll.OnIdleState.BorderColor = Color.FromArgb(255, 128, 0);
+                objViewPayrolls.btnPayAll.IdleFillColor = Color.FromArgb(255, 128, 0);
+                objViewPayrolls.btnPayAll.IdleBorderColor = Color.FromArgb(255, 128, 0);
+                objViewPayrolls.btnRevertPay.OnIdleState.FillColor = Color.FromArgb(255, 128, 0);
+                objViewPayrolls.btnRevertPay.OnIdleState.BorderColor = Color.FromArgb(255, 128, 0);
+                objViewPayrolls.btnRevertPay.IdleFillColor = Color.FromArgb(255, 128, 0);
+                objViewPayrolls.btnRevertPay.IdleBorderColor = Color.FromArgb(255, 128, 0);
+                objViewPayrolls.txtSearch.FillColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.txtSearch.BorderColorActive = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.txtSearch.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.txtSearch.BorderColorIdle = Color.FromArgb(26, 32, 161);
+                objViewPayrolls.dgvPayrolls.BackgroundColor = Color.FromArgb(45, 45, 45);
+                objViewPayrolls.dgvPayrolls.HeaderBackColor = Color.LightSlateGray;
+                objViewPayrolls.dgvPayrolls.GridColor = Color.FromArgb(45, 45, 45);
+                objViewPayrolls.dgvPayrolls.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
+                objViewPayrolls.dgvPayrolls.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSlateGray;
+            }
         }
         public async void CreatePayroll(object sender, EventArgs e)
         {

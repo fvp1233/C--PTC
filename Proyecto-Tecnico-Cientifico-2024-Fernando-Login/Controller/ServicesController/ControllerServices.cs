@@ -14,6 +14,8 @@ using PTC2024.Model.DAO.CustomersDAO;
 using PTC2024.Controller.Helper;
 using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.View.formularios.inicio;
+using System.Drawing;
+using System.Data.Odbc;
 
 namespace PTC2024.Controller.ServicesController
 {
@@ -47,6 +49,39 @@ namespace PTC2024.Controller.ServicesController
         public void ChargeData(object sender, EventArgs e)
         {
             ChargeDgv();
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objServices.BackColor = Color.FromArgb(18,18,18);
+                objServices.lblServices.ForeColor = Color.White;
+                objServices.lblInformation.ForeColor = Color.White;
+                objServices.lblCategory.ForeColor = Color.White;
+                objServices.lblSegurity.ForeColor = Color.White;
+                objServices.lblSupport.ForeColor = Color.White;
+                objServices.lblProgramming.ForeColor = Color.White;
+                objServices.lblInfrastructure.ForeColor = Color.White;
+                objServices.lblMaintenance.ForeColor = Color.White;
+                objServices.txtSearch.FillColor = Color.FromArgb(26, 32, 161);
+                objServices.txtSearch.BorderColorActive = Color.FromArgb(26, 32, 161);
+                objServices.txtSearch.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objServices.txtSearch.BorderColorIdle = Color.FromArgb(26, 32, 161);
+                objServices.btnAddService.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objServices.btnAddService.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objServices.btnAddService.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objServices.btnAddService.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objServices.btnReportServices.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objServices.btnReportServices.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objServices.btnReportServices.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objServices.btnReportServices.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objServices.btnAgenda.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objServices.btnAgenda.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objServices.btnAgenda.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objServices.btnAgenda.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objServices.DgvServicios.BackgroundColor = Color.FromArgb(45, 45, 45);
+                objServices.DgvServicios.HeaderBackColor = Color.LightSlateGray;
+                objServices.DgvServicios.GridColor = Color.FromArgb(45, 45, 45);
+                objServices.DgvServicios.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
+                objServices.DgvServicios.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSlateGray;
+            }
         }
 
         /*Este metodo se usara para cargar el DataGridView al momento de abrir el apartado de servicios asi mismo de refrescarlo cuando se actualice, elimine o inserte algun dato*/

@@ -8,6 +8,7 @@ using PTC2024.View.formularios.inicio;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,39 @@ namespace PTC2024.Controller.PayrollsController
         public void LoadData(object sender, EventArgs e)
         {
             RefreshData();
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objPermission.BackColor = Color.FromArgb(18,18,18);
+                objPermission.lblTitle.ForeColor = Color.White;
+                objPermission.lblSubTitle.ForeColor = Color.White;
+                objPermission.lblCategory.ForeColor = Color.White;
+                objPermission.lblStatus.ForeColor = Color.White;
+                objPermission.lblIncapacidad.ForeColor  = Color.White;
+                objPermission.lblPaternity.ForeColor = Color.White;
+                objPermission.lblMaternity.ForeColor = Color.White;
+                objPermission.lblPermission.ForeColor = Color.White;
+                objPermission.lblProcess.ForeColor = Color.White;
+                objPermission.lblCompleted.ForeColor = Color.White;
+                objPermission.lblDisabled.ForeColor = Color.White;
+                objPermission.txtEmployeeSearch.FillColor = Color.FromArgb(26, 32, 161);
+                objPermission.txtEmployeeSearch.BorderColorActive = Color.FromArgb(26, 32, 161);
+                objPermission.txtEmployeeSearch.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objPermission.txtEmployeeSearch.BorderColorIdle = Color.FromArgb(26, 32, 161);
+                objPermission.btnGeneratePermission.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objPermission.btnGeneratePermission.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objPermission.btnGeneratePermission.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objPermission.btnGeneratePermission.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objPermission.btnDeletePermission.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objPermission.btnDeletePermission.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objPermission.btnDeletePermission.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objPermission.btnDeletePermission.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objPermission.dgvPermissions.BackgroundColor = Color.FromArgb(45, 45, 45);
+                objPermission.dgvPermissions.HeaderBackColor = Color.LightSlateGray;
+                objPermission.dgvPermissions.GridColor = Color.FromArgb(45, 45, 45);
+                objPermission.dgvPermissions.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
+                objPermission.dgvPermissions.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSlateGray;
+
+            }
         }
         public void RefreshData()
         {

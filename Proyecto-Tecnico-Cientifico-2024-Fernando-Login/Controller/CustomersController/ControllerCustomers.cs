@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,6 +49,33 @@ namespace PTC2024.Controller.CustomersController
         public void LoadData(object sender, EventArgs e)
         {
             refreshData();
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objCustomers.BackColor = Color.FromArgb(18, 18, 18);
+                objCustomers.lblTitleCustomers.ForeColor = Color.White;
+                objCustomers.lblSubTitle.ForeColor = Color.White;
+                objCustomers.lblTypeCustomer.ForeColor = Color.White;
+                objCustomers.lblNatural.ForeColor = Color.White;
+                objCustomers.lblJuridic.ForeColor = Color.White;
+                objCustomers.lblAll.ForeColor = Color.White;
+                objCustomers.txtSearch.FillColor = Color.FromArgb(26, 32, 161);
+                objCustomers.txtSearch.BorderColorActive = Color.FromArgb(26, 32, 161);
+                objCustomers.txtSearch.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objCustomers.txtSearch.BorderColorIdle = Color.FromArgb(26, 32, 161);
+                objCustomers.BtnAddCustomer.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objCustomers.BtnAddCustomer.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objCustomers.BtnAddCustomer.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objCustomers.BtnAddCustomer.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objCustomers.btnReportCustomers.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objCustomers.btnReportCustomers.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objCustomers.btnReportCustomers.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objCustomers.btnReportCustomers.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objCustomers.dgvCustomers.BackgroundColor = Color.FromArgb(45, 45, 45);
+                objCustomers.dgvCustomers.HeaderBackColor = Color.LightSlateGray;
+                objCustomers.dgvCustomers.GridColor = Color.FromArgb(45, 45, 45);
+                objCustomers.dgvCustomers.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
+                objCustomers.dgvCustomers.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSlateGray;
+            }
         }
 
         //Metodo que filtra todos los clientes existentes

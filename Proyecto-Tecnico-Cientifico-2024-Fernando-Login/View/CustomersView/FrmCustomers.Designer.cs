@@ -123,6 +123,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
@@ -255,9 +256,9 @@
             this.lblTitleCustomers.Location = new System.Drawing.Point(15, 5);
             this.lblTitleCustomers.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
             this.lblTitleCustomers.Name = "lblTitleCustomers";
-            this.lblTitleCustomers.Size = new System.Drawing.Size(367, 40);
+            this.lblTitleCustomers.Size = new System.Drawing.Size(149, 40);
             this.lblTitleCustomers.TabIndex = 1;
-            this.lblTitleCustomers.Text = "CONSULTAR CLIENTES";
+            this.lblTitleCustomers.Text = "Clientes";
             // 
             // lblSubTitle
             // 
@@ -400,7 +401,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.432937F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.56706F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 204F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel11, 3, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel9, 2, 1);
             this.tableLayoutPanel4.Controls.Add(this.lblTypeCustomer, 1, 0);
@@ -422,15 +423,16 @@
             this.tableLayoutPanel11.Controls.Add(this.flowLayoutPanel3, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel12, 1, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(748, 29);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(746, 29);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(197, 91);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(199, 91);
             this.tableLayoutPanel11.TabIndex = 8;
             // 
             // flowLayoutPanel3
             // 
+            this.flowLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel3.Controls.Add(this.bunifuCheckBox9);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
@@ -504,7 +506,7 @@
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(162, 85);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(164, 85);
             this.tableLayoutPanel12.TabIndex = 1;
             // 
             // tableLayoutPanel9
@@ -515,7 +517,7 @@
             this.tableLayoutPanel9.Controls.Add(this.flowLayoutPanel2, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(589, 29);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(587, 29);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -524,6 +526,7 @@
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel2.Controls.Add(this.bunifuCheckBox5);
             this.flowLayoutPanel2.Controls.Add(this.bunifuCheckBox6);
             this.flowLayoutPanel2.Controls.Add(this.bunifuCheckBox7);
@@ -788,11 +791,12 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(549, 91);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(547, 91);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel1.Controls.Add(this.chkNatural);
             this.flowLayoutPanel1.Controls.Add(this.chkJuridico);
             this.flowLayoutPanel1.Controls.Add(this.chkTodos);
@@ -976,7 +980,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(515, 85);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(513, 85);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // lblJuridic
@@ -986,7 +990,7 @@
             this.lblJuridic.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJuridic.Location = new System.Drawing.Point(3, 22);
             this.lblJuridic.Name = "lblJuridic";
-            this.lblJuridic.Size = new System.Drawing.Size(509, 16);
+            this.lblJuridic.Size = new System.Drawing.Size(507, 16);
             this.lblJuridic.TabIndex = 1;
             this.lblJuridic.Text = "Jurídico";
             // 
@@ -997,7 +1001,7 @@
             this.lblNatural.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNatural.Location = new System.Drawing.Point(3, 2);
             this.lblNatural.Name = "lblNatural";
-            this.lblNatural.Size = new System.Drawing.Size(509, 16);
+            this.lblNatural.Size = new System.Drawing.Size(507, 16);
             this.lblNatural.TabIndex = 0;
             this.lblNatural.Text = "Natural";
             // 
@@ -1008,7 +1012,7 @@
             this.lblAll.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAll.Location = new System.Drawing.Point(3, 43);
             this.lblAll.Name = "lblAll";
-            this.lblAll.Size = new System.Drawing.Size(509, 16);
+            this.lblAll.Size = new System.Drawing.Size(507, 16);
             this.lblAll.TabIndex = 2;
             this.lblAll.Text = "Todos";
             // 

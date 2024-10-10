@@ -20,6 +20,7 @@ using PTC2024.Model.DAO;
 using PTC2024.View.Reporting.Employees;
 using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.View.formularios.inicio;
+using System.Drawing;
 
 namespace PTC2024.Controller.Employees
 {
@@ -60,6 +61,45 @@ namespace PTC2024.Controller.Employees
         public void LoadData (object sender, EventArgs e)
         {
             RefreshDataGridEmployees();
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objEmployees.BackColor = Color.FromArgb(18, 18, 18);
+                objEmployees.lblTitle.ForeColor = Color.White;
+                objEmployees.lblSubTitle.ForeColor = Color.White;
+                objEmployees.lblType.ForeColor = Color.White;
+                objEmployees.lblDepartment.ForeColor = Color.White;
+                objEmployees.lblState.ForeColor = Color.White;
+                objEmployees.lblTC.ForeColor = Color.White;
+                objEmployees.lblTV.ForeColor = Color.White;
+                objEmployees.lblTB.ForeColor = Color.White;
+                objEmployees.lblBec.ForeColor = Color.White;
+                objEmployees.lblAdmin.ForeColor = Color.White;
+                objEmployees.lblDevelop.ForeColor = Color.White;
+                objEmployees.lblSop.ForeColor = Color.White;
+                objEmployees.lblRH.ForeColor = Color.White;
+                objEmployees.lblMark.ForeColor = Color.White;
+                objEmployees.lblInac.ForeColor = Color.White;
+                objEmployees.lblPat.ForeColor = Color.White;
+                objEmployees.lblMat.ForeColor = Color.White;
+                objEmployees.lblInc.ForeColor = Color.White;
+                objEmployees.txtEmployeeSearch.FillColor = Color.FromArgb(26, 32, 161);
+                objEmployees.txtEmployeeSearch.BorderColorActive = Color.FromArgb(26, 32, 161);
+                objEmployees.txtEmployeeSearch.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objEmployees.txtEmployeeSearch.BorderColorIdle = Color.FromArgb(26, 32, 161);
+                objEmployees.BtnAddEmployee.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objEmployees.BtnAddEmployee.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objEmployees.BtnAddEmployee.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objEmployees.BtnAddEmployee.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objEmployees.btnGeneralReport.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objEmployees.btnGeneralReport.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objEmployees.btnGeneralReport.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objEmployees.btnGeneralReport.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objEmployees.dgvEmployees.BackgroundColor = Color.FromArgb(45, 45, 45);
+                objEmployees.dgvEmployees.HeaderBackColor = Color.LightSlateGray;
+                objEmployees.dgvEmployees.GridColor = Color.FromArgb(45, 45, 45);
+                objEmployees.dgvEmployees.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
+                objEmployees.dgvEmployees.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSlateGray;
+            }
         }
 
         public void SearchEmployeeEvent(object sender, KeyEventArgs e)

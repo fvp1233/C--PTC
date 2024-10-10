@@ -56,6 +56,35 @@ namespace PTC2024.Controller.BillsController
         public void LoadDataBills(object sender, EventArgs e)
         {
             ChargeData();
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objFormBills.BackColor = Color.FromArgb(18, 18, 18);
+                objFormBills.lblTitle.ForeColor = Color.White;
+                objFormBills.lblSubTitle.ForeColor = Color.White;
+                objFormBills.lblPayMeth.ForeColor = Color.White;
+                objFormBills.lblStatus.ForeColor = Color.White;
+                objFormBills.lblCash.ForeColor = Color.White;
+                objFormBills.lblCheque.ForeColor = Color.White;
+                objFormBills.lblCrypto.ForeColor = Color.White;
+                objFormBills.lblEm.ForeColor = Color.White;
+                objFormBills.lblRec.ForeColor = Color.White;
+                objFormBills.lblPaid.ForeColor = Color.White;
+                objFormBills.lblCanceled.ForeColor = Color.White;
+                objFormBills.lblPen.ForeColor = Color.White;
+                objFormBills.txtSearchB.FillColor = Color.FromArgb(26, 32, 161);
+                objFormBills.txtSearchB.BorderColorActive = Color.FromArgb(26, 32, 161);
+                objFormBills.txtSearchB.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objFormBills.txtSearchB.BorderColorIdle = Color.FromArgb(26, 32, 161);
+                objFormBills.btnNewBills.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                objFormBills.btnNewBills.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                objFormBills.btnNewBills.IdleFillColor = Color.FromArgb(26, 32, 161);
+                objFormBills.btnNewBills.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                objFormBills.dgvBills.BackgroundColor = Color.FromArgb(45, 45, 45);
+                objFormBills.dgvBills.HeaderBackColor = Color.LightSlateGray;
+                objFormBills.dgvBills.GridColor = Color.FromArgb(45, 45, 45);
+                objFormBills.dgvBills.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
+                objFormBills.dgvBills.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSlateGray;
+            }
         }
         public void ChargeData()
         {
