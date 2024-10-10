@@ -14,6 +14,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AForge.Video;
+using AForge.Video.DirectShow;
 
 
 namespace PTC2024.Controller.ProfileController
@@ -21,6 +23,8 @@ namespace PTC2024.Controller.ProfileController
     internal class ControllerProfileConfiguration
     {
         FrmProfileConfiguration objProfileC;
+        private FilterInfoCollection videoDevices; // Dispositivos de video
+        private VideoCaptureDevice videoSource; // Dispositivo de captura seleccionado
         public ControllerProfileConfiguration(FrmProfileConfiguration View, string names, string lastnames, string dui, string phone, string email, string adress, string affilitiation, string bankAccount)
         {
             objProfileC = View;
@@ -30,6 +34,8 @@ namespace PTC2024.Controller.ProfileController
             objProfileC.txtAffilliation.TextChanged += new EventHandler(AffiliatioNumberMask);
             objProfileC.txtBankA.TextChanged += new EventHandler(BankAccountMask);
             objProfileC.btnSavePhoto.Click += new EventHandler(PutImage);
+            objProfileC.btntake.Click += new EventHandler(InitialCamera);
+            objProfileC.btnPictureSave.Click += new EventHandler(Save);
             objProfileC.btnGuardar.Click += new EventHandler(UpdateInfo);
             objProfileC.btnChangePassword.Click += new EventHandler(ChangePass);
             objProfileC.txtNames.MouseDown += new MouseEventHandler(DisableContextMenu);
@@ -436,6 +442,73 @@ namespace PTC2024.Controller.ProfileController
             bool answer = email.UpdatedEmail(para, de, subject, message);
 
             return answer;
+        }
+        public void InitialCamera(object sender, EventArgs e)
+        {
+            StartCamera();
+        }
+
+        public void Save(object sender, EventArgs e)
+        {
+            CapturePhoto();
+            StopCamera();
+        }
+        private void capturingFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            // Captura el frame actual de la cámara
+            Bitmap frame = (Bitmap)eventArgs.Frame.Clone();
+
+            // Muestra el frame capturado en el PictureBox
+           objProfileC.picUser.Image = frame;
+        }
+
+        private void StartCamera()
+        {
+            // Buscar dispositivos de video (cámaras)
+            videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+
+            if (videoDevices.Count == 0)
+            {
+                MessageBox.Show("No se encontró ninguna cámara.");
+                return;
+            }
+
+            // Selecciona el primer dispositivo de video disponible (puedes agregar lógica para seleccionar entre varios)
+            videoSource = new VideoCaptureDevice(videoDevices[0].MonikerString);
+
+            // Asigna el evento NewFrame para capturar cada fotograma
+            videoSource.NewFrame += new NewFrameEventHandler(capturingFrame);
+
+            // Inicia la transmisión de video
+            videoSource.Start();
+        }
+
+        private void StopCamera()
+        {
+            if (videoSource != null && videoSource.IsRunning)
+            {
+                videoSource.SignalToStop();
+                videoSource.WaitForStop();
+            }
+        }
+
+        private void CapturePhoto()
+        {
+            if (objProfileC.picUser.Image != null)
+            {
+                // Guardar la imagen capturada
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Imagen JPG|*.jpg";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    objProfileC.picUser.Image.Save(saveFileDialog.FileName, ImageFormat.Jpeg);
+                    MessageBox.Show("Foto guardada con éxito.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay una imagen para guardar.");
+            }
         }
 
     }
