@@ -177,7 +177,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtNames.OnIdleState = stateProperties4;
-            this.txtNames.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtNames.Padding = new System.Windows.Forms.Padding(3);
             this.txtNames.PasswordChar = '\0';
             this.txtNames.PlaceholderForeColor = System.Drawing.Color.LightGray;
             this.txtNames.PlaceholderText = "";
@@ -253,7 +253,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtLastNames.OnIdleState = stateProperties8;
-            this.txtLastNames.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtLastNames.Padding = new System.Windows.Forms.Padding(3);
             this.txtLastNames.PasswordChar = '\0';
             this.txtLastNames.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtLastNames.PlaceholderText = "";
@@ -339,7 +339,7 @@
             stateProperties12.ForeColor = System.Drawing.Color.Empty;
             stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtDui.OnIdleState = stateProperties12;
-            this.txtDui.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtDui.Padding = new System.Windows.Forms.Padding(3);
             this.txtDui.PasswordChar = '\0';
             this.txtDui.PlaceholderForeColor = System.Drawing.Color.LightGray;
             this.txtDui.PlaceholderText = "";
@@ -425,7 +425,7 @@
             stateProperties16.ForeColor = System.Drawing.Color.Empty;
             stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtPhone.OnIdleState = stateProperties16;
-            this.txtPhone.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtPhone.Padding = new System.Windows.Forms.Padding(3);
             this.txtPhone.PasswordChar = '\0';
             this.txtPhone.PlaceholderForeColor = System.Drawing.Color.LightGray;
             this.txtPhone.PlaceholderText = "";
@@ -600,7 +600,7 @@
             stateProperties20.ForeColor = System.Drawing.Color.Empty;
             stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtEmail.OnIdleState = stateProperties20;
-            this.txtEmail.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtEmail.Padding = new System.Windows.Forms.Padding(3);
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtEmail.PlaceholderText = "";
@@ -884,7 +884,7 @@
             stateProperties24.ForeColor = System.Drawing.Color.Empty;
             stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtAddress.OnIdleState = stateProperties24;
-            this.txtAddress.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtAddress.Padding = new System.Windows.Forms.Padding(3);
             this.txtAddress.PasswordChar = '\0';
             this.txtAddress.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtAddress.PlaceholderText = "";
@@ -970,7 +970,7 @@
             stateProperties28.ForeColor = System.Drawing.Color.Empty;
             stateProperties28.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtAffilliation.OnIdleState = stateProperties28;
-            this.txtAffilliation.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtAffilliation.Padding = new System.Windows.Forms.Padding(3);
             this.txtAffilliation.PasswordChar = '\0';
             this.txtAffilliation.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtAffilliation.PlaceholderText = "";
@@ -1056,7 +1056,7 @@
             stateProperties32.ForeColor = System.Drawing.Color.Empty;
             stateProperties32.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtBankA.OnIdleState = stateProperties32;
-            this.txtBankA.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtBankA.Padding = new System.Windows.Forms.Padding(3);
             this.txtBankA.PasswordChar = '\0';
             this.txtBankA.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtBankA.PlaceholderText = "";
@@ -1261,7 +1261,7 @@
             this.btnPictureSave.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.btnPictureSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPictureSave.BackgroundImage")));
             this.btnPictureSave.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.btnPictureSave.ButtonText = "Guardar foto";
+            this.btnPictureSave.ButtonText = "Capturar foto";
             this.btnPictureSave.ButtonTextMarginLeft = 0;
             this.btnPictureSave.ColorContrastOnClick = 45;
             this.btnPictureSave.ColorContrastOnHover = 45;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Management.Instrumentation;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PTC2024.Controller.Helper;
@@ -289,47 +290,53 @@ namespace PTC2024.Controller.PasswordRecover
                         //Ahora pasamos a validar que el campo del usuario del empleado esté lleno, ya que es el único necesario para esta acción.
                         if (!(string.IsNullOrEmpty(objAdminMethod.txtUser.Text.Trim())))
                         {
-                            //Validación para saber si ese usuario si existe en el sistema.
-                            //damos valor al getter para el método del DAO
-                            daoAdminM.EmployeeUsername = objAdminMethod.txtUser.Text.Trim();
-                            //ejecutamos el método del DAO
-                            bool checkUser = daoAdminM.CheckUser();
-                            if (checkUser == true)
+                            if (ValidarTexto()==true)
                             {
-                                //Validación para saber si se trata de un usuario de tipo empleado o de un administrador
-                                //damos valor al getter de nuevo por si acaso
+                                //Validación para saber si ese usuario si existe en el sistema.
+                                //damos valor al getter para el método del DAO
                                 daoAdminM.EmployeeUsername = objAdminMethod.txtUser.Text.Trim();
                                 //ejecutamos el método del DAO
-                                bool employeeUser = daoAdminM.CheckEmployeeUser();
-                                //validamos la respuesta
-                                if (employeeUser == true)
+                                bool checkUser = daoAdminM.CheckUser();
+                                if (checkUser == true)
                                 {
-                                    //Si la respuesta es true, si se trata de un empleado
-                                    //Todas las validaciones son correctas
-                                    //damos valor a los getters una vez más.
+                                    //Validación para saber si se trata de un usuario de tipo empleado o de un administrador
+                                    //damos valor al getter de nuevo por si acaso
                                     daoAdminM.EmployeeUsername = objAdminMethod.txtUser.Text.Trim();
-                                    daoAdminM.TemporalPass = true;
-                                    string result = "Hubo un error al intentar restablecer la contraseña.";
-                                    //Ejecutamos el método
-                                    result = daoAdminM.RecoverPassword();
+                                    //ejecutamos el método del DAO
+                                    bool employeeUser = daoAdminM.CheckEmployeeUser();
+                                    //validamos la respuesta
+                                    if (employeeUser == true)
+                                    {
+                                        //Si la respuesta es true, si se trata de un empleado
+                                        //Todas las validaciones son correctas
+                                        //damos valor a los getters una vez más.
+                                        daoAdminM.EmployeeUsername = objAdminMethod.txtUser.Text.Trim();
+                                        daoAdminM.TemporalPass = true;
+                                        string result = "Hubo un error al intentar restablecer la contraseña.";
+                                        //Ejecutamos el método
+                                        result = daoAdminM.RecoverPassword();
 
-                                    MessageBox.Show(result, "Recuperación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    objAdminMethod.txtAdminUser.Clear();
-                                    objAdminMethod.txtAdminPass.Clear();
-                                    objAdminMethod.txtUser.Clear();
-                                    objAdminMethod.txtUserNewPass.Clear();
-                                    objAdminMethod.txtUserConfirmPass.Clear();
+                                        MessageBox.Show(result, "Recuperación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        objAdminMethod.txtAdminUser.Clear();
+                                        objAdminMethod.txtAdminPass.Clear();
+                                        objAdminMethod.txtUser.Clear();
+                                        objAdminMethod.txtUserNewPass.Clear();
+                                        objAdminMethod.txtUserConfirmPass.Clear();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("El usuario al que se le desea cambiar la contraseña es uno de tipo administrador, por lo que esta acción no se puede realizar.", "Acción imposible", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("El usuario al que se le desea cambiar la contraseña es uno de tipo administrador, por lo que esta acción no se puede realizar.", "Acción imposible", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show("El usuario al que se le quiere cambiar la contraseña no está registrado en el sistema.", "Usuario inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("El usuario al que se le quiere cambiar la contraseña no está registrado en el sistema.", "Usuario inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("El texto debe tener al menos una letra mayúscula, un número, un carácter especial y tener un mínimo de 8 caracteres.");
                             }
-
                         }
                         else
                         {
@@ -399,5 +406,29 @@ namespace PTC2024.Controller.PasswordRecover
             //Restaura la posición del cursor
             objAdminMethod.txtAdminUser.SelectionStart = cursorPosition;
         }
+        public bool ValidarTexto()
+        {
+            string input = objAdminMethod.txtUserNewPass.Text;
+
+            // Verifica que haya al menos 8 caracteres
+            if (input.Length < 8)
+            {
+                return false;
+            }
+
+            // Patrón para validar la contraseña
+            string pattern = @"^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':""\\|,.<>\/?]).{8,}$";
+
+            if (Regex.IsMatch(input, pattern))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
     }
 }

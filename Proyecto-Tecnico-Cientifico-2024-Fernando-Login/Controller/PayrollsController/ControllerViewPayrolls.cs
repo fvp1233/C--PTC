@@ -380,6 +380,7 @@ namespace PTC2024.Controller.EmployeesController
                             DAOUpdatePayroll.IdPayrollStatus = 1;
 
                             totalRowsAffected += DAOUpdatePayroll.UpdatePayrollStatusPaid();
+                            //Posible mencion del metodo para enviar planillla alcorreo
                             if (totalRowsAffected > 0)
                             {
                                 DAOInitialView daoInitial = new DAOInitialView();

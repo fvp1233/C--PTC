@@ -28,6 +28,7 @@ namespace PTC2024.Controller.ProfileController
         public ControllerProfileConfiguration(FrmProfileConfiguration View, string names, string lastnames, string dui, string phone, string email, string adress, string affilitiation, string bankAccount)
         {
             objProfileC = View;
+            objProfileC.FormClosing += new FormClosingEventHandler(CloseClose);
             ChargeValues(names, lastnames, dui, phone, email, adress, affilitiation, bankAccount);
             objProfileC.txtDui.TextChanged += new EventHandler(DUIMask);
             objProfileC.txtPhone.TextChanged += new EventHandler(PhoneMask);
@@ -131,10 +132,12 @@ namespace PTC2024.Controller.ProfileController
                 objProfileC.picUser.Image = Image.FromFile(imageRute);
             }
         }
-
+        public void CloseClose(object sender, FormClosingEventArgs e)
+        {
+            StopCamera();
+        }
         public void UpdateInfo(object sender, EventArgs e)
         {
-            
             //validación campos vacíos
             if (!(string.IsNullOrEmpty(objProfileC.txtNames.Text.Trim()) ||
                   string.IsNullOrEmpty(objProfileC.txtLastNames.Text.Trim()) ||
@@ -450,7 +453,7 @@ namespace PTC2024.Controller.ProfileController
 
         public void Save(object sender, EventArgs e)
         {
-            CapturePhoto();
+            //CapturePhoto();
             StopCamera();
         }
         private void capturingFrame(object sender, NewFrameEventArgs eventArgs)

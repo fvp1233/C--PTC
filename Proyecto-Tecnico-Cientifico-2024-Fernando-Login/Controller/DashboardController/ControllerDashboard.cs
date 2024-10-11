@@ -27,7 +27,6 @@ namespace PTC2024.Controller.DashboardController
             objDashboard.Load += new EventHandler(ChargeValues);
             objDashboard.Load += new EventHandler(LoadDataBills);
             objDashboard.btnConfirm.Click += new EventHandler(DtpSearch);
-
         }
         public void ChargeValues(object sender, EventArgs e)
         {
@@ -219,21 +218,17 @@ namespace PTC2024.Controller.DashboardController
         public void CaptureDay()
         {
             DateTime currentHour = DateTime.Now;
-            if (currentHour.Hour >= 12 && currentHour.Hour < 15)
+            if (currentHour.Hour >= 12 && currentHour.Hour < 18)
             {
-                objDashboard.lblTime.Text = "Buenas tardes, buen provecho";
-            }
-            else if (currentHour.Hour >= 15 && currentHour.Hour < 18)
-            {
-                objDashboard.lblTime.Text = "Buenas tardes";
+                objDashboard.lblTime.Text = $"Buenas tardes, {SessionVar.Username}";
             }
             else if (currentHour.Hour >= 5 && currentHour.Hour <= 11)
             {
-                objDashboard.lblTime.Text = "Buenos días";
+                objDashboard.lblTime.Text = $"Buenos días, {SessionVar.Username}";
             }
             else
             {
-                objDashboard.lblTime.Text = "Buenas noches";
+                objDashboard.lblTime.Text = $"Buenas noches, {SessionVar.Username}";
             }
         }
         public bool ValidateDaysEvent()

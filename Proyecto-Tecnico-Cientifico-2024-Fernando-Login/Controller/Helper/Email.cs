@@ -16,7 +16,7 @@ namespace PTC2024.Controller.Helper
         //Se crea una instancia del SmtpClient
         public SmtpClient Client = new SmtpClient();
         public MailMessage msg = new MailMessage();
-        public NetworkCredential creds = new NetworkCredential("h2c.soporte.usuarios@gmail.com", "uqtl fozz ttgg gzee");
+        public NetworkCredential creds = new NetworkCredential("h2c.soporte.usuarios@gmail.com", "cvtt tawm xgwp eysm");
         public void Send(string para, string de, string subject, string message)
         {
             try
