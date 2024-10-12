@@ -169,6 +169,10 @@ namespace PTC2024.Controller.DashboardController
                 objDashboard.panelIn.BackgroundColor = Color.FromArgb(45, 45, 45);
                 //objDashboard.btnConfirm.IdleFillColor = Color.FromArgb(0, 102, 204);
                 objDashboard.chartPayrolls.ChartAreas[0].BackColor = Color.FromArgb(45, 45, 45);
+                objDashboard.chartPayrolls.ChartAreas[0].Axes[0].LabelStyle.ForeColor = Color.White;
+                objDashboard.chartPayrolls.ChartAreas[0].Axes[1].LabelStyle.ForeColor = Color.White;
+                objDashboard.chartPayrolls.ChartAreas[0].Axes[2].LabelStyle.ForeColor = Color.White;
+                objDashboard.chartPayrolls.ChartAreas[0].Axes[3].LabelStyle.ForeColor = Color.White;
             }
         }
         public void ChargeData()
