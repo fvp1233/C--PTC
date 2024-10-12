@@ -1050,7 +1050,7 @@
             this.dtfiscalPeriod.DPHeight = 0;
             this.dtfiscalPeriod.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtfiscalPeriod.FillDatePicker = false;
-            this.dtfiscalPeriod.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtfiscalPeriod.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtfiscalPeriod.ForeColor = System.Drawing.Color.Black;
             this.dtfiscalPeriod.Icon = ((System.Drawing.Image)(resources.GetObject("dtfiscalPeriod.Icon")));
             this.dtfiscalPeriod.IconColor = System.Drawing.Color.DimGray;
@@ -1178,7 +1178,7 @@
             this.dtFinalDate.DPHeight = 0;
             this.dtFinalDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtFinalDate.FillDatePicker = false;
-            this.dtFinalDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtFinalDate.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFinalDate.ForeColor = System.Drawing.Color.Black;
             this.dtFinalDate.Icon = ((System.Drawing.Image)(resources.GetObject("dtFinalDate.Icon")));
             this.dtFinalDate.IconColor = System.Drawing.Color.DimGray;
@@ -1205,7 +1205,7 @@
             this.dtStartDate.DPHeight = 0;
             this.dtStartDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtStartDate.FillDatePicker = false;
-            this.dtStartDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtStartDate.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtStartDate.ForeColor = System.Drawing.Color.Black;
             this.dtStartDate.Icon = ((System.Drawing.Image)(resources.GetObject("dtStartDate.Icon")));
             this.dtStartDate.IconColor = System.Drawing.Color.DimGray;

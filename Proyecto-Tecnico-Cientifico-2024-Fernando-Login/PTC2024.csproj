@@ -204,6 +204,7 @@
     <Compile Include="Controller\PayrollsController\ControllerUpdatePermission.cs" />
     <Compile Include="Controller\PayrollsController\ControllerViewPayrolls.cs" />
     <Compile Include="Controller\ProfileController\ControllerChangeUserPass.cs" />
+    <Compile Include="Controller\ProfileController\ControllerOptions.cs" />
     <Compile Include="Controller\ProfileController\ControllerProfile.cs" />
     <Compile Include="Controller\ProfileController\ControllerProfileConfiguration.cs" />
     <Compile Include="Controller\ProfileController\ControllerSecurityQuestions.cs" />
@@ -514,6 +515,12 @@
     <Compile Include="View\ProfileSettings\FrmChangeUserPass.Designer.cs">
       <DependentUpon>FrmChangeUserPass.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ProfileSettings\FrmOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProfileSettings\FrmOptions.Designer.cs">
+      <DependentUpon>FrmOptions.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ProfileSettings\FrmProfileConfiguration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -769,6 +776,9 @@
     <EmbeddedResource Include="View\ProfileSettings\FrmChangeUserPass.resx">
       <DependentUpon>FrmChangeUserPass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ProfileSettings\FrmOptions.resx">
+      <DependentUpon>FrmOptions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ProfileSettings\FrmProfile.resx">
       <DependentUpon>FrmProfile.cs</DependentUpon>
     </EmbeddedResource>
@@ -856,6 +866,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="PTC2024_TemporaryKey.pfx" />
+    <Content Include="Resources\modoOscuroNegro %281%29.png" />
+    <Content Include="Resources\modoOscuroNegro.png" />
     <Content Include="Resources\PDF\MANUAL DE USUARIO - H2C.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -978,6 +990,7 @@
     <Content Include="Resources\planillas.png" />
     <Content Include="Resources\planillass.png" />
     <Content Include="Resources\preguntasSeguridad.png" />
+    <Content Include="Resources\puntosS.png" />
     <Content Include="Resources\questionsMethod.png" />
     <Content Include="Resources\salir.png" />
     <Content Include="Resources\seguridadPreguntas.png" />

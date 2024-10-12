@@ -31,42 +31,42 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDeleteAlert));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lbl1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lbl2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnConfirmDelete = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnCancelar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.SuspendLayout();
             // 
-            // bunifuLabel1
+            // lbl1
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(57, 18);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(238, 19);
-            this.bunifuLabel1.TabIndex = 0;
-            this.bunifuLabel1.Text = "Deshabilitará a un empleado";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lbl1.AllowParentOverrides = false;
+            this.lbl1.AutoEllipsis = false;
+            this.lbl1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbl1.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lbl1.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Location = new System.Drawing.Point(57, 18);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl1.Size = new System.Drawing.Size(238, 19);
+            this.lbl1.TabIndex = 0;
+            this.lbl1.Text = "Deshabilitará a un empleado";
+            this.lbl1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lbl1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel2
+            // lbl2
             // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.CursorType = null;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(93, 43);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(154, 19);
-            this.bunifuLabel2.TabIndex = 1;
-            this.bunifuLabel2.Text = "¿Desea continuar?";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lbl2.AllowParentOverrides = false;
+            this.lbl2.AutoEllipsis = false;
+            this.lbl2.CursorType = null;
+            this.lbl2.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2.Location = new System.Drawing.Point(93, 43);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl2.Size = new System.Drawing.Size(154, 19);
+            this.lbl2.TabIndex = 1;
+            this.lbl2.Text = "¿Desea continuar?";
+            this.lbl2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lbl2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // btnConfirmDelete
             // 
@@ -98,7 +98,7 @@
             this.btnConfirmDelete.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnConfirmDelete.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnConfirmDelete.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnConfirmDelete.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnConfirmDelete.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmDelete.ForeColor = System.Drawing.Color.White;
             this.btnConfirmDelete.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfirmDelete.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -188,7 +188,7 @@
             this.btnCancelar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnCancelar.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnCancelar.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.btnCancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -256,8 +256,8 @@
             this.ClientSize = new System.Drawing.Size(353, 132);
             this.Controls.Add(this.btnConfirmDelete);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.bunifuLabel2);
-            this.Controls.Add(this.bunifuLabel1);
+            this.Controls.Add(this.lbl2);
+            this.Controls.Add(this.lbl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDeleteAlert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -268,10 +268,9 @@
         }
 
         #endregion
-
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnConfirmDelete;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnCancelar;
+        public Bunifu.UI.WinForms.BunifuLabel lbl1;
+        public Bunifu.UI.WinForms.BunifuLabel lbl2;
     }
 }

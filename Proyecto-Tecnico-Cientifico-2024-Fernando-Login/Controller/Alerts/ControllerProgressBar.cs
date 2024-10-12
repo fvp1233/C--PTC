@@ -1,6 +1,7 @@
 ﻿using PTC2024.View.Alerts;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,23 @@ namespace PTC2024.Controller.Alerts
         {
             objForm = View;
             objForm.Load += new EventHandler(Event);
+            objForm.Load += new EventHandler(DarkMode);
         }
+
+        public void DarkMode(object sender, EventArgs e)
+        {
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objForm.BackColor = Color.FromArgb(30, 30, 30);
+                objForm.lblStatus.ForeColor = Color.White;
+                //objForm.progressBar.ProgressColorLeft = Color.FromArgb(26, 32, 161);
+                //objForm.progressBar.ProgressColorRight = Color.FromArgb(10, 182, 238);
+                //objForm.progressBar.BackColor = Color.Gray;
+                //objForm.progressBar.BorderColor = Color.Gray;
+            }
+            
+        }
+
         public void Event(object sender, EventArgs e) 
         {
             UpdateProgress(0, " ");

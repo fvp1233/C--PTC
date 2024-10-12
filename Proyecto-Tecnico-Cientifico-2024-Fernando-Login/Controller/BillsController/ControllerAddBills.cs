@@ -24,6 +24,7 @@ using PTC2024.Model.DAO.EmployeesDAO;
 using PTC2024.Controller.Helper;
 using PTC2024.View.formularios.inicio;
 using PTC2024.Model.DAO.HelperDAO;
+using System.Drawing;
 
 namespace PTC2024.Controller.BillsController
 {
@@ -83,6 +84,7 @@ namespace PTC2024.Controller.BillsController
 
         }
 
+        
         private void TxtDiscount_TextChanged1(object sender, EventArgs e)
         {
             throw new NotImplementedException();
@@ -124,7 +126,70 @@ namespace PTC2024.Controller.BillsController
         {
             objAddBills.dtfiscalPeriod.Value = DateTime.Now;
             InitialCharge();
-
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objAddBills.BackColor = Color.FromArgb(30,30,30);
+                objAddBills.lblTitle.ForeColor = Color.White;
+                objAddBills.lblSubTitle.ForeColor = Color.White;
+                objAddBills.gbInfoEmployee.ForeColor = Color.White;
+                objAddBills.gbInfoCustomer.ForeColor = Color.White;
+                objAddBills.gbPayInfo.ForeColor = Color.White;
+                objAddBills.gbService.ForeColor = Color.White;
+                objAddBills.txtcompanyN.FillColor = Color.FromArgb(60,60,60);
+                objAddBills.txtcompanyN.BorderColorIdle = Color.Gray;
+                objAddBills.txtNITCompany.FillColor = Color.FromArgb(60, 60, 60);
+                objAddBills.txtNITCompany.BorderColorIdle = Color.Gray;
+                objAddBills.txtNRCompany.FillColor = Color.FromArgb(60, 60, 60);
+                objAddBills.txtNRCompany.BorderColorIdle = Color.Gray;
+                objAddBills.txtEmployee.FillColor = Color.FromArgb(60, 60, 60);
+                objAddBills.txtEmployee.BorderColorIdle = Color.Gray;
+                objAddBills.txtCustomerName.FillColor = Color.FromArgb(60, 60, 60);
+                objAddBills.txtCustomerName.BorderColorIdle = Color.Gray;
+                objAddBills.txtDUICustomer.FillColor = Color.FromArgb(60, 60, 60);
+                objAddBills.txtDUICustomer.BorderColorIdle = Color.Gray;
+                objAddBills.txtCustomerPhone.FillColor = Color.FromArgb(60, 60, 60);
+                objAddBills.txtCustomerPhone.BorderColorIdle = Color.Gray;
+                objAddBills.txtCustomerEmail.FillColor = Color.FromArgb(60, 60, 60);
+                objAddBills.txtCustomerEmail.BorderColorIdle = Color.Gray;
+                objAddBills.comboServiceBill.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objAddBills.comboServiceBill.BorderColor = Color.Gray;
+                objAddBills.comboServiceBill.ForeColor = Color.White;
+                objAddBills.comboServiceBill.ItemBackColor = Color.DimGray;
+                objAddBills.comboServiceBill.ItemBorderColor = Color.Gray;
+                objAddBills.comboServiceBill.ItemForeColor = Color.White;
+                objAddBills.dtStartDate.BackColor = Color.FromArgb(60, 60, 60);
+                objAddBills.dtStartDate.ForeColor = Color.White;
+                objAddBills.dtStartDate.IconColor = Color.White;
+                objAddBills.dtFinalDate.BackColor = Color.FromArgb(60, 60, 60);
+                objAddBills.dtFinalDate.ForeColor = Color.White;
+                objAddBills.dtFinalDate.IconColor = Color.White;
+                objAddBills.dtfiscalPeriod.BackColor = Color.FromArgb(60, 60, 60);
+                objAddBills.dtfiscalPeriod.ForeColor = Color.White;
+                objAddBills.dtfiscalPeriod.IconColor = Color.White;
+                objAddBills.comboMethodP.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objAddBills.comboMethodP.BorderColor = Color.Gray;
+                objAddBills.comboMethodP.ForeColor = Color.White;
+                objAddBills.comboMethodP.ItemBackColor = Color.DimGray;
+                objAddBills.comboMethodP.ItemBorderColor = Color.Gray;
+                objAddBills.comboMethodP.ItemForeColor = Color.White;
+                objAddBills.comboStatusBill.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objAddBills.comboStatusBill.BorderColor = Color.Gray;
+                objAddBills.comboStatusBill.ForeColor = Color.White;
+                objAddBills.comboStatusBill.ItemBackColor = Color.DimGray;
+                objAddBills.comboStatusBill.ItemBorderColor = Color.Gray;
+                objAddBills.comboStatusBill.ItemForeColor = Color.White;
+                objAddBills.txtDiscount.FillColor = Color.FromArgb(60, 60, 60);
+                objAddBills.txtDiscount.BorderColorIdle = Color.Gray;
+                objAddBills.txtSubTotal.FillColor = Color.FromArgb(60, 60, 60);
+                objAddBills.txtSubTotal.BorderColorIdle = Color.Gray;
+                objAddBills.txtTotalPay.FillColor = Color.FromArgb(60, 60, 60);
+                objAddBills.txtTotalPay.BorderColorIdle = Color.Gray;
+                objAddBills.dgvData.BackgroundColor = Color.FromArgb(45, 45, 45);
+                objAddBills.dgvData.HeaderBackColor = Color.LightSlateGray;
+                objAddBills.dgvData.GridColor = Color.FromArgb(45, 45, 45);
+                objAddBills.dgvData.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
+                objAddBills.dgvData.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSlateGray;
+            }
         }
         public void InitialCharge()
         {

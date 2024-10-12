@@ -32,6 +32,7 @@ namespace PTC2024.Controller.ProfileController
             objProfile.btnUpdate.Click += new EventHandler(UpdateInfo);
             objProfile.btnUserManual.Click += new EventHandler(OpenManualU);
             objProfile.btnManualT.Click += new EventHandler(OpenManualT);
+            objProfile.btnMore.Click += new EventHandler(OpenOptions);
             
         }
 
@@ -62,22 +63,22 @@ namespace PTC2024.Controller.ProfileController
                 objProfile.lblAddress.ForeColor = Color.White;
                 objProfile.lblRoleTitle.ForeColor = Color.White;
                 objProfile.lblCharge.ForeColor = Color.White;
-                objProfile.btnManualT.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
-                objProfile.btnManualT.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
-                objProfile.btnManualT.IdleFillColor = Color.FromArgb(26, 32, 161);
-                objProfile.btnManualT.IdleBorderColor = Color.FromArgb(26, 32, 161);
-                objProfile.btnSecurityQ.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
-                objProfile.btnSecurityQ.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
-                objProfile.btnSecurityQ.IdleFillColor = Color.FromArgb(26, 32, 161);
-                objProfile.btnSecurityQ.IdleBorderColor = Color.FromArgb(26, 32, 161);
-                objProfile.btnUpdate.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
-                objProfile.btnUpdate.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
-                objProfile.btnUpdate.IdleFillColor = Color.FromArgb(26, 32, 161);
-                objProfile.btnUpdate.IdleBorderColor = Color.FromArgb(26, 32, 161);
-                objProfile.btnUserManual.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
-                objProfile.btnUserManual.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
-                objProfile.btnUserManual.IdleFillColor = Color.FromArgb(26, 32, 161);
-                objProfile.btnUserManual.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                //objProfile.btnManualT.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                //objProfile.btnManualT.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                //objProfile.btnManualT.IdleFillColor = Color.FromArgb(26, 32, 161);
+                //objProfile.btnManualT.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                //objProfile.btnSecurityQ.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                //objProfile.btnSecurityQ.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                //objProfile.btnSecurityQ.IdleFillColor = Color.FromArgb(26, 32, 161);
+                //objProfile.btnSecurityQ.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                //objProfile.btnUpdate.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                //objProfile.btnUpdate.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                //objProfile.btnUpdate.IdleFillColor = Color.FromArgb(26, 32, 161);
+                //objProfile.btnUpdate.IdleBorderColor = Color.FromArgb(26, 32, 161);
+                //objProfile.btnUserManual.OnIdleState.FillColor = Color.FromArgb(26, 32, 161);
+                //objProfile.btnUserManual.OnIdleState.BorderColor = Color.FromArgb(26, 32, 161);
+                //objProfile.btnUserManual.IdleFillColor = Color.FromArgb(26, 32, 161);
+                //objProfile.btnUserManual.IdleBorderColor = Color.FromArgb(26, 32, 161);
 
             }
         }
@@ -235,6 +236,12 @@ namespace PTC2024.Controller.ProfileController
             {
                 MessageBox.Show($"El archivo PDF no se encuentra en la ubicación: {pdfPath}", "Archivo no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public void OpenOptions(object sender, EventArgs e)
+        {
+            FrmOptions objform = new FrmOptions();
+            objform.ShowDialog();
         }
     }
 }

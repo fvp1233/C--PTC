@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace PTC2024.Controller.Alerts
         {
             //Métodos que se ejecutarán al mostrar el formulario
             objChangePassword = Vista;
+            objChangePassword.Load += new EventHandler(DarkMode);
             ChargeValues(username);
             objChangePassword.HidePassword.Visible = false;
             objChangePassword.btnChange.Click += new EventHandler(ChangePassword);
@@ -26,6 +28,19 @@ namespace PTC2024.Controller.Alerts
             objChangePassword.txtPassword.MouseDown += new MouseEventHandler(DisableContextMenu);
             objChangePassword.txtConfirmPass.MouseDown += new MouseEventHandler(DisableContextMenu);
 
+        }
+
+        public void DarkMode(object sender, EventArgs e)
+        {
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objChangePassword.BackColor = Color.FromArgb(30, 30, 30);
+                objChangePassword.lblTitle.ForeColor = Color.White;
+                objChangePassword.lblSubTitle.ForeColor = Color.White;
+                objChangePassword.lblPass2.ForeColor = Color.White;
+                objChangePassword.lblPass.ForeColor = Color.White;
+                objChangePassword.bunifuSeparator1.LineColor = Color.White;
+            }
         }
 
         public void ChargeValues(string username)

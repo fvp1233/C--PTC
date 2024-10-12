@@ -42,13 +42,13 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblSubTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtPassword = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtConfirmPass = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtUsername = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblPass = new System.Windows.Forms.Label();
+            this.lblPass2 = new System.Windows.Forms.Label();
             this.ShowPassword = new System.Windows.Forms.PictureBox();
             this.HidePassword = new System.Windows.Forms.PictureBox();
             this.btnChange = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
@@ -57,26 +57,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.HidePassword)).BeginInit();
             this.SuspendLayout();
             // 
-            // bunifuCustomLabel1
+            // lblTitle
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(114, 8);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(290, 28);
-            this.bunifuCustomLabel1.TabIndex = 107;
-            this.bunifuCustomLabel1.Text = "CAMBIAR CONTRASEÑA";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(114, 8);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(290, 28);
+            this.lblTitle.TabIndex = 107;
+            this.lblTitle.Text = "CAMBIAR CONTRASEÑA";
             // 
-            // bunifuCustomLabel2
+            // lblSubTitle
             // 
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(24, 36);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(487, 38);
-            this.bunifuCustomLabel2.TabIndex = 108;
-            this.bunifuCustomLabel2.Text = "Usted inició sesión con una contraseña temporal o realizó un método de recuperaci" +
+            this.lblSubTitle.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTitle.Location = new System.Drawing.Point(24, 36);
+            this.lblSubTitle.Name = "lblSubTitle";
+            this.lblSubTitle.Size = new System.Drawing.Size(487, 38);
+            this.lblSubTitle.TabIndex = 108;
+            this.lblSubTitle.Text = "Usted inició sesión con una contraseña temporal o realizó un método de recuperaci" +
     "ón. Se requiere un cambio de contraseña obligatorio.";
-            this.bunifuCustomLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSubTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtPassword
             // 
@@ -307,27 +307,27 @@
             this.txtUsername.Visible = false;
             this.txtUsername.WordWrap = true;
             // 
-            // lblUser
+            // lblPass
             // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.ForeColor = System.Drawing.Color.Black;
-            this.lblUser.Location = new System.Drawing.Point(88, 98);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(122, 17);
-            this.lblUser.TabIndex = 112;
-            this.lblUser.Text = "Nueva contraseña:";
+            this.lblPass.AutoSize = true;
+            this.lblPass.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPass.ForeColor = System.Drawing.Color.Black;
+            this.lblPass.Location = new System.Drawing.Point(88, 98);
+            this.lblPass.Name = "lblPass";
+            this.lblPass.Size = new System.Drawing.Size(122, 17);
+            this.lblPass.TabIndex = 112;
+            this.lblPass.Text = "Nueva contraseña:";
             // 
-            // label1
+            // lblPass2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(88, 160);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 17);
-            this.label1.TabIndex = 113;
-            this.label1.Text = "Confirmar contraseña:";
+            this.lblPass2.AutoSize = true;
+            this.lblPass2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPass2.ForeColor = System.Drawing.Color.Black;
+            this.lblPass2.Location = new System.Drawing.Point(88, 160);
+            this.lblPass2.Name = "lblPass2";
+            this.lblPass2.Size = new System.Drawing.Size(145, 17);
+            this.lblPass2.TabIndex = 113;
+            this.lblPass2.Text = "Confirmar contraseña:";
             // 
             // ShowPassword
             // 
@@ -468,13 +468,13 @@
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.HidePassword);
             this.Controls.Add(this.ShowPassword);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblUser);
+            this.Controls.Add(this.lblPass2);
+            this.Controls.Add(this.lblPass);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtConfirmPass);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.bunifuCustomLabel1);
-            this.Controls.Add(this.bunifuCustomLabel2);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.lblSubTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -487,17 +487,16 @@
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         public Bunifu.UI.WinForms.BunifuTextBox txtPassword;
         public Bunifu.UI.WinForms.BunifuTextBox txtConfirmPass;
         public Bunifu.UI.WinForms.BunifuTextBox txtUsername;
-        public System.Windows.Forms.Label lblUser;
-        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label lblPass;
+        public System.Windows.Forms.Label lblPass2;
         public System.Windows.Forms.PictureBox ShowPassword;
         public System.Windows.Forms.PictureBox HidePassword;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnChange;
-        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblTitle;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblSubTitle;
+        public Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
     }
 }

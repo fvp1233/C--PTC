@@ -5,6 +5,7 @@ using PTC2024.View.Alerts;
 using PTC2024.View.formularios.inicio;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Security;
 using System.Text;
@@ -26,6 +27,16 @@ namespace PTC2024.Controller.Alerts
             objForm.btnCancel.Click += new EventHandler(CancelProcess);
         }
 
+        public void DarkMode(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.darkMode == true)
+            {
+                objForm.BackColor = Color.FromArgb(30, 30, 30);
+                objForm.lblTitle.ForeColor = Color.White;
+                objForm.lblSubTitle.ForeColor = Color.White;
+                objForm.lblPass.ForeColor = Color.White;
+            }
+        }
         public void CancelProcess(object sender, EventArgs e)
         {
             CancelProcessValue();

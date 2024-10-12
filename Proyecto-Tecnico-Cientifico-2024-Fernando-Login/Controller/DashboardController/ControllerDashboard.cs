@@ -134,8 +134,8 @@ namespace PTC2024.Controller.DashboardController
                 objDashboard.dtpStart.ForeColor = Color.White;
                 objDashboard.dtpEnd.BackColor = Color.FromArgb(45, 45, 45);
                 objDashboard.dtpEnd.ForeColor = Color.White;
-                objDashboard.btnConfirm.OnIdleState.BorderColor = Color.FromArgb(0, 102, 204);
-                objDashboard.btnConfirm.OnIdleState.FillColor = Color.FromArgb(0, 102, 204);
+                //objDashboard.btnConfirm.OnIdleState.BorderColor = Color.FromArgb(0, 102, 204);
+                //objDashboard.btnConfirm.OnIdleState.FillColor = Color.FromArgb(0, 102, 204);
                 objDashboard.panel1.PanelColor = Color.FromArgb(30, 30, 30);
                 objDashboard.panel2.PanelColor = Color.FromArgb(30, 30, 30);
                 objDashboard.panel3.PanelColor = Color.FromArgb(30, 30, 30);
@@ -167,7 +167,7 @@ namespace PTC2024.Controller.DashboardController
                 objDashboard.panelServices.BackgroundColor = Color.FromArgb(45, 45, 45);
                 objDashboard.panelCustom.BackgroundColor = Color.FromArgb(45, 45, 45);
                 objDashboard.panelIn.BackgroundColor = Color.FromArgb(45, 45, 45);
-                objDashboard.btnConfirm.IdleFillColor = Color.FromArgb(0, 102, 204);
+                //objDashboard.btnConfirm.IdleFillColor = Color.FromArgb(0, 102, 204);
                 objDashboard.chartPayrolls.ChartAreas[0].BackColor = Color.FromArgb(45, 45, 45);
             }
         }

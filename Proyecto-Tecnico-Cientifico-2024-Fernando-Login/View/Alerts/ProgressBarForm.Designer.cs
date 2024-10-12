@@ -63,16 +63,18 @@
             // 
             this.lblStatus.AllowParentOverrides = false;
             this.lblStatus.AutoEllipsis = false;
+            this.lblStatus.AutoSize = false;
             this.lblStatus.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblStatus.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lblStatus.Location = new System.Drawing.Point(135, 60);
+            this.lblStatus.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblStatus.Location = new System.Drawing.Point(0, 60);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblStatus.Size = new System.Drawing.Size(91, 21);
+            this.lblStatus.Size = new System.Drawing.Size(472, 21);
             this.lblStatus.TabIndex = 1;
             this.lblStatus.Text = "bunifuLabel1";
-            this.lblStatus.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblStatus.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblStatus.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // ProgressBarForm
@@ -88,7 +90,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProgressBarForm";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

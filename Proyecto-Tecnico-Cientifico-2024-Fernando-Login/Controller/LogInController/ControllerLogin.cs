@@ -266,6 +266,7 @@ namespace PTC2024.Controller.LogInController
                 MessageBox.Show("Ocurrió un error y no se pudieron guardar sus credenciales, tendrá que volver a iniciar sesión.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         public void UsernameMask(object sender, EventArgs e)
         {
             //Almacena la posición original del cursor
