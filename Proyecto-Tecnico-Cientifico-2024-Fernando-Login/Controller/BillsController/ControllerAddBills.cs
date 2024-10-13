@@ -79,6 +79,7 @@ namespace PTC2024.Controller.BillsController
             objAddBills.txtCustomerEmail.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddBills.txtDiscount.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddBills.txtDiscount.TextChanged += new EventHandler(DiscountMask);
+            objAddBills.txtDiscount.TextChanged += new EventHandler(OnlyNum);
             objAddBills.txtSubTotal.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddBills.txtTotalPay.MouseDown += new MouseEventHandler(DisableContextMenu);
 
@@ -843,13 +844,72 @@ namespace PTC2024.Controller.BillsController
             objAddBills.txtCustomerPhone.Text = CustomerPhone.ToString();
             objAddBills.txtDUICustomer.Text = CustomerDui.ToString();
             objAddBills.txtEmployee.Text = employee;
-                       
-
         }
         public void ChargeV(int id, string IdServices1, float Price1)
         {
             objAddBills.comboServiceBill.SelectedValue.ToString();
         }
+        public void OnlyNum(object sender, EventArgs e)
+        {
+            int cursorPosition = objAddBills.txtDiscount.SelectionStart;
+
+            // Permitir solo dígitos y un solo punto decimal
+            string text = new string(objAddBills.txtDiscount.Text.Where(c => char.IsDigit(c) || c == '.').ToArray());
+
+            // Asegurarse de que solo haya un punto decimal
+            int decimalCount = text.Count(c => c == '.');
+            if (decimalCount > 1)
+            {
+                // Si hay más de un punto decimal, remover los adicionales
+                int firstDecimalIndex = text.IndexOf('.');
+                text = text.Substring(0, firstDecimalIndex + 1) + text.Substring(firstDecimalIndex + 1).Replace(".", "");
+            }
+
+            // Evitar que el texto comience con un punto decimal
+            if (text.StartsWith("."))
+            {
+                text = text.TrimStart('.');
+            }
+
+            // Limitar a solo dos decimales después del punto
+            int decimalPosition = text.IndexOf('.');
+            if (decimalPosition != -1 && text.Length > decimalPosition + 3)
+            {
+                // Truncar a dos dígitos después del punto decimal
+                text = text.Substring(0, decimalPosition + 3);
+            }
+
+            // Validar que el número no sea mayor a 100
+            if (decimalPosition == -1) // Si no hay decimales
+            {
+                if (int.TryParse(text, out int number) && number > 100)
+                {
+                    text = "100"; // Limitar a 100 si se excede
+                }
+            }
+            else // Si hay decimales, validar la parte entera
+            {
+                if (int.TryParse(text.Substring(0, decimalPosition), out int integerPart) && integerPart > 100)
+                {
+                    text = "100"; // Limitar la parte entera a 100 si se excede
+                }
+            }
+
+            // Si el valor es 100, eliminar cualquier punto decimal
+            if (text == "100" && text.Contains("."))
+            {
+                text = "100"; // Forzar el valor a 100 sin punto
+            }
+
+            // Asignar el texto filtrado al TextBox
+            objAddBills.txtDiscount.Text = text;
+
+            // Restablecer la posición del cursor
+            objAddBills.txtDiscount.SelectionStart = cursorPosition;
+        }
+
+
+
 
     }
 }
