@@ -70,6 +70,45 @@ namespace PTC2024.Controller.ProfileController
             {
 
             }
+
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objProfileC.BackColor = Color.FromArgb(30, 30, 30);
+                objProfileC.lblNames.ForeColor = Color.White;
+                objProfileC.lblLastN.ForeColor = Color.White;
+                objProfileC.lblDui.ForeColor = Color.White;
+                objProfileC.lblPhone.ForeColor = Color.White;
+                objProfileC.lblEmail.ForeColor = Color.White;
+                objProfileC.lblAddress.ForeColor = Color.White;
+                objProfileC.lblAffil.ForeColor = Color.White;
+                objProfileC.lblBankAcc.ForeColor = Color.White;
+                objProfileC.txtNames.FillColor = Color.FromArgb(60, 60, 60);
+                objProfileC.txtNames.BorderColorIdle = Color.Gray;
+                objProfileC.ForeColor = Color.White;
+                objProfileC.txtLastNames.FillColor = Color.FromArgb(60, 60, 60);
+                objProfileC.txtLastNames.BorderColorIdle = Color.Gray;
+                objProfileC.txtLastNames.ForeColor = Color.White;
+                objProfileC.txtDui.FillColor = Color.FromArgb(60, 60, 60);
+                objProfileC.txtDui.BorderColorIdle = Color.Gray;
+                objProfileC.txtDui.ForeColor = Color.White;
+                objProfileC.txtPhone.FillColor = Color.FromArgb(60, 60, 60);
+                objProfileC.txtPhone.BorderColorIdle = Color.Gray;
+                objProfileC.txtPhone.ForeColor = Color.White;
+                objProfileC.txtEmail.FillColor = Color.FromArgb(60, 60, 60);
+                objProfileC.txtEmail.BorderColorIdle = Color.Gray;
+                objProfileC.txtEmail.ForeColor = Color.White;
+                objProfileC.txtAddress.FillColor = Color.FromArgb(60, 60, 60);
+                objProfileC.txtAddress.BorderColorIdle = Color.Gray;
+                objProfileC.txtAddress.ForeColor = Color.White;
+                objProfileC.txtAffilliation.FillColor = Color.FromArgb(60, 60, 60);
+                objProfileC.txtAffilliation.BorderColorIdle = Color.Gray;
+                objProfileC.txtAffilliation.ForeColor = Color.White;
+                objProfileC.txtBankA.FillColor = Color.FromArgb(60, 60, 60);
+                objProfileC.txtBankA.BorderColorIdle = Color.Gray;
+                objProfileC.txtBankA.ForeColor = Color.White;
+                objProfileC.bunifuPanel1.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objProfileC.bunifuPanel1.BorderColor = Color.FromArgb(60, 60, 60);
+            }
         }
 
         public Image ByteArrayToImage(byte[] byteArray)
@@ -449,6 +488,7 @@ namespace PTC2024.Controller.ProfileController
         public void InitialCamera(object sender, EventArgs e)
         {
             StartCamera();
+            objProfileC.btnPictureSave.Visible = true;
         }
 
         public void Save(object sender, EventArgs e)

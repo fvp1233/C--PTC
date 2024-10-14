@@ -47,12 +47,12 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblSub1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblSub2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblQ1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblQ2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblQ3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.txtFirstQ = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
@@ -62,66 +62,66 @@
             this.btnVolver = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.SuspendLayout();
             // 
-            // bunifuCustomLabel1
+            // lblTitle
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(168, 13);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(365, 32);
-            this.bunifuCustomLabel1.TabIndex = 108;
-            this.bunifuCustomLabel1.Text = "PREGUNTAS DE SEGURIDAD";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(168, 13);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(365, 32);
+            this.lblTitle.TabIndex = 108;
+            this.lblTitle.Text = "PREGUNTAS DE SEGURIDAD";
             // 
-            // bunifuCustomLabel2
+            // lblSub1
             // 
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(57, 46);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(580, 20);
-            this.bunifuCustomLabel2.TabIndex = 109;
-            this.bunifuCustomLabel2.Text = "En caso de que olvides tu contraseña puedas recuperarla respondiendo las pregunta" +
+            this.lblSub1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSub1.Location = new System.Drawing.Point(57, 46);
+            this.lblSub1.Name = "lblSub1";
+            this.lblSub1.Size = new System.Drawing.Size(580, 20);
+            this.lblSub1.TabIndex = 109;
+            this.lblSub1.Text = "En caso de que olvides tu contraseña puedas recuperarla respondiendo las pregunta" +
     "s de nuevo.";
-            this.bunifuCustomLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSub1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bunifuCustomLabel3
+            // lblSub2
             // 
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(57, 66);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(580, 20);
-            this.bunifuCustomLabel3.TabIndex = 111;
-            this.bunifuCustomLabel3.Text = "Agrega tus respuestas.";
-            this.bunifuCustomLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSub2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSub2.Location = new System.Drawing.Point(57, 66);
+            this.lblSub2.Name = "lblSub2";
+            this.lblSub2.Size = new System.Drawing.Size(580, 20);
+            this.lblSub2.TabIndex = 111;
+            this.lblSub2.Text = "Agrega tus respuestas.";
+            this.lblSub2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bunifuCustomLabel4
+            // lblQ1
             // 
-            this.bunifuCustomLabel4.AutoSize = true;
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(34, 129);
-            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(334, 16);
-            this.bunifuCustomLabel4.TabIndex = 113;
-            this.bunifuCustomLabel4.Text = "1. ¿Cuál fue el nombre de tu primera mascota?";
+            this.lblQ1.AutoSize = true;
+            this.lblQ1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQ1.Location = new System.Drawing.Point(34, 129);
+            this.lblQ1.Name = "lblQ1";
+            this.lblQ1.Size = new System.Drawing.Size(334, 16);
+            this.lblQ1.TabIndex = 113;
+            this.lblQ1.Text = "1. ¿Cuál fue el nombre de tu primera mascota?";
             // 
-            // bunifuCustomLabel5
+            // lblQ2
             // 
-            this.bunifuCustomLabel5.AutoSize = true;
-            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(34, 202);
-            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(322, 16);
-            this.bunifuCustomLabel5.TabIndex = 115;
-            this.bunifuCustomLabel5.Text = "2. ¿Cuál es el segundo nombre de tu madre?";
+            this.lblQ2.AutoSize = true;
+            this.lblQ2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQ2.Location = new System.Drawing.Point(34, 202);
+            this.lblQ2.Name = "lblQ2";
+            this.lblQ2.Size = new System.Drawing.Size(322, 16);
+            this.lblQ2.TabIndex = 115;
+            this.lblQ2.Text = "2. ¿Cuál es el segundo nombre de tu madre?";
             // 
-            // bunifuCustomLabel6
+            // lblQ3
             // 
-            this.bunifuCustomLabel6.AutoSize = true;
-            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(33, 281);
-            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(228, 16);
-            this.bunifuCustomLabel6.TabIndex = 117;
-            this.bunifuCustomLabel6.Text = "3. ¿Cuál es tu película favorita?";
+            this.lblQ3.AutoSize = true;
+            this.lblQ3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQ3.Location = new System.Drawing.Point(33, 281);
+            this.lblQ3.Name = "lblQ3";
+            this.lblQ3.Size = new System.Drawing.Size(228, 16);
+            this.lblQ3.TabIndex = 117;
+            this.lblQ3.Text = "3. ¿Cuál es tu película favorita?";
             // 
             // btnSave
             // 
@@ -634,13 +634,13 @@
             this.Controls.Add(this.txtThirdQ);
             this.Controls.Add(this.txtSecondQ);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.bunifuCustomLabel6);
-            this.Controls.Add(this.bunifuCustomLabel5);
-            this.Controls.Add(this.bunifuCustomLabel4);
+            this.Controls.Add(this.lblQ3);
+            this.Controls.Add(this.lblQ2);
+            this.Controls.Add(this.lblQ1);
             this.Controls.Add(this.txtFirstQ);
-            this.Controls.Add(this.bunifuCustomLabel3);
-            this.Controls.Add(this.bunifuCustomLabel2);
-            this.Controls.Add(this.bunifuCustomLabel1);
+            this.Controls.Add(this.lblSub2);
+            this.Controls.Add(this.lblSub1);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.bunifuSeparator1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmSecurityQuestions";
@@ -652,19 +652,18 @@
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         public Bunifu.UI.WinForms.BunifuTextBox txtFirstQ;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnSave;
         public Bunifu.UI.WinForms.BunifuTextBox txtSecondQ;
         public Bunifu.UI.WinForms.BunifuTextBox txtThirdQ;
         public Bunifu.UI.WinForms.BunifuTextBox txtUser;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnVolver;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblTitle;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblSub1;
+        public Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblSub2;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblQ1;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblQ2;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblQ3;
     }
 }

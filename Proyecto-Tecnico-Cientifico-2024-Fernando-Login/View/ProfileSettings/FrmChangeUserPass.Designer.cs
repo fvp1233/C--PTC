@@ -47,8 +47,8 @@
             this.txtPass = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblTitle = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblActualPass = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnCheck = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.lblCorrectPass = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblIncorrectPass = new Bunifu.UI.WinForms.BunifuLabel();
@@ -246,38 +246,38 @@
             this.btnSave.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnSave.UseDefaultRadiusAndThickness = true;
             // 
-            // bunifuLabel1
+            // lblTitle
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.AutoSize = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(29, 12);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(288, 36);
-            this.bunifuLabel1.TabIndex = 48;
-            this.bunifuLabel1.Text = "INGRESE SU CONTRASEÑA ACTUAL Y COMPRUEBELA PARA PODER CAMBIARLA";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblTitle.AllowParentOverrides = false;
+            this.lblTitle.AutoEllipsis = false;
+            this.lblTitle.AutoSize = false;
+            this.lblTitle.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblTitle.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(29, 12);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblTitle.Size = new System.Drawing.Size(288, 36);
+            this.lblTitle.TabIndex = 48;
+            this.lblTitle.Text = "INGRESE SU CONTRASEÑA ACTUAL Y COMPRUEBELA PARA PODER CAMBIARLA";
+            this.lblTitle.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel2
+            // lblActualPass
             // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(22, 77);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(114, 17);
-            this.bunifuLabel2.TabIndex = 49;
-            this.bunifuLabel2.Text = "Contraseña actual:";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblActualPass.AllowParentOverrides = false;
+            this.lblActualPass.AutoEllipsis = false;
+            this.lblActualPass.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblActualPass.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblActualPass.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActualPass.Location = new System.Drawing.Point(22, 77);
+            this.lblActualPass.Name = "lblActualPass";
+            this.lblActualPass.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblActualPass.Size = new System.Drawing.Size(114, 17);
+            this.lblActualPass.TabIndex = 49;
+            this.lblActualPass.Text = "Contraseña actual:";
+            this.lblActualPass.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblActualPass.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // btnCheck
             // 
@@ -311,7 +311,7 @@
             this.btnCheck.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
             this.btnCheck.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheck.ForeColor = System.Drawing.Color.White;
-            this.btnCheck.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCheck.IconLeftAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCheck.IconLeftCursor = System.Windows.Forms.Cursors.Default;
             this.btnCheck.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
             this.btnCheck.IconMarginLeft = 11;
@@ -515,7 +515,6 @@
             this.txtNewPass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNewPass.DefaultFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNewPass.DefaultText = "";
-            this.txtNewPass.Enabled = false;
             this.txtNewPass.FillColor = System.Drawing.Color.Gainsboro;
             this.txtNewPass.HideSelection = true;
             this.txtNewPass.IconLeft = null;
@@ -609,7 +608,6 @@
             this.txtConfirmPass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtConfirmPass.DefaultFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmPass.DefaultText = "";
-            this.txtConfirmPass.Enabled = false;
             this.txtConfirmPass.FillColor = System.Drawing.Color.Gainsboro;
             this.txtConfirmPass.HideSelection = true;
             this.txtConfirmPass.IconLeft = null;
@@ -707,8 +705,8 @@
             this.Controls.Add(this.lblIncorrectPass);
             this.Controls.Add(this.lblCorrectPass);
             this.Controls.Add(this.btnCheck);
-            this.Controls.Add(this.bunifuLabel2);
-            this.Controls.Add(this.bunifuLabel1);
+            this.Controls.Add(this.lblActualPass);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.bunifuSeparator1);
@@ -727,9 +725,6 @@
         #endregion
 
         public Bunifu.UI.WinForms.BunifuTextBox txtPass;
-        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnCheck;
         public Bunifu.UI.WinForms.BunifuSnackbar snack;
         public Bunifu.UI.WinForms.BunifuTextBox txtConfirmPass;
@@ -739,7 +734,10 @@
         public Bunifu.UI.WinForms.BunifuLabel lbl2;
         public Bunifu.UI.WinForms.BunifuLabel lbl1;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnSave;
-        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
         public Bunifu.UI.WinForms.BunifuTextBox txtNewPass;
+        public Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
+        public Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
+        public Bunifu.UI.WinForms.BunifuLabel lblTitle;
+        public Bunifu.UI.WinForms.BunifuLabel lblActualPass;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,17 @@ namespace PTC2024.Controller.MaintenanceController
         public void InitialCharge(object sender, EventArgs e)
         {
             LoadDataGridBanks();
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objBanks.BackColor = Color.FromArgb(30, 30, 30);
+                objBanks.lblTitle.ForeColor = Color.White;
+                objBanks.lblText.ForeColor = Color.White;
+                objBanks.dgvBanks.BackgroundColor = Color.FromArgb(45, 45, 45);
+                objBanks.dgvBanks.HeaderBackColor = Color.LightSlateGray;
+                objBanks.dgvBanks.GridColor = Color.FromArgb(45, 45, 45);
+                objBanks.dgvBanks.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
+                objBanks.dgvBanks.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSlateGray;
+            }
         }
 
         public void CloseForm(object sender, EventArgs e)

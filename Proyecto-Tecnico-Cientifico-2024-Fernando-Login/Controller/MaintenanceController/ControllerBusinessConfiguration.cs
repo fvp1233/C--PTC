@@ -23,6 +23,7 @@ namespace PTC2024.Controller.MaintenanceController
         {
             objBusinessConf = View;
             objBusinessConf.Load += new EventHandler(LoadData);
+            objBusinessConf.Load += new EventHandler(DarkModer);
             objBusinessConf.btnUploadPhoto.Click += new EventHandler(PutImage);
             objBusinessConf.btnSave.Click += new EventHandler(UpdateInfoBusiness);
             objBusinessConf.txtPhone.TextChanged += new EventHandler(PhoneMask);
@@ -46,6 +47,22 @@ namespace PTC2024.Controller.MaintenanceController
             objBusinessConf.txtID.Text = BusinessVar.IdBusiness.ToString();
             objBusinessConf.txtID.Visible = false; 
         }
+
+        public void DarkModer(object sender, EventArgs e)
+        {
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objBusinessConf.BackColor = Color.FromArgb(30, 30, 30);
+                objBusinessConf.lblTitle.ForeColor = Color.White;
+                objBusinessConf.lblSubt.ForeColor = Color.White;
+                objBusinessConf.lblName.ForeColor = Color.White;
+                objBusinessConf.lblEmail.ForeColor = Color.White;
+                objBusinessConf.lblPhone.ForeColor = Color.White;
+                objBusinessConf.lblPbx.ForeColor = Color.White;
+                objBusinessConf.lblAddress.ForeColor = Color.White;
+            }
+        }
+
         public void UpdateInfoBusiness(object sender, EventArgs e)
         {
             if (!(string.IsNullOrEmpty(objBusinessConf.txtBusinessName.Text.Trim())|| string.IsNullOrEmpty(objBusinessConf.txtEmail.Text.Trim()) ||string.IsNullOrEmpty(objBusinessConf.txtAdress.Text.Trim()) || string.IsNullOrEmpty(objBusinessConf.txtPBX.Text.Trim())|| string.IsNullOrEmpty(objBusinessConf.txtPhone.Text.Trim()))

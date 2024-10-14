@@ -104,31 +104,31 @@
             // lblISSS
             // 
             this.lblISSS.AutoSize = true;
-            this.lblISSS.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblISSS.Location = new System.Drawing.Point(220, 87);
+            this.lblISSS.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblISSS.Location = new System.Drawing.Point(219, 87);
             this.lblISSS.Name = "lblISSS";
-            this.lblISSS.Size = new System.Drawing.Size(38, 16);
+            this.lblISSS.Size = new System.Drawing.Size(32, 16);
             this.lblISSS.TabIndex = 165;
             this.lblISSS.Text = "ISSS";
             // 
             // lblSalary
             // 
             this.lblSalary.AutoSize = true;
-            this.lblSalary.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalary.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSalary.Location = new System.Drawing.Point(27, 25);
             this.lblSalary.Name = "lblSalary";
             this.lblSalary.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSalary.Size = new System.Drawing.Size(55, 16);
+            this.lblSalary.Size = new System.Drawing.Size(53, 16);
             this.lblSalary.TabIndex = 163;
             this.lblSalary.Text = "Salario";
             // 
             // lblBonus
             // 
             this.lblBonus.AutoSize = true;
-            this.lblBonus.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBonus.Location = new System.Drawing.Point(27, 84);
+            this.lblBonus.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBonus.Location = new System.Drawing.Point(27, 87);
             this.lblBonus.Name = "lblBonus";
-            this.lblBonus.Size = new System.Drawing.Size(94, 16);
+            this.lblBonus.Size = new System.Drawing.Size(88, 16);
             this.lblBonus.TabIndex = 162;
             this.lblBonus.Text = "Bonificación";
             // 
@@ -155,21 +155,21 @@
             // lblDUI
             // 
             this.lblDUI.AutoSize = true;
-            this.lblDUI.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDUI.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDUI.Location = new System.Drawing.Point(331, 25);
             this.lblDUI.Name = "lblDUI";
             this.lblDUI.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblDUI.Size = new System.Drawing.Size(31, 16);
+            this.lblDUI.Size = new System.Drawing.Size(28, 16);
             this.lblDUI.TabIndex = 160;
             this.lblDUI.Text = "DUI";
             // 
             // lblEmployee
             // 
             this.lblEmployee.AutoSize = true;
-            this.lblEmployee.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployee.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployee.Location = new System.Drawing.Point(11, 25);
             this.lblEmployee.Name = "lblEmployee";
-            this.lblEmployee.Size = new System.Drawing.Size(76, 16);
+            this.lblEmployee.Size = new System.Drawing.Size(73, 16);
             this.lblEmployee.TabIndex = 159;
             this.lblEmployee.Text = "Empleado";
             // 
@@ -335,11 +335,11 @@
             // dtpIssueDate
             // 
             this.dtpIssueDate.AutoSize = true;
-            this.dtpIssueDate.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpIssueDate.Location = new System.Drawing.Point(529, 84);
+            this.dtpIssueDate.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpIssueDate.Location = new System.Drawing.Point(478, 84);
             this.dtpIssueDate.Name = "dtpIssueDate";
             this.dtpIssueDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtpIssueDate.Size = new System.Drawing.Size(137, 16);
+            this.dtpIssueDate.Size = new System.Drawing.Size(129, 16);
             this.dtpIssueDate.TabIndex = 203;
             this.dtpIssueDate.Text = "Fecha de creacion";
             // 
@@ -362,19 +362,19 @@
             this.dtpDate.IconColor = System.Drawing.Color.Gray;
             this.dtpDate.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dtpDate.LeftTextMargin = 5;
-            this.dtpDate.Location = new System.Drawing.Point(534, 103);
+            this.dtpDate.Location = new System.Drawing.Point(481, 103);
             this.dtpDate.MinimumSize = new System.Drawing.Size(4, 32);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(234, 32);
+            this.dtpDate.Size = new System.Drawing.Size(287, 32);
             this.dtpDate.TabIndex = 202;
             // 
             // lblAffiliation
             // 
             this.lblAffiliation.AutoSize = true;
-            this.lblAffiliation.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAffiliation.Location = new System.Drawing.Point(331, 84);
+            this.lblAffiliation.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAffiliation.Location = new System.Drawing.Point(281, 84);
             this.lblAffiliation.Name = "lblAffiliation";
-            this.lblAffiliation.Size = new System.Drawing.Size(151, 16);
+            this.lblAffiliation.Size = new System.Drawing.Size(145, 16);
             this.lblAffiliation.TabIndex = 190;
             this.lblAffiliation.Text = "Numero de afiliación";
             // 
@@ -391,7 +391,7 @@
             this.txtAffiliationNumber.LineIdleColor = System.Drawing.Color.Gray;
             this.txtAffiliationNumber.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtAffiliationNumber.LineThickness = 3;
-            this.txtAffiliationNumber.Location = new System.Drawing.Point(334, 104);
+            this.txtAffiliationNumber.Location = new System.Drawing.Point(284, 104);
             this.txtAffiliationNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtAffiliationNumber.Name = "txtAffiliationNumber";
             this.txtAffiliationNumber.Size = new System.Drawing.Size(190, 31);
@@ -401,10 +401,10 @@
             // lblBankAccount
             // 
             this.lblBankAccount.AutoSize = true;
-            this.lblBankAccount.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBankAccount.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBankAccount.Location = new System.Drawing.Point(11, 84);
             this.lblBankAccount.Name = "lblBankAccount";
-            this.lblBankAccount.Size = new System.Drawing.Size(121, 16);
+            this.lblBankAccount.Size = new System.Drawing.Size(119, 16);
             this.lblBankAccount.TabIndex = 188;
             this.lblBankAccount.Text = "Cuenta bancaria";
             // 
@@ -424,7 +424,7 @@
             this.txtBankAccount.Location = new System.Drawing.Point(14, 104);
             this.txtBankAccount.Margin = new System.Windows.Forms.Padding(4);
             this.txtBankAccount.Name = "txtBankAccount";
-            this.txtBankAccount.Size = new System.Drawing.Size(308, 31);
+            this.txtBankAccount.Size = new System.Drawing.Size(261, 31);
             this.txtBankAccount.TabIndex = 187;
             this.txtBankAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -451,11 +451,11 @@
             // lblCharge
             // 
             this.lblCharge.AutoSize = true;
-            this.lblCharge.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCharge.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCharge.Location = new System.Drawing.Point(531, 25);
             this.lblCharge.Name = "lblCharge";
             this.lblCharge.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCharge.Size = new System.Drawing.Size(49, 16);
+            this.lblCharge.Size = new System.Drawing.Size(48, 16);
             this.lblCharge.TabIndex = 185;
             this.lblCharge.Text = "Cargo";
             // 
@@ -494,8 +494,8 @@
             this.bunifuGroupBox2.Controls.Add(this.txtSalary);
             this.bunifuGroupBox2.Controls.Add(this.lblBonus);
             this.bunifuGroupBox2.Controls.Add(this.lblISSS);
-            this.bunifuGroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuGroupBox2.LabelAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuGroupBox2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuGroupBox2.LabelAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.bunifuGroupBox2.LabelIndent = 10;
             this.bunifuGroupBox2.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
             this.bunifuGroupBox2.Location = new System.Drawing.Point(24, 234);
@@ -528,11 +528,11 @@
             // lblGrossSalary
             // 
             this.lblGrossSalary.AutoSize = true;
-            this.lblGrossSalary.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrossSalary.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGrossSalary.Location = new System.Drawing.Point(602, 28);
             this.lblGrossSalary.Name = "lblGrossSalary";
             this.lblGrossSalary.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblGrossSalary.Size = new System.Drawing.Size(98, 16);
+            this.lblGrossSalary.Size = new System.Drawing.Size(90, 16);
             this.lblGrossSalary.TabIndex = 212;
             this.lblGrossSalary.Text = "Salario Bruto";
             // 
@@ -559,11 +559,11 @@
             // lblDaysWorked
             // 
             this.lblDaysWorked.AutoSize = true;
-            this.lblDaysWorked.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDaysWorked.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDaysWorked.Location = new System.Drawing.Point(219, 28);
             this.lblDaysWorked.Name = "lblDaysWorked";
             this.lblDaysWorked.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblDaysWorked.Size = new System.Drawing.Size(115, 16);
+            this.lblDaysWorked.Size = new System.Drawing.Size(111, 16);
             this.lblDaysWorked.TabIndex = 210;
             this.lblDaysWorked.Text = "Dias trabajados";
             // 
@@ -590,21 +590,21 @@
             // lblSalaryXDay
             // 
             this.lblSalaryXDay.AutoSize = true;
-            this.lblSalaryXDay.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalaryXDay.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSalaryXDay.Location = new System.Drawing.Point(411, 28);
             this.lblSalaryXDay.Name = "lblSalaryXDay";
             this.lblSalaryXDay.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSalaryXDay.Size = new System.Drawing.Size(108, 16);
+            this.lblSalaryXDay.Size = new System.Drawing.Size(105, 16);
             this.lblSalaryXDay.TabIndex = 208;
             this.lblSalaryXDay.Text = "Salario por dia";
             // 
             // lblCb
             // 
             this.lblCb.AutoSize = true;
-            this.lblCb.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCb.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCb.Location = new System.Drawing.Point(28, 225);
             this.lblCb.Name = "lblCb";
-            this.lblCb.Size = new System.Drawing.Size(77, 16);
+            this.lblCb.Size = new System.Drawing.Size(76, 16);
             this.lblCb.TabIndex = 205;
             this.lblCb.Text = "Aguinaldo";
             // 
@@ -621,7 +621,7 @@
             this.txtPayrollStatus.LineIdleColor = System.Drawing.Color.Gray;
             this.txtPayrollStatus.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             this.txtPayrollStatus.LineThickness = 3;
-            this.txtPayrollStatus.Location = new System.Drawing.Point(223, 245);
+            this.txtPayrollStatus.Location = new System.Drawing.Point(222, 245);
             this.txtPayrollStatus.Margin = new System.Windows.Forms.Padding(4);
             this.txtPayrollStatus.Name = "txtPayrollStatus";
             this.txtPayrollStatus.Size = new System.Drawing.Size(163, 31);
@@ -631,11 +631,11 @@
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.Location = new System.Drawing.Point(220, 225);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblStatus.Size = new System.Drawing.Size(55, 16);
+            this.lblStatus.Size = new System.Drawing.Size(50, 16);
             this.lblStatus.TabIndex = 202;
             this.lblStatus.Text = "Estado";
             // 
@@ -682,11 +682,11 @@
             // lblDiscountEmployeer
             // 
             this.lblDiscountEmployeer.AutoSize = true;
-            this.lblDiscountEmployeer.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiscountEmployeer.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiscountEmployeer.Location = new System.Drawing.Point(602, 159);
             this.lblDiscountEmployeer.Name = "lblDiscountEmployeer";
             this.lblDiscountEmployeer.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblDiscountEmployeer.Size = new System.Drawing.Size(162, 16);
+            this.lblDiscountEmployeer.Size = new System.Drawing.Size(150, 16);
             this.lblDiscountEmployeer.TabIndex = 200;
             this.lblDiscountEmployeer.Text = "Descuento empleador";
             // 
@@ -713,11 +713,11 @@
             // lblAFPeMPLOYEER
             // 
             this.lblAFPeMPLOYEER.AutoSize = true;
-            this.lblAFPeMPLOYEER.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAFPeMPLOYEER.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAFPeMPLOYEER.Location = new System.Drawing.Point(411, 159);
             this.lblAFPeMPLOYEER.Name = "lblAFPeMPLOYEER";
             this.lblAFPeMPLOYEER.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblAFPeMPLOYEER.Size = new System.Drawing.Size(113, 16);
+            this.lblAFPeMPLOYEER.Size = new System.Drawing.Size(105, 16);
             this.lblAFPeMPLOYEER.TabIndex = 198;
             this.lblAFPeMPLOYEER.Text = "AFP Empleador";
             // 
@@ -744,10 +744,10 @@
             // lblEmployeerD
             // 
             this.lblEmployeerD.AutoSize = true;
-            this.lblEmployeerD.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeerD.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeerD.Location = new System.Drawing.Point(226, 159);
             this.lblEmployeerD.Name = "lblEmployeerD";
-            this.lblEmployeerD.Size = new System.Drawing.Size(117, 16);
+            this.lblEmployeerD.Size = new System.Drawing.Size(107, 16);
             this.lblEmployeerD.TabIndex = 196;
             this.lblEmployeerD.Text = "ISSS Empleador";
             // 
@@ -774,22 +774,22 @@
             // lblAFP
             // 
             this.lblAFP.AutoSize = true;
-            this.lblAFP.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAFP.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAFP.Location = new System.Drawing.Point(411, 87);
             this.lblAFP.Name = "lblAFP";
             this.lblAFP.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblAFP.Size = new System.Drawing.Size(34, 16);
+            this.lblAFP.Size = new System.Drawing.Size(30, 16);
             this.lblAFP.TabIndex = 194;
             this.lblAFP.Text = "AFP";
             // 
             // lblNetPay
             // 
             this.lblNetPay.AutoSize = true;
-            this.lblNetPay.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNetPay.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNetPay.Location = new System.Drawing.Point(411, 225);
             this.lblNetPay.Name = "lblNetPay";
             this.lblNetPay.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblNetPay.Size = new System.Drawing.Size(91, 16);
+            this.lblNetPay.Size = new System.Drawing.Size(85, 16);
             this.lblNetPay.TabIndex = 193;
             this.lblNetPay.Text = "Salario neto";
             // 
@@ -816,11 +816,11 @@
             // lblDiscount
             // 
             this.lblDiscount.AutoSize = true;
-            this.lblDiscount.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiscount.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiscount.Location = new System.Drawing.Point(28, 159);
             this.lblDiscount.Name = "lblDiscount";
             this.lblDiscount.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblDiscount.Size = new System.Drawing.Size(156, 16);
+            this.lblDiscount.Size = new System.Drawing.Size(145, 16);
             this.lblDiscount.TabIndex = 191;
             this.lblDiscount.Text = "Descuento empleado";
             // 
@@ -867,11 +867,11 @@
             // lblIncome
             // 
             this.lblIncome.AutoSize = true;
-            this.lblIncome.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIncome.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIncome.Location = new System.Drawing.Point(602, 87);
             this.lblIncome.Name = "lblIncome";
             this.lblIncome.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblIncome.Size = new System.Drawing.Size(48, 16);
+            this.lblIncome.Size = new System.Drawing.Size(44, 16);
             this.lblIncome.TabIndex = 188;
             this.lblIncome.Text = "Renta";
             // 
@@ -942,7 +942,6 @@
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnCancelar;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtDUI;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtSalary;
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtEmployee;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtPossition;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtEmployeeDiscount;
@@ -986,5 +985,6 @@
         public Bunifu.Framework.UI.BunifuCustomLabel lblAFPeMPLOYEER;
         public Bunifu.Framework.UI.BunifuCustomLabel lblStatus;
         public Bunifu.Framework.UI.BunifuCustomLabel lblCb;
+        public Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
     }
 }

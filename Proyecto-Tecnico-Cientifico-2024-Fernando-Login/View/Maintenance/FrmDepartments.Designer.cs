@@ -44,9 +44,9 @@
             this.dgvDepartments = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.cmsDepartment = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsDeleteDepartment = new System.Windows.Forms.ToolStripMenuItem();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblText = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.btnGoBack = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.txtDepartment = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnAddDepartment = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
@@ -162,16 +162,16 @@
             this.cmsDeleteDepartment.Size = new System.Drawing.Size(212, 26);
             this.cmsDeleteDepartment.Text = "Eliminar departamento";
             // 
-            // label2
+            // lblText
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 88);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(210, 18);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Nombre del departamento:";
+            this.lblText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblText.AutoSize = true;
+            this.lblText.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblText.Location = new System.Drawing.Point(42, 88);
+            this.lblText.Name = "lblText";
+            this.lblText.Size = new System.Drawing.Size(210, 18);
+            this.lblText.TabIndex = 12;
+            this.lblText.Text = "Nombre del departamento:";
             // 
             // bunifuSeparator1
             // 
@@ -186,19 +186,19 @@
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(146, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(30, 0, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 40);
-            this.label1.TabIndex = 192;
-            this.label1.Text = "DEPARTAMENTOS";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(146, 15);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(30, 0, 3, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(297, 40);
+            this.lblTitle.TabIndex = 192;
+            this.lblTitle.Text = "DEPARTAMENTOS";
             // 
             // btnGoBack
             // 
@@ -535,9 +535,9 @@
             this.ClientSize = new System.Drawing.Size(583, 443);
             this.Controls.Add(this.btnAddDepartment);
             this.Controls.Add(this.bunifuSeparator1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnGoBack);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblText);
             this.Controls.Add(this.txtDepartment);
             this.Controls.Add(this.dgvDepartments);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -554,14 +554,14 @@
         #endregion
 
         public Bunifu.UI.WinForms.BunifuDataGridView dgvDepartments;
-        private System.Windows.Forms.Label label2;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnGoBack;
         public Bunifu.UI.WinForms.BunifuTextBox txtDepartment;
         public System.Windows.Forms.ContextMenuStrip cmsDepartment;
         public System.Windows.Forms.ToolStripMenuItem cmsDeleteDepartment;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private System.Windows.Forms.Label label1;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnAddDepartment;
         public Bunifu.UI.WinForms.BunifuSnackbar snack;
+        public System.Windows.Forms.Label lblText;
+        public System.Windows.Forms.Label lblTitle;
     }
 }

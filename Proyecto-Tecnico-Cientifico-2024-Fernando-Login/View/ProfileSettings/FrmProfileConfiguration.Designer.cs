@@ -68,26 +68,26 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.picUser = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblNames = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtNames = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtLastNames = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblLastN = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtDui = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblDui = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtPhone = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblPhone = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnSavePhoto = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.txtEmail = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblEmail = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.btnChangePassword = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnGuardar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.txtAddress = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblAddress = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtAffilliation = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblAffil = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtBankA = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblBankAcc = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.snack = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.btntake = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnPictureSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
@@ -112,15 +112,15 @@
             this.picUser.TabStop = false;
             this.picUser.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
-            // bunifuCustomLabel3
+            // lblNames
             // 
-            this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(279, 31);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(73, 17);
-            this.bunifuCustomLabel3.TabIndex = 34;
-            this.bunifuCustomLabel3.Text = "Nombres:";
+            this.lblNames.AutoSize = true;
+            this.lblNames.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNames.Location = new System.Drawing.Point(279, 31);
+            this.lblNames.Name = "lblNames";
+            this.lblNames.Size = new System.Drawing.Size(73, 17);
+            this.lblNames.TabIndex = 34;
+            this.lblNames.Text = "Nombres:";
             // 
             // txtNames
             // 
@@ -274,15 +274,15 @@
             this.txtLastNames.UseSystemPasswordChar = false;
             this.txtLastNames.WordWrap = true;
             // 
-            // bunifuCustomLabel1
+            // lblLastN
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(279, 94);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(76, 17);
-            this.bunifuCustomLabel1.TabIndex = 36;
-            this.bunifuCustomLabel1.Text = "Apellidos:";
+            this.lblLastN.AutoSize = true;
+            this.lblLastN.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastN.Location = new System.Drawing.Point(279, 94);
+            this.lblLastN.Name = "lblLastN";
+            this.lblLastN.Size = new System.Drawing.Size(76, 17);
+            this.lblLastN.TabIndex = 36;
+            this.lblLastN.Text = "Apellidos:";
             // 
             // txtDui
             // 
@@ -360,15 +360,15 @@
             this.txtDui.UseSystemPasswordChar = false;
             this.txtDui.WordWrap = true;
             // 
-            // bunifuCustomLabel2
+            // lblDui
             // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(279, 159);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(35, 17);
-            this.bunifuCustomLabel2.TabIndex = 38;
-            this.bunifuCustomLabel2.Text = "DUI:";
+            this.lblDui.AutoSize = true;
+            this.lblDui.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDui.Location = new System.Drawing.Point(279, 159);
+            this.lblDui.Name = "lblDui";
+            this.lblDui.Size = new System.Drawing.Size(35, 17);
+            this.lblDui.TabIndex = 38;
+            this.lblDui.Text = "DUI:";
             // 
             // txtPhone
             // 
@@ -446,15 +446,15 @@
             this.txtPhone.UseSystemPasswordChar = false;
             this.txtPhone.WordWrap = true;
             // 
-            // bunifuCustomLabel4
+            // lblPhone
             // 
-            this.bunifuCustomLabel4.AutoSize = true;
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(504, 159);
-            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(70, 17);
-            this.bunifuCustomLabel4.TabIndex = 40;
-            this.bunifuCustomLabel4.Text = "Teléfono:";
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Location = new System.Drawing.Point(504, 159);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(70, 17);
+            this.lblPhone.TabIndex = 40;
+            this.lblPhone.Text = "Teléfono:";
             // 
             // btnSavePhoto
             // 
@@ -622,15 +622,15 @@
             this.txtEmail.WordWrap = true;
             this.txtEmail.TextChanged += new System.EventHandler(this.bunifuTextBox4_TextChanged);
             // 
-            // bunifuCustomLabel5
+            // lblEmail
             // 
-            this.bunifuCustomLabel5.AutoSize = true;
-            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(279, 225);
-            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(140, 17);
-            this.bunifuCustomLabel5.TabIndex = 44;
-            this.bunifuCustomLabel5.Text = "Correo electrónico:";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(279, 225);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(140, 17);
+            this.lblEmail.TabIndex = 44;
+            this.lblEmail.Text = "Correo electrónico:";
             // 
             // bunifuPanel1
             // 
@@ -905,15 +905,15 @@
             this.txtAddress.UseSystemPasswordChar = false;
             this.txtAddress.WordWrap = true;
             // 
-            // bunifuCustomLabel6
+            // lblAddress
             // 
-            this.bunifuCustomLabel6.AutoSize = true;
-            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(28, 296);
-            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(78, 17);
-            this.bunifuCustomLabel6.TabIndex = 47;
-            this.bunifuCustomLabel6.Text = "Dirección:";
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Location = new System.Drawing.Point(28, 296);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(78, 17);
+            this.lblAddress.TabIndex = 47;
+            this.lblAddress.Text = "Dirección:";
             // 
             // txtAffilliation
             // 
@@ -991,15 +991,15 @@
             this.txtAffilliation.UseSystemPasswordChar = false;
             this.txtAffilliation.WordWrap = true;
             // 
-            // bunifuCustomLabel7
+            // lblAffil
             // 
-            this.bunifuCustomLabel7.AutoSize = true;
-            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(28, 386);
-            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
-            this.bunifuCustomLabel7.Size = new System.Drawing.Size(138, 17);
-            this.bunifuCustomLabel7.TabIndex = 49;
-            this.bunifuCustomLabel7.Text = "Núm. de afiliación.";
+            this.lblAffil.AutoSize = true;
+            this.lblAffil.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAffil.Location = new System.Drawing.Point(28, 386);
+            this.lblAffil.Name = "lblAffil";
+            this.lblAffil.Size = new System.Drawing.Size(138, 17);
+            this.lblAffil.TabIndex = 49;
+            this.lblAffil.Text = "Núm. de afiliación.";
             // 
             // txtBankA
             // 
@@ -1077,15 +1077,15 @@
             this.txtBankA.UseSystemPasswordChar = false;
             this.txtBankA.WordWrap = true;
             // 
-            // bunifuCustomLabel8
+            // lblBankAcc
             // 
-            this.bunifuCustomLabel8.AutoSize = true;
-            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(380, 386);
-            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(126, 17);
-            this.bunifuCustomLabel8.TabIndex = 51;
-            this.bunifuCustomLabel8.Text = "Cuenta bancaria:";
+            this.lblBankAcc.AutoSize = true;
+            this.lblBankAcc.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBankAcc.Location = new System.Drawing.Point(380, 386);
+            this.lblBankAcc.Name = "lblBankAcc";
+            this.lblBankAcc.Size = new System.Drawing.Size(126, 17);
+            this.lblBankAcc.TabIndex = 51;
+            this.lblBankAcc.Text = "Cuenta bancaria:";
             // 
             // snack
             // 
@@ -1335,6 +1335,7 @@
             this.btnPictureSave.TextMarginLeft = 0;
             this.btnPictureSave.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnPictureSave.UseDefaultRadiusAndThickness = true;
+            this.btnPictureSave.Visible = false;
             // 
             // FrmProfileConfiguration
             // 
@@ -1345,23 +1346,23 @@
             this.Controls.Add(this.btnPictureSave);
             this.Controls.Add(this.btntake);
             this.Controls.Add(this.txtBankA);
-            this.Controls.Add(this.bunifuCustomLabel8);
+            this.Controls.Add(this.lblBankAcc);
             this.Controls.Add(this.txtAffilliation);
-            this.Controls.Add(this.bunifuCustomLabel7);
+            this.Controls.Add(this.lblAffil);
             this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.bunifuCustomLabel6);
+            this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.bunifuCustomLabel5);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.btnSavePhoto);
             this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.bunifuCustomLabel4);
+            this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.txtDui);
-            this.Controls.Add(this.bunifuCustomLabel2);
+            this.Controls.Add(this.lblDui);
             this.Controls.Add(this.txtLastNames);
-            this.Controls.Add(this.bunifuCustomLabel1);
+            this.Controls.Add(this.lblLastN);
             this.Controls.Add(this.txtNames);
-            this.Controls.Add(this.bunifuCustomLabel3);
+            this.Controls.Add(this.lblNames);
             this.Controls.Add(this.picUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmProfileConfiguration";
@@ -1377,28 +1378,28 @@
         #endregion
 
         public Bunifu.UI.WinForms.BunifuPictureBox picUser;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         public Bunifu.UI.WinForms.BunifuTextBox txtNames;
         public Bunifu.UI.WinForms.BunifuTextBox txtLastNames;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         public Bunifu.UI.WinForms.BunifuTextBox txtDui;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         public Bunifu.UI.WinForms.BunifuTextBox txtPhone;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         public Bunifu.UI.WinForms.BunifuTextBox txtEmail;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnGuardar;
         public Bunifu.UI.WinForms.BunifuTextBox txtAddress;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         public Bunifu.UI.WinForms.BunifuTextBox txtAffilliation;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
         public Bunifu.UI.WinForms.BunifuTextBox txtBankA;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnChangePassword;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnSavePhoto;
         public Bunifu.UI.WinForms.BunifuSnackbar snack;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btntake;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnPictureSave;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblNames;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblLastN;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblDui;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblPhone;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblEmail;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblAddress;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblAffil;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblBankAcc;
+        public Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
     }
 }

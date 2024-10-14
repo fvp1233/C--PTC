@@ -3,6 +3,7 @@ using PTC2024.View.Dashboard;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting;
 using System.Text;
@@ -46,7 +47,17 @@ namespace PTC2024.Controller.MaintenanceController
             RefreshData();
             objCharge.txtId.Visible = false;
             objCharge.dgvCharge.Columns[0].Visible = false;
-
+            if (Properties.Settings.Default.darkMode == true)
+            {
+                objCharge.BackColor = Color.FromArgb(30, 30, 30);
+                objCharge.lblTitle.ForeColor = Color.White;
+                objCharge.lblText.ForeColor = Color.White;
+                objCharge.dgvCharge.BackgroundColor = Color.FromArgb(45, 45, 45);
+                objCharge.dgvCharge.HeaderBackColor = Color.LightSlateGray;
+                objCharge.dgvCharge.GridColor = Color.FromArgb(45, 45, 45);
+                objCharge.dgvCharge.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
+                objCharge.dgvCharge.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSlateGray;
+            }
         }
         public void RefreshData()
         {

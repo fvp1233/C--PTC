@@ -6,6 +6,7 @@ using PTC2024.View.formularios.inicio;
 using PTC2024.View.ProfileSettings;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace PTC2024.Controller.ProfileController
         public ControllerChangeUserPass(FrmChangeUserPass View)
         {
             objChangeP = View;
+            objChangeP.Load += new EventHandler(DarkMode);
             objChangeP.btnCheck.Click += new EventHandler(CheckPassword);
             objChangeP.btnSave.Click += new EventHandler(UpdatePass);
             objChangeP.txtPass.MouseDown += new MouseEventHandler(DisableContextMenu);
@@ -41,6 +43,13 @@ namespace PTC2024.Controller.ProfileController
                 answer = daoPass.CheckPass();
                 if (answer == true)
                 {
+                    if(Properties.Settings.Default.darkMode == true)
+                    {
+                        objChangeP.txtConfirmPass.FillColor = Color.FromArgb(60, 60, 60);
+                        objChangeP.txtConfirmPass.BorderColorIdle = Color.Gray;
+                        objChangeP.txtNewPass.FillColor = Color.FromArgb(60, 60, 60);
+                        objChangeP.txtNewPass.BorderColorIdle = Color.Gray;
+                    }
                     objChangeP.lblCorrectPass.Visible = true;
                     objChangeP.lblIncorrectPass.Visible = false;
                     objChangeP.groupBox.Enabled = true;
@@ -48,18 +57,17 @@ namespace PTC2024.Controller.ProfileController
                     objChangeP.txtNewPass.Enabled = true;
                     objChangeP.lbl2.Enabled = true;
                     objChangeP.txtConfirmPass.Enabled = true;
-                    objChangeP.btnSave.Enabled = true;
+                    objChangeP.btnSave.Enabled = true;                    
                 }
                 else
                 {
+
                     objChangeP.lblCorrectPass.Visible = false;
                     objChangeP.lblIncorrectPass.Visible = true;
-                    objChangeP.groupBox.Enabled = false;
                     objChangeP.lbl1.Enabled = false;
                     objChangeP.txtNewPass.Enabled = false;
                     objChangeP.lbl2.Enabled = false;
                     objChangeP.txtConfirmPass.Enabled = false;
-                    objChangeP.btnSave.Enabled = false;
                 }
             }
             else
@@ -68,6 +76,35 @@ namespace PTC2024.Controller.ProfileController
             }
 
         } 
+
+        public void DarkMode(object sender,EventArgs e)
+        {
+            objChangeP.txtConfirmPass.Enabled = false;
+            objChangeP.txtNewPass.Enabled = false;
+            if (Properties.Settings.Default.darkMode == true)
+            {
+                objChangeP.BackColor = Color.FromArgb(30, 30, 30);
+                objChangeP.lblTitle.ForeColor = Color.White;
+                objChangeP.bunifuSeparator1.LineColor = Color.White;
+                objChangeP.lblActualPass.ForeColor = Color.White;
+                objChangeP.lbl1.ForeColor = Color.White;
+                objChangeP.lbl2.ForeColor = Color.White;
+                objChangeP.txtPass.FillColor = Color.FromArgb(60, 60, 60);
+                objChangeP.txtPass.BorderColorIdle = Color.Gray;
+                objChangeP.txtConfirmPass.FillColor = Color.FromArgb(60, 60, 60);
+                objChangeP.txtConfirmPass.BorderColorIdle = Color.Gray;
+                objChangeP.txtNewPass.FillColor = Color.FromArgb(60, 60, 60);
+                objChangeP.txtNewPass.BorderColorIdle = Color.Gray;
+                objChangeP.bunifuPanel1.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objChangeP.bunifuPanel1.BorderColor = Color.FromArgb(60, 60, 60);
+                objChangeP.groupBox.ForeColor = Color.White;
+                objChangeP.txtConfirmPass.OnDisabledState.FillColor = Color.FromArgb(60, 60, 60);
+                objChangeP.txtConfirmPass.BorderColorDisabled = Color.Gray;
+                objChangeP.txtNewPass.OnDisabledState.FillColor = Color.FromArgb(60, 60, 60);
+                objChangeP.txtNewPass.BorderColorDisabled = Color.Gray;
+            }
+            
+        }
 
         public void UpdatePass(object sender, EventArgs e)
         {

@@ -7,6 +7,7 @@ using PTC2024.View.Maintenance;
 using PTC2024.Model.DAO.MaintenanceDAO;
 using System.Data;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace PTC2024.Controller.MaintenanceController
 {
@@ -31,6 +32,17 @@ namespace PTC2024.Controller.MaintenanceController
         public void InitialCharge(object sender, EventArgs e)
         {
             GetCategoriesDgv();
+            if (Properties.Settings.Default.darkMode == true)
+            {
+                objCategories.BackColor = Color.FromArgb(30, 30, 30);
+                objCategories.lblTitle.ForeColor = Color.White;
+                objCategories.lblText.ForeColor = Color.White;
+                objCategories.dgvCategories.BackgroundColor = Color.FromArgb(45, 45, 45);
+                objCategories.dgvCategories.HeaderBackColor = Color.LightSlateGray;
+                objCategories.dgvCategories.GridColor = Color.FromArgb(45, 45, 45);
+                objCategories.dgvCategories.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
+                objCategories.dgvCategories.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSlateGray;
+            }
         }
         public void CloseForm(object sender, EventArgs e)
         {

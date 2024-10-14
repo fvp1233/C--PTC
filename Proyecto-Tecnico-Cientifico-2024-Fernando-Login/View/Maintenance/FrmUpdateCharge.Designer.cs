@@ -44,13 +44,13 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.txtBonus = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblBonus = new System.Windows.Forms.Label();
             this.btnUpdate = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.txtCharge = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtID = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnGoBack = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblTitle = new Bunifu.UI.WinForms.BunifuLabel();
             this.SuspendLayout();
             // 
             // txtBonus
@@ -129,16 +129,16 @@
             this.txtBonus.UseSystemPasswordChar = false;
             this.txtBonus.WordWrap = true;
             // 
-            // label3
+            // lblBonus
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(60, 148);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 16);
-            this.label3.TabIndex = 110;
-            this.label3.Text = "Bono:";
+            this.lblBonus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblBonus.AutoSize = true;
+            this.lblBonus.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBonus.Location = new System.Drawing.Point(60, 148);
+            this.lblBonus.Name = "lblBonus";
+            this.lblBonus.Size = new System.Drawing.Size(43, 16);
+            this.lblBonus.TabIndex = 110;
+            this.lblBonus.Text = "Bono:";
             // 
             // btnUpdate
             // 
@@ -230,16 +230,16 @@
             this.btnUpdate.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnUpdate.UseDefaultRadiusAndThickness = true;
             // 
-            // label2
+            // lblName
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 16);
-            this.label2.TabIndex = 109;
-            this.label2.Text = "Nombre del puesto:";
+            this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(60, 82);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(135, 16);
+            this.lblName.TabIndex = 109;
+            this.lblName.Text = "Nombre del puesto:";
             // 
             // txtCharge
             // 
@@ -483,21 +483,21 @@
             this.btnGoBack.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnGoBack.UseDefaultRadiusAndThickness = true;
             // 
-            // bunifuLabel1
+            // lblTitle
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(60, 24);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(231, 28);
-            this.bunifuLabel1.TabIndex = 113;
-            this.bunifuLabel1.Text = "ACTUALIZAR PUESTO";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblTitle.AllowParentOverrides = false;
+            this.lblTitle.AutoEllipsis = false;
+            this.lblTitle.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblTitle.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(60, 24);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblTitle.Size = new System.Drawing.Size(231, 28);
+            this.lblTitle.TabIndex = 113;
+            this.lblTitle.Text = "ACTUALIZAR PUESTO";
+            this.lblTitle.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblTitle.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // FrmUpdateCharge
             // 
@@ -505,13 +505,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(354, 297);
-            this.Controls.Add(this.bunifuLabel1);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.txtBonus);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblBonus);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.txtCharge);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmUpdateCharge";
@@ -525,12 +525,12 @@
         #endregion
 
         public Bunifu.UI.WinForms.BunifuTextBox txtBonus;
-        private System.Windows.Forms.Label label3;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnUpdate;
-        private System.Windows.Forms.Label label2;
         public Bunifu.UI.WinForms.BunifuTextBox txtCharge;
         public Bunifu.UI.WinForms.BunifuTextBox txtID;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnGoBack;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        public System.Windows.Forms.Label lblBonus;
+        public System.Windows.Forms.Label lblName;
+        public Bunifu.UI.WinForms.BunifuLabel lblTitle;
     }
 }

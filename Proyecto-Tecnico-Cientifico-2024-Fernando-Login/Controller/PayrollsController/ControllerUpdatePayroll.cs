@@ -6,6 +6,7 @@ using PTC2024.View.formularios.inicio;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace PTC2024.Controller.EmployeesController
             objUpdatePayroll = Vista;
             DisableComponents();
             ChargeValues(nP, dui, employee, salary, possition, bonus, bankAccount, affiliationNumber, isss, afp, rent, netSalary, discountEmployee, issueDate, daysWorkded, daySalary, grossPay, hoursWorked, hourSalary, extraHours);
+            objUpdatePayroll.Load += new EventHandler(DarkMode);
             objUpdatePayroll.btnConfirm.Click += new EventHandler(UpdatePayrollStatus);
             objUpdatePayroll.btnCancelar.Click += new EventHandler(CloseForm);
             objUpdatePayroll.txtHoursWorked.TextChanged += new EventHandler(DaysWorked);
@@ -34,6 +36,91 @@ namespace PTC2024.Controller.EmployeesController
             objUpdatePayroll.txtExtraHours.TextChange += new EventHandler(ExtraHoursNum);
 
         }
+
+        public void DarkMode(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.darkMode == true)
+            {
+                objUpdatePayroll.BackColor = Color.FromArgb(30, 30, 30);
+                objUpdatePayroll.lblTitle.ForeColor = Color.White;
+                objUpdatePayroll.lblSubTitle.ForeColor = Color.White;
+                objUpdatePayroll.bunifuGroupBox1.ForeColor = Color.White;
+                objUpdatePayroll.bunifuGroupBox2.ForeColor = Color.White;
+                objUpdatePayroll.txtEmployee.BackColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtEmployee.LineIdleColor = Color.Gray;
+                objUpdatePayroll.txtEmployee.ForeColor = Color.White;
+                objUpdatePayroll.txtDUI.BackColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtDUI.LineIdleColor = Color.Gray;
+                objUpdatePayroll.txtDUI.ForeColor = Color.White;
+                objUpdatePayroll.txtPossition.BackColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtPossition.LineIdleColor = Color.Gray;
+                objUpdatePayroll.txtPossition.ForeColor = Color.White;
+                objUpdatePayroll.txtBankAccount.BackColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtBankAccount.LineIdleColor = Color.Gray;
+                objUpdatePayroll.txtBankAccount.ForeColor = Color.White;
+                objUpdatePayroll.txtAffiliationNumber.BackColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtAffiliationNumber.LineIdleColor = Color.Gray;
+                objUpdatePayroll.txtAffiliationNumber.ForeColor = Color.White;
+                objUpdatePayroll.dtpDate.BackColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.dtpDate.ForeColor = Color.White;
+                objUpdatePayroll.dtpDate.IconColor = Color.White;
+                objUpdatePayroll.txtSalary.BackColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtSalary.LineIdleColor = Color.Gray;
+                objUpdatePayroll.txtSalary.ForeColor = Color.White;
+                objUpdatePayroll.txtDaysWorked.FillColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtDaysWorked.BorderColorIdle = Color.Gray;
+                objUpdatePayroll.txtDaysWorked.ForeColor = Color.White;
+                objUpdatePayroll.txtDaySalary.BackColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtDaySalary.LineIdleColor = Color.Gray;
+                objUpdatePayroll.txtDaySalary.ForeColor = Color.White;
+                objUpdatePayroll.txtGrossPay.BackColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtGrossPay.LineIdleColor = Color.Gray;
+                objUpdatePayroll.txtGrossPay.ForeColor = Color.White;
+                objUpdatePayroll.txtBonus.BackColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtBonus.LineIdleColor = Color.Gray;
+                objUpdatePayroll.txtBonus.ForeColor = Color.White;
+                objUpdatePayroll.txtISSS.BackColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtISSS.LineIdleColor = Color.Gray;
+                objUpdatePayroll.txtISSS.ForeColor = Color.White;
+                objUpdatePayroll.txtAFP.BackColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtAFP.LineIdleColor = Color.Gray;
+                objUpdatePayroll.txtAFP.ForeColor = Color.White;
+                objUpdatePayroll.txtRent.BackColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtRent.LineIdleColor = Color.Gray;
+                objUpdatePayroll.txtRent.ForeColor = Color.White;
+                objUpdatePayroll.txtEmployeeDiscount.BackColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtEmployeeDiscount.LineIdleColor = Color.Gray;
+                objUpdatePayroll.txtEmployeeDiscount.ForeColor = Color.White;
+                //objUpdatePayroll.txtEmployerISSS.BackColor = Color.FromArgb(60, 60, 60);
+                //objUpdatePayroll.txtEmployerISSS.LineIdleColor = Color.Gray;
+                //objUpdatePayroll.txtEmployerISSS.ForeColor = Color.White;
+                //objUpdatePayroll.txtEmployerAFP.BackColor = Color.FromArgb(60, 60, 60);
+                //objUpdatePayroll.txtEmployerAFP.LineIdleColor = Color.Gray;
+                //objUpdatePayroll.txtEmployerAFP.ForeColor = Color.White;
+                //objUpdatePayroll.txtEmployerDiscount.BackColor = Color.FromArgb(60, 60, 60);
+                //objUpdatePayroll.txtEmployerDiscount.LineIdleColor = Color.Gray;
+                //objUpdatePayroll.txtEmployerDiscount.ForeColor = Color.White;
+                //objUpdatePayroll.txtChristmasBonus.BackColor = Color.FromArgb(60, 60, 60);
+                //objUpdatePayroll.txtChristmasBonus.LineIdleColor = Color.Gray;
+                //objUpdatePayroll.txtChristmasBonus.ForeColor = Color.White;
+                //objUpdatePayroll.txtPayrollStatus.BackColor = Color.FromArgb(60, 60, 60);
+                //objUpdatePayroll.txtPayrollStatus.LineIdleColor = Color.Gray;
+                //objUpdatePayroll.txtPayrollStatus.ForeColor = Color.White;
+                objUpdatePayroll.txtNetSalary.BackColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtNetSalary.LineIdleColor = Color.Gray;
+                objUpdatePayroll.txtNetSalary.ForeColor = Color.White;
+                objUpdatePayroll.txtHourSalary.BackColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtHourSalary.LineIdleColor = Color.Gray;
+                objUpdatePayroll.txtHourSalary.ForeColor = Color.White;
+                objUpdatePayroll.txtDaysWorked.FillColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtDaysWorked.BorderColorIdle = Color.Gray;
+                objUpdatePayroll.txtHoursWorked.FillColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtHoursWorked.BorderColorIdle = Color.Gray;
+                objUpdatePayroll.txtExtraHours.FillColor = Color.FromArgb(60, 60, 60);
+                objUpdatePayroll.txtExtraHours.BorderColorIdle = Color.Gray;
+            }
+        }
+
         public void UpdatePayrollStatus(object sender, EventArgs e)
         {
             if (!(string.IsNullOrEmpty(objUpdatePayroll.txtHoursWorked.Text.Trim()) || string.IsNullOrEmpty(objUpdatePayroll.txtDaysWorked.Text.Trim()) || string.IsNullOrEmpty(objUpdatePayroll.txtExtraHours.Text.Trim())))

@@ -42,8 +42,8 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblText = new System.Windows.Forms.Label();
             this.dgvBanks = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.cmsBanks = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsDeleteBank = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,30 +68,30 @@
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(212, 28);
-            this.label1.Margin = new System.Windows.Forms.Padding(30, 0, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 40);
-            this.label1.TabIndex = 206;
-            this.label1.Text = "BANCOS";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(212, 28);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(30, 0, 3, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(161, 40);
+            this.lblTitle.TabIndex = 206;
+            this.lblTitle.Text = "BANCOS";
             // 
-            // label2
+            // lblText
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 18);
-            this.label2.TabIndex = 204;
-            this.label2.Text = "Nombre del banco:";
+            this.lblText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblText.AutoSize = true;
+            this.lblText.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblText.Location = new System.Drawing.Point(44, 99);
+            this.lblText.Name = "lblText";
+            this.lblText.Size = new System.Drawing.Size(153, 18);
+            this.lblText.TabIndex = 204;
+            this.lblText.Text = "Nombre del banco:";
             // 
             // dgvBanks
             // 
@@ -534,11 +534,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(583, 443);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnAddBank);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.btnGoBack);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblText);
             this.Controls.Add(this.txtBank);
             this.Controls.Add(this.dgvBanks);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -554,14 +554,14 @@
 
         #endregion
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private System.Windows.Forms.Label label1;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnGoBack;
-        private System.Windows.Forms.Label label2;
         public Bunifu.UI.WinForms.BunifuTextBox txtBank;
         public Bunifu.UI.WinForms.BunifuDataGridView dgvBanks;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnAddBank;
         public System.Windows.Forms.ContextMenuStrip cmsBanks;
         public System.Windows.Forms.ToolStripMenuItem cmsDeleteBank;
         public Bunifu.UI.WinForms.BunifuSnackbar snack;
+        public System.Windows.Forms.Label lblTitle;
+        public System.Windows.Forms.Label lblText;
     }
 }

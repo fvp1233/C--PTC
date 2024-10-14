@@ -2,6 +2,7 @@
 using PTC2024.View.Dashboard;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,6 +46,15 @@ namespace PTC2024.Controller.MaintenanceController
             }
             CloseUpdate();
         }
+
+        public void DarkMode(object sender, EventArgs e)
+        {
+            objUpdateCharge.BackColor = Color.FromArgb(30, 30, 30);
+            objUpdateCharge.lblTitle.ForeColor = Color.White;
+            objUpdateCharge.lblName.ForeColor = Color.White;
+            objUpdateCharge.lblBonus.ForeColor = Color.White;
+        }
+
         public void ChargeValues(int id, string name, double bonus)
         {
             try

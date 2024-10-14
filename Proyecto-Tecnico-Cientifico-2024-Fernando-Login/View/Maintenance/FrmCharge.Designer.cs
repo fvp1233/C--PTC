@@ -40,7 +40,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.cmsCharge = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsUpdateCharge = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDeleteCharge = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,24 +49,24 @@
             this.dgvCharge = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.snack = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblText = new System.Windows.Forms.Label();
             this.cmsCharge.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCharge)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(286, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(30, 0, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 40);
-            this.label1.TabIndex = 100;
-            this.label1.Text = "PUESTOS";
+            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(0, 9);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(30, 0, 3, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(736, 40);
+            this.lblTitle.TabIndex = 100;
+            this.lblTitle.Text = "PUESTOS";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cmsCharge
             // 
@@ -433,17 +433,17 @@
             this.snack.WarningOptions.IconLeftMargin = 12;
             this.snack.ZoomCloseIcon = true;
             // 
-            // label3
+            // lblText
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(211, 65);
-            this.label3.Margin = new System.Windows.Forms.Padding(25, 0, 3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(312, 16);
-            this.label3.TabIndex = 192;
-            this.label3.Text = "Haga click derecho sobre una cargo para mas opciones";
+            this.lblText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblText.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblText.Location = new System.Drawing.Point(0, 87);
+            this.lblText.Margin = new System.Windows.Forms.Padding(25, 0, 3, 0);
+            this.lblText.Name = "lblText";
+            this.lblText.Size = new System.Drawing.Size(736, 19);
+            this.lblText.TabIndex = 192;
+            this.lblText.Text = "Haga click derecho sobre una cargo para mas opciones";
+            this.lblText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmCharge
             // 
@@ -451,12 +451,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(735, 459);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblText);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.dgvCharge);
             this.Controls.Add(this.txtId);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCharge";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -464,12 +464,10 @@
             this.cmsCharge.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCharge)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.ContextMenuStrip cmsCharge;
         public System.Windows.Forms.ToolStripMenuItem cmsUpdateCharge;
         public System.Windows.Forms.ToolStripMenuItem cmsDeleteCharge;
@@ -478,6 +476,7 @@
         public Bunifu.UI.WinForms.BunifuDataGridView dgvCharge;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         public Bunifu.UI.WinForms.BunifuSnackbar snack;
-        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label lblTitle;
+        public System.Windows.Forms.Label lblText;
     }
 }

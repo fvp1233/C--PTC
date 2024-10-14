@@ -42,8 +42,8 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblText = new System.Windows.Forms.Label();
             this.dgvCategories = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.cmsCategorie = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsDeleteCategorie = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,30 +68,30 @@
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(169, 24);
-            this.label1.Margin = new System.Windows.Forms.Padding(30, 0, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 40);
-            this.label1.TabIndex = 199;
-            this.label1.Text = "CATEGORÍAS";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(169, 24);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(30, 0, 3, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(232, 40);
+            this.lblTitle.TabIndex = 199;
+            this.lblTitle.Text = "CATEGORÍAS";
             // 
-            // label2
+            // lblText
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 18);
-            this.label2.TabIndex = 196;
-            this.label2.Text = "Nombre de la categoría:";
+            this.lblText.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblText.AutoSize = true;
+            this.lblText.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblText.Location = new System.Drawing.Point(44, 99);
+            this.lblText.Name = "lblText";
+            this.lblText.Size = new System.Drawing.Size(191, 18);
+            this.lblText.TabIndex = 196;
+            this.lblText.Text = "Nombre de la categoría:";
             // 
             // dgvCategories
             // 
@@ -536,9 +536,9 @@
             this.ClientSize = new System.Drawing.Size(583, 443);
             this.Controls.Add(this.btnAddCategorie);
             this.Controls.Add(this.bunifuSeparator1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnGoBack);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblText);
             this.Controls.Add(this.txtCategorie);
             this.Controls.Add(this.dgvCategories);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -553,16 +553,15 @@
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private System.Windows.Forms.Label label1;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnGoBack;
-        private System.Windows.Forms.Label label2;
         public Bunifu.UI.WinForms.BunifuTextBox txtCategorie;
         public Bunifu.UI.WinForms.BunifuDataGridView dgvCategories;
         public System.Windows.Forms.ContextMenuStrip cmsCategorie;
         public System.Windows.Forms.ToolStripMenuItem cmsDeleteCategorie;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnAddCategorie;
         public Bunifu.UI.WinForms.BunifuSnackbar snack;
+        public Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
+        public System.Windows.Forms.Label lblTitle;
+        public System.Windows.Forms.Label lblText;
     }
 }
