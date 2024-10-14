@@ -1,4 +1,4 @@
-# H2C - Project README
+# H2C 
 
 ## Author(s):
 - **Developer:** Jennifer Sofía Alfaro Tomasino
