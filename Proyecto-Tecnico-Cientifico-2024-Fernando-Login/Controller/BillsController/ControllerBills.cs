@@ -17,6 +17,13 @@ using PTC2024.Model.DTO.BillsDTO;
 using PTC2024.View.Reporting.Bills;
 using PTC2024.View.formularios.inicio;
 using PTC2024.Model.DAO.HelperDAO;
+using QRCoder;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.Drawing.Imaging;
+using System.Diagnostics; // Para abrir el PDF después de generarlo
+
+
 
 namespace PTC2024.Controller.BillsController
 {
@@ -56,7 +63,7 @@ namespace PTC2024.Controller.BillsController
         public void LoadDataBills(object sender, EventArgs e)
         {
             ChargeData();
-            if(Properties.Settings.Default.darkMode == true)
+            if (Properties.Settings.Default.darkMode == true)
             {
                 objFormBills.BackColor = Color.FromArgb(18, 18, 18);
                 objFormBills.lblTitle.ForeColor = Color.White;
@@ -134,26 +141,26 @@ namespace PTC2024.Controller.BillsController
         public void CheckboxFiltersMethodCash(object senderl, EventArgs e)
         {
 
-                //Creamos objeto del dAOBills
-                DAOBills dAOBills = new DAOBills();
-                //Creamos una variable string que dependerá de que checkbox esta activado
-                string Method;
-                if (objFormBills.cbEfectivo.Checked == true)
-                {
-                    Method = objFormBills.cbEfectivo.Tag.ToString();
-                    objFormBills.cbCheque.Checked = false;
-                    objFormBills.cbCriptomoneda.Checked = false;
-                    //Creamos un dataset para capturar el que nos va a devolver el método en el DAO, y le enviamos la variable string que este tiene como parámetro
-                    DataSet ds = dAOBills.CheckboxFiltersMethod(Method);
-                    //Le damos el valor al datagrid
-                    objFormBills.dgvBills.DataSource = ds.Tables["viewBill"];
+            //Creamos objeto del dAOBills
+            DAOBills dAOBills = new DAOBills();
+            //Creamos una variable string que dependerá de que checkbox esta activado
+            string Method;
+            if (objFormBills.cbEfectivo.Checked == true)
+            {
+                Method = objFormBills.cbEfectivo.Tag.ToString();
+                objFormBills.cbCheque.Checked = false;
+                objFormBills.cbCriptomoneda.Checked = false;
+                //Creamos un dataset para capturar el que nos va a devolver el método en el DAO, y le enviamos la variable string que este tiene como parámetro
+                DataSet ds = dAOBills.CheckboxFiltersMethod(Method);
+                //Le damos el valor al datagrid
+                objFormBills.dgvBills.DataSource = ds.Tables["viewBill"];
 
-                }
-                else
-                {
-                    ChargeData();
-                }
             }
+            else
+            {
+                ChargeData();
+            }
+        }
 
         public void CheckboxFiltersMethodPayCheck(object senderl, EventArgs e)
         {
@@ -253,7 +260,7 @@ namespace PTC2024.Controller.BillsController
             }
         }
 
-        public void CheckboxFiltersStatusPay (object senderl, EventArgs e)
+        public void CheckboxFiltersStatusPay(object senderl, EventArgs e)
         {
             //Creamos objeto del dAOBills
             DAOBills dAOBills = new DAOBills();
@@ -335,17 +342,128 @@ namespace PTC2024.Controller.BillsController
         /// <param name="e"></param>
         public void printBills(object sender, EventArgs e)
         {
+            // Método que se encarga de manejar el evento Click del botón cmsPrintBill
             if (objFormBills.dgvBills.CurrentRow != null)
             {
-                int BillId = Convert.ToInt32(objFormBills.dgvBills.CurrentRow.Cells["N°"].Value);
-                FrmPrintBill printbill = new FrmPrintBill(BillId);
-                printbill.ShowDialog();
+                // Capturar el IdBill de la factura seleccionada en el DataGridView
+                int billId = Convert.ToInt32(objFormBills.dgvBills.CurrentRow.Cells["N°"].Value);
+
+                // Generar el PDF de la factura con el IdBill seleccionado
+                GenerateBillPDF(billId);
             }
             else
             {
-                MessageBox.Show("Por favor, selecciona una factura para imprimir.");
+                MessageBox.Show("Por favor, selecciona una factura para imprimir.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        // Método para generar el PDF de una factura
+        public void GenerateBillPDF(int idBill)
+        {
+            try
+            {
+                DAOBills dAOBills = new DAOBills();
+                DataSet dsBill = dAOBills.GetBillDetails(idBill);
+
+                if (dsBill != null && dsBill.Tables["viewBill"].Rows.Count > 0)
+                {
+                    DataRow billRow = dsBill.Tables["viewBill"].Rows[0];
+
+                    // Obtener un directorio temporal para almacenar el PDF
+                    string tempFilePath = Path.Combine(Path.GetTempPath(), $"Bill_{idBill}.pdf");
+
+                    Document doc = new Document();
+                    PdfWriter.GetInstance(doc, new FileStream(tempFilePath, FileMode.Create));
+                    doc.Open();
+
+                    // Fuentes para los textos
+                    var titleFont = iTextSharp.text.FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD, BaseColor.RED);
+                    var regularFont = iTextSharp.text.FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+                    var boldFont = iTextSharp.text.FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+
+                    // Título del documento
+                    doc.Add(new Paragraph("FACTURA", titleFont));
+                    doc.Add(new Paragraph(" "));
+
+                    // Datos principales
+                    doc.Add(new Paragraph($"Número de Factura: {billRow["N°"]}", boldFont));
+                    doc.Add(new Paragraph($"Razón Social: {billRow["Razon Social"]}", regularFont));
+                    doc.Add(new Paragraph($"NIT: {billRow["NIT"]}", regularFont));
+                    doc.Add(new Paragraph($"NRC: {billRow["NRC"]}", regularFont));
+                    doc.Add(new Paragraph($"Cliente: {billRow["Cliente"]}", regularFont));
+                    doc.Add(new Paragraph($"DUI del Cliente: {billRow["DUI"]}", regularFont));
+                    doc.Add(new Paragraph($"Teléfono del Cliente: {billRow["Télefono"]}", regularFont));
+                    doc.Add(new Paragraph($"Email del Cliente: {billRow["Email"]}", regularFont));
+                    doc.Add(new Paragraph(" "));
+
+                    // Detalles del servicio
+                    doc.Add(new Paragraph("Detalles del Servicio:", boldFont));
+                    doc.Add(new Paragraph($"Servicio: {billRow["Servicios"]}", regularFont));
+                    doc.Add(new Paragraph($"Descuento: {billRow["Descuento"]}%", regularFont));
+                    doc.Add(new Paragraph($"Subtotal: ${billRow["Subtotal"]}", regularFont));
+                    doc.Add(new Paragraph($"Total a Pagar: ${billRow["Total"]}", regularFont));
+                    doc.Add(new Paragraph($"Método de Pago: {billRow["Método de Pago"]}", regularFont));
+                    doc.Add(new Paragraph(" "));
+
+                    // Fechas
+                    doc.Add(new Paragraph($"Fecha de Emisión: {billRow["Fecha de emisión"]}", regularFont));
+                    doc.Add(new Paragraph($"Fecha Inicio del Servicio: {billRow["Fecha inicio"]}", regularFont));
+                    doc.Add(new Paragraph($"Fecha Fin del Servicio: {billRow["Fecha fin"]}", regularFont));
+                    doc.Add(new Paragraph(" "));
+
+                    // Encargado y estado
+                    doc.Add(new Paragraph($"Encargado: {billRow["Encargado"]}", regularFont));
+                    doc.Add(new Paragraph($"Estado de la Factura: {billRow["Estado"]}", regularFont));
+
+                    // Generar el código QR basado en los datos de la factura
+                    string qrData = $"Factura N°: {billRow["N°"]}\n" +
+                                    $"Razón Social: {billRow["Razon Social"]}\n" +
+                                    $"Cliente: {billRow["Cliente"]}\n" +
+                                    $"Total a Pagar: ${billRow["Total"]}\n" +
+                                    $"Fecha de Emisión: {billRow["Fecha de emisión"]}";
+
+                    using (MemoryStream msQrCode = new MemoryStream())
+                    {
+                        // Generar el código QR usando QRCoder
+                        QRCodeGenerator qrGenerator = new QRCodeGenerator();
+                        QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrData, QRCodeGenerator.ECCLevel.Q);
+                        QRCode qrCode = new QRCode(qrCodeData);
+
+                        using (Bitmap qrCodeImage = qrCode.GetGraphic(20)) // Ajusta la escala del código QR aquí
+                        {
+                            // Guardar el código QR como imagen en memoria
+                            qrCodeImage.Save(msQrCode, ImageFormat.Png);
+                        }
+
+                        // Convertir el stream en una imagen que iTextSharp pueda usar
+                        iTextSharp.text.Image qrImage = iTextSharp.text.Image.GetInstance(msQrCode.ToArray());
+                        qrImage.ScaleToFit(100f, 100f); // Ajusta el tamaño del QR según sea necesario
+                        qrImage.Alignment = Element.ALIGN_RIGHT;
+
+                        // Añadir el código QR al PDF
+                        doc.Add(qrImage);
+                    }
+
+                    // Cerrar el documento PDF
+                    doc.Close();
+
+                    // Abrir el PDF en el navegador predeterminado o visor de PDF
+                    Process.Start(new ProcessStartInfo(tempFilePath)
+                    {
+                        UseShellExecute = true // Esto asegurará que se abra con el programa predeterminado del sistema
+                    });
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron datos para la factura seleccionada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar el PDF: " + ex.Message);
+            }
+        }
+
+
 
         /// <summary>
         /// Método para abrir formulario "Agregar factura"
