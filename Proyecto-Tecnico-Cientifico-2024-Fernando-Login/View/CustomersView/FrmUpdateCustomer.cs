@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using PTC2024.Controller.CustomersController;
+using PTC2024.Controller.Helper;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace PTC2024.View.Clientes
@@ -22,7 +23,8 @@ namespace PTC2024.View.Clientes
         {
             InitializeComponent();
             ControllerUpdateCustomers obj = new ControllerUpdateCustomers(this,  idClient, dui, names, lastnames,   phone,  email,  address, idTypeC);
-            
+            Region = Region.FromHrgn(CommonClasses.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)

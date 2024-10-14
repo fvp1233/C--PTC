@@ -49,7 +49,7 @@
             this.txtIdPermission = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnAddPermission = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnCancel = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
-            this.bunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.groupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.lblId = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblText = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblStatus = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -66,7 +66,7 @@
             this.dtpStart = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.lblEmployeeID = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSnackbar1 = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
-            this.bunifuGroupBox1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblSubtitle
@@ -345,36 +345,36 @@
             this.btnCancel.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnCancel.UseDefaultRadiusAndThickness = true;
             // 
-            // bunifuGroupBox1
+            // groupBox1
             // 
-            this.bunifuGroupBox1.BorderColor = System.Drawing.Color.LightGray;
-            this.bunifuGroupBox1.BorderRadius = 10;
-            this.bunifuGroupBox1.BorderThickness = 2;
-            this.bunifuGroupBox1.Controls.Add(this.lblId);
-            this.bunifuGroupBox1.Controls.Add(this.lblText);
-            this.bunifuGroupBox1.Controls.Add(this.lblStatus);
-            this.bunifuGroupBox1.Controls.Add(this.rtxtContext);
-            this.bunifuGroupBox1.Controls.Add(this.txtIdEmployee);
-            this.bunifuGroupBox1.Controls.Add(this.cmbTypePermission);
-            this.bunifuGroupBox1.Controls.Add(this.lblPermissionType);
-            this.bunifuGroupBox1.Controls.Add(this.cmbStatusPermission);
-            this.bunifuGroupBox1.Controls.Add(this.bunifuCustomLabel11);
-            this.bunifuGroupBox1.Controls.Add(this.lblReason);
-            this.bunifuGroupBox1.Controls.Add(this.lblEnd);
-            this.bunifuGroupBox1.Controls.Add(this.dtpEnd);
-            this.bunifuGroupBox1.Controls.Add(this.lblStart);
-            this.bunifuGroupBox1.Controls.Add(this.dtpStart);
-            this.bunifuGroupBox1.Controls.Add(this.lblEmployeeID);
-            this.bunifuGroupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuGroupBox1.LabelAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bunifuGroupBox1.LabelIndent = 10;
-            this.bunifuGroupBox1.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
-            this.bunifuGroupBox1.Location = new System.Drawing.Point(17, 72);
-            this.bunifuGroupBox1.Name = "bunifuGroupBox1";
-            this.bunifuGroupBox1.Size = new System.Drawing.Size(827, 353);
-            this.bunifuGroupBox1.TabIndex = 119;
-            this.bunifuGroupBox1.TabStop = false;
-            this.bunifuGroupBox1.Text = "Permiso";
+            this.groupBox1.BorderColor = System.Drawing.Color.LightGray;
+            this.groupBox1.BorderRadius = 10;
+            this.groupBox1.BorderThickness = 2;
+            this.groupBox1.Controls.Add(this.lblId);
+            this.groupBox1.Controls.Add(this.lblText);
+            this.groupBox1.Controls.Add(this.lblStatus);
+            this.groupBox1.Controls.Add(this.rtxtContext);
+            this.groupBox1.Controls.Add(this.txtIdEmployee);
+            this.groupBox1.Controls.Add(this.cmbTypePermission);
+            this.groupBox1.Controls.Add(this.lblPermissionType);
+            this.groupBox1.Controls.Add(this.cmbStatusPermission);
+            this.groupBox1.Controls.Add(this.bunifuCustomLabel11);
+            this.groupBox1.Controls.Add(this.lblReason);
+            this.groupBox1.Controls.Add(this.lblEnd);
+            this.groupBox1.Controls.Add(this.dtpEnd);
+            this.groupBox1.Controls.Add(this.lblStart);
+            this.groupBox1.Controls.Add(this.dtpStart);
+            this.groupBox1.Controls.Add(this.lblEmployeeID);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.LabelAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.groupBox1.LabelIndent = 10;
+            this.groupBox1.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
+            this.groupBox1.Location = new System.Drawing.Point(17, 72);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(827, 353);
+            this.groupBox1.TabIndex = 119;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Permiso";
             // 
             // lblId
             // 
@@ -413,11 +413,11 @@
             // 
             this.lblStatus.AccessibleDescription = "";
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.Location = new System.Drawing.Point(548, 30);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblStatus.Size = new System.Drawing.Size(146, 16);
+            this.lblStatus.Size = new System.Drawing.Size(135, 16);
             this.lblStatus.TabIndex = 115;
             this.lblStatus.Text = "Estado del permiso:";
             // 
@@ -622,11 +622,11 @@
             // lblPermissionType
             // 
             this.lblPermissionType.AutoSize = true;
-            this.lblPermissionType.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPermissionType.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPermissionType.Location = new System.Drawing.Point(282, 30);
             this.lblPermissionType.Name = "lblPermissionType";
             this.lblPermissionType.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPermissionType.Size = new System.Drawing.Size(124, 16);
+            this.lblPermissionType.Size = new System.Drawing.Size(115, 16);
             this.lblPermissionType.TabIndex = 53;
             this.lblPermissionType.Text = "Tipo de permiso:";
             // 
@@ -689,22 +689,22 @@
             // lblReason
             // 
             this.lblReason.AutoSize = true;
-            this.lblReason.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReason.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReason.Location = new System.Drawing.Point(23, 169);
             this.lblReason.Name = "lblReason";
             this.lblReason.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblReason.Size = new System.Drawing.Size(60, 16);
+            this.lblReason.Size = new System.Drawing.Size(54, 16);
             this.lblReason.TabIndex = 44;
             this.lblReason.Text = "Motivo:";
             // 
             // lblEnd
             // 
             this.lblEnd.AutoSize = true;
-            this.lblEnd.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnd.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEnd.Location = new System.Drawing.Point(425, 100);
             this.lblEnd.Name = "lblEnd";
             this.lblEnd.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblEnd.Size = new System.Drawing.Size(33, 16);
+            this.lblEnd.Size = new System.Drawing.Size(29, 16);
             this.lblEnd.TabIndex = 42;
             this.lblEnd.Text = "Fin:";
             // 
@@ -738,11 +738,11 @@
             // lblStart
             // 
             this.lblStart.AutoSize = true;
-            this.lblStart.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStart.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStart.Location = new System.Drawing.Point(23, 100);
             this.lblStart.Name = "lblStart";
             this.lblStart.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblStart.Size = new System.Drawing.Size(49, 16);
+            this.lblStart.Size = new System.Drawing.Size(47, 16);
             this.lblStart.TabIndex = 40;
             this.lblStart.Text = "Inicio:";
             // 
@@ -776,10 +776,10 @@
             // lblEmployeeID
             // 
             this.lblEmployeeID.AutoSize = true;
-            this.lblEmployeeID.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeID.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeeID.Location = new System.Drawing.Point(23, 30);
             this.lblEmployeeID.Name = "lblEmployeeID";
-            this.lblEmployeeID.Size = new System.Drawing.Size(124, 16);
+            this.lblEmployeeID.Size = new System.Drawing.Size(120, 16);
             this.lblEmployeeID.TabIndex = 35;
             this.lblEmployeeID.Text = "ID del empleado:";
             // 
@@ -861,7 +861,7 @@
             this.ClientSize = new System.Drawing.Size(860, 514);
             this.Controls.Add(this.btnAddPermission);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.bunifuGroupBox1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtIdPermission);
             this.Controls.Add(this.lblSubtitle);
             this.Controls.Add(this.lblTitle);
@@ -869,8 +869,8 @@
             this.Name = "FrmUpdatePermission";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmUpdatePermission";
-            this.bunifuGroupBox1.ResumeLayout(false);
-            this.bunifuGroupBox1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -879,7 +879,6 @@
         public Bunifu.UI.WinForms.BunifuTextBox txtIdPermission;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnAddPermission;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnCancel;
-        private Bunifu.UI.WinForms.BunifuGroupBox bunifuGroupBox1;
         public Bunifu.UI.WinForms.BunifuTextBox rtxtContext;
         public Bunifu.UI.WinForms.BunifuTextBox txtIdEmployee;
         public Bunifu.UI.WinForms.BunifuDropdown cmbTypePermission;
@@ -898,5 +897,6 @@
         public Bunifu.Framework.UI.BunifuCustomLabel lblEnd;
         public Bunifu.Framework.UI.BunifuCustomLabel lblStart;
         public Bunifu.Framework.UI.BunifuCustomLabel lblEmployeeID;
+        public Bunifu.UI.WinForms.BunifuGroupBox groupBox1;
     }
 }

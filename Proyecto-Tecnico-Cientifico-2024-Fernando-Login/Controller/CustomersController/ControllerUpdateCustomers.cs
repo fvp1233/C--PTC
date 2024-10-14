@@ -12,6 +12,7 @@ using PTC2024.View.Clientes;
 using PTC2024.Controller.Helper;
 using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.View.formularios.inicio;
+using System.Drawing;
 
 namespace PTC2024.Controller.CustomersController
 {
@@ -30,6 +31,7 @@ namespace PTC2024.Controller.CustomersController
             ChargeValues(idClient, dui, names, lastnames, phone, email, address);
             //Evento para cargar los combos
             objUpdateCustomers.Load += new EventHandler(loadCombos);
+            objUpdateCustomers.Load += new EventHandler(DarkMode);
             //Evento para actulizar los clientes
             objUpdateCustomers.BtnActualizarCliente.Click += new EventHandler(UpdateCustomers);
             //Evento para cancelar el proceso
@@ -44,6 +46,47 @@ namespace PTC2024.Controller.CustomersController
             objUpdateCustomers.txtEmail.MouseDown += new MouseEventHandler(DisableContextMenu);
             objUpdateCustomers.txtPhone.TextChanged += new EventHandler(PhoneMask);
 
+        }
+
+        public void DarkMode(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.darkMode == true)
+            {
+                objUpdateCustomers.BackColor = Color.FromArgb(30, 30, 30);
+                objUpdateCustomers.lblTitle.ForeColor = Color.White;
+                objUpdateCustomers.lblSubTitle.ForeColor = Color.White;
+                objUpdateCustomers.lblName.ForeColor = Color.White;
+                objUpdateCustomers.lblLastNames.ForeColor = Color.White;
+                objUpdateCustomers.lblDUI.ForeColor = Color.White;
+                objUpdateCustomers.lblEmail.ForeColor = Color.White;
+                objUpdateCustomers.lblAdress.ForeColor = Color.White;
+                objUpdateCustomers.lblPhone.ForeColor = Color.White;
+                objUpdateCustomers.lblTypeCustome.ForeColor = Color.White;
+                objUpdateCustomers.txtNames.FillColor = Color.FromArgb(60, 60, 60);
+                objUpdateCustomers.txtNames.BorderColorIdle = Color.Gray;
+                objUpdateCustomers.txtNames.ForeColor = Color.White;
+                objUpdateCustomers.txtLastNames.FillColor = Color.FromArgb(60, 60, 60);
+                objUpdateCustomers.txtLastNames.BorderColorIdle = Color.Gray;
+                objUpdateCustomers.txtLastNames.ForeColor = Color.White;
+                objUpdateCustomers.txtDui.FillColor = Color.FromArgb(60, 60, 60);
+                objUpdateCustomers.txtDui.BorderColorIdle = Color.Gray;
+                objUpdateCustomers.txtDui.ForeColor = Color.White;
+                objUpdateCustomers.txtEmail.FillColor = Color.FromArgb(60, 60, 60);
+                objUpdateCustomers.txtEmail.BorderColorIdle = Color.Gray;
+                objUpdateCustomers.txtEmail.ForeColor = Color.White;
+                objUpdateCustomers.txtAddress.FillColor = Color.FromArgb(60, 60, 60);
+                objUpdateCustomers.txtAddress.BorderColorIdle = Color.Gray;
+                objUpdateCustomers.txtAddress.ForeColor = Color.White;
+                objUpdateCustomers.txtPhone.FillColor = Color.FromArgb(60, 60, 60);
+                objUpdateCustomers.txtPhone.BorderColorIdle = Color.Gray;
+                objUpdateCustomers.txtPhone.ForeColor = Color.White;
+                objUpdateCustomers.dpClientType.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objUpdateCustomers.dpClientType.BorderColor = Color.Gray;
+                objUpdateCustomers.dpClientType.ForeColor = Color.White;
+                objUpdateCustomers.dpClientType.ItemBackColor = Color.DimGray;
+                objUpdateCustomers.dpClientType.ItemBorderColor = Color.Gray;
+                objUpdateCustomers.dpClientType.ItemForeColor = Color.White;
+            }
         }
 
         public void loadCombos(object sender, EventArgs e)

@@ -13,6 +13,7 @@ using System.Net.Sockets;
 using System.Net;
 using PTC2024.Model.DAO.HelperDAO;
 using PTC2024.View.formularios.inicio;
+using System.Drawing;
 
 namespace PTC2024.Controller.CustomersController
 {
@@ -27,6 +28,8 @@ namespace PTC2024.Controller.CustomersController
             objAddCustomers = Vista;
             // Evento para cargar los combos
             objAddCustomers.Load += new EventHandler(LoadCombos);
+            //Evento modo oscuro
+            objAddCustomers.Load += new EventHandler(DarkMode);
             //Evento para agregar un cliente
             objAddCustomers.BtnAgregarCliente.Click += new EventHandler(AddClient);
             //Evento para cancelar el proceso
@@ -66,6 +69,47 @@ namespace PTC2024.Controller.CustomersController
             objAddCustomers.comboTypeC.DisplayMember = "customerType";
             //Identifica que valor tiene (1,2)
             objAddCustomers.comboTypeC.ValueMember = "IdTypeC";
+        }
+
+        public void DarkMode(object sender, EventArgs e)
+        {
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objAddCustomers.BackColor = Color.FromArgb(30, 30, 30);
+                objAddCustomers.lblTitle.ForeColor = Color.White;
+                objAddCustomers.lblSubTitle.ForeColor = Color.White;
+                objAddCustomers.lblName.ForeColor = Color.White;
+                objAddCustomers.lblLastNames.ForeColor = Color.White;
+                objAddCustomers.lblDUI.ForeColor = Color.White;
+                objAddCustomers.lblEmail.ForeColor = Color.White;
+                objAddCustomers.lblAdress.ForeColor = Color.White;
+                objAddCustomers.lblPhone.ForeColor = Color.White;
+                objAddCustomers.lblTypeCustome.ForeColor = Color.White;
+                objAddCustomers.txtNames.FillColor = Color.FromArgb(60, 60, 60);
+                objAddCustomers.txtNames.BorderColorIdle = Color.Gray;
+                objAddCustomers.txtNames.ForeColor = Color.White;
+                objAddCustomers.txtLastnames.FillColor = Color.FromArgb(60, 60, 60);
+                objAddCustomers.txtLastnames.BorderColorIdle = Color.Gray;
+                objAddCustomers.txtLastnames.ForeColor = Color.White;
+                objAddCustomers.txtDui.FillColor = Color.FromArgb(60, 60, 60);
+                objAddCustomers.txtDui.BorderColorIdle = Color.Gray;
+                objAddCustomers.txtDui.ForeColor = Color.White;
+                objAddCustomers.txtEmail.FillColor = Color.FromArgb(60, 60, 60);
+                objAddCustomers.txtEmail.BorderColorIdle = Color.Gray;
+                objAddCustomers.txtEmail.ForeColor = Color.White;
+                objAddCustomers.txtAddress.FillColor = Color.FromArgb(60, 60, 60);
+                objAddCustomers.txtAddress.BorderColorIdle = Color.Gray;
+                objAddCustomers.txtAddress.ForeColor = Color.White;
+                objAddCustomers.txtPhone.FillColor = Color.FromArgb(60, 60, 60);
+                objAddCustomers.txtPhone.BorderColorIdle = Color.Gray;
+                objAddCustomers.txtPhone.ForeColor = Color.White;
+                objAddCustomers.comboTypeC.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objAddCustomers.comboTypeC.BorderColor = Color.Gray;
+                objAddCustomers.comboTypeC.ForeColor = Color.White;
+                objAddCustomers.comboTypeC.ItemBackColor = Color.DimGray;
+                objAddCustomers.comboTypeC.ItemBorderColor = Color.Gray;
+                objAddCustomers.comboTypeC.ItemForeColor = Color.White;
+            }
         }
 
         //Metodo para añadir un cliente

@@ -6,6 +6,7 @@ using PTC2024.View.formularios.inicio;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace PTC2024.Controller.PayrollsController
         {
             objAddPermission = View;
             objAddPermission.Load += new EventHandler(FillDropdown);
+            objAddPermission.Load += new EventHandler(DarkMode);
             objAddPermission.cmbTypePermission.SelectedIndexChanged += new EventHandler(cmbTypePermission_SelectedIndexChangedM);
             objAddPermission.cmbTypePermission.SelectedIndexChanged += new EventHandler(cmbTypePermission_SelectedIndexChangedP);
             objAddPermission.btnAddPermission.Click += new EventHandler(AddPermission);
@@ -34,6 +36,42 @@ namespace PTC2024.Controller.PayrollsController
             objAddPermission.rtxtContext.MouseDown += new MouseEventHandler(DisableContextMenu);
 
         }
+
+        public void DarkMode(object senderm, EventArgs e)
+        {
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objAddPermission.BackColor = Color.FromArgb(30, 30 ,30);
+                objAddPermission.lblTitle.ForeColor = Color.White;
+                objAddPermission.lblSubTitle.ForeColor = Color.White;
+                objAddPermission.groupBox1.ForeColor = Color.White;
+                objAddPermission.txtIdEmployee.FillColor = Color.FromArgb(60, 60, 60);
+                objAddPermission.txtIdEmployee.BorderColorIdle = Color.Gray;
+                objAddPermission.cmbTypePermission.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objAddPermission.cmbTypePermission.BorderColor = Color.Gray;
+                objAddPermission.cmbTypePermission.ForeColor = Color.White;
+                objAddPermission.cmbTypePermission.ItemBackColor = Color.DimGray;
+                objAddPermission.cmbTypePermission.ItemBorderColor = Color.Gray;
+                objAddPermission.cmbTypePermission.ItemForeColor = Color.White;
+                objAddPermission.cmbStatusPermission.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objAddPermission.cmbStatusPermission.BorderColor = Color.Gray;
+                objAddPermission.cmbStatusPermission.ForeColor = Color.White;
+                objAddPermission.cmbStatusPermission.ItemBackColor = Color.DimGray;
+                objAddPermission.cmbStatusPermission.ItemBorderColor = Color.Gray;
+                objAddPermission.cmbStatusPermission.ItemForeColor = Color.White;
+                objAddPermission.dtpEnd.BackColor = Color.FromArgb(60, 60, 60);
+                objAddPermission.dtpEnd.ForeColor = Color.White;
+                objAddPermission.dtpEnd.IconColor = Color.White;
+                objAddPermission.dtpStart.BackColor = Color.FromArgb(60, 60, 60);
+                objAddPermission.dtpStart.ForeColor = Color.White;
+                objAddPermission.dtpStart.IconColor = Color.White;
+                objAddPermission.rtxtContext.FillColor = Color.FromArgb(60, 60, 60);
+                objAddPermission.rtxtContext.BorderColorIdle = Color.Gray;
+                objAddPermission.lblText.ForeColor = Color.White;
+                objAddPermission.lblEmployeeName.ForeColor = Color.White;
+            }
+        }
+
         private void DisableContextMenu(object sender, MouseEventArgs e)
         {
             // Desactiva el menú contextual al hacer clic derecho

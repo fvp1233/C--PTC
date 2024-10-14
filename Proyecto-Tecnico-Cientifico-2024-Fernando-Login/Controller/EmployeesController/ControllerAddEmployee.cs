@@ -13,6 +13,7 @@ using PTC2024.View.formularios.inicio;
 using System.Net.Sockets;
 using System.Net;
 using PTC2024.Model.DAO.HelperDAO;
+using System.Drawing;
 
 namespace PTC2024.Controller
 {
@@ -24,6 +25,7 @@ namespace PTC2024.Controller
         {
             objAddEmployee = View;
             objAddEmployee.Load += new EventHandler(ChargeCombos);
+            objAddEmployee.Load += new EventHandler(DarkMode);
             objAddEmployee.BtnAgregarEmpleado.Click += new EventHandler(AddEmployee);
             objAddEmployee.BtnCancelar.Click += new EventHandler(GoBack);
             objAddEmployee.txtSalary.Enter += new EventHandler(EnterSalary);
@@ -107,6 +109,81 @@ namespace PTC2024.Controller
             objAddEmployee.dtBirthDate.Value = DateTime.Now;
             objAddEmployee.dpHireDate.Value = DateTime.Now;
             ValidateDays();
+        }
+
+        public void DarkMode(object sender, EventArgs e)
+        {
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objAddEmployee.BackColor = Color.FromArgb(30, 30, 30);
+                objAddEmployee.lblTitle.ForeColor = Color.White;
+                objAddEmployee.lblSubTitle.ForeColor = Color.White;
+                objAddEmployee.groupBox1.ForeColor = Color.White;
+                objAddEmployee.groupBox2.ForeColor = Color.White;
+                objAddEmployee.groupBox3.ForeColor = Color.White;
+                objAddEmployee.txtNames.FillColor = Color.FromArgb(60, 60, 60);
+                objAddEmployee.txtNames.BorderColorIdle = Color.Gray;
+                objAddEmployee.txtLastNames.FillColor = Color.FromArgb(60, 60, 60);
+                objAddEmployee.txtLastNames.BorderColorIdle = Color.Gray;
+                objAddEmployee.txtDUI.FillColor = Color.FromArgb(60, 60, 60);
+                objAddEmployee.txtDUI.BorderColorIdle = Color.Gray;
+                objAddEmployee.dtBirthDate.BackColor = Color.FromArgb(60, 60, 60);
+                objAddEmployee.dtBirthDate.ForeColor = Color.White;
+                objAddEmployee.dtBirthDate.IconColor = Color.White;
+                objAddEmployee.txtAddress.FillColor = Color.FromArgb(60, 60, 60);
+                objAddEmployee.txtAddress.BorderColorIdle = Color.Gray;
+                objAddEmployee.txtPhone.FillColor = Color.FromArgb(60, 60, 60);
+                objAddEmployee.txtPhone.BorderColorIdle = Color.Gray;
+                objAddEmployee.txtEmail.FillColor = Color.FromArgb(60, 60, 60);
+                objAddEmployee.txtEmail.BorderColorIdle = Color.Gray;
+                objAddEmployee.dpHireDate.BackColor = Color.FromArgb(60, 60, 60);
+                objAddEmployee.dpHireDate.ForeColor = Color.White;
+                objAddEmployee.dpHireDate.IconColor = Color.White;
+                objAddEmployee.comboMaritalStatus.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objAddEmployee.comboMaritalStatus.BorderColor = Color.Gray;
+                objAddEmployee.comboMaritalStatus.ForeColor = Color.White;
+                objAddEmployee.comboMaritalStatus.ItemBackColor = Color.DimGray;
+                objAddEmployee.comboMaritalStatus.ItemBorderColor = Color.Gray;
+                objAddEmployee.comboMaritalStatus.ItemForeColor = Color.White;
+                objAddEmployee.comboDepartment.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objAddEmployee.comboDepartment.BorderColor = Color.Gray;
+                objAddEmployee.comboDepartment.ForeColor = Color.White;
+                objAddEmployee.comboDepartment.ItemBackColor = Color.DimGray;
+                objAddEmployee.comboDepartment.ItemBorderColor = Color.Gray;
+                objAddEmployee.comboDepartment.ItemForeColor = Color.White;
+                objAddEmployee.comboEmployeeType.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objAddEmployee.comboEmployeeType.BorderColor = Color.Gray;
+                objAddEmployee.comboEmployeeType.ForeColor = Color.White;
+                objAddEmployee.comboEmployeeType.ItemBackColor = Color.DimGray;
+                objAddEmployee.comboEmployeeType.ItemBorderColor = Color.Gray;
+                objAddEmployee.comboEmployeeType.ItemForeColor = Color.White;
+                objAddEmployee.comboGender.BackgroundColor = Color.FromArgb(60,60,60);
+                objAddEmployee.comboGender.BorderColor = Color.Gray;
+                objAddEmployee.comboGender.ForeColor = Color.White;
+                objAddEmployee.comboGender.ItemBackColor = Color.DimGray;
+                objAddEmployee.comboGender.ItemBorderColor = Color.Gray;
+                objAddEmployee.comboGender.ItemForeColor = Color.White;
+                objAddEmployee.txtSalary.FillColor = Color.FromArgb(60, 60, 60);
+                objAddEmployee.txtSalary.BorderColorIdle = Color.Gray;
+                objAddEmployee.txtAffiliationNumber.FillColor = Color.FromArgb(60, 60, 60);
+                objAddEmployee.txtAffiliationNumber.BorderColorIdle = Color.Gray;
+                objAddEmployee.txtBankAccount.FillColor = Color.FromArgb(60, 60, 60);
+                objAddEmployee.txtBankAccount.BorderColorIdle = Color.Gray;
+                objAddEmployee.comboBanks.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objAddEmployee.comboBanks.BorderColor = Color.Gray;
+                objAddEmployee.comboBanks.ForeColor = Color.White;
+                objAddEmployee.comboBanks.ItemBackColor = Color.DimGray;
+                objAddEmployee.comboBanks.ItemBorderColor = Color.Gray;
+                objAddEmployee.comboBanks.ItemForeColor = Color.White;
+                objAddEmployee.txtUsername.FillColor = Color.FromArgb(60, 60, 60);
+                objAddEmployee.txtUsername.BorderColorIdle = Color.Gray;
+                objAddEmployee.comboBusinessP.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objAddEmployee.comboBusinessP.BorderColor = Color.Gray;
+                objAddEmployee.comboBusinessP.ForeColor = Color.White;
+                objAddEmployee.comboBusinessP.ItemBackColor = Color.DimGray;
+                objAddEmployee.comboBusinessP.ItemBorderColor = Color.Gray;
+                objAddEmployee.comboBusinessP.ItemForeColor = Color.White;
+            }
         }
 
         public void EnterSalary(object sender, EventArgs e)

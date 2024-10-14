@@ -124,6 +124,7 @@
             this.bunifuToolTip1.SetToolTip(this.groupBox1, "");
             this.bunifuToolTip1.SetToolTipIcon(this.groupBox1, null);
             this.bunifuToolTip1.SetToolTipTitle(this.groupBox1, "");
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lblEmployeeName
             // 
@@ -167,11 +168,11 @@
             // lblStatusPerm
             // 
             this.lblStatusPerm.AutoSize = true;
-            this.lblStatusPerm.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatusPerm.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatusPerm.Location = new System.Drawing.Point(548, 30);
             this.lblStatusPerm.Name = "lblStatusPerm";
             this.lblStatusPerm.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblStatusPerm.Size = new System.Drawing.Size(146, 16);
+            this.lblStatusPerm.Size = new System.Drawing.Size(135, 16);
             this.lblStatusPerm.TabIndex = 115;
             this.lblStatusPerm.Text = "Estado del permiso:";
             this.bunifuToolTip1.SetToolTip(this.lblStatusPerm, "");
@@ -388,11 +389,11 @@
             // lblTypePerm
             // 
             this.lblTypePerm.AutoSize = true;
-            this.lblTypePerm.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTypePerm.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTypePerm.Location = new System.Drawing.Point(282, 30);
             this.lblTypePerm.Name = "lblTypePerm";
             this.lblTypePerm.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTypePerm.Size = new System.Drawing.Size(124, 16);
+            this.lblTypePerm.Size = new System.Drawing.Size(115, 16);
             this.lblTypePerm.TabIndex = 53;
             this.lblTypePerm.Text = "Tipo de permiso:";
             this.bunifuToolTip1.SetToolTip(this.lblTypePerm, "");
@@ -464,11 +465,11 @@
             // lblReason
             // 
             this.lblReason.AutoSize = true;
-            this.lblReason.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReason.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReason.Location = new System.Drawing.Point(23, 169);
             this.lblReason.Name = "lblReason";
             this.lblReason.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblReason.Size = new System.Drawing.Size(60, 16);
+            this.lblReason.Size = new System.Drawing.Size(54, 16);
             this.lblReason.TabIndex = 44;
             this.lblReason.Text = "Motivo:";
             this.bunifuToolTip1.SetToolTip(this.lblReason, "");
@@ -478,11 +479,11 @@
             // lblEnd
             // 
             this.lblEnd.AutoSize = true;
-            this.lblEnd.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnd.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEnd.Location = new System.Drawing.Point(425, 100);
             this.lblEnd.Name = "lblEnd";
             this.lblEnd.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblEnd.Size = new System.Drawing.Size(33, 16);
+            this.lblEnd.Size = new System.Drawing.Size(29, 16);
             this.lblEnd.TabIndex = 42;
             this.lblEnd.Text = "Fin:";
             this.bunifuToolTip1.SetToolTip(this.lblEnd, "");
@@ -522,11 +523,11 @@
             // lblStart
             // 
             this.lblStart.AutoSize = true;
-            this.lblStart.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStart.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStart.Location = new System.Drawing.Point(23, 100);
             this.lblStart.Name = "lblStart";
             this.lblStart.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblStart.Size = new System.Drawing.Size(49, 16);
+            this.lblStart.Size = new System.Drawing.Size(47, 16);
             this.lblStart.TabIndex = 40;
             this.lblStart.Text = "Inicio:";
             this.bunifuToolTip1.SetToolTip(this.lblStart, "");
@@ -566,10 +567,10 @@
             // lblEmployeeID
             // 
             this.lblEmployeeID.AutoSize = true;
-            this.lblEmployeeID.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeID.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeeID.Location = new System.Drawing.Point(23, 30);
             this.lblEmployeeID.Name = "lblEmployeeID";
-            this.lblEmployeeID.Size = new System.Drawing.Size(124, 16);
+            this.lblEmployeeID.Size = new System.Drawing.Size(120, 16);
             this.lblEmployeeID.TabIndex = 35;
             this.lblEmployeeID.Text = "ID del empleado:";
             this.bunifuToolTip1.SetToolTip(this.lblEmployeeID, "");

@@ -19,6 +19,7 @@ namespace PTC2024.View.Clientes
         {
             InitializeComponent();
             ControllerAddCustomers objControl = new ControllerAddCustomers(this);
+            Region = Region.FromHrgn(CommonClasses.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)

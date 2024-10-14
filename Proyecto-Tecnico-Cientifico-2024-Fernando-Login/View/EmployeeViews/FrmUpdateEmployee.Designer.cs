@@ -73,8 +73,8 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties38 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties39 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties40 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblSubtitle = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnEmployeUpdate = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.BtnCancelar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.txtEmployeeId = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -128,25 +128,25 @@
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // bunifuCustomLabel2
+            // lblSubtitle
             // 
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(-3, 51);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(1091, 13);
-            this.bunifuCustomLabel2.TabIndex = 114;
-            this.bunifuCustomLabel2.Text = "Cambie la información que desea actualizar";
-            this.bunifuCustomLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSubtitle.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtitle.Location = new System.Drawing.Point(-3, 51);
+            this.lblSubtitle.Name = "lblSubtitle";
+            this.lblSubtitle.Size = new System.Drawing.Size(1091, 13);
+            this.lblSubtitle.TabIndex = 114;
+            this.lblSubtitle.Text = "Cambie la información que desea actualizar";
+            this.lblSubtitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bunifuCustomLabel1
+            // lblTitle
             // 
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(0, 19);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(1088, 32);
-            this.bunifuCustomLabel1.TabIndex = 113;
-            this.bunifuCustomLabel1.Text = "ACTUALIZAR EMPLEADO";
-            this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(0, 19);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(1088, 32);
+            this.lblTitle.TabIndex = 113;
+            this.lblTitle.Text = "ACTUALIZAR EMPLEADO";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnEmployeUpdate
             // 
@@ -1972,8 +1972,8 @@
             this.Controls.Add(this.btnRestorePass);
             this.Controls.Add(this.lblEmployeeId);
             this.Controls.Add(this.txtEmployeeId);
-            this.Controls.Add(this.bunifuCustomLabel2);
-            this.Controls.Add(this.bunifuCustomLabel1);
+            this.Controls.Add(this.lblSubtitle);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnEmployeUpdate);
             this.Controls.Add(this.BtnCancelar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -2019,8 +2019,8 @@
         public Bunifu.UI.WinForms.BunifuDropdown comboBusinessP;
         public Bunifu.UI.WinForms.BunifuDropdown comboGender;
         public Bunifu.UI.WinForms.BunifuSnackbar snackbar;
-        public Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        public Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblSubtitle;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblTitle;
         public Bunifu.UI.WinForms.BunifuGroupBox groupBox1;
         public Bunifu.Framework.UI.BunifuCustomLabel lblHireDate;
         public Bunifu.Framework.UI.BunifuCustomLabel lblNames;

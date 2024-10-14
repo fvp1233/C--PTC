@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -16,6 +17,7 @@ namespace PTC2024.Controller.EmployeesController
         {
             objInfoEmployees = Vista;
             DisableComponents();
+            objInfoEmployees.Load += new EventHandler(DarkMode);
             ChargeValues(names, lastNames, dui, birthDate, adress, phone, email, hireDate, maritalStatus, typeEmployee, statusEmployee, salary, affiliationNumber, bankAccount, username, businessP, department, bank);
             //Botón regresar
             objInfoEmployees.BtnCancelar.Click += new EventHandler(CloseForm);
@@ -71,5 +73,58 @@ namespace PTC2024.Controller.EmployeesController
             objInfoEmployees.Close();
         }
 
+        public void DarkMode(object sender, EventArgs e)
+        {
+            if(Properties.Settings.Default.darkMode)
+            {
+                objInfoEmployees.BackColor = Color.FromArgb(30, 30, 30);
+                objInfoEmployees.lblTitle.ForeColor = Color.White;
+                objInfoEmployees.groupBox1.ForeColor = Color.White;
+                objInfoEmployees.groupBox2.ForeColor = Color.White;
+                objInfoEmployees.groupBox3.ForeColor = Color.White;
+                objInfoEmployees.bunifuSeparator1.LineColor = Color.White;
+                objInfoEmployees.txtNames.BackColor = Color.FromArgb(60, 60, 60);
+                objInfoEmployees.txtNames.LineIdleColor = Color.Gray;
+                objInfoEmployees.txtNames.ForeColor = Color.White;
+                objInfoEmployees.txtLastNames.BackColor = Color.FromArgb(60, 60, 60);
+                objInfoEmployees.txtLastNames.LineIdleColor = Color.Gray;
+                objInfoEmployees.txtLastNames.ForeColor = Color.White;
+                objInfoEmployees.txtDUI.BackColor = Color.FromArgb(60, 60, 60);
+                objInfoEmployees.txtDUI.LineIdleColor = Color.Gray;
+                objInfoEmployees.txtDUI.ForeColor = Color.White;
+                objInfoEmployees.dtBirthDate.BackColor = Color.FromArgb(60, 60, 60);
+                objInfoEmployees.dtBirthDate.ForeColor = Color.White;
+                objInfoEmployees.dtBirthDate.IconColor = Color.White;
+                objInfoEmployees.txtAddress.BackColor = Color.FromArgb(60, 60, 60);
+                objInfoEmployees.txtAddress.LineIdleColor = Color.Gray;
+                objInfoEmployees.txtPhone.BackColor = Color.FromArgb(60, 60, 60);
+                objInfoEmployees.txtPhone.LineIdleColor = Color.Gray;
+                objInfoEmployees.txtEmail.BackColor = Color.FromArgb(60, 60, 60);
+                objInfoEmployees.txtEmail.LineIdleColor = Color.Gray;
+                objInfoEmployees.dpHireDate.BackColor = Color.FromArgb(60, 60, 60);
+                objInfoEmployees.dpHireDate.ForeColor = Color.White;
+                objInfoEmployees.dpHireDate.IconColor = Color.White;
+                objInfoEmployees.txtMaritalS.BackColor = Color.FromArgb(60, 60, 60);
+                objInfoEmployees.txtMaritalS.LineIdleColor = Color.Gray;
+                objInfoEmployees.txtDepartment.BackColor = Color.FromArgb(60, 60, 60);
+                objInfoEmployees.txtDepartment.LineIdleColor = Color.Gray;
+                objInfoEmployees.txtEmployeeStatus.BackColor = Color.FromArgb(60, 60, 60);
+                objInfoEmployees.txtEmployeeStatus.LineIdleColor = Color.Gray;
+                objInfoEmployees.txtEmployeeType.BackColor = Color.FromArgb(60, 60, 60);
+                objInfoEmployees.txtEmployeeType.LineIdleColor = Color.Gray;
+                objInfoEmployees.txtSalary.BackColor = Color.FromArgb(60, 60, 60);
+                objInfoEmployees.txtSalary.LineIdleColor = Color.Gray;
+                objInfoEmployees.txtAffiliationNumber.BackColor = Color.FromArgb(60, 60, 60);
+                objInfoEmployees.txtAffiliationNumber.LineIdleColor = Color.Gray;
+                objInfoEmployees.txtBankAccount.BackColor = Color.FromArgb(60, 60, 60);
+                objInfoEmployees.txtBankAccount.LineIdleColor = Color.Gray;
+                objInfoEmployees.txtBank.BackColor = Color.FromArgb(60, 60, 60);
+                objInfoEmployees.txtBank.LineIdleColor = Color.Gray;
+                objInfoEmployees.txtUsername.BackColor = Color.FromArgb(60, 60, 60);
+                objInfoEmployees.txtUsername.LineIdleColor = Color.Gray;
+                objInfoEmployees.txtBusinessP.BackColor = Color.FromArgb(60, 60, 60);
+                objInfoEmployees.txtBusinessP.LineIdleColor = Color.Gray;
+            }
+        }
     }
 }

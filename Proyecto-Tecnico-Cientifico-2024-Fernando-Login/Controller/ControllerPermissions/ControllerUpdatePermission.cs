@@ -7,6 +7,7 @@ using PTC2024.View.Service_inventory;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +39,42 @@ namespace PTC2024.Controller.PayrollsController
             objUpdatePermission.cmbTypePermission.SelectedIndexChanged += new EventHandler(cmbTypePermission_SelectedIndexChangedM);
             objUpdatePermission.cmbTypePermission.SelectedIndexChanged += new EventHandler(cmbTypePermission_SelectedIndexChangedP);
         }
+
+        public void DarkMode(object senderm, EventArgs e)
+        {
+            if (Properties.Settings.Default.darkMode == true)
+            {
+                objUpdatePermission.BackColor = Color.FromArgb(30, 30, 30);
+                objUpdatePermission.lblTitle.ForeColor = Color.White;
+                objUpdatePermission.lblSubtitle.ForeColor = Color.White;
+                objUpdatePermission.groupBox1.ForeColor = Color.White;
+                objUpdatePermission.txtIdEmployee.FillColor = Color.FromArgb(60, 60, 60);
+                objUpdatePermission.txtIdEmployee.BorderColorIdle = Color.Gray;
+                objUpdatePermission.cmbTypePermission.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objUpdatePermission.cmbTypePermission.BorderColor = Color.Gray;
+                objUpdatePermission.cmbTypePermission.ForeColor = Color.White;
+                objUpdatePermission.cmbTypePermission.ItemBackColor = Color.DimGray;
+                objUpdatePermission.cmbTypePermission.ItemBorderColor = Color.Gray;
+                objUpdatePermission.cmbTypePermission.ItemForeColor = Color.White;
+                objUpdatePermission.cmbStatusPermission.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objUpdatePermission.cmbStatusPermission.BorderColor = Color.Gray;
+                objUpdatePermission.cmbStatusPermission.ForeColor = Color.White;
+                objUpdatePermission.cmbStatusPermission.ItemBackColor = Color.DimGray;
+                objUpdatePermission.cmbStatusPermission.ItemBorderColor = Color.Gray;
+                objUpdatePermission.cmbStatusPermission.ItemForeColor = Color.White;
+                objUpdatePermission.dtpEnd.BackColor = Color.FromArgb(60, 60, 60);
+                objUpdatePermission.dtpEnd.ForeColor = Color.White;
+                objUpdatePermission.dtpEnd.IconColor = Color.White;
+                objUpdatePermission.dtpStart.BackColor = Color.FromArgb(60, 60, 60);
+                objUpdatePermission.dtpStart.ForeColor = Color.White;
+                objUpdatePermission.dtpStart.IconColor = Color.White;
+                objUpdatePermission.rtxtContext.FillColor = Color.FromArgb(60, 60, 60);
+                objUpdatePermission.rtxtContext.BorderColorIdle = Color.Gray;
+                objUpdatePermission.lblText.ForeColor = Color.White;
+                objUpdatePermission.lblId.ForeColor = Color.White;
+            }
+        }
+
         public void UpdatePermission(object sender, EventArgs e)
         {
             try

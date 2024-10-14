@@ -32,5 +32,10 @@ namespace PTC2024.View.EmployeeViews
             //Llamar al método base para manejar otras teclas
             return base.ProcessCmdKey(ref msg, keyData);
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

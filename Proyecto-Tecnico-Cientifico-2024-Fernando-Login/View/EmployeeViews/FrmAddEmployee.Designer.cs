@@ -1329,7 +1329,7 @@
             this.txtAddress.MaxLength = 500;
             this.txtAddress.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtAddress.Modified = false;
-            this.txtAddress.Multiline = false;
+            this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             stateProperties25.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(0)))), ((int)(((byte)(11)))));
             stateProperties25.FillColor = System.Drawing.Color.Empty;
