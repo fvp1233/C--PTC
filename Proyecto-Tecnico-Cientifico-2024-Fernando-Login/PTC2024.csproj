@@ -1006,6 +1006,7 @@
     <Content Include="Resources\questionsMethod.png" />
     <Content Include="Resources\salir.png" />
     <Content Include="Resources\seguridadPreguntas.png" />
+    <Content Include="Resources\ServerPassBlanco.png" />
     <Content Include="Resources\subirFoto.png" />
     <Content Include="Resources\usuarioRegister.png" />
     <Content Include="Resources\viewEmployees.png" />

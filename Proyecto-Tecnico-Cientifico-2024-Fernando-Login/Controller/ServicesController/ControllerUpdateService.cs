@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace PTC2024.Controller.ServicesController
 {
@@ -34,12 +35,44 @@ namespace PTC2024.Controller.ServicesController
             ChargeValues(id, name, description, amount);
             /*Eventos*/
             objUpdateService.Load += new EventHandler(ChargeDropDown);
+            objUpdateService.Load += new EventHandler(DarkMode);
             objUpdateService.btnCloseUpdateService.Click += new EventHandler(CloseUpdateService);
             objUpdateService.btnUpdateService.Click += new EventHandler(UpdateService);
             objUpdateService.txtName.MouseDown += new MouseEventHandler(DisableContextMenu);
             objUpdateService.txtDescription.MouseDown += new MouseEventHandler(DisableContextMenu);
             objUpdateService.txtAmount.MouseDown += new MouseEventHandler(DisableContextMenu);
             objUpdateService.txtAmount.TextChanged += new EventHandler(OnlyNum);
+        }
+
+        //Modo oscuro
+        public void DarkMode(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.darkMode == true)
+            {
+                objUpdateService.BackColor = Color.FromArgb(30, 30, 30);
+                objUpdateService.lblUpdateService.ForeColor = Color.White;
+                objUpdateService.lblInformation.ForeColor = Color.White;
+                objUpdateService.bunifuSeparator1.LineColor = Color.Gainsboro;
+                objUpdateService.lblName.ForeColor = Color.White;
+                objUpdateService.lblDescription.ForeColor = Color.White;
+                objUpdateService.lblCategory.ForeColor = Color.White;
+                objUpdateService.lblAmount.ForeColor = Color.White;
+                objUpdateService.txtName.FillColor = Color.FromArgb(60, 60, 60);
+                objUpdateService.txtName.BorderColorIdle = Color.Gray;
+                objUpdateService.txtName.ForeColor = Color.White;
+                objUpdateService.txtDescription.FillColor = Color.FromArgb(60, 60, 60);
+                objUpdateService.txtDescription.BorderColorIdle = Color.Gray;
+                objUpdateService.txtDescription.ForeColor = Color.White;
+                objUpdateService.txtAmount.FillColor = Color.FromArgb(60, 60, 60);
+                objUpdateService.txtAmount.BorderColorIdle = Color.Gray;
+                objUpdateService.txtAmount.ForeColor = Color.White;
+                objUpdateService.cmbCategoryS.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objUpdateService.cmbCategoryS.BorderColor = Color.Gray;
+                objUpdateService.cmbCategoryS.ForeColor = Color.White;
+                objUpdateService.cmbCategoryS.ItemBackColor = Color.DimGray;
+                objUpdateService.cmbCategoryS.ItemBorderColor = Color.Gray;
+                objUpdateService.cmbCategoryS.ItemForeColor = Color.White;
+            }
         }
 
         public void OnlyNum(object sender, EventArgs e)

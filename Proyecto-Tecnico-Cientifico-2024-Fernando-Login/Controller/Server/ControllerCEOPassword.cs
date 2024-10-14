@@ -2,6 +2,7 @@
 using PTC2024.View.Server;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace PTC2024.Controller.Server
         public ControllerCEOPassword(FrmConfirmPassword View)
         {
             objPassword = View;
+            objPassword.MaximizeBox = false;
             objPassword.Load += new EventHandler(InitialCharge);
             objPassword.HidePassword.Click += new EventHandler(HidePassword);
             objPassword.ShowPassword.Click += new EventHandler(ShowPassword);
@@ -67,6 +69,15 @@ namespace PTC2024.Controller.Server
         {
             objPassword.txtPassword.PasswordChar = '*';
             objPassword.HidePassword.Visible = false;
+            
+            //Modo oscuro
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objPassword.BackColor = Color.FromArgb(30, 30, 30);
+                objPassword.serverPassNegro.Visible = false;
+                objPassword.ServerPassBlanco.Visible = true;
+                objPassword.lblText.ForeColor = Color.White;
+            }
         }
 
         private void DisableContextMenu(object sender, MouseEventArgs e)

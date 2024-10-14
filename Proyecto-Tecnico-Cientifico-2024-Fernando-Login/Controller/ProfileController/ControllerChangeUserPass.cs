@@ -21,6 +21,7 @@ namespace PTC2024.Controller.ProfileController
         public ControllerChangeUserPass(FrmChangeUserPass View)
         {
             objChangeP = View;
+            objChangeP.MaximizeBox = false;
             objChangeP.Load += new EventHandler(DarkMode);
             objChangeP.btnCheck.Click += new EventHandler(CheckPassword);
             objChangeP.btnSave.Click += new EventHandler(UpdatePass);

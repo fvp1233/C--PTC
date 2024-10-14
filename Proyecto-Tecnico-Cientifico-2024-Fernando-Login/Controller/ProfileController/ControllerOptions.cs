@@ -16,6 +16,7 @@ namespace PTC2024.Controller.ProfileController
         public ControllerOptions(FrmOptions View)
         {
             objOp = View;
+            objOp.MaximizeBox = false;
             objOp.Load += new EventHandler(VerifyDarkMode);
             objOp.btnManualT.Click += new EventHandler(OpenManualT);
             objOp.btnUserManual.Click += new EventHandler(OpenManualU);

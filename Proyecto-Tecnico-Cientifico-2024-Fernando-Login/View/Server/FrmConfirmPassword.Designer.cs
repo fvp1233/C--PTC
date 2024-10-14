@@ -34,48 +34,51 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.lblText = new Bunifu.UI.WinForms.BunifuLabel();
+            this.serverPassNegro = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.btnConfirm = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.txtPassword = new Bunifu.UI.WinForms.BunifuTextBox();
             this.HidePassword = new System.Windows.Forms.PictureBox();
             this.ShowPassword = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
+            this.ServerPassBlanco = new Bunifu.UI.WinForms.BunifuPictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.serverPassNegro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HidePassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServerPassBlanco)).BeginInit();
             this.SuspendLayout();
             // 
-            // bunifuLabel1
+            // lblText
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(127, 20);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(103, 17);
-            this.bunifuLabel1.TabIndex = 1;
-            this.bunifuLabel1.Text = "Contraseña(CEO)";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblText.AllowParentOverrides = false;
+            this.lblText.AutoEllipsis = false;
+            this.lblText.AutoSize = false;
+            this.lblText.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblText.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblText.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblText.Location = new System.Drawing.Point(0, 107);
+            this.lblText.Name = "lblText";
+            this.lblText.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblText.Size = new System.Drawing.Size(386, 17);
+            this.lblText.TabIndex = 1;
+            this.lblText.Text = "Contraseña(CEO)";
+            this.lblText.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblText.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuPictureBox1
+            // serverPassNegro
             // 
-            this.bunifuPictureBox1.AllowFocused = false;
-            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuPictureBox1.AutoSizeHeight = false;
-            this.bunifuPictureBox1.BorderRadius = 0;
-            this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
-            this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(14, 17);
-            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(98, 98);
-            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuPictureBox1.TabIndex = 5;
-            this.bunifuPictureBox1.TabStop = false;
-            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
+            this.serverPassNegro.AllowFocused = false;
+            this.serverPassNegro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.serverPassNegro.AutoSizeHeight = false;
+            this.serverPassNegro.BorderRadius = 0;
+            this.serverPassNegro.Image = ((System.Drawing.Image)(resources.GetObject("serverPassNegro.Image")));
+            this.serverPassNegro.IsCircle = true;
+            this.serverPassNegro.Location = new System.Drawing.Point(147, 4);
+            this.serverPassNegro.Name = "serverPassNegro";
+            this.serverPassNegro.Size = new System.Drawing.Size(92, 98);
+            this.serverPassNegro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.serverPassNegro.TabIndex = 5;
+            this.serverPassNegro.TabStop = false;
+            this.serverPassNegro.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
             // 
             // btnConfirm
             // 
@@ -125,7 +128,7 @@
             this.btnConfirm.IdleIconLeftImage = null;
             this.btnConfirm.IdleIconRightImage = null;
             this.btnConfirm.IndicateFocus = false;
-            this.btnConfirm.Location = new System.Drawing.Point(236, 81);
+            this.btnConfirm.Location = new System.Drawing.Point(124, 171);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnConfirm.OnDisabledState.BorderRadius = 15;
@@ -196,7 +199,7 @@
             this.txtPassword.IconRight = null;
             this.txtPassword.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.Lines = new string[0];
-            this.txtPassword.Location = new System.Drawing.Point(127, 38);
+            this.txtPassword.Location = new System.Drawing.Point(10, 126);
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPassword.Modified = false;
@@ -248,7 +251,7 @@
             this.HidePassword.BackColor = System.Drawing.Color.White;
             this.HidePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HidePassword.Image = ((System.Drawing.Image)(resources.GetObject("HidePassword.Image")));
-            this.HidePassword.Location = new System.Drawing.Point(462, 42);
+            this.HidePassword.Location = new System.Drawing.Point(345, 130);
             this.HidePassword.Name = "HidePassword";
             this.HidePassword.Size = new System.Drawing.Size(25, 25);
             this.HidePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -260,43 +263,62 @@
             this.ShowPassword.BackColor = System.Drawing.Color.White;
             this.ShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ShowPassword.Image = ((System.Drawing.Image)(resources.GetObject("ShowPassword.Image")));
-            this.ShowPassword.Location = new System.Drawing.Point(462, 42);
+            this.ShowPassword.Location = new System.Drawing.Point(345, 130);
             this.ShowPassword.Name = "ShowPassword";
             this.ShowPassword.Size = new System.Drawing.Size(25, 25);
             this.ShowPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ShowPassword.TabIndex = 19;
             this.ShowPassword.TabStop = false;
             // 
+            // ServerPassBlanco
+            // 
+            this.ServerPassBlanco.AllowFocused = false;
+            this.ServerPassBlanco.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ServerPassBlanco.AutoSizeHeight = false;
+            this.ServerPassBlanco.BorderRadius = 0;
+            this.ServerPassBlanco.Image = ((System.Drawing.Image)(resources.GetObject("ServerPassBlanco.Image")));
+            this.ServerPassBlanco.IsCircle = true;
+            this.ServerPassBlanco.Location = new System.Drawing.Point(145, 3);
+            this.ServerPassBlanco.Name = "ServerPassBlanco";
+            this.ServerPassBlanco.Size = new System.Drawing.Size(92, 98);
+            this.ServerPassBlanco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ServerPassBlanco.TabIndex = 20;
+            this.ServerPassBlanco.TabStop = false;
+            this.ServerPassBlanco.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
+            this.ServerPassBlanco.Visible = false;
+            // 
             // FrmConfirmPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(499, 127);
+            this.ClientSize = new System.Drawing.Size(386, 217);
             this.Controls.Add(this.ShowPassword);
             this.Controls.Add(this.HidePassword);
-            this.Controls.Add(this.bunifuPictureBox1);
+            this.Controls.Add(this.serverPassNegro);
             this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.bunifuLabel1);
+            this.Controls.Add(this.lblText);
             this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.ServerPassBlanco);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmConfirmPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Introducir contraseña";
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serverPassNegro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HidePassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ServerPassBlanco)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         public Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnConfirm;
-        private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
         public Bunifu.UI.WinForms.BunifuTextBox txtPassword;
         public System.Windows.Forms.PictureBox HidePassword;
         public System.Windows.Forms.PictureBox ShowPassword;
+        public Bunifu.UI.WinForms.BunifuPictureBox ServerPassBlanco;
+        public Bunifu.UI.WinForms.BunifuPictureBox serverPassNegro;
+        public Bunifu.UI.WinForms.BunifuLabel lblText;
     }
 }

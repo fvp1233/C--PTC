@@ -5,6 +5,7 @@ using PTC2024.View.Server;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Security.Authentication.ExtendedProtection;
 using System.Text;
@@ -22,6 +23,8 @@ namespace PTC2024.Controller.Server
         {
             objServer = View;
             VerifyOrigin(origin);
+            objServer.MaximizeBox = false;
+            objServer.Load += new EventHandler(DarkMode);
             objServer.rdFalse.CheckedChanged += new EventHandler(rdFalseMarked);
             objServer.rdTrue.CheckedChanged += new EventHandler(rdTrueMarked);
             objServer.txtDB.MouseDown += new MouseEventHandler(DisableContextMenu);
@@ -40,6 +43,29 @@ namespace PTC2024.Controller.Server
         {
             Environment.Exit(0);
         }
+
+        public void DarkMode(object sender, EventArgs e)
+        {
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objServer.BackColor = Color.FromArgb(30, 30, 30);
+                objServer.lblConfigServer.ForeColor = Color.White;
+                objServer.lblSubTitle.ForeColor = Color.White;
+                objServer.bunifuGroupBox1.ForeColor = Color.White;
+                objServer.lblServer.ForeColor = Color.White;
+                objServer.lbldb.ForeColor = Color.White;
+                objServer.bunifuGroupBox2.ForeColor = Color.White;
+                objServer.lblSubTitle2.ForeColor = Color.White;
+                objServer.lblAuth.ForeColor = Color.White;
+                objServer.lblPassAuth.ForeColor = Color.White;
+                objServer.txtServer.ForeColor = SystemColors.ControlText;
+                objServer.txtDB.ForeColor = SystemColors.ControlText;
+                objServer.txtSqlAuth.ForeColor = SystemColors.ControlText;
+                objServer.txtPasswordAuth.ForeColor = SystemColors.ControlText;
+                objServer.bunifuPanel1.BackgroundColor = Color.FromArgb(60, 60, 60);
+            }
+        }
+
         public void VerifyOrigin(int origin)
         {
             if ((origin == 2))

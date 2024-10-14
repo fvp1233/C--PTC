@@ -28,6 +28,7 @@ namespace PTC2024.Controller.ProfileController
         public ControllerProfileConfiguration(FrmProfileConfiguration View, string names, string lastnames, string dui, string phone, string email, string adress, string affilitiation, string bankAccount)
         {
             objProfileC = View;
+            objProfileC.MaximizeBox = false;
             objProfileC.FormClosing += new FormClosingEventHandler(CloseClose);
             ChargeValues(names, lastnames, dui, phone, email, adress, affilitiation, bankAccount);
             objProfileC.txtDui.TextChanged += new EventHandler(DUIMask);

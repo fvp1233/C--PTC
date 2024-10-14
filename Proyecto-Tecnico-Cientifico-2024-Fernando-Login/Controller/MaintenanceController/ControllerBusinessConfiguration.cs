@@ -22,6 +22,7 @@ namespace PTC2024.Controller.MaintenanceController
         public ControllerBusinessConfiguration(FrmBusinessConfiguration View)
         {
             objBusinessConf = View;
+            objBusinessConf.MaximizeBox = false;
             objBusinessConf.Load += new EventHandler(LoadData);
             objBusinessConf.Load += new EventHandler(DarkModer);
             objBusinessConf.btnUploadPhoto.Click += new EventHandler(PutImage);

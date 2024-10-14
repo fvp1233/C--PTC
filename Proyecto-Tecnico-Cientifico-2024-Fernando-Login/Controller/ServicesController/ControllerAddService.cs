@@ -7,6 +7,7 @@ using PTC2024.View.InventarioServicios;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -26,12 +27,44 @@ namespace PTC2024.Controller.ServicesController
             /*Eventos*/
             objAddService = view;
             objAddService.Load += new EventHandler(ChargeDropDowns);
+            objAddService.Load += new EventHandler(DarkMode);
             objAddService.btnCancel.Click += new EventHandler(CloseAddService);
             objAddService.btnAddService.Click += new EventHandler(AddService);
             objAddService.txtNameS.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddService.txtDescriptionS.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddService.txtAmount.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddService.txtAmount.TextChanged += new EventHandler(OnlyNum);
+        }
+
+        //Modo oscuro
+        public void DarkMode(object sender, EventArgs e)
+        {
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objAddService.BackColor = Color.FromArgb(30, 30, 30);
+                objAddService.lblAddService.ForeColor = Color.White;
+                objAddService.lblInformation.ForeColor = Color.White;
+                objAddService.bunifuSeparator1.LineColor = Color.Gainsboro;
+                objAddService.lblName.ForeColor = Color.White;
+                objAddService.lblDescription.ForeColor = Color.White;
+                objAddService.lblCategory.ForeColor = Color.White;
+                objAddService.lblAmount.ForeColor = Color.White;
+                objAddService.txtNameS.FillColor = Color.FromArgb(60, 60, 60);
+                objAddService.txtNameS.BorderColorIdle = Color.Gray;
+                objAddService.txtNameS.ForeColor = Color.White;
+                objAddService.txtDescriptionS.FillColor = Color.FromArgb(60, 60, 60);
+                objAddService.txtDescriptionS.BorderColorIdle = Color.Gray;
+                objAddService.txtDescriptionS.ForeColor = Color.White;
+                objAddService.txtAmount.FillColor = Color.FromArgb(60, 60, 60);
+                objAddService.txtAmount.BorderColorIdle = Color.Gray;
+                objAddService.txtAmount.ForeColor = Color.White;
+                objAddService.cmbCategoryS.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objAddService.cmbCategoryS.BorderColor = Color.Gray;
+                objAddService.cmbCategoryS.ForeColor = Color.White;
+                objAddService.cmbCategoryS.ItemBackColor = Color.DimGray;
+                objAddService.cmbCategoryS.ItemBorderColor = Color.Gray;
+                objAddService.cmbCategoryS.ItemForeColor = Color.White;
+            }
         }
 
         /*Metodo para cargar el combobox*/

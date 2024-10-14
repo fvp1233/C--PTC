@@ -3,6 +3,7 @@ using PTC2024.View.Service_inventory;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,31 @@ namespace PTC2024.Controller.ServicesController
             objAgendaS = view;
 
             objAgendaS.Load += new EventHandler(ChargeData);
+            objAgendaS.Load += new EventHandler(DarkMode);
             objAgendaS.btnClose.Click += new EventHandler(CloseForm);
             objAgendaS.cmbFilterS.SelectedIndexChanged += new EventHandler(FilterData);
             objAgendaS.txtSearch.KeyDown += new KeyEventHandler(SearchData);
+        }
+
+        public void DarkMode(object sender, EventArgs e)
+        {
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objAgendaS.BackColor = Color.FromArgb(30,30,30);
+                objAgendaS.lblTitle.ForeColor = Color.White;
+                objAgendaS.lblFilter.ForeColor = Color.White;
+                objAgendaS.cmbFilterS.BackgroundColor = Color.FromArgb(60, 60, 60);
+                objAgendaS.cmbFilterS.BorderColor = Color.Gray;
+                objAgendaS.cmbFilterS.ForeColor = Color.White;
+                objAgendaS.cmbFilterS.ItemBackColor = Color.DimGray;
+                objAgendaS.cmbFilterS.ItemBorderColor = Color.Gray;
+                objAgendaS.cmbFilterS.ItemForeColor = Color.White;
+                objAgendaS.DgvAgendaServices.BackgroundColor = Color.FromArgb(45, 45, 45);
+                objAgendaS.DgvAgendaServices.HeaderBackColor = Color.LightSlateGray;
+                objAgendaS.DgvAgendaServices.GridColor = Color.FromArgb(45, 45, 45);
+                objAgendaS.DgvAgendaServices.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
+                objAgendaS.DgvAgendaServices.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSlateGray;
+            }
         }
 
         public void ChargeData(object sender, EventArgs e)

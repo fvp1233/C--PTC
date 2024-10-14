@@ -633,11 +633,11 @@
         public Bunifu.UI.WinForms.BunifuTextBox txtDescriptionS;
         public Bunifu.UI.WinForms.BunifuTextBox txtNameS;
         public Bunifu.Framework.UI.BunifuCustomLabel lblAddService;
-        public Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         public Bunifu.Framework.UI.BunifuCustomLabel lblInformation;
         public Bunifu.Framework.UI.BunifuCustomLabel lblCategory;
         public Bunifu.Framework.UI.BunifuCustomLabel lblDescription;
         public Bunifu.Framework.UI.BunifuCustomLabel lblName;
         public Bunifu.Framework.UI.BunifuCustomLabel lblAmount;
+        protected internal Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
     }
 }
