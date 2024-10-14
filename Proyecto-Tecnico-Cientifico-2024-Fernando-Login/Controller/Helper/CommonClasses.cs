@@ -80,5 +80,48 @@ namespace PTC2024.Controller.Helper
                 return string.Empty;
             }
         }
+        public bool TieneAlMenos8Caracteres(string contrasena)
+        {
+            return contrasena.Length >= 8;
+        }
+        public bool ContieneAlMenosUnNumero(string contrasena)
+        {
+            return contrasena.Any(char.IsDigit);
+        }
+        public bool ContieneAlMenosUnaMayuscula(string contrasena)
+        {
+            return contrasena.Any(char.IsUpper);
+        }
+        public bool ContieneAlMenosUnaMinuscula(string contrasena)
+        {
+            return contrasena.Any(char.IsLower);
+        }
+        public bool ContieneAlMenosUnSimbolo(string contrasena)
+        {
+            string simbolos = "@$#_.";
+            return contrasena.Any(simbolo => simbolos.Contains(simbolo));
+        }
+        //public bool IsValid(string contrasena)
+        //{
+        //    bool tieneLongitud = TieneAlMenos8Caracteres(contrasena);
+        //    bool tieneNumero = ContieneAlMenosUnNumero(contrasena);
+        //    bool tieneMayuscula = ContieneAlMenosUnaMayuscula(contrasena);
+        //    bool tieneMinuscula = ContieneAlMenosUnaMinuscula(contrasena);
+        //    bool tieneSimbolo = ContieneAlMenosUnSimbolo(contrasena);
+        //    if (tieneLongitud == true && tieneNumero == true && tieneMayuscula == true && tieneMinuscula == true && tieneSimbolo == true)
+        //    {
+        //        return true;
+        //    }
+        //    else {  return false; }
+        //}
+        public bool IsValid(string contrasena)
+        {
+            return TieneAlMenos8Caracteres(contrasena) &&
+                   ContieneAlMenosUnNumero(contrasena) &&
+                   ContieneAlMenosUnaMayuscula(contrasena) &&
+                   ContieneAlMenosUnaMinuscula(contrasena) &&
+                   ContieneAlMenosUnSimbolo(contrasena);
+        }
+
     }
 }
