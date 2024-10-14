@@ -72,36 +72,46 @@ namespace PTC2024.Controller.PasswordRecover
                             //validación de la longitud de la nueva contraseña
                             if (ValidatePasswordLength() == true)
                             {
-                                //Validación de la confirmación de contraseña
-                                if (objAdminMethod.txtUserNewPass.Text.Trim() == objAdminMethod.txtUserConfirmPass.Text.Trim())
+                                if (common.IsValid(objAdminMethod.txtUserNewPass.Text.Trim()) == true && common.IsValid(objAdminMethod.txtUserConfirmPass.Text.Trim()) == true)
                                 {
-                                    //Todas las validaciones son correctas
-                                    //damos valor a los getters una vez más.
-                                    daoAdminM.EmployeeUsername = objAdminMethod.txtUser.Text.Trim();
-                                    daoAdminM.EmployeePassword = common.ComputeSha256Hash(objAdminMethod.txtUserNewPass.Text.Trim());
-                                    daoAdminM.TemporalPass = false;
-                                    //ejecutamos el método del dao.
-                                    int passwordUpdt = daoAdminM.UpdatePersonalizedPass();
-                                    //Evaluamos la respuesta del método
-                                    if (passwordUpdt == 1)
+                                    //Validación de la confirmación de contraseña
+                                    if (objAdminMethod.txtUserNewPass.Text.Trim() == objAdminMethod.txtUserConfirmPass.Text.Trim())
                                     {
-                                        MessageBox.Show("La contraseña del usuario fue actualizada con éxito.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                        objAdminMethod.txtAdminUser.Clear();
-                                        objAdminMethod.txtAdminPass.Clear();
-                                        objAdminMethod.txtUser.Clear();
-                                        objAdminMethod.txtUserNewPass.Clear();
-                                        objAdminMethod.txtUserConfirmPass.Clear();
+                                        //Todas las validaciones son correctas
+                                        //damos valor a los getters una vez más.
+                                        daoAdminM.EmployeeUsername = objAdminMethod.txtUser.Text.Trim();
+                                        daoAdminM.EmployeePassword = common.ComputeSha256Hash(objAdminMethod.txtUserNewPass.Text.Trim());
+                                        daoAdminM.TemporalPass = false;
+                                        //ejecutamos el método del dao.
+                                        int passwordUpdt = daoAdminM.UpdatePersonalizedPass();
+                                        //Evaluamos la respuesta del método
+                                        if (passwordUpdt == 1)
+                                        {
+                                            MessageBox.Show("La contraseña del usuario fue actualizada con éxito.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            objAdminMethod.txtAdminUser.Clear();
+                                            objAdminMethod.txtAdminPass.Clear();
+                                            objAdminMethod.txtUser.Clear();
+                                            objAdminMethod.txtUserNewPass.Clear();
+                                            objAdminMethod.txtUserConfirmPass.Clear();
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("La contraseña de usuario no pudo ser actualizada, inténtelo de nuevo", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("La contraseña de usuario no pudo ser actualizada, inténtelo de nuevo", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        MessageBox.Show("La confirmación de la nueva contraseña es incorrecta, intente de nuevo.", "Confirmación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("La confirmación de la nueva contraseña es incorrecta, intente de nuevo.", "Confirmación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    MessageBox.Show("Fromato incorrecto: La contraseña debe tener al menos 8 caracteres, un numero, una mayuscula, una minuscula y un simbolo,", "Formato inccorecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                                 }
                             }
+
+
                             else
                             {
                                 MessageBox.Show("La nueva contraseña del usuario debe de tener al menos 6 caracteres.", "Contraseña corta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -142,6 +152,7 @@ namespace PTC2024.Controller.PasswordRecover
                             bool checkUser = daoAdminM.CheckUser();
                             if (checkUser == true)
                             {
+
                                 //Validación para saber si se trata de un usuario de tipo empleado o de un administrador
                                 //damos valor al getter de nuevo por si acaso
                                 daoAdminM.EmployeeUsername = objAdminMethod.txtUser.Text.Trim();
@@ -150,43 +161,52 @@ namespace PTC2024.Controller.PasswordRecover
                                 //validamos la respuesta
                                 if (employeeUser == true)
                                 {
-                                    //Si la respuesta es true, si se trata de un empleado
-                                    //validación de la longitud de la nueva contraseña
-                                    if (ValidatePasswordLength() == true)
+                                    if (common.IsValid(objAdminMethod.txtUserNewPass.Text.Trim()) == true && common.IsValid(objAdminMethod.txtUserConfirmPass.Text.Trim()) == true)
                                     {
-                                        //Validación de la confirmación de contraseña
-                                        if (objAdminMethod.txtUserNewPass.Text.Trim() == objAdminMethod.txtUserConfirmPass.Text.Trim())
+                                        //Si la respuesta es true, si se trata de un empleado
+                                        //validación de la longitud de la nueva contraseña
+                                        if (ValidatePasswordLength() == true)
                                         {
-                                            //Todas las validaciones son correctas
-                                            //damos valor a los getters una vez más.
-                                            daoAdminM.EmployeeUsername = objAdminMethod.txtUser.Text.Trim();
-                                            daoAdminM.EmployeePassword = common.ComputeSha256Hash(objAdminMethod.txtUserNewPass.Text.Trim());
-                                            daoAdminM.TemporalPass = false;
-                                            //ejecutamos el método del dao.
-                                            int passwordUpdt = daoAdminM.UpdatePersonalizedPass();
-                                            //Evaluamos la respuesta del método
-                                            if (passwordUpdt == 1)
+                                            //Validación de la confirmación de contraseña
+                                            if (objAdminMethod.txtUserNewPass.Text.Trim() == objAdminMethod.txtUserConfirmPass.Text.Trim())
                                             {
-                                                MessageBox.Show("La contraseña del usuario fue actualizada con éxito.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                objAdminMethod.txtAdminUser.Clear();
-                                                objAdminMethod.txtAdminPass.Clear();
-                                                objAdminMethod.txtUser.Clear();
-                                                objAdminMethod.txtUserNewPass.Clear();
-                                                objAdminMethod.txtUserConfirmPass.Clear();
+                                                //Todas las validaciones son correctas
+                                                //damos valor a los getters una vez más.
+                                                daoAdminM.EmployeeUsername = objAdminMethod.txtUser.Text.Trim();
+                                                daoAdminM.EmployeePassword = common.ComputeSha256Hash(objAdminMethod.txtUserNewPass.Text.Trim());
+                                                daoAdminM.TemporalPass = false;
+                                                //ejecutamos el método del dao.
+                                                int passwordUpdt = daoAdminM.UpdatePersonalizedPass();
+                                                //Evaluamos la respuesta del método
+                                                if (passwordUpdt == 1)
+                                                {
+                                                    MessageBox.Show("La contraseña del usuario fue actualizada con éxito.", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                    objAdminMethod.txtAdminUser.Clear();
+                                                    objAdminMethod.txtAdminPass.Clear();
+                                                    objAdminMethod.txtUser.Clear();
+                                                    objAdminMethod.txtUserNewPass.Clear();
+                                                    objAdminMethod.txtUserConfirmPass.Clear();
+                                                }
+                                                else
+                                                {
+                                                    MessageBox.Show("La contraseña de usuario no pudo ser actualizada, inténtelo de nuevo", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                }
                                             }
                                             else
                                             {
-                                                MessageBox.Show("La contraseña de usuario no pudo ser actualizada, inténtelo de nuevo", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                MessageBox.Show("La confirmación de la nueva contraseña es incorrecta, intente de nuevo.", "Confirmación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                             }
                                         }
                                         else
                                         {
-                                            MessageBox.Show("La confirmación de la nueva contraseña es incorrecta, intente de nuevo.", "Confirmación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                            MessageBox.Show("La nueva contraseña del usuario debe de tener al menos 6 caracteres.", "Contraseña corta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         }
+
                                     }
                                     else
                                     {
-                                        MessageBox.Show("La nueva contraseña del usuario debe de tener al menos 6 caracteres.", "Contraseña corta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Fromato incorrecto: La contraseña debe tener al menos 8 caracteres, un numero, una mayuscula, una minuscula y un simbolo,", "Formato inccorecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                                     }
                                 }
                                 else
@@ -210,7 +230,7 @@ namespace PTC2024.Controller.PasswordRecover
                         MessageBox.Show("Las credenciales de administrador ingresadas no son válidas", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                
+
             }
             else
             {
@@ -245,6 +265,7 @@ namespace PTC2024.Controller.PasswordRecover
                     //Ahora pasamos a validar que el campo del usuario del empleado esté lleno, ya que es el único necesario para esta acción.
                     if (!(string.IsNullOrEmpty(objAdminMethod.txtUser.Text.Trim())))
                     {
+
                         daoAdminM.EmployeeUsername = objAdminMethod.txtUser.Text.Trim();
                         //ejecutamos el método del DAO
                         bool checkUser = daoAdminM.CheckUser();
@@ -269,6 +290,7 @@ namespace PTC2024.Controller.PasswordRecover
                         {
                             MessageBox.Show("El usuario al que se le quiere cambiar la contraseña no está registrado en el sistema.", "Usuario inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
+
                     }
                     else
                     {
@@ -290,53 +312,49 @@ namespace PTC2024.Controller.PasswordRecover
                         //Ahora pasamos a validar que el campo del usuario del empleado esté lleno, ya que es el único necesario para esta acción.
                         if (!(string.IsNullOrEmpty(objAdminMethod.txtUser.Text.Trim())))
                         {
-                            if (ValidarTexto()==true)
+
+                            //Validación para saber si ese usuario si existe en el sistema.
+                            //damos valor al getter para el método del DAO
+                            daoAdminM.EmployeeUsername = objAdminMethod.txtUser.Text.Trim();
+                            //ejecutamos el método del DAO
+                            bool checkUser = daoAdminM.CheckUser();
+                            if (checkUser == true)
                             {
-                                //Validación para saber si ese usuario si existe en el sistema.
-                                //damos valor al getter para el método del DAO
+                                //Validación para saber si se trata de un usuario de tipo empleado o de un administrador
+                                //damos valor al getter de nuevo por si acaso
                                 daoAdminM.EmployeeUsername = objAdminMethod.txtUser.Text.Trim();
                                 //ejecutamos el método del DAO
-                                bool checkUser = daoAdminM.CheckUser();
-                                if (checkUser == true)
+                                bool employeeUser = daoAdminM.CheckEmployeeUser();
+                                //validamos la respuesta
+                                if (employeeUser == true)
                                 {
-                                    //Validación para saber si se trata de un usuario de tipo empleado o de un administrador
-                                    //damos valor al getter de nuevo por si acaso
+                                    //Si la respuesta es true, si se trata de un empleado
+                                    //Todas las validaciones son correctas
+                                    //damos valor a los getters una vez más.
                                     daoAdminM.EmployeeUsername = objAdminMethod.txtUser.Text.Trim();
-                                    //ejecutamos el método del DAO
-                                    bool employeeUser = daoAdminM.CheckEmployeeUser();
-                                    //validamos la respuesta
-                                    if (employeeUser == true)
-                                    {
-                                        //Si la respuesta es true, si se trata de un empleado
-                                        //Todas las validaciones son correctas
-                                        //damos valor a los getters una vez más.
-                                        daoAdminM.EmployeeUsername = objAdminMethod.txtUser.Text.Trim();
-                                        daoAdminM.TemporalPass = true;
-                                        string result = "Hubo un error al intentar restablecer la contraseña.";
-                                        //Ejecutamos el método
-                                        result = daoAdminM.RecoverPassword();
+                                    daoAdminM.TemporalPass = true;
+                                    string result = "Hubo un error al intentar restablecer la contraseña.";
+                                    //Ejecutamos el método
+                                    result = daoAdminM.RecoverPassword();
 
-                                        MessageBox.Show(result, "Recuperación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                        objAdminMethod.txtAdminUser.Clear();
-                                        objAdminMethod.txtAdminPass.Clear();
-                                        objAdminMethod.txtUser.Clear();
-                                        objAdminMethod.txtUserNewPass.Clear();
-                                        objAdminMethod.txtUserConfirmPass.Clear();
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("El usuario al que se le desea cambiar la contraseña es uno de tipo administrador, por lo que esta acción no se puede realizar.", "Acción imposible", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    }
+                                    MessageBox.Show(result, "Recuperación de contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    objAdminMethod.txtAdminUser.Clear();
+                                    objAdminMethod.txtAdminPass.Clear();
+                                    objAdminMethod.txtUser.Clear();
+                                    objAdminMethod.txtUserNewPass.Clear();
+                                    objAdminMethod.txtUserConfirmPass.Clear();
                                 }
                                 else
                                 {
-                                    MessageBox.Show("El usuario al que se le quiere cambiar la contraseña no está registrado en el sistema.", "Usuario inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show("El usuario al que se le desea cambiar la contraseña es uno de tipo administrador, por lo que esta acción no se puede realizar.", "Acción imposible", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
+
                             else
                             {
-                                MessageBox.Show("El texto debe tener al menos una letra mayúscula, un número, un carácter especial y tener un mínimo de 8 caracteres.");
+                                MessageBox.Show("El usuario al que se le quiere cambiar la contraseña no está registrado en el sistema.", "Usuario inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
+
                         }
                         else
                         {
@@ -348,7 +366,7 @@ namespace PTC2024.Controller.PasswordRecover
                         MessageBox.Show("Las credenciales de administrador ingresadas no son válidas", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                
+
             }
             else
             {
@@ -361,7 +379,7 @@ namespace PTC2024.Controller.PasswordRecover
             FrmRecoverPMethods openForm = new FrmRecoverPMethods();
             //Cerramos el formulario y abrimos nuevamente el formulario para seleccionar los métodos
             objAdminMethod.Close();
-            openForm.Show();           
+            openForm.Show();
         }
 
         public bool ValidatePasswordLength()
