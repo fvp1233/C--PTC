@@ -25,6 +25,12 @@ using PTC2024.Controller.Helper;
 using PTC2024.View.formularios.inicio;
 using PTC2024.Model.DAO.HelperDAO;
 using System.Drawing;
+using System.IO;
+using QRCoder;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.Drawing.Imaging;
+using System.Diagnostics; // Para abrir el PDF después de generarlo
 
 namespace PTC2024.Controller.BillsController
 {
@@ -583,6 +589,21 @@ namespace PTC2024.Controller.BillsController
                 {
                     StartMenu startMenu = new StartMenu(SessionVar.Username);
                     startMenu.snackBar.Show(startMenu, $"Los datos se registraron de manera exitosa", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                    int idBill = daoNew.GetLastInsertedBillId(); // Debes tener este método implementado en DAOAddBills para obtener el último ID
+
+                    // Generar el PDF con el ID de la factura
+                    string pdfFilePath = GenerateBillPDF(idBill);
+
+                    // Enviar el PDF por correo si la ruta del archivo es válida
+                    if (!string.IsNullOrEmpty(pdfFilePath))
+                    {
+                        bool emailSent = SendEmail(pdfFilePath);
+
+                        if (!emailSent)
+                        {
+                            startMenu.snackBar.Show(startMenu, $"La factura fue generada pero no se pudo enviar por correo.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                        }
+                    }
                     DAOInitialView daoInitial = new DAOInitialView();
                     daoInitial.ActionType = "Se insertó una factura";
                     daoInitial.TableName = "Facturas";
@@ -602,6 +623,136 @@ namespace PTC2024.Controller.BillsController
                 StartMenu startMenu = new StartMenu(SessionVar.Username);
                 startMenu.snackBar.Show(startMenu, $"Por favor, complete todos los campos requeridos", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
+        }
+        // Método para generar el PDF de una factura
+        public string GenerateBillPDF(int idBill)
+        {
+            try
+            {
+                DAOBills dAOBills = new DAOBills();
+                DataSet dsBill = dAOBills.GetBillDetails(idBill);
+
+                if (dsBill != null && dsBill.Tables["viewBill"].Rows.Count > 0)
+                {
+                    DataRow billRow = dsBill.Tables["viewBill"].Rows[0];
+
+                    // Obtener un directorio temporal para almacenar el PDF
+                    string tempFilePath = Path.Combine(Path.GetTempPath(), $"Bill_{idBill}.pdf");
+
+                    Document doc = new Document();
+                    PdfWriter.GetInstance(doc, new FileStream(tempFilePath, FileMode.Create));
+                    doc.Open();
+
+                    // Fuentes para los textos
+                    var titleFont = iTextSharp.text.FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD, BaseColor.RED);
+                    var regularFont = iTextSharp.text.FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+                    var boldFont = iTextSharp.text.FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+
+                    // Título del documento
+                    doc.Add(new Paragraph("FACTURA", titleFont));
+                    doc.Add(new Paragraph(" "));
+
+                    // Datos principales
+                    doc.Add(new Paragraph($"Número de Factura: {billRow["N°"]}", boldFont));
+                    doc.Add(new Paragraph($"Razón Social: {billRow["Razon Social"]}", regularFont));
+                    doc.Add(new Paragraph($"NIT: {billRow["NIT"]}", regularFont));
+                    doc.Add(new Paragraph($"NRC: {billRow["NRC"]}", regularFont));
+                    doc.Add(new Paragraph($"Cliente: {billRow["Cliente"]}", regularFont));
+                    doc.Add(new Paragraph($"DUI del Cliente: {billRow["DUI"]}", regularFont));
+                    doc.Add(new Paragraph($"Teléfono del Cliente: {billRow["Télefono"]}", regularFont));
+                    doc.Add(new Paragraph($"Email del Cliente: {billRow["Email"]}", regularFont));
+                    doc.Add(new Paragraph(" "));
+
+                    // Detalles del servicio
+                    doc.Add(new Paragraph("Detalles del Servicio:", boldFont));
+                    doc.Add(new Paragraph($"Servicio: {billRow["Servicios"]}", regularFont));
+                    doc.Add(new Paragraph($"Descuento: {billRow["Descuento"]}%", regularFont));
+                    doc.Add(new Paragraph($"Subtotal: ${billRow["Subtotal"]}", regularFont));
+                    doc.Add(new Paragraph($"Total a Pagar: ${billRow["Total"]}", regularFont));
+                    doc.Add(new Paragraph($"Método de Pago: {billRow["Método de Pago"]}", regularFont));
+                    doc.Add(new Paragraph(" "));
+
+                    // Fechas
+                    doc.Add(new Paragraph($"Fecha de Emisión: {billRow["Fecha de emisión"]}", regularFont));
+                    doc.Add(new Paragraph($"Fecha Inicio del Servicio: {billRow["Fecha inicio"]}", regularFont));
+                    doc.Add(new Paragraph($"Fecha Fin del Servicio: {billRow["Fecha fin"]}", regularFont));
+                    doc.Add(new Paragraph(" "));
+
+                    // Encargado y estado
+                    doc.Add(new Paragraph($"Encargado: {billRow["Encargado"]}", regularFont));
+                    doc.Add(new Paragraph($"Estado de la Factura: {billRow["Estado"]}", regularFont));
+
+                    // Generar el código QR basado en los datos de la factura
+                    string qrData = $"Factura N°: {billRow["N°"]}\n" +
+                                    $"Razón Social: {billRow["Razon Social"]}\n" +
+                                    $"Cliente: {billRow["Cliente"]}\n" +
+                                    $"Total a Pagar: ${billRow["Total"]}\n" +
+                                    $"Fecha de Emisión: {billRow["Fecha de emisión"]}";
+
+                    using (MemoryStream msQrCode = new MemoryStream())
+                    {
+                        // Generar el código QR usando QRCoder
+                        QRCodeGenerator qrGenerator = new QRCodeGenerator();
+                        QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrData, QRCodeGenerator.ECCLevel.Q);
+                        QRCode qrCode = new QRCode(qrCodeData);
+
+                        using (Bitmap qrCodeImage = qrCode.GetGraphic(20)) // Ajusta la escala del código QR aquí
+                        {
+                            // Guardar el código QR como imagen en memoria
+                            qrCodeImage.Save(msQrCode, ImageFormat.Png);
+                        }
+
+                        // Convertir el stream en una imagen que iTextSharp pueda usar
+                        iTextSharp.text.Image qrImage = iTextSharp.text.Image.GetInstance(msQrCode.ToArray());
+                        qrImage.ScaleToFit(100f, 100f); // Ajusta el tamaño del QR según sea necesario
+                        qrImage.Alignment = Element.ALIGN_RIGHT;
+
+                        // Añadir el código QR al PDF
+                        doc.Add(qrImage);
+                    }
+
+                    // Cerrar el documento PDF
+                    doc.Close();
+                    // Enviar el PDF por correo
+                    bool emailSent = SendEmail(tempFilePath);
+
+                    if (!emailSent)
+                    {
+                        MessageBox.Show("La factura fue generada pero no se pudo enviar por correo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Factura generada y enviada por correo exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    //// Abrir el PDF en el navegador predeterminado o visor de PDF
+                    //Process.Start(new ProcessStartInfo(tempFilePath)
+                    //{
+                    //    UseShellExecute = true // Esto asegurará que se abra con el programa predeterminado del sistema
+                    //});
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron datos para la factura seleccionada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar el PDF: " + ex.Message);
+            }
+            return null;
+        }
+
+        public bool SendEmail(string pdfFilePath)
+        {
+            string para = objAddBills.txtCustomerEmail.Text.Trim();
+            string de = "h2c.soporte.usuarios@gmail.com";
+            string subject = "H2C: Gracias por visitarnos.";
+            string message = $"Hola estimado cliente, se adjunta los datos de tu factura electronica {BusinessVar.BusinessName}.\nEn caso de tener algun problema, favor enviarla en este mismo correo.";
+
+            Email email = new Email();
+            bool answer = email.CustomerEmailAttachment(para, de, subject, message, pdfFilePath);
+
+            return answer;
         }
         //Método para deshabilitar el contextmenu de los textbox
         private void DisableContextMenu(object sender, MouseEventArgs e)

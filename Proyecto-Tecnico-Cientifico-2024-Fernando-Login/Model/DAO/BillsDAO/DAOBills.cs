@@ -45,6 +45,59 @@ namespace PTC2024.Model.DAO.BillsDAO
                 getConnection().Close();
             }
         }
+        //Codigo para consulta y generar pdf
+        public DataSet GetBillDetails(int billId)
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = @"
+            SELECT
+                RIGHT('00000' + CAST(a.IdBill AS VARCHAR), 5) AS 'N°',    
+                a.companyName AS 'Razon Social',
+                a.NIT AS 'NIT',
+                NRC AS 'NRC',
+                CONCAT(c.names, ' ', c.lastNames) AS 'Cliente',
+                a.CustomerDui AS 'DUI',
+                a.CustomerPhone AS 'Télefono',
+                a.CustomerEmail AS 'Email',
+                b.serviceName AS 'Servicios',
+                a.discount AS 'Descuento',
+                a.subtotalPay AS 'Subtotal',
+                a.totalPay AS 'Total',
+                f.paymentMethod AS 'Método de Pago',
+                a.startDate AS 'Fecha inicio',
+                a.FinalDate AS 'Fecha fin',
+                CONCAT(d.names, ' ', d.lastName) AS 'Encargado',
+                e.billStatus AS 'Estado',
+                a.dateissuance AS 'Fecha de emisión'
+            FROM tbBills a
+            INNER JOIN tbServices b ON a.IdServices = b.IdServices
+            INNER JOIN tbCustomer c ON a.IdCustomer = c.IdCustomer
+            INNER JOIN tbEmployee d ON a.IdEmployee = d.IdEmployee
+            INNER JOIN tbStatusBill e ON a.IdStatusBill = e.IdStatusBill
+            INNER JOIN tbMethodP f ON a.IdmethodP = f.IdmethodP
+            WHERE a.IdBill = @IdBill";
+
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("@IdBill", billId);
+                SqlDataAdapter adap = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adap.Fill(ds, "viewBill");
+                return ds;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("EC-108: No se pudo obtener los datos de la factura", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+
+
         public DataSet SearchDataB(string consulta)
         {
             try

@@ -167,6 +167,38 @@ namespace PTC2024.Controller.Helper
                 return false;
             }
         }
+        public bool CustomerEmailAttachment(string para, string de, string subject, string message, string attachmentPath)
+        {
+            StartMenu objS = new StartMenu(SessionVar.Username);
+            try
+            {
+
+                Client.Host = "smtp.gmail.com";
+                Client.EnableSsl = true;
+                Client.Port = 587;
+                Client.Credentials = creds;
+
+                MailAddress to = new MailAddress(para);
+                MailAddress from = new MailAddress(de);
+                msg.Subject = subject;
+                msg.Body = message;
+                msg.From = from;
+                msg.To.Add(to);
+
+                Attachment attachment = new Attachment(attachmentPath);
+                msg.Attachments.Add(attachment);
+                //
+                Client.Send(msg);
+
+                objS.snackBar.Show(objS, "Se envío un correo electrónico al email del cliente.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 2000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomLeft);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                objS.snackBar.Show(objS, "No se pudo enviar un correo electrónico al email del cliente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 2000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomLeft);
+                return false;
+            }
+        }
         public bool UpdateBusiness(string para, string de, string subject, string message)
         {
             StartMenu objS = new StartMenu(SessionVar.Username);
