@@ -1,4 +1,7 @@
-﻿using PTC2024.Controller.Helper;
+﻿using Bunifu.UI.WinForms;
+using Bunifu.UI.WinForms.Helpers.Transitions;
+using iTextSharp.text.pdf.security;
+using PTC2024.Controller.Helper;
 using PTC2024.Model.DAO.AlertsDAO;
 using PTC2024.Model.DAO.ProfileDAO;
 using PTC2024.View.Alerts;
@@ -44,7 +47,7 @@ namespace PTC2024.Controller.ProfileController
                 answer = daoPass.CheckPass();
                 if (answer == true)
                 {
-                    if(Properties.Settings.Default.darkMode == true)
+                    if (Properties.Settings.Default.darkMode == true)
                     {
                         objChangeP.txtConfirmPass.FillColor = Color.FromArgb(60, 60, 60);
                         objChangeP.txtConfirmPass.BorderColorIdle = Color.Gray;
@@ -58,7 +61,7 @@ namespace PTC2024.Controller.ProfileController
                     objChangeP.txtNewPass.Enabled = true;
                     objChangeP.lbl2.Enabled = true;
                     objChangeP.txtConfirmPass.Enabled = true;
-                    objChangeP.btnSave.Enabled = true;                    
+                    objChangeP.btnSave.Enabled = true;
                 }
                 else
                 {
@@ -76,9 +79,9 @@ namespace PTC2024.Controller.ProfileController
                 objChangeP.snack.Show(objChangeP, "Ingrese su contraseña actual", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 2000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomLeft);
             }
 
-        } 
+        }
 
-        public void DarkMode(object sender,EventArgs e)
+        public void DarkMode(object sender, EventArgs e)
         {
             objChangeP.txtConfirmPass.Enabled = false;
             objChangeP.txtNewPass.Enabled = false;
@@ -104,23 +107,22 @@ namespace PTC2024.Controller.ProfileController
                 objChangeP.txtNewPass.OnDisabledState.FillColor = Color.FromArgb(60, 60, 60);
                 objChangeP.txtNewPass.BorderColorDisabled = Color.Gray;
             }
-            
+
         }
 
         public void UpdatePass(object sender, EventArgs e)
         {
-
-            if(!(string.IsNullOrEmpty(objChangeP.txtNewPass.Text.Trim()) ||
+            CommonClasses common = new CommonClasses();
+            if (!(string.IsNullOrEmpty(objChangeP.txtNewPass.Text.Trim()) ||
                  string.IsNullOrEmpty(objChangeP.txtConfirmPass.Text.Trim()))
                 )
             {
-                if(objChangeP.txtNewPass.Text.Trim().Length >= 6)
+                if (objChangeP.txtNewPass.Text.Trim() == objChangeP.txtConfirmPass.Text.Trim())
                 {
-                    if(objChangeP.txtNewPass.Text.Trim() == objChangeP.txtConfirmPass.Text.Trim())
+                    if (common.IsValid(objChangeP.txtNewPass.Text) == true && common.IsValid(objChangeP.txtConfirmPass.Text) == true)
                     {
                         FrmProfile profile = new FrmProfile();
                         int answer;
-                        CommonClasses common = new CommonClasses();
                         DAOChangeUserPass daoPass = new DAOChangeUserPass();
                         daoPass.NewPass = common.ComputeSha256Hash(objChangeP.txtNewPass.Text.Trim());
                         daoPass.Username = SessionVar.Username;
@@ -141,7 +143,7 @@ namespace PTC2024.Controller.ProfileController
                             objChangeP.btnSave.Enabled = false;
 
                             SendEmail();
-                            objChangeP.snack.Show(objChangeP, "La contraseña se actualizó con exito.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 2500, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomLeft);                          
+                            objChangeP.snack.Show(objChangeP, "La contraseña se actualizó con exito.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 2500, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomLeft);
                         }
                         else
                         {
@@ -150,13 +152,14 @@ namespace PTC2024.Controller.ProfileController
                     }
                     else
                     {
-                        MessageBox.Show("La confirmación de la contraseña es incorrecta, intente de nuevo.", "Nueva contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        objChangeP.snack.Show(objChangeP, "La contrasela debe tener al menos 8 caracteres, una mayuscula, un numero y un caracter", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 2500, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomCenter);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("La nueva contraseña debe contener al menos 6 caracteres.", "Nueva contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("La confirmación de la contraseña es incorrecta, intente de nuevo.", "Nueva contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
             }
             else
             {

@@ -66,8 +66,7 @@ namespace PTC2024.Controller.Alerts
                 ))
             {
                 //validación de la longitud de la contraseña
-                bool passLength = ValidatePasswordLength();
-                if (passLength == true)
+                if (commonClasses.IsValid(objChangePassword.txtPassword.Text) == true && commonClasses.IsValid(objChangePassword.txtConfirmPass.Text) == true)
                 {
                     //validación de que la confirmación de la contraseña sea correcta
                     if (objChangePassword.txtPassword.Text.Trim() == objChangePassword.txtConfirmPass.Text.Trim())
@@ -96,7 +95,7 @@ namespace PTC2024.Controller.Alerts
                 }
                 else
                 {
-                    MessageBox.Show("La contraseña debe de tener un mínimo de 6 carácteres", "Contraseña muy corta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("La contrasela debe tener al menos 8 caracteres, una mayuscula, un numero y un caracter", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }                
 
             }
@@ -107,17 +106,6 @@ namespace PTC2024.Controller.Alerts
         }
 
         //método para verificar la longitud de la contraseña
-        public bool ValidatePasswordLength()
-        {
-            if (objChangePassword.txtPassword.Text.Trim().Length >= 6)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
 
         public void ShowPassword(object sender, EventArgs e)
         {
