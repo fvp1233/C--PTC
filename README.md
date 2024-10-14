@@ -1,11 +1,11 @@
 # H2C - Project README
 
 ## Author(s):
-- **Developer:** Jennifer Sofia Alfaro Tomasino
-- **Developer:** Jose Gerardo Merino Martinez
+- **Developer:** Jennifer Sofía Alfaro Tomasino
+- **Developer:** José Gerardo Merino Martínez
 - **Developer:** Oscar Abel Velásquez Joyar
-- **Developer:** Max Alexander Jimenez Salguero
-- **Developer:** Fernando Miguel Velásquez Perez
+- **Developer:** Max Alexander Jiménez Salguero
+- **Developer:** Fernando Miguel Velásquez Pérez
 
 ## Año de creación:
 2024
