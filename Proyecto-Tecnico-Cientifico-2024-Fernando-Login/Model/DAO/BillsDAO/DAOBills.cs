@@ -97,6 +97,40 @@ namespace PTC2024.Model.DAO.BillsDAO
             }
         }
 
+        //Codigo para consulta y generar pdf
+        public DataSet GetBillServices(int servicesId)
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = @"
+            SELECT
+                a.IdDetail AS 'Id detalle',
+	            b.serviceName AS 'Servicio',
+	            a.Price AS 'Precio'
+	            FROM tbBillDataS a
+
+                INNER JOIN tbServices b ON a.IdServices = b.IdServices
+                WHERE a.IdServices = @IdServices";
+
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.Parameters.AddWithValue("@IdBill", servicesId);
+                SqlDataAdapter adap = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adap.Fill(ds, "viewBill");
+                return ds;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("EC-108: No se pudo obtener los datos de la factura", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+
 
         public DataSet SearchDataB(string consulta)
         {

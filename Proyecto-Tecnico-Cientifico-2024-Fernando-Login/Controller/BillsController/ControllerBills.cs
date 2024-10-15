@@ -356,7 +356,6 @@ namespace PTC2024.Controller.BillsController
                 MessageBox.Show("Por favor, selecciona una factura para imprimir.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        // Método para generar el PDF de una factura
         public void GenerateBillPDF(int idBill)
         {
             try
@@ -368,21 +367,31 @@ namespace PTC2024.Controller.BillsController
                 {
                     DataRow billRow = dsBill.Tables["viewBill"].Rows[0];
 
-                    // Obtener un directorio temporal para almacenar el PDF
                     string tempFilePath = Path.Combine(Path.GetTempPath(), $"Bill_{idBill}.pdf");
 
-                    Document doc = new Document();
+                    Document doc = new Document(PageSize.A4, 50, 50, 25, 25); // Márgenes ajustados
                     PdfWriter.GetInstance(doc, new FileStream(tempFilePath, FileMode.Create));
                     doc.Open();
 
-                    // Fuentes para los textos
-                    var titleFont = iTextSharp.text.FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD, BaseColor.RED);
-                    var regularFont = iTextSharp.text.FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
-                    var boldFont = iTextSharp.text.FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+                    // Fuentes mejoradas
+                    var titleFont = FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD, BaseColor.RED);
+                    var regularFont = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+                    var boldFont = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+                    var headerFont = FontFactory.GetFont("Arial", 14, iTextSharp.text.Font.BOLD, BaseColor.RED);
 
-                    // Título del documento
-                    doc.Add(new Paragraph("FACTURA", titleFont));
-                    doc.Add(new Paragraph(" "));
+                    // Añadir el logo
+                    string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "H2C_HR negro.png");
+                    if (System.IO.File.Exists(imagePath))
+                    {
+                        iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(imagePath);
+                        img.ScaleToFit(140f, 120f);
+                        img.Alignment = Element.ALIGN_CENTER;
+                        doc.Add(img);
+                    }
+                    else
+                    {
+                        doc.Add(new Paragraph("No se encontró la imagen.", boldFont));
+                    }
 
                     // Datos principales
                     doc.Add(new Paragraph($"Número de Factura: {billRow["N°"]}", boldFont));
@@ -395,26 +404,40 @@ namespace PTC2024.Controller.BillsController
                     doc.Add(new Paragraph($"Email del Cliente: {billRow["Email"]}", regularFont));
                     doc.Add(new Paragraph(" "));
 
-                    // Detalles del servicio
-                    doc.Add(new Paragraph("Detalles del Servicio:", boldFont));
-                    doc.Add(new Paragraph($"Servicio: {billRow["Servicios"]}", regularFont));
-                    doc.Add(new Paragraph($"Descuento: {billRow["Descuento"]}%", regularFont));
-                    doc.Add(new Paragraph($"Subtotal: ${billRow["Subtotal"]}", regularFont));
-                    doc.Add(new Paragraph($"Total a Pagar: ${billRow["Total"]}", regularFont));
-                    doc.Add(new Paragraph($"Método de Pago: {billRow["Método de Pago"]}", regularFont));
+                    // Segunda tabla para detalles del servicio
+                    PdfPTable serviceTable = new PdfPTable(2);
+                    serviceTable.WidthPercentage = 100;
+                    serviceTable.SetWidths(new float[] { 1f, 2f });
+
+                    serviceTable.AddCell(CreateCell("Servicio:", boldFont, BaseColor.LIGHT_GRAY));
+                    serviceTable.AddCell(CreateCell(billRow["Servicios"].ToString(), regularFont, BaseColor.WHITE));
+
+                    serviceTable.AddCell(CreateCell("Descuento:", boldFont, BaseColor.LIGHT_GRAY));
+                    serviceTable.AddCell(CreateCell($"{billRow["Descuento"]}%", regularFont, BaseColor.WHITE));
+
+                    serviceTable.AddCell(CreateCell("Subtotal:", boldFont, BaseColor.LIGHT_GRAY));
+                    serviceTable.AddCell(CreateCell($"${billRow["Subtotal"]}", regularFont, BaseColor.WHITE));
+
+                    serviceTable.AddCell(CreateCell("Total a Pagar:", boldFont, BaseColor.LIGHT_GRAY));
+                    serviceTable.AddCell(CreateCell($"${billRow["Total"]}", regularFont, BaseColor.WHITE));
+
+                    serviceTable.AddCell(CreateCell("Método de Pago:", boldFont, BaseColor.LIGHT_GRAY));
+                    serviceTable.AddCell(CreateCell(billRow["Método de Pago"].ToString(), regularFont, BaseColor.WHITE));
+
+                    doc.Add(serviceTable);
                     doc.Add(new Paragraph(" "));
 
-                    // Fechas
-                    doc.Add(new Paragraph($"Fecha de Emisión: {billRow["Fecha de emisión"]}", regularFont));
-                    doc.Add(new Paragraph($"Fecha Inicio del Servicio: {billRow["Fecha inicio"]}", regularFont));
-                    doc.Add(new Paragraph($"Fecha Fin del Servicio: {billRow["Fecha fin"]}", regularFont));
-                    doc.Add(new Paragraph(" "));
+                   // Fechas
+            doc.Add(new Paragraph($"Fecha de Emisión: {billRow["Fecha de emisión"]}", regularFont));
+            doc.Add(new Paragraph($"Fecha Inicio del Servicio: {billRow["Fecha inicio"]}", regularFont));
+            doc.Add(new Paragraph($"Fecha Fin del Servicio: {billRow["Fecha fin"]}", regularFont));
+            doc.Add(new Paragraph(" "));
 
-                    // Encargado y estado
-                    doc.Add(new Paragraph($"Encargado: {billRow["Encargado"]}", regularFont));
-                    doc.Add(new Paragraph($"Estado de la Factura: {billRow["Estado"]}", regularFont));
+            // Encargado y estado
+            doc.Add(new Paragraph($"Encargado: {billRow["Encargado"]}", regularFont));
+            doc.Add(new Paragraph($"Estado de la Factura: {billRow["Estado"]}", regularFont));
 
-                    // Generar el código QR basado en los datos de la factura
+                    // Generar código QR
                     string qrData = $"Factura N°: {billRow["N°"]}\n" +
                                     $"Razón Social: {billRow["Razon Social"]}\n" +
                                     $"Cliente: {billRow["Cliente"]}\n" +
@@ -423,33 +446,27 @@ namespace PTC2024.Controller.BillsController
 
                     using (MemoryStream msQrCode = new MemoryStream())
                     {
-                        // Generar el código QR usando QRCoder
                         QRCodeGenerator qrGenerator = new QRCodeGenerator();
                         QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrData, QRCodeGenerator.ECCLevel.Q);
                         QRCode qrCode = new QRCode(qrCodeData);
 
-                        using (Bitmap qrCodeImage = qrCode.GetGraphic(20)) // Ajusta la escala del código QR aquí
+                        using (Bitmap qrCodeImage = qrCode.GetGraphic(20))
                         {
-                            // Guardar el código QR como imagen en memoria
                             qrCodeImage.Save(msQrCode, ImageFormat.Png);
                         }
 
-                        // Convertir el stream en una imagen que iTextSharp pueda usar
                         iTextSharp.text.Image qrImage = iTextSharp.text.Image.GetInstance(msQrCode.ToArray());
-                        qrImage.ScaleToFit(100f, 100f); // Ajusta el tamaño del QR 
+                        qrImage.ScaleToFit(100f, 100f);
                         qrImage.Alignment = Element.ALIGN_RIGHT;
 
-                        // Añadir el código QR al PDF
                         doc.Add(qrImage);
                     }
 
-                    // Cerrar el documento PDF
                     doc.Close();
 
-                    // Abrir el PDF en el navegador predeterminado o visor de PDF
                     Process.Start(new ProcessStartInfo(tempFilePath)
                     {
-                        UseShellExecute = true // Esto asegurará que se abra con el programa predeterminado del sistema
+                        UseShellExecute = true
                     });
                 }
                 else
@@ -463,14 +480,28 @@ namespace PTC2024.Controller.BillsController
             }
         }
 
+        // Método auxiliar para crear celdas con estilo
+        private PdfPCell CreateCell(string text, iTextSharp.text.Font font, BaseColor backgroundColor)
+        {
+            PdfPCell cell = new PdfPCell(new Phrase(text, font)) // Aquí asegúrate de usar iTextSharp.text.Font
+            {
+                BackgroundColor = backgroundColor,
+                Padding = 5,
+                BorderColor = BaseColor.BLACK,
+                HorizontalAlignment = Element.ALIGN_LEFT
+            };
+            return cell;
+        }
 
 
-        /// <summary>
-        /// Método para abrir formulario "Agregar factura"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void AddBills(object sender, EventArgs e)
+
+
+    /// <summary>
+    /// Método para abrir formulario "Agregar factura"
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    public void AddBills(object sender, EventArgs e)
         {
             FrmAddBills newBill = new FrmAddBills(2);
             newBill.ShowDialog();
