@@ -24,6 +24,14 @@ using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.Drawing.Imaging;
+using System.Diagnostics; // Para abrir el PDF después de generarlo
+using System.IO;
+using PTC2024.Model.DAO.BillsDAO;
+using QRCoder;
+
 
 namespace PTC2024.Controller.EmployeesController
 {
@@ -311,6 +319,21 @@ namespace PTC2024.Controller.EmployeesController
 
             if (returnValue == 1)
             {
+                int idPayroll = DAOInsertPayroll.GetLastInsertedPayrollId(); 
+
+                // Generar el PDF con el ID de la factura
+                string pdfFilePath = GeneratePayrollPDF(idPayroll);
+
+                // Enviar el PDF por correo si la ruta del archivo es válida
+                if (!string.IsNullOrEmpty(pdfFilePath))
+                {
+                    bool emailSent = SendEmail(pdfFilePath);
+
+                    if (!emailSent)
+                    {
+                        objStartForm.snackBar.Show(objStartForm, $"La planilla fue generada pero no se pudo enviar por correo.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    }
+                }
                 StartMenu objStart = new StartMenu(SessionVar.Username);
                 objStartForm = objStart;
                 objStartForm.snackBar.Show(objStartForm, $"Los datos fueron insertados exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
@@ -322,6 +345,142 @@ namespace PTC2024.Controller.EmployeesController
                 objStartForm.snackBar.Show(objStartForm, $"No hay empleados a los cuales generar planillas", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
             }
         }
+
+        // Método para generar el PDF de una factura
+        public string GeneratePayrollPDF(int idPayroll)
+        {
+            try
+            {
+                DAOViewPayrolls dAOViewPayrolls = new DAOViewPayrolls();
+                DataSet dsPayroll = dAOViewPayrolls.GetPayrollDetails(idPayroll);
+
+                if (dsPayroll != null && dsPayroll.Tables["viewPayrolls"].Rows.Count > 0)
+                {
+                    DataRow payrollrow = dsPayroll.Tables["viewPayrolls"].Rows[0];
+
+                    // Obtener un directorio temporal para almacenar el PDF
+                    string tempFilePath = Path.Combine(Path.GetTempPath(), $"Payroll_{idPayroll}.pdf");
+
+                    Document doc = new Document();
+                    PdfWriter.GetInstance(doc, new FileStream(tempFilePath, FileMode.Create));
+                    doc.Open();
+
+                    // Fuentes para los textos
+                    var titleFont = iTextSharp.text.FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD, BaseColor.RED);
+                    var regularFont = iTextSharp.text.FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+                    var boldFont = iTextSharp.text.FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+
+                    // Título del documento
+                    doc.Add(new Paragraph("Planilla", titleFont));
+                    doc.Add(new Paragraph(" "));
+
+                    // Datos principales
+                    doc.Add(new Paragraph($"Número de planilla: {payrollrow["N°"]}", boldFont));
+                    doc.Add(new Paragraph($"DUI del Empleado: {payrollrow["DUI"]}", regularFont));
+                    doc.Add(new Paragraph($"Empledo: {payrollrow["Empleado"]}", regularFont));
+                    doc.Add(new Paragraph($"Salario: {payrollrow["Salario"]}", regularFont));
+                    doc.Add(new Paragraph($"Bono: {payrollrow["Bono"]}", regularFont));
+                    doc.Add(new Paragraph($"Salario Bruto: {payrollrow["Salario bruto"]}", regularFont));
+                    doc.Add(new Paragraph($"Cargo: {payrollrow["Cargo"]}", regularFont));
+                    doc.Add(new Paragraph($"Cuenta Bancaria: {payrollrow["Cuenta bancaria"]}", regularFont));
+                    doc.Add(new Paragraph(" "));
+
+                    // Detalles de descuentos y pago
+                    doc.Add(new Paragraph("Detalles de pago:", boldFont));
+                    doc.Add(new Paragraph($"N° de afiliación: {payrollrow["N° de afiliación"]}", regularFont));
+                    doc.Add(new Paragraph($"AFP: {payrollrow["AFP"]}%", regularFont));
+                    doc.Add(new Paragraph($"ISSS: ${payrollrow["ISSS"]}", regularFont));
+                    doc.Add(new Paragraph($"Renta: ${payrollrow["Renta"]}", regularFont));
+                    doc.Add(new Paragraph($"Salario Neto: {payrollrow["Salario Neto"]}", regularFont));
+                    doc.Add(new Paragraph(" "));
+
+                    // Fechas y dias trabajados
+                    doc.Add(new Paragraph($"Fecha de Emisión: {payrollrow["Fecha de emisión"]}", regularFont));
+                    doc.Add(new Paragraph($"Estado: {payrollrow["Estado"]}", regularFont));
+                    doc.Add(new Paragraph($"Aguinaldo: {payrollrow["Aguinaldo"]}", regularFont));
+                    doc.Add(new Paragraph($"Dias trabajados: {payrollrow["Dias trabajados"]}", regularFont));
+                    doc.Add(new Paragraph($"Salario por día: {payrollrow["Salario por día"]}", regularFont));
+                    doc.Add(new Paragraph($"Horas trabajadas: {payrollrow["Horas trabajadas"]}", regularFont));
+                    doc.Add(new Paragraph($"Salario por hora: {payrollrow["Salario por hora"]}", regularFont));
+                    doc.Add(new Paragraph(" "));
+
+                    // Horas extra y estado
+                    doc.Add(new Paragraph($"Horas extra: {payrollrow["Horas extra"]}", regularFont));
+
+
+                    // Generar el código QR basado en los datos de la factura
+                    string qrData = $"Planilla N°: {payrollrow["N°"]}\n" +
+                                    $"Empleado: {payrollrow["Empleado"]}\n" +
+                                    $"Salario: {payrollrow["Salario"]}\n" +
+                                    $"Bono: ${payrollrow["Bono"]}\n" +
+                                    $"Fecha de Emisión: {payrollrow["Fecha de emisión"]}";
+
+                    using (MemoryStream msQrCode = new MemoryStream())
+                    {
+                        // Generar el código QR usando QRCoder
+                        QRCodeGenerator qrGenerator = new QRCodeGenerator();
+                        QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrData, QRCodeGenerator.ECCLevel.Q);
+                        QRCode qrCode = new QRCode(qrCodeData);
+
+                        using (Bitmap qrCodeImage = qrCode.GetGraphic(20)) // Ajusta la escala del código QR aquí
+                        {
+                            // Guardar el código QR como imagen en memoria
+                            qrCodeImage.Save(msQrCode, ImageFormat.Png);
+                        }
+
+                        // Convertir el stream en una imagen que iTextSharp pueda usar
+                        iTextSharp.text.Image qrImage = iTextSharp.text.Image.GetInstance(msQrCode.ToArray());
+                        qrImage.ScaleToFit(100f, 100f); // Ajusta el tamaño del QR según sea necesario
+                        qrImage.Alignment = Element.ALIGN_RIGHT;
+
+                        // Añadir el código QR al PDF
+                        doc.Add(qrImage);
+                    }
+
+                    // Cerrar el documento PDF
+                    doc.Close();
+                    // Enviar el PDF por correo
+                    bool emailSent = SendEmail(tempFilePath);
+
+                    if (!emailSent)
+                    {
+                        MessageBox.Show("La planilla fue generada pero no se pudo enviar por correo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Planilla generada y enviada por correo exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    //// Abrir el PDF en el navegador predeterminado o visor de PDF
+                    //Process.Start(new ProcessStartInfo(tempFilePath)
+                    //{
+                    //    UseShellExecute = true // Esto asegurará que se abra con el programa predeterminado del sistema
+                    //});
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron datos para la planilla seleccionada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar el PDF: " + ex.Message);
+            }
+            return null;
+        }
+
+        public bool SendEmail(string pdfFilePath)
+        {
+            
+            string de = "h2c.soporte.usuarios@gmail.com";
+            string subject = "H2C: Gracias por visitarnos.";
+            string message = $"Hola usuario se adjunta los datos de tu planilla de pago {BusinessVar.BusinessName}.\nEn caso de tener algun problema, favor enviarla en este mismo correo.";
+
+            Email email = new Email();
+            bool answer = email.SendEmailWithAttachment(de, subject, message, pdfFilePath);
+
+            return answer;
+        }
+
 
         public async void UpdateXmonth(object sender, EventArgs e)
         {
@@ -1111,10 +1270,122 @@ namespace PTC2024.Controller.EmployeesController
         }
         public void Payroll(object sender, EventArgs e)
         {
-            int idPayroll = Convert.ToInt32(objViewPayrolls.dgvPayrolls.CurrentRow.Cells["N°"].Value);
-            FrmReportPayroll print = new FrmReportPayroll(idPayroll);
-            print.ShowDialog();
+            // Método que se encarga de manejar el evento Click del botón cmsPrintBill
+            if (objViewPayrolls.dgvPayrolls.CurrentRow != null)
+            {
+                // Capturar el IdBill de la factura seleccionada en el DataGridView
+                int idPayroll = Convert.ToInt32(objViewPayrolls.dgvPayrolls.CurrentRow.Cells["N°"].Value);
+
+                // Generar el PDF de la factura con el IdBill seleccionado
+                GeneratePPDF(idPayroll);
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una factura para imprimir.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+        // Método para generar el PDF de una factura
+        public void GeneratePPDF(int idPayroll)
+        {
+            try
+            {
+                DAOViewPayrolls dAOViewPayrolls = new DAOViewPayrolls();
+                DataSet dsPayroll = dAOViewPayrolls.GetPayrollDetails(idPayroll);
+
+                if (dsPayroll != null && dsPayroll.Tables["viewPayrolls"].Rows.Count > 0)
+                {
+                    DataRow payrollrow = dsPayroll.Tables["viewPayrolls"].Rows[0];
+
+                    // Directorio temporal para almacenar el PDF
+                    string tempFilePath = Path.Combine(Path.GetTempPath(), $"Payroll_{idPayroll}.pdf");
+
+                    Document doc = new Document(PageSize.A4, 36, 36, 36, 36);
+                    PdfWriter.GetInstance(doc, new FileStream(tempFilePath, FileMode.Create));
+                    doc.Open();
+
+                    // Establecer fuentes y colores
+                    var titleFont = iTextSharp.text.FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD, BaseColor.RED);
+                    var regularFont = iTextSharp.text.FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+                    var boldFont = iTextSharp.text.FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+
+                    // Agregar logo de la empresa 
+                    iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("C:\\Users\\jenni\\Documents\\GitHub\\C--PTC\\Proyecto-Tecnico-Cientifico-2024-Fernando-Login\\Resources\\H2C_HR negro.png");
+                    logo.ScaleToFit(100f, 100f);
+                    logo.Alignment = Element.ALIGN_LEFT;
+                    doc.Add(logo);
+
+                    // Título del documento
+                    doc.Add(new Paragraph("Planilla de Pago", titleFont));
+                    doc.Add(new Paragraph(" ")); // Espacio
+
+                    // Crear tabla para la información del empleado
+                    PdfPTable employeeTable = new PdfPTable(2);
+                    employeeTable.WidthPercentage = 100;
+                    employeeTable.AddCell(new PdfPCell(new Phrase("Número de Planilla", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    employeeTable.AddCell(new PdfPCell(new Phrase(payrollrow["N°"].ToString(), regularFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    employeeTable.AddCell(new PdfPCell(new Phrase("Empleado", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    employeeTable.AddCell(new PdfPCell(new Phrase(payrollrow["Empleado"].ToString(), regularFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    employeeTable.AddCell(new PdfPCell(new Phrase("Salario Bruto", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    employeeTable.AddCell(new PdfPCell(new Phrase($"${payrollrow["Salario bruto"]}", regularFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    employeeTable.AddCell(new PdfPCell(new Phrase("Cargo", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    employeeTable.AddCell(new PdfPCell(new Phrase(payrollrow["Cargo"].ToString(), regularFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    doc.Add(employeeTable);
+                    doc.Add(new Paragraph(" ")); // Espacio
+
+                    // Agregar sección de descuentos
+                    PdfPTable discountTable = new PdfPTable(2);
+                    discountTable.WidthPercentage = 100;
+                    discountTable.AddCell(new PdfPCell(new Phrase("Detalles de Pago", titleFont)) { Colspan = 2, Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    discountTable.AddCell(new PdfPCell(new Phrase("AFP", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    discountTable.AddCell(new PdfPCell(new Phrase($"{payrollrow["AFP"]}%")) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    discountTable.AddCell(new PdfPCell(new Phrase("ISSS", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    discountTable.AddCell(new PdfPCell(new Phrase($"${payrollrow["ISSS"]}")) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    discountTable.AddCell(new PdfPCell(new Phrase("Renta", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    discountTable.AddCell(new PdfPCell(new Phrase($"${payrollrow["Renta"]}")) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    discountTable.AddCell(new PdfPCell(new Phrase("Salario Neto", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    discountTable.AddCell(new PdfPCell(new Phrase($"${payrollrow["Salario Neto"]}")) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    doc.Add(discountTable);
+                    doc.Add(new Paragraph(" ")); // Espacio
+
+                    // Agregar sección de fechas
+                    doc.Add(new Paragraph($"Fecha de Emisión: {payrollrow["Fecha de emisión"]}", regularFont));
+                    doc.Add(new Paragraph($"Estado: {payrollrow["Estado"]}", regularFont));
+                    doc.Add(new Paragraph($"Aguinaldo: {payrollrow["Aguinaldo"]}", regularFont));
+                    doc.Add(new Paragraph($"Dias trabajados: {payrollrow["Dias trabajados"]}", regularFont));
+
+                    // Agregar el código QR
+                    string qrData = $"Planilla N°: {payrollrow["N°"]}\nEmpleado: {payrollrow["Empleado"]}\nSalario Neto: {payrollrow["Salario Neto"]}";
+                    using (MemoryStream msQrCode = new MemoryStream())
+                    {
+                        QRCodeGenerator qrGenerator = new QRCodeGenerator();
+                        QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrData, QRCodeGenerator.ECCLevel.Q);
+                        QRCode qrCode = new QRCode(qrCodeData);
+
+                        using (Bitmap qrCodeImage = qrCode.GetGraphic(20))
+                        {
+                            qrCodeImage.Save(msQrCode, ImageFormat.Png);
+                        }
+
+                        iTextSharp.text.Image qrImage = iTextSharp.text.Image.GetInstance(msQrCode.ToArray());
+                        qrImage.ScaleToFit(100f, 100f);
+                        qrImage.Alignment = Element.ALIGN_RIGHT;
+                        doc.Add(qrImage);
+                    }
+
+                    doc.Close();
+                    Process.Start(new ProcessStartInfo(tempFilePath) { UseShellExecute = true });
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron datos para la planilla seleccionada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar el PDF: " + ex.Message);
+            }
+        }
+
 
         //----------------------Metodos de interaccion con otros formularios---------------------------//
         public void OpenUpdatePayroll(object sender, EventArgs e)

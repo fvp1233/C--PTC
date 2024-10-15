@@ -436,7 +436,7 @@ namespace PTC2024.Controller.BillsController
 
                         // Convertir el stream en una imagen que iTextSharp pueda usar
                         iTextSharp.text.Image qrImage = iTextSharp.text.Image.GetInstance(msQrCode.ToArray());
-                        qrImage.ScaleToFit(100f, 100f); // Ajusta el tamaño del QR según sea necesario
+                        qrImage.ScaleToFit(100f, 100f); // Ajusta el tamaño del QR 
                         qrImage.Alignment = Element.ALIGN_RIGHT;
 
                         // Añadir el código QR al PDF
