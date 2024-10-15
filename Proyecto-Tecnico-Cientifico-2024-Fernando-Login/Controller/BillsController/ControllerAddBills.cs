@@ -50,24 +50,34 @@ namespace PTC2024.Controller.BillsController
 
             chooseAccions();
             objAddBills.Load += new EventHandler(LoadDataServices);
-
+            //Evento que se utiliza para ingresar la nueva factura
             objAddBills.btnAddBill.Click += new EventHandler(NewBill);
+            //Evento que se utiliza para agregar un nuevo servicio a la datagrid del formulario
             objAddBills.btnmore.Click += new EventHandler(More);
+            //Evento que se utiliza en caso de agregar un nuevo cliente
             objAddBills.btnPlusC.Click += new EventHandler(AddOtherCustomer);
+            //Evento para retroceder
             objAddBills.btnBack.Click += new EventHandler(BackProcess);
+            //Evento para eliminar algun servicio de la datagrid
             objAddBills.btnDeletemore.Click += new EventHandler(DataProcessS);
+            //Evento para calcular el total
             objAddBills.txtSubTotal.TextChanged += new EventHandler(CalculateTotal);
+            //Evento para calcular el descuento
             objAddBills.txtDiscount.TextChanged += new EventHandler(TxtDiscount_TextChanged);
+            //Evento para autocompletado en cliente
             objAddBills.txtCustomerName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             objAddBills.txtCustomerName.AutoCompleteSource = AutoCompleteSource.CustomSource;
             objAddBills.txtCustomerName.TextChanged += txtCustomerName_TextChanged;
+            //Evento para autocompletado en empleado
             objAddBills.txtEmployee.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             objAddBills.txtEmployee.AutoCompleteSource = AutoCompleteSource.CustomSource;
             objAddBills.txtEmployee.TextChanged += txtEmployeeName_TextChanged;
+            //Calcula el total segun el descuento y las filas seleccionadas
             objAddBills.txtTotalPay.TextChanged += new EventHandler(CalculateTotal);
             objAddBills.dgvData.CellValueChanged += new DataGridViewCellEventHandler(CalculateTotal);
             objAddBills.dgvData.RowsAdded += new DataGridViewRowsAddedEventHandler(CalculateTotal);
             objAddBills.dgvData.RowsRemoved += new DataGridViewRowsRemovedEventHandler(CalculateTotal);
+            //deshabilita el menucontextual de todos los textbox y validaciones de los campos
             objAddBills.txtcompanyN.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddBills.txtcompanyN.TextChanged += new EventHandler(OnlyLettersAndNumbers);
             objAddBills.txtNITCompany.MouseDown += new MouseEventHandler(DisableContextMenu);
@@ -91,12 +101,12 @@ namespace PTC2024.Controller.BillsController
 
         }
 
-        
+        //Método para devolver la excepcion en caso de algun problema
         private void TxtDiscount_TextChanged1(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
-
+        //Carga los valores
         public ControllerAddBills(FrmAddBills view, int accions, string companyName, string NIT, string NRC, string Customer,   string CustomerDui, string CustomerPhone, string CustomerEmail, string employee)
         {
             objAddBills = view;
@@ -126,9 +136,7 @@ namespace PTC2024.Controller.BillsController
             //objAddBills.btnRectify.Click += new EventHandler(RectifyBills);
         }
 
-
-
-
+//Metodo para el diseño de modo oscuro
         public void LoadDataServices(object sender, EventArgs e)
         {
             objAddBills.dtfiscalPeriod.Value = DateTime.Now;
@@ -198,6 +206,7 @@ namespace PTC2024.Controller.BillsController
                 objAddBills.dgvData.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSlateGray;
             }
         }
+        //Carga todos los respectivos combobox
         public void InitialCharge()
         {
             DAOAddBills objBills = new DAOAddBills();
@@ -241,7 +250,7 @@ namespace PTC2024.Controller.BillsController
                 objAddBills.btnmore.Enabled = true;
             }
         }
-
+        //Elimina algun servicio de la datagrid
         public void More(object sender, EventArgs e)
         {
             try
@@ -405,7 +414,11 @@ namespace PTC2024.Controller.BillsController
         }
 
         private string previousCustomerName = string.Empty; // Para evitar consultas repetidas
-
+        /// <summary>
+        /// Método que se utiliza para ingresar el nombre del cliente usando async y await
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public async void txtCustomerName_TextChanged(object sender, EventArgs e)
         {
             try
@@ -456,6 +469,9 @@ namespace PTC2024.Controller.BillsController
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        /// <summary>
+        /// Método que se utiliza para filtrar el nombre del empleado
+        /// </summary>
 
         private string previousEmployeeName = string.Empty; // Para almacenar el nombre de empleado anterior
 
@@ -500,7 +516,13 @@ namespace PTC2024.Controller.BillsController
             }
         }
 
-
+        /// <summary>
+        /// Método para validar las fechas
+        /// </summary>
+        /// <param name="startDate"></param>
+        /// <param name="finalDate"></param>
+        /// <param name="dateIssued"></param>
+        /// <returns></returns>
         public bool ValidateDates(DateTime startDate, DateTime finalDate, DateTime dateIssued)
         {
             //Fecha de inicio y fecha final
@@ -518,10 +540,15 @@ namespace PTC2024.Controller.BillsController
 
             return true;
         }
-
+        /// <summary>
+        /// Método para agregar una nueva factura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void NewBill(object sender, EventArgs e)
         {
             if (!(
+                //Validación para no dejar ningun campo vacio
                 string.IsNullOrEmpty(objAddBills.txtNITCompany.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddBills.txtNRCompany.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddBills.txtDiscount.Text.Trim()) ||
@@ -557,7 +584,7 @@ namespace PTC2024.Controller.BillsController
                 daoNew.CustomerPhone1 = objAddBills.txtCustomerPhone.Text.Trim();
                 daoNew.CustomerEmail1 = objAddBills.txtCustomerEmail.Text.Trim();
                 daoNew.Employee = objAddBills.txtEmployee.Text.Trim();
-
+                //Obtener IdEmployee basado en el nombre del empleado
                 int EmployeeId = daoNew.GetEmployeeIdByName(daoNew.Employee);
                 if (EmployeeId == 1)
                 {
@@ -760,7 +787,11 @@ namespace PTC2024.Controller.BillsController
             }
             return null;
         }
-
+        /// <summary>
+        /// Método para enviar el correo al cliente
+        /// </summary>
+        /// <param name="pdfFilePath"></param>
+        /// <returns></returns>
         public bool SendEmail(string pdfFilePath)
         {
             string para = objAddBills.txtCustomerEmail.Text.Trim();

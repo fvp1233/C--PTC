@@ -17,8 +17,8 @@ using PTC2024.Model.DTO.BillsDTO;
 using PTC2024.View.Reporting.Bills;
 using PTC2024.View.formularios.inicio;
 using PTC2024.Model.DAO.HelperDAO;
-using QRCoder;
-using iTextSharp.text;
+using QRCoder;//Libreria para generar el qr
+using iTextSharp.text;//Libreria de itextsharp
 using iTextSharp.text.pdf;
 using System.Drawing.Imaging;
 using System.Diagnostics; // Para abrir el PDF después de generarlo
@@ -33,18 +33,27 @@ namespace PTC2024.Controller.BillsController
         Form currentForm;
         StartMenu objStartMenu;
         int disabledBillId;
-
+        //Constructor del formulario
         public ControllerBills(FrmBills View)
         {
             objFormBills = View;
+            //Evento que se utiliza para cargar los datos de facturas
             objFormBills.Load += new EventHandler(LoadDataBills);
+            //Evento que se utiliza para Abrir formulario FrmAddBills
             objFormBills.btnNewBills.Click += new EventHandler(AddBills);
+            //Evento que se utiliza para mostrar y generar el respectivo pdf
             objFormBills.cmsPrintBill.Click += new EventHandler(printBills);
+            //Evento que se utiliza para actualizar el estado a "Anulado" en una factura
             objFormBills.cmsOverrideBill.Click += new EventHandler(OverrideBills);
+            //Evento que abre nuevamente el formulario para FrmAddBills factura
             objFormBills.cmsRectifyBill.Click += new EventHandler(Rectify);
+            //Evento que se utiliza para buscar por medio del textbox
             objFormBills.txtSearchB.KeyDown += new KeyEventHandler(SearchBills);
+            //Evento que se utiliza al momento que el usuario de click en la datagid
             objFormBills.dgvBills.CellMouseDown += new DataGridViewCellMouseEventHandler(objFormBills_CellMouseDown);
+            //Evento que se utiliza en caso que el manejo de filas cambie
             objFormBills.dgvBills.SelectionChanged += new EventHandler(dgvBills_SelectionChanged);
+            //Metodos de filtraciones por medio de checkbox
             objFormBills.cbEfectivo.Click += new EventHandler(CheckboxFiltersMethodCash);
             objFormBills.cbCheque.Click += new EventHandler(CheckboxFiltersMethodPayCheck);
             objFormBills.cbCriptomoneda.Click += new EventHandler(CheckboxFiltersMethodCryptocurrency);
@@ -53,6 +62,7 @@ namespace PTC2024.Controller.BillsController
             objFormBills.cbPagada.Click += new EventHandler(CheckboxFiltersStatusPay);
             objFormBills.cbAnulada.Click += new EventHandler(CheckboxFiltersStatusOverride);
             objFormBills.cbPendiente.Click += new EventHandler(CheckboxFiltersStatusDue);
+            //Se utiliza en caso que la fila de la datagrid se dehabilite
             disabledBillId = -1;
         }
         /// <summary>
@@ -93,14 +103,17 @@ namespace PTC2024.Controller.BillsController
                 objFormBills.dgvBills.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSlateGray;
             }
         }
+        //Carga los datos de la datagrid
         public void ChargeData()
         {
             DAOBills dAOBills = new DAOBills();
+            //Data set que consulta si hay datos registrados
             DataSet ds = dAOBills.Bills();
             //Llenando el datagridview
             objFormBills.dgvBills.DataSource = ds.Tables["viewBill"];
             objFormBills.dgvBills.Columns[0].DividerWidth = 1;
             objFormBills.dgvBills.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            //Filas de la datagrid que no se visualizan
             objFormBills.dgvBills.Columns[2].Visible = false;
             objFormBills.dgvBills.Columns[3].Visible = false;
             objFormBills.dgvBills.Columns[9].Visible = false;
@@ -111,7 +124,7 @@ namespace PTC2024.Controller.BillsController
             objFormBills.dgvBills.Columns[19].Visible = false;
 
         }
-        //filtracion por busqueda
+        //filtracion por busqueda de textbox
         public void SearchBills(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -356,30 +369,33 @@ namespace PTC2024.Controller.BillsController
                 MessageBox.Show("Por favor, selecciona una factura para imprimir.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        //Método que genera propiamente el pdf
         public void GenerateBillPDF(int idBill)
         {
+            //Se utiliza try catch en caso de que el pdf no se pueda generar
             try
             {
                 DAOBills dAOBills = new DAOBills();
+                //Data set que se utilizara para consultar todos los datos de ViewBill en el método GetBillDetails
                 DataSet dsBill = dAOBills.GetBillDetails(idBill);
-
+                //Lee las filas de viewbill
                 if (dsBill != null && dsBill.Tables["viewBill"].Rows.Count > 0)
                 {
                     DataRow billRow = dsBill.Tables["viewBill"].Rows[0];
-
+                    //Formato que se le dara al nombre del archivo
                     string tempFilePath = Path.Combine(Path.GetTempPath(), $"Bill_{idBill}.pdf");
 
                     Document doc = new Document(PageSize.A4, 50, 50, 25, 25); // Márgenes ajustados
                     PdfWriter.GetInstance(doc, new FileStream(tempFilePath, FileMode.Create));
                     doc.Open();
 
-                    // Fuentes mejoradas
+                    // Fuentes utilizadas para el archivo
                     var titleFont = FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD, BaseColor.RED);
                     var regularFont = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
                     var boldFont = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
                     var headerFont = FontFactory.GetFont("Arial", 14, iTextSharp.text.Font.BOLD, BaseColor.RED);
 
-                    // Añadir el logo
+                    // Añadir el logo segun la ruta especificada
                     string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "H2C_HR negro.png");
                     if (System.IO.File.Exists(imagePath))
                     {
@@ -393,18 +409,19 @@ namespace PTC2024.Controller.BillsController
                         doc.Add(new Paragraph("No se encontró la imagen.", boldFont));
                     }
 
-                    // Datos principales
+                    // Datos principales de la factura quiere decir datos del emisor y receptor (empresa y cliente)
                     doc.Add(new Paragraph($"Número de Factura: {billRow["N°"]}", boldFont));
                     doc.Add(new Paragraph($"Razón Social: {billRow["Razon Social"]}", regularFont));
                     doc.Add(new Paragraph($"NIT: {billRow["NIT"]}", regularFont));
                     doc.Add(new Paragraph($"NRC: {billRow["NRC"]}", regularFont));
+                    //Datos del cliente
                     doc.Add(new Paragraph($"Cliente: {billRow["Cliente"]}", regularFont));
                     doc.Add(new Paragraph($"DUI del Cliente: {billRow["DUI"]}", regularFont));
                     doc.Add(new Paragraph($"Teléfono del Cliente: {billRow["Télefono"]}", regularFont));
                     doc.Add(new Paragraph($"Email del Cliente: {billRow["Email"]}", regularFont));
                     doc.Add(new Paragraph(" "));
 
-                    // Segunda tabla para detalles del servicio
+                    // Tabla para detalles del servicio
                     PdfPTable serviceTable = new PdfPTable(2);
                     serviceTable.WidthPercentage = 100;
                     serviceTable.SetWidths(new float[] { 1f, 2f });
@@ -454,7 +471,7 @@ namespace PTC2024.Controller.BillsController
                         {
                             qrCodeImage.Save(msQrCode, ImageFormat.Png);
                         }
-
+                        //Guarda la imagen en la memoria temporal
                         iTextSharp.text.Image qrImage = iTextSharp.text.Image.GetInstance(msQrCode.ToArray());
                         qrImage.ScaleToFit(100f, 100f);
                         qrImage.Alignment = Element.ALIGN_RIGHT;
@@ -463,7 +480,7 @@ namespace PTC2024.Controller.BillsController
                     }
 
                     doc.Close();
-
+                    //Sirve para abrir el documento al respectivo visor pdf que se utilice en la computadora
                     Process.Start(new ProcessStartInfo(tempFilePath)
                     {
                         UseShellExecute = true
@@ -480,7 +497,7 @@ namespace PTC2024.Controller.BillsController
             }
         }
 
-        // Método auxiliar para crear celdas con estilo
+        // Método auxiliar para crear celdas con estilo (Detalles del servicio)
         private PdfPCell CreateCell(string text, iTextSharp.text.Font font, BaseColor backgroundColor)
         {
             PdfPCell cell = new PdfPCell(new Phrase(text, font)) // Aquí asegúrate de usar iTextSharp.text.Font
@@ -492,9 +509,6 @@ namespace PTC2024.Controller.BillsController
             };
             return cell;
         }
-
-
-
 
     /// <summary>
     /// Método para abrir formulario "Agregar factura"
@@ -529,34 +543,41 @@ namespace PTC2024.Controller.BillsController
         /// <param name="e"></param>
         public void OverrideBills(object sender, EventArgs e)
         {
+            //Verifica que haya una fila seleccionada de la datagrid
             int row = objFormBills.dgvBills.CurrentRow.Index;
             if (row < 0)
             {
                 MessageBox.Show("Por favor, seleccione una factura para anular.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+            //Lee el id de la factura
             int idBill = int.Parse(objFormBills.dgvBills[0, row].Value.ToString());
+            //Abre el formulario para poder anularla
             FrmOverrideBill openForm = new FrmOverrideBill();
+            //LLama al controlador del respectivo formulario
             ControllerOverride controller = new ControllerOverride(openForm);
 
             openForm.ShowDialog();
-
+            //Proceso que se utiliza para cuando en el controlador confrimvalue de 1
             if (controller.ConfirmValue == 1)
             {
                 DAOBills daoBills = new DAOBills();
+                //Llama a la consulta de over para asi actualizar el estado de la factura
                 DataSet ds = daoBills.over(idBill.ToString());
-                // Deshabilitar visualmente la fila y marcarla como solo lectura
+                //Llama al snackbar que esta en startmenu
                 StartMenu startMenu = new StartMenu(SessionVar.Username);
                 startMenu.snackBar.Show(startMenu, $"Factura anulada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
                 disabledBillId = idBill;
+                // Deshabilitar visualmente la fila y marcarla como solo lectura
                 DisableRow(idBill);
                 SetRowReadOnly(idBill);
+                //Llama al snackbar que esta en el startmenu
                 DAOInitialView daoInitial = new DAOInitialView();
                 daoInitial.ActionType = "Se anuló una factura";
                 daoInitial.TableName = "Facturas";
                 daoInitial.ActionBy = SessionVar.Username;
                 daoInitial.ActionDate = DateTime.Now;
+                //Ingresa su respectiva auditoria
                 int auditAnswer = daoInitial.InsertAudit();
                 if (auditAnswer != 1)
                 {
@@ -565,6 +586,7 @@ namespace PTC2024.Controller.BillsController
             }
             else
             {
+                //Muestra mensaje de error en caso que la contraseña sea incorrecta o la operación cancelada
                 StartMenu startMenu = new StartMenu(SessionVar.Username);
                 startMenu.snackBar.Show(startMenu, $"Contraseña de administrador incorrecta", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
                 startMenu.snackBar.Show(startMenu, $"Operación cancelada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
