@@ -113,7 +113,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             try
             {
                 comand.Connection = getConnection();
-                string queryPayroll = "SELECT * FROM viewPayrolls WHERE [N°] = @param1";
+                string queryPayroll = "SELECT [Email] FROM viewPayrolls WHERE [N°] = @param1 AND [Estado] != 'Pagada' AND [Estado] != 'Indemnización'";
                 SqlCommand cmdPayroll = new SqlCommand(queryPayroll, comand.Connection);
                 cmdPayroll.Parameters.AddWithValue("param1", IdPayroll);
                 cmdPayroll.ExecuteNonQuery();
@@ -864,7 +864,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
     [Horas extra],
 [Email]
 FROM viewPayrolls
-WHERE [N°] = 1;
+WHERE [N°] = 1 AND [Estado] != 'Pagada' AND [Estado] != 'Indemnización';
 ";
 
                 SqlCommand cmd = new SqlCommand(query, comand.Connection);
