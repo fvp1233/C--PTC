@@ -427,22 +427,21 @@ namespace PTC2024.Model.DAO.BillsDAO
 
         public int GetCustomerIdByName(string customerName)
         {
-            int customerId = -1;
+            int customerId = -1; // Usamos -1 como valor para indicar que no se encontró el cliente
 
             try
             {
                 Command.Connection = getConnection();
-                string query = "SELECT IdCustomer FROM tbCustomer WHERE names + ' ' + lastNames = @CustomerName";
+                string query = "SELECT IdCustomer FROM tbCustomer WHERE RTRIM(LTRIM(names)) + ' ' + RTRIM(LTRIM(lastNames)) = @CustomerName";
                 using (SqlCommand cmd = new SqlCommand(query, Command.Connection))
                 {
-                    cmd.Parameters.AddWithValue("@CustomerName", customerName);
+                    cmd.Parameters.AddWithValue("@CustomerName", customerName.Trim()); // Asegurarse de que no haya espacios adicionales
 
-               
-                        object result = cmd.ExecuteScalar();
-                        if (result != null)
-                        {
-                            customerId = Convert.ToInt32(result);
-                        }                  
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        customerId = Convert.ToInt32(result);
+                    }
                 }
             }
             catch (Exception ex)

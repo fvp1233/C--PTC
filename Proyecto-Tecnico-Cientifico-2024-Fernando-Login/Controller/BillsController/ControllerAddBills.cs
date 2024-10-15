@@ -585,7 +585,7 @@ namespace PTC2024.Controller.BillsController
                 int checks = daoNew.RegisterBills();
 
                 // Verificamos el valor que nos retorna dicho método
-                if (checks == 1)
+                if (checks == -1)
                 {
                     StartMenu startMenu = new StartMenu(SessionVar.Username);
                     startMenu.snackBar.Show(startMenu, $"Los datos se registraron de manera exitosa", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
