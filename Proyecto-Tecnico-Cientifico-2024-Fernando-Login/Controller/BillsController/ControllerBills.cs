@@ -529,7 +529,7 @@ namespace PTC2024.Controller.BillsController
         /// <param name="e"></param>
         public void Rectify(object sender, EventArgs e)
         {
-            FrmAddBills rectifyBill = new FrmAddBills(1);
+            FrmAddBills rectifyBill = new FrmAddBills(2);
             rectifyBill.ShowDialog();
             ChargeData();
 
