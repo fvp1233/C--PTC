@@ -91,35 +91,11 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             {
                 comand.Connection = getConnection();
                 string queryPayroll = "SELECT * FROM tbPayroll";
-                SqlCommand cmdPayroll = new SqlCommand(queryPayroll, comand.Connection);
+                SqlCommand cmdPayroll = new SqlCommand(@queryPayroll, comand.Connection);
                 cmdPayroll.ExecuteNonQuery();
                 SqlDataAdapter adp = new SqlDataAdapter(cmdPayroll);
                 DataSet ds = new DataSet();
                 adp.Fill(ds, "tbPayroll");
-                return ds;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("EC-048: No se pudieron obtener los datos de las planillas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-            finally
-            {
-                getConnection().Close();
-            }
-        }
-        public DataSet GetPayrollV()
-        {
-            try
-            {
-                comand.Connection = getConnection();
-                string queryPayroll = "SELECT * FROM viewPayrolls WHERE [N°] = @param1";
-                SqlCommand cmdPayroll = new SqlCommand(queryPayroll, comand.Connection);
-                cmdPayroll.Parameters.AddWithValue("param1", IdPayroll);
-                cmdPayroll.ExecuteNonQuery();
-                SqlDataAdapter adp = new SqlDataAdapter(cmdPayroll);
-                DataSet ds = new DataSet();
-                adp.Fill(ds, "viewPayrolls");
                 return ds;
             }
             catch (Exception)
@@ -841,31 +817,33 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 comand.Connection = getConnection();
                 string query = @"
             SELECT
-    [N°],
-    DUI,
-    Empleado,
-    Salario,
-    Bono,
-    [Salario bruto],
-    Cargo,
-    [Cuenta bancaria],
-    [N° de afiliación],
-    AFP,
-    ISSS,
-    Renta,
-    [Salario Neto],
-    [Fecha de emisión],
-    Estado,
-    Aguinaldo,
-    [Dias trabajados],
-    [Salario por día],
-    [Horas trabajadas],
-    [Salario por hora],
-    [Horas extra],
-[Email]
-FROM viewPayrolls
-WHERE [N°] = 1;
-";
+                a.IdPayroll AS 'N°',
+                b.DUI AS 'DUI',
+                CONCAT(b.names, ' ', b.lastName) AS 'Empleado',
+                b.salary AS 'Salario',
+	            bp.positionBonus AS 'Bono',
+	            a.grossSalary AS 'Salario bruto',
+                bp.businessPosition AS 'Cargo',
+                b.bankAccount AS 'Cuenta bancaria',
+                b.affiliationNumber AS 'N° de afiliación',
+                a.AFP,
+                a.ISSS,
+                a.rent AS 'Renta',
+                a.netPay AS 'Salario Neto',
+                a.issueDate AS 'Fecha de emisión',
+                ps.payrollStatus AS 'Estado',
+	            a.christmasBonus AS 'Aguinaldo',
+	            a.daysWorked AS 'Dias trabajados',
+	            a.daySalary AS 'Salario por día',
+	            a.hoursWorked AS 'Horas trabajadas',
+	            a.hourSalary AS 'Salario por hora',
+	            a.extraHours AS 'Horas extra'
+                FROM tbPayroll a
+                INNER JOIN tbEmployee b ON a.IdEmployee = b.IdEmployee
+                INNER JOIN tbUserData ud ON b.username = ud.username
+                INNER JOIN tbBusinessP bp ON ud.idBusinessP = bp.idBusinessP
+                INNER JOIN tbPayrollStatus ps ON a.IdPayrollStatus = ps.IdPayrollStatus
+                WHERE a.IdPayroll = @IdPayroll";
 
                 SqlCommand cmd = new SqlCommand(query, comand.Connection);
                 cmd.Parameters.AddWithValue("@IdPayroll", payrollId);
@@ -887,7 +865,7 @@ WHERE [N°] = 1;
         public int GetLastInsertedPayrollId()
         {
             int lastId = 0;
-            string query = "SELECT TOP 1 IdPayroll FROM tbPayroll ORDER BY IdPayroll DESC";
+            string query = "SELECT TOP 1 IdPayroll FROM tbPayroll ORDER BY IdPayroll DESC"; 
 
             comand.Connection = getConnection();
             SqlCommand cmd = new SqlCommand(query, comand.Connection);

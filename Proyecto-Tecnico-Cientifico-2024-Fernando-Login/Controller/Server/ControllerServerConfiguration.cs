@@ -93,6 +93,8 @@ namespace PTC2024.Controller.Server
             {
                 objServer.txtPasswordAuth.Enabled = false;
                 objServer.txtSqlAuth.Enabled = false;
+                objServer.txtSqlAuth.Clear();
+                objServer.txtPasswordAuth.Clear();
             }
         }
 

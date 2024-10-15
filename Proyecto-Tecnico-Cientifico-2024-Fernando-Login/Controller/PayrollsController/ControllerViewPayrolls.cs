@@ -319,21 +319,21 @@ namespace PTC2024.Controller.EmployeesController
 
             if (returnValue == 1)
             {
-                //int idPayroll = DAOInsertPayroll.GetLastInsertedPayrollId(); 
+                int idPayroll = DAOInsertPayroll.GetLastInsertedPayrollId(); 
 
-                //// Generar el PDF con el ID de la factura
-                //string pdfFilePath = GeneratePayrollPDF(idPayroll);
+                // Generar el PDF con el ID de la factura
+                string pdfFilePath = GeneratePayrollPDF(idPayroll);
 
-                //// Enviar el PDF por correo si la ruta del archivo es válida
-                //if (!string.IsNullOrEmpty(pdfFilePath))
-                //{
-                //    bool emailSent = SendEmail(pdfFilePath);
+                // Enviar el PDF por correo si la ruta del archivo es válida
+                if (!string.IsNullOrEmpty(pdfFilePath))
+                {
+                    bool emailSent = SendEmail(pdfFilePath);
 
-                //    if (!emailSent)
-                //    {
-                //        objStartForm.snackBar.Show(objStartForm, $"La planilla fue generada pero no se pudo enviar por correo.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
-                //    }
-                //}
+                    if (!emailSent)
+                    {
+                        objStartForm.snackBar.Show(objStartForm, $"La planilla fue generada pero no se pudo enviar por correo.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    }
+                }
                 StartMenu objStart = new StartMenu(SessionVar.Username);
                 objStartForm = objStart;
                 objStartForm.snackBar.Show(objStartForm, $"Los datos fueron insertados exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
@@ -351,21 +351,16 @@ namespace PTC2024.Controller.EmployeesController
         {
             try
             {
-                string tempFilePath = "";
-                string emailE = "";
                 DAOViewPayrolls dAOViewPayrolls = new DAOViewPayrolls();
                 DataSet dsPayroll = dAOViewPayrolls.GetPayrollDetails(idPayroll);
 
                 if (dsPayroll != null && dsPayroll.Tables["viewPayrolls"].Rows.Count > 0)
                 {
-                    DataTable objTable = dsPayroll.Tables["viewPayrolls"];
                     DataRow payrollrow = dsPayroll.Tables["viewPayrolls"].Rows[0];
-                    foreach (DataRow item in objTable.Rows)
-                    {
-                        // Obtener un directorio temporal para almacenar el PDF
-                        tempFilePath = Path.Combine(Path.GetTempPath(), $"Payroll_{idPayroll}.pdf");
-                        emailE = item["Email"].ToString();
-                    }
+
+                    // Obtener un directorio temporal para almacenar el PDF
+                    string tempFilePath = Path.Combine(Path.GetTempPath(), $"Payroll_{idPayroll}.pdf");
+
                     Document doc = new Document();
                     PdfWriter.GetInstance(doc, new FileStream(tempFilePath, FileMode.Create));
                     doc.Open();
@@ -445,7 +440,7 @@ namespace PTC2024.Controller.EmployeesController
                     // Cerrar el documento PDF
                     doc.Close();
                     // Enviar el PDF por correo
-                    bool emailSent = SendEmail(emailE, tempFilePath);
+                    bool emailSent = SendEmail(tempFilePath);
 
                     if (!emailSent)
                     {
@@ -473,15 +468,15 @@ namespace PTC2024.Controller.EmployeesController
             return null;
         }
 
-        public bool SendEmail(string emaile, string pdfFilePath)
+        public bool SendEmail(string pdfFilePath)
         {
-            string para = emaile;
+            
             string de = "h2c.soporte.usuarios@gmail.com";
             string subject = "H2C: Gracias por visitarnos.";
             string message = $"Hola usuario se adjunta los datos de tu planilla de pago {BusinessVar.BusinessName}.\nEn caso de tener algun problema, favor enviarla en este mismo correo.";
 
             Email email = new Email();
-            bool answer = email.SendEmailWithAttachment(para, de, subject, message, pdfFilePath);
+            bool answer = email.SendEmailWithAttachment(de, subject, message, pdfFilePath);
 
             return answer;
         }
@@ -519,6 +514,7 @@ namespace PTC2024.Controller.EmployeesController
 
             DataSet employeeDs = DAOUpdatePayroll.GetEmployee();
             DataSet payrollDs = DAOUpdatePayroll.GetPayroll();
+
             DateTime actualMonth = DateTime.Now;
             int year = actualMonth.Year;
             int month = actualMonth.Month;
@@ -539,30 +535,10 @@ namespace PTC2024.Controller.EmployeesController
                     {
                         await Task.Run(() =>
                         {
-
                             DAOUpdatePayroll.IdPayroll = int.Parse(dr["IdPayroll"].ToString());
                             DAOUpdatePayroll.IdPayrollStatus = 1;
-                            int idP = int.Parse(dr["IdPayroll"].ToString());
-                            totalRowsAffected += DAOUpdatePayroll.UpdatePayrollStatusPaid();
-                            string email = "";
-                            DAOViewPayrolls objDAO = new DAOViewPayrolls();
-                            DataSet datasetEmail = objDAO.GetPayrollV();
-                            DataTable emailDt = datasetEmail.Tables["viewPayrolls"];
-                            foreach (DataRow datarow in emailDt.Rows)
-                            {
-                                email = datarow["Email"].ToString();
-                            }
-                            string pdfFilePath = GeneratePayrollPDF(idP);
-                            // Enviar el PDF por correo si la ruta del archivo es válida
-                            if (!string.IsNullOrEmpty(pdfFilePath))
-                            {
-                                bool emailSent = SendEmail(email, pdfFilePath);
 
-                                if (!emailSent)
-                                {
-                                    objStartForm.snackBar.Show(objStartForm, $"La planilla fue generada pero no se pudo enviar por correo.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
-                                }
-                            }
+                            totalRowsAffected += DAOUpdatePayroll.UpdatePayrollStatusPaid();
                             //Posible mencion del metodo para enviar planillla alcorreo
                             if (totalRowsAffected > 0)
                             {
@@ -1272,7 +1248,6 @@ namespace PTC2024.Controller.EmployeesController
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
             objViewPayrolls.dgvPayrolls.Columns[7].Visible = false;
             objViewPayrolls.dgvPayrolls.Columns[8].Visible = false;
-            objViewPayrolls.dgvPayrolls.Columns[21].Visible = false;
 
         }
         public void Disable(object sender, EventArgs e)
@@ -1332,25 +1307,12 @@ namespace PTC2024.Controller.EmployeesController
                     var titleFont = iTextSharp.text.FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD, BaseColor.RED);
                     var regularFont = iTextSharp.text.FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
                     var boldFont = iTextSharp.text.FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
-                    string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "H2C_HR negro.png");
 
-                    if (System.IO.File.Exists(imagePath))
-                    {
-                        iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(imagePath);
-                        img.ScaleToFit(100f, 100f);
-                        img.Alignment = Element.ALIGN_LEFT;
-                        doc.Add(img);
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se encontró la imagen.");
-                        doc.Add(new Paragraph("No se encontró la imagen.", boldFont));
-                    }
-                    //// Agregar logo de la empresa 
-                    //iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("C:\\Users\\jenni\\Documents\\GitHub\\C--PTC\\Proyecto-Tecnico-Cientifico-2024-Fernando-Login\\Resources\\H2C_HR negro.png");
-                    //logo.ScaleToFit(100f, 100f);
-                    //logo.Alignment = Element.ALIGN_LEFT;
-                    //doc.Add(logo);
+                    // Agregar logo de la empresa 
+                    iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("C:\\Users\\jenni\\Documents\\GitHub\\C--PTC\\Proyecto-Tecnico-Cientifico-2024-Fernando-Login\\Resources\\H2C_HR negro.png");
+                    logo.ScaleToFit(100f, 100f);
+                    logo.Alignment = Element.ALIGN_LEFT;
+                    doc.Add(logo);
 
                     // Título del documento
                     doc.Add(new Paragraph("Planilla de Pago", titleFont));
@@ -1375,7 +1337,7 @@ namespace PTC2024.Controller.EmployeesController
                     discountTable.WidthPercentage = 100;
                     discountTable.AddCell(new PdfPCell(new Phrase("Detalles de Pago", titleFont)) { Colspan = 2, Border = iTextSharp.text.Rectangle.NO_BORDER });
                     discountTable.AddCell(new PdfPCell(new Phrase("AFP", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
-                    discountTable.AddCell(new PdfPCell(new Phrase($"${payrollrow["AFP"]}")) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    discountTable.AddCell(new PdfPCell(new Phrase($"{payrollrow["AFP"]}%")) { Border = iTextSharp.text.Rectangle.NO_BORDER });
                     discountTable.AddCell(new PdfPCell(new Phrase("ISSS", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
                     discountTable.AddCell(new PdfPCell(new Phrase($"${payrollrow["ISSS"]}")) { Border = iTextSharp.text.Rectangle.NO_BORDER });
                     discountTable.AddCell(new PdfPCell(new Phrase("Renta", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
@@ -1390,8 +1352,6 @@ namespace PTC2024.Controller.EmployeesController
                     doc.Add(new Paragraph($"Estado: {payrollrow["Estado"]}", regularFont));
                     doc.Add(new Paragraph($"Aguinaldo: {payrollrow["Aguinaldo"]}", regularFont));
                     doc.Add(new Paragraph($"Dias trabajados: {payrollrow["Dias trabajados"]}", regularFont));
-                    doc.Add(new Paragraph($"Horas trabajadas: {payrollrow["Horas trabajadas"]}", regularFont));
-
 
                     // Agregar el código QR
                     string qrData = $"Planilla N°: {payrollrow["N°"]}\nEmpleado: {payrollrow["Empleado"]}\nSalario Neto: {payrollrow["Salario Neto"]}";

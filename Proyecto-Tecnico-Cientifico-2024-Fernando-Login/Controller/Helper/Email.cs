@@ -8,7 +8,6 @@ using System.Net.Mail;
 using System.Windows.Forms;
 using PTC2024.View.ProfileSettings;
 using PTC2024.View.formularios.inicio;
-using System.Web.UI.WebControls.WebParts;
 
 namespace PTC2024.Controller.Helper
 {
@@ -200,7 +199,7 @@ namespace PTC2024.Controller.Helper
                 return false;
             }
         }
-        public bool SendEmailWithAttachment(string para, string de, string subject, string message, string attachmentPath)
+        public bool SendEmailWithAttachment(string de, string subject, string message, string attachmentPath)
         {
             StartMenu objS = new StartMenu(SessionVar.Username);
             try
@@ -210,12 +209,12 @@ namespace PTC2024.Controller.Helper
                 Client.EnableSsl = true;
                 Client.Port = 587;
                 Client.Credentials = creds;
-                MailAddress to = new MailAddress(para);
+
                 MailAddress from = new MailAddress(de);
                 msg.Subject = subject;
                 msg.Body = message;
                 msg.From = from;
-                msg.To.Add(to);
+                
 
                 Attachment attachment = new Attachment(attachmentPath);
                 msg.Attachments.Add(attachment);
