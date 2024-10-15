@@ -335,7 +335,7 @@ namespace PTC2024.Model.DAO.BillsDAO
         public int GetLastInsertedBillId()
         {
             int lastId = 0;
-            string query = "SELECT TOP 1 IdBill FROM tbBills ORDER BY IdBill DESC"; // Ajusta el nombre de la tabla y columna según tu base de datos
+            string query = "SELECT TOP 1 IdBill FROM tbBills ORDER BY IdBill DESC"; 
 
                 Command.Connection = getConnection();
                 SqlCommand cmd = new SqlCommand(query, Command.Connection);

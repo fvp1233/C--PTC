@@ -589,7 +589,7 @@ namespace PTC2024.Controller.BillsController
                 {
                     StartMenu startMenu = new StartMenu(SessionVar.Username);
                     startMenu.snackBar.Show(startMenu, $"Los datos se registraron de manera exitosa", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
-                    int idBill = daoNew.GetLastInsertedBillId(); // Debes tener este método implementado en DAOAddBills para obtener el último ID
+                    int idBill = daoNew.GetLastInsertedBillId(); 
 
                     // Generar el PDF con el ID de la factura
                     string pdfFilePath = GenerateBillPDF(idBill);
@@ -696,7 +696,7 @@ namespace PTC2024.Controller.BillsController
                         QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrData, QRCodeGenerator.ECCLevel.Q);
                         QRCode qrCode = new QRCode(qrCodeData);
 
-                        using (Bitmap qrCodeImage = qrCode.GetGraphic(20)) // Ajusta la escala del código QR aquí
+                        using (Bitmap qrCodeImage = qrCode.GetGraphic(20)) // Ajusta la escala del código QR 
                         {
                             // Guardar el código QR como imagen en memoria
                             qrCodeImage.Save(msQrCode, ImageFormat.Png);
@@ -704,7 +704,7 @@ namespace PTC2024.Controller.BillsController
 
                         // Convertir el stream en una imagen que iTextSharp pueda usar
                         iTextSharp.text.Image qrImage = iTextSharp.text.Image.GetInstance(msQrCode.ToArray());
-                        qrImage.ScaleToFit(100f, 100f); // Ajusta el tamaño del QR según sea necesario
+                        qrImage.ScaleToFit(100f, 100f); // Ajusta el tamaño del QR 
                         qrImage.Alignment = Element.ALIGN_RIGHT;
 
                         // Añadir el código QR al PDF
