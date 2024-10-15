@@ -108,6 +108,29 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 getConnection().Close();
             }
         }
+        public DataSet GetPayrollP()
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string queryPayroll = "SELECT * FROM tbPayroll WHERE IdPayrollStatus != 1 AND IdPayrollStatus != 3";
+                SqlCommand cmdPayroll = new SqlCommand(queryPayroll, comand.Connection);
+                cmdPayroll.ExecuteNonQuery();
+                SqlDataAdapter adp = new SqlDataAdapter(cmdPayroll);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "tbPayroll");
+                return ds;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("EC-048: No se pudieron obtener los datos de las planillas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
         public DataSet GetPayrollV()
         {
             try
@@ -115,7 +138,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
                 comand.Connection = getConnection();
                 string queryPayroll = "SELECT [Email] FROM viewPayrolls WHERE [N°] = @param1 AND [Estado] != 'Pagada' AND [Estado] != 'Indemnización'";
                 SqlCommand cmdPayroll = new SqlCommand(queryPayroll, comand.Connection);
-                cmdPayroll.Parameters.AddWithValue("param1", IdPayroll);
+                cmdPayroll.Parameters.AddWithValue("@param1", IdPayroll);
                 cmdPayroll.ExecuteNonQuery();
                 SqlDataAdapter adp = new SqlDataAdapter(cmdPayroll);
                 DataSet ds = new DataSet();
@@ -864,7 +887,57 @@ namespace PTC2024.Model.DAO.PayrollsDAO
     [Horas extra],
 [Email]
 FROM viewPayrolls
-WHERE [N°] = 1 AND [Estado] != 'Pagada' AND [Estado] != 'Indemnización';
+WHERE [N°] = @IdPayroll AND [Estado] != 'Pagada' AND [Estado] != 'Indemnización';
+";
+
+                SqlCommand cmd = new SqlCommand(query, comand.Connection);
+                cmd.Parameters.AddWithValue("@IdPayroll", payrollId);
+                SqlDataAdapter adap = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adap.Fill(ds, "viewPayrolls");
+                return ds;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("EC-108: EC-048: No se pudieron obtener los datos de las planillas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            finally
+            {
+                getConnection().Close();
+            }
+        }
+        public DataSet GetPayrollDetailsPPDF(int payrollId)
+        {
+            try
+            {
+                comand.Connection = getConnection();
+                string query = @"
+            SELECT
+    [N°],
+    DUI,
+    Empleado,
+    Salario,
+    Bono,
+    [Salario bruto],
+    Cargo,
+    [Cuenta bancaria],
+    [N° de afiliación],
+    AFP,
+    ISSS,
+    Renta,
+    [Salario Neto],
+    [Fecha de emisión],
+    Estado,
+    Aguinaldo,
+    [Dias trabajados],
+    [Salario por día],
+    [Horas trabajadas],
+    [Salario por hora],
+    [Horas extra],
+[Email]
+FROM viewPayrolls
+WHERE [N°] = @IdPayroll;
 ";
 
                 SqlCommand cmd = new SqlCommand(query, comand.Connection);
