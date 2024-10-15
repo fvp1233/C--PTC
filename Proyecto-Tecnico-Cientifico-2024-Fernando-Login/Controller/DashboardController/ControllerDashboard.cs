@@ -30,8 +30,26 @@ namespace PTC2024.Controller.DashboardController
         }
         public void ChargeValues(object sender, EventArgs e)
         {
-            objDashboard.dtpEnd.Value = new DateTime(DateTime.Now.Year, 12, 31);
             DAODashboard dAODashboard = new DAODashboard();
+
+            DataSet startDateDs = dAODashboard.GetFirstUse();
+            DataTable startDateDt = startDateDs.Tables["tbBusinessInfo"];
+            DataRow row = startDateDt.Rows[0];
+            DateTime startValue = DateTime.Parse(row["firstUse"].ToString());
+            int compareYear = DateTime.Now.Year;
+            DateTime monthValueDay = new DateTime(startValue.Year, startValue.Month, 1);
+
+            if (compareYear == monthValueDay.Year)
+            {
+                objDashboard.dtpStart.Value = monthValueDay;
+            }
+            else
+            {
+                DateTime threeMonthsAgo = DateTime.Now.AddMonths(-3);
+                objDashboard.dtpStart.Value = new DateTime(threeMonthsAgo.Year, threeMonthsAgo.Month, 1);
+            }
+            objDashboard.dtpEnd.Value = new DateTime(DateTime.Now.Year, 12, 31);
+
             ValidateDays();
             YearRadialGauge();
             CaptureDay();

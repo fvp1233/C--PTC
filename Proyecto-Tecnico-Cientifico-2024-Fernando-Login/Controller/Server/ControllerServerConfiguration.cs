@@ -18,6 +18,7 @@ namespace PTC2024.Controller.Server
     internal class ControllerServerConfiguration
     {
         FrmServerConfiguration objServer;
+        FrmConfirmPassword objConfirmPass;
 
         public ControllerServerConfiguration(FrmServerConfiguration View, int origin)
         {
@@ -43,7 +44,6 @@ namespace PTC2024.Controller.Server
         {
             Environment.Exit(0);
         }
-
         public void DarkMode(object sender, EventArgs e)
         {
             if(Properties.Settings.Default.darkMode == true)
@@ -82,8 +82,8 @@ namespace PTC2024.Controller.Server
         {
             if (objServer.rdFalse.Checked == true)
             {
-                objServer.txtPasswordAuth.Enabled = false;
-                objServer.txtSqlAuth.Enabled = false;              
+                objServer.txtPasswordAuth.Enabled = true;
+                objServer.txtSqlAuth.Enabled = true;              
             }
         }
 
@@ -91,8 +91,10 @@ namespace PTC2024.Controller.Server
         {
             if (objServer.rdTrue.Checked == true)
             {
-                objServer.txtPasswordAuth.Enabled = true;
-                objServer.txtSqlAuth.Enabled = true;                
+                objServer.txtPasswordAuth.Enabled = false;
+                objServer.txtSqlAuth.Enabled = false;
+                objServer.txtSqlAuth.Clear();
+                objServer.txtPasswordAuth.Clear();
             }
         }
 

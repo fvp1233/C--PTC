@@ -16,6 +16,26 @@ namespace PTC2024.Model.DAO.DashboardDAO
     internal class DAODashboard : DTODashboard
     {
         readonly SqlCommand Command = new SqlCommand();
+        public DataSet GetFirstUse()
+        {
+            try
+            {
+                Command.Connection = getConnection();
+                string query = "SELECT firstUse FROM tbBusinessInfo WHERE idBusiness = 1";
+                SqlCommand cmd = new SqlCommand(query, Command.Connection);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds , "tbBusinessInfo");
+                return ds;
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudieron obtener los datos de las empresas.");
+                return null;
+            }
+        }
         public int GetNumberEmployee()
         {
             try
