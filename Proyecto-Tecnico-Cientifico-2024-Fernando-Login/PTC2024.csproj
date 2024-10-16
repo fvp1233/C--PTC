@@ -880,10 +880,10 @@
     <None Include="PTC2024_TemporaryKey.pfx" />
     <Content Include="Resources\modoOscuroNegro %281%29.png" />
     <Content Include="Resources\modoOscuroNegro.png" />
-    <Content Include="Resources\PDF\MANUAL DE USUARIO - H2C.pdf">
+    <Content Include="Resources\PDF\MANUAL TÉCNICO - H2C.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\PDF\MANUAL TÉCNICO - H2C.pdf">
+    <Content Include="Resources\PDF\MANUAL DE USUARIO - H2C.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="View\Reporting\Bills\DataSet_detalle.xsc">
