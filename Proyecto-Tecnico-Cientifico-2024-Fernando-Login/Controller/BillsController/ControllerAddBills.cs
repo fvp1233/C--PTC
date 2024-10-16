@@ -50,24 +50,34 @@ namespace PTC2024.Controller.BillsController
 
             chooseAccions();
             objAddBills.Load += new EventHandler(LoadDataServices);
-
+            //Evento que se utiliza para ingresar la nueva factura
             objAddBills.btnAddBill.Click += new EventHandler(NewBill);
+            //Evento que se utiliza para agregar un nuevo servicio a la datagrid del formulario
             objAddBills.btnmore.Click += new EventHandler(More);
+            //Evento que se utiliza en caso de agregar un nuevo cliente
             objAddBills.btnPlusC.Click += new EventHandler(AddOtherCustomer);
+            //Evento para retroceder
             objAddBills.btnBack.Click += new EventHandler(BackProcess);
+            //Evento para eliminar algun servicio de la datagrid
             objAddBills.btnDeletemore.Click += new EventHandler(DataProcessS);
+            //Evento para calcular el total
             objAddBills.txtSubTotal.TextChanged += new EventHandler(CalculateTotal);
+            //Evento para calcular el descuento
             objAddBills.txtDiscount.TextChanged += new EventHandler(TxtDiscount_TextChanged);
+            //Evento para autocompletado en cliente
             objAddBills.txtCustomerName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             objAddBills.txtCustomerName.AutoCompleteSource = AutoCompleteSource.CustomSource;
             objAddBills.txtCustomerName.TextChanged += txtCustomerName_TextChanged;
+            //Evento para autocompletado en empleado
             objAddBills.txtEmployee.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             objAddBills.txtEmployee.AutoCompleteSource = AutoCompleteSource.CustomSource;
             objAddBills.txtEmployee.TextChanged += txtEmployeeName_TextChanged;
+            //Calcula el total segun el descuento y las filas seleccionadas
             objAddBills.txtTotalPay.TextChanged += new EventHandler(CalculateTotal);
             objAddBills.dgvData.CellValueChanged += new DataGridViewCellEventHandler(CalculateTotal);
             objAddBills.dgvData.RowsAdded += new DataGridViewRowsAddedEventHandler(CalculateTotal);
             objAddBills.dgvData.RowsRemoved += new DataGridViewRowsRemovedEventHandler(CalculateTotal);
+            //deshabilita el menucontextual de todos los textbox y validaciones de los campos
             objAddBills.txtcompanyN.MouseDown += new MouseEventHandler(DisableContextMenu);
             objAddBills.txtcompanyN.TextChanged += new EventHandler(OnlyLettersAndNumbers);
             objAddBills.txtNITCompany.MouseDown += new MouseEventHandler(DisableContextMenu);
@@ -91,12 +101,12 @@ namespace PTC2024.Controller.BillsController
 
         }
 
-        
+        //Método para devolver la excepcion en caso de algun problema
         private void TxtDiscount_TextChanged1(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
-
+        //Carga los valores
         public ControllerAddBills(FrmAddBills view, int accions, string companyName, string NIT, string NRC, string Customer,   string CustomerDui, string CustomerPhone, string CustomerEmail, string employee)
         {
             objAddBills = view;
@@ -126,9 +136,7 @@ namespace PTC2024.Controller.BillsController
             //objAddBills.btnRectify.Click += new EventHandler(RectifyBills);
         }
 
-
-
-
+//Metodo para el diseño de modo oscuro
         public void LoadDataServices(object sender, EventArgs e)
         {
             objAddBills.dtfiscalPeriod.Value = DateTime.Now;
@@ -198,6 +206,7 @@ namespace PTC2024.Controller.BillsController
                 objAddBills.dgvData.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSlateGray;
             }
         }
+        //Carga todos los respectivos combobox
         public void InitialCharge()
         {
             DAOAddBills objBills = new DAOAddBills();
@@ -241,7 +250,7 @@ namespace PTC2024.Controller.BillsController
                 objAddBills.btnmore.Enabled = true;
             }
         }
-
+        //Elimina algun servicio de la datagrid
         public void More(object sender, EventArgs e)
         {
             try
@@ -405,7 +414,11 @@ namespace PTC2024.Controller.BillsController
         }
 
         private string previousCustomerName = string.Empty; // Para evitar consultas repetidas
-
+        /// <summary>
+        /// Método que se utiliza para ingresar el nombre del cliente usando async y await
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public async void txtCustomerName_TextChanged(object sender, EventArgs e)
         {
             try
@@ -456,6 +469,9 @@ namespace PTC2024.Controller.BillsController
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        /// <summary>
+        /// Método que se utiliza para filtrar el nombre del empleado
+        /// </summary>
 
         private string previousEmployeeName = string.Empty; // Para almacenar el nombre de empleado anterior
 
@@ -500,7 +516,13 @@ namespace PTC2024.Controller.BillsController
             }
         }
 
-
+        /// <summary>
+        /// Método para validar las fechas
+        /// </summary>
+        /// <param name="startDate"></param>
+        /// <param name="finalDate"></param>
+        /// <param name="dateIssued"></param>
+        /// <returns></returns>
         public bool ValidateDates(DateTime startDate, DateTime finalDate, DateTime dateIssued)
         {
             //Fecha de inicio y fecha final
@@ -518,10 +540,15 @@ namespace PTC2024.Controller.BillsController
 
             return true;
         }
-
+        /// <summary>
+        /// Método para agregar una nueva factura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void NewBill(object sender, EventArgs e)
         {
             if (!(
+                //Validación para no dejar ningun campo vacio
                 string.IsNullOrEmpty(objAddBills.txtNITCompany.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddBills.txtNRCompany.Text.Trim()) ||
                 string.IsNullOrEmpty(objAddBills.txtDiscount.Text.Trim()) ||
@@ -557,7 +584,7 @@ namespace PTC2024.Controller.BillsController
                 daoNew.CustomerPhone1 = objAddBills.txtCustomerPhone.Text.Trim();
                 daoNew.CustomerEmail1 = objAddBills.txtCustomerEmail.Text.Trim();
                 daoNew.Employee = objAddBills.txtEmployee.Text.Trim();
-
+                //Obtener IdEmployee basado en el nombre del empleado
                 int EmployeeId = daoNew.GetEmployeeIdByName(daoNew.Employee);
                 if (EmployeeId == 1)
                 {
@@ -573,7 +600,7 @@ namespace PTC2024.Controller.BillsController
                 // Obtener IdCustomer basado en el nombre del cliente
                 daoNew.Customer = objAddBills.txtCustomerName.Text.Trim();
                 int customerId = daoNew.GetCustomerIdByName(daoNew.Customer);
-                if (customerId == 1)
+                if (customerId == -1)
                 {
                     StartMenu startMenu = new StartMenu(SessionVar.Username);
                     startMenu.snackBar.Show(startMenu, $"Cliente no encontrado en la base de datos", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
@@ -585,7 +612,7 @@ namespace PTC2024.Controller.BillsController
                 int checks = daoNew.RegisterBills();
 
                 // Verificamos el valor que nos retorna dicho método
-                if (checks == -1)
+                if (checks == 1)
                 {
                     StartMenu startMenu = new StartMenu(SessionVar.Username);
                     startMenu.snackBar.Show(startMenu, $"Los datos se registraron de manera exitosa", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
@@ -636,21 +663,31 @@ namespace PTC2024.Controller.BillsController
                 {
                     DataRow billRow = dsBill.Tables["viewBill"].Rows[0];
 
-                    // Obtener un directorio temporal para almacenar el PDF
                     string tempFilePath = Path.Combine(Path.GetTempPath(), $"Bill_{idBill}.pdf");
 
-                    Document doc = new Document();
+                    Document doc = new Document(PageSize.A4, 50, 50, 25, 25); // Márgenes ajustados
                     PdfWriter.GetInstance(doc, new FileStream(tempFilePath, FileMode.Create));
                     doc.Open();
 
-                    // Fuentes para los textos
-                    var titleFont = iTextSharp.text.FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD, BaseColor.RED);
-                    var regularFont = iTextSharp.text.FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
-                    var boldFont = iTextSharp.text.FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+                    // Fuentes mejoradas
+                    var titleFont = FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD, BaseColor.RED);
+                    var regularFont = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+                    var boldFont = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+                    var headerFont = FontFactory.GetFont("Arial", 14, iTextSharp.text.Font.BOLD, BaseColor.RED);
 
-                    // Título del documento
-                    doc.Add(new Paragraph("FACTURA", titleFont));
-                    doc.Add(new Paragraph(" "));
+                    // Añadir el logo
+                    string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "H2C_HR negro.png");
+                    if (System.IO.File.Exists(imagePath))
+                    {
+                        iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(imagePath);
+                        img.ScaleToFit(140f, 120f);
+                        img.Alignment = Element.ALIGN_CENTER;
+                        doc.Add(img);
+                    }
+                    else
+                    {
+                        doc.Add(new Paragraph("No se encontró la imagen.", boldFont));
+                    }
 
                     // Datos principales
                     doc.Add(new Paragraph($"Número de Factura: {billRow["N°"]}", boldFont));
@@ -663,13 +700,27 @@ namespace PTC2024.Controller.BillsController
                     doc.Add(new Paragraph($"Email del Cliente: {billRow["Email"]}", regularFont));
                     doc.Add(new Paragraph(" "));
 
-                    // Detalles del servicio
-                    doc.Add(new Paragraph("Detalles del Servicio:", boldFont));
-                    doc.Add(new Paragraph($"Servicio: {billRow["Servicios"]}", regularFont));
-                    doc.Add(new Paragraph($"Descuento: {billRow["Descuento"]}%", regularFont));
-                    doc.Add(new Paragraph($"Subtotal: ${billRow["Subtotal"]}", regularFont));
-                    doc.Add(new Paragraph($"Total a Pagar: ${billRow["Total"]}", regularFont));
-                    doc.Add(new Paragraph($"Método de Pago: {billRow["Método de Pago"]}", regularFont));
+                    // Segunda tabla para detalles del servicio
+                    PdfPTable serviceTable = new PdfPTable(2);
+                    serviceTable.WidthPercentage = 100;
+                    serviceTable.SetWidths(new float[] { 1f, 2f });
+
+                    serviceTable.AddCell(CreateCell("Servicio:", boldFont, BaseColor.LIGHT_GRAY));
+                    serviceTable.AddCell(CreateCell(billRow["Servicios"].ToString(), regularFont, BaseColor.WHITE));
+
+                    serviceTable.AddCell(CreateCell("Descuento:", boldFont, BaseColor.LIGHT_GRAY));
+                    serviceTable.AddCell(CreateCell($"{billRow["Descuento"]}%", regularFont, BaseColor.WHITE));
+
+                    serviceTable.AddCell(CreateCell("Subtotal:", boldFont, BaseColor.LIGHT_GRAY));
+                    serviceTable.AddCell(CreateCell($"${billRow["Subtotal"]}", regularFont, BaseColor.WHITE));
+
+                    serviceTable.AddCell(CreateCell("Total a Pagar:", boldFont, BaseColor.LIGHT_GRAY));
+                    serviceTable.AddCell(CreateCell($"${billRow["Total"]}", regularFont, BaseColor.WHITE));
+
+                    serviceTable.AddCell(CreateCell("Método de Pago:", boldFont, BaseColor.LIGHT_GRAY));
+                    serviceTable.AddCell(CreateCell(billRow["Método de Pago"].ToString(), regularFont, BaseColor.WHITE));
+
+                    doc.Add(serviceTable);
                     doc.Add(new Paragraph(" "));
 
                     // Fechas
@@ -682,7 +733,7 @@ namespace PTC2024.Controller.BillsController
                     doc.Add(new Paragraph($"Encargado: {billRow["Encargado"]}", regularFont));
                     doc.Add(new Paragraph($"Estado de la Factura: {billRow["Estado"]}", regularFont));
 
-                    // Generar el código QR basado en los datos de la factura
+                    // Generar código QR
                     string qrData = $"Factura N°: {billRow["N°"]}\n" +
                                     $"Razón Social: {billRow["Razon Social"]}\n" +
                                     $"Cliente: {billRow["Cliente"]}\n" +
@@ -691,27 +742,22 @@ namespace PTC2024.Controller.BillsController
 
                     using (MemoryStream msQrCode = new MemoryStream())
                     {
-                        // Generar el código QR usando QRCoder
                         QRCodeGenerator qrGenerator = new QRCodeGenerator();
                         QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrData, QRCodeGenerator.ECCLevel.Q);
                         QRCode qrCode = new QRCode(qrCodeData);
 
-                        using (Bitmap qrCodeImage = qrCode.GetGraphic(20)) // Ajusta la escala del código QR 
+                        using (Bitmap qrCodeImage = qrCode.GetGraphic(20))
                         {
-                            // Guardar el código QR como imagen en memoria
                             qrCodeImage.Save(msQrCode, ImageFormat.Png);
                         }
 
-                        // Convertir el stream en una imagen que iTextSharp pueda usar
                         iTextSharp.text.Image qrImage = iTextSharp.text.Image.GetInstance(msQrCode.ToArray());
-                        qrImage.ScaleToFit(100f, 100f); // Ajusta el tamaño del QR 
+                        qrImage.ScaleToFit(100f, 100f);
                         qrImage.Alignment = Element.ALIGN_RIGHT;
 
-                        // Añadir el código QR al PDF
                         doc.Add(qrImage);
                     }
 
-                    // Cerrar el documento PDF
                     doc.Close();
                     // Enviar el PDF por correo
                     bool emailSent = SendEmail(tempFilePath);
@@ -741,7 +787,11 @@ namespace PTC2024.Controller.BillsController
             }
             return null;
         }
-
+        /// <summary>
+        /// Método para enviar el correo al cliente
+        /// </summary>
+        /// <param name="pdfFilePath"></param>
+        /// <returns></returns>
         public bool SendEmail(string pdfFilePath)
         {
             string para = objAddBills.txtCustomerEmail.Text.Trim();
@@ -754,6 +804,19 @@ namespace PTC2024.Controller.BillsController
 
             return answer;
         }
+        // Método auxiliar para crear celdas con estilo
+        private PdfPCell CreateCell(string text, iTextSharp.text.Font font, BaseColor backgroundColor)
+        {
+            PdfPCell cell = new PdfPCell(new Phrase(text, font)) // Aquí asegúrate de usar iTextSharp.text.Font
+            {
+                BackgroundColor = backgroundColor,
+                Padding = 5,
+                BorderColor = BaseColor.BLACK,
+                HorizontalAlignment = Element.ALIGN_LEFT
+            };
+            return cell;
+        }
+
         //Método para deshabilitar el contextmenu de los textbox
         private void DisableContextMenu(object sender, MouseEventArgs e)
         {

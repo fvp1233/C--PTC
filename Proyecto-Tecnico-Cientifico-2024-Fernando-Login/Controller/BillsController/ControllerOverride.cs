@@ -31,77 +31,71 @@ namespace PTC2024.Controller.BillsController
             objoverrideBill = View;
             //Eventos para los clicks de los botones
             objoverrideBill.btnback.Click += new EventHandler(CancelProcess);
-            objoverrideBill.btnConfirm.Click += new EventHandler(ConfirmProcess);
+            //Evento que verifica que la contraseña es correcta o no
+            objoverrideBill.btnConfirm.Click += new EventHandler(VerifyEvent);
+            //Evento que muestra la contraseña
             objoverrideBill.ShowPassword.Click += new EventHandler(ShowPassword);
+            //Evento que desahabilita para mostrar contraseña
             objoverrideBill.txtPasswordBunifu.Click += new EventHandler(HidePassword);
+            //Evento que deshabilita el menu context del textbox
             objoverrideBill.txtPasswordBunifu.MouseDown += new MouseEventHandler(DisableContextMenu);
 
         }
-        /// <summary>
-        /// Métodos de los eventos del formulario para anular las facturas
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void CancelProcess(object sender, EventArgs e)
+        
+    public void VerifyEvent(object sender, EventArgs e)
+    {
+        VerifyPass();
+    }
+        //Verifica la contraseña
+    public bool VerifyPass()
+    {
+            //Muestra el objeto de la clase common
+        CommonClasses common = new CommonClasses();
+            //Verifica que la contraseña sea una previamente incriptada
+        string encryptedPass = common.ComputeSha256Hash(objoverrideBill.txtPasswordBunifu.Text);
+        if (!string.IsNullOrEmpty(objoverrideBill.txtPasswordBunifu.Text))
+        {
+                //Cuando se incripte la contraseña ejecuta el proceso
+            if (encryptedPass == SessionVar.Password)
+            {
+                    ConfirmProcessValue(); // Establecer confirmación exitosa
+                    objoverrideBill.Close(); // Ocultar formulario
+                    //Muestra el objeto de la clase de DAOInitialView
+                    DAOInitialView daoInitial = new DAOInitialView();
+                    //Muestra mensaje de confirmación luego que la contraseña este incriptada
+                    daoInitial.ActionType = "Se rectificó una factura";
+                    daoInitial.TableName = "Facturas";
+                    daoInitial.ActionBy = SessionVar.Username;
+                    daoInitial.ActionDate = DateTime.Now;
+                    //Esto sirve para ingresar la auditoria respectiva de la anulación de facturas
+                    int auditAnswer = daoInitial.InsertAudit();
+                    if (auditAnswer != 1)
+                    {
+                        objStartMenu.snackBar.Show(objStartMenu, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    }
+                }
+                else
+                {
+                    objoverrideBill.Close(); // Cerrar formulario en caso de error
+                }
+                return true;
+        }
+        else
+        {
+            MessageBox.Show("Favor llenar todos los campos", "Campos vacios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
+        }
+    }
+    /// <summary>
+    /// Métodos de los eventos del formulario para anular las facturas
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    public void CancelProcess(object sender, EventArgs e)
         {
             CancelProcessValue();
             objoverrideBill.Close();
         }
-        /// <summary>
-        /// Método que convierte una cadena de texto string en un secureString el cual logra de manera más segura almacenar las contraseñas en la memoria
-        /// </summary>
-        /// <param name="password"></param>
-        /// <returns></returns>
-        public SecureString ConvertToSecureString(string password)
-        {
-            SecureString securePassword = new SecureString();
-            //Se recorre cada carácter de la contraseña ya ingresada o guardada en la base de datos
-            foreach (char c in password.ToCharArray())
-            {
-                //Se agrega cada caracter a secureString
-                securePassword.AppendChar(c);
-            }
-            //SecureString se establece como solo lectura para que no se pueda modificar después de ser creado
-            securePassword.MakeReadOnly();
-            // Se devuelve la contraseña en formato SecureString
-            return securePassword;
-        }
-        /// <summary>
-        /// Método de confirmación de un proceso, validando la contraseña del administrador
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void ConfirmProcess(object sender, EventArgs e)
-        {
-            DAOBills dAOBills = new DAOBills();
-
-            // Convertir la contraseña ingresada a SecureString
-            SecureString securePassword = ConvertToSecureString(objoverrideBill.txtPasswordBunifu.Text);
-
-            // Validar la contraseña
-            bool validatepassword = dAOBills.VerifyAdminPassword(securePassword);
-
-            if (validatepassword)
-            {
-                ConfirmProcessValue(); // Establecer confirmación exitosa
-                objoverrideBill.Close(); // Ocultar formulario
-                DAOInitialView daoInitial = new DAOInitialView();
-                daoInitial.ActionType = "Se rectificó una factura";
-                daoInitial.TableName = "Facturas";
-                daoInitial.ActionBy = SessionVar.Username;
-                daoInitial.ActionDate = DateTime.Now;
-                int auditAnswer = daoInitial.InsertAudit();
-                if (auditAnswer != 1)
-                {
-                    objStartMenu.snackBar.Show(objStartMenu, $"La auditoria no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
-                }
-            }
-            else
-            {
-                objoverrideBill.Close(); // Cerrar formulario en caso de error
-            }
-        }
-
 
         public void ShowPassword(object sender, EventArgs e)
         {
