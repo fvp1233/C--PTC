@@ -10,6 +10,7 @@ using System.Linq;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PTC2024.Controller.Alerts
 {
@@ -23,7 +24,7 @@ namespace PTC2024.Controller.Alerts
             objForm = View;
             objForm.HidePassword.Click += new EventHandler(HidePassword);
             objForm.ShowPassword.Click += new EventHandler(ShowPassword);
-            objForm.btnConfirm.Click += new EventHandler(ConfirmProcess);
+            objForm.btnConfirm.Click += new EventHandler(VerifyEvent);
             objForm.btnCancel.Click += new EventHandler(CancelProcess);
         }
 
@@ -41,6 +42,39 @@ namespace PTC2024.Controller.Alerts
         {
             CancelProcessValue();
             objForm.Close();
+        }
+        public void VerifyEvent(object sender, EventArgs e)
+        {
+            VerifyPass();
+        }
+        public bool VerifyPass()
+        {
+            //Muestra el objeto de la clase common
+            CommonClasses common = new CommonClasses();
+            //Verifica que la contraseña sea una previamente incriptada
+            string encryptedPass = common.ComputeSha256Hash(objForm.txtPassword.Text);
+            if (!string.IsNullOrEmpty(objForm.txtPassword.Text))
+            {
+                //Cuando se incripte la contraseña ejecuta el proceso
+                if (encryptedPass == SessionVar.Password)
+                {
+                    ConfirmProcessValue(); // Establecer confirmación exitosa
+                    objForm.Close(); // Ocultar formulario
+                    //Muestra el objeto de la clase de DAOInitialView
+                    DAOInitialView daoInitial = new DAOInitialView();
+                    //Muestra mensaje de confirmación luego que la contraseña este incriptada
+                }
+                else
+                {
+                    objForm.Close(); // Cerrar formulario en caso de error
+                }
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Favor llenar todos los campos", "Campos vacios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
         }
         public SecureString ConvertToSecureString(string password)
         {

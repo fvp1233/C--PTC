@@ -31,6 +31,7 @@ using System.Diagnostics; // Para abrir el PDF después de generarlo
 using System.IO;
 using PTC2024.Model.DAO.BillsDAO;
 using QRCoder;
+using static QRCoder.PayloadGenerator;
 
 
 namespace PTC2024.Controller.EmployeesController
@@ -565,12 +566,16 @@ namespace PTC2024.Controller.EmployeesController
             objV.Enabled = false;
             // Verificar si el día es = 30
             DateTime actualDate = DateTime.Now;
-            //if (actualDate.Day != 30)
-            //{
-            //    StartMenu objStart = new StartMenu(SessionVar.Username);
-            //    objStart.snackBar.Show(objStart, "Este proceso solo se puede ejecutar el día 30 del mes", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
-            //    return; // Nos salimos del método si el día es diferente de 30
-            //}
+            DateTime lastDayOfMonth = new DateTime(actualDate.Year, actualDate.Month, DateTime.DaysInMonth(actualDate.Year, actualDate.Month));
+            if (actualDate.Date != lastDayOfMonth)
+            {
+                StartMenu objStart = new StartMenu(SessionVar.Username);
+                objStart.snackBar.Show(objStart, "Este proceso solo se puede ejecutar el último día del mes",
+                    Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null,
+                    Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                return; // Nos salimos del método si no es el último día del mes
+            }
+
 
             // Continuar con el proceso si es el día 30
             ProgressBarForm progressBarForm = new ProgressBarForm();
@@ -1041,7 +1046,19 @@ namespace PTC2024.Controller.EmployeesController
                         objStartForm = objStart;
                         objStartForm.snackBar.Show(objStartForm, $"La planilla fue pagada exitosamente",
                             Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                        int idP = int.Parse(objViewPayrolls.dgvPayrolls[0,pos].Value.ToString());
+                        string pdfFilePath = GenerateSinglePDF(idP);
+                        string email = objViewPayrolls.dgvPayrolls[21,pos].Value.ToString();
+                        // Enviar el PDF por correo si la ruta del archivo es válida
+                        if (!string.IsNullOrEmpty(pdfFilePath))
+                        {
+                            bool emailSent = SendEmail(email, pdfFilePath);
 
+                            if (!emailSent)
+                            {
+                                objStartForm.snackBar.Show(objStartForm, $"La planilla fue generada pero no se pudo enviar por correo.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                            }
+                        }
                         DAOInitialView daoInitial = new DAOInitialView();
                         daoInitial.ActionType = "Se pagó una planilla";
                         daoInitial.TableName = "Planillas";
@@ -1526,7 +1543,129 @@ namespace PTC2024.Controller.EmployeesController
                 MessageBox.Show("Error al generar el PDF: " + ex.Message);
             }
         }
+        public string GenerateSinglePDF(int idPayroll)
+        {
+            try
+            {
+                DAOViewPayrolls dAOViewPayrolls = new DAOViewPayrolls();
+                DataSet dsPayroll = dAOViewPayrolls.GetPayrollDetailsPPDF(idPayroll);
 
+                if (dsPayroll != null && dsPayroll.Tables["viewPayrolls"].Rows.Count > 0)
+                {
+                    DataRow payrollrow = dsPayroll.Tables["viewPayrolls"].Rows[0];
+                    int pos = objViewPayrolls.dgvPayrolls.CurrentRow.Index;
+                    string emailE = objViewPayrolls.dgvPayrolls[21,pos].Value.ToString();
+                    // Directorio temporal para almacenar el PDF
+                    string tempFilePath = Path.Combine(Path.GetTempPath(), $"Recibo de pago{idPayroll}.pdf");
+
+                    Document doc = new Document(PageSize.A4, 36, 36, 36, 36);
+                    PdfWriter.GetInstance(doc, new FileStream(tempFilePath, FileMode.Create));
+                    doc.Open();
+
+                    // Establecer fuentes y colores
+                    var titleFont = iTextSharp.text.FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD, BaseColor.RED);
+                    var regularFont = iTextSharp.text.FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+                    var boldFont = iTextSharp.text.FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+                    string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "H2C_HR negro.png");
+
+                    if (System.IO.File.Exists(imagePath))
+                    {
+                        iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(imagePath);
+                        img.ScaleToFit(100f, 100f);
+                        img.Alignment = Element.ALIGN_LEFT;
+                        doc.Add(img);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró la imagen.");
+                        doc.Add(new Paragraph("No se encontró la imagen.", boldFont));
+                    }
+                    //// Agregar logo de la empresa 
+                    //iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("C:\\Users\\jenni\\Documents\\GitHub\\C--PTC\\Proyecto-Tecnico-Cientifico-2024-Fernando-Login\\Resources\\H2C_HR negro.png");
+                    //logo.ScaleToFit(100f, 100f);
+                    //logo.Alignment = Element.ALIGN_LEFT;
+                    //doc.Add(logo);
+
+                    // Título del documento
+                    doc.Add(new Paragraph("Planilla de Pago", titleFont));
+                    doc.Add(new Paragraph(" ")); // Espacio
+
+                    // Crear tabla para la información del empleado
+                    PdfPTable employeeTable = new PdfPTable(2);
+                    employeeTable.WidthPercentage = 100;
+                    employeeTable.AddCell(new PdfPCell(new Phrase("Número de Planilla", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    employeeTable.AddCell(new PdfPCell(new Phrase(payrollrow["N°"].ToString(), regularFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    employeeTable.AddCell(new PdfPCell(new Phrase("Empleado", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    employeeTable.AddCell(new PdfPCell(new Phrase(payrollrow["Empleado"].ToString(), regularFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    employeeTable.AddCell(new PdfPCell(new Phrase("Salario Bruto", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    employeeTable.AddCell(new PdfPCell(new Phrase($"${payrollrow["Salario bruto"]}", regularFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    employeeTable.AddCell(new PdfPCell(new Phrase("Cargo", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    employeeTable.AddCell(new PdfPCell(new Phrase(payrollrow["Cargo"].ToString(), regularFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    doc.Add(employeeTable);
+                    doc.Add(new Paragraph(" ")); // Espacio
+
+                    // Agregar sección de descuentos
+                    PdfPTable discountTable = new PdfPTable(2);
+                    discountTable.WidthPercentage = 100;
+                    discountTable.AddCell(new PdfPCell(new Phrase("Detalles de Pago", titleFont)) { Colspan = 2, Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    discountTable.AddCell(new PdfPCell(new Phrase("AFP", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    discountTable.AddCell(new PdfPCell(new Phrase($"${payrollrow["AFP"]}")) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    discountTable.AddCell(new PdfPCell(new Phrase("ISSS", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    discountTable.AddCell(new PdfPCell(new Phrase($"${payrollrow["ISSS"]}")) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    discountTable.AddCell(new PdfPCell(new Phrase("Renta", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    discountTable.AddCell(new PdfPCell(new Phrase($"${payrollrow["Renta"]}")) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    discountTable.AddCell(new PdfPCell(new Phrase("Salario Neto", boldFont)) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    discountTable.AddCell(new PdfPCell(new Phrase($"${payrollrow["Salario Neto"]}")) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                    doc.Add(discountTable);
+                    doc.Add(new Paragraph(" ")); // Espacio
+
+                    // Agregar sección de fechas
+                    doc.Add(new Paragraph($"Fecha de Emisión: {payrollrow["Fecha de emisión"]}", regularFont));
+                    doc.Add(new Paragraph($"Estado: {payrollrow["Estado"]}", regularFont));
+                    doc.Add(new Paragraph($"Aguinaldo: {payrollrow["Aguinaldo"]}", regularFont));
+                    doc.Add(new Paragraph($"Dias trabajados: {payrollrow["Dias trabajados"]}", regularFont));
+                    doc.Add(new Paragraph($"Horas trabajadas: {payrollrow["Horas trabajadas"]}", regularFont));
+
+
+                    // Agregar el código QR
+                    string qrData = $"Planilla N°: {payrollrow["N°"]}\nEmpleado: {payrollrow["Empleado"]}\nSalario Neto: {payrollrow["Salario Neto"]}";
+                    using (MemoryStream msQrCode = new MemoryStream())
+                    {
+                        QRCodeGenerator qrGenerator = new QRCodeGenerator();
+                        QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrData, QRCodeGenerator.ECCLevel.Q);
+                        QRCode qrCode = new QRCode(qrCodeData);
+
+                        using (Bitmap qrCodeImage = qrCode.GetGraphic(20))
+                        {
+                            qrCodeImage.Save(msQrCode, ImageFormat.Png);
+                        }
+
+                        iTextSharp.text.Image qrImage = iTextSharp.text.Image.GetInstance(msQrCode.ToArray());
+                        qrImage.ScaleToFit(100f, 100f);
+                        qrImage.Alignment = Element.ALIGN_RIGHT;
+                        doc.Add(qrImage);
+                    }
+
+                    doc.Close();
+                    bool emailSent = SendEmail(emailE, tempFilePath);
+
+                    if (!emailSent)
+                    {
+                        MessageBox.Show("La planilla fue generada pero no se pudo enviar por correo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    Process.Start(new ProcessStartInfo(tempFilePath) { UseShellExecute = true });
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron datos para la planilla seleccionada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar el PDF: " + ex.Message);
+            }
+            return null;
+        }
 
         //----------------------Metodos de interaccion con otros formularios---------------------------//
         public void OpenUpdatePayroll(object sender, EventArgs e)
