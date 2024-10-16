@@ -108,7 +108,7 @@
             this.dgvBanks.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvBanks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBanks.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dgvBanks.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvBanks.BackgroundColor = System.Drawing.Color.White;
             this.dgvBanks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBanks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvBanks.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
@@ -532,7 +532,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(583, 443);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnAddBank);

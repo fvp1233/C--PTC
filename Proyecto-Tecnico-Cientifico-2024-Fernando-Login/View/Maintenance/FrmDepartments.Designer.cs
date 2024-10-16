@@ -70,7 +70,7 @@
             this.dgvDepartments.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvDepartments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDepartments.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dgvDepartments.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvDepartments.BackgroundColor = System.Drawing.Color.White;
             this.dgvDepartments.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDepartments.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDepartments.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
@@ -531,7 +531,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(583, 443);
             this.Controls.Add(this.btnAddDepartment);
             this.Controls.Add(this.bunifuSeparator1);

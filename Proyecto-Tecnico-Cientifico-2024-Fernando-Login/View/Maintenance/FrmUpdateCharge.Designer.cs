@@ -72,7 +72,7 @@
             this.txtBonus.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtBonus.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtBonus.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBonus.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtBonus.DefaultFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBonus.DefaultText = "";
             this.txtBonus.FillColor = System.Drawing.Color.White;
             this.txtBonus.HideSelection = true;
@@ -118,7 +118,7 @@
             this.txtBonus.SelectionLength = 0;
             this.txtBonus.SelectionStart = 0;
             this.txtBonus.ShortcutsEnabled = true;
-            this.txtBonus.Size = new System.Drawing.Size(247, 39);
+            this.txtBonus.Size = new System.Drawing.Size(247, 37);
             this.txtBonus.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtBonus.TabIndex = 107;
             this.txtBonus.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -260,7 +260,7 @@
             this.txtCharge.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtCharge.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtCharge.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCharge.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtCharge.DefaultFont = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCharge.DefaultText = "";
             this.txtCharge.FillColor = System.Drawing.Color.White;
             this.txtCharge.HideSelection = true;
@@ -306,7 +306,7 @@
             this.txtCharge.SelectionLength = 0;
             this.txtCharge.SelectionStart = 0;
             this.txtCharge.ShortcutsEnabled = true;
-            this.txtCharge.Size = new System.Drawing.Size(247, 39);
+            this.txtCharge.Size = new System.Drawing.Size(247, 37);
             this.txtCharge.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtCharge.TabIndex = 106;
             this.txtCharge.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -503,7 +503,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(354, 297);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnGoBack);

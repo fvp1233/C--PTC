@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMaintenance));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -128,6 +128,7 @@
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel2.ColumnCount = 6;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.503395F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.2483F));
@@ -141,7 +142,6 @@
             this.tableLayoutPanel2.Controls.Add(this.panelDepartments, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.btnBusinessConfiguration, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnServerConfiguration, 3, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 71);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
@@ -258,10 +258,10 @@
             this.lblCategories2.CursorType = System.Windows.Forms.Cursors.Hand;
             this.lblCategories2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategories2.ForeColor = System.Drawing.Color.White;
-            this.lblCategories2.Location = new System.Drawing.Point(37, 256);
+            this.lblCategories2.Location = new System.Drawing.Point(40, 257);
             this.lblCategories2.Name = "lblCategories2";
             this.lblCategories2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCategories2.Size = new System.Drawing.Size(175, 187);
+            this.lblCategories2.Size = new System.Drawing.Size(175, 204);
             this.lblCategories2.TabIndex = 4;
             this.lblCategories2.Text = resources.GetString("lblCategories2.Text");
             this.lblCategories2.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
@@ -330,10 +330,10 @@
             this.lblPositions2.CursorType = System.Windows.Forms.Cursors.Hand;
             this.lblPositions2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPositions2.ForeColor = System.Drawing.Color.White;
-            this.lblPositions2.Location = new System.Drawing.Point(43, 256);
+            this.lblPositions2.Location = new System.Drawing.Point(45, 257);
             this.lblPositions2.Name = "lblPositions2";
             this.lblPositions2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPositions2.Size = new System.Drawing.Size(168, 187);
+            this.lblPositions2.Size = new System.Drawing.Size(168, 204);
             this.lblPositions2.TabIndex = 3;
             this.lblPositions2.Text = resources.GetString("lblPositions2.Text");
             this.lblPositions2.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
@@ -405,7 +405,7 @@
             this.lblDepartments2.Location = new System.Drawing.Point(45, 256);
             this.lblDepartments2.Name = "lblDepartments2";
             this.lblDepartments2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblDepartments2.Size = new System.Drawing.Size(168, 204);
+            this.lblDepartments2.Size = new System.Drawing.Size(168, 221);
             this.lblDepartments2.TabIndex = 2;
             this.lblDepartments2.Text = resources.GetString("lblDepartments2.Text");
             this.lblDepartments2.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
@@ -458,11 +458,11 @@
             this.btnBusinessConfiguration.ColorContrastOnClick = 45;
             this.btnBusinessConfiguration.ColorContrastOnHover = 45;
             this.btnBusinessConfiguration.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnBusinessConfiguration.CustomizableEdges = borderEdges1;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.btnBusinessConfiguration.CustomizableEdges = borderEdges5;
             this.btnBusinessConfiguration.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnBusinessConfiguration.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnBusinessConfiguration.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -548,11 +548,11 @@
             this.btnServerConfiguration.ColorContrastOnClick = 45;
             this.btnServerConfiguration.ColorContrastOnHover = 45;
             this.btnServerConfiguration.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnServerConfiguration.CustomizableEdges = borderEdges2;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.btnServerConfiguration.CustomizableEdges = borderEdges6;
             this.btnServerConfiguration.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnServerConfiguration.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnServerConfiguration.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));

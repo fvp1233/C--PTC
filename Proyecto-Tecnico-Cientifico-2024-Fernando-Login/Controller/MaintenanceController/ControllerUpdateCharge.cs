@@ -18,6 +18,7 @@ namespace PTC2024.Controller.MaintenanceController
             objUpdateCharge = View;
             ChargeValues(id, name, bonus);
             Disable();
+            objUpdateCharge.Load += new EventHandler(DarkMode);
             objUpdateCharge.btnUpdate.Click += new EventHandler(UpdateCharge);
             objUpdateCharge.btnGoBack.Click += new EventHandler(CloseForm);
             objUpdateCharge.txtCharge.MouseDown += new MouseEventHandler(DisableContextMenu);
@@ -49,10 +50,14 @@ namespace PTC2024.Controller.MaintenanceController
 
         public void DarkMode(object sender, EventArgs e)
         {
-            objUpdateCharge.BackColor = Color.FromArgb(30, 30, 30);
-            objUpdateCharge.lblTitle.ForeColor = Color.White;
-            objUpdateCharge.lblName.ForeColor = Color.White;
-            objUpdateCharge.lblBonus.ForeColor = Color.White;
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objUpdateCharge.BackColor = Color.FromArgb(30, 30, 30);
+                objUpdateCharge.lblTitle.ForeColor = Color.White;
+                objUpdateCharge.lblName.ForeColor = Color.White;
+                objUpdateCharge.lblBonus.ForeColor = Color.White;
+            }
+            
         }
 
         public void ChargeValues(int id, string name, double bonus)

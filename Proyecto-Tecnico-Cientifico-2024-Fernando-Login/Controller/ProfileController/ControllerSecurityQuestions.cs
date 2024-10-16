@@ -35,22 +35,26 @@ namespace PTC2024.Controller.ProfileController
 
         public void DarkMode(object sender, EventArgs e)
         {
-            objSecurityQ.BackColor = Color.FromArgb(30, 30, 30);
-            objSecurityQ.lblTitle.ForeColor = Color.White;
-            objSecurityQ.lblSub1.ForeColor = Color.White;
-            objSecurityQ.lblSub2.ForeColor = Color.White;
-            objSecurityQ.lblQ1.ForeColor = Color.White;
-            objSecurityQ.lblQ2.ForeColor = Color.White;
-            objSecurityQ.lblQ3.ForeColor = Color.White;
-            objSecurityQ.txtFirstQ.FillColor = Color.FromArgb(60, 60, 60);
-            objSecurityQ.txtFirstQ.BorderColorIdle = Color.Gray;
-            objSecurityQ.txtFirstQ.ForeColor = Color.White;
-            objSecurityQ.txtSecondQ.FillColor = Color.FromArgb(60, 60, 60);
-            objSecurityQ.txtSecondQ.BorderColorIdle = Color.Gray;
-            objSecurityQ.txtSecondQ.ForeColor = Color.White;
-            objSecurityQ.txtThirdQ.FillColor = Color.FromArgb(60, 60, 60);
-            objSecurityQ.txtThirdQ.BorderColorIdle = Color.Gray;
-            objSecurityQ.txtThirdQ.ForeColor = Color.White;
+            if(Properties.Settings.Default.darkMode == true)
+            {
+                objSecurityQ.BackColor = Color.FromArgb(30, 30, 30);
+                objSecurityQ.lblTitle.ForeColor = Color.White;
+                objSecurityQ.lblSub1.ForeColor = Color.White;
+                objSecurityQ.lblSub2.ForeColor = Color.White;
+                objSecurityQ.lblQ1.ForeColor = Color.White;
+                objSecurityQ.lblQ2.ForeColor = Color.White;
+                objSecurityQ.lblQ3.ForeColor = Color.White;
+                objSecurityQ.txtFirstQ.FillColor = Color.FromArgb(60, 60, 60);
+                objSecurityQ.txtFirstQ.BorderColorIdle = Color.Gray;
+                objSecurityQ.txtFirstQ.ForeColor = Color.White;
+                objSecurityQ.txtSecondQ.FillColor = Color.FromArgb(60, 60, 60);
+                objSecurityQ.txtSecondQ.BorderColorIdle = Color.Gray;
+                objSecurityQ.txtSecondQ.ForeColor = Color.White;
+                objSecurityQ.txtThirdQ.FillColor = Color.FromArgb(60, 60, 60);
+                objSecurityQ.txtThirdQ.BorderColorIdle = Color.Gray;
+                objSecurityQ.txtThirdQ.ForeColor = Color.White;
+            }
+            
         }
         //Método para insertar las respuestas
         public void NewAnswers(object sender, EventArgs e)

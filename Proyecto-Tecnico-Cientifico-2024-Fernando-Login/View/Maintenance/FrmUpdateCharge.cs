@@ -1,4 +1,5 @@
-﻿using PTC2024.Controller.MaintenanceController;
+﻿using PTC2024.Controller.Helper;
+using PTC2024.Controller.MaintenanceController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace PTC2024.View.Dashboard
         {
             InitializeComponent();
             ControllerUpdateCharge objController = new ControllerUpdateCharge(this, id, name, bonus);
+            Region = Region.FromHrgn(CommonClasses.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
