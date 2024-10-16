@@ -550,7 +550,7 @@ namespace PTC2024.Controller.EmployeesController
         {
             string para = emaile;
             string de = "h2c.soporte.usuarios@gmail.com";
-            string subject = "H2C: Gracias por visitarnos.";
+            string subject = "H2C: Pago de planillas";
             string message = $"Hola usuario se adjunta los datos de tu planilla de pago {BusinessVar.BusinessName}.\nEn caso de tener algun problema, favor enviarla en este mismo correo.";
 
             Email email = new Email();
@@ -566,14 +566,33 @@ namespace PTC2024.Controller.EmployeesController
             objV.Enabled = false;
             // Verificar si el día es = 30
             DateTime actualDate = DateTime.Now;
-            DateTime lastDayOfMonth = new DateTime(actualDate.Year, actualDate.Month, DateTime.DaysInMonth(actualDate.Year, actualDate.Month));
-            if (actualDate.Date != lastDayOfMonth)
+            int daysInMonth = DateTime.DaysInMonth(actualDate.Year, actualDate.Month);
+
+            // Verificar si el mes tiene 30 o más días
+            if (daysInMonth >= 30)
             {
-                StartMenu objStart = new StartMenu(SessionVar.Username);
-                objStart.snackBar.Show(objStart, "Este proceso solo se puede ejecutar el último día del mes",
-                    Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null,
-                    Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
-                return; // Nos salimos del método si no es el último día del mes
+                // Si no es 30, mostrar mensaje y salir
+                if (actualDate.Day != 30)
+                {
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStart.snackBar.Show(objStart, "Este proceso solo se puede ejecutar el día 30 del mes.",
+                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null,
+                        Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                    return; // Nos salimos del método si no es el 30
+                }
+            }
+            else
+            {
+                // Si el mes tiene menos de 30 días, permitir solo el último día del mes
+                DateTime lastDayOfMonth = new DateTime(actualDate.Year, actualDate.Month, daysInMonth);
+                if (actualDate.Date != lastDayOfMonth)
+                {
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStart.snackBar.Show(objStart, "Este proceso solo se puede ejecutar el último día del mes.",
+                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null,
+                        Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
+                    return; // Nos salimos del método si no es el último día
+                }
             }
 
 
@@ -609,74 +628,80 @@ namespace PTC2024.Controller.EmployeesController
             {
                 DataTable payrollDt = payrollDs.Tables["tbPayroll"];
                 DataTable payrollPDt = payrollPDs.Tables["tbPayroll"];
+                DataTable employeeDt = employeeDs.Tables["tbEmployee"];
                 int totalRowsAffected = 0;
-                int totalPayrolls = payrollPDt.Rows.Count;
                 int currentPayroll = 0;
 
-                foreach (DataRow dr in payrollDt.Rows)
-                {
-                    DateTime issueDate = DateTime.Parse(dr["issueDate"].ToString());
-                    int idPayrollStatus = int.Parse(dr["IdPayrollStatus"].ToString());
-
-                    if (issueDate.Year == year && issueDate.Month == month && idPayrollStatus != 1)
-                    {
-                        await Task.Run(() =>
+                        foreach (DataRow dr in payrollDt.Rows)
                         {
-                            DAOViewPayrolls objDAO = new DAOViewPayrolls();
+                            DateTime issueDate = DateTime.Parse(dr["issueDate"].ToString());
+                            int idPayrollStatus = int.Parse(dr["IdPayrollStatus"].ToString());
 
-                            DAOUpdatePayroll.IdPayroll = int.Parse(dr["IdPayroll"].ToString());
-                            DAOUpdatePayroll.IdPayrollStatus = 1;
-                            int idP = int.Parse(dr["IdPayroll"].ToString());
-                            string pdfFilePath = GeneratePayrollPDF(idP);
-                            DataSet datasetEmail = objDAO.GetPayrollV();
-                            DataTable emailDt = datasetEmail.Tables["viewPayrolls"];
-                            foreach (DataRow datarow in emailDt.Rows)
+                            if (issueDate.Year == year && issueDate.Month == month )
                             {
-                                string email = datarow["Email"].ToString();
-                                // Enviar el PDF por correo si la ruta del archivo es válida
-                                if (!string.IsNullOrEmpty(pdfFilePath))
+                                if (idPayrollStatus != 1 && idPayrollStatus != 3)
                                 {
-                                    bool emailSent = SendEmail(email, pdfFilePath);
-
-                                    if (!emailSent)
+                                    int totalPayrolls = payrollPDt.Rows.Count;
+                                    await Task.Run(() =>
                                     {
-                                        objStartForm.snackBar.Show(objStartForm, $"La planilla fue generada pero no se pudo enviar por correo.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
-                                    }
-                                }
+                                        DAOViewPayrolls objDAO = new DAOViewPayrolls();
 
+                                        DAOUpdatePayroll.IdPayroll = int.Parse(dr["IdPayroll"].ToString());
+                                        DAOUpdatePayroll.IdPayrollStatus = 1;
+                                        int idP = int.Parse(dr["IdPayroll"].ToString());
+                                        string pdfFilePath = GeneratePayrollPDF(idP);
+                                        DataSet datasetEmail = objDAO.GetPayrollV();
+                                        DataTable emailDt = datasetEmail.Tables["viewPayrolls"];
+                                        foreach (DataRow datarow in emailDt.Rows)
+                                        {
+                                            string email = datarow["Email"].ToString();
+                                            // Enviar el PDF por correo si la ruta del archivo es válida
+                                            if (!string.IsNullOrEmpty(pdfFilePath))
+                                            {
+                                                bool emailSent = SendEmail(email, pdfFilePath);
+
+                                                if (!emailSent)
+                                                {
+                                                    objStartForm.snackBar.Show(objStartForm, $"La planilla fue generada pero no se pudo enviar por correo.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                                                }
+                                            }
+
+                                        }
+
+                                        totalRowsAffected += DAOUpdatePayroll.UpdatePayrollStatusPaid();
+
+                                        //Posible mencion del metodo para enviar planillla alcorreo
+                                        if (totalRowsAffected > 0)
+                                        {
+                                            DAOInitialView daoInitial = new DAOInitialView();
+                                            daoInitial.ActionType = "Se pagó una planilla";
+                                            daoInitial.TableName = "Planillas";
+                                            daoInitial.ActionBy = SessionVar.Username;
+                                            daoInitial.ActionDate = DateTime.Now;
+                                            int auditAnswer = daoInitial.InsertAudit();
+
+                                            if (auditAnswer != 1)
+                                            {
+                                                objStartMenu.snackBar.Show(objStartMenu, "La auditoría no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                                            }
+                                        }
+                                        currentPayroll++;
+                                        int progress = (currentPayroll * 100) / totalPayrolls;
+                                        objProgress.UpdateProgress(progress, $"Pagando planillas {currentPayroll} de {totalPayrolls}");
+
+                                    });
+                                }                      
                             }
+                        }
+     
 
-                            totalRowsAffected += DAOUpdatePayroll.UpdatePayrollStatusPaid();
-
-                            //Posible mencion del metodo para enviar planillla alcorreo
-                            if (totalRowsAffected > 0)
-                            {
-                                DAOInitialView daoInitial = new DAOInitialView();
-                                daoInitial.ActionType = "Se pagó una planilla";
-                                daoInitial.TableName = "Planillas";
-                                daoInitial.ActionBy = SessionVar.Username;
-                                daoInitial.ActionDate = DateTime.Now;
-                                int auditAnswer = daoInitial.InsertAudit();
-
-                                if (auditAnswer != 1)
-                                {
-                                    objStartMenu.snackBar.Show(objStartMenu, "La auditoría no pudo ser registrada", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
-                                }
-                            }
-                            currentPayroll++;
-                            int progress = (currentPayroll * 100) / totalPayrolls;
-                            objProgress.UpdateProgress(progress, $"Pagando planillas {currentPayroll} de {totalPayrolls}");
-
-                        });
-                    }
-                }
 
                 progressBarForm.Close();
                 objV.Enabled = true;
 
                 if (totalRowsAffected > 0)
                 {
-                    objStartMenu.snackBar.Show(objStartMenu, "Se pagaron todas las planillas del mes exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                    objStartMenu.snackBar.Show(objStartMenu, "Se pagaron todas las planillas y se enviaron a cada correo exitosamente", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
                 }
                 else
                 {
@@ -702,46 +727,53 @@ namespace PTC2024.Controller.EmployeesController
             if (employeeDs != null && payrollDs != null)
             {
                 DataTable payrollDt = payrollDs.Tables["tbPayroll"];
+                DataTable empDt = employeeDs.Tables["tbEmployee"];
                 int totalRowsAffected = 0;
                 int totalPayrolls = 1;
                 int currentPayroll = 0;
-
-                foreach (DataRow dr in payrollDt.Rows)
-                {
-                    DateTime issueDate = DateTime.Parse(dr["issueDate"].ToString());
-                    int idPayrollStatus = int.Parse(dr["IdPayrollStatus"].ToString());
-
-                    if (issueDate.Year == year && issueDate.Month == month && idPayrollStatus != 2)
-                    {
-                        await Task.Run(() =>
+              
+                        foreach (DataRow dr in payrollDt.Rows)
                         {
-                            DAOUpdatePayroll.IdPayroll = int.Parse(dr["IdPayroll"].ToString());
-                            DAOUpdatePayroll.IdPayrollStatus = 2;
+                            DateTime issueDate = DateTime.Parse(dr["issueDate"].ToString());
+                            int idPayrollStatus = int.Parse(dr["IdPayrollStatus"].ToString());
 
-                            totalRowsAffected += DAOUpdatePayroll.UpdatePayrollStatusUnPaid();
-                            if (totalRowsAffected > 0)
+                            if (issueDate.Year == year && issueDate.Month == month )
                             {
-                                DAOInitialView daoInitial = new DAOInitialView();
-                                daoInitial.ActionType = "Se revirtio el pago de una planilla";
-                                daoInitial.TableName = "Planillas";
-                                daoInitial.ActionBy = SessionVar.Username;
-                                daoInitial.ActionDate = DateTime.Now;
-                                int auditAnswer = daoInitial.InsertAudit();
-
-                                if (auditAnswer != 1)
+                                if (idPayrollStatus != 2 && idPayrollStatus != 3)
                                 {
-                                    objStart.snackBar.Show(objStart, $"La auditoría no pudo ser registrada",
-                                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
-                                }
-                            }
-                            currentPayroll++;
-                            int progress = (currentPayroll * 100) / totalPayrolls;
-                            objProgress.UpdateProgress(progress, $"Revirtiendo planillas {currentPayroll} de {totalPayrolls}");
-                            totalPayrolls++;
+                                    await Task.Run(() =>
+                                    {
+                                        DAOUpdatePayroll.IdPayroll = int.Parse(dr["IdPayroll"].ToString());
+                                        DAOUpdatePayroll.IdPayrollStatus = 2;
 
-                        });
-                    }
-                }
+                                        totalRowsAffected += DAOUpdatePayroll.UpdatePayrollStatusUnPaid();
+                                        if (totalRowsAffected > 0)
+                                        {
+                                            DAOInitialView daoInitial = new DAOInitialView();
+                                            daoInitial.ActionType = "Se revirtio el pago de una planilla";
+                                            daoInitial.TableName = "Planillas";
+                                            daoInitial.ActionBy = SessionVar.Username;
+                                            daoInitial.ActionDate = DateTime.Now;
+                                            int auditAnswer = daoInitial.InsertAudit();
+
+                                            if (auditAnswer != 1)
+                                            {
+                                                objStart.snackBar.Show(objStart, $"La auditoría no pudo ser registrada",
+                                                    Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Warning, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomRight);
+                                            }
+                                        }
+                                        currentPayroll++;
+                                        int progress = (currentPayroll * 100) / totalPayrolls;
+                                        objProgress.UpdateProgress(progress, $"Revirtiendo planillas {currentPayroll} de {totalPayrolls}");
+                                        totalPayrolls++;
+
+                                    });
+                                }         
+                            }
+                        }
+
+
+
 
                 progressBarForm.Close();
 
@@ -1046,9 +1078,9 @@ namespace PTC2024.Controller.EmployeesController
                         objStartForm = objStart;
                         objStartForm.snackBar.Show(objStartForm, $"La planilla fue pagada exitosamente",
                             Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
-                        int idP = int.Parse(objViewPayrolls.dgvPayrolls[0,pos].Value.ToString());
+                        int idP = int.Parse(objViewPayrolls.dgvPayrolls[0, pos].Value.ToString());
                         string pdfFilePath = GenerateSinglePDF(idP);
-                        string email = objViewPayrolls.dgvPayrolls[21,pos].Value.ToString();
+                        string email = objViewPayrolls.dgvPayrolls[21, pos].Value.ToString();
                         // Enviar el PDF por correo si la ruta del archivo es válida
                         if (!string.IsNullOrEmpty(pdfFilePath))
                         {
@@ -1114,6 +1146,8 @@ namespace PTC2024.Controller.EmployeesController
 
             FrmConfirmPayment objConfirmPayment = new FrmConfirmPayment();
             ControllerConfirmPayment objController = new ControllerConfirmPayment(objConfirmPayment);
+            objConfirmPayment.lblTitle.Text = "REVERTIR PAGO";
+            objConfirmPayment.lblSubTitle.Text = "Favor ingresar la contraseña de CEO para poder revertir el pago";
             objConfirmPayment.ShowDialog();
             if (objController.ConfirmValue == 1)
             {
@@ -1554,7 +1588,7 @@ namespace PTC2024.Controller.EmployeesController
                 {
                     DataRow payrollrow = dsPayroll.Tables["viewPayrolls"].Rows[0];
                     int pos = objViewPayrolls.dgvPayrolls.CurrentRow.Index;
-                    string emailE = objViewPayrolls.dgvPayrolls[21,pos].Value.ToString();
+                    string emailE = objViewPayrolls.dgvPayrolls[21, pos].Value.ToString();
                     // Directorio temporal para almacenar el PDF
                     string tempFilePath = Path.Combine(Path.GetTempPath(), $"Recibo de pago{idPayroll}.pdf");
 
