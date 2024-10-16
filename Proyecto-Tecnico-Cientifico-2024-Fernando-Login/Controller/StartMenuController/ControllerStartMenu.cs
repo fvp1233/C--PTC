@@ -130,34 +130,98 @@ namespace PTC2024.Controller.StartMenuController
         private void LoadDashboard(object sender, EventArgs e)
         {
             OpenForm<FrmDashboard>();
+            objStartMenu.btnMenuDashboard.Normalcolor = Color.DimGray;
+            objStartMenu.btnMenuEmployee.Normalcolor = Color.Black;
+            objStartMenu.btnMenuPayroll.Normalcolor = Color.Black;
+            objStartMenu.btnpermissions.Normalcolor = Color.Black;
+            objStartMenu.btnMenuServices.Normalcolor = Color.Black;
+            objStartMenu.btnMenuCustomers.Normalcolor = Color.Black;
+            objStartMenu.btnMenuBills.Normalcolor = Color.Black;
+            objStartMenu.btnMaintenance.Normalcolor = Color.Black;
         }
         private void LoadEmployeeForm(object sender, EventArgs e)
         {
             OpenForm<FrmEmployees>();
+            objStartMenu.btnMenuDashboard.Normalcolor = Color.Black;
+            objStartMenu.btnMenuEmployee.Normalcolor = Color.DimGray;
+            objStartMenu.btnMenuPayroll.Normalcolor = Color.Black;
+            objStartMenu.btnpermissions.Normalcolor = Color.Black;
+            objStartMenu.btnMenuServices.Normalcolor = Color.Black;
+            objStartMenu.btnMenuCustomers.Normalcolor = Color.Black;
+            objStartMenu.btnMenuBills.Normalcolor = Color.Black;
+            objStartMenu.btnMaintenance.Normalcolor = Color.Black;
         }
         private void LoadPayrollForm(object sender, EventArgs e)
         {
             OpenForm<FrmViewPayrolls>();
+            objStartMenu.btnMenuDashboard.Normalcolor = Color.Black;
+            objStartMenu.btnMenuEmployee.Normalcolor = Color.Black;
+            objStartMenu.btnMenuPayroll.Normalcolor = Color.DimGray;
+            objStartMenu.btnpermissions.Normalcolor = Color.Black;
+            objStartMenu.btnMenuServices.Normalcolor = Color.Black;
+            objStartMenu.btnMenuCustomers.Normalcolor = Color.Black;
+            objStartMenu.btnMenuBills.Normalcolor = Color.Black;
+            objStartMenu.btnMaintenance.Normalcolor = Color.Black;
         }
         private void LoadPermissionsForm(object sender, EventArgs e)
         {
             OpenForm<FrmPermissions>();
+            objStartMenu.btnMenuDashboard.Normalcolor = Color.Black;
+            objStartMenu.btnMenuEmployee.Normalcolor = Color.Black;
+            objStartMenu.btnMenuPayroll.Normalcolor = Color.Black;
+            objStartMenu.btnpermissions.Normalcolor = Color.DimGray;
+            objStartMenu.btnMenuServices.Normalcolor = Color.Black;
+            objStartMenu.btnMenuCustomers.Normalcolor = Color.Black;
+            objStartMenu.btnMenuBills.Normalcolor = Color.Black;
+            objStartMenu.btnMaintenance.Normalcolor = Color.Black;
         }
         private void LoadServiceForm(object sender, EventArgs e)
         {
             OpenForm<FrmServices>();
+            objStartMenu.btnMenuDashboard.Normalcolor = Color.Black;
+            objStartMenu.btnMenuEmployee.Normalcolor = Color.Black;
+            objStartMenu.btnMenuPayroll.Normalcolor = Color.Black;
+            objStartMenu.btnpermissions.Normalcolor = Color.Black;
+            objStartMenu.btnMenuServices.Normalcolor = Color.DimGray;
+            objStartMenu.btnMenuCustomers.Normalcolor = Color.Black;
+            objStartMenu.btnMenuBills.Normalcolor = Color.Black;
+            objStartMenu.btnMaintenance.Normalcolor = Color.Black;
         }
         private void LoadCustomersForm(object sender, EventArgs e)
         {
             OpenForm<FrmCustomers>();
+            objStartMenu.btnMenuDashboard.Normalcolor = Color.Black;
+            objStartMenu.btnMenuEmployee.Normalcolor = Color.Black;
+            objStartMenu.btnMenuPayroll.Normalcolor = Color.Black;
+            objStartMenu.btnpermissions.Normalcolor = Color.Black;
+            objStartMenu.btnMenuServices.Normalcolor = Color.Black;
+            objStartMenu.btnMenuCustomers.Normalcolor = Color.DimGray;
+            objStartMenu.btnMenuBills.Normalcolor = Color.Black;
+            objStartMenu.btnMaintenance.Normalcolor = Color.Black;
         }
         private void LoadBillsForm(object sender, EventArgs e)
         {
             OpenForm<FrmBills>();
+            objStartMenu.btnMenuDashboard.Normalcolor = Color.Black;
+            objStartMenu.btnMenuEmployee.Normalcolor = Color.Black;
+            objStartMenu.btnMenuPayroll.Normalcolor = Color.Black;
+            objStartMenu.btnpermissions.Normalcolor = Color.Black;
+            objStartMenu.btnMenuServices.Normalcolor = Color.Black;
+            objStartMenu.btnMenuCustomers.Normalcolor = Color.Black;
+            objStartMenu.btnMenuBills.Normalcolor = Color.DimGray;
+            objStartMenu.btnMaintenance.Normalcolor = Color.Black;
         }
         private void LoadMaintenance(object sender, EventArgs e)
         {
             OpenForm<FrmMaintenance>();
+            objStartMenu.btnMenuDashboard.Normalcolor = Color.Black;
+            objStartMenu.btnMenuEmployee.Normalcolor = Color.Black;
+            objStartMenu.btnMenuPayroll.Normalcolor = Color.Black;
+            objStartMenu.btnpermissions.Normalcolor = Color.Black;
+            objStartMenu.btnMenuServices.Normalcolor = Color.Black;
+            objStartMenu.btnMenuCustomers.Normalcolor = Color.Black;
+            objStartMenu.btnMenuBills.Normalcolor = Color.Black;
+            objStartMenu.btnMaintenance.Normalcolor = Color.DimGray;
         }
         /// <summary>
         /// Metodo para abrir formularios dentro del panel contenedor del formulario principal
@@ -253,7 +317,7 @@ namespace PTC2024.Controller.StartMenuController
                 if (answer == true)
                 {
                     //si la respuesta es true, el token local si pertenece al usuario y no ha expirado, por lo que solo damos un aviso al usuario
-                    if (MessageBox.Show("¿Desea cerrar el programa? \nSu sesión permanecerá abierta ya que usted pidió que se recordaran sus credenciales.", "Cerar programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("¿Desea cerrar el programa? \nSu sesión permanecerá abierta ya que usted pidió que se recordaran sus credenciales.", "Cerrar programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         Environment.Exit(0);
                     }
@@ -290,6 +354,7 @@ namespace PTC2024.Controller.StartMenuController
             }
             
         }
+
 
         public void DeleteLocalToken()
         {
