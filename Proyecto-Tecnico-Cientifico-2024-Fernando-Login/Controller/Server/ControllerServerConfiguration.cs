@@ -135,7 +135,7 @@ namespace PTC2024.Controller.Server
                 database.InnerText = encodedDatabase;
                 root.AppendChild(database);
 
-                if(objServer.rdTrue.Checked == true)
+                if(objServer.rdFalse.Checked == true)
                 {
                     XmlElement sqlAuth = xmlDoc.CreateElement("SqlAuth");
                     string encodedSqlAuth = common.EncodeString(objServer.txtSqlAuth.Text.Trim());
