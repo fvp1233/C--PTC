@@ -183,7 +183,7 @@ namespace PTC2024.Model.DAO.PayrollsDAO
             try
             {
                 comand.Connection = getConnection();
-                string queryPayroll = "SELECT * FROM tbPayroll WHERE IdPayrollStatus != 1";
+                string queryPayroll = "SELECT * FROM tbPayroll WHERE IdPayrollStatus != 1 AND IdPayrollStatus != 3";
                 SqlCommand cmdPayroll = new SqlCommand(@queryPayroll, comand.Connection);
                 cmdPayroll.ExecuteNonQuery();
                 SqlDataAdapter adp = new SqlDataAdapter(cmdPayroll);
