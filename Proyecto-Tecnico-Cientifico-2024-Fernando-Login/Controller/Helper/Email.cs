@@ -265,7 +265,7 @@ namespace PTC2024.Controller.Helper
                 }
 
                 // Mostrar mensaje de éxito
-                objS.snackBar.Show(objS, "Se envió un correo electrónico al email del cliente.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 2000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.BottomLeft);
+                objS.snackBar.Show(objS, "Se envió un correo electrónico al email del cliente.", Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 2000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
                 return true;
             }
             catch (Exception ex)

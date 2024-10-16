@@ -686,7 +686,7 @@ namespace PTC2024.Controller.EmployeesController
             {
                 DataTable payrollDt = payrollDs.Tables["tbPayroll"];
                 int totalRowsAffected = 0;
-                int totalPayrolls = payrollDt.Rows.Count;
+                int totalPayrolls = 1;
                 int currentPayroll = 0;
 
                 foreach (DataRow dr in payrollDt.Rows)
@@ -720,6 +720,8 @@ namespace PTC2024.Controller.EmployeesController
                             currentPayroll++;
                             int progress = (currentPayroll * 100) / totalPayrolls;
                             objProgress.UpdateProgress(progress, $"Revirtiendo planillas {currentPayroll} de {totalPayrolls}");
+                            totalPayrolls++;
+
                         });
                     }
                 }
@@ -748,6 +750,7 @@ namespace PTC2024.Controller.EmployeesController
             DataSet userDs = DAOUpdatePayroll.GetUsername();
             DataSet payrollDs = DAOUpdatePayroll.GetPayroll();
             DataSet unpaidPayrollsDs = DAOUpdatePayroll.GetUnpaidPayrolls();
+            DataSet totalProgress = DAOUpdatePayroll.GetUnpaidPayrollsProgress();
             int totalRowsAffected = 0;
 
             if (employeeDs != null && payrollDs != null && bonusDs != null && userDs != null)
@@ -757,7 +760,8 @@ namespace PTC2024.Controller.EmployeesController
                 DataTable bonusDt = bonusDs.Tables["tbBusinessP"];
                 DataTable userDt = userDs.Tables["tbUserData"];
                 DataTable unpaidDt = unpaidPayrollsDs.Tables["tbPayroll"];
-                int totalEmployees = unpaidDt.Rows.Count;
+                DataTable totalProgressDt = totalProgress.Tables["tbPayroll"];
+                int totalEmployees = totalProgressDt.Rows.Count;
                 int currentEmployee = 0;
 
                 foreach (DataRow row in employeeDt.Rows)
@@ -1567,6 +1571,21 @@ namespace PTC2024.Controller.EmployeesController
         #region Aca estan los metodos para los checkbox
         public void SearchAll(object sender, EventArgs e)
         {
+            objViewPayrolls.ch1.Checked = false;
+            objViewPayrolls.ch2.Checked = false;
+            objViewPayrolls.ch3.Checked = false;
+            objViewPayrolls.ch4.Checked = false;
+            objViewPayrolls.ch5.Checked = false;
+            objViewPayrolls.ch6.Checked = false;
+            objViewPayrolls.ch7.Checked = false;
+            objViewPayrolls.ch8.Checked = false;
+            objViewPayrolls.ch9.Checked = false;
+            objViewPayrolls.ch10.Checked = false;
+            objViewPayrolls.ch11.Checked = false;
+            objViewPayrolls.ch12.Checked = false;
+            objViewPayrolls.chPaid.Checked = false;
+            objViewPayrolls.chuUnpaid.Checked = false;
+            objViewPayrolls.chCompensation.Checked = false;
             objViewPayrolls.dgvPayrolls.Enabled = true;
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.GetEmployeesDgv();
@@ -1575,7 +1594,21 @@ namespace PTC2024.Controller.EmployeesController
         public void SearchByFirstTrimester(object sender, EventArgs e)
         {
             objViewPayrolls.dgvPayrolls.Enabled = true;
-
+            objViewPayrolls.ch1.Checked = false;
+            objViewPayrolls.ch2.Checked = false;
+            objViewPayrolls.ch3.Checked = false;
+            objViewPayrolls.ch4.Checked = false;
+            objViewPayrolls.ch5.Checked = false;
+            objViewPayrolls.ch6.Checked = false;
+            objViewPayrolls.ch7.Checked = false;
+            objViewPayrolls.ch8.Checked = false;
+            objViewPayrolls.ch9.Checked = false;
+            objViewPayrolls.ch10.Checked = false;
+            objViewPayrolls.ch11.Checked = false;
+            objViewPayrolls.ch12.Checked = false;
+            objViewPayrolls.chPaid.Checked = false;
+            objViewPayrolls.chuUnpaid.Checked = false;
+            objViewPayrolls.chCompensation.Checked = false;
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SerachPayrollFirstTrimester();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
@@ -1583,7 +1616,21 @@ namespace PTC2024.Controller.EmployeesController
         public void SearchBySecondTrimester(object sender, EventArgs e)
         {
             objViewPayrolls.dgvPayrolls.Enabled = true;
-
+            objViewPayrolls.ch1.Checked = false;
+            objViewPayrolls.ch2.Checked = false;
+            objViewPayrolls.ch3.Checked = false;
+            objViewPayrolls.ch4.Checked = false;
+            objViewPayrolls.ch5.Checked = false;
+            objViewPayrolls.ch6.Checked = false;
+            objViewPayrolls.ch7.Checked = false;
+            objViewPayrolls.ch8.Checked = false;
+            objViewPayrolls.ch9.Checked = false;
+            objViewPayrolls.ch10.Checked = false;
+            objViewPayrolls.ch11.Checked = false;
+            objViewPayrolls.ch12.Checked = false;
+            objViewPayrolls.chPaid.Checked = false;
+            objViewPayrolls.chuUnpaid.Checked = false;
+            objViewPayrolls.chCompensation.Checked = false;
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SerachPayrollSecondTrimester();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
@@ -1591,7 +1638,21 @@ namespace PTC2024.Controller.EmployeesController
         public void SearchByThirthTrimester(object sender, EventArgs e)
         {
             objViewPayrolls.dgvPayrolls.Enabled = true;
-
+            objViewPayrolls.ch1.Checked = false;
+            objViewPayrolls.ch2.Checked = false;
+            objViewPayrolls.ch3.Checked = false;
+            objViewPayrolls.ch4.Checked = false;
+            objViewPayrolls.ch5.Checked = false;
+            objViewPayrolls.ch6.Checked = false;
+            objViewPayrolls.ch7.Checked = false;
+            objViewPayrolls.ch8.Checked = false;
+            objViewPayrolls.ch9.Checked = false;
+            objViewPayrolls.ch10.Checked = false;
+            objViewPayrolls.ch11.Checked = false;
+            objViewPayrolls.ch12.Checked = false;
+            objViewPayrolls.chPaid.Checked = false;
+            objViewPayrolls.chuUnpaid.Checked = false;
+            objViewPayrolls.chCompensation.Checked = false;
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SerachPayrollThirthTrimester();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
@@ -1599,7 +1660,21 @@ namespace PTC2024.Controller.EmployeesController
         public void SearchByFourthTrimester(object sender, EventArgs e)
         {
             objViewPayrolls.dgvPayrolls.Enabled = true;
-
+            objViewPayrolls.ch1.Checked = false;
+            objViewPayrolls.ch2.Checked = false;
+            objViewPayrolls.ch3.Checked = false;
+            objViewPayrolls.ch4.Checked = false;
+            objViewPayrolls.ch5.Checked = false;
+            objViewPayrolls.ch6.Checked = false;
+            objViewPayrolls.ch7.Checked = false;
+            objViewPayrolls.ch8.Checked = false;
+            objViewPayrolls.ch9.Checked = false;
+            objViewPayrolls.ch10.Checked = false;
+            objViewPayrolls.ch11.Checked = false;
+            objViewPayrolls.ch12.Checked = false;
+            objViewPayrolls.chPaid.Checked = false;
+            objViewPayrolls.chuUnpaid.Checked = false;
+            objViewPayrolls.chCompensation.Checked = false;
             DAOViewPayrolls objSearch = new DAOViewPayrolls();
             DataSet ds = objSearch.SerachPayrollFourthTrimester();
             objViewPayrolls.dgvPayrolls.DataSource = ds.Tables["viewPayrolls"];
