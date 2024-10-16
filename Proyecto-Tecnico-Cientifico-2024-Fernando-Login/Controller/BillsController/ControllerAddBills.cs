@@ -704,9 +704,14 @@ namespace PTC2024.Controller.BillsController
                     PdfPTable serviceTable = new PdfPTable(2);
                     serviceTable.WidthPercentage = 100;
                     serviceTable.SetWidths(new float[] { 1f, 2f });
-
-                    serviceTable.AddCell(CreateCell("Servicio:", boldFont, BaseColor.LIGHT_GRAY));
-                    serviceTable.AddCell(CreateCell(billRow["Servicios"].ToString(), regularFont, BaseColor.WHITE));
+                    DAOAddBills objDao = new DAOAddBills();
+                    DataSet detDs = objDao.BillsD();
+                    DataTable detDT = detDs.Tables["viewDetail"];
+                    foreach (DataRow dr in detDT.Rows)
+                    {
+                        serviceTable.AddCell(CreateCell("Servicio:", boldFont, BaseColor.LIGHT_GRAY));
+                        serviceTable.AddCell(CreateCell(dr["Servicio"].ToString(), regularFont, BaseColor.WHITE));
+                    }
 
                     serviceTable.AddCell(CreateCell("Descuento:", boldFont, BaseColor.LIGHT_GRAY));
                     serviceTable.AddCell(CreateCell($"{billRow["Descuento"]}%", regularFont, BaseColor.WHITE));
