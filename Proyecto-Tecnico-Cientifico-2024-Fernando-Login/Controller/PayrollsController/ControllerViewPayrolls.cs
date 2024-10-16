@@ -164,21 +164,24 @@ namespace PTC2024.Controller.EmployeesController
         }
         public async void CreatePayroll(object sender, EventArgs e)
         {
+            //LLamamos al progress bar
             ProgressBarForm progressBarForm = new ProgressBarForm();
             progressBarForm.Show();
             ControllerProgressBar objProgress = new ControllerProgressBar(progressBarForm);
             DAOViewPayrolls DAOInsertPayroll = new DAOViewPayrolls();
+            //Accedemos a los datos mediante el dataset
             DataSet employeeDs = DAOInsertPayroll.GetEmployee();
             DataSet bonusDs = DAOInsertPayroll.GetBonus();
             DataSet userDs = DAOInsertPayroll.GetUsername();
             DataSet payrollDs = DAOInsertPayroll.GetPayroll();
             DataSet businessDs = DAOInsertPayroll.GetBusiness();
             int returnValue = 0;
-
+            //Verificamos que tengan algo
             if (employeeDs != null && employeeDs.Tables.Count > 0 &&
                 bonusDs != null && bonusDs.Tables.Count > 0 &&
                 userDs != null && userDs.Tables.Count > 0 && businessDs.Tables.Count > 0)
             {
+                //Accedemos a la información de los dataser mediante los datatable
                 DataTable employeeDt = employeeDs.Tables["tbEmployee"];
                 DataTable bonusDt = bonusDs.Tables["tbBusinessP"];
                 DataTable userDt = userDs.Tables["tbUserData"];
@@ -187,9 +190,11 @@ namespace PTC2024.Controller.EmployeesController
 
                 int totalEmployees = 1;
                 int currentEmployee = 0;
-
+                //Iteramos mediante las filas de la tabla de empleados para ver cuales empleados cumplen con las condiciones
+                //que se muestran mas adelante
                 foreach (DataRow row in employeeDt.Rows)
                 {
+                    //Accdemos a estos datos
                     int status = int.Parse(row["IdStatus"].ToString());
                     int idEmployee = int.Parse(row["IdEmployee"].ToString());
                     DateTime hireDate = DateTime.Parse(row["hireDate"].ToString());
@@ -217,25 +222,28 @@ namespace PTC2024.Controller.EmployeesController
 
                             // Establecemos la generación de planillas hasta el mes actual
                             int endMonth = (year == DateTime.Now.Year) ? DateTime.Now.Month : 12;
-
+                            //Y creamos las planillas de los meses 
                             for (int month = startMonth; month <= endMonth; month++)
                             {
                                 // Verificamos si la planilla ya existe
                                 DataRow[] existingPayrollRows = payrollDt.Select($"IdEmployee = {idEmployee} AND IssueDate = '{year}-{month:D2}-01'");
                                 if (existingPayrollRows.Length == 0)
                                 {
-
+                                    //Accedemos al usuario para poder acceder a su posicion en el negocio
                                     string username = row["username"].ToString();
                                     DataRow[] userRows = userDt.Select($"username = '{username}'");
                                     if (userRows.Length > 0)
                                     {
+                                        //Obtenemos el businessRol
                                         DataRow userRow = userRows[0];
                                         string businessRole = userRow["IdBusinessP"].ToString();
                                         DataRow[] bonusRows = bonusDt.Select($"IdBusinessP = '{businessRole}'");
                                         if (bonusRows.Length > 0)
                                         {
+                                            //Iniciamos con el await
                                             await Task.Run(() =>
                                             {
+                                                //Obtenemos el bono de la posicion
                                                 DataRow bonusRow = bonusRows[0];
                                                 double roleBonus = double.Parse(bonusRow["positionBonus"].ToString());
 
@@ -244,6 +252,8 @@ namespace PTC2024.Controller.EmployeesController
 
                                                 int daysWorked = 0;
                                                 int hoursWorked = 0;
+                                                //Esta validación sirve para cuando nosotros contratamos a alguien en el mes actual 
+                                                //y digamos el inicia el 10 del mes se le pagan 20 
                                                 if (hireDate.Year == currentDate.Year && hireDate.Month == currentDate.Month)
                                                 {
                                                     // Caso de un empleado contratado en el mismo mes que estamos generando la planilla
@@ -252,6 +262,7 @@ namespace PTC2024.Controller.EmployeesController
                                                 }
                                                 else
                                                 {
+                                                    //Si el empleado fue contratado en un mes anterior, la planilla se le genera normalmente
                                                     daysWorked = 30;
                                                     hoursWorked = 240;
                                                 }
@@ -266,6 +277,7 @@ namespace PTC2024.Controller.EmployeesController
                                                     BusinessBonus = float.Parse(roleBonus.ToString()),
                                                     ChristmasBonus = 0,
                                                     Username = row["username"].ToString(),
+                                                    //Ir a los metodos $$$ para entender los calculos
                                                     Isss = GetISSS(calculatedSalary),
                                                     Afp = GetAFP(calculatedSalary),
                                                     Rent = GetRent(calculatedSalary),
@@ -1213,11 +1225,13 @@ namespace PTC2024.Controller.EmployeesController
             }
             return ISS;
         }
+        //Metodo para obtener el AFP a pagar por parte del empleador el cual es igual a 8.75%
         public double GetAFPEmployer(double Salary)
         {
             double AFP = Salary * 0.0875;
             return AFP;
         }
+        //Metodo para obtener el AFP a pagar por parte del empleador el cual es igual a 7.5%
         public double GetISSSEmployeer(double Salary)
         {
             double ISSS = Salary * 0.075; ;
@@ -1251,6 +1265,9 @@ namespace PTC2024.Controller.EmployeesController
             double retencion = rent;
             return retencion;
         }
+        //Obtener la renta del aguinaldo 
+        //Aguinaldo mayor a 1500 y menor a 2038.11 = 0.02 + 60
+        //Aguinaldo mayor a 2028.11  = 0.3 + 288.57
         public double GetChristmasBonusRent(double Salary)
         {
             double rent;
@@ -1275,11 +1292,13 @@ namespace PTC2024.Controller.EmployeesController
             double netSalary = Salary - (GetISSS(Salary) + GetAFP(Salary) + GetRent(Salary));
             return netSalary;
         }
+        //Obtener el descuento del empleado,
         public double GetEmployeeDiscount(double Salary)
         {
             double employeeDiscount = Salary - GetNetSalary(Salary);
             return employeeDiscount;
         }
+        //Obtener el descuento del empleador
         public double GetEmployerDiscount(double Salary)
         {
             double employerDiscount = GetAFPEmployer(Salary) + GetISSS(Salary) + GetRent(Salary);
@@ -1296,19 +1315,26 @@ namespace PTC2024.Controller.EmployeesController
             }
             int workedYears = year - hireDate.Year;
             double christmasBonus;
-
+            //Si trabajo de un año a 2 entonces su aguinaldo sera el salario / 30 * 15
             if (workedYears >= 1 && workedYears < 3)
             {
                 christmasBonus = (salary / 30) * 15;
             }
+            //Si trabajo de 3 año a  e9ntonces su aguinaldo sera el salario / 30 * 19
+
             else if (workedYears >= 3 && workedYears < 10)
             {
                 christmasBonus = (salary / 30) * 19;
             }
+
+            //Si trabajo mas de 10 entonces su aguinalso sera el salario /30 *21
             else if (workedYears >= 10)
             {
                 christmasBonus = (salary / 30) * 21;
             }
+            //Si trabajo menos del año entonces, su aguinaldo sera proporcional
+            //Es decir que sacamos cuando gana diariamente y lo multiplicamos por los dias trabajados, esto se guarda en el 
+            //TimeSpan el cual guarda intervalos de tiempo
             else
             {
                 TimeSpan workedDays = endDate - hireDate;
