@@ -156,8 +156,10 @@ namespace PTC2024.Controller.ServicesController
                 /*Se evalua la respuesta*/
                 if (answer == 1)
                 {
-                    MessageBox.Show("Los datos se eliminaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    DAOInitialView daoInitial = new DAOInitialView();
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStartMenu = objStart;
+                    objStartMenu.snackBar.Show(objStartMenu, $"Se elimino el servicio de manera exitosa",
+                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight); DAOInitialView daoInitial = new DAOInitialView();
                     daoInitial.ActionType = "Se eliminó un servicio";
                     daoInitial.TableName = "Servicios";
                     daoInitial.ActionBy = SessionVar.Username;
@@ -170,7 +172,10 @@ namespace PTC2024.Controller.ServicesController
                 }
                 else
                 {
-                    MessageBox.Show("Los datos no se eliminaron debido a un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStartMenu = objStart;
+                    objStartMenu.snackBar.Show(objStartMenu, $"No se pudo eliminar el servicio",
+                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
                 }
 
                 /*Se refresca el DataGridView*/

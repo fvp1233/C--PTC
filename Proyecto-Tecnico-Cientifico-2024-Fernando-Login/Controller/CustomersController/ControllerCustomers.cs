@@ -182,7 +182,11 @@ namespace PTC2024.Controller.CustomersController
                 //Se evalua la respuesta, si es 1 los datos se muestra la correcta eliminacion,en caso que no se muestra el mensaje de la incorrecta eliminacion
                 if (answer == 1)
                 {
-                    MessageBox.Show("Los datos se eliminaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStartMenu = objStart;
+                    objStartMenu.snackBar.Show(objStartMenu, $"Se elimino el cliente de forma exitosa",
+                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight); 
                     DAOInitialView daoInitial = new DAOInitialView();
                     daoInitial.ActionType = "Se eliminó un cliente";
                     daoInitial.TableName = "Clientes";
@@ -196,7 +200,10 @@ namespace PTC2024.Controller.CustomersController
                 }
                 else
                 {
-                    MessageBox.Show("Los datos no se eliminaron debido a un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStartMenu = objStart;
+                    objStartMenu.snackBar.Show(objStartMenu, $"El cliente no pudo ser eliminado",
+                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
                 }
 
                 //Se refresca el DataGridView

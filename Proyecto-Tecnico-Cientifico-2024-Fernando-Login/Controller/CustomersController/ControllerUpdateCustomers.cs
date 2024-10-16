@@ -120,8 +120,11 @@ namespace PTC2024.Controller.CustomersController
                 if (answer == 1)
                 {
                     SendEmail();
-                    MessageBox.Show("Datos Actualizados");
-                    DAOInitialView daoInitial = new DAOInitialView();
+
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStartMenu = objStart;
+                    objStartMenu.snackBar.Show(objStartMenu, $"Datos actualizados",
+                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight); DAOInitialView daoInitial = new DAOInitialView();
                     daoInitial.ActionType = "Se actualizó un cliente";
                     daoInitial.TableName = "Clientes";
                     daoInitial.ActionBy = SessionVar.Username;
@@ -135,7 +138,10 @@ namespace PTC2024.Controller.CustomersController
                 }
                 else
                 {
-                    MessageBox.Show("Datos no se pudieron actualizar", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStartMenu = objStart;
+                    objStartMenu.snackBar.Show(objStartMenu, $"Los datos no se pudieron actualizar",
+                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
                 }
 
             }

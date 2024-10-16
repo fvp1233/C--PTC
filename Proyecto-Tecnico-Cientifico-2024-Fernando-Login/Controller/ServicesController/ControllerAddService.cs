@@ -126,8 +126,10 @@ namespace PTC2024.Controller.ServicesController
                 /*Se valida la respuesta*/
                 if (respuesta == 1)
                 {
-                    MessageBox.Show("Los datos se ingresaron correctamente", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    objAddService.Close();
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStartMenu = objStart;
+                    objStartMenu.snackBar.Show(objStartMenu, $"Se registro el servicio de forma exitosa",
+                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight); objAddService.Close();
                     DAOInitialView daoInitial = new DAOInitialView();
                     daoInitial.ActionType = "Se insertó un servicio";
                     daoInitial.TableName = "Servicios";
@@ -141,7 +143,10 @@ namespace PTC2024.Controller.ServicesController
                 }
                 else
                 {
-                    MessageBox.Show("Los datos no pudieron ser ingresados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStartMenu = objStart;
+                    objStartMenu.snackBar.Show(objStartMenu, $"No se pudo registrar el servicio",
+                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
                 }
 
             }

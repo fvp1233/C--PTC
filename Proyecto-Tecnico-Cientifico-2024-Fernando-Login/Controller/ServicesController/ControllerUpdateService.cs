@@ -173,8 +173,10 @@ namespace PTC2024.Controller.ServicesController
                 /*Se valida el valor retornado*/
                 if (returnedValue == 1)
                 {
-                    MessageBox.Show("Los datos se actualizaron correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    DAOInitialView daoInitial = new DAOInitialView();
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStartMenu = objStart;
+                    objStartMenu.snackBar.Show(objStartMenu, $"Los datos se actualizaron de manera exitosa",
+                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight); DAOInitialView daoInitial = new DAOInitialView();
                     daoInitial.ActionType = "Se actualizó un servicio";
                     daoInitial.TableName = "Servicios";
                     daoInitial.ActionBy = SessionVar.Username;
@@ -187,7 +189,10 @@ namespace PTC2024.Controller.ServicesController
                 }
                 else
                 {
-                    MessageBox.Show("Los datos no pudieron ser actualizados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    StartMenu objStart = new StartMenu(SessionVar.Username);
+                    objStartMenu = objStart;
+                    objStartMenu.snackBar.Show(objStartMenu, $"No se pudo actualizar el servicio",
+                        Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
                 }
                 /*Al haberse ejecutado todo se cerrara el formulario automaticamente*/
                 objUpdateService.Close();

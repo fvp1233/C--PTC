@@ -145,8 +145,10 @@ namespace PTC2024.Controller.CustomersController
                     if (AnswerValue == 1)
                     {//Si el valor es 1 se mostrara el mensaje
                         SendEmail();
-                        MessageBox.Show("Los datos se registraron de manera exitosa", "Proceso completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        DAOInitialView daoInitial = new DAOInitialView();
+                        StartMenu objStart = new StartMenu(SessionVar.Username);
+                        objStartMenu = objStart;
+                        objStartMenu.snackBar.Show(objStartMenu, $"Los datos se insertaron de manera exitosa",
+                            Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Success, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight); DAOInitialView daoInitial = new DAOInitialView();
                         daoInitial.ActionType = "Se insertó un cliente";
                         daoInitial.TableName = "Cliente";
                         daoInitial.ActionBy = SessionVar.Username;
@@ -161,7 +163,10 @@ namespace PTC2024.Controller.CustomersController
                     }
                     else
                     {//Si el valor es diferente a 1 se mostrara el mensaje de error
-                        MessageBox.Show("Los datos no pudieron ser registrados", "Proceso fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        StartMenu objStart = new StartMenu(SessionVar.Username);
+                        objStartMenu = objStart;
+                        objStartMenu.snackBar.Show(objStartMenu, $"Los datos no pudieron ser registrados",
+                            Bunifu.UI.WinForms.BunifuSnackbar.MessageTypes.Error, 3000, null, Bunifu.UI.WinForms.BunifuSnackbar.Positions.TopRight);
                     }
 
                 }
