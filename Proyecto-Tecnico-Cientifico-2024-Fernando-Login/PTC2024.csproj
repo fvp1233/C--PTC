@@ -1019,7 +1019,9 @@
     <Content Include="Resources\Cancelar.png" />
     <Content Include="Resources\Confirmar.png" />
     <Content Include="Resources\Eliminar.png" />
-    <Content Include="Resources\H2C_HR negro.png" />
+    <Content Include="Resources\H2C_HR negro.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\imgCerrarSesion.png" />
     <Content Include="Resources\imgClientes %281%29.png" />
     <Content Include="Resources\imgDashboard.png" />
